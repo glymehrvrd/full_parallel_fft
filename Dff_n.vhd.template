@@ -1,0 +1,33 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+{% set component_name = 'Dff_%d'|format(n) + ('_init_1' if init_1 else '') %}
+entity {{ component_name }} is
+    Port ( D : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+           rst : in  STD_LOGIC;
+           Q : out  STD_LOGIC);
+end {{ component_name }};
+
+architecture Behavioral of {{ component_name }} is
+
+signal reg: std_logic_vector({{ n-1 }} downto 0);
+begin
+
+Q<= reg({{ n-1 }});
+
+process(clk,rst)
+begin
+    if rst='1' then
+        reg<=(others=>'{{ 1 if init_1 else 0 }}');
+    elsif rising_edge(clk) then
+        {% if n>1 %}
+        reg<=reg({{ n-2 }} downto 0) & D;
+        {% else %}
+        reg(0)<=D;
+        {% endif %}
+    end if;
+end process;
+
+end Behavioral;
+

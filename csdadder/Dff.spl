@@ -1,0 +1,7 @@
+[Inputs]
+D
+clk
+rst
+[Outputs]
+Q
+[BiDir]

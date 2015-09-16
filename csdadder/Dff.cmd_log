@@ -1,0 +1,10 @@
+vhdtdtfi -lib work Dff.vhd -prj csdadder -o Dff.spl -module Dff -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Dff.spl f:/Documents/FFT/csdadder/Dff.sym 
+vhdtdtfi -lib work Dff.vhd -prj csdadder -o Dff.spl -module Dff -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Dff.spl f:/Documents/FFT/csdadder/Dff.sym 
+vhdtdtfi -lib work Dff.vhd -prj csdadder -o Dff.spl -module Dff -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Dff.spl f:/Documents/FFT/csdadder/Dff.sym 
+vhdtdtfi -lib work Dff.vhd -prj csdadder -o Dff.spl -module Dff -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Dff.spl F:/Documents/FFT/csdadder/Dff.sym 
+vhdtdtfi -lib work Dff.vhd -prj csdadder -o Dff.spl -module Dff -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 Dff.spl F:/Documents/FFT/csdadder/Dff.sym 
