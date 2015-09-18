@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    22:59:24 09/05/2015 
 -- Design Name: 
--- Module Name:    one_bit_adder - Behavioral 
+-- Module Name:    adder_half_bit1 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,34 +29,19 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity one_bit_full_adder is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           C_IN : in STD_LOGIC;
-           S : out  STD_LOGIC;
-           C_OUT : out  STD_LOGIC);
-end one_bit_full_adder;
+entity adder_half_bit1 is
+    Port ( d1_in : in  STD_LOGIC;
+           d2_in : in  STD_LOGIC;
+           sum_out : out  STD_LOGIC;
+           c_out : out  STD_LOGIC);
+end adder_half_bit1;
 
-architecture Behavioral of one_bit_full_adder is
-
-component one_bit_adder is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           S : out  STD_LOGIC;
-           C : out  STD_LOGIC);
-end component;
-
-signal c1:std_logic;
-signal c2:std_logic;
-signal s1:std_logic;
+architecture Behavioral of adder_half_bit1 is
 
 begin
 
-HA1 : one_bit_adder port map(A,B,s1,c1);
-HA2 : one_bit_adder port map(s1,C_IN,S,c2);
-
-C_OUT <= c1 or c2;
-
+sum_out<=d1_in xor d2_in;
+c_out<=d1_in and d2_in;
 
 end Behavioral;
 

@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-{% set component_name = 'Dff_%d'|format(n) + ('_init_1' if init_1 else '') %}
+{% set component_name = 'Dff_reg%d'|format(n) + ('_init_1' if init_1 else '') %}
 entity {{ component_name }} is
     Port ( D : in  STD_LOGIC;
            clk : in  STD_LOGIC;

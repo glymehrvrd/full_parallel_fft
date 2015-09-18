@@ -29,19 +29,34 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity one_bit_adder is
-    Port ( A : in  STD_LOGIC;
-           B : in  STD_LOGIC;
-           S : out  STD_LOGIC;
-           C : out  STD_LOGIC);
-end one_bit_adder;
+entity adder_bit1 is
+    Port ( d1_in : in  STD_LOGIC;
+           d2_in : in  STD_LOGIC;
+           c_in : in STD_LOGIC;
+           sum_out : out  STD_LOGIC;
+           c_out : out  STD_LOGIC);
+end adder_bit1;
 
-architecture Behavioral of one_bit_adder is
+architecture Behavioral of adder_bit1 is
+
+component adder_half_bit1 is
+    Port ( d1_in : in  STD_LOGIC;
+           d2_in : in  STD_LOGIC;
+           sum_out : out  STD_LOGIC;
+           C : out  STD_LOGIC);
+end component;
+
+signal c1:std_logic;
+signal c2:std_logic;
+signal s1:std_logic;
 
 begin
 
-S<=A xor B;
-C<=A and B;
+HA1 : one_bit_adder port map(d1_in,d2_in,s1,c1);
+HA2 : one_bit_adder port map(s1,c_in,sum_out,c2);
+
+c_out <= c1 or c2;
+
 
 end Behavioral;
 
