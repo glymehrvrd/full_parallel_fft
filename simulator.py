@@ -43,26 +43,40 @@ def simulate(num, csd, width):
     #                            c[j])
     #     result.append(s[-1])
     binary = ''.join(map(str, reversed(result)))
-    return int(binary, 2) / float(2**(len(csd) - 1)), binary
+    return int(binary, 2) / float(2 ** (len(csd) - 1)), binary
     # return int(binary,2)
 
-if __name__=='__main__':
+
+def simulate_new(multiplicator, multiplicand, width):
+    result = []
+    s = [0] * (width + 1)
+    if multiplicand[0] == '1':
+        s[1:] = [int(multiplicator[i]) for i in xrange(width)]
+
+    for i in xrange(1, width):
+        result.append(s[-1])
+        s = [0] + s[:-1]
+        c = 0
+        for j in xrange(width):
+            s[width - j], c = adder(int(multiplicator[width - j - 1]) if multiplicand[width - i - 1]
+                                                                         == '1' else 0, s[width - j], c)
+        # s[1], c = adder(int(multiplicator[0]) if multiplicand[i] == '1' else 0, s[1], c)
+        s[0] = c
+    return s + list(reversed(result))
+
+
+if __name__ == '__main__':
     width = 16
     multiplicator = 51557
     multiplicand = 0.707
 
-    numbin = sfi(multiplicand, 16, 15)
-    csd = bintocsd(numbin)
-
     print 'multiplicator:', multiplicator
     print 'multiplicator binary:', sfi(multiplicator, width, 0)
     print 'multiplicand:', multiplicand
-    print 'multiplicand csd:', csd
+    print 'multiplicand binary:', sfi(multiplicand, 16, 15)
 
-    print 'simulate result:', simulate(multiplicator, csd, width)
+    # print 'simulate result:', simulate_new(sfi(multiplicator, 16, 15),
+    print ''.join(map(str,simulate_new(sfi(multiplicator, 16, 15), sfi(multiplicand, 16, 15), 16)))
+
     print 'float result:', multiplicator * multiplicand
-
-
-    starters = calc_starter(csd)
-    print starters
-    print 'time difference:', starters[0][0]-starters[-1][0]*2-1
+    print 'float result binary:', sfi(multiplicator * multiplicand, 16, 15)
