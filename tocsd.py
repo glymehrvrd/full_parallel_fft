@@ -101,4 +101,5 @@ def test():
     print bintocsd(fxnum)
 
 if __name__ == '__main__':
-    test()
+    print bintocsd('1101')
+    # test()
