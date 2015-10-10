@@ -5,9 +5,10 @@ from tocsd import *
 from simulator import simulate
 
 env = Environment(
-    loader=FileSystemLoader('./'), trim_blocks=True, lstrip_blocks=True)
+    loader=FileSystemLoader('templates/'), trim_blocks=True, lstrip_blocks=True)
 temp_top = env.get_template('top.vhd.template')
 temp_Dff_n = env.get_template('Dff_n.vhd.template')
+temp_Dff_preload_n = env.get_template('Dff_preload_n.vhd.template')
 temp_test_top = env.get_template('test_top.vhd.template')
 
 
@@ -23,10 +24,11 @@ def get_Dff_list(starters):
 def generate_Dff(n, init_1=False):
     return temp_Dff_n.render(n=n, init_1=init_1)
 
+def generate_Dff_preload(n, init_1=False):
+    return temp_Dff_preload_n.render(n=n, init_1=init_1)
 
 def generate_top(starters, Dff_list):
     return temp_top.render(starters=starters, Dff_list=Dff_list)
-
 
 def generate_test_top(binarylist):
     return temp_test_top.render(binarylist=binarylist)
@@ -52,12 +54,18 @@ print 'float result:', multiplicator * multiplicand
 starters = calc_starter(csd)
 Dff_list = get_Dff_list(starters)
 
-with open('gen/test_top.vhd', 'w') as f:
+with open('../gen/test_top.vhd', 'w') as f:
     f.write(generate_test_top(reversed(multiplicator_bin)))
 
-with open('gen/top.vhd', 'w') as f:
+with open('../gen/top.vhd', 'w') as f:
     f.write(generate_top(starters, Dff_list))
 
+with open('../gen/Dff_preload_1.vhd', 'w') as f:
+    f.write(generate_Dff_preload(1))
+
+with open('../gen/Dff_preload_1_init_1.vhd', 'w') as f:
+    f.write(generate_Dff_preload(1,True))
+
 for Dff in Dff_list:
-    with open('gen/Dff_' + str(Dff[0]) + ('_init_1' if Dff[1] else '') + '.vhd', 'w') as f:
+    with open('../gen/Dff_' + str(Dff[0]) + ('_init_1' if Dff[1] else '') + '.vhd', 'w') as f:
         f.write(generate_Dff(Dff[0], Dff[1]))

@@ -43,7 +43,7 @@ component adder_half_bit1 is
     Port ( d1_in : in  STD_LOGIC;
            d2_in : in  STD_LOGIC;
            sum_out : out  STD_LOGIC;
-           C : out  STD_LOGIC);
+           c_out : out  STD_LOGIC);
 end component;
 
 signal c1:std_logic;
@@ -52,8 +52,17 @@ signal s1:std_logic;
 
 begin
 
-HA1 : one_bit_adder port map(d1_in,d2_in,s1,c1);
-HA2 : one_bit_adder port map(s1,c_in,sum_out,c2);
+HA1 : adder_half_bit1 port map(
+    d1_in=>d1_in,
+    d2_in=>d2_in,
+    sum_out=>s1,
+    c_out=>c1);
+
+HA2 : adder_half_bit1 port map(
+    d1_in=>s1,
+    d2_in=>c_in,
+    sum_out=>sum_out,
+    c_out=>c2);
 
 c_out <= c1 or c2;
 

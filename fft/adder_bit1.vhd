@@ -43,7 +43,7 @@ component adder_half_bit1 is
     Port ( d1_in : in  STD_LOGIC;
            d2_in : in  STD_LOGIC;
            sum_out : out  STD_LOGIC;
-           C : out  STD_LOGIC);
+           c_out : out  STD_LOGIC);
 end component;
 
 signal c1:std_logic;

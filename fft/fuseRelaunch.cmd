@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "F:/Documents/FFT/fft/test_fft_pt4_isim_beh.exe" -prj "F:/Documents/FFT/fft/test_fft_pt4_beh.prj" "work.test_fft_pt4" 

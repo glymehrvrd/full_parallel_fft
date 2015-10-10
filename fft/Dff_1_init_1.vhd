@@ -19,7 +19,7 @@ process(clk,rst)
 begin
     if rst='1' then
         reg<=(others=>'1');
-    elsif rising_edge(clk) then
+    elsif clk'event and clk='1' then
         reg(0)<=D;
     end if;
 end process;

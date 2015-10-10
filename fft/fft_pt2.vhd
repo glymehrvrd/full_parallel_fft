@@ -55,30 +55,36 @@ component adder_bit1 is
              c_out : out  STD_LOGIC);
 end component;
 
-component Dff_reg1 is
+component Dff_preload_reg1 is
       Port ( D : in  STD_LOGIC;
              clk : in  STD_LOGIC;
              rst : in  STD_LOGIC;
+           preload: in STD_LOGIC;
              Q : out  STD_LOGIC);
 end component;
 
-component Dff_reg1_init_1 is
+component Dff_preload_reg1_init_1 is
       Port ( D : in  STD_LOGIC;
              clk : in  STD_LOGIC;
              rst : in  STD_LOGIC;
+           preload: in STD_LOGIC;
              Q : out  STD_LOGIC);
 end component;
 
 signal c: std_logic_vector(3 downto 0);
 signal c_buff: std_logic_vector(3 downto 0);
 
+signal not_data_1_re_in:STD_LOGIC;
+signal not_data_1_im_in:STD_LOGIC;
+
 begin
 
 --- Re(X[0])=Re(x[0])+Re(x[1])
-C_BUFF0_RE : Dff_reg1 port map(
+C_BUFF0_RE : Dff_preload_reg1 port map(
     D=>c(0), 
     clk=>clk, 
     rst=>rst, 
+    preload=>ctrl,
     Q=>c_buff(0));
 
 ADDER0_RE : adder_bit1 port map (
@@ -89,10 +95,11 @@ ADDER0_RE : adder_bit1 port map (
     c_out=>c(0));
 
 --- Im(X[0])=Im(x[0])+Im(x[1])
-C_BUFF0_IM : Dff_reg1 port map(
+C_BUFF0_IM : Dff_preload_reg1 port map(
     D=>c(1), 
     clk=>clk, 
     rst=>rst, 
+    preload=>ctrl,
     Q=>c_buff(1));
 
 ADDER0_IM : adder_bit1 port map (
@@ -103,29 +110,35 @@ ADDER0_IM : adder_bit1 port map (
     c_out=>c(1));
 
 --- Re(X[1])=Re(x[0])-Re(x[1])
-C_BUFF1_RE : Dff_reg1_init_1 port map(
+C_BUFF1_RE : Dff_preload_reg1_init_1 port map(
     D=>c(2), 
     clk=>clk, 
     rst=>rst, 
+    preload=>ctrl,
     Q=>c_buff(2));
+
+not_data_1_re_in<=not data_1_re_in;
 
 ADDER1_RE : adder_bit1 port map (
     d1_in=>data_0_re_in,
-    d2_in=>(not data_1_re_in),
+    d2_in=>not_data_1_re_in,
     c_in=>c_buff(2),
     sum_out=>data_1_re_out,
     c_out=>c(2));
 
 --- Im(X[1])=Im(x[0])-Im(x[1])
-C_BUFF1_IM : Dff_reg1_init_1 port map(
+C_BUFF1_IM : Dff_preload_reg1_init_1 port map(
     D=>c(3), 
     clk=>clk, 
     rst=>rst, 
+    preload=>ctrl,
     Q=>c_buff(3));
+
+not_data_1_im_in<=not data_1_im_in;
 
 ADDER1_IM : adder_bit1 port map (
     d1_in=>data_0_im_in,
-    d2_in=>(not data_1_im_in),
+    d2_in=>not_data_1_im_in,
     c_in=>c_buff(3),
     sum_out=>data_1_im_out,
     c_out=>c(3));
