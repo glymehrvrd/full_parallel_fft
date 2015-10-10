@@ -52,8 +52,8 @@ signal s1:std_logic;
 
 begin
 
-HA1 : one_bit_adder port map(d1_in,d2_in,s1,c1);
-HA2 : one_bit_adder port map(s1,c_in,sum_out,c2);
+HA1 : adder_half_bit1 port map(d1_in,d2_in,s1,c1);
+HA2 : adder_half_bit1 port map(s1,c_in,sum_out,c2);
 
 c_out <= c1 or c2;
 
