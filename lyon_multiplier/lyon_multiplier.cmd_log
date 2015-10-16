@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/dell/Documents/ISE Projects/fft/lyon_multiplier/lyon_multiplier.xst" -ofn "D:/dell/Documents/ISE Projects/fft/lyon_multiplier/lyon_multiplier.syr" 
