@@ -1,0 +1,78 @@
+# Reading D:/modeltech_10.1a/tcl/vsim/pref.tcl 
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {test_lyon_multiplier.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_half_bit1
+# -- Compiling architecture Behavioral of adder_half_bit1
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux_in2
+# -- Compiling architecture Behavioral of mux_in2
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Dff_reg1
+# -- Compiling architecture Behavioral of Dff_reg1
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_bit1
+# -- Compiling architecture Behavioral of adder_bit1
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity partial_product_last
+# -- Compiling architecture Behavioral of partial_product_last
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity partial_product
+# -- Compiling architecture Behavioral of partial_product
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity lyon_multiplier
+# -- Compiling architecture Behavioral of lyon_multiplier
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_lyon_multiplier
+# -- Compiling architecture behavior of test_lyon_multiplier
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.test_lyon_multiplier 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.test_lyon_multiplier(behavior)#1
+# Loading work.lyon_multiplier(behavioral)#1
+# Loading work.partial_product(behavioral)#1
+# Loading work.dff_reg1(behavioral)#1
+# Loading work.mux_in2(behavioral)#1
+# Loading work.adder_bit1(behavioral)#1
+# Loading work.adder_half_bit1(behavioral)#1
+# Loading work.partial_product_last(behavioral)#1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree

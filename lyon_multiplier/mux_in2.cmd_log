@@ -1,0 +1,1 @@
+vhdtdtfi -prj lyon_multiplier -o "D:/dell/Documents/ISE Projects/lyon_multiplier/mux_in2.tfi" -module mux_in2 -template d:/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work mux_in2.vhd 

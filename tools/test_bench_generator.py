@@ -18,3 +18,9 @@ for i in xrange(vector_length):
     print 'wait for clk_period;'
     print ''
 
+data = '1100010101011010'
+for i in reversed(data):
+    print "d1_in<='%s';"% i
+    print "wait for clk_period;"
+    print
+

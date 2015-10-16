@@ -1,0 +1,28 @@
+Command line:
+   test_lyon_multiplier_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  10099
+
+Fri Oct 16 10:26:46 2015
+
+
+ Elaboration Time: 0.46875 sec
+
+ Current Memory Usage: 853.062 Meg
+
+ Total Signals          : 809
+ Total Nets             : 232
+ Total Signal Drivers   : 176
+ Total Blocks           : 152
+ Total Primitive Blocks : 106
+ Total Processes        : 174
+ Total Traceable Variables  : 24
+ Total Scalar Nets and Variables : 623
+
+ Total Simulation Time: 0.53125 sec
+
+ Current Memory Usage: 381.178 Meg
+
+Fri Oct 16 11:06:35 2015
+

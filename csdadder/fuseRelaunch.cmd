@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/dell/Documents/FFT/csdadder/test_top_isim_beh.exe" -prj "D:/dell/Documents/FFT/csdadder/test_top_beh.prj" "work.test_top" "work.glbl" 

@@ -1,3 +1,0 @@
-vhdtdtfi -lib work one_bit_adder.vhd -prj csdadder -o one_bit_adder.spl -module one_bit_adder -template d:/Xilinx/14.2/ISE_DS/ISE//data/splfile.tft -deleteonerror 
-spl2sym -intstyle ise -family artix7 one_bit_adder.spl f:/Documents/FFT/csdadder/one_bit_adder.sym 
-vhdtdtfi -prj csdadder -o F:/Documents/FFT/csdadder/one_bit_adder.tfi -module one_bit_adder -template d:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work one_bit_adder.vhd 

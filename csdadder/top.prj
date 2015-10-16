@@ -1,6 +1,0 @@
-vhdl work "one_bit_adder.vhd"
-vhdl work "one_bit_full_adder.vhd"
-vhdl work "Dff_6.vhd"
-vhdl work "Dff_2.vhd"
-vhdl work "Dff.vhd"
-vhdl work "top.vhd"
