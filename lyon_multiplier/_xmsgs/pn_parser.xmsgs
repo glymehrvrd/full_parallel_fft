@@ -8,28 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/Dff_1.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/Dff_1_init_1.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/adder_bit1.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/adder_half_bit1.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/lyon_multiplier.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/mux_in2.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/partial_product.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;d:/dell/Documents/ISE Projects/fft/lyon_multiplier/partial_product_last.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;D:/dell/Documents/ISE Projects/fft/lyon_multiplier/Dff_1.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

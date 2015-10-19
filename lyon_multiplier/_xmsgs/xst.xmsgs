@@ -5,28 +5,58 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ce</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[4].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ce</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[0].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[1].PPX/BUFF_C/Q</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[8].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[4].PPX/BUFF_C/Q</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[13].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[9].PPX/BUFF_C/Q</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[5].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">GEN_PP[1].PPX/BUFF_CTRL/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt;.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">d1_in_delay_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[0].PPX/BUFF_DIN1/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">GEN_PP[4].PPX/BUFF_CTRL/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt;.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[10].PPX/BUFF_CTRL/reg_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">GEN_PP[9].PPX/BUFF_CTRL/Q</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt;.
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[9].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[2].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[6].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[11].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[1].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[3].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[7].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">ctrl_delay_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">lyon_multiplier</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;GEN_PP[12].PPX/BUFF_CTRL/reg_0&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[1].PPX/BUFF_C/reg_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[4].PPX/BUFF_C/reg_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">GEN_PP[9].PPX/BUFF_C/reg_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">lyon_multiplier</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 </messages>

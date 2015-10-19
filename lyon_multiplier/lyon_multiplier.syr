@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.33 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: lyon_multiplier.prj
 
@@ -187,14 +187,13 @@ Unit <lyon_multiplier> synthesized.
 
 Synthesizing Unit <partial_product>.
     Related source file is "D:\dell\Documents\ISE Projects\fft\lyon_multiplier\partial_product.vhd".
-WARNING:Xst:647 - Input <ce> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <partial_product> synthesized.
 
 Synthesizing Unit <Dff_reg1>.
     Related source file is "D:\dell\Documents\ISE Projects\fft\lyon_multiplier\Dff_1.vhd".
-    Found 1-bit register for signal <Q>.
+    Found 1-bit register for signal <reg>.
     Summary:
 	inferred   1 D-type flip-flop(s).
 Unit <Dff_reg1> synthesized.
@@ -219,7 +218,6 @@ Unit <adder_half_bit1> synthesized.
 
 Synthesizing Unit <partial_product_last>.
     Related source file is "D:\dell\Documents\ISE Projects\fft\lyon_multiplier\partial_product_last.vhd".
-WARNING:Xst:647 - Input <ce> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	no macro.
 Unit <partial_product_last> synthesized.
@@ -252,12 +250,24 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <GEN_PP[1].PPX/BUFF_C/Q> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <GEN_PP[4].PPX/BUFF_C/Q> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <GEN_PP[9].PPX/BUFF_C/Q> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <GEN_PP[1].PPX/BUFF_CTRL/Q> of sequential type is unconnected in block <lyon_multiplier>.
-WARNING:Xst:2677 - Node <GEN_PP[4].PPX/BUFF_CTRL/Q> of sequential type is unconnected in block <lyon_multiplier>.
-WARNING:Xst:2677 - Node <GEN_PP[9].PPX/BUFF_CTRL/Q> of sequential type is unconnected in block <lyon_multiplier>.
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_5> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[4].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_1> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[0].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_9> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[8].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_14> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[13].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_6> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[5].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <d1_in_delay_1> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[0].PPX/BUFF_DIN1/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_11> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[10].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_10> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[9].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_3> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[2].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_7> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[6].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_12> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[11].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_2> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[1].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_4> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[3].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_8> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[7].PPX/BUFF_CTRL/reg_0> 
+INFO:Xst:2261 - The FF/Latch <ctrl_delay_13> in Unit <lyon_multiplier> is equivalent to the following FF/Latch, which will be removed : <GEN_PP[12].PPX/BUFF_CTRL/reg_0> 
+WARNING:Xst:1710 - FF/Latch <GEN_PP[1].PPX/BUFF_C/reg_0> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <GEN_PP[4].PPX/BUFF_C/reg_0> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <GEN_PP[9].PPX/BUFF_C/reg_0> (without init value) has a constant value of 0 in block <lyon_multiplier>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <lyon_multiplier> ...
 
@@ -271,8 +281,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 69
- Flip-Flops                                            : 69
+# Registers                                            : 57
+ Flip-Flops                                            : 57
 
 =========================================================================
 
@@ -295,16 +305,15 @@ Top Level Output File Name         : lyon_multiplier.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 146
+# BELS                             : 127
 #      INV                         : 1
 #      LUT3                        : 11
-#      LUT4                        : 3
-#      LUT5                        : 10
-#      LUT6                        : 91
-#      MUXF7                       : 30
-# FlipFlops/Latches                : 69
-#      FDR                         : 39
-#      FDRE                        : 30
+#      LUT4                        : 4
+#      LUT5                        : 13
+#      LUT6                        : 80
+#      MUXF7                       : 18
+# FlipFlops/Latches                : 57
+#      FDRE                        : 57
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 5
@@ -318,16 +327,16 @@ Selected Device : 7a100tcsg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              69  out of  126800     0%  
- Number of Slice LUTs:                  116  out of  63400     0%  
-    Number used as Logic:               116  out of  63400     0%  
+ Number of Slice Registers:              57  out of  126800     0%  
+ Number of Slice LUTs:                  109  out of  63400     0%  
+    Number used as Logic:               109  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    149
-   Number with an unused Flip Flop:      80  out of    149    53%  
-   Number with an unused LUT:            33  out of    149    22%  
-   Number of fully used LUT-FF pairs:    36  out of    149    24%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    135
+   Number with an unused Flip Flop:      78  out of    135    57%  
+   Number with an unused LUT:            26  out of    135    19%  
+   Number of fully used LUT-FF pairs:    31  out of    135    22%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                           6
@@ -357,7 +366,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 69    |
+clk                                | BUFGP                  | 57    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -368,8 +377,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.010ns (Maximum Frequency: 332.248MHz)
-   Minimum input arrival time before clock: 2.490ns
+   Minimum period: 2.737ns (Maximum Frequency: 365.324MHz)
+   Minimum input arrival time before clock: 2.313ns
    Maximum output required time after clock: 0.640ns
    Maximum combinational path delay: No path found
 
@@ -379,53 +388,51 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 3.010ns (frequency: 332.248MHz)
-  Total number of paths / destination ports: 2720 / 65
+  Clock period: 2.737ns (frequency: 365.324MHz)
+  Total number of paths / destination ports: 1774 / 55
 -------------------------------------------------------------------------
-Delay:               3.010ns (Levels of Logic = 5)
+Delay:               2.737ns (Levels of Logic = 4)
   Source:            d1_in_delay_11 (FF)
-  Destination:       product_out (FF)
+  Destination:       GEN_PP[12].PPX/BUFF_C/reg_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: d1_in_delay_11 to product_out
+  Data Path: d1_in_delay_11 to GEN_PP[12].PPX/BUFF_C/reg_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q             4   0.361   0.525  d1_in_delay_11 (d1_in_delay_11)
-     LUT3:I0->O            5   0.097   0.298  GEN_PP[9].PPX/MUX_DIN1/Mmux_d_out11_SW0 (N2)
-     MUXF7:S->O           25   0.335   0.401  GEN_PP[10].PPX/ADDER/HA2/sum_out1_SW0 (N23)
-     LUT6:I5->O            1   0.097   0.000  GEN_PP[11].PPX/ADDER/HA2/sum_out1_SW0_G (N116)
-     MUXF7:I1->O           1   0.279   0.511  GEN_PP[11].PPX/ADDER/HA2/sum_out1_SW0 (N41)
-     LUT6:I3->O            1   0.097   0.000  GEN_PP[12].PPX/ADDER/c_out1 (GEN_PP[12].PPX/c_out)
-     FDR:D                     0.008          GEN_PP[12].PPX/BUFF_C/Q
+     FDRE:C->Q             8   0.361   0.725  d1_in_delay_11 (d1_in_delay_11)
+     LUT6:I0->O            1   0.097   0.000  GEN_PP[10].PPX/ADDER/HA2/sum_out1_SW0_F (N166)
+     MUXF7:I0->O          11   0.277   0.326  GEN_PP[10].PPX/ADDER/HA2/sum_out1_SW0 (N27)
+     MUXF7:S->O            1   0.335   0.511  GEN_PP[11].PPX/ADDER/HA2/sum_out1_SW0 (N46)
+     LUT5:I2->O            1   0.097   0.000  GEN_PP[12].PPX/ADDER/c_out1 (GEN_PP[12].PPX/c_out)
+     FDRE:D                    0.008          GEN_PP[12].PPX/BUFF_C/reg_0
     ----------------------------------------
-    Total                      3.010ns (1.274ns logic, 1.736ns route)
-                                       (42.3% logic, 57.7% route)
+    Total                      2.737ns (1.175ns logic, 1.562ns route)
+                                       (42.9% logic, 57.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 157 / 130
+  Total number of paths / destination ports: 170 / 143
 -------------------------------------------------------------------------
-Offset:              2.490ns (Levels of Logic = 6)
-  Source:            d1_in (PAD)
+Offset:              2.313ns (Levels of Logic = 5)
+  Source:            ctrl (PAD)
   Destination:       product_out (FF)
   Destination Clock: clk rising
 
-  Data Path: d1_in to product_out
+  Data Path: ctrl to product_out
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.001   0.707  d1_in_IBUF (d1_in_IBUF)
-     LUT6:I0->O            3   0.097   0.305  GEN_PP[0].PPX/ADDER/HA2/sum_out1 (pp<1>)
-     LUT6:I5->O            5   0.097   0.314  GEN_PP[2].PPX/ADDER/HA2/sum_out1 (pp<3>)
-     LUT6:I5->O           13   0.097   0.351  GEN_PP[5].PPX/ADDER/HA2/sum_out1 (pp<6>)
-     LUT6:I5->O            6   0.097   0.318  GEN_PP[8].PPX/ADDER/HA2/sum_out1 (pp<9>)
-     LUT6:I5->O            1   0.097   0.000  GEN_PP[12].PPX/ADDER/c_out1 (GEN_PP[12].PPX/c_out)
-     FDR:D                     0.008          GEN_PP[12].PPX/BUFF_C/Q
+     IBUF:I->O             4   0.001   0.707  ctrl_IBUF (ctrl_IBUF)
+     LUT6:I0->O            4   0.097   0.525  GEN_PP[1].PPX/MUX_DIN1/Mmux_d_out11 (GEN_PP[1].PPX/ADDER/s1)
+     LUT6:I3->O           15   0.097   0.360  GEN_PP[3].PPX/ADDER/HA2/sum_out1 (pp<4>)
+     LUT6:I5->O            7   0.097   0.323  GEN_PP[8].PPX/ADDER/HA2/sum_out1 (pp<9>)
+     LUT5:I4->O            1   0.097   0.000  GEN_PP[13].PPX/ADDER/c_out1 (GEN_PP[13].PPX/c_out)
+     FDRE:D                    0.008          GEN_PP[13].PPX/BUFF_C/reg_0
     ----------------------------------------
-    Total                      2.490ns (0.494ns logic, 1.996ns route)
-                                       (19.8% logic, 80.2% route)
+    Total                      2.313ns (0.397ns logic, 1.916ns route)
+                                       (17.2% logic, 82.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -456,20 +463,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    3.010|         |         |         |
+clk            |    2.737|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 29.00 secs
-Total CPU time to Xst completion: 28.71 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.21 secs
  
 --> 
 
-Total memory usage is 526392 kilobytes
+Total memory usage is 405444 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    8 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
 

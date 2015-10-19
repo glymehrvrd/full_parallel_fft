@@ -1,6 +1,6 @@
 proc openClient {} {
   set find_spare 0
-  set port 1303
+  set port 1302
   set cid [socket localhost $port]
   echo Connected to Xilinx System Generator Block {ModelSim}
   fileevent $cid readable "event_handler $cid"
@@ -130,7 +130,7 @@ if {$xlcosim_stat==0} {
     openWave
   }
   if {$xlcosim_stat==0} {
-    do {d:/dell/Documents/ISE Projects/lyon_multiplier/before.do}
+    do {d:/dell/Documents/ISE Projects/fft/lyon_multiplier/before.do}
   }
 }
 
