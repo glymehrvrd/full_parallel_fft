@@ -49,7 +49,8 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "VHDL Formatter", None))
+        MainWindow.setWindowTitle(
+            _translate("MainWindow", "VHDL Formatter", None))
         self.label.setText(_translate("MainWindow", "拖拽.vhd到这里！", None))
 
 
@@ -65,8 +66,8 @@ class mw(QtGui.QMainWindow):
             event.acceptProposedAction()
 
     def dropEvent(self, event):
-        urls = [unicode(url.toString().replace('file:///','')) for url in event.mimeData().urls()]
-        os.system('node vhdlformatter.js '+' '.join(urls))
+        urls = [unicode('"' + url.toString().replace('file:///', '') + '"') for url in event.mimeData().urls()]
+        os.system('node vhdlformatter.js ' + ' '.join(urls))
 
 
 app = QtGui.QApplication(sys.argv)
