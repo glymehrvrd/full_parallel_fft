@@ -1,27 +1,31 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity Dff_reg1_init_1 is
-    Port ( D : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
-           Q : out  STD_LOGIC);
-end Dff_reg1_init_1;
+ENTITY Dff_reg1_init_1 IS
+    PORT (
+        D    : IN STD_LOGIC;
+        clk  : IN STD_LOGIC;
+        ce   : IN STD_LOGIC;
+        rst  : IN STD_LOGIC;
+        Q    : OUT STD_LOGIC
+    );
+END Dff_reg1_init_1;
 
-architecture Behavioral of Dff_reg1_init_1 is
+ARCHITECTURE Behavioral OF Dff_reg1_init_1 IS
 
-signal reg: std_logic_vector(0 downto 0);
-begin
+    SIGNAL reg : std_logic_vector(0 DOWNTO 0);
+BEGIN
+    Q <= reg(0);
 
-Q<= reg(0);
+    PROCESS (clk, rst)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' THEN
+                reg <= (OTHERS => '1');
+            ELSIF ce = '1' THEN
+                reg(0) <= D;
+            END IF;
+        END IF;
+    END PROCESS;
 
-process(clk,rst)
-begin
-    if rst='1' then
-        reg<=(others=>'1');
-    elsif clk'event and clk='1' then
-        reg(0)<=D;
-    end if;
-end process;
-
-end Behavioral;
+END Behavioral;

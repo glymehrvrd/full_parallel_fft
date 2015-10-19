@@ -1,0 +1,10 @@
+Command line:
+   test_fft_pt2_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  3515
+
+Mon Oct 19 20:44:50 2015
+
+
+ Elaboration Time: 0.453125 sec

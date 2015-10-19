@@ -1,24 +1,24 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    15:07:11 10/09/2015 
--- Design Name: 
--- Module Name:    fft_pt2048 - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date: 15:07:11 10/09/2015
+-- Design Name:
+-- Module Name: fft_pt2048 - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,17 +29,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity fft_pt2048 is
-    Port ( clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
-           data_in : in  STD_LOGIC;
-           data_out : out  STD_LOGIC);
-end fft_pt2048;
+ENTITY fft_pt2048 IS
+    PORT (
+        clk       : IN STD_LOGIC;
+        rst       : IN STD_LOGIC;
+        ce        : IN STD_LOGIC;
+        data_in   : IN STD_LOGIC;
+        data_out  : OUT STD_LOGIC
+    );
+END fft_pt2048;
 
-architecture Behavioral of fft_pt2048 is
+ARCHITECTURE Behavioral OF fft_pt2048 IS
 
-begin
-
-
-end Behavioral;
+BEGIN
+END Behavioral;
 

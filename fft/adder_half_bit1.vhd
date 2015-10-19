@@ -1,24 +1,24 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    22:59:24 09/05/2015 
--- Design Name: 
--- Module Name:    adder_half_bit1 - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date: 22:59:24 09/05/2015
+-- Design Name:
+-- Module Name: adder_half_bit1 - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,19 +29,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity adder_half_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end adder_half_bit1;
+ENTITY adder_half_bit1 IS
+    PORT (
+        d1_in    : IN STD_LOGIC;
+        d2_in    : IN STD_LOGIC;
+        sum_out  : OUT STD_LOGIC;
+        c_out    : OUT STD_LOGIC
+    );
+END adder_half_bit1;
 
-architecture Behavioral of adder_half_bit1 is
+ARCHITECTURE Behavioral OF adder_half_bit1 IS
 
-begin
+BEGIN
+    sum_out <= d1_in XOR d2_in;
+    c_out <= d1_in AND d2_in;
 
-sum_out<=d1_in xor d2_in;
-c_out<=d1_in and d2_in;
-
-end Behavioral;
+END Behavioral;
 

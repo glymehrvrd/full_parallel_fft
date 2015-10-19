@@ -1,28 +1,32 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-entity Dff_preload_reg1 is
-    Port ( D : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
-           preload: in STD_LOGIC;
-           Q : out  STD_LOGIC);
-end Dff_preload_reg1;
+ENTITY Dff_preload_reg1 IS
+    PORT (
+        D        : IN STD_LOGIC;
+        clk      : IN STD_LOGIC;
+        ce       : IN STD_LOGIC; --- active high
+        rst      : IN STD_LOGIC; --- active low
+        preload  : IN STD_LOGIC; --- active high
+        Q        : OUT STD_LOGIC
+    );
+END Dff_preload_reg1;
 
-architecture Behavioral of Dff_preload_reg1 is
+ARCHITECTURE Behavioral OF Dff_preload_reg1 IS
 
-signal reg: std_logic_vector(0 downto 0);
-begin
+    SIGNAL reg : std_logic_vector(0 DOWNTO 0);
+BEGIN
+    Q <= reg(0);
 
-Q<= reg(0);
+    PROCESS (clk, rst, preload)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' OR preload = '1' THEN
+                reg <= (OTHERS => '0');
+            ELSIF ce = '1' THEN
+                reg(0) <= D;
+            END IF;
+        END IF;
+    END PROCESS;
 
-process(clk,rst,preload)
-begin
-    if rst='1' or preload='1' then
-        reg<=(others=>'0');
-    elsif clk'event and clk='1' then
-        reg(0)<=D;
-    end if;
-end process;
-
-end Behavioral;
+END Behavioral;

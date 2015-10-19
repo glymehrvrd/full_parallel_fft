@@ -1,0 +1,34 @@
+--------------------------------- Version Log ----------------------------------
+Version                                 Path
+System Generator                        D:/Xilinx/14.7/ISE_DS/ISE/sysgen
+Matlab 8.0.0.783 (R2012b)               D:/MATLAB/R2012b
+ISE                                     D:/Xilinx/14.7/ISE_DS/ISE
+--------------------------------------------------------------------------------
+Summary of Errors:
+Error 0001: 
+--- ModelSim reported errors during compilation.
+The fol...
+     Block: 'fft_2pt_co_sim/Black Box'
+--------------------------------------------------------------------------------
+
+Error 0001:
+
+Reported by:
+  'fft_2pt_co_sim/Black Box'
+
+Details:
+
+--- ModelSim reported errors during compilation.
+The following errors were found in d:/dell/Documents/ise
+Projects/fft/fft/modelsim/transcript :
+# ** Error: fft_2pt_co_sim_cosim.vhd(2096): near ")": expecting ';'
+# ** Error: fft_2pt_co_sim_cosim.vhd(2112): (vcom-1136) Unknown
+identifier "data_1_im_out_buff".
+# ** Error: fft_2pt_co_sim_cosim.vhd(2182): (vcom-1136) Unknown
+identifier "data_1_im_out_buff".
+# ** Error: fft_2pt_co_sim_cosim.vhd(2186): VHDL Compiler exiting
+# ** Error: D:/modeltech_10.1a/win32/vcom failed.
+
+Error occurred during "Simulation Initialization".
+
+--------------------------------------------------------------------------------

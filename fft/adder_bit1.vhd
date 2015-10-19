@@ -1,24 +1,24 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    22:59:24 09/05/2015 
--- Design Name: 
--- Module Name:    one_bit_adder - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date: 22:59:24 09/05/2015
+-- Design Name:
+-- Module Name: one_bit_adder - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -29,34 +29,37 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity adder_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           c_in : in STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end adder_bit1;
+ENTITY adder_bit1 IS
+    PORT (
+        d1_in    : IN STD_LOGIC;
+        d2_in    : IN STD_LOGIC;
+        c_in     : IN STD_LOGIC;
+        sum_out  : OUT STD_LOGIC;
+        c_out    : OUT STD_LOGIC
+    );
+END adder_bit1;
 
-architecture Behavioral of adder_bit1 is
+ARCHITECTURE Behavioral OF adder_bit1 IS
 
-component adder_half_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end component;
+    COMPONENT adder_half_bit1 IS
+        PORT (
+            d1_in    : IN STD_LOGIC;
+            d2_in    : IN STD_LOGIC;
+            sum_out  : OUT STD_LOGIC;
+            c_out    : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-signal c1:std_logic;
-signal c2:std_logic;
-signal s1:std_logic;
+    SIGNAL c1 : std_logic;
+    SIGNAL c2 : std_logic;
+    SIGNAL s1 : std_logic;
 
-begin
+BEGIN
+    HA1 : adder_half_bit1
+    PORT MAP(d1_in, d2_in, s1, c1);
+    HA2 : adder_half_bit1
+    PORT MAP(s1, c_in, sum_out, c2);
 
-HA1 : adder_half_bit1 port map(d1_in,d2_in,s1,c1);
-HA2 : adder_half_bit1 port map(s1,c_in,sum_out,c2);
-
-c_out <= c1 or c2;
-
-
-end Behavioral;
+    c_out <= c1 OR c2;
+END Behavioral;
 
