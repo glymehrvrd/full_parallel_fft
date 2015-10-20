@@ -1,7 +1,7 @@
 
 -- -- --
 entity xlcosim_fli_controller is
-  generic ( A: string := "port1302");
+  generic ( A: string := "port1301");
 end xlcosim_fli_controller;
 
 architecture only of xlcosim_fli_controller is
@@ -100,7 +100,7 @@ end fft_2pt_co_sim_cosim_cw;
 
 architecture structural of fft_2pt_co_sim_cosim_cw is
   component xlcosim_fli_controller
-  generic ( A: string := "port1302");
+  generic ( A: string := "port1301");
   end component;
   signal black_box_ctrl_net: std_logic;
   signal black_box_data_0_im_in_net: std_logic;
@@ -151,5 +151,5 @@ begin
     );
 
   xlcosim_fli_controller_0 : xlcosim_fli_controller
-               generic map (A => "port1302");
+               generic map (A => "port1301");
 end structural;

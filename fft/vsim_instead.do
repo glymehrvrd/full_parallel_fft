@@ -1,0 +1,1 @@
+vsim -t ns -novopt work.fft_2pt_co_sim_cosim_cw

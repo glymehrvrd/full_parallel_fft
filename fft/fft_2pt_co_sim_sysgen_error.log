@@ -5,9 +5,7 @@ Matlab 8.0.0.783 (R2012b)               D:/MATLAB/R2012b
 ISE                                     D:/Xilinx/14.7/ISE_DS/ISE
 --------------------------------------------------------------------------------
 Summary of Errors:
-Error 0001: 
---- ModelSim reported errors during compilation.
-The fol...
+Error 0001: Internal Error
      Block: 'fft_2pt_co_sim/Black Box'
 --------------------------------------------------------------------------------
 
@@ -17,18 +15,13 @@ Reported by:
   'fft_2pt_co_sim/Black Box'
 
 Details:
+An internal error occurred in the Xilinx Blockset Library.
 
---- ModelSim reported errors during compilation.
-The following errors were found in d:/dell/Documents/ise
-Projects/fft/fft/modelsim/transcript :
-# ** Error: fft_2pt_co_sim_cosim.vhd(2096): near ")": expecting ';'
-# ** Error: fft_2pt_co_sim_cosim.vhd(2112): (vcom-1136) Unknown
-identifier "data_1_im_out_buff".
-# ** Error: fft_2pt_co_sim_cosim.vhd(2182): (vcom-1136) Unknown
-identifier "data_1_im_out_buff".
-# ** Error: fft_2pt_co_sim_cosim.vhd(2186): VHDL Compiler exiting
-# ** Error: D:/modeltech_10.1a/win32/vcom failed.
+Please report this error to Xilinx (http://support.xilinx.com),
+in as much detail as possible. You may also find immediate help
+in the Answers Database and other online resources at http://support.xilinx.com.
 
-Error occurred during "Simulation Initialization".
+
+Error occurred during "Simulation Update Outputs".
 
 --------------------------------------------------------------------------------

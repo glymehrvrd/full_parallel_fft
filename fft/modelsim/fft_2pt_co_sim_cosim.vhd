@@ -1838,26 +1838,26 @@ begin
   end generate;
 end structural;
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    22:59:24 09/05/2015 
--- Design Name: 
--- Module Name:    adder_half_bit1 - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date: 22:59:24 09/05/2015
+-- Design Name:
+-- Module Name: adder_half_bit1 - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -1868,43 +1868,44 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity adder_half_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end adder_half_bit1;
+ENTITY adder_half_bit1 IS
+    PORT (
+        d1_in    : IN STD_LOGIC;
+        d2_in    : IN STD_LOGIC;
+        sum_out  : OUT STD_LOGIC;
+        c_out    : OUT STD_LOGIC
+    );
+END adder_half_bit1;
 
-architecture Behavioral of adder_half_bit1 is
+ARCHITECTURE Behavioral OF adder_half_bit1 IS
 
-begin
+BEGIN
+    sum_out <= d1_in XOR d2_in;
+    c_out <= d1_in AND d2_in;
 
-sum_out<=d1_in xor d2_in;
-c_out<=d1_in and d2_in;
-
-end Behavioral;
+END Behavioral;
 
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    22:59:24 09/05/2015 
--- Design Name: 
--- Module Name:    one_bit_adder - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
+-- Company:
+-- Engineer:
 --
--- Dependencies: 
+-- Create Date: 22:59:24 09/05/2015
+-- Design Name:
+-- Module Name: one_bit_adder - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
 --
--- Revision: 
+-- Dependencies:
+--
+-- Revision:
 -- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments:
 --
 ----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -1915,275 +1916,301 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity adder_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           c_in : in STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end adder_bit1;
+ENTITY adder_bit1 IS
+    PORT (
+        d1_in    : IN STD_LOGIC;
+        d2_in    : IN STD_LOGIC;
+        c_in     : IN STD_LOGIC;
+        sum_out  : OUT STD_LOGIC;
+        c_out    : OUT STD_LOGIC
+    );
+END adder_bit1;
 
-architecture Behavioral of adder_bit1 is
+ARCHITECTURE Behavioral OF adder_bit1 IS
 
-component adder_half_bit1 is
-    Port ( d1_in : in  STD_LOGIC;
-           d2_in : in  STD_LOGIC;
-           sum_out : out  STD_LOGIC;
-           c_out : out  STD_LOGIC);
-end component;
+    COMPONENT adder_half_bit1 IS
+        PORT (
+            d1_in    : IN STD_LOGIC;
+            d2_in    : IN STD_LOGIC;
+            sum_out  : OUT STD_LOGIC;
+            c_out    : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-signal c1:std_logic;
-signal c2:std_logic;
-signal s1:std_logic;
+    SIGNAL c1 : std_logic;
+    SIGNAL c2 : std_logic;
+    SIGNAL s1 : std_logic;
 
-begin
+BEGIN
+    HA1 : adder_half_bit1
+    PORT MAP(d1_in, d2_in, s1, c1);
+    HA2 : adder_half_bit1
+    PORT MAP(s1, c_in, sum_out, c2);
 
-HA1 : adder_half_bit1 port map(d1_in,d2_in,s1,c1);
-HA2 : adder_half_bit1 port map(s1,c_in,sum_out,c2);
+    c_out <= c1 OR c2;
+END Behavioral;
 
-c_out <= c1 or c2;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
+ENTITY Dff_preload_reg1 IS
+    PORT (
+        D        : IN STD_LOGIC;
+        clk      : IN STD_LOGIC;
+        ce       : IN STD_LOGIC; --- active high
+        rst      : IN STD_LOGIC; --- active low
+        preload  : IN STD_LOGIC; --- active high
+        Q        : OUT STD_LOGIC
+    );
+END Dff_preload_reg1;
 
-end Behavioral;
+ARCHITECTURE Behavioral OF Dff_preload_reg1 IS
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+    SIGNAL reg : std_logic_vector(0 DOWNTO 0);
+BEGIN
+    Q <= reg(0);
 
-entity Dff_preload_reg1 is
-    Port ( D : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           ce  : in  STD_LOGIC; --- active high
-           rst : in  STD_LOGIC; --- active low
-           preload: in STD_LOGIC; --- active high
-           Q : out  STD_LOGIC);
-end Dff_preload_reg1;
-
-architecture Behavioral of Dff_preload_reg1 is
-
-signal reg: std_logic_vector(0 downto 0);
-begin
-
-Q<= reg(0);
-
-process(clk,rst,preload)
-begin
-    if clk'event and clk='1' then
-        if rst='0' or preload='1' then
-            reg<=(others=>'0');
-        elsif ce='1' then
-            reg(0)<=D;
-        end if;
-    end if;
-end process;
-
-end Behavioral;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-entity Dff_preload_reg1_init_1 is
-    Port ( D : in  STD_LOGIC;
-           clk : in  STD_LOGIC;
-           ce  : in  STD_LOGIC; --- active high
-           rst : in  STD_LOGIC; --- active low
-           preload: in STD_LOGIC; --- active high
-           Q : out  STD_LOGIC);
-end Dff_preload_reg1_init_1;
-
-architecture Behavioral of Dff_preload_reg1_init_1 is
-
-signal reg: std_logic_vector(0 downto 0);
-begin
-
-Q<= reg(0);
-
-process(clk,rst,preload)
-begin
-    if clk'event and clk='1' then
-        if rst='0' or preload='1' then
-            reg<=(others=>'1');
-        elsif ce='1' then
-            reg(0)<=D;
-        end if;
-    end if;
-end process;
-
-end Behavioral;
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    15:10:51 10/09/2015 
--- Design Name: 
--- Module Name:    fft_pt2 - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
-entity fft_pt2 is
-    Port ( clk : in  STD_LOGIC;
-           rst : in  STD_LOGIC;
-           ce  : in  STD_LOGIC;
-           ctrl : in STD_LOGIC;
-
-           data_0_re_in : in  STD_LOGIC;
-           data_0_im_in:in STD_LOGIC;
-           data_1_re_in : in  STD_LOGIC;
-           data_1_im_in: in STD_LOGIC;
-
-           data_0_re_out : out  STD_LOGIC;
-           data_0_im_out:out STD_LOGIC;
-           data_1_re_out : out  STD_LOGIC;
-           data_1_im_out: out STD_LOGIC);
-end fft_pt2;
-
-architecture Behavioral of fft_pt2 is
-
-component adder_bit1 is
-      Port ( d1_in : in  STD_LOGIC;
-             d2_in : in  STD_LOGIC;
-             c_in : in STD_LOGIC;
-             sum_out : out  STD_LOGIC;
-             c_out : out  STD_LOGIC);
-end component;
-
-component Dff_preload_reg1 is
-      Port ( D : in  STD_LOGIC;
-             clk : in  STD_LOGIC;
-             rst : in  STD_LOGIC;
-             ce  : in STD_LOGIC;
-           preload: in STD_LOGIC;
-             Q : out  STD_LOGIC);
-end component;
-
-component Dff_preload_reg1_init_1 is
-      Port ( D : in  STD_LOGIC;
-             clk : in  STD_LOGIC;
-             rst : in  STD_LOGIC;
-             ce  : in  STD_LOGIC;
-           preload: in STD_LOGIC;
-             Q : out  STD_LOGIC);
-end component;
-
-signal c: std_logic_vector(3 downto 0);
-signal c_buff: std_logic_vector(3 downto 0);
-
-signal not_data_1_re_in:STD_LOGIC;
-signal not_data_1_im_in:STD_LOGIC;
-
-signal data_0_re_out_buff:  STD_LOGIC;
-signal data_0_im_out_buff:STD_LOGIC;
-signal data_1_re_out_buff:  STD_LOGIC;
-signal data_1_im_out_buff:STD_LOGIC;
-
-begin
-
-process(clk,rst,ce)
-begin
+    PROCESS (clk, rst, preload)
+    BEGIN
         IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                data_0_re_out<='0';
-                data_0_im_out<='0';
-                data_1_re_out<='0';
-                data_1_im_out<='0';
+            IF rst = '0' OR preload = '1' THEN
+                reg <= (OTHERS => '0');
             ELSIF ce = '1' THEN
-                data_0_re_out<=data_0_re_out_buff;
-                data_0_im_out<=data_0_im_out_buff;
-                data_1_re_out<=data_1_re_out_buff;
-                data_1_im_out<=data_1_im_out_buff;
+                reg(0) <= D;
             END IF;
         END IF;
-end process;
+    END PROCESS;
 
---- Re(X[0])=Re(x[0])+Re(x[1])
-C_BUFF0_RE : Dff_preload_reg1 port map(
-    D=>c(0), 
-    clk=>clk, 
-    rst=>rst, 
-    ce=>ce,
-    preload=>ctrl,
-    Q=>c_buff(0));
+END Behavioral;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-ADDER0_RE : adder_bit1 port map (
-    d1_in=>data_0_re_in,
-    d2_in=>data_1_re_in,
-    c_in=>c_buff(0),
-    sum_out=>data_0_re_out_buff,
-    c_out=>c(0));
+ENTITY Dff_preload_reg1_init_1 IS
+    PORT (
+        D        : IN STD_LOGIC;
+        clk      : IN STD_LOGIC;
+        ce       : IN STD_LOGIC; --- active high
+        rst      : IN STD_LOGIC; --- active low
+        preload  : IN STD_LOGIC; --- active high
+        Q        : OUT STD_LOGIC
+    );
+END Dff_preload_reg1_init_1;
 
---- Im(X[0])=Im(x[0])+Im(x[1])
-C_BUFF0_IM : Dff_preload_reg1 port map(
-    D=>c(1), 
-    clk=>clk, 
-    rst=>rst, 
-    ce=>ce,
-    preload=>ctrl,
-    Q=>c_buff(1));
+ARCHITECTURE Behavioral OF Dff_preload_reg1_init_1 IS
 
-ADDER0_IM : adder_bit1 port map (
-    d1_in=>data_0_im_in,
-    d2_in=>data_1_im_in,
-    c_in=>c_buff(1),
-    sum_out=>data_0_im_out_buff,
-    c_out=>c(1));
+    SIGNAL reg : std_logic_vector(0 DOWNTO 0);
+BEGIN
+    Q <= reg(0);
 
---- Re(X[1])=Re(x[0])-Re(x[1])
-C_BUFF1_RE : Dff_preload_reg1_init_1 port map(
-    D=>c(2), 
-    clk=>clk, 
-    rst=>rst, 
-    ce=>ce,
-    preload=>ctrl,
-    Q=>c_buff(2));
+    PROCESS (clk, rst, preload)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' OR preload = '1' THEN
+                reg <= (OTHERS => '1');
+            ELSIF ce = '1' THEN
+                reg(0) <= D;
+            END IF;
+        END IF;
+    END PROCESS;
 
-not_data_1_re_in<=not data_1_re_in;
+END Behavioral;
+----------------------------------------------------------------------------------
+-- Company:
+-- Engineer:
+--
+-- Create Date: 15:10:51 10/09/2015
+-- Design Name:
+-- Module Name: fft_pt2 - Behavioral
+-- Project Name:
+-- Target Devices:
+-- Tool versions:
+-- Description:
+--
+-- Dependencies:
+--
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+--
+----------------------------------------------------------------------------------
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-ADDER1_RE : adder_bit1 port map (
-    d1_in=>data_0_re_in,
-    d2_in=>not_data_1_re_in,
-    c_in=>c_buff(2),
-    sum_out=>data_1_re_out_buff,
-    c_out=>c(2));
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
 
---- Im(X[1])=Im(x[0])-Im(x[1])
-C_BUFF1_IM : Dff_preload_reg1_init_1 port map(
-    D=>c(3), 
-    clk=>clk, 
-    rst=>rst, 
-    ce=>ce,
-    preload=>ctrl,
-    Q=>c_buff(3));
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
 
-not_data_1_im_in<=not data_1_im_in;
+ENTITY fft_pt2 IS
+    PORT (
+        clk            : IN STD_LOGIC;
+        rst            : IN STD_LOGIC;
+        ce             : IN STD_LOGIC;
+        ctrl           : IN STD_LOGIC;
 
-ADDER1_IM : adder_bit1 port map (
-    d1_in=>data_0_im_in,
-    d2_in=>not_data_1_im_in,
-    c_in=>c_buff(3),
-    sum_out=>data_1_im_out_buff,
-    c_out=>c(3));
+        data_0_re_in   : IN STD_LOGIC;
+        data_0_im_in   : IN STD_LOGIC;
+        data_1_re_in   : IN STD_LOGIC;
+        data_1_im_in   : IN STD_LOGIC;
 
+        data_0_re_out  : OUT STD_LOGIC;
+        data_0_im_out  : OUT STD_LOGIC;
+        data_1_re_out  : OUT STD_LOGIC;
+        data_1_im_out  : OUT STD_LOGIC
+    );
+END fft_pt2;
 
-end Behavioral;
+ARCHITECTURE Behavioral OF fft_pt2 IS
+
+    COMPONENT adder_bit1 IS
+        PORT (
+            d1_in    : IN STD_LOGIC;
+            d2_in    : IN STD_LOGIC;
+            c_in     : IN STD_LOGIC;
+            sum_out  : OUT STD_LOGIC;
+            c_out    : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    COMPONENT Dff_preload_reg1 IS
+        PORT (
+            D        : IN STD_LOGIC;
+            clk      : IN STD_LOGIC;
+            rst      : IN STD_LOGIC;
+            ce       : IN STD_LOGIC;
+            preload  : IN STD_LOGIC;
+            Q        : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    COMPONENT Dff_preload_reg1_init_1 IS
+        PORT (
+            D        : IN STD_LOGIC;
+            clk      : IN STD_LOGIC;
+            rst      : IN STD_LOGIC;
+            ce       : IN STD_LOGIC;
+            preload  : IN STD_LOGIC;
+            Q        : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    SIGNAL c : std_logic_vector(3 DOWNTO 0);
+    SIGNAL c_buff : std_logic_vector(3 DOWNTO 0);
+
+    SIGNAL not_data_1_re_in : STD_LOGIC;
+    SIGNAL not_data_1_im_in : STD_LOGIC;
+
+    SIGNAL data_0_re_out_buff : STD_LOGIC;
+    SIGNAL data_0_im_out_buff : STD_LOGIC;
+    SIGNAL data_1_re_out_buff : STD_LOGIC;
+    SIGNAL data_1_im_out_buff : STD_LOGIC;
+
+BEGIN
+    PROCESS (clk, rst, ce)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' THEN
+                data_0_re_out <= '0';
+                data_0_im_out <= '0';
+                data_1_re_out <= '0';
+                data_1_im_out <= '0';
+            ELSIF ce = '1' THEN
+                data_0_re_out <= data_0_re_out_buff;
+                data_0_im_out <= data_0_im_out_buff;
+                data_1_re_out <= data_1_re_out_buff;
+                data_1_im_out <= data_1_im_out_buff;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    --- Re(X[0])=Re(x[0])+Re(x[1])
+    C_BUFF0_RE : Dff_preload_reg1
+    PORT MAP(
+        D        => c(0), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl, 
+        Q        => c_buff(0)
+    );
+
+    ADDER0_RE : adder_bit1
+    PORT MAP(
+        d1_in    => data_0_re_in, 
+        d2_in    => data_1_re_in, 
+        c_in     => c_buff(0), 
+        sum_out  => data_0_re_out_buff, 
+        c_out    => c(0)
+    );
+
+    --- Im(X[0])=Im(x[0])+Im(x[1])
+    C_BUFF0_IM : Dff_preload_reg1
+    PORT MAP(
+        D        => c(1), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl, 
+        Q        => c_buff(1)
+    );
+
+    ADDER0_IM : adder_bit1
+    PORT MAP(
+        d1_in    => data_0_im_in, 
+        d2_in    => data_1_im_in, 
+        c_in     => c_buff(1), 
+        sum_out  => data_0_im_out_buff, 
+        c_out    => c(1)
+    );
+
+    --- Re(X[1])=Re(x[0])-Re(x[1])
+    C_BUFF1_RE : Dff_preload_reg1_init_1
+    PORT MAP(
+        D        => c(2), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl, 
+        Q        => c_buff(2)
+    );
+
+    not_data_1_re_in <= NOT data_1_re_in;
+
+    ADDER1_RE : adder_bit1
+    PORT MAP(
+        d1_in    => data_0_re_in, 
+        d2_in    => not_data_1_re_in, 
+        c_in     => c_buff(2), 
+        sum_out  => data_1_re_out_buff, 
+        c_out    => c(2)
+    );
+
+    --- Im(X[1])=Im(x[0])-Im(x[1])
+    C_BUFF1_IM : Dff_preload_reg1_init_1
+    PORT MAP(
+        D        => c(3), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl, 
+        Q        => c_buff(3)
+    );
+
+    not_data_1_im_in <= NOT data_1_im_in;
+
+    ADDER1_IM : adder_bit1
+    PORT MAP(
+        d1_in    => data_0_im_in, 
+        d2_in    => not_data_1_im_in, 
+        c_in     => c_buff(3), 
+        sum_out  => data_1_im_out_buff, 
+        c_out    => c(3)
+    );
+END Behavioral;
 
 library IEEE;
 use IEEE.std_logic_1164.all;

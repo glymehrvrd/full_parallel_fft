@@ -1,0 +1,45 @@
+# Reading D:/modeltech_10.1a/tcl/vsim/pref.tcl 
+# //  ModelSim SE 10.1a Feb 22 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {test_dff_preload_reg1.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Dff_preload_reg1
+# -- Compiling architecture Behavioral of Dff_preload_reg1
+# Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_dff_preload_reg1
+# -- Compiling architecture behavior of test_dff_preload_reg1
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.test_dff_preload_reg1 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.test_dff_preload_reg1(behavior)#1
+# Loading work.dff_preload_reg1(behavioral)#1
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: dell  Hostname: DELL-PC  ProcessID: 8272
+# 
+#           Attempting to use alternate WLF file "./wlftbmj780".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftbmj780
+# 
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree

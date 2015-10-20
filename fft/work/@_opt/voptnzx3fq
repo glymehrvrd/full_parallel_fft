@@ -1,0 +1,222 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\dell\Documents\ISE Projects\fft\fft
+T_opt
+V__M3`[b9==L?lh3L?Q^^z3
+04 12 8 work test_fft_pt2 behavior 1
+=1-989096e4856f-5625afce-126-20a4
+o-quiet -auto_acc_if_foreign -work work +acc
+n@_opt
+OE;O;10.1a;51
+Eadder_bit1
+Z1 w1445260343
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\dell\Documents\ISE Projects\fft\fft
+Z5 8adder_bit1.vhd
+Z6 Fadder_bit1.vhd
+l0
+L32
+VPJ@1klfbBnP3m2lBP2bVF3
+Z7 OE;C;10.1a;51
+31
+Z8 !s108 1445310413.566000
+Z9 !s90 -reportprogress|300|-explicit|-93|adder_bit1.vhd|
+Z10 !s107 adder_bit1.vhd|
+Z11 o-explicit -93
+Z12 tExplicit 1
+!s100 ;cZ;h?iL4ZSlBd]ZEQ7o]2
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 10 adder_bit1 0 22 PJ@1klfbBnP3m2lBP2bVF3
+l57
+L42
+VE;oF3Q^R<ZA<3:N7gF`_B3
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 BmZKhBDBXNOBgVk<jg_7R0
+!i10b 1
+Eadder_half_bit1
+R1
+R2
+R3
+R4
+Z13 8adder_half_bit1.vhd
+Z14 Fadder_half_bit1.vhd
+l0
+L32
+V?VeZj:8]ZXUZCO2<;M7[j3
+R7
+31
+Z15 !s108 1445310412.783000
+Z16 !s90 -reportprogress|300|-explicit|-93|adder_half_bit1.vhd|
+Z17 !s107 adder_half_bit1.vhd|
+R11
+R12
+!s100 cHO:RKcefSgE@5L?EU];f3
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 15 adder_half_bit1 0 22 ?VeZj:8]ZXUZCO2<;M7[j3
+l43
+L41
+V4_d?3T`WCDYl[TT`fz2k62
+R7
+31
+R15
+R16
+R17
+R11
+R12
+!s100 kf:NNzSDc=>6d3aQD7Yb_1
+!i10b 1
+Edff_preload_reg1
+Z18 w1445309885
+R2
+R3
+R4
+Z19 8Dff_preload_1.vhd
+Z20 FDff_preload_1.vhd
+l0
+L4
+VPQ@LbC4?<<?`7=HOcb;9V3
+R7
+31
+Z21 !s108 1445310413.335000
+Z22 !s90 -reportprogress|300|-explicit|-93|Dff_preload_1.vhd|
+Z23 !s107 Dff_preload_1.vhd|
+R11
+R12
+!s100 JZGTKf:hV;WeX6_7G66_S1
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 16 dff_preload_reg1 0 22 PQ@LbC4?<<?`7=HOcb;9V3
+l18
+L15
+V04=>N:U8l2:=f`@NUQh>Z2
+R7
+31
+R21
+R22
+R23
+R11
+R12
+!s100 Ed4m0B256XGjn9SC]la?<0
+!i10b 1
+Edff_preload_reg1_init_1
+R1
+R2
+R3
+R4
+Z24 8Dff_preload_1_init_1.vhd
+Z25 FDff_preload_1_init_1.vhd
+l0
+L4
+VF<eooPzMG`8diIGf6E`<d3
+R7
+31
+Z26 !s108 1445310413.048000
+Z27 !s90 -reportprogress|300|-explicit|-93|Dff_preload_1_init_1.vhd|
+Z28 !s107 Dff_preload_1_init_1.vhd|
+R11
+R12
+!s100 6149KNK8Ij^oXJ@i>S[dd2
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 23 dff_preload_reg1_init_1 0 22 F<eooPzMG`8diIGf6E`<d3
+l18
+L15
+VAlKR:NUHE^1ec<C3QZjzJ0
+R7
+31
+R26
+R27
+R28
+R11
+R12
+!s100 Kg@;L8[6BIUkGfBEKQ6Kc1
+!i10b 1
+Efft_pt2
+R1
+R2
+R3
+R4
+Z29 8fft_pt2.vhd
+Z30 Ffft_pt2.vhd
+l0
+L32
+VW<XDGHl7cLmFjDokEiYF^0
+R7
+31
+Z31 !s108 1445310413.731000
+Z32 !s90 -reportprogress|300|-explicit|-93|fft_pt2.vhd|
+Z33 !s107 fft_pt2.vhd|
+R11
+R12
+!s100 [XNKd=o>:G@[SP_T[4lJl0
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 7 fft_pt2 0 22 W<XDGHl7cLmFjDokEiYF^0
+l96
+L51
+V]Lih?f[og@Tz_RY283`OQ1
+R7
+31
+R31
+R32
+R33
+R11
+R12
+!s100 5ao:5P[[EnHFA=`18KjQ?2
+!i10b 1
+Etest_fft_pt2
+R1
+R2
+R3
+R4
+Z34 8test_fft_pt2.vhd
+Z35 Ftest_fft_pt2.vhd
+l0
+L35
+VdI;<J=z2ck:QB`YRTzf?:1
+R7
+31
+Z36 !s108 1445310413.878000
+Z37 !s90 -reportprogress|300|-explicit|-93|test_fft_pt2.vhd|
+Z38 !s107 test_fft_pt2.vhd|
+R11
+R12
+!s100 PGZb^E;oU48glSnS`aETL1
+!i10b 1
+Abehavior
+R2
+R3
+DEx4 work 12 test_fft_pt2 0 22 dI;<J=z2ck:QB`YRTzf?:1
+l79
+L38
+VnfkQNmfZV8ObJemS6>YQc1
+R7
+31
+R36
+R37
+R38
+R11
+R12
+!s100 =Z]acL3`^dji86JHU3FbX3
+!i10b 1

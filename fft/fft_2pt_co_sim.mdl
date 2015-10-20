@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 52.0, 1934.0, 1036.0]
+      Location		      [-8.0, 50.0, 1932.0, 1038.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1684.0, 835.0]
+	Extents			[1682.0, 837.0]
 	ZoomFactor		[1.25]
-	Offset			[-69.766666666666708, 18.800000000000011]
+	Offset			[-47.299999999999955, -85.400000000000091]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Oct 19 21:11:32 2015"
-  RTWModifiedTimeStamp	  367188431
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Tue Oct 20 21:40:03 2015"
+  RTWModifiedTimeStamp	  367275575
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -197,11 +197,11 @@ Model {
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
-	  SolverMode		  "Auto"
+	  SolverMode		  "SingleTasking"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "VariableStepDiscrete"
-	  SolverName		  "VariableStepDiscrete"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -793,7 +793,7 @@ Model {
   }
   System {
     Name		    "fft_2pt_co_sim"
-    Location		    [-8, 52, 1926, 1088]
+    Location		    [-8, 50, 1924, 1088]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -807,7 +807,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "30"
+    SIDHighWatermark	    "31"
     Block {
       BlockType		      FromWorkspace
       Name		      "\n"
@@ -895,15 +895,15 @@ Model {
       "6.655 26.155 ],[0.698039 0.0313725 0.219608 ]);\npatch([1.6375 16.81 27.31 12.1375 1.6375 ],[15.655 15.655 26.15"
       "5 26.155 15.655 ],[0.933333 0.203922 0.141176 ]);\npatch([12.1375 48.31 37.81 27.31 16.81 1.6375 12.1375 ],[5.15"
       "5 5.155 15.655 5.155 15.655 15.655 5.155 ],[0.698039 0.0313725 0.219608 ]);\nfprintf('','COMMENT: end icon graph"
-      "ics');\nfprintf('','COMMENT: begin icon text');\n\nfprintf('','COMMENT: end icon text');"
+      "ics');\nfprintf('','COMMENT: begin icon text');\nfprintf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
       Name		      "Black Box"
-      SID		      "14"
+      SID		      "31"
       Ports		      [6, 4]
-      Position		      [470, 229, 635, 401]
-      ZOrder		      70
+      Position		      [470, 234, 615, 426]
+      ZOrder		      87
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Black Box"
       SourceType	      "Xilinx Black Box Block"
@@ -921,26 +921,25 @@ Model {
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "blackbox2"
-      sg_icon_stat	      "165,172,6,4,white,blue,0,d64407a1,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 165 165 0 0 ],[0 0 172 172 0 ],[0.7"
-      "7 0.82 0.91 ]);\nplot([0 165 165 0 0 ],[0 0 172 172 0 ]);\npatch([30.825 64.06 87.06 110.06 133.06 87.06 53.825 "
-      "30.825 ],[111.53 111.53 134.53 111.53 134.53 134.53 134.53 111.53 ],[1 1 1 ]);\npatch([53.825 87.06 64.06 30.825"
-      " 53.825 ],[88.53 88.53 111.53 111.53 88.53 ],[0.931 0.946 0.973 ]);\npatch([30.825 64.06 87.06 53.825 30.825 ],["
-      "65.53 65.53 88.53 88.53 65.53 ],[1 1 1 ]);\npatch([53.825 133.06 110.06 87.06 64.06 30.825 53.825 ],[42.53 42.53"
-      " 65.53 42.53 65.53 65.53 42.53 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','"
-      "COMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'c"
-      "trl');\ncolor('black');port_label('input',3,'data_0_re_in');\ncolor('black');port_label('input',4,'data_0_im_in'"
-      ");\ncolor('black');port_label('input',5,'data_1_re_in');\ncolor('black');port_label('input',6,'data_1_im_in');\n"
-      "color('black');port_label('output',1,'data_0_re_out');\ncolor('black');port_label('output',2,'data_0_im_out');\n"
-      "color('black');port_label('output',3,'data_1_re_out');\ncolor('black');port_label('output',4,'data_1_im_out');\n"
-      "fprintf('','COMMENT: end icon text');"
+      sg_icon_stat	      "145,192,6,4,white,blue,0,d64407a1,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 145 145 0 0 ],[0 0 192 192 0 ],[0.7"
+      "7 0.82 0.91 ]);\nplot([0 145 145 0 0 ],[0 0 192 192 0 ]);\npatch([27.5 56.4 76.4 96.4 116.4 76.4 47.5 27.5 ],[11"
+      "8.2 118.2 138.2 118.2 138.2 138.2 138.2 118.2 ],[1 1 1 ]);\npatch([47.5 76.4 56.4 27.5 47.5 ],[98.2 98.2 118.2 1"
+      "18.2 98.2 ],[0.931 0.946 0.973 ]);\npatch([27.5 56.4 76.4 47.5 27.5 ],[78.2 78.2 98.2 98.2 78.2 ],[1 1 1 ]);\npa"
+      "tch([47.5 116.4 96.4 76.4 56.4 27.5 47.5 ],[58.2 58.2 78.2 58.2 78.2 78.2 58.2 ],[0.931 0.946 0.973 ]);\nfprintf"
+      "('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_label('input',1"
+      ",'rst');\ncolor('black');port_label('input',2,'ctrl');\ncolor('black');port_label('input',3,'data_0_re_in');\nco"
+      "lor('black');port_label('input',4,'data_0_im_in');\ncolor('black');port_label('input',5,'data_1_re_in');\ncolor("
+      "'black');port_label('input',6,'data_1_im_in');\ncolor('black');port_label('output',1,'data_0_re_out');\ncolor('b"
+      "lack');port_label('output',2,'data_0_im_out');\ncolor('black');port_label('output',3,'data_1_re_out');\ncolor('b"
+      "lack');port_label('output',4,'data_1_im_out');\nfprintf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
       Name		      "Gateway Out"
       SID		      "27"
       Ports		      [1, 1]
-      Position		      [745, 240, 805, 260]
+      Position		      [745, 230, 805, 250]
       ZOrder		      83
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -975,7 +974,7 @@ Model {
       Name		      "Gateway Out1"
       SID		      "28"
       Ports		      [1, 1]
-      Position		      [745, 305, 805, 325]
+      Position		      [745, 295, 805, 315]
       ZOrder		      84
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
@@ -1095,6 +1094,8 @@ Model {
       use_unisim	      off
       use_ver_xilinxcorelib   off
       custom_scripts	      on
+      vsim_script	      "vsim_instead.do"
+      post_vsim_script	      "./before.do"
       startup_timeout	      "40"
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
@@ -1121,7 +1122,7 @@ Model {
       Name		      "To Workspace"
       SID		      "23"
       Ports		      [1]
-      Position		      [860, 235, 920, 265]
+      Position		      [860, 225, 920, 255]
       ZOrder		      79
       VariableName	      "d0_re_out"
       MaxDataPoints	      "inf"
@@ -1133,7 +1134,7 @@ Model {
       Name		      "To Workspace1"
       SID		      "24"
       Ports		      [1]
-      Position		      [860, 300, 920, 330]
+      Position		      [860, 290, 920, 320]
       ZOrder		      80
       VariableName	      "d0_im_out"
       MaxDataPoints	      "inf"
@@ -1477,20 +1478,21 @@ Model {
     Line {
       SrcBlock		      "ctrl\n"
       SrcPort		      1
-      Points		      [78, 0; 0, -25]
+      Points		      [107, 0; 0, -10]
       DstBlock		      "Black Box"
       DstPort		      2
     }
     Line {
       SrcBlock		      "d0_re_in\n"
       SrcPort		      1
-      Points		      [105, 0; 0, -50]
+      Points		      [69, 0; 0, -35]
       DstBlock		      "Black Box"
       DstPort		      3
     }
     Line {
       SrcBlock		      "rst (active low)"
       SrcPort		      1
+      Points		      [105, 0; 0, 15]
       DstBlock		      "Black Box"
       DstPort		      1
     }
@@ -1503,7 +1505,7 @@ Model {
     Line {
       SrcBlock		      "d0_re_in\n1"
       SrcPort		      1
-      Points		      [139, 0; 0, -75]
+      Points		      [142, 0; 0, -60]
       DstBlock		      "Black Box"
       DstPort		      4
     }
@@ -1516,7 +1518,7 @@ Model {
     Line {
       SrcBlock		      "d0_re_in\n2"
       SrcPort		      1
-      Points		      [178, 0; 0, -105]
+      Points		      [169, 0; 0, -90]
       DstBlock		      "Black Box"
       DstPort		      5
     }
@@ -1529,41 +1531,40 @@ Model {
     Line {
       SrcBlock		      "d0_re_in\n3"
       SrcPort		      1
-      Points		      [197, 0; 0, -135]
+      Points		      [196, 0; 0, -120]
       DstBlock		      "Black Box"
       DstPort		      6
     }
     Line {
       SrcBlock		      "Black Box"
       SrcPort		      1
+      Points		      [60, 0; 0, -15]
       DstBlock		      "Gateway Out"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Black Box"
       SrcPort		      2
-      Points		      [50, 0; 0, 20]
       DstBlock		      "Gateway Out1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Black Box"
       SrcPort		      3
-      Points		      [51, 0; 0, 35]
+      Points		      [64, 0; 0, 20]
       DstBlock		      "Gateway Out2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Black Box"
       SrcPort		      4
-      Points		      [23, 0; 0, 65]
+      Points		      [64, 0; 0, 45]
       DstBlock		      "Gateway Out3"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Gateway Out"
       SrcPort		      1
-      Points		      [35, 0]
       DstBlock		      "To Workspace"
       DstPort		      1
     }

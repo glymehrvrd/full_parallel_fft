@@ -4,52 +4,53 @@ K3
 cModel Technology
 Z0 dD:\dell\Documents\ISE Projects\fft\fft\modelsim
 T_opt
-VQzk4[6znAl0bAl1aJTG4=1
+VDcYNM7fFco:JmX1lOzJ_`0
 04 23 10 work fft_2pt_co_sim_cosim_cw structural 1
-=1-989096e4856f-5624ebc8-2b3-2aac
+=1-989096e4856f-56264215-2b5-1184
 o-quiet -auto_acc_if_foreign -work work
 n@_opt
 OE;O;10.1a;51
+Z1 dD:\dell\Documents\ISE Projects\fft\fft\modelsim
 Eadder_bit1
-Z1 w1445260220
-Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 dD:\dell\Documents\ISE Projects\fft\fft\modelsim
+Z2 w1445348074
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R1
 Z5 8fft_2pt_co_sim_cosim.vhd
 Z6 Ffft_2pt_co_sim_cosim.vhd
 l0
-L1918
+L1919
 Vm`g_QEbXF8E4PHbmXo0gP2
 Z7 OE;C;10.1a;51
 31
-Z8 !s108 1445260229.182000
+Z8 !s108 1445348084.353000
 Z9 !s90 -reportprogress|300|-93|fft_2pt_co_sim_cosim.vhd|
 Z10 !s107 fft_2pt_co_sim_cosim.vhd|
 o-93
 Z11 tExplicit 1
-!s100 eC8h<=;YVMUIF^1@lnnPG2
+!s100 d3X4FdYnonM9SL12Vz`ON2
 !i10b 1
 Abehavioral
-R2
 R3
+R4
 DEx4 work 10 adder_bit1 0 22 m`g_QEbXF8E4PHbmXo0gP2
-l1939
-L1926
+31
+l1944
+L1929
 V@]C`cRE_G7DHh6]X>kdCE2
 R7
-31
 R8
 R9
 R10
 o-93
 R11
-!s100 ka<k>EX4WGS]Y5:FWD@cJ0
 !i10b 1
+!s100 EmMY0R^Djn9QR>e7U0oEf0
 Eadder_half_bit1
-R1
 R2
 R3
 R4
+R1
 R5
 R6
 l0
@@ -62,30 +63,30 @@ R9
 R10
 o-93
 R11
-!s100 Dgi3Mc>Uj3MXYS[1;hgg01
+!s100 CFZnJ5<N>VHKfcCAKiU@z0
 !i10b 1
 Abehavioral
-R2
 R3
+R4
 DEx4 work 15 adder_half_bit1 0 22 CJ0?6L?X4lJ3R`DlbF[;<2
-l1880
-L1878
+31
+l1882
+L1880
 ViSeN7LL=lfWTeIgF9jO?A3
 R7
-31
 R8
 R9
 R10
 o-93
 R11
-!s100 `COOSOIdFMBgf8EZW_1o20
 !i10b 1
+!s100 omj_2lQT4cRCH?<TKcPk72
 Pconv_pkg
 Z12 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-R2
 R3
-R1
 R4
+R2
+R1
 R5
 R6
 l0
@@ -104,30 +105,30 @@ R11
 Bbody
 Z13 DPx4 work 8 conv_pkg 0 22 ghZPkFeg9o?l85<NTRJD[2
 R12
-R2
 R3
+R4
+31
 l0
 L207
 Vme]TC1`m2?dhFN6zaI2Lz3
 R7
-31
 R8
 R9
 R10
 o-93
 R11
 nbody
-!s100 6z0RiR1i<GeQMF3[62MTc2
 !i10b 1
+!s100 6z0RiR1i<GeQMF3[62MTc2
 Edff_preload_reg1
-R1
 R2
 R3
 R4
+R1
 R5
 R6
 l0
-L1952
+L1956
 V:CTk95AUWzzl;3XHdNV_^3
 R7
 31
@@ -136,33 +137,33 @@ R9
 R10
 o-93
 R11
-!s100 D56hI`TFW8:WT2=]::mXQ3
+!s100 k7VT_cXGcm]h2<WdOITaE1
 !i10b 1
 Abehavioral
-R2
 R3
+R4
 DEx4 work 16 dff_preload_reg1 0 22 :CTk95AUWzzl;3XHdNV_^3
-l1964
-L1961
-V=kEKHaRWHboQS:3McWT3C2
-R7
 31
+l1970
+L1967
+V<[0m6oQ?AIlfcR^<ckzjL1
+R7
 R8
 R9
 R10
 o-93
 R11
-!s100 ig5QEm9cG>FFhK;57;P=M3
 !i10b 1
+!s100 KdFV5VT>fI1N]Q]UGSJb00
 Edff_preload_reg1_init_1
-R1
 R2
 R3
 R4
+R1
 R5
 R6
 l0
-L1983
+L1988
 V1P2:Zk3IZh1<6IZ8nJeQY2
 R7
 31
@@ -171,35 +172,35 @@ R9
 R10
 o-93
 R11
-!s100 FNH0E9kK192XmiiZlRQ_R1
+!s100 >^@27CgD4GE>gik9DK9322
 !i10b 1
 Abehavioral
-R2
 R3
+R4
 DEx4 work 23 dff_preload_reg1_init_1 0 22 1P2:Zk3IZh1<6IZ8nJeQY2
-l1995
-L1992
-VZX1h[elFC4oT`nZWmzoD23
-R7
 31
+l2002
+L1999
+VTO@W4GPfhA>NE>TaGi;3d2
+R7
 R8
 R9
 R10
 o-93
 R11
-!s100 j4bc40n^okL8?@f5XjOXh1
 !i10b 1
+!s100 dh;E9QlS6>0oMoNXbk]S`2
 Efft_2pt_co_sim_cosim
-R1
+R2
 R12
 R13
-R2
 R3
 R4
+R1
 R5
 R6
 l0
-L2194
+L2221
 Vc`^T:e]8=D>UTT=m8Nif93
 R7
 31
@@ -208,44 +209,44 @@ R9
 R10
 o-93
 R11
-!s100 AWW0>[nzn`H7dnJ;G2:m92
+!s100 0V]M]VE7[L?gQ@V?NnXmn3
 !i10b 1
 Astructural
 Z14 DEx4 work 7 fft_pt2 0 22 G2LYbDAmf>OjU2R`C;?9h1
 R12
 R13
-R2
 R3
+R4
 Z15 DEx4 work 20 fft_2pt_co_sim_cosim 0 22 c`^T:e]8=D>UTT=m8Nif93
-l2228
-L2211
+31
+l2255
+L2238
 VSCI3Tbi[WA0Z:?B:6>;0n3
 R7
-31
 R8
 R9
 R10
 o-93
 R11
-!s100 XYQZTRkMY=O<47L`QD36:3
 !i10b 1
+!s100 0e89@cfjVgd5UaMLhVjEi1
 Efft_2pt_co_sim_cosim_clk_drvr
-R1
+Z16 w1445348075
 R12
 R13
-R2
 R3
 R4
-Z16 8fft_2pt_co_sim_cosim_cw.vhd
-Z17 Ffft_2pt_co_sim_cosim_cw.vhd
+R1
+Z17 8fft_2pt_co_sim_cosim_cw.vhd
+Z18 Ffft_2pt_co_sim_cosim_cw.vhd
 l0
 L41
 VUJiUce1gJPHXM5coYBi[62
 R7
 31
-Z18 !s108 1445260231.055000
-Z19 !s90 -reportprogress|300|-93|fft_2pt_co_sim_cosim_cw.vhd|
-Z20 !s107 fft_2pt_co_sim_cosim_cw.vhd|
+Z19 !s108 1445348085.919000
+Z20 !s90 -reportprogress|300|-93|fft_2pt_co_sim_cosim_cw.vhd|
+Z21 !s107 fft_2pt_co_sim_cosim_cw.vhd|
 o-93
 R11
 !s100 82GmcOWGXDGZLOR[ni[j;0
@@ -253,71 +254,71 @@ R11
 Abehavioral
 R12
 R13
-R2
 R3
-Z21 DEx4 work 29 fft_2pt_co_sim_cosim_clk_drvr 0 22 UJiUce1gJPHXM5coYBi[62
+R4
+Z22 DEx4 work 29 fft_2pt_co_sim_cosim_clk_drvr 0 22 UJiUce1gJPHXM5coYBi[62
+31
+!i10b 1
 l54
 L48
 V=2Az^X7T;2mAHNEf]k@eD2
 R7
-31
-R18
 R19
 R20
+R21
 o-93
 R11
 !s100 Se7f0a002U:J<C_WLjA7=3
-!i10b 1
 Efft_2pt_co_sim_cosim_cw
-R1
+R16
 R12
 R13
-R2
 R3
 R4
-R16
+R1
 R17
+R18
 l0
 L72
 VXZChGEIY9n4<jPC6iYIf`0
 R7
 31
-R18
 R19
 R20
+R21
 o-93
 R11
 !s100 PCaBMNQ7=c7TbjGzAKRlz2
 !i10b 1
 Astructural
-R21
+R22
 R15
 R12
 R13
-R2
 R3
+R4
 DEx4 work 23 fft_2pt_co_sim_cosim_cw 0 22 XZChGEIY9n4<jPC6iYIf`0
+31
 l102
 L87
 V`Mim;RWAA@cHZ;1fLhNH]2
 R7
-31
-R18
 R19
 R20
+R21
 o-93
 R11
-!s100 ifVJAcT>koA^4U9dLKn072
 !i10b 1
+!s100 ifVJAcT>koA^4U9dLKn072
 Efft_pt2
-R1
 R2
 R3
 R4
+R1
 R5
 R6
 l0
-L2042
+L2048
 VG2LYbDAmf>OjU2R`C;?9h1
 R7
 31
@@ -326,32 +327,32 @@ R9
 R10
 o-93
 R11
-!s100 k6XH^:RjLzIgIQ1nk8Tbo2
+!s100 `5:bN^<LG`^eN8m4`e0id0
 !i10b 1
 Abehavioral
-R2
 R3
+R4
 R14
-l2098
-L2059
+31
+l2112
+L2067
 V^Q`8bWmQ3nl5ao2GVck190
 R7
-31
 R8
 R9
 R10
 o-93
 R11
-!s100 CYa58W9Ni2^?HbafDeC=41
 !i10b 1
+!s100 ]5d;0hZzN9aB;UQ14ESR22
 Esingle_reg_w_init
-R1
+R2
 R12
 R13
-R2
 R3
-Z22 DPx6 unisim 11 vcomponents 0 22 ^SgSiH]fe0j`VL_8Rhmkj2
 R4
+Z23 DPx6 unisim 11 vcomponents 0 22 ^SgSiH]fe0j`VL_8Rhmkj2
+R1
 R5
 R6
 l0
@@ -369,9 +370,9 @@ R11
 Astructural
 R12
 R13
-R2
 R3
-R22
+R4
+R23
 DEx4 work 17 single_reg_w_init 0 22 en48Mn?PA]<lAmb3zb[0J1
 l1751
 L1709
@@ -386,13 +387,13 @@ R11
 !s100 eZiRhQB:7JZ1Wh3QIkT5`1
 !i10b 1
 Esrl17e
-R1
+R2
 R12
 R13
-R2
 R3
-R22
 R4
+R23
+R1
 R5
 R6
 l0
@@ -410,9 +411,9 @@ R11
 Astructural
 R12
 R13
-R2
 R3
-R22
+R4
+R23
 DEx4 work 6 srl17e 0 22 fmAa9XblWOkZhW2Qb_lFK2
 l1515
 L1489
@@ -427,12 +428,12 @@ R11
 !s100 =C6dVGch1?S@VJ2S3fakA0
 !i10b 1
 Esynth_reg
-R1
+R2
 R12
 R13
-R2
 R3
 R4
+R1
 R5
 R6
 l0
@@ -450,8 +451,8 @@ R11
 Astructural
 R12
 R13
-R2
 R3
+R4
 DEx4 work 9 synth_reg 0 22 Th>kQ6RBdm_6;mWdDA^5>1
 l1582
 L1554
@@ -466,12 +467,12 @@ R11
 !s100 GWIm>5B<zE>U3dXA6;MbU0
 !i10b 1
 Esynth_reg_reg
-R1
+R2
 R12
 R13
-R2
 R3
 R4
+R1
 R5
 R6
 l0
@@ -489,8 +490,8 @@ R11
 Abehav
 R12
 R13
-R2
 R3
+R4
 DEx4 work 13 synth_reg_reg 0 22 aT7Ph2;hUcJCfXFd0gOBe1
 l1628
 L1618
@@ -505,13 +506,13 @@ R11
 !s100 Nigh9U4f43PIdc0H1GKNZ3
 !i10b 1
 Esynth_reg_w_init
-R1
+R2
 R12
 R13
-R2
 R3
-R22
 R4
+R23
+R1
 R5
 R6
 l0
@@ -529,9 +530,9 @@ R11
 Astructural
 R12
 R13
-R2
 R3
-R22
+R4
+R23
 DEx4 work 16 synth_reg_w_init 0 22 g;H7SUCY;jM>aTC8[gMeZ2
 l1814
 L1797

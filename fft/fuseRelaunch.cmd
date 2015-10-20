@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt4_isim_beh.exe" -prj "D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt4_beh.prj" "work.test_fft_pt4" 
+-intstyle "ise" -incremental -lib "secureip" -o "D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt2_isim_beh.exe" -prj "D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt2_beh.prj" "work.test_fft_pt2" 

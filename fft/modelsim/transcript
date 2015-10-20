@@ -61,14 +61,37 @@
 # -- Compiling architecture structural of fft_2pt_co_sim_cosim_cw
 # -- Loading entity fft_2pt_co_sim_cosim
 # -- Loading entity fft_2pt_co_sim_cosim_clk_drvr
-# vsim -t ps work.fft_2pt_co_sim_cosim_cw 
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# 
+# vsim -t ns -novopt work.fft_2pt_co_sim_cosim_cw 
 # Loading std.standard
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim_cw(structural)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.conv_pkg(body)
 # Loading ieee.numeric_std(body)
 # Loading work.conv_pkg(body)
-# Loading work.fft_2pt_co_sim_cosim_cw(structural)#1
-# .main_pane.wave.interior.cs.body.pw.wf
+# Loading work.fft_2pt_co_sim_cosim_cw(structural)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim(structural)
+# Loading work.fft_2pt_co_sim_cosim(structural)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_pt2(behavioral)
+# Loading work.fft_pt2(behavioral)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.dff_preload_reg1(behavioral)
+# Loading work.dff_preload_reg1(behavioral)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.adder_bit1(behavioral)
+# Loading work.adder_bit1(behavioral)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.adder_half_bit1(behavioral)
+# Loading work.adder_half_bit1(behavioral)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.dff_preload_reg1_init_1(behavioral)
+# Loading work.dff_preload_reg1_init_1(behavioral)
+# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim_clk_drvr(behavioral)
+# Loading work.fft_2pt_co_sim_cosim_clk_drvr(behavioral)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: dell  Hostname: DELL-PC  ProcessID: 6152
+# 
+#           Attempting to use alternate WLF file "./wlftk3j847".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftk3j847
+# 
 # simstats: 
+# Causality operation skipped due to absense of debug database file

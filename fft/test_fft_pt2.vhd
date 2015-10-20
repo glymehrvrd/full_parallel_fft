@@ -107,7 +107,7 @@ BEGIN
     BEGIN
         ctrl <= '0';
         WAIT FOR 95 ns;
-        WAIT FOR clk_period * 10;
+        WAIT FOR clk_period * 9;
         LOOP
         ctrl <= '1';
         WAIT FOR clk_period;

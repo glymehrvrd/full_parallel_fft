@@ -1,6 +1,6 @@
 proc openClient {} {
   set find_spare 0
-  set port 1302
+  set port 1301
   set cid [socket localhost $port]
   echo Connected to Xilinx System Generator Block {ModelSim}
   fileevent $cid readable "event_handler $cid"
@@ -129,7 +129,7 @@ if {$xlcosim_stat==0} {
 if {$xlcosim_stat==0} {
   onerror { global xlcosim_stat ; set xlcosim_stat 9; resume }
   onElabError { global xlcosim_stat ; set xlcosim_stat 9; resume }
-  vsim -t ps work.fft_2pt_co_sim_cosim_cw -title {System Generator Co-Simulation   (from block "ModelSim")}
+  do {d:/dell/Documents/ISE Projects/fft/fft/vsim_instead.do} {work.fft_2pt_co_sim_cosim_cw} {ModelSim}
   update
   if {$xlcosim_stat==0} {
     onerror { global xlcosim_stat ; set xlcosim_stat 9; resume }
@@ -137,6 +137,9 @@ if {$xlcosim_stat==0} {
 }
   if {$xlcosim_stat==0} {
     openWave
+  }
+  if {$xlcosim_stat==0} {
+    do {d:/dell/Documents/ISE Projects/fft/fft/before.do}
   }
 }
 
