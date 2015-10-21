@@ -50,13 +50,13 @@
          <ClosedNode>/fft_pt4 - Behavioral d:|dell|Documents|ISE Projects|fft|fft|fft_pt4.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>C_BUFF0_RE - Dff_preload_reg1 - Behavioral (d:/dell/Documents/ISE Projects/fft/fft/Dff_preload_1.vhd)</SelectedItem>
+         <SelectedItem>C_BUFF0_RE - Dff_preload_reg1 - Behavioral (D:/dell/Documents/ISE Projects/fft/fft/Dff_preload_1.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000211000000020000000000000000000000000200000064ffffffff000000810000000300000002000002110000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000021d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000021d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>C_BUFF0_RE - Dff_preload_reg1 - Behavioral (d:/dell/Documents/ISE Projects/fft/fft/Dff_preload_1.vhd)</CurrentItem>
+      <CurrentItem>C_BUFF0_RE - Dff_preload_reg1 - Behavioral (D:/dell/Documents/ISE Projects/fft/fft/Dff_preload_1.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -119,9 +119,16 @@
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/adder_bit1 - Behavioral F:|Documents|FFT|fft|adder_bit1.vhd</ClosedNode>
          <ClosedNode>/fft_pt2 - Behavioral F:|Documents|FFT|fft|fft_pt2.vhd</ClosedNode>
+         <ClosedNode>/test_dff_preload_reg1 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_dff_preload_reg1.vhd</ClosedNode>
+         <ClosedNode>/test_dff_reg1 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_dff_reg1.vhd</ClosedNode>
          <ClosedNode>/test_dff_reg1 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_dff_reg1.vhd</ClosedNode>
+         <ClosedNode>/test_dff_reg1_init_1 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_dff_reg1_init_1.vhd</ClosedNode>
          <ClosedNode>/test_dff_reg1_init_1 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_dff_reg1_init_1.vhd</ClosedNode>
          <ClosedNode>/test_fft_p4 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_fft_p4.vhd</ClosedNode>
+         <ClosedNode>/test_fft_pt2 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER0_IM - adder_bit1 - Behavioral</ClosedNode>
+         <ClosedNode>/test_fft_pt2 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER0_RE - adder_bit1 - Behavioral</ClosedNode>
+         <ClosedNode>/test_fft_pt2 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER1_IM - adder_bit1 - Behavioral</ClosedNode>
+         <ClosedNode>/test_fft_pt2 - behavior D:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER1_RE - adder_bit1 - Behavioral</ClosedNode>
          <ClosedNode>/test_fft_pt2 - behavior F:|Documents|FFT|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral</ClosedNode>
          <ClosedNode>/test_fft_pt2 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER0_IM - adder_bit1 - Behavioral</ClosedNode>
          <ClosedNode>/test_fft_pt2 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_fft_pt2.vhd/uut - fft_pt2 - Behavioral/ADDER0_RE - adder_bit1 - Behavioral</ClosedNode>
@@ -131,13 +138,13 @@
          <ClosedNode>/test_fft_pt4 - behavior d:|dell|Documents|ISE Projects|fft|fft|test_fft_pt4.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>uut - fft_pt2 - Behavioral (d:/dell/Documents/ISE Projects/fft/fft/fft_pt2.vhd)</SelectedItem>
+         <SelectedItem>test_fft_pt2 - behavior (D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt2.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >3</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000225000000020000000000000000000000000200000064ffffffff000000810000000300000002000002250000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000231000000020000000000000000000000000200000064ffffffff000000810000000300000002000002310000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>uut - fft_pt2 - Behavioral (d:/dell/Documents/ISE Projects/fft/fft/fft_pt2.vhd)</CurrentItem>
+      <CurrentItem>test_fft_pt2 - behavior (D:/dell/Documents/ISE Projects/fft/fft/test_fft_pt2.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -145,13 +152,13 @@
          <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Design Utilities</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000014e000000010000000100000000000000000000000064ffffffff0000008100000000000000010000014e0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Design Utilities</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>

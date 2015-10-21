@@ -2,7 +2,6 @@ function [parallel_out] = serial2parallel(data)
 
 d_num=length(data)/16;
 parallel_out=zeros(d_num,1);
-p=zeros(1,16);
 for i=1:d_num
     p=data(1+16*(i-1):16*i)';
     % different approach for +/- data
