@@ -8,9 +8,9 @@
 # //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
-# do {fft_2pt_co_sim_cosim_cw.tcl} 
+# do {fft_4pt_co_sim_cosim_cw.tcl} 
 # Connected to Xilinx System Generator Block ModelSim 
-# sock1584
+# sock1624
 # 0
 # 1
 # sec
@@ -36,61 +36,44 @@
 # -- Compiling architecture structural of single_reg_w_init
 # -- Compiling entity synth_reg_w_init
 # -- Compiling architecture structural of synth_reg_w_init
-# -- Compiling entity adder_half_bit1
-# -- Compiling architecture Behavioral of adder_half_bit1
-# -- Compiling entity adder_bit1
-# -- Compiling architecture Behavioral of adder_bit1
-# -- Compiling entity Dff_preload_reg1
-# -- Compiling architecture Behavioral of Dff_preload_reg1
-# -- Compiling entity Dff_preload_reg1_init_1
-# -- Compiling architecture Behavioral of Dff_preload_reg1_init_1
-# -- Compiling entity fft_pt2
-# -- Compiling architecture Behavioral of fft_pt2
-# -- Compiling entity fft_2pt_co_sim_cosim
-# -- Compiling architecture structural of fft_2pt_co_sim_cosim
-# -- Loading entity fft_pt2
+# -- Compiling entity fft_pt4
+# -- Compiling architecture Behavioral of fft_pt4
+# -- Compiling entity fft_4pt_co_sim_cosim
+# -- Compiling architecture structural of fft_4pt_co_sim_cosim
+# -- Loading entity fft_pt4
 # Model Technology ModelSim SE vcom 10.1a Compiler 2012.02 Feb 22 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Loading package conv_pkg
-# -- Compiling entity fft_2pt_co_sim_cosim_clk_drvr
-# -- Compiling architecture behavioral of fft_2pt_co_sim_cosim_clk_drvr
-# -- Compiling entity fft_2pt_co_sim_cosim_cw
-# -- Compiling architecture structural of fft_2pt_co_sim_cosim_cw
-# -- Loading entity fft_2pt_co_sim_cosim
-# -- Loading entity fft_2pt_co_sim_cosim_clk_drvr
-# vsim -t ns -novopt work.fft_2pt_co_sim_cosim_cw 
+# -- Compiling entity fft_4pt_co_sim_cosim_clk_drvr
+# -- Compiling architecture behavioral of fft_4pt_co_sim_cosim_clk_drvr
+# -- Compiling entity fft_4pt_co_sim_cosim_cw
+# -- Compiling architecture structural of fft_4pt_co_sim_cosim_cw
+# -- Loading entity fft_4pt_co_sim_cosim
+# -- Loading entity fft_4pt_co_sim_cosim_clk_drvr
+# vsim -t ps work.fft_4pt_co_sim_cosim_cw 
+# ** Note: (vsim-3812) Design is being optimized...
+# 
 # Loading std.standard
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim_cw(structural)
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.conv_pkg(body)
 # Loading ieee.numeric_std(body)
 # Loading work.conv_pkg(body)
-# Loading work.fft_2pt_co_sim_cosim_cw(structural)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim(structural)
-# Loading work.fft_2pt_co_sim_cosim(structural)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_pt2(behavioral)
-# Loading work.fft_pt2(behavioral)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.dff_preload_reg1(behavioral)
-# Loading work.dff_preload_reg1(behavioral)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.adder_bit1(behavioral)
-# Loading work.adder_bit1(behavioral)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.adder_half_bit1(behavioral)
-# Loading work.adder_half_bit1(behavioral)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.dff_preload_reg1_init_1(behavioral)
-# Loading work.dff_preload_reg1_init_1(behavioral)
-# Refreshing D:\dell\Documents\ISE Projects\fft\fft\modelsim\work.fft_2pt_co_sim_cosim_clk_drvr(behavioral)
-# Loading work.fft_2pt_co_sim_cosim_clk_drvr(behavioral)
+# Loading work.fft_4pt_co_sim_cosim_cw(structural)#1
+# Loading work.fft_pt4(behavioral)#1
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: dell  Hostname: DELL-PC  ProcessID: 6152
 # 
-#           Attempting to use alternate WLF file "./wlfte5g4w1".
+#           Attempting to use alternate WLF file "./wlft6hemye".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlfte5g4w1
+#           Using alternate file: ./wlft6hemye
 # 
+# ** Error: (vish-4014) No objects found matching '/fft_2pt_co_sim_cosim_cw/fft_2pt_co_sim/black_box/*'.
+# Executing ONERROR command at macro d:\dell\Documents\ISE Projects\fft\fft\before.do line 1
+# ** Error: (vish-4014) No objects found matching '/fft_2pt_co_sim_cosim_cw/fft_2pt_co_sim/black_box/C_BUFF0_RE/*'.
+# Executing ONERROR command at macro d:\dell\Documents\ISE Projects\fft\fft\before.do line 3
 # simstats: 

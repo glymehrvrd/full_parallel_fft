@@ -1,8 +1,0 @@
-vhdl work "adder_half_bit1.vhd"
-vhdl work "mux_in2.vhd"
-vhdl work "Dff_1.vhd"
-vhdl work "adder_bit1.vhd"
-vhdl work "partial_product_last.vhd"
-vhdl work "partial_product.vhd"
-vhdl work "lyon_multiplier.vhd"
-vhdl work "test_lyon_multiplier.vhd"

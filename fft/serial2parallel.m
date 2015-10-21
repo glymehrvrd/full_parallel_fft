@@ -8,6 +8,6 @@ for i=1:d_num
     if p(end)==0
         parallel_out(i)=bi2de(p);
     else
-        parallel_out(i)=-(bitcmp(uint16(bi2de(p)))+1);
+        parallel_out(i)=-(bitcmp(bi2de(p),'uint16')+1);
     end;
 end;

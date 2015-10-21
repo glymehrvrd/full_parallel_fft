@@ -6,11 +6,22 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.5"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "GBK"
+  slprops.hdlmdlprops {
+    $PropName		    "HDLParams"
+    $ObjectID		    1
+    Array {
+      Type		      "Cell"
+      Dimension		      2
+      Cell		      "HDLSubsystem"
+      Cell		      "fft_4pt_co_sim"
+      PropName		      "mdlProps"
+    }
+  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -23,17 +34,17 @@ Model {
   MaxMDLFileLineLength	  120
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    1
+    $ObjectID		    2
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      2
+      $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
       Location		      [-9.0, 41.0, 1938.0, 1048.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		3
+	$ObjectID		4
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[1]
 	DockPosition		"Left"
@@ -43,20 +54,20 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		4
+	$ObjectID		5
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
-	$ObjectID		5
+	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1688.0, 847.0]
-	ZoomFactor		[1.5]
-	Offset			[172.16190476190479, 136.53190057050637]
+	ZoomFactor		[1.25]
+	Offset			[15.674999999999997, 3.8000000000000007]
       }
     }
   }
@@ -66,16 +77,16 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 20 21:45:56 2015"
-  RTWModifiedTimeStamp	  367278315
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Wed Oct 21 15:28:11 2015"
+  RTWModifiedTimeStamp	  367341270
+  ModelVersionFormat	  "1.%<AutoIncrement:5>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
   WideLines		  off
   ShowLineDimensions	  off
-  ShowPortDataTypes	  off
+  ShowPortDataTypes	  on
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -103,7 +114,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "fft_4pt_co_sim"
     overrideMode_	    [0.0]
@@ -162,16 +173,16 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "50.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -189,8 +200,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -203,7 +214,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -235,7 +246,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -291,7 +302,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -381,7 +392,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -418,7 +429,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -433,7 +444,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -448,7 +459,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -517,7 +528,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -585,7 +596,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -665,7 +676,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  18
+	  $ObjectID		  19
 	  Version		  "1.12.1"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -681,17 +692,17 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 328, 225, 1208, 855 ] 
+      ConfigPrmDlgPosition     [ 319, 187, 1217, 864 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -769,6 +780,16 @@ Model {
       VectorParams1D	      on
       ZeroCross		      on
     }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
     Name		    "fft_4pt_co_sim"
@@ -784,9 +805,33 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "23"
+    SIDHighWatermark	    "37"
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "\n"
+      SID		      "26"
+      Position		      [75, 328, 140, 352]
+      ZOrder		      84
+      VariableName	      "d_re_in"
+      SampleTime	      "1"
+      Interpolate	      off
+      ZeroCross		      on
+      OutputAfterFinalValue   "Setting to zero"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "\n1"
+      SID		      "27"
+      Position		      [75, 383, 140, 407]
+      ZOrder		      90
+      VariableName	      "d_im_in"
+      SampleTime	      "1"
+      Interpolate	      off
+      ZeroCross		      on
+      OutputAfterFinalValue   "Setting to zero"
+    }
     Block {
       BlockType		      Reference
       Name		      " System Generator"
@@ -834,15 +879,15 @@ Model {
       "6.655 26.155 ],[0.698039 0.0313725 0.219608 ]);\npatch([1.6375 16.81 27.31 12.1375 1.6375 ],[15.655 15.655 26.15"
       "5 26.155 15.655 ],[0.933333 0.203922 0.141176 ]);\npatch([12.1375 48.31 37.81 27.31 16.81 1.6375 12.1375 ],[5.15"
       "5 5.155 15.655 5.155 15.655 15.655 5.155 ],[0.698039 0.0313725 0.219608 ]);\nfprintf('','COMMENT: end icon graph"
-      "ics');\nfprintf('','COMMENT: begin icon text');\n\nfprintf('','COMMENT: end icon text');"
+      "ics');\nfprintf('','COMMENT: begin icon text');\nfprintf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
       Name		      "Black Box"
-      SID		      "2"
-      Ports		      [10, 8]
-      Position		      [460, 134, 615, 391]
-      ZOrder		      60
+      SID		      "25"
+      Ports		      [4, 2]
+      Position		      [530, 243, 650, 397]
+      ZOrder		      83
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Black Box"
       SourceType	      "Xilinx Black Box Block"
@@ -852,30 +897,95 @@ Model {
       "e\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<br>When \""
       "Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
       init_code		      "fft_pt4_config"
-      sim_method	      "Inactive"
+      sim_method	      "External co-simulator"
+      engine_block	      "ModelSim"
       verbose		      off
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "blackbox2"
-      sg_icon_stat	      "155,257,10,8,white,blue,0,687864d9,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 155 155 0 0 ],[0 0 257 257 0 ],[0.7"
-      "7 0.82 0.91 ]);\nplot([0 155 155 0 0 ],[0 0 257 257 0 ]);\npatch([28.05 59.84 81.84 103.84 125.84 81.84 50.05 28"
-      ".05 ],[152.42 152.42 174.42 152.42 174.42 174.42 174.42 152.42 ],[1 1 1 ]);\npatch([50.05 81.84 59.84 28.05 50.0"
-      "5 ],[130.42 130.42 152.42 152.42 130.42 ],[0.931 0.946 0.973 ]);\npatch([28.05 59.84 81.84 50.05 28.05 ],[108.42"
-      " 108.42 130.42 130.42 108.42 ],[1 1 1 ]);\npatch([50.05 125.84 103.84 81.84 59.84 28.05 50.05 ],[86.42 86.42 108"
-      ".42 86.42 108.42 108.42 86.42 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','C"
-      "OMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'ct"
-      "rl');\ncolor('black');port_label('input',3,'data_0_re_in');\ncolor('black');port_label('input',4,'data_0_im_in')"
-      ";\ncolor('black');port_label('input',5,'data_1_re_in');\ncolor('black');port_label('input',6,'data_1_im_in');\nc"
-      "olor('black');port_label('input',7,'data_2_re_in');\ncolor('black');port_label('input',8,'data_2_im_in');\ncolor"
-      "('black');port_label('input',9,'data_3_re_in');\ncolor('black');port_label('input',10,'data_3_im_in');\ncolor('b"
-      "lack');port_label('output',1,'data_0_re_out');\ncolor('black');port_label('output',2,'data_0_im_out');\ncolor('b"
-      "lack');port_label('output',3,'data_1_re_out');\ncolor('black');port_label('output',4,'data_1_im_out');\ncolor('b"
-      "lack');port_label('output',5,'data_2_re_out');\ncolor('black');port_label('output',6,'data_2_im_out');\ncolor('b"
-      "lack');port_label('output',7,'data_3_re_out');\ncolor('black');port_label('output',8,'data_3_im_out');\nfprintf("
-      "'','COMMENT: end icon text');"
+      sg_icon_stat	      "120,154,4,2,white,blue,0,6df97725,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 120 120 0 0 ],[0 0 154 154 0 ],[0.7"
+      "7 0.82 0.91 ]);\nplot([0 120 120 0 0 ],[0 0 154 154 0 ]);\npatch([22.175 46.74 63.74 80.74 97.74 63.74 39.175 22"
+      ".175 ],[95.87 95.87 112.87 95.87 112.87 112.87 112.87 95.87 ],[1 1 1 ]);\npatch([39.175 63.74 46.74 22.175 39.17"
+      "5 ],[78.87 78.87 95.87 95.87 78.87 ],[0.931 0.946 0.973 ]);\npatch([22.175 46.74 63.74 39.175 22.175 ],[61.87 61"
+      ".87 78.87 78.87 61.87 ],[1 1 1 ]);\npatch([39.175 97.74 80.74 63.74 46.74 22.175 39.175 ],[44.87 44.87 61.87 44."
+      "87 61.87 61.87 44.87 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: b"
+      "egin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'ctrl');\nco"
+      "lor('black');port_label('input',3,'data_re_in');\ncolor('black');port_label('input',4,'data_im_in');\ncolor('bla"
+      "ck');port_label('output',1,'data_re_out');\ncolor('black');port_label('output',2,'data_im_out');\nfprintf('','CO"
+      "MMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out"
+      SID		      "34"
+      Ports		      [1, 1]
+      Position		      [785, 275, 845, 295]
+      ZOrder		      94
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out1"
+      SID		      "35"
+      Ports		      [1, 1]
+      Position		      [785, 350, 845, 370]
+      ZOrder		      95
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
@@ -913,29 +1023,43 @@ Model {
     }
     Block {
       BlockType		      Step
-      Name		      "Step"
-      SID		      "6"
-      Position		      [30, 135, 60, 165]
-      ZOrder		      64
+      Name		      "Step1"
+      SID		      "28"
+      Position		      [90, 215, 120, 245]
+      ZOrder		      87
       SampleTime	      "1"
     }
     Block {
-      BlockType		      FromWorkspace
-      Name		      "ctrl"
-      SID		      "7"
-      Position		      [15, 193, 80, 217]
-      ZOrder		      62
-      VariableName	      "ctrl"
-      SampleTime	      "1"
-      ZeroCross		      on
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "36"
+      Ports		      [1]
+      Position		      [900, 270, 960, 300]
+      ZOrder		      92
+      VariableName	      "d_re_out"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace1"
+      SID		      "37"
+      Ports		      [1]
+      Position		      [900, 345, 960, 375]
+      ZOrder		      93
+      VariableName	      "d_im_out"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
     }
     Block {
       BlockType		      Reference
-      Name		      "ctrl\n"
-      SID		      "8"
+      Name		      "ctrl\n1"
+      SID		      "30"
       Ports		      [1, 1]
-      Position		      [190, 194, 245, 216]
-      ZOrder		      66
+      Position		      [250, 274, 305, 296]
+      ZOrder		      89
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -944,7 +1068,7 @@ Model {
       "el input ports."
       gui_display_data_type   "Boolean"
       arith_type	      "Boolean"
-      n_bits		      "16"
+      n_bits		      "2"
       bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
@@ -978,31 +1102,31 @@ Model {
     }
     Block {
       BlockType		      FromWorkspace
-      Name		      "d1_in"
-      SID		      "9"
-      Position		      [15, 248, 80, 272]
-      ZOrder		      61
-      VariableName	      "d1_in"
+      Name		      "ctrl1"
+      SID		      "29"
+      Position		      [75, 273, 140, 297]
+      ZOrder		      85
+      VariableName	      "ctrl"
       SampleTime	      "1"
       ZeroCross		      on
     }
     Block {
       BlockType		      Reference
-      Name		      "d1_in\n"
-      SID		      "10"
+      Name		      "d0_re_in\n"
+      SID		      "31"
       Ports		      [1, 1]
-      Position		      [190, 249, 245, 271]
-      ZOrder		      65
+      Position		      [250, 329, 305, 351]
+      ZOrder		      88
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
       infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
       " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
       "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
+      gui_display_data_type   "Fixed-point"
+      arith_type	      "Unsigned"
+      n_bits		      "4"
+      bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
       frac_width	      "24"
@@ -1035,21 +1159,21 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "d1_in\n1"
-      SID		      "13"
+      Name		      "d0_re_in\n1"
+      SID		      "32"
       Ports		      [1, 1]
-      Position		      [190, 304, 245, 326]
-      ZOrder		      71
+      Position		      [250, 384, 305, 406]
+      ZOrder		      91
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
       infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
       " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
       "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
+      gui_display_data_type   "Fixed-point"
+      arith_type	      "Unsigned"
+      n_bits		      "4"
+      bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
       frac_width	      "24"
@@ -1082,11 +1206,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "d1_in\n2"
-      SID		      "15"
+      Name		      "rst (active low)1"
+      SID		      "33"
       Ports		      [1, 1]
-      Position		      [190, 364, 245, 386]
-      ZOrder		      73
+      Position		      [250, 216, 305, 244]
+      ZOrder		      86
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -1117,420 +1241,90 @@ Model {
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "gatewayin"
       block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "d1_in\n3"
-      SID		      "17"
-      Ports		      [1, 1]
-      Position		      [190, 429, 245, 451]
-      ZOrder		      75
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Gateway In"
-      SourceType	      "Xilinx Gateway In Block"
-      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
-      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
-      "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
-      preci_type	      "Single"
-      exp_width		      "8"
-      frac_width	      "24"
-      quantization	      "Round  (unbiased: +/- Inf)"
-      overflow		      "Saturate"
-      period		      "1"
-      dbl_ovrd		      off
-      timing_constraint	      "None"
-      locs_specified	      off
-      LOCs		      "{}"
-      UseAsADC		      off
-      ADCChannel	      "'1'"
-      xl_use_area	      off
-      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
-      inherit_from_input      off
-      hdl_port		      "on"
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "gatewayin"
-      block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "d1_in\n4"
-      SID		      "19"
-      Ports		      [1, 1]
-      Position		      [190, 489, 245, 511]
-      ZOrder		      77
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Gateway In"
-      SourceType	      "Xilinx Gateway In Block"
-      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
-      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
-      "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
-      preci_type	      "Single"
-      exp_width		      "8"
-      frac_width	      "24"
-      quantization	      "Round  (unbiased: +/- Inf)"
-      overflow		      "Saturate"
-      period		      "1"
-      dbl_ovrd		      off
-      timing_constraint	      "None"
-      locs_specified	      off
-      LOCs		      "{}"
-      UseAsADC		      off
-      ADCChannel	      "'1'"
-      xl_use_area	      off
-      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
-      inherit_from_input      off
-      hdl_port		      "on"
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "gatewayin"
-      block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "d1_in\n5"
-      SID		      "21"
-      Ports		      [1, 1]
-      Position		      [190, 549, 245, 571]
-      ZOrder		      79
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Gateway In"
-      SourceType	      "Xilinx Gateway In Block"
-      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
-      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
-      "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
-      preci_type	      "Single"
-      exp_width		      "8"
-      frac_width	      "24"
-      quantization	      "Round  (unbiased: +/- Inf)"
-      overflow		      "Saturate"
-      period		      "1"
-      dbl_ovrd		      off
-      timing_constraint	      "None"
-      locs_specified	      off
-      LOCs		      "{}"
-      UseAsADC		      off
-      ADCChannel	      "'1'"
-      xl_use_area	      off
-      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
-      inherit_from_input      off
-      hdl_port		      "on"
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "gatewayin"
-      block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "d1_in\n6"
-      SID		      "23"
-      Ports		      [1, 1]
-      Position		      [190, 609, 245, 631]
-      ZOrder		      81
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Gateway In"
-      SourceType	      "Xilinx Gateway In Block"
-      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
-      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
-      "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
-      preci_type	      "Single"
-      exp_width		      "8"
-      frac_width	      "24"
-      quantization	      "Round  (unbiased: +/- Inf)"
-      overflow		      "Saturate"
-      period		      "1"
-      dbl_ovrd		      off
-      timing_constraint	      "None"
-      locs_specified	      off
-      LOCs		      "{}"
-      UseAsADC		      off
-      ADCChannel	      "'1'"
-      xl_use_area	      off
-      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
-      inherit_from_input      off
-      hdl_port		      "on"
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "gatewayin"
-      block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in1"
-      SID		      "12"
-      Position		      [15, 303, 80, 327]
-      ZOrder		      70
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in2"
-      SID		      "14"
-      Position		      [15, 363, 80, 387]
-      ZOrder		      72
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in3"
-      SID		      "16"
-      Position		      [15, 428, 80, 452]
-      ZOrder		      74
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in4"
-      SID		      "18"
-      Position		      [15, 488, 80, 512]
-      ZOrder		      76
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in5"
-      SID		      "20"
-      Position		      [15, 548, 80, 572]
-      ZOrder		      78
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "d1_in6"
-      SID		      "22"
-      Position		      [15, 608, 80, 632]
-      ZOrder		      80
-      VariableName	      "d1_in"
-      SampleTime	      "1"
-      ZeroCross		      on
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "rst (active low)"
-      SID		      "11"
-      Ports		      [1, 1]
-      Position		      [190, 139, 245, 161]
-      ZOrder		      63
-      LibraryVersion	      "1.2"
-      SourceBlock	      "xbsIndex_r4/Gateway In"
-      SourceType	      "Xilinx Gateway In Block"
-      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
-      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
-      "el input ports."
-      gui_display_data_type   "Boolean"
-      arith_type	      "Boolean"
-      n_bits		      "10"
-      bin_pt		      "8"
-      preci_type	      "Single"
-      exp_width		      "8"
-      frac_width	      "24"
-      quantization	      "Round  (unbiased: +/- Inf)"
-      overflow		      "Saturate"
-      period		      "1"
-      dbl_ovrd		      off
-      timing_constraint	      "None"
-      locs_specified	      off
-      LOCs		      "{}"
-      UseAsADC		      off
-      ADCChannel	      "'1'"
-      xl_use_area	      off
-      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
-      inherit_from_input      off
-      hdl_port		      "on"
-      has_advanced_control    "0"
-      sggui_pos		      "-1,-1,-1,-1"
-      block_type	      "gatewayin"
-      block_version	      "VER_STRING_GOES_HERE"
-      sg_icon_stat	      "55,22,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 22 22 0 ],[0.95 0."
-      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 22 22 0 ]);\npatch([20.325 24.66 27.66 30.66 33.66 27.66 23.325 20.325 ],["
-      "14.33 14.33 17.33 14.33 17.33 17.33 17.33 14.33 ],[1 1 1 ]);\npatch([23.325 27.66 24.66 20.325 23.325 ],[11.33 1"
-      "1.33 14.33 14.33 11.33 ],[0.985 0.979 0.895 ]);\npatch([20.325 24.66 27.66 23.325 20.325 ],[8.33 8.33 11.33 11.3"
-      "3 8.33 ],[1 1 1 ]);\npatch([23.325 33.66 30.66 27.66 24.66 20.325 23.325 ],[5.33 5.33 8.33 5.33 8.33 8.33 5.33 ]"
-      ",[0.985 0.979 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncol"
-      "or('black');port_label('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output'"
-      ",1,' ');\nfprintf('','COMMENT: end icon text');"
+      sg_icon_stat	      "55,28,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 28 28 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 28 28 0 ]);\npatch([18.1 23.88 27.88 31.88 35.88 27.88 22.1 18.1 ],[18.44 "
+      "18.44 22.44 18.44 22.44 22.44 22.44 18.44 ],[1 1 1 ]);\npatch([22.1 27.88 23.88 18.1 22.1 ],[14.44 14.44 18.44 1"
+      "8.44 14.44 ],[0.985 0.979 0.895 ]);\npatch([18.1 23.88 27.88 22.1 18.1 ],[10.44 10.44 14.44 14.44 10.44 ],[1 1 1"
+      " ]);\npatch([22.1 35.88 31.88 27.88 23.88 18.1 22.1 ],[6.44 6.44 10.44 6.44 10.44 10.44 6.44 ],[0.985 0.979 0.89"
+      "5 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_l"
+      "abel('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf("
+      "'','COMMENT: end icon text');"
     }
     Line {
-      SrcBlock		      "Step"
+      SrcBlock		      "Step1"
       SrcPort		      1
-      DstBlock		      "rst (active low)"
+      DstBlock		      "rst (active low)1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "ctrl"
+      SrcBlock		      "ctrl1"
       SrcPort		      1
-      DstBlock		      "ctrl\n"
+      DstBlock		      "ctrl\n1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "d1_in"
+      SrcBlock		      "\n"
       SrcPort		      1
-      DstBlock		      "d1_in\n"
+      DstBlock		      "d0_re_in\n"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "ctrl\n"
+      SrcBlock		      "ctrl\n1"
       SrcPort		      1
-      Points		      [104, 0; 0, -30]
+      Points		      [107, 0; 0, 15]
       DstBlock		      "Black Box"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "d1_in\n"
+      SrcBlock		      "rst (active low)1"
       SrcPort		      1
-      Points		      [157, 0; 0, -60]
-      DstBlock		      "Black Box"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "rst (active low)"
-      SrcPort		      1
+      Points		      [111, 0; 0, 30]
       DstBlock		      "Black Box"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "d1_in1"
+      SrcBlock		      "\n1"
       SrcPort		      1
-      DstBlock		      "d1_in\n1"
+      DstBlock		      "d0_re_in\n1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "d1_in2"
+      SrcBlock		      "d0_re_in\n1"
       SrcPort		      1
-      DstBlock		      "d1_in\n2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d1_in3"
-      SrcPort		      1
-      DstBlock		      "d1_in\n3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d1_in4"
-      SrcPort		      1
-      DstBlock		      "d1_in\n4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d1_in\n4"
-      SrcPort		      1
-      Points		      [157, 0; 0, -60; 48, 0]
-    }
-    Line {
-      SrcBlock		      "d1_in5"
-      SrcPort		      1
-      DstBlock		      "d1_in\n5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d1_in\n5"
-      SrcPort		      1
-      Points		      [157, 0; 0, -60; 48, 0]
-    }
-    Line {
-      SrcBlock		      "d1_in6"
-      SrcPort		      1
-      DstBlock		      "d1_in\n6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d1_in\n6"
-      SrcPort		      1
-      Points		      [157, 0; 0, -60; 48, 0]
-    }
-    Line {
-      SrcBlock		      "d1_in\n1"
-      SrcPort		      1
-      Points		      [76, 0; 0, -90]
+      Points		      [107, 0; 0, -15]
       DstBlock		      "Black Box"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "d1_in\n2"
+      SrcBlock		      "d0_re_in\n"
       SrcPort		      1
-      Points		      [183, 0; 0, -125]
       DstBlock		      "Black Box"
-      DstPort		      5
+      DstPort		      3
     }
     Line {
-      SrcBlock		      "d1_in\n3"
+      SrcBlock		      "Gateway Out"
       SrcPort		      1
-      Points		      [36, 0; 0, -165]
-      DstBlock		      "Black Box"
-      DstPort		      6
+      DstBlock		      "To Workspace"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out1"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      1
+      DstBlock		      "Gateway Out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      2
+      DstBlock		      "Gateway Out1"
+      DstPort		      1
     }
   }
 }

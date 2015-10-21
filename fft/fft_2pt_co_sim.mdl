@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.19"
+    ComputedModelVersion    "1.22"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 50.0, 1932.0, 1038.0]
+      Location		      [-9.0, 41.0, 1938.0, 1048.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1682.0, 837.0]
+	Extents			[1688.0, 847.0]
 	ZoomFactor		[1.25]
-	Offset			[-130.29999999999995, -4.8000000000000114]
+	Offset			[8.900000000000043, -4.8000000000000114]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 21 11:21:18 2015"
+  LastModifiedDate	  "Wed Oct 21 15:09:44 2015"
   RTWModifiedTimeStamp	  367323878
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  ModelVersionFormat	  "1.%<AutoIncrement:22>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -793,7 +793,7 @@ Model {
   }
   System {
     Name		    "fft_2pt_co_sim"
-    Location		    [-8, 50, 1924, 1088]
+    Location		    [-9, 41, 1929, 1089]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -807,7 +807,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "38"
+    SIDHighWatermark	    "50"
     Block {
       BlockType		      FromWorkspace
       Name		      "\n"
@@ -1298,18 +1298,6 @@ Model {
       DstPort		      4
     }
     Line {
-      SrcBlock		      "Black Box"
-      SrcPort		      1
-      DstBlock		      "Gateway Out"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Black Box"
-      SrcPort		      2
-      DstBlock		      "Gateway Out1"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Gateway Out"
       SrcPort		      1
       DstBlock		      "To Workspace"
@@ -1326,6 +1314,18 @@ Model {
       SrcPort		      1
       DstBlock		      "Black Box"
       DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      1
+      DstBlock		      "Gateway Out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      2
+      DstBlock		      "Gateway Out1"
+      DstPort		      1
     }
   }
 }

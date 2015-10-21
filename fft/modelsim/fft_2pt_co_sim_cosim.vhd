@@ -2222,7 +2222,7 @@ end fft_2pt_co_sim_cosim;
 
 architecture structural of fft_2pt_co_sim_cosim is
   attribute core_generation_info: string;
-  attribute core_generation_info of structural : architecture is "fft_2pt_co_sim,sysgen_core,{black_box_modelsim_used=1,clock_period=10.00000000,clocking=Clock_Enables,compilation=HDL_Netlist,modelsim_hdl_co_simulation_interface_block=1,sample_periods=1.00000000000,testbench=0,total_blocks=19,xilinx_black_box_block=1,xilinx_gateway_in_block=4,xilinx_gateway_out_block=2,xilinx_system_generator_block=1,}";
+  attribute core_generation_info of structural : architecture is "fft_2pt_co_sim,sysgen_core,{black_box_modelsim_used=1,clock_period=10.00000000,clocking=Clock_Enables,compilation=HDL_Netlist,modelsim_hdl_co_simulation_interface_block=1,sample_periods=1.00000000000,testbench=0,total_blocks=23,xilinx_black_box_block=1,xilinx_gateway_in_block=4,xilinx_gateway_out_block=4,xilinx_system_generator_block=1,}";
 
   signal black_box_ctrl_net: std_logic;
   signal black_box_data_im_in_net: std_logic_vector(1 downto 0);
