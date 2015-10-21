@@ -19,8 +19,8 @@ end;
 % input data, starts at time 3
 t=0:numel(d_re(1,:))+3;
 t=t';
-d_re_in=timeseries([0; 0; 0; vec2fi(d_re); 0],t);
-d_im_in=timeseries([0; 0; 0; vec2fi(d_im); 0],t);
+d_re_in=timeseries([0; 0; 0; vec2fi(d_re)'; 0],t);
+d_im_in=timeseries([0; 0; 0; vec2fi(d_im)'; 0],t);
 
 % ctrl signal
 d_ctrl=repmat([1 zeros(1,15)],size(d_fp,2)+10,1);

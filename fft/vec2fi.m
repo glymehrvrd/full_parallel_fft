@@ -3,7 +3,7 @@ function [fiout] = vec2fi(vec)
 % fi word length equals to row number of vec. i.e, convert
 % each column into a fi object.
 
-fiout=fi(zeros(size(vec,2),1),0,size(vec,1),0);
+fiout=fi(zeros(1,size(vec,2)),0,size(vec,1),0);
 
 for j=1:size(vec,2)
     for i=1:size(vec,1)
