@@ -10,7 +10,7 @@
 # //
 # do {fft_2pt_co_sim_cosim_cw.tcl} 
 # Connected to Xilinx System Generator Block ModelSim 
-# sock1620
+# sock1584
 # 0
 # 1
 # sec
@@ -88,10 +88,9 @@
 # 
 #           File in use by: dell  Hostname: DELL-PC  ProcessID: 6152
 # 
-#           Attempting to use alternate WLF file "./wlftk3j847".
+#           Attempting to use alternate WLF file "./wlfte5g4w1".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftk3j847
+#           Using alternate file: ./wlfte5g4w1
 # 
 # simstats: 
-# Causality operation skipped due to absense of debug database file

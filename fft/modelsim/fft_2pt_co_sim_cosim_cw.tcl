@@ -16,15 +16,11 @@ proc openWave {} {
   add wave -noupdate -height 30 -divider {  Block : "Black Box"  }
   add wave -label "  rst" sim:/fft_2pt_co_sim_cosim_cw/black_box_rst
   add wave -label "  ctrl" sim:/fft_2pt_co_sim_cosim_cw/black_box_ctrl
-  add wave -label "  data_0_re_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_0_re_in
-  add wave -label "  data_0_im_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_0_im_in
-  add wave -label "  data_1_re_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_1_re_in
-  add wave -label "  data_1_im_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_1_im_in
+  add wave -label "  data_re_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_re_in
+  add wave -label "  data_im_in" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_im_in
   add wave -noupdate -height 11 -divider { }
-  add wave -label "  data_0_re_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_0_re_out
-  add wave -label "  data_0_im_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_0_im_out
-  add wave -label "  data_1_re_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_1_re_out
-  add wave -label "  data_1_im_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_1_im_out
+  add wave -label "  data_re_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_re_out
+  add wave -label "  data_im_out" sim:/fft_2pt_co_sim_cosim_cw/black_box_data_im_out
   add wave -noupdate -height 50 -divider {Clock Signals}
   add wave -label "  ce_1" sim:/fft_2pt_co_sim_cosim_cw/hdlcosim_clk_driver/ce_1
   add wave -label "  clk" sim:/fft_2pt_co_sim_cosim_cw/hdlcosim_clk_driver/clk
@@ -47,14 +43,12 @@ proc event_handler {cid} {
     scan $message "%s" request
     switch -- $request {
       f {
-        scan $message "%s %s %s %s %s %s %s" request black_box_rst black_box_ctrl black_box_data_0_re_in black_box_data_0_im_in black_box_data_1_re_in black_box_data_1_im_in 
+        scan $message "%s %s %s %s %s" request black_box_rst black_box_ctrl black_box_data_re_in black_box_data_im_in 
         onerror { puts $cid 9 ; flush $cid}
         force black_box_rst $black_box_rst
         force black_box_ctrl $black_box_ctrl
-        force black_box_data_0_re_in $black_box_data_0_re_in
-        force black_box_data_0_im_in $black_box_data_0_im_in
-        force black_box_data_1_re_in $black_box_data_1_re_in
-        force black_box_data_1_im_in $black_box_data_1_im_in
+        force black_box_data_re_in $black_box_data_re_in
+        force black_box_data_im_in $black_box_data_im_in
         if [llength [find signal black_box_rst]] {puts $cid 2} else {puts $cid 9}
         flush $cid
       }
@@ -66,7 +60,7 @@ proc event_handler {cid} {
         flush $cid
       }
       e {
-        set valMsg [examine black_box_data_0_re_out black_box_data_0_im_out black_box_data_1_re_out black_box_data_1_im_out]
+        set valMsg [examine black_box_data_re_out black_box_data_im_out]
         puts $cid $valMsg
         flush $cid
       }

@@ -22,6 +22,28 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="fft.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="fft_pt2.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="fft_pt2.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="fft_pt2.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="fft_pt2.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fft_pt2.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="fft_pt2.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="fft_pt2.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="fft_pt2.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="fft_pt2_envsettings.html"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="fft_pt2_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="fft_pt2_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="fft_pt4.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="fft_pt4.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="fft_pt4.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="fft_pt4.ngr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fft_pt4.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="fft_pt4.stx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="fft_pt4.syr"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="fft_pt4.xst"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="fft_pt4_summary.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="fft_pt4_xst.xrpt"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -33,8 +55,10 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test_fft_pt2_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="test_fft_pt2_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
@@ -45,6 +69,10 @@
     <transform xil_pn:end_ts="1445391201" xil_pn:in_ck="-1853500888613975376" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1445391201">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Dff_1.vhd"/>
       <outfile xil_pn:name="Dff_1_init_1.vhd"/>
       <outfile xil_pn:name="Dff_preload_1.vhd"/>
@@ -70,10 +98,16 @@
     <transform xil_pn:end_ts="1445309280" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4334934312644397696" xil_pn:start_ts="1445309280">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1445391201" xil_pn:in_ck="-1853500888613975376" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1445391201">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Dff_1.vhd"/>
       <outfile xil_pn:name="Dff_1_init_1.vhd"/>
       <outfile xil_pn:name="Dff_preload_1.vhd"/>
@@ -91,11 +125,61 @@
     <transform xil_pn:end_ts="1445391225" xil_pn:in_ck="-1853500888613975376" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="6067088567954539090" xil_pn:start_ts="1445391224">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="test_fft_pt2.fdo"/>
       <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392443" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1445392443">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="8735535776396339606" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="3163802994890467774" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="8667175172278099704" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="3206529612922900429" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392514" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="2008070156292131976" xil_pn:start_ts="1445392514">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1445393560" xil_pn:in_ck="7461215633723591398" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2204746178824378875" xil_pn:start_ts="1445393529">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="fft_pt2.lso"/>
+      <outfile xil_pn:name="fft_pt2.ngc"/>
+      <outfile xil_pn:name="fft_pt2.ngr"/>
+      <outfile xil_pn:name="fft_pt2.prj"/>
+      <outfile xil_pn:name="fft_pt2.stx"/>
+      <outfile xil_pn:name="fft_pt2.syr"/>
+      <outfile xil_pn:name="fft_pt2.xst"/>
+      <outfile xil_pn:name="fft_pt2_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1445392534" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="4904481436865947693" xil_pn:start_ts="1445392534">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
   </transforms>
 

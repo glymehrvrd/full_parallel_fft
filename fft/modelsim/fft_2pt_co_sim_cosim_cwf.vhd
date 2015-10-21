@@ -86,15 +86,11 @@ use work.conv_pkg.all;
 entity fft_2pt_co_sim_cosim_cw is
   port (
     black_box_ctrl: in std_logic; 
-    black_box_data_0_im_in: in std_logic; 
-    black_box_data_0_re_in: in std_logic; 
-    black_box_data_1_im_in: in std_logic; 
-    black_box_data_1_re_in: in std_logic; 
+    black_box_data_im_in: in std_logic_vector(1 downto 0); 
+    black_box_data_re_in: in std_logic_vector(1 downto 0); 
     black_box_rst: in std_logic; 
-    black_box_data_0_im_out: out std_logic; 
-    black_box_data_0_re_out: out std_logic; 
-    black_box_data_1_im_out: out std_logic; 
-    black_box_data_1_re_out: out std_logic
+    black_box_data_im_out: out std_logic_vector(1 downto 0); 
+    black_box_data_re_out: out std_logic_vector(1 downto 0)
   );
 end fft_2pt_co_sim_cosim_cw;
 
@@ -103,14 +99,10 @@ architecture structural of fft_2pt_co_sim_cosim_cw is
   generic ( A: string := "port1301");
   end component;
   signal black_box_ctrl_net: std_logic;
-  signal black_box_data_0_im_in_net: std_logic;
-  signal black_box_data_0_im_out_net: std_logic;
-  signal black_box_data_0_re_in_net: std_logic;
-  signal black_box_data_0_re_out_net: std_logic;
-  signal black_box_data_1_im_in_net: std_logic;
-  signal black_box_data_1_im_out_net: std_logic;
-  signal black_box_data_1_re_in_net: std_logic;
-  signal black_box_data_1_re_out_net: std_logic;
+  signal black_box_data_im_in_net: std_logic_vector(1 downto 0);
+  signal black_box_data_im_out_net: std_logic_vector(1 downto 0);
+  signal black_box_data_re_in_net: std_logic_vector(1 downto 0);
+  signal black_box_data_re_out_net: std_logic_vector(1 downto 0);
   signal black_box_rst_net: std_logic;
   signal ce_1_sg_x0: std_logic;
   signal clk_1_sg_x0: std_logic;
@@ -118,30 +110,22 @@ architecture structural of fft_2pt_co_sim_cosim_cw is
 
 begin
   black_box_ctrl_net <= black_box_ctrl;
-  black_box_data_0_im_in_net <= black_box_data_0_im_in;
-  black_box_data_0_re_in_net <= black_box_data_0_re_in;
-  black_box_data_1_im_in_net <= black_box_data_1_im_in;
-  black_box_data_1_re_in_net <= black_box_data_1_re_in;
+  black_box_data_im_in_net <= black_box_data_im_in;
+  black_box_data_re_in_net <= black_box_data_re_in;
   black_box_rst_net <= black_box_rst;
-  black_box_data_0_im_out <= black_box_data_0_im_out_net;
-  black_box_data_0_re_out <= black_box_data_0_re_out_net;
-  black_box_data_1_im_out <= black_box_data_1_im_out_net;
-  black_box_data_1_re_out <= black_box_data_1_re_out_net;
+  black_box_data_im_out <= black_box_data_im_out_net;
+  black_box_data_re_out <= black_box_data_re_out_net;
 
   fft_2pt_co_sim: entity work.fft_2pt_co_sim_cosim
     port map (
       black_box_ctrl => black_box_ctrl_net,
-      black_box_data_0_im_in => black_box_data_0_im_in_net,
-      black_box_data_0_re_in => black_box_data_0_re_in_net,
-      black_box_data_1_im_in => black_box_data_1_im_in_net,
-      black_box_data_1_re_in => black_box_data_1_re_in_net,
+      black_box_data_im_in => black_box_data_im_in_net,
+      black_box_data_re_in => black_box_data_re_in_net,
       black_box_rst => black_box_rst_net,
       ce_1 => ce_1_sg_x0,
       clk_1 => clk_net,
-      black_box_data_0_im_out => black_box_data_0_im_out_net,
-      black_box_data_0_re_out => black_box_data_0_re_out_net,
-      black_box_data_1_im_out => black_box_data_1_im_out_net,
-      black_box_data_1_re_out => black_box_data_1_re_out_net
+      black_box_data_im_out => black_box_data_im_out_net,
+      black_box_data_re_out => black_box_data_re_out_net
     );
 
   hdlcosim_clk_driver: entity work.fft_2pt_co_sim_cosim_clk_drvr

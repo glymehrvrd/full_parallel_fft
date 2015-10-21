@@ -36,23 +36,11 @@ ENTITY fft_pt4 IS
         ce             : IN STD_LOGIC;
         ctrl           : IN STD_LOGIC;
 
-        data_0_re_in   : IN STD_LOGIC;
-        data_0_im_in   : IN STD_LOGIC;
-        data_1_re_in   : IN STD_LOGIC;
-        data_1_im_in   : IN STD_LOGIC;
-        data_2_re_in   : IN STD_LOGIC;
-        data_2_im_in   : IN STD_LOGIC;
-        data_3_re_in   : IN STD_LOGIC;
-        data_3_im_in   : IN STD_LOGIC;
+        data_re_in:in std_logic_vector(3 downto 0);
+        data_im_in:in std_logic_vector(3 downto 0);
 
-        data_0_re_out  : OUT STD_LOGIC;
-        data_0_im_out  : OUT STD_LOGIC;
-        data_1_re_out  : OUT STD_LOGIC;
-        data_1_im_out  : OUT STD_LOGIC;
-        data_2_re_out  : OUT STD_LOGIC;
-        data_2_im_out  : OUT STD_LOGIC;
-        data_3_re_out  : OUT STD_LOGIC;
-        data_3_im_out  : OUT STD_LOGIC
+        data_re_out:out std_logic_vector(3 downto 0);
+        data_im_out:out std_logic_vector(3 downto 0)
     );
 END fft_pt4;
 
@@ -122,54 +110,25 @@ ARCHITECTURE Behavioral OF fft_pt4 IS
     SIGNAL c_buff_im_3 : std_logic_vector(3 DOWNTO 0);
     SIGNAL s_im_3 : std_logic_vector(2 DOWNTO 0);
 
-    SIGNAL not_data_0_re_in : STD_LOGIC;
-    SIGNAL not_data_0_im_in : STD_LOGIC;
-    SIGNAL not_data_1_re_in : STD_LOGIC;
-    SIGNAL not_data_1_im_in : STD_LOGIC;
-    SIGNAL not_data_2_re_in : STD_LOGIC;
-    SIGNAL not_data_2_im_in : STD_LOGIC;
-    SIGNAL not_data_3_re_in : STD_LOGIC;
-    SIGNAL not_data_3_im_in : STD_LOGIC;
+    signal not_data_re_in: std_logic_vector(3 downto 0);
+    signal not_data_im_in: std_logic_vector(3 downto 0);
 
-    SIGNAL data_0_re_out_buff : STD_LOGIC;
-    SIGNAL data_1_re_out_buff : STD_LOGIC;
-    SIGNAL data_2_re_out_buff : STD_LOGIC;
-    SIGNAL data_3_re_out_buff : STD_LOGIC;
-    SIGNAL data_0_im_out_buff : STD_LOGIC;
-    SIGNAL data_1_im_out_buff : STD_LOGIC;
-    SIGNAL data_2_im_out_buff : STD_LOGIC;
-    SIGNAL data_3_im_out_buff : STD_LOGIC;
+    signal data_re_out_buff: std_logic_vector(3 downto 0);
+    signal data_im_out_buff: std_logic_vector(3 downto 0);
 
 BEGIN
-    not_data_0_re_in <= NOT data_0_re_in;
-    not_data_0_im_in <= NOT data_0_im_in;
-    not_data_1_re_in <= NOT data_1_re_in;
-    not_data_1_im_in <= NOT data_1_im_in;
-    not_data_2_re_in <= NOT data_2_re_in;
-    not_data_2_im_in <= NOT data_2_im_in;
-    not_data_3_re_in <= NOT data_3_re_in;
-    not_data_3_im_in <= NOT data_3_im_in;
+    not_data_re_in<=not data_re_in;
+    not_data_im_in<=not data_im_in;
+
     PROCESS (clk, rst, ce)
     BEGIN
         IF clk'EVENT AND clk = '1' THEN
             IF rst = '0' THEN
-                data_0_re_out <= '0';
-                data_0_im_out <= '0';
-                data_1_re_out <= '0';
-                data_1_im_out <= '0';
-                data_2_re_out <= '0';
-                data_2_im_out <= '0';
-                data_3_re_out <= '0';
-                data_3_im_out <= '0';
+                data_re_out<=(others=>'0');
+                data_im_out<=(others=>'0');
             ELSIF ce = '1' THEN
-                data_0_re_out <= data_0_re_out_buff;
-                data_0_im_out <= data_0_im_out_buff;
-                data_1_re_out <= data_1_re_out_buff;
-                data_1_im_out <= data_1_im_out_buff;
-                data_2_re_out <= data_2_re_out_buff;
-                data_2_im_out <= data_2_im_out_buff;
-                data_3_re_out <= data_3_re_out_buff;
-                data_3_im_out <= data_3_im_out_buff;
+                data_re_out<=data_re_out_buff;
+                data_im_out<=data_im_out_buff;
             END IF;
         END IF;
     END PROCESS;
@@ -187,7 +146,7 @@ BEGIN
     ADDER0_RE_0 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_re_in, 
+        d2_in    => data_re_in(0), 
         c_in     => c_buff_re_0(0), 
         sum_out  => s_re_0(0), 
         c_out    => c_re_0(0)
@@ -205,7 +164,7 @@ BEGIN
     ADDER1_RE_0 : adder_bit1
     PORT MAP(
         d1_in    => s_re_0(0), 
-        d2_in    => data_1_re_in, 
+        d2_in    => data_re_in(1), 
         c_in     => c_buff_re_0(1), 
         sum_out  => s_re_0(1), 
         c_out    => c_re_0(1)
@@ -223,7 +182,7 @@ BEGIN
     ADDER2_RE_0 : adder_bit1
     PORT MAP(
         d1_in    => s_re_0(1), 
-        d2_in    => data_2_re_in, 
+        d2_in    => data_re_in(2), 
         c_in     => c_buff_re_0(2), 
         sum_out  => s_re_0(2), 
         c_out    => c_re_0(2)
@@ -241,9 +200,9 @@ BEGIN
     ADDER3_RE_0 : adder_bit1
     PORT MAP(
         d1_in    => s_re_0(2), 
-        d2_in    => data_3_re_in, 
+        d2_in    => data_re_in(3), 
         c_in     => c_buff_re_0(3), 
-        sum_out  => data_0_re_out_buff, 
+        sum_out  => data_re_out_buff(0), 
         c_out    => c_re_0(3)
     );
 
@@ -260,7 +219,7 @@ BEGIN
     ADDER0_IM_0 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_im_in, 
+        d2_in    => data_im_in(0), 
         c_in     => c_buff_im_0(0), 
         sum_out  => s_im_0(0), 
         c_out    => c_im_0(0)
@@ -278,7 +237,7 @@ BEGIN
     ADDER1_IM_0 : adder_bit1
     PORT MAP(
         d1_in    => s_im_0(0), 
-        d2_in    => data_1_im_in, 
+        d2_in    => data_im_in(1), 
         c_in     => c_buff_im_0(1), 
         sum_out  => s_im_0(1), 
         c_out    => c_im_0(1)
@@ -296,7 +255,7 @@ BEGIN
     ADDER2_IM_0 : adder_bit1
     PORT MAP(
         d1_in    => s_im_0(1), 
-        d2_in    => data_2_im_in, 
+        d2_in    => data_im_in(2), 
         c_in     => c_buff_im_0(2), 
         sum_out  => s_im_0(2), 
         c_out    => c_im_0(2)
@@ -314,9 +273,9 @@ BEGIN
     ADDER3_IM_0 : adder_bit1
     PORT MAP(
         d1_in    => s_im_0(2), 
-        d2_in    => data_3_im_in, 
+        d2_in    => data_im_in(3), 
         c_in     => c_buff_im_0(3), 
-        sum_out  => data_0_im_out_buff, 
+        sum_out  => data_im_out_buff(0), 
         c_out    => c_im_0(3)
     );
 
@@ -333,7 +292,7 @@ BEGIN
     ADDER0_RE_1 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_re_in, 
+        d2_in    => data_re_in(0), 
         c_in     => c_buff_re_1(0), 
         sum_out  => s_re_1(0), 
         c_out    => c_re_1(0)
@@ -351,7 +310,7 @@ BEGIN
     ADDER1_RE_1 : adder_bit1
     PORT MAP(
         d1_in    => s_re_1(0), 
-        d2_in    => data_1_im_in, 
+        d2_in    => data_im_in(1), 
         c_in     => c_buff_re_1(1), 
         sum_out  => s_re_1(1), 
         c_out    => c_re_1(1)
@@ -369,7 +328,7 @@ BEGIN
     ADDER2_RE_1 : adder_bit1
     PORT MAP(
         d1_in    => s_re_1(1), 
-        d2_in    => not_data_2_re_in, 
+        d2_in    => not_data_re_in(2), 
         c_in     => c_buff_re_1(2), 
         sum_out  => s_re_1(2), 
         c_out    => c_re_1(2)
@@ -387,9 +346,9 @@ BEGIN
     ADDER3_RE_1 : adder_bit1
     PORT MAP(
         d1_in    => s_re_1(2), 
-        d2_in    => not_data_3_im_in, 
+        d2_in    => not_data_im_in(3), 
         c_in     => c_buff_re_1(3), 
-        sum_out  => data_1_re_out_buff, 
+        sum_out  => data_re_out_buff(1), 
         c_out    => c_re_1(3)
     );
 
@@ -406,7 +365,7 @@ BEGIN
     ADDER0_IM_1 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_im_in, 
+        d2_in    => data_im_in(0), 
         c_in     => c_buff_im_1(0), 
         sum_out  => s_im_1(0), 
         c_out    => c_im_1(0)
@@ -424,7 +383,7 @@ BEGIN
     ADDER1_IM_1 : adder_bit1
     PORT MAP(
         d1_in    => s_im_1(0), 
-        d2_in    => not_data_1_re_in, 
+        d2_in    => not_data_re_in(1), 
         c_in     => c_buff_im_1(1), 
         sum_out  => s_im_1(1), 
         c_out    => c_im_1(1)
@@ -442,7 +401,7 @@ BEGIN
     ADDER2_IM_1 : adder_bit1
     PORT MAP(
         d1_in    => s_im_1(1), 
-        d2_in    => not_data_2_im_in, 
+        d2_in    => not_data_im_in(2), 
         c_in     => c_buff_im_1(2), 
         sum_out  => s_im_1(2), 
         c_out    => c_im_1(2)
@@ -460,9 +419,9 @@ BEGIN
     ADDER3_IM_1 : adder_bit1
     PORT MAP(
         d1_in    => s_im_1(2), 
-        d2_in    => data_3_re_in, 
+        d2_in    => data_re_in(3), 
         c_in     => c_buff_im_1(3), 
-        sum_out  => data_1_im_out_buff, 
+        sum_out  => data_im_out_buff(1), 
         c_out    => c_im_1(3)
     );
 
@@ -479,7 +438,7 @@ BEGIN
     ADDER0_RE_2 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_re_in, 
+        d2_in    => data_re_in(0), 
         c_in     => c_buff_re_2(0), 
         sum_out  => s_re_2(0), 
         c_out    => c_re_2(0)
@@ -497,7 +456,7 @@ BEGIN
     ADDER1_RE_2 : adder_bit1
     PORT MAP(
         d1_in    => s_re_2(0), 
-        d2_in    => not_data_1_re_in, 
+        d2_in    => not_data_re_in(1), 
         c_in     => c_buff_re_2(1), 
         sum_out  => s_re_2(1), 
         c_out    => c_re_2(1)
@@ -515,7 +474,7 @@ BEGIN
     ADDER2_RE_2 : adder_bit1
     PORT MAP(
         d1_in    => s_re_2(1), 
-        d2_in    => data_2_re_in, 
+        d2_in    => data_re_in(2), 
         c_in     => c_buff_re_2(2), 
         sum_out  => s_re_2(2), 
         c_out    => c_re_2(2)
@@ -533,9 +492,9 @@ BEGIN
     ADDER3_RE_2 : adder_bit1
     PORT MAP(
         d1_in    => s_re_2(2), 
-        d2_in    => not_data_3_re_in, 
+        d2_in    => not_data_re_in(3), 
         c_in     => c_buff_re_2(3), 
-        sum_out  => data_2_re_out_buff, 
+        sum_out  => data_re_out_buff(2), 
         c_out    => c_re_2(3)
     );
 
@@ -552,7 +511,7 @@ BEGIN
     ADDER0_IM_2 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_im_in, 
+        d2_in    => data_im_in(0), 
         c_in     => c_buff_im_2(0), 
         sum_out  => s_im_2(0), 
         c_out    => c_im_2(0)
@@ -570,7 +529,7 @@ BEGIN
     ADDER1_IM_2 : adder_bit1
     PORT MAP(
         d1_in    => s_im_2(0), 
-        d2_in    => not_data_1_im_in, 
+        d2_in    => not_data_im_in(1), 
         c_in     => c_buff_im_2(1), 
         sum_out  => s_im_2(1), 
         c_out    => c_im_2(1)
@@ -588,7 +547,7 @@ BEGIN
     ADDER2_IM_2 : adder_bit1
     PORT MAP(
         d1_in    => s_im_2(1), 
-        d2_in    => data_2_im_in, 
+        d2_in    => data_im_in(2), 
         c_in     => c_buff_im_2(2), 
         sum_out  => s_im_2(2), 
         c_out    => c_im_2(2)
@@ -606,9 +565,9 @@ BEGIN
     ADDER3_IM_2 : adder_bit1
     PORT MAP(
         d1_in    => s_im_2(2), 
-        d2_in    => not_data_3_im_in, 
+        d2_in    => not_data_im_in(3), 
         c_in     => c_buff_im_2(3), 
-        sum_out  => data_2_im_out_buff, 
+        sum_out  => data_im_out_buff(2), 
         c_out    => c_im_2(3)
     );
 
@@ -625,7 +584,7 @@ BEGIN
     ADDER0_RE_3 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_re_in, 
+        d2_in    => data_re_in(0), 
         c_in     => c_buff_re_3(0), 
         sum_out  => s_re_3(0), 
         c_out    => c_re_3(0)
@@ -643,7 +602,7 @@ BEGIN
     ADDER1_RE_3 : adder_bit1
     PORT MAP(
         d1_in    => s_re_3(0), 
-        d2_in    => not_data_1_im_in, 
+        d2_in    => not_data_im_in(1), 
         c_in     => c_buff_re_3(1), 
         sum_out  => s_re_3(1), 
         c_out    => c_re_3(1)
@@ -661,7 +620,7 @@ BEGIN
     ADDER2_RE_3 : adder_bit1
     PORT MAP(
         d1_in    => s_re_3(1), 
-        d2_in    => not_data_2_re_in, 
+        d2_in    => not_data_re_in(2), 
         c_in     => c_buff_re_3(2), 
         sum_out  => s_re_3(2), 
         c_out    => c_re_3(2)
@@ -679,9 +638,9 @@ BEGIN
     ADDER3_RE_3 : adder_bit1
     PORT MAP(
         d1_in    => s_re_3(2), 
-        d2_in    => data_3_im_in, 
+        d2_in    => data_im_in(3), 
         c_in     => c_buff_re_3(3), 
-        sum_out  => data_3_re_out_buff, 
+        sum_out  => data_re_out_buff(3), 
         c_out    => c_re_3(3)
     );
 
@@ -698,7 +657,7 @@ BEGIN
     ADDER0_IM_3 : adder_bit1
     PORT MAP(
         d1_in    => '0', 
-        d2_in    => data_0_im_in, 
+        d2_in    => data_im_in(0), 
         c_in     => c_buff_im_3(0), 
         sum_out  => s_im_3(0), 
         c_out    => c_im_3(0)
@@ -716,7 +675,7 @@ BEGIN
     ADDER1_IM_3 : adder_bit1
     PORT MAP(
         d1_in    => s_im_3(0), 
-        d2_in    => data_1_re_in, 
+        d2_in    => data_re_in(1), 
         c_in     => c_buff_im_3(1), 
         sum_out  => s_im_3(1), 
         c_out    => c_im_3(1)
@@ -734,7 +693,7 @@ BEGIN
     ADDER2_IM_3 : adder_bit1
     PORT MAP(
         d1_in    => s_im_3(1), 
-        d2_in    => not_data_2_im_in, 
+        d2_in    => not_data_im_in(2), 
         c_in     => c_buff_im_3(2), 
         sum_out  => s_im_3(2), 
         c_out    => c_im_3(2)
@@ -752,9 +711,9 @@ BEGIN
     ADDER3_IM_3 : adder_bit1
     PORT MAP(
         d1_in    => s_im_3(2), 
-        d2_in    => not_data_3_re_in, 
+        d2_in    => not_data_re_in(3), 
         c_in     => c_buff_im_3(3), 
-        sum_out  => data_3_im_out_buff, 
+        sum_out  => data_im_out_buff(3), 
         c_out    => c_im_3(3)
     );
 END Behavioral;

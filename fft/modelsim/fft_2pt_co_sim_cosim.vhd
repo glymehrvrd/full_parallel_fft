@@ -2052,15 +2052,11 @@ ENTITY fft_pt2 IS
         ce             : IN STD_LOGIC;
         ctrl           : IN STD_LOGIC;
 
-        data_0_re_in   : IN STD_LOGIC;
-        data_0_im_in   : IN STD_LOGIC;
-        data_1_re_in   : IN STD_LOGIC;
-        data_1_im_in   : IN STD_LOGIC;
+        data_re_in     : in std_logic_vector(1 downto 0);
+        data_im_in     : in std_logic_vector(1 downto 0);
 
-        data_0_re_out  : OUT STD_LOGIC;
-        data_0_im_out  : OUT STD_LOGIC;
-        data_1_re_out  : OUT STD_LOGIC;
-        data_1_im_out  : OUT STD_LOGIC
+        data_re_out     : out std_logic_vector(1 downto 0);
+        data_im_out     : out std_logic_vector(1 downto 0)
     );
 END fft_pt2;
 
@@ -2101,28 +2097,25 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
     SIGNAL c : std_logic_vector(3 DOWNTO 0);
     SIGNAL c_buff : std_logic_vector(3 DOWNTO 0);
 
-    SIGNAL not_data_1_re_in : STD_LOGIC;
-    SIGNAL not_data_1_im_in : STD_LOGIC;
+    signal not_data_re_in:std_logic_vector(1 downto 0);
+    signal not_data_im_in:std_logic_vector(1 downto 0);
 
-    SIGNAL data_0_re_out_buff : STD_LOGIC;
-    SIGNAL data_0_im_out_buff : STD_LOGIC;
-    SIGNAL data_1_re_out_buff : STD_LOGIC;
-    SIGNAL data_1_im_out_buff : STD_LOGIC;
+    signal data_re_out_buff : std_logic_vector(1 downto 0);
+    signal data_im_out_buff : std_logic_vector(1 downto 0);
 
 BEGIN
+    not_data_re_in<=not data_re_in;
+    not_data_im_in<=not data_im_in;
+
     PROCESS (clk, rst, ce)
     BEGIN
         IF clk'EVENT AND clk = '1' THEN
             IF rst = '0' THEN
-                data_0_re_out <= '0';
-                data_0_im_out <= '0';
-                data_1_re_out <= '0';
-                data_1_im_out <= '0';
+                data_re_out<=(others=>'0');
+                data_im_out<=(others=>'0');
             ELSIF ce = '1' THEN
-                data_0_re_out <= data_0_re_out_buff;
-                data_0_im_out <= data_0_im_out_buff;
-                data_1_re_out <= data_1_re_out_buff;
-                data_1_im_out <= data_1_im_out_buff;
+                data_re_out<=data_re_out_buff;
+                data_im_out<=data_im_out_buff;
             END IF;
         END IF;
     END PROCESS;
@@ -2140,10 +2133,10 @@ BEGIN
 
     ADDER0_RE : adder_bit1
     PORT MAP(
-        d1_in    => data_0_re_in, 
-        d2_in    => data_1_re_in, 
+        d1_in    => data_re_in(0), 
+        d2_in    => data_re_in(1), 
         c_in     => c_buff(0), 
-        sum_out  => data_0_re_out_buff, 
+        sum_out  => data_re_out_buff(0), 
         c_out    => c(0)
     );
 
@@ -2160,10 +2153,10 @@ BEGIN
 
     ADDER0_IM : adder_bit1
     PORT MAP(
-        d1_in    => data_0_im_in, 
-        d2_in    => data_1_im_in, 
+        d1_in    => data_im_in(0), 
+        d2_in    => data_im_in(1), 
         c_in     => c_buff(1), 
-        sum_out  => data_0_im_out_buff, 
+        sum_out  => data_im_out_buff(0), 
         c_out    => c(1)
     );
 
@@ -2178,14 +2171,12 @@ BEGIN
         Q        => c_buff(2)
     );
 
-    not_data_1_re_in <= NOT data_1_re_in;
-
     ADDER1_RE : adder_bit1
     PORT MAP(
-        d1_in    => data_0_re_in, 
-        d2_in    => not_data_1_re_in, 
+        d1_in    => data_re_in(0), 
+        d2_in    => not_data_re_in(1), 
         c_in     => c_buff(2), 
-        sum_out  => data_1_re_out_buff, 
+        sum_out  => data_re_out_buff(1), 
         c_out    => c(2)
     );
 
@@ -2200,14 +2191,12 @@ BEGIN
         Q        => c_buff(3)
     );
 
-    not_data_1_im_in <= NOT data_1_im_in;
-
     ADDER1_IM : adder_bit1
     PORT MAP(
-        d1_in    => data_0_im_in, 
-        d2_in    => not_data_1_im_in, 
+        d1_in    => data_im_in(0), 
+        d2_in    => not_data_im_in(1), 
         c_in     => c_buff(3), 
-        sum_out  => data_1_im_out_buff, 
+        sum_out  => data_im_out_buff(1), 
         c_out    => c(3)
     );
 END Behavioral;
@@ -2221,65 +2210,49 @@ use work.conv_pkg.all;
 entity fft_2pt_co_sim_cosim is
   port (
     black_box_ctrl: in std_logic; 
-    black_box_data_0_im_in: in std_logic; 
-    black_box_data_0_re_in: in std_logic; 
-    black_box_data_1_im_in: in std_logic; 
-    black_box_data_1_re_in: in std_logic; 
+    black_box_data_im_in: in std_logic_vector(1 downto 0); 
+    black_box_data_re_in: in std_logic_vector(1 downto 0); 
     black_box_rst: in std_logic; 
     ce_1: in std_logic; 
     clk_1: in std_logic; 
-    black_box_data_0_im_out: out std_logic; 
-    black_box_data_0_re_out: out std_logic; 
-    black_box_data_1_im_out: out std_logic; 
-    black_box_data_1_re_out: out std_logic
+    black_box_data_im_out: out std_logic_vector(1 downto 0); 
+    black_box_data_re_out: out std_logic_vector(1 downto 0)
   );
 end fft_2pt_co_sim_cosim;
 
 architecture structural of fft_2pt_co_sim_cosim is
   attribute core_generation_info: string;
-  attribute core_generation_info of structural : architecture is "fft_2pt_co_sim,sysgen_core,{black_box_modelsim_used=1,clock_period=10.00000000,clocking=Clock_Enables,compilation=HDL_Netlist,modelsim_hdl_co_simulation_interface_block=1,sample_periods=1.00000000000,testbench=0,total_blocks=27,xilinx_black_box_block=1,xilinx_gateway_in_block=6,xilinx_gateway_out_block=4,xilinx_system_generator_block=1,}";
+  attribute core_generation_info of structural : architecture is "fft_2pt_co_sim,sysgen_core,{black_box_modelsim_used=1,clock_period=10.00000000,clocking=Clock_Enables,compilation=HDL_Netlist,modelsim_hdl_co_simulation_interface_block=1,sample_periods=1.00000000000,testbench=0,total_blocks=19,xilinx_black_box_block=1,xilinx_gateway_in_block=4,xilinx_gateway_out_block=2,xilinx_system_generator_block=1,}";
 
   signal black_box_ctrl_net: std_logic;
-  signal black_box_data_0_im_in_net: std_logic;
-  signal black_box_data_0_im_out_net: std_logic;
-  signal black_box_data_0_re_in_net: std_logic;
-  signal black_box_data_0_re_out_net: std_logic;
-  signal black_box_data_1_im_in_net: std_logic;
-  signal black_box_data_1_im_out_net: std_logic;
-  signal black_box_data_1_re_in_net: std_logic;
-  signal black_box_data_1_re_out_net: std_logic;
+  signal black_box_data_im_in_net: std_logic_vector(1 downto 0);
+  signal black_box_data_im_out_net: std_logic_vector(1 downto 0);
+  signal black_box_data_re_in_net: std_logic_vector(1 downto 0);
+  signal black_box_data_re_out_net: std_logic_vector(1 downto 0);
   signal black_box_rst_net: std_logic;
   signal ce_1_sg_x0: std_logic;
   signal clk_1_sg_x0: std_logic;
 
 begin
   black_box_ctrl_net <= black_box_ctrl;
-  black_box_data_0_im_in_net <= black_box_data_0_im_in;
-  black_box_data_0_re_in_net <= black_box_data_0_re_in;
-  black_box_data_1_im_in_net <= black_box_data_1_im_in;
-  black_box_data_1_re_in_net <= black_box_data_1_re_in;
+  black_box_data_im_in_net <= black_box_data_im_in;
+  black_box_data_re_in_net <= black_box_data_re_in;
   black_box_rst_net <= black_box_rst;
   ce_1_sg_x0 <= ce_1;
   clk_1_sg_x0 <= clk_1;
-  black_box_data_0_im_out <= black_box_data_0_im_out_net;
-  black_box_data_0_re_out <= black_box_data_0_re_out_net;
-  black_box_data_1_im_out <= black_box_data_1_im_out_net;
-  black_box_data_1_re_out <= black_box_data_1_re_out_net;
+  black_box_data_im_out <= black_box_data_im_out_net;
+  black_box_data_re_out <= black_box_data_re_out_net;
 
   black_box: entity work.fft_pt2
     port map (
       ce => ce_1_sg_x0,
       clk => clk_1_sg_x0,
       ctrl => black_box_ctrl_net,
-      data_0_im_in => black_box_data_0_im_in_net,
-      data_0_re_in => black_box_data_0_re_in_net,
-      data_1_im_in => black_box_data_1_im_in_net,
-      data_1_re_in => black_box_data_1_re_in_net,
+      data_im_in => black_box_data_im_in_net,
+      data_re_in => black_box_data_re_in_net,
       rst => black_box_rst_net,
-      data_0_im_out => black_box_data_0_im_out_net,
-      data_0_re_out => black_box_data_0_re_out_net,
-      data_1_im_out => black_box_data_1_im_out_net,
-      data_1_re_out => black_box_data_1_re_out_net
+      data_im_out => black_box_data_im_out_net,
+      data_re_out => black_box_data_re_out_net
     );
 
 end structural;

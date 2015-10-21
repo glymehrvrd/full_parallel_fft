@@ -5,7 +5,13 @@ Matlab 8.0.0.783 (R2012b)               D:/MATLAB/R2012b
 ISE                                     D:/Xilinx/14.7/ISE_DS/ISE
 --------------------------------------------------------------------------------
 Summary of Errors:
-Error 0001: Internal Error
+Error 0001: Input data type for port "data_re_in" must have width=2.
+     Block: 'fft_2pt_co_sim/Black Box'
+Error 0002: Input data type for port "data_im_in" must have width=2.
+     Block: 'fft_2pt_co_sim/Black Box'
+Error 0003: Input data type for port "data_re_in" must have width=2.
+     Block: 'fft_2pt_co_sim/Black Box'
+Error 0004: Input data type for port "data_im_in" must have width=2.
      Block: 'fft_2pt_co_sim/Black Box'
 --------------------------------------------------------------------------------
 
@@ -15,13 +21,40 @@ Reported by:
   'fft_2pt_co_sim/Black Box'
 
 Details:
-An internal error occurred in the Xilinx Blockset Library.
+Input data type for port "data_re_in" must have width=2.
+Error occurred during "Rate and Type Propagation".
 
-Please report this error to Xilinx (http://support.xilinx.com),
-in as much detail as possible. You may also find immediate help
-in the Answers Database and other online resources at http://support.xilinx.com.
+--------------------------------------------------------------------------------
 
+Error 0001:
 
-Error occurred during "Simulation Update Outputs".
+Reported by:
+  'fft_2pt_co_sim/Black Box'
+
+Details:
+Input data type for port "data_im_in" must have width=2.
+Error occurred during "Rate and Type Propagation".
+
+--------------------------------------------------------------------------------
+
+Error 0001:
+
+Reported by:
+  'fft_2pt_co_sim/Black Box'
+
+Details:
+Input data type for port "data_re_in" must have width=2.
+Error occurred during "Rate and Type Error Checking".
+
+--------------------------------------------------------------------------------
+
+Error 0001:
+
+Reported by:
+  'fft_2pt_co_sim/Black Box'
+
+Details:
+Input data type for port "data_im_in" must have width=2.
+Error occurred during "Rate and Type Error Checking".
 
 --------------------------------------------------------------------------------
