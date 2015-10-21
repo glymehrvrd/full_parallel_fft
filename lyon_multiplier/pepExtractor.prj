@@ -1,7 +1,0 @@
-work	"Dff_1.vhd"
-work	"adder_bit1.vhd"
-work	"adder_half_bit1.vhd"
-work	"lyon_multiplier.vhd"
-work	"mux_in2.vhd"
-work	"partial_product.vhd"
-work	"partial_product_last.vhd"
