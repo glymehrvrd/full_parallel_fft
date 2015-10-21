@@ -1,0 +1,5 @@
+vhdl work "adder_half_bit1.vhd"
+vhdl work "Dff_preload_1_init_1.vhd"
+vhdl work "Dff_preload_1.vhd"
+vhdl work "adder_bit1.vhd"
+vhdl work "fft_pt2.vhd"
