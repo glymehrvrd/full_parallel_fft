@@ -1,44 +1,16 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 15:13:28 10/13/2015
--- Design Name:
--- Module Name: partial_product - Behavioral
--- Project Name:
--- Target Devices:
--- Tool versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 ENTITY partial_product IS
     PORT (
         clk     : IN std_logic;
         rst     : IN std_logic;
         ce      : IN std_logic;
-        ctrl    : IN STD_LOGIC; --进位信号
-        d1_in   : IN std_logic;
-        d2_in   : IN STD_LOGIC;--两路数据输入
-        d3_in   : IN std_logic;
-        pp_out  : OUT STD_LOGIC --部分积
+        ctrl    : IN STD_LOGIC;
+        data1_in   : IN std_logic;
+        data2_in   : IN STD_LOGIC;
+        data3_in   : IN std_logic;
+        pp_out  : OUT STD_LOGIC --- partial product
     );
 END partial_product;
 
@@ -46,8 +18,8 @@ ARCHITECTURE Behavioral OF partial_product IS
 
     COMPONENT adder_bit1 IS
         PORT (
-            d1_in    : IN STD_LOGIC;
-            d2_in    : IN STD_LOGIC;
+            data1_in    : IN STD_LOGIC;
+            data2_in    : IN STD_LOGIC;
             c_in     : IN STD_LOGIC;
             sum_out  : OUT STD_LOGIC;
             c_out    : OUT STD_LOGIC
@@ -68,15 +40,15 @@ ARCHITECTURE Behavioral OF partial_product IS
         PORT (
             sel    : IN STD_LOGIC;
 
-            d1_in  : IN STD_LOGIC;
-            d2_in  : IN std_logic;
-            d_out  : OUT std_logic
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN std_logic;
+            data_out  : OUT std_logic
         );
     END COMPONENT;
 
     SIGNAL ctrl_delay1 : std_logic;
 
-    SIGNAL d1_in_delay1 : std_logic;
+    SIGNAL data1_in_delay1 : std_logic;
 
     SIGNAL adder_in1 : std_logic;
     SIGNAL adder_in2 : std_logic;
@@ -97,22 +69,22 @@ BEGIN
 
     BUFF_DIN1 : Dff_reg1
     PORT MAP(
-        D    => d1_in, 
+        D    => data1_in, 
         clk  => clk, 
         rst  => rst, 
         ce   => ce, 
-        Q    => d1_in_delay1
+        Q    => data1_in_delay1
     );
 
     MUX_DIN1 : mux_in2
     PORT MAP(
         sel    => ctrl, 
-        d1_in  => d1_in, 
-        d2_in  => d1_in_delay1, 
-        d_out  => adder_in1
+        data1_in  => data1_in, 
+        data2_in  => data1_in_delay1, 
+        data_out  => adder_in1
     );
 
-    adder_in2 <= d2_in AND d3_in;
+    adder_in2 <= data2_in AND data3_in;
 
     BUFF_C : Dff_reg1
     PORT MAP(
@@ -126,15 +98,15 @@ BEGIN
     MUX_ADDER_C_IN : mux_in2
     PORT MAP(
         sel    => ctrl_delay1, 
-        d1_in  => c_buff, 
-        d2_in  => '0', 
-        d_out  => adder_c_in
+        data1_in  => c_buff, 
+        data2_in  => '0', 
+        data_out  => adder_c_in
     );
 
     ADDER : adder_bit1
     PORT MAP(
-        d1_in    => adder_in1, 
-        d2_in    => adder_in2, 
+        data1_in    => adder_in1, 
+        data2_in    => adder_in2, 
         c_in     => adder_c_in, 
         sum_out  => pp_out, 
         c_out    => c_out

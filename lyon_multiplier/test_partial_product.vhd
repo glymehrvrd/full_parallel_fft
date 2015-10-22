@@ -45,9 +45,9 @@ ARCHITECTURE behavior OF test_partial_product IS
             rst     : IN std_logic;
             ce      : IN std_logic;
             ctrl    : IN std_logic;
-            d1_in   : IN std_logic;
-            d2_in   : IN std_logic;
-            d3_in   : IN std_logic;
+            data1_in   : IN std_logic;
+            data2_in   : IN std_logic;
+            data3_in   : IN std_logic;
             pp_out  : OUT std_logic
         );
     END COMPONENT;
@@ -66,9 +66,9 @@ ARCHITECTURE behavior OF test_partial_product IS
     SIGNAL rst : std_logic := '0';
     SIGNAL ce : std_logic := '0';
     SIGNAL ctrl : std_logic := '0';
-    SIGNAL d1_in : std_logic := '0';
-    SIGNAL d2_in : std_logic := '0';
-    SIGNAL d3_in : std_logic := '1';
+    SIGNAL data1_in : std_logic := '0';
+    SIGNAL data2_in : std_logic := '0';
+    SIGNAL data3_in : std_logic := '1';
 
     SIGNAL ctrl_buff : std_logic;
     SIGNAL d1_in_buff : std_logic;
@@ -88,7 +88,7 @@ BEGIN
     );
     D2 : Dff_reg1
     PORT MAP(
-        D    => d1_in, 
+        D    => data1_in, 
         clk  => clk, 
         rst  => rst, 
         Q    => d1_in_buff
@@ -100,9 +100,9 @@ BEGIN
         rst     => rst, 
         ce      => ce, 
         ctrl    => ctrl_buff, 
-        d1_in   => d1_in_buff, 
-        d2_in   => d2_in, 
-        d3_in   => d3_in, 
+        data1_in   => d1_in_buff, 
+        data2_in   => data2_in, 
+        data3_in   => data3_in, 
         pp_out  => pp_out
     );
 
@@ -126,43 +126,43 @@ BEGIN
         ce <= '1';
         WAIT FOR clk_period * 10;
         -- insert stimulus here
-        d1_in <= '0';
-        d2_in <= '1';
+        data1_in <= '0';
+        data2_in <= '1';
         ctrl <= '1';
         WAIT FOR clk_period;
 
-        d1_in <= '0';
-        d2_in <= '0';
+        data1_in <= '0';
+        data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
  
-        d1_in <= '1';
-        d2_in <= '0';
+        data1_in <= '1';
+        data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
  
-        d1_in <= '0';
-        d2_in <= '0';
+        data1_in <= '0';
+        data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
  
-        d1_in <= '1';
-        d2_in <= '1';
+        data1_in <= '1';
+        data2_in <= '1';
         ctrl <= '1';
         WAIT FOR clk_period;
  
-        d1_in <= '0';
-        d2_in <= '1';
+        data1_in <= '0';
+        data2_in <= '1';
         ctrl <= '0';
         WAIT FOR clk_period;
 
-        d1_in <= '1';
-        d2_in <= '0';
+        data1_in <= '1';
+        data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
 
-        d1_in <= '0';
-        d2_in <= '0';
+        data1_in <= '0';
+        data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
         WAIT;
