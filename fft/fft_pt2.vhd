@@ -1,33 +1,5 @@
-----------------------------------------------------------------------------------
--- Company:
--- Engineer:
---
--- Create Date: 15:10:51 10/09/2015
--- Design Name:
--- Module Name: fft_pt2 - Behavioral
--- Project Name:
--- Target Devices:
--- Tool versions:
--- Description:
---
--- Dependencies:
---
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
-----------------------------------------------------------------------------------
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 ENTITY fft_pt2 IS
     PORT (
@@ -48,8 +20,8 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
 
     COMPONENT adder_bit1 IS
         PORT (
-            d1_in    : IN STD_LOGIC;
-            d2_in    : IN STD_LOGIC;
+            data1_in    : IN STD_LOGIC;
+            data2_in    : IN STD_LOGIC;
             c_in     : IN STD_LOGIC;
             sum_out  : OUT STD_LOGIC;
             c_out    : OUT STD_LOGIC
@@ -117,8 +89,8 @@ BEGIN
 
     ADDER0_RE : adder_bit1
     PORT MAP(
-        d1_in    => data_re_in(0), 
-        d2_in    => data_re_in(1), 
+        data1_in    => data_re_in(0), 
+        data2_in    => data_re_in(1), 
         c_in     => c_buff(0), 
         sum_out  => data_re_out_buff(0), 
         c_out    => c(0)
@@ -137,8 +109,8 @@ BEGIN
 
     ADDER0_IM : adder_bit1
     PORT MAP(
-        d1_in    => data_im_in(0), 
-        d2_in    => data_im_in(1), 
+        data1_in    => data_im_in(0), 
+        data2_in    => data_im_in(1), 
         c_in     => c_buff(1), 
         sum_out  => data_im_out_buff(0), 
         c_out    => c(1)
@@ -157,8 +129,8 @@ BEGIN
 
     ADDER1_RE : adder_bit1
     PORT MAP(
-        d1_in    => data_re_in(0), 
-        d2_in    => not_data_re_in(1), 
+        data1_in    => data_re_in(0), 
+        data2_in    => not_data_re_in(1), 
         c_in     => c_buff(2), 
         sum_out  => data_re_out_buff(1), 
         c_out    => c(2)
@@ -177,8 +149,8 @@ BEGIN
 
     ADDER1_IM : adder_bit1
     PORT MAP(
-        d1_in    => data_im_in(0), 
-        d2_in    => not_data_im_in(1), 
+        data1_in    => data_im_in(0), 
+        data2_in    => not_data_im_in(1), 
         c_in     => c_buff(3), 
         sum_out  => data_im_out_buff(1), 
         c_out    => c(3)

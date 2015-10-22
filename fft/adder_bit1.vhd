@@ -31,8 +31,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY adder_bit1 IS
     PORT (
-        d1_in    : IN STD_LOGIC;
-        d2_in    : IN STD_LOGIC;
+        data1_in    : IN STD_LOGIC;
+        data2_in    : IN STD_LOGIC;
         c_in     : IN STD_LOGIC;
         sum_out  : OUT STD_LOGIC;
         c_out    : OUT STD_LOGIC
@@ -43,8 +43,8 @@ ARCHITECTURE Behavioral OF adder_bit1 IS
 
     COMPONENT adder_half_bit1 IS
         PORT (
-            d1_in    : IN STD_LOGIC;
-            d2_in    : IN STD_LOGIC;
+            data1_in    : IN STD_LOGIC;
+            data2_in    : IN STD_LOGIC;
             sum_out  : OUT STD_LOGIC;
             c_out    : OUT STD_LOGIC
         );
@@ -56,7 +56,7 @@ ARCHITECTURE Behavioral OF adder_bit1 IS
 
 BEGIN
     HA1 : adder_half_bit1
-    PORT MAP(d1_in, d2_in, s1, c1);
+    PORT MAP(data1_in, data2_in, s1, c1);
     HA2 : adder_half_bit1
     PORT MAP(s1, c_in, sum_out, c2);
 
