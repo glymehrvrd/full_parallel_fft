@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "D:/dell/Documents/ISE Projects/fft/lyon_multiplier/test_lyon_multiplier_isim_beh.exe" -prj "D:/dell/Documents/ISE Projects/fft/lyon_multiplier/test_lyon_multiplier_beh.prj" "work.test_lyon_multiplier" 
+-intstyle "ise" -incremental -lib "secureip" -o "E:/Glyme/Documents/ISE Projects/fft/lyon_multiplier/test_complex_multiplier_isim_beh.exe" -prj "E:/Glyme/Documents/ISE Projects/fft/lyon_multiplier/test_complex_multiplier_beh.prj" "test_complex_multiplier" 

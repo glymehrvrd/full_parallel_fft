@@ -3,12 +3,12 @@
 -- Engineer:
 --
 -- Create Date: 20:35:46 10/19/2015
--- Design Name: 
+-- Design Name:
 -- Module Name: d:/dell/Documents/ISE Projects/fft/fft/test_fft_pt4.vhd
 -- Project Name: fft
--- Target Device: 
--- Tool versions: 
--- Description: 
+-- Target Device:
+-- Tool versions:
+-- Description:
 --
 -- VHDL Test Bench Created by ISE for module: fft_pt4
 --
@@ -63,8 +63,6 @@ ARCHITECTURE behavior OF test_fft_pt4 IS
             data_3_im_out  : OUT std_logic
         );
     END COMPONENT;
- 
-
     --Inputs
     SIGNAL clk : std_logic := '0';
     SIGNAL rst : std_logic := '0';
@@ -158,7 +156,7 @@ BEGIN
     --- data_2_im_in = -6 '1010'
     --- data_3_re_in = 7 '0111'
     --- data_3_im_in = -8 '1000'
- 
+
     data_0_re_in <= '1';
     data_0_im_in <= '0';
     data_1_re_in <= '1';

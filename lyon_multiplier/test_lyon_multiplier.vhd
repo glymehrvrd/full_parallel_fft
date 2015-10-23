@@ -3,12 +3,12 @@
 -- Engineer:
 --
 -- Create Date: 16:31:49 10/14/2015
--- Design Name: 
+-- Design Name:
 -- Module Name: d:/dell/Documents/ISE Projects/lyon_multiplier/test_lyon_multiplier.vhd
 -- Project Name: lyon_multiplier
--- Target Device: 
--- Tool versions: 
--- Description: 
+-- Target Device:
+-- Tool versions:
+-- Description:
 --
 -- VHDL Test Bench Created by ISE for module: lyon_multiplier
 --
@@ -45,12 +45,10 @@ ARCHITECTURE behavior OF test_lyon_multiplier IS
             rst          : IN std_logic;
             ce           : IN std_logic;
             ctrl         : IN std_logic;
-            data1_in        : IN std_logic;
+            data1_in     : IN std_logic;
             product_out  : OUT std_logic
         );
     END COMPONENT;
- 
-
     --Inputs
     SIGNAL clk : std_logic := '0';
     SIGNAL rst : std_logic := '0';
@@ -72,7 +70,7 @@ BEGIN
         rst          => rst, 
         ce           => ce, 
         ctrl         => ctrl, 
-        data1_in        => data1_in, 
+        data1_in     => data1_in, 
         product_out  => product_out
     );
 
@@ -157,7 +155,7 @@ BEGIN
 
     data1_in <= '1';
     WAIT FOR clk_period;
- 
+
     data1_in <= '0';
     WAIT;
 END PROCESS;

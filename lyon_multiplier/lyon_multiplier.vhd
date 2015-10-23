@@ -1,16 +1,17 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.ALL;
 
 ENTITY lyon_multiplier IS
-    generic(
-            multiplicator : integer:=-1061
+    GENERIC (
+        multiplicator : INTEGER
     );
     PORT (
         clk          : IN std_logic;
         rst          : IN std_logic;
         ce           : IN std_logic;
         ctrl         : IN STD_LOGIC;
-        data_in        : IN std_logic;
+        data_in      : IN std_logic;
         product_out  : OUT STD_LOGIC
     );
 END lyon_multiplier;
@@ -19,27 +20,27 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
 
     COMPONENT partial_product IS
         PORT (
-            clk     : IN std_logic;
-            rst     : IN std_logic;
-            ce      : IN std_logic;
-            ctrl    : IN STD_LOGIC; --进位信号
-            data1_in   : IN std_logic;
-            data2_in   : IN STD_LOGIC;--两路数据输入
-            data3_in   : IN std_logic;
-            pp_out  : OUT STD_LOGIC --部分积
+            clk       : IN std_logic;
+            rst       : IN std_logic;
+            ce        : IN std_logic;
+            ctrl      : IN STD_LOGIC;
+            data1_in  : IN std_logic;
+            data2_in  : IN STD_LOGIC;
+            data3_in  : IN std_logic;
+            pp_out    : OUT STD_LOGIC
         );
     END COMPONENT;
 
     COMPONENT partial_product_last IS
         PORT (
-            clk     : IN std_logic;
-            rst     : IN std_logic;
-            ce      : IN std_logic;
-            ctrl    : IN STD_LOGIC; --进位信号
-            data1_in   : IN std_logic;
-            data2_in   : IN STD_LOGIC;--两路数据输入
-            data3_in   : IN std_logic;
-            pp_out  : OUT STD_LOGIC --部分积
+            clk       : IN std_logic;
+            rst       : IN std_logic;
+            ce        : IN std_logic;
+            ctrl      : IN STD_LOGIC;
+            data1_in  : IN std_logic;
+            data2_in  : IN STD_LOGIC;
+            data3_in  : IN std_logic;
+            pp_out    : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -47,6 +48,9 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
     SIGNAL ctrl_delay : std_logic_vector(14 DOWNTO 0);
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
+
+    --- multiplicator in std_logic_vector
+    SIGNAL mul_vec : std_logic_vector(15 DOWNTO 0) := std_logic_vector(to_signed(multiplicator, 16));
 
 BEGIN
     data_in_delay(0) <= data_in;
@@ -75,33 +79,33 @@ BEGIN
         END IF;
     END PROCESS;
 
-    pp(0) <= multiplicator(0) AND data_in;
+    pp(0) <= mul_vec(0) AND data_in;
 
     GEN_PP : 
     FOR I IN 0 TO 13 GENERATE
         PPX : partial_product
         PORT MAP(
-            clk     => clk, 
-            rst     => rst, 
-            ce      => ce, 
-            data1_in   => pp(I), 
-            data2_in   => data_in_delay(I + 1), 
-            data3_in   => multiplicator(I + 1), 
-            ctrl    => ctrl_delay(I), 
-            pp_out  => pp(I + 1)
+            clk       => clk, 
+            rst       => rst, 
+            ce        => ce, 
+            data1_in  => pp(I), 
+            data2_in  => data_in_delay(I + 1), 
+            data3_in  => mul_vec(I + 1), 
+            ctrl      => ctrl_delay(I), 
+            pp_out    => pp(I + 1)
         );
     END GENERATE;
 
     PP_LAST : partial_product_last
     PORT MAP(
-        clk     => clk, 
-        rst     => rst, 
-        ce      => ce, 
-        data1_in   => pp(14), 
-        data2_in   => data_in_delay(15), 
-        data3_in   => multiplicator(15), 
-        ctrl    => ctrl_delay(14), 
-        pp_out  => pp(15)
+        clk       => clk, 
+        rst       => rst, 
+        ce        => ce, 
+        data1_in  => pp(14), 
+        data2_in  => data_in_delay(15), 
+        data3_in  => mul_vec(15), 
+        ctrl      => ctrl_delay(14), 
+        pp_out    => pp(15)
     );
 
     --- output

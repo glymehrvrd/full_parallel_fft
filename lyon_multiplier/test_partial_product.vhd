@@ -3,12 +3,12 @@
 -- Engineer:
 --
 -- Create Date: 15:53:08 10/13/2015
--- Design Name: 
+-- Design Name:
 -- Module Name: d:/dell/Documents/ISE Projects/lyon_multiplier/test_partial_product.vhd
 -- Project Name: lyon_multiplier
--- Target Device: 
--- Tool versions: 
--- Description: 
+-- Target Device:
+-- Tool versions:
+-- Description:
 --
 -- VHDL Test Bench Created by ISE for module: partial_product
 --
@@ -41,17 +41,17 @@ ARCHITECTURE behavior OF test_partial_product IS
 
     COMPONENT partial_product
         PORT (
-            clk     : IN std_logic;
-            rst     : IN std_logic;
-            ce      : IN std_logic;
-            ctrl    : IN std_logic;
-            data1_in   : IN std_logic;
-            data2_in   : IN std_logic;
-            data3_in   : IN std_logic;
-            pp_out  : OUT std_logic
+            clk       : IN std_logic;
+            rst       : IN std_logic;
+            ce        : IN std_logic;
+            ctrl      : IN std_logic;
+            data1_in  : IN std_logic;
+            data2_in  : IN std_logic;
+            data3_in  : IN std_logic;
+            pp_out    : OUT std_logic
         );
     END COMPONENT;
- 
+
     COMPONENT Dff_reg1 IS
         PORT (
             D    : IN STD_LOGIC;
@@ -96,14 +96,14 @@ BEGIN
     -- Instantiate the Unit Under Test (UUT)
     uut : partial_product
     PORT MAP(
-        clk     => clk, 
-        rst     => rst, 
-        ce      => ce, 
-        ctrl    => ctrl_buff, 
-        data1_in   => d1_in_buff, 
-        data2_in   => data2_in, 
-        data3_in   => data3_in, 
-        pp_out  => pp_out
+        clk       => clk, 
+        rst       => rst, 
+        ce        => ce, 
+        ctrl      => ctrl_buff, 
+        data1_in  => d1_in_buff, 
+        data2_in  => data2_in, 
+        data3_in  => data3_in, 
+        pp_out    => pp_out
     );
 
     -- Clock process definitions
@@ -121,7 +121,7 @@ BEGIN
         rst <= '0';
         ce <= '0';
         ctrl <= '0';
-        WAIT FOR 95 ns; 
+        WAIT FOR 95 ns;
         rst <= '1';
         ce <= '1';
         WAIT FOR clk_period * 10;
@@ -135,22 +135,22 @@ BEGIN
         data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
- 
+
         data1_in <= '1';
         data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
- 
+
         data1_in <= '0';
         data2_in <= '0';
         ctrl <= '0';
         WAIT FOR clk_period;
- 
+
         data1_in <= '1';
         data2_in <= '1';
         ctrl <= '1';
         WAIT FOR clk_period;
- 
+
         data1_in <= '0';
         data2_in <= '1';
         ctrl <= '0';

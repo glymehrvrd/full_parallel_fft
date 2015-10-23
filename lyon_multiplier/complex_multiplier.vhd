@@ -1,46 +1,47 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity complex_multiplier is
-    generic (
-        re_multiplicator: integer:=-1061;
-        im_multiplicator: integer:=-1061
+ENTITY complex_multiplier IS
+    GENERIC (
+        re_multiplicator : INTEGER := 0;
+        im_multiplicator : INTEGER := 0
     );
     PORT (
-        clk          : IN std_logic;
-        rst          : IN std_logic;
-        ce           : IN std_logic;
-        ctrl         : IN STD_LOGIC;
-        data_re_in        : IN std_logic;
-        data_im_in        : IN std_logic;
+        clk             : IN std_logic;
+        rst             : IN std_logic;
+        ce              : IN std_logic;
+        ctrl            : IN STD_LOGIC;
+        data_re_in      : IN std_logic;
+        data_im_in      : IN std_logic;
         product_re_out  : OUT STD_LOGIC;
         product_im_out  : OUT STD_LOGIC
     );
-end complex_multiplier;
+END complex_multiplier;
 
-architecture Behavioral of complex_multiplier is
+ARCHITECTURE Behavioral OF complex_multiplier IS
 
-    component lyon_multiplier is
-        generic(
-            multiplicator : std_logic_vector(15 DOWNTO 0)
+    COMPONENT lyon_multiplier IS
+        GENERIC (
+            multiplicator   : INTEGER
         );
         PORT (
             clk          : IN std_logic;
             rst          : IN std_logic;
             ce           : IN std_logic;
             ctrl         : IN STD_LOGIC;
-            data_in        : IN std_logic;
+            data_in      : IN std_logic;
             product_out  : OUT STD_LOGIC
         );
-    end component;
+    END COMPONENT;
 
     COMPONENT adder_bit1 IS
         PORT (
-            data1_in    : IN STD_LOGIC;
-            data2_in    : IN STD_LOGIC;
-            c_in     : IN STD_LOGIC;
-            sum_out  : OUT STD_LOGIC;
-            c_out    : OUT STD_LOGIC
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN STD_LOGIC;
+            c_in      : IN STD_LOGIC;
+            sum_out   : OUT STD_LOGIC;
+            c_out     : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -66,72 +67,56 @@ architecture Behavioral of complex_multiplier is
         );
     END COMPONENT;
 
------ c+d, a-b
---signal cd,ab:std_logic;
------ b*c, a*d, (c+d)*(a-b)
---signal bc,ad,cdab:std_logic;
+    SIGNAL acd, bcd, dab, ab : std_logic;
+    SIGNAL not_b : std_logic;
 
-    signal ac,bd,bc,ad:std_logic;
-    signal not_bd:std_logic;
-
-    SIGNAL c : std_logic_vector(1 DOWNTO 0);
-    SIGNAL c_buff : std_logic_vector(1 DOWNTO 0);
-begin
-
+    SIGNAL c : std_logic_vector(2 DOWNTO 0);
+    SIGNAL c_buff : std_logic_vector(2 DOWNTO 0);
+BEGIN
     --- (a+b*i)*(c+d*i) = (a*c - b*d) + (b*c + a*d)*i = x + y*i
-    --- x = (c+d)*(a-b) + (b*c - a*d)
-    --- y = (b*c + a*d)
-    not_bd<=not bd;
-    --- calculate a*c
-    UAC : lyon_multiplier
-    generic map (multiplicator=>re_multiplicator)
-    port map(
-        clk=>clk,
-        rst=>rst,
-        ce=>ce,
-        ctrl=>ctrl,
-        data_in=>data_re_in,
-        product_out=>ac
+    --- x = a(c-d)+d(a-b)
+    --- y = b(c+d)+d(a-b)
+
+    not_b <= data_im_in;
+
+    --- calculate a(c-d)
+    UMUL0 : lyon_multiplier
+    GENERIC MAP(multiplicator => re_multiplicator - im_multiplicator)
+    PORT MAP(
+        clk          => clk, 
+        rst          => rst, 
+        ce           => ce, 
+        ctrl         => ctrl, 
+        data_in      => data_re_in, 
+        product_out  => acd
     );
 
-    --- calculate b*d
-    UBD : lyon_multiplier
-    generic map (multiplicator=>im_multiplicator)
-    port map(
-        clk=>clk,
-        rst=>rst,
-        ce=>ce,
-        ctrl=>ctrl,
-        data_in=>data_im_in,
-        product_out=>bd
+    --- calculate b(c+d)
+    UMUL1 : lyon_multiplier
+    GENERIC MAP(multiplicator => re_multiplicator + im_multiplicator)
+    PORT MAP(
+        clk          => clk, 
+        rst          => rst, 
+        ce           => ce, 
+        ctrl         => ctrl, 
+        data_in      => data_im_in, 
+        product_out  => bcd
     );
 
-    --- calculate b*c
-    UBC : lyon_multiplier
-    generic map (multiplicator=>re_multiplicator)
-    port map(
-        clk=>clk,
-        rst=>rst,
-        ce=>ce,
-        ctrl=>ctrl,
-        data_in=>data_im_in,
-        product_out=>bc
+    --- calculate d(a-b)
+    UMUL2 : lyon_multiplier
+    GENERIC MAP(multiplicator => im_multiplicator)
+    PORT MAP(
+        clk          => clk, 
+        rst          => rst, 
+        ce           => ce, 
+        ctrl         => ctrl, 
+        data_in      => ab, 
+        product_out  => dab
     );
 
-    --- calculate a*d
-    UAD : lyon_multiplier
-    generic map (multiplicator=>im_multiplicator)
-    port map(
-        clk=>clk,
-        rst=>rst,
-        ce=>ce,
-        ctrl=>ctrl,
-        data_in=>data_re_in,
-        product_out=>ad
-    );
-
-    --- x=ac-bd
-    C_BUFF_RE : Dff_preload_reg1_init_1
+    --- a-b
+    C_BUFF_AB : Dff_preload_reg1_init_1
     PORT MAP(
         D        => c(0), 
         clk      => clk, 
@@ -141,17 +126,17 @@ begin
         Q        => c_buff(0)
     );
 
-    ADDER_RE : adder_bit1
+    ADDER_AB : adder_bit1
     PORT MAP(
-        data1_in    => ac, 
-        data2_in    => not_bd, 
-        c_in     => c_buff(0), 
-        sum_out  => product_re_out, 
-        c_out    => c(0)
+        data1_in  => data_re_in, 
+        data2_in  => not_b, 
+        c_in      => c_buff(0), 
+        sum_out   => ab, 
+        c_out     => c(0)
     );
 
-    --- y=bc+ad
-    C_BUFF_IM : Dff_preload_reg1
+    --- x = a(c-d)+d(a-b)
+    C_BUFF_RE : Dff_preload_reg1
     PORT MAP(
         D        => c(1), 
         clk      => clk, 
@@ -161,13 +146,33 @@ begin
         Q        => c_buff(1)
     );
 
-    ADDER_IM : adder_bit1
+    ADDER_RE : adder_bit1
     PORT MAP(
-        data1_in    => bc, 
-        data2_in    => ad, 
-        c_in     => c_buff(1), 
-        sum_out  => product_im_out, 
-        c_out    => c(1)
+        data1_in  => acd, 
+        data2_in  => dab, 
+        c_in      => c_buff(1), 
+        sum_out   => product_re_out, 
+        c_out     => c(1)
     );
 
-end Behavioral;
+    --- y = b(c+d)+d(a-b)
+    C_BUFF_IM : Dff_preload_reg1
+    PORT MAP(
+        D        => c(2), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl, 
+        Q        => c_buff(2)
+    );
+
+    ADDER_IM : adder_bit1
+    PORT MAP(
+        data1_in  => bcd, 
+        data2_in  => dab, 
+        c_in      => c_buff(2), 
+        sum_out   => product_im_out, 
+        c_out     => c(2)
+    );
+
+END Behavioral;

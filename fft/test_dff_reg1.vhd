@@ -3,12 +3,12 @@
 -- Engineer:
 --
 -- Create Date: 15:32:34 10/19/2015
--- Design Name: 
+-- Design Name:
 -- Module Name: d:/dell/Documents/ISE Projects/fft/fft/test_dff_reg1.vhd
 -- Project Name: fft
--- Target Device: 
--- Tool versions: 
--- Description: 
+-- Target Device:
+-- Tool versions:
+-- Description:
 --
 -- VHDL Test Bench Created by ISE for module: Dff_reg1
 --
@@ -48,8 +48,6 @@ ARCHITECTURE behavior OF test_dff_reg1 IS
             Q    : OUT std_logic
         );
     END COMPONENT;
- 
-
     --Inputs
     SIGNAL D : std_logic := '0';
     SIGNAL clk : std_logic := '0';
@@ -86,7 +84,7 @@ BEGIN
     BEGIN
         rst <= '0';
         -- hold reset state for 100 ns.
-        WAIT FOR 100 ns; 
+        WAIT FOR 100 ns;
         rst <= '1';
         ce <= '1';
         WAIT FOR clk_period * 10;
