@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY lyon_multiplier IS
     generic(
-            multiplicator : std_logic_vector(15 DOWNTO 0):="1111101111011011"
+            multiplicator : integer:=-1061
     );
     PORT (
         clk          : IN std_logic;

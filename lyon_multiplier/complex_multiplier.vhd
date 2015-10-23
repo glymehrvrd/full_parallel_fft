@@ -3,8 +3,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity complex_multiplier is
     generic (
-        re_multiplicator: std_logic_vector(15 downto 0):="1111101111011011";
-        im_multiplicator: std_logic_vector(15 downto 0):="1111101111011011"
+        re_multiplicator: integer:=-1061;
+        im_multiplicator: integer:=-1061
     );
     PORT (
         clk          : IN std_logic;
