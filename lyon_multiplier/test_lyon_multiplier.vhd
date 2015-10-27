@@ -45,7 +45,7 @@ ARCHITECTURE behavior OF test_lyon_multiplier IS
             rst          : IN std_logic;
             ce           : IN std_logic;
             ctrl         : IN std_logic;
-            data1_in     : IN std_logic;
+            data_in     : IN std_logic;
             product_out  : OUT std_logic
         );
     END COMPONENT;
@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF test_lyon_multiplier IS
     SIGNAL rst : std_logic := '0';
     SIGNAL ce : std_logic := '0';
     SIGNAL ctrl : std_logic := '0';
-    SIGNAL data1_in : std_logic := '0';
+    SIGNAL data_in : std_logic := '0';
 
     --Outputs
     SIGNAL product_out : std_logic;
@@ -70,7 +70,7 @@ BEGIN
         rst          => rst, 
         ce           => ce, 
         ctrl         => ctrl, 
-        data1_in     => data1_in, 
+        data_in     => data_in, 
         product_out  => product_out
     );
 
@@ -108,55 +108,55 @@ BEGIN
     WAIT FOR clk_period * 10;
     -- insert stimulus here
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '1';
+    data_in <= '1';
     WAIT FOR clk_period;
 
-    data1_in <= '0';
+    data_in <= '0';
     WAIT;
 END PROCESS;
 

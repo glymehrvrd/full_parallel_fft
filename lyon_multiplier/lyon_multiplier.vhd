@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY lyon_multiplier IS
     GENERIC (
-        multiplicator : INTEGER
+        multiplicator : INTEGER := 17000
     );
     PORT (
         clk          : IN std_logic;

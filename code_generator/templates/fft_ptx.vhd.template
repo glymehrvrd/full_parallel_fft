@@ -52,17 +52,29 @@ component {{ rhs_component_name }} is
     );
 end component;
 
-component mul_N_k is
+component complex_multiplier is
+    GENERIC (
+        re_multiplicator : INTEGER;
+        im_multiplicator : INTEGER
+    );
     PORT (
-        clk          : IN std_logic;
-        rst          : IN std_logic;
-        ce           : IN std_logic;
-        ctrl         : IN STD_LOGIC;
-        data_re_in        : IN std_logic;
-        data_im_in        : IN std_logic;
+        clk             : IN std_logic;
+        rst             : IN std_logic;
+        ce              : IN std_logic;
+        ctrl            : IN STD_LOGIC;
+        data_re_in      : IN std_logic;
+        data_im_in      : IN std_logic;
         product_re_out  : OUT STD_LOGIC;
         product_im_out  : OUT STD_LOGIC
     );
+end component;
+
+component Dff_reg16 is
+    Port ( D : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+           ce  : in  STD_LOGIC;
+           rst : in  STD_LOGIC;
+           Q : out  STD_LOGIC);
 end component;
 
 signal first_stage_re_out, first_stage_im_out: std_logic_vector({{ point-1 }} downto 0);
@@ -78,8 +90,12 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl,
-            data_re_in=>({% for j in range(0,point,rhs_point)|reverse %}{{'data_re_in(%d)'|format(j)}}{{',' if not loop.last}}{% endfor %}),
-            data_im_in=>({% for j in range(0,point,rhs_point)|reverse %}{{'data_im_in(%d)'|format(j)}}{{',' if not loop.last}}{% endfor %}),
+            {% for j in range(0,lhs_point) %}
+            data_re_in({{j}})=>data_re_in({{i+j*rhs_point}}),
+            {% endfor %}
+            {% for j in range(0,lhs_point) %}
+            data_im_in({{j}})=>data_im_in({{i+j*rhs_point}}),
+            {% endfor %}
             data_re_out=>first_stage_re_out({{lhs_point*(i+1)-1}} downto {{lhs_point*i}}),
             data_im_out=>first_stage_im_out({{lhs_point*(i+1)-1}} downto {{lhs_point*i}})
         );
@@ -108,19 +124,37 @@ begin
 
     --- multipliers
     {% for i in range(point) %}
-    {% if w[i]==1 %}
-    mul_re_out({{i}})<=first_stage_re_out({{i}});
-    mul_im_out({{i}})<=first_stage_im_out({{i}});
+    {% if w[i]==(2**14,0) %} {#- TODO: judge if w[i] is identity #}
+    UDELAY_{{i}}_RE : Dff_reg16
+    port map(
+            D=>first_stage_re_out({{i}}),
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>mul_re_out({{i}})
+        );
+    UDELAY_{{i}}_IM : Dff_reg16
+    port map(
+            D=>first_stage_re_out({{i}}),
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>mul_im_out({{i}})
+        );
 
     {% else %}
-    UMUL_{{i}} : mul_N_k
+    UMUL_{{i}} : complex_multiplier
+    generic map(
+            re_multiplicator=>{{w[i][0]}}, --- {{w[i][0]/2.0**14}} + j{{w[i][1]/2.0**14}}
+            im_multiplicator=>{{w[i][1]}}
+        )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl,
-            data_re_in=>data_re_out({{i}}),
-            data_im_in=>data_im_in({{i}}),
+            data_re_in=>first_stage_re_out({{i}}),
+            data_im_in=>first_stage_im_out({{i}}),
             product_re_out=>mul_re_out({{i}}),
             product_im_out=>mul_im_out({{i}})
         );

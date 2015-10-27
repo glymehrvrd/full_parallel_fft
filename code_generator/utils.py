@@ -20,7 +20,7 @@ def twos_comp(val, bits):
     return val                         # return positive value as is
 
 
-def sfi(f, w, v):
+def sfi(f, w, v, result_type='number'):
     '''
     convert float to signed fix pointing number
     f: floating number
@@ -28,11 +28,14 @@ def sfi(f, w, v):
     v: bit width of the decimal part
     '''
     fpn = int(f * (1 << v))
-    if f > 0:
-        num_bin = bin(fpn)[2:]
+    if result_type!='number':
+        if f > 0:
+            num_bin = bin(fpn)[2:]
+        else:
+            num_bin = bin(fpn + (1<<w))[2:]
+        return '0' * (w - len(num_bin)) + num_bin
     else:
-        num_bin = bin(fpn + (1<<w))[2:]
-    return '0' * (w - len(num_bin)) + num_bin
+        return fpn
 
 
 def calc_starter(csd):
