@@ -50,9 +50,10 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
     --- multiplicator in std_logic_vector
-    SIGNAL mul_vec : std_logic_vector(15 DOWNTO 0) := std_logic_vector(to_signed(multiplicator, 16));
+    SIGNAL mul_vec : std_logic_vector(15 DOWNTO 0);
 
 BEGIN
+    mul_vec<=std_logic_vector(to_signed(multiplicator, 16));
     data_in_delay(0) <= data_in;
     --- buffer for data_in
     PROCESS (clk, rst, ce)

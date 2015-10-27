@@ -90,17 +90,100 @@ BEGIN
         clk <= '1';
         WAIT FOR clk_period/2;
     END PROCESS;
-    -- Stimulus process
-    stim_proc : PROCESS
+
+    ctrl_proc : PROCESS
     BEGIN
-        -- hold reset state for 100 ns.
-        WAIT FOR 100 ns; 
-
+        ctrl <= '0';
+        WAIT FOR 95 ns;
         WAIT FOR clk_period * 10;
+        LOOP
+        ctrl <= '1';
+        WAIT FOR clk_period;
+        ctrl <= '0';
+        WAIT FOR clk_period * 15;
+    END LOOP;
+END PROCESS;
 
-        -- insert stimulus here
+-- Stimulus process
+stim_proc : PROCESS
+BEGIN
+    -- hold reset state for 100 ns.
+    rst <= '0';
+    ce <= '0';
+    WAIT FOR 95 ns;
+    rst <= '1';
+    ce <= '1';
+    WAIT FOR clk_period * 10;
+    -- insert stimulus here
+    
+data_re_in<='1';
+data_im_in<='1';
+wait for clk_period;
 
-        WAIT;
-    END PROCESS;
+data_re_in<='0';
+data_im_in<='0';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='0';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='1';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='1';
+data_im_in<='0';
+wait for clk_period;
+
+data_re_in<='1';
+data_im_in<='0';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+data_re_in<='0';
+data_im_in<='1';
+wait for clk_period;
+
+
+    data_re_in <= '0';
+    data_im_in<='0';
+    WAIT;
+END PROCESS;
 
     END;

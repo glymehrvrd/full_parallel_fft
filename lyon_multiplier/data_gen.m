@@ -4,7 +4,7 @@ clear all;
 d=[-15014, 15221, -5013, 10284]';
 
 % calculate the should-be result
-result1=bitshift(d*(-1061),-15,'int32');
+result1=bitshift(d*(17000),-15,'int32');
 
 % convert data to signed fixed-point num
 d=sfi(d,16,0);

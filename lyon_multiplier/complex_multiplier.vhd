@@ -4,8 +4,8 @@ USE ieee.numeric_std.ALL;
 
 ENTITY complex_multiplier IS
     GENERIC (
-        re_multiplicator : INTEGER := 0;
-        im_multiplicator : INTEGER := 0
+        re_multiplicator : INTEGER := -15000;
+        im_multiplicator : INTEGER := 17000
     );
     PORT (
         clk             : IN std_logic;
@@ -45,6 +45,16 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         );
     END COMPONENT;
 
+    component Dff_reg1 is
+        PORT (
+            D    : IN STD_LOGIC;
+            clk  : IN STD_LOGIC;
+            ce   : IN STD_LOGIC;
+            rst  : IN STD_LOGIC;
+            Q    : OUT STD_LOGIC
+        );
+    end component;
+
     COMPONENT Dff_preload_reg1 IS
         PORT (
             D        : IN STD_LOGIC;
@@ -72,12 +82,23 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
 
     SIGNAL c : std_logic_vector(2 DOWNTO 0);
     SIGNAL c_buff : std_logic_vector(2 DOWNTO 0);
+
+    signal ctrl_delay: std_logic;
 BEGIN
     --- (a+b*i)*(c+d*i) = (a*c - b*d) + (b*c + a*d)*i = x + y*i
     --- x = a(c-d)+d(a-b)
     --- y = b(c+d)+d(a-b)
 
-    not_b <= data_im_in;
+    not_b <= not data_im_in;
+
+    UDFF1 : Dff_reg1
+    port map(
+            D=>ctrl,
+            clk=>clk,
+            rst=>rst,
+            ce=>ce,
+            Q=>ctrl_delay
+        );
 
     --- calculate a(c-d)
     UMUL0 : lyon_multiplier
@@ -86,7 +107,7 @@ BEGIN
         clk          => clk, 
         rst          => rst, 
         ce           => ce, 
-        ctrl         => ctrl, 
+        ctrl         => ctrl_delay, 
         data_in      => data_re_in, 
         product_out  => acd
     );
@@ -98,7 +119,7 @@ BEGIN
         clk          => clk, 
         rst          => rst, 
         ce           => ce, 
-        ctrl         => ctrl, 
+        ctrl         => ctrl_delay, 
         data_in      => data_im_in, 
         product_out  => bcd
     );
@@ -110,7 +131,7 @@ BEGIN
         clk          => clk, 
         rst          => rst, 
         ce           => ce, 
-        ctrl         => ctrl, 
+        ctrl         => ctrl_delay, 
         data_in      => ab, 
         product_out  => dab
     );
