@@ -15,6 +15,6 @@ y=y.';
 result2=fft(y);
 
 result1
-result2=result2.';
-result2=result2(:);
+% result2=result2.';
+% result2=result2(:);
 result2

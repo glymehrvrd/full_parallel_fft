@@ -7,6 +7,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity {{ component_name }} is
     PORT (
+        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector({{ point-1 }} downto 0);
+        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector({{ point-1 }} downto 0);
+
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
@@ -69,7 +72,8 @@ component complex_multiplier is
     );
 end component;
 
-component Dff_reg16 is
+component Dff_regN is
+    GENERIC( N: INTEGER );
     Port ( D : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            ce  : in  STD_LOGIC;
@@ -77,10 +81,41 @@ component Dff_reg16 is
            Q : out  STD_LOGIC);
 end component;
 
+component shifter is
+    port(
+            clk            : IN STD_LOGIC;
+            rst            : IN STD_LOGIC;
+            ce             : IN STD_LOGIC;
+            ctrl           : IN STD_LOGIC;
+            data_in:in std_logic;
+            data_out:out std_logic
+        );
+end component;
+
 signal first_stage_re_out, first_stage_im_out: std_logic_vector({{ point-1 }} downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector({{ point-1 }} downto 0);
+signal shifter_re,shifter_im:std_logic_vector({{point-1}} downto 0);
+SIGNAL ctrl_delay : std_logic_vector(1 DOWNTO 0);
 
 begin
+
+    tmp_first_stage_re_out <= first_stage_re_out;
+    tmp_first_stage_im_out <= first_stage_im_out;
+    tmp_mul_re_out <= mul_re_out;
+    tmp_mul_im_out <= mul_im_out;
+
+    ctrl_delay(0) <= ctrl;
+    --- buffer for ctrl
+    PROCESS (clk, rst, ce)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' THEN
+                ctrl_delay(1 DOWNTO 1) <= (OTHERS => '0');
+            ELSIF ce = '1' THEN
+                ctrl_delay(1 DOWNTO 1) <= ctrl_delay(0 DOWNTO 0);
+            END IF;
+        END IF;
+    END PROCESS;
 
     --- left-hand-side processors
     {% for i in range(rhs_point) %}
@@ -109,15 +144,19 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl,
+            ctrl=>ctrl_delay(1),
             {% for j in range(rhs_point) %}
             data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
             {% endfor %}
             {% for j in range(rhs_point) %}
             data_im_in({{j}})=>mul_im_out({{index[i][j]}}),
             {% endfor %}
-            data_re_out=>data_re_out({{rhs_point*(i+1)-1}} downto {{rhs_point*i}}),
-            data_im_out=>data_im_out({{rhs_point*(i+1)-1}} downto {{rhs_point*i}})
+            {% for j in range(rhs_point) %}
+            data_re_out({{j}})=>data_re_out({{i+j*lhs_point}}),
+            {% endfor %}
+            {% for j in range(rhs_point) %}
+            data_im_out({{j}})=>data_im_out({{i+j*lhs_point}}){{',' if not loop.last}}
+            {% endfor %}
         );           
 
     {% endfor %}
@@ -125,21 +164,41 @@ begin
     --- multipliers
     {% for i in range(point) %}
     {% if w[i]==(2**14,0) %} {#- TODO: judge if w[i] is identity #}
-    UDELAY_{{i}}_RE : Dff_reg16
+    UDELAY_{{i}}_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out({{i}}),
             clk=>clk,
             ce=>ce,
             rst=>rst,
-            Q=>mul_re_out({{i}})
+            Q=>shifter_re({{i}})
         );
-    UDELAY_{{i}}_IM : Dff_reg16
+    UDELAY_{{i}}_IM : Dff_regN
+    generic map(N=>15)
     port map(
-            D=>first_stage_re_out({{i}}),
+            D=>first_stage_im_out({{i}}),
             clk=>clk,
             ce=>ce,
             rst=>rst,
-            Q=>mul_im_out({{i}})
+            Q=>shifter_im({{i}})
+        );
+    USHIFTER_{{i}}_RE: shifter
+    port map(
+            clk=>clk,
+            rst=>rst,
+            ce=>ce,
+            ctrl=>ctrl_delay(1),
+            data_in=>shifter_re({{i}}),
+            data_out=>mul_re_out({{i}})
+        );
+    USHIFTER_{{i}}_IM: shifter
+    port map(
+            clk=>clk,
+            rst=>rst,
+            ce=>ce,
+            ctrl=>ctrl_delay(1),
+            data_in=>shifter_im({{i}}),
+            data_out=>mul_im_out({{i}})
         );
 
     {% else %}
@@ -152,7 +211,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl,
+            ctrl=>ctrl_delay(1),
             data_re_in=>first_stage_re_out({{i}}),
             data_im_in=>first_stage_im_out({{i}}),
             product_re_out=>mul_re_out({{i}}),

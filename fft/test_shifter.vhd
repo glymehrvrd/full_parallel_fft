@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   11:11:54 10/28/2015
+-- Create Date:   15:07:47 10/28/2015
 -- Design Name:   
--- Module Name:   d:/dell/Documents/ISE Projects/fft/fft/test_fft_pt8.vhd
+-- Module Name:   d:/dell/Documents/ISE Projects/fft/fft/test_shifter.vhd
 -- Project Name:  fft
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: fft_pt8
+-- VHDL Test Bench Created by ISE for module: shifter
 -- 
 -- Dependencies:
 -- 
@@ -32,27 +32,21 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-ENTITY test_fft_pt8 IS
-END test_fft_pt8;
+ENTITY test_shifter IS
+END test_shifter;
  
-ARCHITECTURE behavior OF test_fft_pt8 IS 
+ARCHITECTURE behavior OF test_shifter IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT fft_pt8
+    COMPONENT shifter
     PORT(
-         tmp_first_stage_re_out : OUT  std_logic_vector(7 downto 0);
-         tmp_first_stage_im_out : OUT  std_logic_vector(7 downto 0);
-         tmp_mul_re_out : OUT  std_logic_vector(7 downto 0);
-         tmp_mul_im_out : OUT  std_logic_vector(7 downto 0);
          clk : IN  std_logic;
          rst : IN  std_logic;
          ce : IN  std_logic;
          ctrl : IN  std_logic;
-         data_re_in : IN  std_logic_vector(7 downto 0);
-         data_im_in : IN  std_logic_vector(7 downto 0);
-         data_re_out : OUT  std_logic_vector(7 downto 0);
-         data_im_out : OUT  std_logic_vector(7 downto 0)
+         data_in : IN  std_logic;
+         data_out : OUT  std_logic
         );
     END COMPONENT;
     
@@ -62,16 +56,10 @@ ARCHITECTURE behavior OF test_fft_pt8 IS
    signal rst : std_logic := '0';
    signal ce : std_logic := '0';
    signal ctrl : std_logic := '0';
-   signal data_re_in : std_logic_vector(7 downto 0) := (others => '0');
-   signal data_im_in : std_logic_vector(7 downto 0) := (others => '0');
+   signal data_in : std_logic := '0';
 
  	--Outputs
-   signal tmp_first_stage_re_out : std_logic_vector(7 downto 0);
-   signal tmp_first_stage_im_out : std_logic_vector(7 downto 0);
-   signal tmp_mul_re_out : std_logic_vector(7 downto 0);
-   signal tmp_mul_im_out : std_logic_vector(7 downto 0);
-   signal data_re_out : std_logic_vector(7 downto 0);
-   signal data_im_out : std_logic_vector(7 downto 0);
+   signal data_out : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -79,19 +67,13 @@ ARCHITECTURE behavior OF test_fft_pt8 IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: fft_pt8 PORT MAP (
-          tmp_first_stage_re_out => tmp_first_stage_re_out,
-          tmp_first_stage_im_out => tmp_first_stage_im_out,
-          tmp_mul_re_out => tmp_mul_re_out,
-          tmp_mul_im_out => tmp_mul_im_out,
+   uut: shifter PORT MAP (
           clk => clk,
           rst => rst,
           ce => ce,
           ctrl => ctrl,
-          data_re_in => data_re_in,
-          data_im_in => data_im_in,
-          data_re_out => data_re_out,
-          data_im_out => data_im_out
+          data_in => data_in,
+          data_out => data_out
         );
 
    -- Clock process definitions
@@ -107,13 +89,25 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
+    rst<='0';
+    ce<='0';
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
+      rst<='1';
+      ce<='1';
+      ctrl<='0';
       wait for clk_period*10;
 
       -- insert stimulus here 
-
+      data_in<='0';
+      ctrl<='0';
+      wait for clk_period;
+      data_in<='1';
+      wait for clk_period;
+      data_in<='0';
+      ctrl<='1';
+      wait for clk_period;
+      data_in<='1';
       wait;
    end process;
 

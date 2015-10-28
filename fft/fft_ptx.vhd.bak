@@ -66,7 +66,8 @@ component complex_multiplier is
     );
 end component;
 
-component Dff_reg16 is
+component Dff_regN is
+    generic(N:integer);
     Port ( D : in  STD_LOGIC;
            clk : in  STD_LOGIC;
            ce  : in  STD_LOGIC;
@@ -176,7 +177,8 @@ begin
 
 
     --- multipliers
-    UDELAY_0_RE : Dff_reg16
+    UDELAY_0_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(0),
             clk=>clk,
@@ -184,7 +186,8 @@ begin
             rst=>rst,
             Q=>mul_re_out(0)
         );
-    UDELAY_0_IM : Dff_reg16
+    UDELAY_0_IM : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(0),
             clk=>clk,
@@ -193,7 +196,8 @@ begin
             Q=>mul_im_out(0)
         );
 
-    UDELAY_1_RE : Dff_reg16
+    UDELAY_1_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(1),
             clk=>clk,
@@ -201,7 +205,8 @@ begin
             rst=>rst,
             Q=>mul_re_out(1)
         );
-    UDELAY_1_IM : Dff_reg16
+    UDELAY_1_IM : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(1),
             clk=>clk,
@@ -210,7 +215,8 @@ begin
             Q=>mul_im_out(1)
         );
 
-    UDELAY_2_RE : Dff_reg16
+    UDELAY_2_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(2),
             clk=>clk,
@@ -218,7 +224,8 @@ begin
             rst=>rst,
             Q=>mul_re_out(2)
         );
-    UDELAY_2_IM : Dff_reg16
+    UDELAY_2_IM : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(2),
             clk=>clk,
@@ -227,7 +234,8 @@ begin
             Q=>mul_im_out(2)
         );
 
-    UDELAY_3_RE : Dff_reg16
+    UDELAY_3_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(3),
             clk=>clk,
@@ -235,7 +243,8 @@ begin
             rst=>rst,
             Q=>mul_re_out(3)
         );
-    UDELAY_3_IM : Dff_reg16
+    UDELAY_3_IM : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(3),
             clk=>clk,
@@ -244,7 +253,8 @@ begin
             Q=>mul_im_out(3)
         );
 
-    UDELAY_4_RE : Dff_reg16
+    UDELAY_4_RE : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(4),
             clk=>clk,
@@ -252,7 +262,8 @@ begin
             rst=>rst,
             Q=>mul_re_out(4)
         );
-    UDELAY_4_IM : Dff_reg16
+    UDELAY_4_IM : Dff_regN
+    generic map(N=>15)
     port map(
             D=>first_stage_re_out(4),
             clk=>clk,
