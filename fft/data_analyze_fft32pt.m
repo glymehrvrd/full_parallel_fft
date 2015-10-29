@@ -1,11 +1,9 @@
 % set number of input data
 d_num=2;
-beginner=22;
-beginner_stage=5;
-beginner_mul=21;
+beginner=22+17;
 
-d_re_out.data=fi(d_re_out.data,0,8,0);
-d_im_out.data=fi(d_im_out.data,0,8,0);
+d_re_out.data=fi(d_re_out.data,0,32,0);
+d_im_out.data=fi(d_im_out.data,0,32,0);
 % 
 % stage_re.data=fi(stage_re.data,0,8,0);
 % stage_im.data=fi(stage_im.data,0,8,0);
@@ -52,4 +50,4 @@ d_out=d_re+d_im*1i;
 % (d_stage_re+1i*d_stage_im).*w-(d_mul_re+1j*d_mul_im)*2
 
 float_out=fft(d);
-hardware_out=d_out*2;
+hardware_out=d_out*4;

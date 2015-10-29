@@ -37,20 +37,6 @@ component fft_pt8 is
     );
 end component;
 
-component fft_pt8 is
-    PORT (
-        clk            : IN STD_LOGIC;
-        rst            : IN STD_LOGIC;
-        ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
-
-        data_re_in     : in std_logic_vector(7 downto 0);
-        data_im_in     : in std_logic_vector(7 downto 0);
-
-        data_re_out     : out std_logic_vector(7 downto 0);
-        data_im_out     : out std_logic_vector(7 downto 0)
-    );
-end component;
 
 component complex_multiplier is
     GENERIC (
@@ -92,7 +78,7 @@ end component;
 signal first_stage_re_out, first_stage_im_out: std_logic_vector(63 downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector(63 downto 0);
 signal shifter_re,shifter_im:std_logic_vector(63 downto 0);
-SIGNAL ctrl_delay : std_logic_vector(1 DOWNTO 0);
+SIGNAL ctrl_delay : std_logic;
 
 begin
 
@@ -101,21 +87,18 @@ begin
     tmp_mul_re_out <= mul_re_out;
     tmp_mul_im_out <= mul_im_out;
 
-    ctrl_delay(0) <= ctrl;
-    --- buffer for ctrl
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                ctrl_delay(1 DOWNTO 1) <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                ctrl_delay(1 DOWNTO 1) <= ctrl_delay(0 DOWNTO 0);
-            END IF;
-        END IF;
-    END PROCESS;
+    UDELAY_CTRL : Dff_regN
+    generic map(N=>2)
+    port map(
+            D=>ctrl,
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>ctrl_delay
+        );
 
     --- left-hand-side processors
-    UFFT_PT8_0 : fft_pt8
+    ULFFT_PT8_0 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -141,7 +124,7 @@ begin
             data_im_out=>first_stage_im_out(7 downto 0)
         );
 
-    UFFT_PT8_1 : fft_pt8
+    ULFFT_PT8_1 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -167,7 +150,7 @@ begin
             data_im_out=>first_stage_im_out(15 downto 8)
         );
 
-    UFFT_PT8_2 : fft_pt8
+    ULFFT_PT8_2 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -193,7 +176,7 @@ begin
             data_im_out=>first_stage_im_out(23 downto 16)
         );
 
-    UFFT_PT8_3 : fft_pt8
+    ULFFT_PT8_3 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -219,7 +202,7 @@ begin
             data_im_out=>first_stage_im_out(31 downto 24)
         );
 
-    UFFT_PT8_4 : fft_pt8
+    ULFFT_PT8_4 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -245,7 +228,7 @@ begin
             data_im_out=>first_stage_im_out(39 downto 32)
         );
 
-    UFFT_PT8_5 : fft_pt8
+    ULFFT_PT8_5 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -271,7 +254,7 @@ begin
             data_im_out=>first_stage_im_out(47 downto 40)
         );
 
-    UFFT_PT8_6 : fft_pt8
+    ULFFT_PT8_6 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -297,7 +280,7 @@ begin
             data_im_out=>first_stage_im_out(55 downto 48)
         );
 
-    UFFT_PT8_7 : fft_pt8
+    ULFFT_PT8_7 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
@@ -325,12 +308,12 @@ begin
 
 
     --- right-hand-side processors
-    UFFT_PT8_0 : fft_pt8
+    URFFT_PT8_0 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(0),
             data_re_in(1)=>mul_re_out(8),
             data_re_in(2)=>mul_re_out(16),
@@ -365,12 +348,12 @@ begin
             data_im_out(7)=>data_im_out(56)
         );           
 
-    UFFT_PT8_1 : fft_pt8
+    URFFT_PT8_1 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(1),
             data_re_in(1)=>mul_re_out(9),
             data_re_in(2)=>mul_re_out(17),
@@ -405,12 +388,12 @@ begin
             data_im_out(7)=>data_im_out(57)
         );           
 
-    UFFT_PT8_2 : fft_pt8
+    URFFT_PT8_2 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(2),
             data_re_in(1)=>mul_re_out(10),
             data_re_in(2)=>mul_re_out(18),
@@ -445,12 +428,12 @@ begin
             data_im_out(7)=>data_im_out(58)
         );           
 
-    UFFT_PT8_3 : fft_pt8
+    URFFT_PT8_3 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(3),
             data_re_in(1)=>mul_re_out(11),
             data_re_in(2)=>mul_re_out(19),
@@ -485,12 +468,12 @@ begin
             data_im_out(7)=>data_im_out(59)
         );           
 
-    UFFT_PT8_4 : fft_pt8
+    URFFT_PT8_4 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(4),
             data_re_in(1)=>mul_re_out(12),
             data_re_in(2)=>mul_re_out(20),
@@ -525,12 +508,12 @@ begin
             data_im_out(7)=>data_im_out(60)
         );           
 
-    UFFT_PT8_5 : fft_pt8
+    URFFT_PT8_5 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(5),
             data_re_in(1)=>mul_re_out(13),
             data_re_in(2)=>mul_re_out(21),
@@ -565,12 +548,12 @@ begin
             data_im_out(7)=>data_im_out(61)
         );           
 
-    UFFT_PT8_6 : fft_pt8
+    URFFT_PT8_6 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(6),
             data_re_in(1)=>mul_re_out(14),
             data_re_in(2)=>mul_re_out(22),
@@ -605,12 +588,12 @@ begin
             data_im_out(7)=>data_im_out(62)
         );           
 
-    UFFT_PT8_7 : fft_pt8
+    URFFT_PT8_7 : fft_pt8
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in(0)=>mul_re_out(7),
             data_re_in(1)=>mul_re_out(15),
             data_re_in(2)=>mul_re_out(23),
@@ -670,7 +653,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(0),
             data_out=>mul_re_out(0)
         );
@@ -679,7 +662,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(0),
             data_out=>mul_im_out(0)
         );
@@ -707,7 +690,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(1),
             data_out=>mul_re_out(1)
         );
@@ -716,7 +699,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(1),
             data_out=>mul_im_out(1)
         );
@@ -744,7 +727,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(2),
             data_out=>mul_re_out(2)
         );
@@ -753,7 +736,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(2),
             data_out=>mul_im_out(2)
         );
@@ -781,7 +764,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(3),
             data_out=>mul_re_out(3)
         );
@@ -790,7 +773,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(3),
             data_out=>mul_im_out(3)
         );
@@ -818,7 +801,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(4),
             data_out=>mul_re_out(4)
         );
@@ -827,7 +810,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(4),
             data_out=>mul_im_out(4)
         );
@@ -855,7 +838,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(5),
             data_out=>mul_re_out(5)
         );
@@ -864,7 +847,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(5),
             data_out=>mul_im_out(5)
         );
@@ -892,7 +875,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(6),
             data_out=>mul_re_out(6)
         );
@@ -901,7 +884,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(6),
             data_out=>mul_im_out(6)
         );
@@ -929,7 +912,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(7),
             data_out=>mul_re_out(7)
         );
@@ -938,7 +921,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(7),
             data_out=>mul_im_out(7)
         );
@@ -966,7 +949,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(8),
             data_out=>mul_re_out(8)
         );
@@ -975,7 +958,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(8),
             data_out=>mul_im_out(8)
         );
@@ -989,7 +972,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(9),
             data_im_in=>first_stage_im_out(9),
             product_re_out=>mul_re_out(9),
@@ -1005,7 +988,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(10),
             data_im_in=>first_stage_im_out(10),
             product_re_out=>mul_re_out(10),
@@ -1021,7 +1004,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(11),
             data_im_in=>first_stage_im_out(11),
             product_re_out=>mul_re_out(11),
@@ -1037,7 +1020,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(12),
             data_im_in=>first_stage_im_out(12),
             product_re_out=>mul_re_out(12),
@@ -1053,7 +1036,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(13),
             data_im_in=>first_stage_im_out(13),
             product_re_out=>mul_re_out(13),
@@ -1069,7 +1052,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(14),
             data_im_in=>first_stage_im_out(14),
             product_re_out=>mul_re_out(14),
@@ -1085,7 +1068,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(15),
             data_im_in=>first_stage_im_out(15),
             product_re_out=>mul_re_out(15),
@@ -1115,7 +1098,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(16),
             data_out=>mul_re_out(16)
         );
@@ -1124,7 +1107,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(16),
             data_out=>mul_im_out(16)
         );
@@ -1138,7 +1121,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(17),
             data_im_in=>first_stage_im_out(17),
             product_re_out=>mul_re_out(17),
@@ -1154,7 +1137,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(18),
             data_im_in=>first_stage_im_out(18),
             product_re_out=>mul_re_out(18),
@@ -1170,7 +1153,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(19),
             data_im_in=>first_stage_im_out(19),
             product_re_out=>mul_re_out(19),
@@ -1186,7 +1169,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(20),
             data_im_in=>first_stage_im_out(20),
             product_re_out=>mul_re_out(20),
@@ -1202,7 +1185,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(21),
             data_im_in=>first_stage_im_out(21),
             product_re_out=>mul_re_out(21),
@@ -1218,7 +1201,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(22),
             data_im_in=>first_stage_im_out(22),
             product_re_out=>mul_re_out(22),
@@ -1234,7 +1217,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(23),
             data_im_in=>first_stage_im_out(23),
             product_re_out=>mul_re_out(23),
@@ -1264,7 +1247,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(24),
             data_out=>mul_re_out(24)
         );
@@ -1273,7 +1256,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(24),
             data_out=>mul_im_out(24)
         );
@@ -1287,7 +1270,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(25),
             data_im_in=>first_stage_im_out(25),
             product_re_out=>mul_re_out(25),
@@ -1303,7 +1286,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(26),
             data_im_in=>first_stage_im_out(26),
             product_re_out=>mul_re_out(26),
@@ -1319,7 +1302,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(27),
             data_im_in=>first_stage_im_out(27),
             product_re_out=>mul_re_out(27),
@@ -1335,7 +1318,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(28),
             data_im_in=>first_stage_im_out(28),
             product_re_out=>mul_re_out(28),
@@ -1351,7 +1334,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(29),
             data_im_in=>first_stage_im_out(29),
             product_re_out=>mul_re_out(29),
@@ -1367,7 +1350,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(30),
             data_im_in=>first_stage_im_out(30),
             product_re_out=>mul_re_out(30),
@@ -1383,7 +1366,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(31),
             data_im_in=>first_stage_im_out(31),
             product_re_out=>mul_re_out(31),
@@ -1413,7 +1396,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(32),
             data_out=>mul_re_out(32)
         );
@@ -1422,7 +1405,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(32),
             data_out=>mul_im_out(32)
         );
@@ -1436,7 +1419,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(33),
             data_im_in=>first_stage_im_out(33),
             product_re_out=>mul_re_out(33),
@@ -1452,7 +1435,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(34),
             data_im_in=>first_stage_im_out(34),
             product_re_out=>mul_re_out(34),
@@ -1468,7 +1451,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(35),
             data_im_in=>first_stage_im_out(35),
             product_re_out=>mul_re_out(35),
@@ -1484,7 +1467,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(36),
             data_im_in=>first_stage_im_out(36),
             product_re_out=>mul_re_out(36),
@@ -1500,7 +1483,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(37),
             data_im_in=>first_stage_im_out(37),
             product_re_out=>mul_re_out(37),
@@ -1516,7 +1499,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(38),
             data_im_in=>first_stage_im_out(38),
             product_re_out=>mul_re_out(38),
@@ -1532,7 +1515,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(39),
             data_im_in=>first_stage_im_out(39),
             product_re_out=>mul_re_out(39),
@@ -1562,7 +1545,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(40),
             data_out=>mul_re_out(40)
         );
@@ -1571,7 +1554,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(40),
             data_out=>mul_im_out(40)
         );
@@ -1585,7 +1568,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(41),
             data_im_in=>first_stage_im_out(41),
             product_re_out=>mul_re_out(41),
@@ -1601,7 +1584,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(42),
             data_im_in=>first_stage_im_out(42),
             product_re_out=>mul_re_out(42),
@@ -1617,7 +1600,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(43),
             data_im_in=>first_stage_im_out(43),
             product_re_out=>mul_re_out(43),
@@ -1633,7 +1616,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(44),
             data_im_in=>first_stage_im_out(44),
             product_re_out=>mul_re_out(44),
@@ -1649,7 +1632,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(45),
             data_im_in=>first_stage_im_out(45),
             product_re_out=>mul_re_out(45),
@@ -1665,7 +1648,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(46),
             data_im_in=>first_stage_im_out(46),
             product_re_out=>mul_re_out(46),
@@ -1681,7 +1664,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(47),
             data_im_in=>first_stage_im_out(47),
             product_re_out=>mul_re_out(47),
@@ -1711,7 +1694,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(48),
             data_out=>mul_re_out(48)
         );
@@ -1720,7 +1703,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(48),
             data_out=>mul_im_out(48)
         );
@@ -1734,7 +1717,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(49),
             data_im_in=>first_stage_im_out(49),
             product_re_out=>mul_re_out(49),
@@ -1750,7 +1733,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(50),
             data_im_in=>first_stage_im_out(50),
             product_re_out=>mul_re_out(50),
@@ -1766,7 +1749,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(51),
             data_im_in=>first_stage_im_out(51),
             product_re_out=>mul_re_out(51),
@@ -1782,7 +1765,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(52),
             data_im_in=>first_stage_im_out(52),
             product_re_out=>mul_re_out(52),
@@ -1798,7 +1781,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(53),
             data_im_in=>first_stage_im_out(53),
             product_re_out=>mul_re_out(53),
@@ -1814,7 +1797,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(54),
             data_im_in=>first_stage_im_out(54),
             product_re_out=>mul_re_out(54),
@@ -1830,7 +1813,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(55),
             data_im_in=>first_stage_im_out(55),
             product_re_out=>mul_re_out(55),
@@ -1860,7 +1843,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re(56),
             data_out=>mul_re_out(56)
         );
@@ -1869,7 +1852,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im(56),
             data_out=>mul_im_out(56)
         );
@@ -1883,7 +1866,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(57),
             data_im_in=>first_stage_im_out(57),
             product_re_out=>mul_re_out(57),
@@ -1899,7 +1882,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(58),
             data_im_in=>first_stage_im_out(58),
             product_re_out=>mul_re_out(58),
@@ -1915,7 +1898,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(59),
             data_im_in=>first_stage_im_out(59),
             product_re_out=>mul_re_out(59),
@@ -1931,7 +1914,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(60),
             data_im_in=>first_stage_im_out(60),
             product_re_out=>mul_re_out(60),
@@ -1947,7 +1930,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(61),
             data_im_in=>first_stage_im_out(61),
             product_re_out=>mul_re_out(61),
@@ -1963,7 +1946,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(62),
             data_im_in=>first_stage_im_out(62),
             product_re_out=>mul_re_out(62),
@@ -1979,7 +1962,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out(63),
             data_im_in=>first_stage_im_out(63),
             product_re_out=>mul_re_out(63),

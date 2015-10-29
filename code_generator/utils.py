@@ -28,11 +28,11 @@ def sfi(f, w, v, result_type='number'):
     v: bit width of the decimal part
     '''
     fpn = int(f * (1 << v))
-    if result_type!='number':
+    if result_type != 'number':
         if f > 0:
             num_bin = bin(fpn)[2:]
         else:
-            num_bin = bin(fpn + (1<<w))[2:]
+            num_bin = bin(fpn + (1 << w))[2:]
         return '0' * (w - len(num_bin)) + num_bin
     else:
         return fpn
@@ -97,7 +97,29 @@ def bintocsd(binary):
     return ''.join(csd)
 
 
+def cal_delay(pt, structure={2048:(64,32),32:(8,4),64:(8,8),8:(4,2),4:1,2:1}):
+    try:
+        lhspt, rhspt=structure[pt]
+    except:
+        return structure[pt]
+
+    try:
+        l, r = structure[lhspt]
+        delay_l = cal_delay(l*r, structure)
+    except:
+        delay_l = structure[lhspt]
+        
+    try:
+        l, r = structure[rhspt]
+        delay_r = cal_delay(l*r, structure)
+    except:
+        delay_r = structure[rhspt]
+
+    return delay_l + 16 + delay_r
+
+
 def test():
+    print cal_delay(4)
     fxnum = sfi(-0.707, 16, 14)
     print calc_starter('10-0-01010000000')
     print fxnum
@@ -106,3 +128,4 @@ def test():
 if __name__ == '__main__':
     print bintocsd('1101')
     # test()
+    print cal_delay(8)

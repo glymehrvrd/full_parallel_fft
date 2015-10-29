@@ -40,6 +40,7 @@ component {{ lhs_component_name }} is
     );
 end component;
 
+{% if lhs_point!=rhs_point %}
 component {{ rhs_component_name }} is
     PORT (
         clk            : IN STD_LOGIC;
@@ -54,6 +55,7 @@ component {{ rhs_component_name }} is
         data_im_out     : out std_logic_vector({{ rhs_point-1 }} downto 0)
     );
 end component;
+{% endif %}
 
 component complex_multiplier is
     GENERIC (
@@ -95,7 +97,7 @@ end component;
 signal first_stage_re_out, first_stage_im_out: std_logic_vector({{ point-1 }} downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector({{ point-1 }} downto 0);
 signal shifter_re,shifter_im:std_logic_vector({{point-1}} downto 0);
-SIGNAL ctrl_delay : std_logic_vector(1 DOWNTO 0);
+SIGNAL ctrl_delay : std_logic;
 
 begin
 
@@ -104,22 +106,19 @@ begin
     tmp_mul_re_out <= mul_re_out;
     tmp_mul_im_out <= mul_im_out;
 
-    ctrl_delay(0) <= ctrl;
-    --- buffer for ctrl
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                ctrl_delay(1 DOWNTO 1) <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                ctrl_delay(1 DOWNTO 1) <= ctrl_delay(0 DOWNTO 0);
-            END IF;
-        END IF;
-    END PROCESS;
+    UDELAY_CTRL : Dff_regN
+    generic map(N=>{{delay}})
+    port map(
+            D=>ctrl,
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>ctrl_delay
+        );
 
     --- left-hand-side processors
     {% for i in range(rhs_point) %}
-    U{{lhs_component_name|upper}}_{{i}} : {{ lhs_component_name }}
+    UL{{lhs_component_name|upper}}_{{i}} : {{ lhs_component_name }}
     port map(
             clk=>clk,
             rst=>rst,
@@ -139,12 +138,12 @@ begin
 
     --- right-hand-side processors
     {% for i in range(lhs_point) %}
-    U{{rhs_component_name|upper}}_{{i}} : {{ rhs_component_name }}
+    UR{{rhs_component_name|upper}}_{{i}} : {{ rhs_component_name }}
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             {% for j in range(rhs_point) %}
             data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
             {% endfor %}
@@ -187,7 +186,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_re({{i}}),
             data_out=>mul_re_out({{i}})
         );
@@ -196,7 +195,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_in=>shifter_im({{i}}),
             data_out=>mul_im_out({{i}})
         );
@@ -211,7 +210,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(1),
+            ctrl=>ctrl_delay,
             data_re_in=>first_stage_re_out({{i}}),
             data_im_in=>first_stage_im_out({{i}}),
             product_re_out=>mul_re_out({{i}}),

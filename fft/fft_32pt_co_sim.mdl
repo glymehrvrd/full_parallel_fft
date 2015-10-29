@@ -1,27 +1,16 @@
 Model {
-  Name			  "fft_8pt_co_sim"
+  Name			  "fft_32pt_co_sim"
   Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.14"
+    ComputedModelVersion    "1.7"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "GBK"
-  slprops.hdlmdlprops {
-    $PropName		    "HDLParams"
-    $ObjectID		    1
-    Array {
-      Type		      "Cell"
-      Dimension		      2
-      Cell		      "HDLSubsystem"
-      Cell		      "fft_8pt_co_sim"
-      PropName		      "mdlProps"
-    }
-  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -34,17 +23,17 @@ Model {
   MaxMDLFileLineLength	  120
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    2
+    $ObjectID		    1
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      3
+      $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
       Location		      [-9.0, 41.0, 1938.0, 1048.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		4
+	$ObjectID		3
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[1]
 	DockPosition		"Left"
@@ -54,32 +43,32 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		5
+	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
-	$ObjectID		6
+	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1688.0, 847.0]
-	ZoomFactor		[1.25]
-	Offset			[-162.70000000000005, -33.800000000000011]
+	ZoomFactor		[1.0]
+	Offset			[-329.0, -103.5]
       }
     }
   }
-  Created		  "Wed Oct 21 21:09:49 2015"
+  Created		  "Wed Oct 28 21:50:10 2015"
   Creator		  "dell"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 29 10:32:23 2015"
-  RTWModifiedTimeStamp	  368015197
-  ModelVersionFormat	  "1.%<AutoIncrement:14>"
+  LastModifiedDate	  "Thu Oct 29 09:29:01 2015"
+  RTWModifiedTimeStamp	  367969832
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -114,14 +103,14 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "fft_8pt_co_sim"
+    model_		    "fft_32pt_co_sim"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "fft_8pt_co_sim"
+      Cell		      "fft_32pt_co_sim"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -173,13 +162,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "100"
@@ -200,8 +189,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "VariableStepDiscrete"
-	  SolverName		  "VariableStepDiscrete"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -214,7 +203,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -246,7 +235,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -302,7 +291,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -392,7 +381,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -429,7 +418,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -444,7 +433,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -459,7 +448,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -528,7 +517,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -596,7 +585,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -676,7 +665,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  19
+	  $ObjectID		  18
 	  Version		  "1.12.1"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -692,17 +681,17 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 311, 156, 1225, 872 ] 
+      ConfigPrmDlgPosition     [ 328, 225, 1208, 855 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -792,7 +781,7 @@ Model {
     }
   }
   System {
-    Name		    "fft_8pt_co_sim"
+    Name		    "fft_32pt_co_sim"
     Location		    [-9, 41, 1929, 1089]
     Open		    on
     ModelBrowserVisibility  on
@@ -805,15 +794,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "32"
+    SIDHighWatermark	    "18"
     Block {
       BlockType		      FromWorkspace
       Name		      "\n"
       SID		      "1"
-      Position		      [60, 328, 125, 352]
-      ZOrder		      99
+      Position		      [60, 343, 125, 367]
+      ZOrder		      130
       VariableName	      "d_re_in"
       SampleTime	      "1"
       Interpolate	      off
@@ -824,8 +813,8 @@ Model {
       BlockType		      FromWorkspace
       Name		      "\n1"
       SID		      "2"
-      Position		      [60, 383, 125, 407]
-      ZOrder		      105
+      Position		      [60, 398, 125, 422]
+      ZOrder		      136
       VariableName	      "d_im_in"
       SampleTime	      "1"
       Interpolate	      off
@@ -838,8 +827,8 @@ Model {
       SID		      "3"
       Tag		      "genX"
       Ports		      []
-      Position		      [12, 17, 62, 67]
-      ZOrder		      96
+      Position		      [12, 32, 62, 82]
+      ZOrder		      128
       ShowName		      off
       AttributesFormatString  "System\\nGenerator"
       LibraryVersion	      "1.2"
@@ -884,10 +873,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Black Box"
-      SID		      "32"
+      SID		      "18"
       Ports		      [4, 2]
-      Position		      [450, 224, 575, 386]
-      ZOrder		      127
+      Position		      [455, 239, 575, 401]
+      ZOrder		      145
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Black Box"
       SourceType	      "Xilinx Black Box Block"
@@ -896,7 +885,7 @@ Model {
       "tor. This information is provided through a Matlab function.<br><br>When \"Simulation mode\" is set to \"Inactiv"
       "e\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<br>When \""
       "Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
-      init_code		      "fft_pt8_config"
+      init_code		      "fft_pt32_config"
       sim_method	      "External co-simulator"
       engine_block	      "ModelSim"
       verbose		      off
@@ -905,12 +894,12 @@ Model {
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "blackbox2"
-      sg_icon_stat	      "125,162,4,2,white,blue,0,6df97725,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 125 125 0 0 ],[0 0 162 162 0 ],[0.7"
-      "7 0.82 0.91 ]);\nplot([0 125 125 0 0 ],[0 0 162 162 0 ]);\npatch([24.175 48.74 65.74 82.74 99.74 65.74 41.175 24"
-      ".175 ],[99.87 99.87 116.87 99.87 116.87 116.87 116.87 99.87 ],[1 1 1 ]);\npatch([41.175 65.74 48.74 24.175 41.17"
-      "5 ],[82.87 82.87 99.87 99.87 82.87 ],[0.931 0.946 0.973 ]);\npatch([24.175 48.74 65.74 41.175 24.175 ],[65.87 65"
-      ".87 82.87 82.87 65.87 ],[1 1 1 ]);\npatch([41.175 99.74 82.74 65.74 48.74 24.175 41.175 ],[48.87 48.87 65.87 48."
+      sg_icon_stat	      "120,162,4,2,white,blue,0,6df97725,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 120 120 0 0 ],[0 0 162 162 0 ],[0.7"
+      "7 0.82 0.91 ]);\nplot([0 120 120 0 0 ],[0 0 162 162 0 ]);\npatch([22.175 46.74 63.74 80.74 97.74 63.74 39.175 22"
+      ".175 ],[99.87 99.87 116.87 99.87 116.87 116.87 116.87 99.87 ],[1 1 1 ]);\npatch([39.175 63.74 46.74 22.175 39.17"
+      "5 ],[82.87 82.87 99.87 99.87 82.87 ],[0.931 0.946 0.973 ]);\npatch([22.175 46.74 63.74 39.175 22.175 ],[65.87 65"
+      ".87 82.87 82.87 65.87 ],[1 1 1 ]);\npatch([39.175 97.74 80.74 63.74 46.74 22.175 39.175 ],[48.87 48.87 65.87 48."
       "87 65.87 65.87 48.87 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: b"
       "egin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'ctrl');\nco"
       "lor('black');port_label('input',3,'data_re_in');\ncolor('black');port_label('input',4,'data_im_in');\ncolor('bla"
@@ -920,10 +909,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out2"
-      SID		      "23"
+      SID		      "5"
       Ports		      [1, 1]
-      Position		      [770, 255, 830, 275]
-      ZOrder		      120
+      Position		      [770, 270, 830, 290]
+      ZOrder		      140
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -955,10 +944,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out3"
-      SID		      "24"
+      SID		      "6"
       Ports		      [1, 1]
-      Position		      [770, 335, 830, 355]
-      ZOrder		      121
+      Position		      [770, 350, 830, 370]
+      ZOrder		      141
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -992,8 +981,8 @@ Model {
       Name		      "ModelSim"
       SID		      "7"
       Ports		      []
-      Position		      [303, 0, 368, 56]
-      ZOrder		      97
+      Position		      [303, 15, 368, 71]
+      ZOrder		      129
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/ModelSim"
       SourceType	      "ModelSim HDL Co-Simulation Interface Block"
@@ -1025,17 +1014,17 @@ Model {
       BlockType		      Step
       Name		      "Step1"
       SID		      "8"
-      Position		      [75, 215, 105, 245]
-      ZOrder		      102
+      Position		      [75, 230, 105, 260]
+      ZOrder		      133
       SampleTime	      "1"
     }
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace2"
-      SID		      "25"
+      SID		      "9"
       Ports		      [1]
-      Position		      [885, 250, 945, 280]
-      ZOrder		      118
+      Position		      [885, 265, 945, 295]
+      ZOrder		      138
       VariableName	      "d_re_out"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
@@ -1044,10 +1033,10 @@ Model {
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace3"
-      SID		      "26"
+      SID		      "10"
       Ports		      [1]
-      Position		      [885, 330, 945, 360]
-      ZOrder		      119
+      Position		      [885, 345, 945, 375]
+      ZOrder		      139
       VariableName	      "d_im_out"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
@@ -1058,8 +1047,8 @@ Model {
       Name		      "ctrl\n1"
       SID		      "11"
       Ports		      [1, 1]
-      Position		      [235, 274, 290, 296]
-      ZOrder		      104
+      Position		      [235, 289, 290, 311]
+      ZOrder		      135
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -1104,8 +1093,8 @@ Model {
       BlockType		      FromWorkspace
       Name		      "ctrl1"
       SID		      "12"
-      Position		      [60, 273, 125, 297]
-      ZOrder		      100
+      Position		      [60, 288, 125, 312]
+      ZOrder		      131
       VariableName	      "ctrl"
       SampleTime	      "1"
       ZeroCross		      on
@@ -1115,8 +1104,8 @@ Model {
       Name		      "d0_re_in\n"
       SID		      "13"
       Ports		      [1, 1]
-      Position		      [235, 329, 290, 351]
-      ZOrder		      103
+      Position		      [235, 344, 290, 366]
+      ZOrder		      134
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -1125,7 +1114,7 @@ Model {
       "el input ports."
       gui_display_data_type   "Fixed-point"
       arith_type	      "Unsigned"
-      n_bits		      "8"
+      n_bits		      "32"
       bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
@@ -1162,8 +1151,8 @@ Model {
       Name		      "d0_re_in\n1"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [235, 384, 290, 406]
-      ZOrder		      106
+      Position		      [235, 399, 290, 421]
+      ZOrder		      137
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -1172,7 +1161,7 @@ Model {
       "el input ports."
       gui_display_data_type   "Fixed-point"
       arith_type	      "Unsigned"
-      n_bits		      "8"
+      n_bits		      "32"
       bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
@@ -1209,8 +1198,8 @@ Model {
       Name		      "rst (active low)1"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [235, 216, 290, 244]
-      ZOrder		      101
+      Position		      [235, 231, 290, 259]
+      ZOrder		      132
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
       SourceType	      "Xilinx Gateway In Block"
@@ -1278,7 +1267,7 @@ Model {
     Line {
       SrcBlock		      "rst (active low)1"
       SrcPort		      1
-      Points		      [81, 0; 0, 15]
+      Points		      [77, 0; 0, 15]
       DstBlock		      "Black Box"
       DstPort		      1
     }
