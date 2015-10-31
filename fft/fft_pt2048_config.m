@@ -81,6 +81,26 @@ function fft_pt2048_config(this_block)
 
   %    this_block.addFile('');
   %    this_block.addFile('');
+  this_block.addFile('adder_half_bit1.vhd');
+  this_block.addFile('adder_bit1.vhd');
+  this_block.addFile('Dff_preload_1.vhd');
+  this_block.addFile('Dff_preload_1_init_1.vhd');
+  this_block.addFile('fft_pt2.vhd');
+  this_block.addFile('fft_pt4.vhd');
+  
+  this_block.addFile('Dff_1.vhd');
+  this_block.addFile('mux_in2.vhd');
+  this_block.addFile('partial_product.vhd');
+  this_block.addFile('partial_product_last.vhd');
+  this_block.addFile('lyon_multiplier.vhd');
+  this_block.addFile('complex_multiplier.vhd');
+  
+  this_block.addFile('Dff_N.vhd');
+  this_block.addFile('shifter.vhd');
+  this_block.addFile('fft_pt8.vhd');
+  
+  this_block.addFile('fft_pt64.vhd');
+  this_block.addFile('fft_pt32.vhd');
   this_block.addFile('fft_pt2048.vhd');
 
 return;
