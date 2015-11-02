@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-9.0, 41.0, 1938.0, 1048.0]
+      Location		      [-8.0, 32.0, 1552.0, 840.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -66,18 +66,18 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1688.0, 842.0]
+	  Extents		  [1305.0, 657.0]
 	  ZoomFactor		  [1.25]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [0.67499999999999716, 35.599999999999966]
 	}
 	Object {
 	  $ObjectID		  7
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "28"
-	  Extents		  [1688.0, 842.0]
+	  Extents		  [1691.0, 865.0]
 	  ZoomFactor		  [1.1960227272727273]
-	  Offset		  [110.36104513064151, 118.7054631828978]
+	  Offset		  [110.36104513064151, 110.29453681710214]
 	}
 	PropName		"EditorsInfo"
       }
@@ -89,7 +89,7 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Oct 30 10:20:23 2015"
+  LastModifiedDate	  "Mon Nov 02 20:47:17 2015"
   RTWModifiedTimeStamp	  368098992
   ModelVersionFormat	  "1.%<AutoIncrement:26>"
   ConfigurationManager	  "None"
@@ -869,7 +869,7 @@ Model {
   }
   System {
     Name		    "fft_64pt_co_sim"
-    Location		    [-9, 41, 1929, 1089]
+    Location		    [-8, 32, 1544, 872]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200

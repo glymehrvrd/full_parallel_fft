@@ -11,8 +11,8 @@ temp_fft_ptx = env.get_template('fft_ptx.vhd.template')
 # (lhs_point, rhs_point, delay)
 # delay indicates the delay caused by the left-hand-side fft component
 fft_list = [(4, 2, False),
-            (8, 8, False),
-            (4, 8, False),
+            (8, 8, True),
+            (4, 8, True),
             (32, 64, True)]
 
 for lhs_point, rhs_point, istop in fft_list:
