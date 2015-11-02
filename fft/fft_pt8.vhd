@@ -3,11 +3,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 entity fft_pt8 is
+    GENERIC (
+        ctrl_start     : INTEGER := 0
+    );
     PORT (
+        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector(7 downto 0);
+        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector(7 downto 0);
+
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(7 downto 0);
         data_im_in:in std_logic_vector(7 downto 0);
@@ -20,11 +26,14 @@ end fft_pt8;
 architecture Behavioral of fft_pt8 is
 
 component fft_pt4 is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(3 downto 0);
         data_im_in:in std_logic_vector(3 downto 0);
@@ -35,11 +44,14 @@ component fft_pt4 is
 end component;
 
 component fft_pt2 is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in     : in std_logic_vector(1 downto 0);
         data_im_in     : in std_logic_vector(1 downto 0);
@@ -52,13 +64,14 @@ end component;
 component complex_multiplier is
     GENERIC (
         re_multiplicator : INTEGER;
-        im_multiplicator : INTEGER
+        im_multiplicator : INTEGER;
+        ctrl_start       : INTEGER
     );
     PORT (
         clk             : IN std_logic;
         rst             : IN std_logic;
         ce              : IN std_logic;
-        ctrl            : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
         product_re_out  : OUT STD_LOGIC;
@@ -89,26 +102,24 @@ end component;
 signal first_stage_re_out, first_stage_im_out: std_logic_vector(7 downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector(7 downto 0);
 signal shifter_re,shifter_im:std_logic_vector(7 downto 0);
-SIGNAL ctrl_delay : std_logic;
 
 begin
-    UDELAY_CTRL : Dff_regN
-    generic map(N=>1)
-    port map(
-            D=>ctrl,
-            clk=>clk,
-            ce=>ce,
-            rst=>rst,
-            Q=>ctrl_delay
-        );
+
+    tmp_first_stage_re_out <= first_stage_re_out;
+    tmp_first_stage_im_out <= first_stage_im_out;
+    tmp_mul_re_out <= mul_re_out;
+    tmp_mul_im_out <= mul_im_out;
 
     --- left-hand-side processors
     ULFFT_PT4_0 : fft_pt4
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(0),
             data_re_in(1)=>data_re_in(2),
             data_re_in(2)=>data_re_in(4),
@@ -122,11 +133,14 @@ begin
         );
 
     ULFFT_PT4_1 : fft_pt4
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(1),
             data_re_in(1)=>data_re_in(3),
             data_re_in(2)=>data_re_in(5),
@@ -142,11 +156,14 @@ begin
 
     --- right-hand-side processors
     URFFT_PT2_0 : fft_pt2
+    generic map(
+        ctrl_start => (ctrl_start+1) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(0),
             data_re_in(1)=>mul_re_out(4),
             data_im_in(0)=>mul_im_out(0),
@@ -158,11 +175,14 @@ begin
         );           
 
     URFFT_PT2_1 : fft_pt2
+    generic map(
+        ctrl_start => (ctrl_start+1) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(1),
             data_re_in(1)=>mul_re_out(5),
             data_im_in(0)=>mul_im_out(1),
@@ -174,11 +194,14 @@ begin
         );           
 
     URFFT_PT2_2 : fft_pt2
+    generic map(
+        ctrl_start => (ctrl_start+1) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(2),
             data_re_in(1)=>mul_re_out(6),
             data_im_in(0)=>mul_im_out(2),
@@ -190,11 +213,14 @@ begin
         );           
 
     URFFT_PT2_3 : fft_pt2
+    generic map(
+        ctrl_start => (ctrl_start+1) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(3),
             data_re_in(1)=>mul_re_out(7),
             data_im_in(0)=>mul_im_out(3),
@@ -230,7 +256,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_re(0),
             data_out=>mul_re_out(0)
         );
@@ -239,7 +265,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_im(0),
             data_out=>mul_im_out(0)
         );
@@ -267,7 +293,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_re(1),
             data_out=>mul_re_out(1)
         );
@@ -276,7 +302,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_im(1),
             data_out=>mul_im_out(1)
         );
@@ -304,7 +330,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_re(2),
             data_out=>mul_re_out(2)
         );
@@ -313,7 +339,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_im(2),
             data_out=>mul_im_out(2)
         );
@@ -341,7 +367,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_re(3),
             data_out=>mul_re_out(3)
         );
@@ -350,7 +376,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_im(3),
             data_out=>mul_im_out(3)
         );
@@ -378,7 +404,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_re(4),
             data_out=>mul_re_out(4)
         );
@@ -387,7 +413,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
             data_in=>shifter_im(4),
             data_out=>mul_im_out(4)
         );
@@ -395,13 +421,14 @@ begin
     UMUL_5 : complex_multiplier
     generic map(
             re_multiplicator=>11585, --- 0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585
+            im_multiplicator=>-11585,
+            ctrl_start => (ctrl_start+1) mod 16
         )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in=>first_stage_re_out(5),
             data_im_in=>first_stage_im_out(5),
             product_re_out=>mul_re_out(5),
@@ -411,13 +438,14 @@ begin
     UMUL_6 : complex_multiplier
     generic map(
             re_multiplicator=>0, --- 0.0 + j-1.0
-            im_multiplicator=>-16384
+            im_multiplicator=>-16384,
+            ctrl_start => (ctrl_start+1) mod 16
         )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in=>first_stage_re_out(6),
             data_im_in=>first_stage_im_out(6),
             product_re_out=>mul_re_out(6),
@@ -427,13 +455,14 @@ begin
     UMUL_7 : complex_multiplier
     generic map(
             re_multiplicator=>-11585, --- -0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585
+            im_multiplicator=>-11585,
+            ctrl_start => (ctrl_start+1) mod 16
         )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in=>first_stage_re_out(7),
             data_im_in=>first_stage_im_out(7),
             product_re_out=>mul_re_out(7),

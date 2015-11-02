@@ -10,12 +10,12 @@ temp_fft_ptx = env.get_template('fft_ptx.vhd.template')
 
 # (lhs_point, rhs_point, delay)
 # delay indicates the delay caused by the left-hand-side fft component
-fft_list = [(4, 2),
-            (8, 8),
-            (4, 8),
-            (32, 64)]
+fft_list = [(4, 2, False),
+            (8, 8, False),
+            (4, 8, False),
+            (32, 64, True)]
 
-for lhs_point, rhs_point in fft_list:
+for lhs_point, rhs_point, istop in fft_list:
     delay = cal_delay(lhs_point)
 
     data_arrival_time = {
@@ -30,4 +30,4 @@ for lhs_point, rhs_point in fft_list:
         index, w = calculate_fft_structure(lhs_point, rhs_point)
         w = [(sfi(i.real, 16, 14), sfi(i.imag, 16, 14)) for i in w]
         f.write(temp_fft_ptx.render(
-            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w, delay=ctrl_delay['mul']))
+            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w, delay=ctrl_delay['mul'], istop=istop))

@@ -6,6 +6,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 {% set rhs_component_name='fft_pt'~rhs_point %}
 
 entity {{ component_name }} is
+    GENERIC (
+        ctrl_start     : INTEGER := 0
+    );
     PORT (
         tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector({{ point-1 }} downto 0);
         tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector({{ point-1 }} downto 0);
@@ -13,7 +16,11 @@ entity {{ component_name }} is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        {% if istop %}
         ctrl           : IN STD_LOGIC;
+        {% else %}
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        {% endif %}
 
         data_re_in:in std_logic_vector({{ point-1 }} downto 0);
         data_im_in:in std_logic_vector({{ point-1 }} downto 0);
@@ -26,11 +33,14 @@ end {{ component_name }};
 architecture Behavioral of {{ component_name }} is
 
 component {{ lhs_component_name }} is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
         data_im_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
@@ -42,11 +52,14 @@ end component;
 
 {% if lhs_point!=rhs_point %}
 component {{ rhs_component_name }} is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
         data_im_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
@@ -60,13 +73,14 @@ end component;
 component complex_multiplier is
     GENERIC (
         re_multiplicator : INTEGER;
-        im_multiplicator : INTEGER
+        im_multiplicator : INTEGER;
+        ctrl_start       : INTEGER
     );
     PORT (
         clk             : IN std_logic;
         rst             : IN std_logic;
         ce              : IN std_logic;
-        ctrl            : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
         product_re_out  : OUT STD_LOGIC;
@@ -97,33 +111,43 @@ end component;
 signal first_stage_re_out, first_stage_im_out: std_logic_vector({{ point-1 }} downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector({{ point-1 }} downto 0);
 signal shifter_re,shifter_im:std_logic_vector({{point-1}} downto 0);
-SIGNAL ctrl_delay : std_logic;
+{% if istop %}
+SIGNAL ctrl_delay : std_logic_vector(15 downto 0);
+{% endif %}
 
 begin
+    {% if istop %}
+    --- create ctrl_delay signal in top module
+    ctrl_delay(0) <= ctrl;
+    --- buffer for ctrl
+    PROCESS (clk, rst, ce, ctrl)
+    BEGIN
+        IF clk'EVENT AND clk = '1' THEN
+            IF rst = '0' THEN
+                ctrl_delay(15 DOWNTO 1) <= (OTHERS => '0');
+            ELSIF ce = '1' THEN
+                ctrl_delay(15 DOWNTO 1) <= ctrl_delay(14 DOWNTO 0);
+            END IF;
+        END IF;
+    END PROCESS;
+    {% endif %}
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
     tmp_mul_re_out <= mul_re_out;
     tmp_mul_im_out <= mul_im_out;
 
-    UDELAY_CTRL : Dff_regN
-    generic map(N=>{{delay}})
-    port map(
-            D=>ctrl,
-            clk=>clk,
-            ce=>ce,
-            rst=>rst,
-            Q=>ctrl_delay
-        );
-
     --- left-hand-side processors
     {% for i in range(rhs_point) %}
     UL{{lhs_component_name|upper}}_{{i}} : {{ lhs_component_name }}
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl,
+            ctrl_delay=>ctrl_delay,
             {% for j in range(0,lhs_point) %}
             data_re_in({{j}})=>data_re_in({{i+j*rhs_point}}),
             {% endfor %}
@@ -139,11 +163,14 @@ begin
     --- right-hand-side processors
     {% for i in range(lhs_point) %}
     UR{{rhs_component_name|upper}}_{{i}} : {{ rhs_component_name }}
+    generic map(
+        ctrl_start => (ctrl_start+{{delay}}) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             {% for j in range(rhs_point) %}
             data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
             {% endfor %}
@@ -186,7 +213,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+{{delay}}) mod 16),
             data_in=>shifter_re({{i}}),
             data_out=>mul_re_out({{i}})
         );
@@ -195,7 +222,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+{{delay}}) mod 16),
             data_in=>shifter_im({{i}}),
             data_out=>mul_im_out({{i}})
         );
@@ -204,13 +231,14 @@ begin
     UMUL_{{i}} : complex_multiplier
     generic map(
             re_multiplicator=>{{w[i][0]}}, --- {{w[i][0]/2.0**14}} + j{{w[i][1]/2.0**14}}
-            im_multiplicator=>{{w[i][1]}}
+            im_multiplicator=>{{w[i][1]}},
+            ctrl_start => (ctrl_start+{{delay}}) mod 16
         )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay,
+            ctrl_delay=>ctrl_delay,
             data_re_in=>first_stage_re_out({{i}}),
             data_im_in=>first_stage_im_out({{i}}),
             product_re_out=>mul_re_out({{i}}),

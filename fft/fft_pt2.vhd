@@ -2,11 +2,14 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY fft_pt2 IS
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk          : IN STD_LOGIC;
         rst          : IN STD_LOGIC;
         ce           : IN STD_LOGIC;
-        ctrl         : IN STD_LOGIC;
+        ctrl_delay   : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in   : IN std_logic_vector(1 DOWNTO 0);
         data_im_in   : IN std_logic_vector(1 DOWNTO 0);
@@ -83,7 +86,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(0)
     );
 
@@ -103,7 +106,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(1)
     );
 
@@ -123,7 +126,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(2)
     );
 
@@ -143,7 +146,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(3)
     );
 

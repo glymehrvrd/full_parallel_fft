@@ -2,11 +2,14 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY fft_pt4 IS
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk          : IN STD_LOGIC;
         rst          : IN STD_LOGIC;
         ce           : IN STD_LOGIC;
-        ctrl         : IN STD_LOGIC;
+        ctrl_delay   : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in   : IN std_logic_vector(3 DOWNTO 0);
         data_im_in   : IN std_logic_vector(3 DOWNTO 0);
@@ -112,7 +115,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_0(0)
     );
     ADDER0_RE_0 : adder_bit1
@@ -130,7 +133,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_0(1)
     );
     ADDER1_RE_0 : adder_bit1
@@ -148,7 +151,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_0(2)
     );
     ADDER2_RE_0 : adder_bit1
@@ -166,7 +169,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_0(3)
     );
     ADDER3_RE_0 : adder_bit1
@@ -185,7 +188,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_0(0)
     );
     ADDER0_IM_0 : adder_bit1
@@ -203,7 +206,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_0(1)
     );
     ADDER1_IM_0 : adder_bit1
@@ -221,7 +224,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_0(2)
     );
     ADDER2_IM_0 : adder_bit1
@@ -239,7 +242,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_0(3)
     );
     ADDER3_IM_0 : adder_bit1
@@ -258,7 +261,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_1(0)
     );
     ADDER0_RE_1 : adder_bit1
@@ -276,7 +279,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_1(1)
     );
     ADDER1_RE_1 : adder_bit1
@@ -294,7 +297,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_1(2)
     );
     ADDER2_RE_1 : adder_bit1
@@ -312,7 +315,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_1(3)
     );
     ADDER3_RE_1 : adder_bit1
@@ -331,7 +334,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_1(0)
     );
     ADDER0_IM_1 : adder_bit1
@@ -349,7 +352,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_1(1)
     );
     ADDER1_IM_1 : adder_bit1
@@ -367,7 +370,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_1(2)
     );
     ADDER2_IM_1 : adder_bit1
@@ -385,7 +388,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_1(3)
     );
     ADDER3_IM_1 : adder_bit1
@@ -404,7 +407,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_2(0)
     );
     ADDER0_RE_2 : adder_bit1
@@ -422,7 +425,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_2(1)
     );
     ADDER1_RE_2 : adder_bit1
@@ -440,7 +443,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_2(2)
     );
     ADDER2_RE_2 : adder_bit1
@@ -458,7 +461,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_2(3)
     );
     ADDER3_RE_2 : adder_bit1
@@ -477,7 +480,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_2(0)
     );
     ADDER0_IM_2 : adder_bit1
@@ -495,7 +498,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_2(1)
     );
     ADDER1_IM_2 : adder_bit1
@@ -513,7 +516,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_2(2)
     );
     ADDER2_IM_2 : adder_bit1
@@ -531,7 +534,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_2(3)
     );
     ADDER3_IM_2 : adder_bit1
@@ -550,7 +553,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_3(0)
     );
     ADDER0_RE_3 : adder_bit1
@@ -568,7 +571,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_3(1)
     );
     ADDER1_RE_3 : adder_bit1
@@ -586,7 +589,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_3(2)
     );
     ADDER2_RE_3 : adder_bit1
@@ -604,7 +607,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_re_3(3)
     );
     ADDER3_RE_3 : adder_bit1
@@ -623,7 +626,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_3(0)
     );
     ADDER0_IM_3 : adder_bit1
@@ -641,7 +644,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_3(1)
     );
     ADDER1_IM_3 : adder_bit1
@@ -659,7 +662,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_3(2)
     );
     ADDER2_IM_3 : adder_bit1
@@ -677,7 +680,7 @@ BEGIN
         clk      => clk, 
         rst      => rst, 
         ce       => ce, 
-        preload  => ctrl, 
+        preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff_im_3(3)
     );
     ADDER3_IM_3 : adder_bit1
