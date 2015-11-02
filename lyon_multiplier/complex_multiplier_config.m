@@ -42,11 +42,9 @@ function complex_multiplier_config(this_block)
 
     this_block.port('rst').useHDLVector(false);
 
-    if (this_block.port('ctrl').width ~= 1);
-      this_block.setError('Input data type for port "ctrl" must have width=1.');
+    if (this_block.port('ctrl').width ~= 16);
+      this_block.setError('Input data type for port "ctrl" must have width=16.');
     end
-
-    this_block.port('ctrl').useHDLVector(false);
 
     if (this_block.port('data_re_in').width ~= 1);
       this_block.setError('Input data type for port "data_re_in" must have width=1.');
@@ -79,6 +77,7 @@ function complex_multiplier_config(this_block)
   %      Supported types are boolean, real, integer and string.
   this_block.addGeneric('re_multiplicator','INTEGER','-15000');
   this_block.addGeneric('im_multiplicator','INTEGER','17000');
+  this_block.addGeneric('ctrl_start','INTEGER','0');
 
   % Add addtional source files as needed.
   %  |-------------

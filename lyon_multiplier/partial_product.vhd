@@ -2,11 +2,14 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY partial_product IS
+    GENERIC (
+        ctrl_start: INTEGER:=0
+    );
     PORT (
         clk       : IN std_logic;
         rst       : IN std_logic;
         ce        : IN std_logic;
-        ctrl      : IN STD_LOGIC;
+        ctrl_delay: IN std_logic_vector(15 DOWNTO 0);
         data1_in  : IN std_logic;
         data2_in  : IN STD_LOGIC;
         data3_in  : IN std_logic;
@@ -46,8 +49,6 @@ ARCHITECTURE Behavioral OF partial_product IS
         );
     END COMPONENT;
 
-    SIGNAL ctrl_delay1 : std_logic;
-
     SIGNAL data1_in_delay1 : std_logic;
 
     SIGNAL adder_in1 : std_logic;
@@ -58,14 +59,6 @@ ARCHITECTURE Behavioral OF partial_product IS
     SIGNAL c_buff : std_logic;
 
 BEGIN
-    BUFF_CTRL : Dff_reg1
-    PORT MAP(
-        D    => ctrl, 
-        clk  => clk, 
-        rst  => rst, 
-        ce   => ce, 
-        Q    => ctrl_delay1
-    );
 
     BUFF_DIN1 : Dff_reg1
     PORT MAP(
@@ -78,7 +71,7 @@ BEGIN
 
     MUX_DIN1 : mux_in2
     PORT MAP(
-        sel       => ctrl, 
+        sel       => ctrl_delay(ctrl_start), 
         data1_in  => data1_in, 
         data2_in  => data1_in_delay1, 
         data_out  => adder_in1
@@ -97,7 +90,7 @@ BEGIN
 
     MUX_ADDER_C_IN : mux_in2
     PORT MAP(
-        sel       => ctrl_delay1, 
+        sel       => ctrl_delay((ctrl_start+1) mod 16), 
         data1_in  => c_buff, 
         data2_in  => '0', 
         data_out  => adder_c_in

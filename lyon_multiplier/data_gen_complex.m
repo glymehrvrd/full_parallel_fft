@@ -16,9 +16,9 @@ d_re_in=timeseries([0; 0; 0; d_re; 0],t);
 d_im_in=timeseries([0; 0; 0; d_im; 0],t);
 
 % ctrl signal
-d_ctrl=repmat([1 zeros(1,15)],size(d_fp,2)+10,1);
-d_ctrl=d_ctrl';
-d_ctrl=boolean(d_ctrl(:));
+d_ctrl=repmat(eye(16),size(d_fp,2)+10,1);
+d_ctrl=fliplr(d_ctrl);
 
-t=0:numel(d_ctrl)+2;
-ctrl=timeseries([0; 0; d_ctrl; 0],t);
+t=0:size(d_ctrl,1)+2;
+ctrl=[zeros(2,16);d_ctrl;zeros(1,16)];
+ctrl=[t' ctrl];
