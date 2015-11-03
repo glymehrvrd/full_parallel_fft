@@ -99,9 +99,34 @@ component shifter is
         );
 end component;
 
+COMPONENT Dff_preload_reg1_init_1 IS
+    PORT (
+        D        : IN STD_LOGIC;
+        clk      : IN STD_LOGIC;
+        rst      : IN STD_LOGIC;
+        ce       : IN STD_LOGIC;
+        preload  : IN STD_LOGIC;
+        Q        : OUT STD_LOGIC
+    );
+END COMPONENT;
+
+component adder_half_bit1
+    PORT (
+        data1_in  : IN STD_LOGIC;
+        data2_in  : IN STD_LOGIC;
+        sum_out   : OUT STD_LOGIC;
+        c_out     : OUT STD_LOGIC
+    );
+end component;
+
 signal first_stage_re_out, first_stage_im_out: std_logic_vector(31 downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector(31 downto 0);
 signal shifter_re,shifter_im:std_logic_vector(31 downto 0);
+signal not_first_stage_re_out: std_logic_vector(31 downto 0);
+signal opp_first_stage_re_out: std_logic_vector(31 downto 0);
+signal c: std_logic_vector(31 downto 0);
+signal c_buff: std_logic_vector(31 downto 0);
+
 SIGNAL ctrl_delay : std_logic_vector(15 downto 0);
 
 begin
@@ -935,21 +960,58 @@ begin
             product_im_out=>mul_im_out(17)
         );
 
-    UMUL_18 : complex_multiplier
-    generic map(
-            re_multiplicator=>0, --- 0.0 + j-1.0
-            im_multiplicator=>-16384,
-            ctrl_start => (ctrl_start+1) mod 16
-        )
+    not_first_stage_re_out(18) <= not first_stage_re_out(18);
+    C_BUFF_18 : Dff_preload_reg1_init_1
+    PORT MAP(
+        D        => c(18), 
+        clk      => clk, 
+        rst      => rst, 
+        ce       => ce, 
+        preload  => ctrl_delay((ctrl_start+1) mod 16), 
+        Q        => c_buff(18)
+    );
+    ADDER_18 : adder_half_bit1
+    PORT MAP(
+        data1_in  => c_buff(18), 
+        data2_in  => not_first_stage_re_out(18), 
+        sum_out   => opp_first_stage_re_out(18), 
+        c_out     => c(18)
+    );
+    UDELAY_18_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(18),
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>shifter_re(18)
+        );
+    UDELAY_18_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>opp_first_stage_re_out(18),
+            clk=>clk,
+            ce=>ce,
+            rst=>rst,
+            Q=>shifter_im(18)
+        );
+    USHIFTER_18_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(18),
-            data_im_in=>first_stage_im_out(18),
-            product_re_out=>mul_re_out(18),
-            product_im_out=>mul_im_out(18)
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
+            data_in=>shifter_re(18),
+            data_out=>mul_re_out(18)
+        );
+    USHIFTER_18_IM: shifter
+    port map(
+            clk=>clk,
+            rst=>rst,
+            ce=>ce,
+            ctrl=>ctrl_delay((ctrl_start+1) mod 16),
+            data_in=>shifter_im(18),
+            data_out=>mul_im_out(18)
         );
 
     UMUL_19 : complex_multiplier
