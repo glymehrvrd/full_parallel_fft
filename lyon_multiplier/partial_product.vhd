@@ -88,13 +88,15 @@ BEGIN
         Q    => c_buff
     );
 
-    MUX_ADDER_C_IN : mux_in2
-    PORT MAP(
-        sel       => ctrl_delay((ctrl_start+1) mod 16), 
-        data1_in  => c_buff, 
-        data2_in  => '0', 
-        data_out  => adder_c_in
-    );
+    --MUX_ADDER_C_IN : mux_in2
+    --PORT MAP(
+    --    sel       => ctrl_delay((ctrl_start+1) mod 16), 
+    --    data1_in  => c_buff, 
+    --    data2_in  => '0', 
+    --    data_out  => adder_c_in
+    --);
+    
+    adder_c_in <= (not ctrl_delay((ctrl_start+1) mod 16)) and c_buff;
 
     ADDER : adder_bit1
     PORT MAP(
