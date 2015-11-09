@@ -1,0 +1,71 @@
+{
+    "shifter": {
+        "dff_1": 1,
+        "gate": 8
+    },
+    "dff_1_preload_1": {
+        "dff": 1,
+        "gate": 5
+    },
+    "dff_1": {
+        "dff": 1,
+        "gate": 3
+    },
+    "mux": {
+        "gate": 4
+    },
+    "HA": {
+        "gate": 3
+    },
+    "FA": {
+        "HA": 2,
+        "gate": 1
+    },
+    "dff_116": {
+        "dff": 15,
+        "gate": 47
+    },
+    "complex_multiplier": {
+        "gate": 15,
+        "dff_1_preload_1": 3,
+        "FA": 3,
+        "mul": 3
+    },
+    "mul":{
+        "dff_1":15,
+        "partial_product":15
+    },
+    "partial_product": {
+        "gate": 1,
+        "dff_1": 2,
+        "mux": 2,
+        "FA": 1
+    },
+    "fft2":{
+        "FA":4,
+        "dff_1_preload_1":4
+    },
+    "fft4":{
+        "FA":16,
+        "dff_1_preload_1":16
+    },
+    "fft8":{
+        "fft4":2,
+        "fft2":4,
+        "complex_multiplier":3
+    },
+    "fft32":{
+        "fft4":8,
+        "fft8":4,
+        "complex_multiplier":21
+    },
+    "fft64":{
+        "fft8":16,
+        "complex_multiplier":49
+    },
+    "fft2048":{
+        "fft32":64,
+        "fft64":32,
+        "complex_multiplier":1953
+    }
+}
