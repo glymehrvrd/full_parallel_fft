@@ -1,5 +1,5 @@
-% set number of input data
-d_num=2;
+ % set number of input data
+d_num=20;
 beginner=22+85;
 
 d_out=[];

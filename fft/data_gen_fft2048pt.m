@@ -2,8 +2,8 @@ clc;
 clear all;
 
 % input data, each row an input port, each column a data
-d=rand(2048,2)+1j*rand(2048,2);
-d=d*1000;
+d=rand(2048,20)+1j*rand(2048,20);
+d=d*1500;
 
 % convert data to signed fixed-point num
 d_fp=sfi(d,2048,0);

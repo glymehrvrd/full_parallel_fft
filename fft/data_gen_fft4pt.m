@@ -1,11 +1,9 @@
 clc;
 clear all;
 
+d_num=100;
 % input data, each row an input port, each column a data
-d=[-5014+5221i -5013-284i;
-   -5013+284i -5014-5221i;
-   -5013-284i -5013-284i;
-   -5014+5221i 5013-284i];
+d=(rand(4,d_num)-0.5)*2^13+(rand(4,d_num)-0.5)*1j*2^13;
 
 % convert data to signed fixed-point num
 d_fp=sfi(d,16,0);
