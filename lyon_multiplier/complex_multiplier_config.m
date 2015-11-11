@@ -18,7 +18,7 @@ function complex_multiplier_config(this_block)
   this_block.tagAsCombinational;
 
   this_block.addSimulinkInport('rst');
-  this_block.addSimulinkInport('ctrl');
+  this_block.addSimulinkInport('ctrl_delay');
   this_block.addSimulinkInport('data_re_in');
   this_block.addSimulinkInport('data_im_in');
 
@@ -42,8 +42,8 @@ function complex_multiplier_config(this_block)
 
     this_block.port('rst').useHDLVector(false);
 
-    if (this_block.port('ctrl').width ~= 16);
-      this_block.setError('Input data type for port "ctrl" must have width=16.');
+    if (this_block.port('ctrl_delay').width ~= 16);
+      this_block.setError('Input data type for port "ctrl_delay" must have width=16.');
     end
 
     if (this_block.port('data_re_in').width ~= 1);
@@ -75,8 +75,8 @@ function complex_multiplier_config(this_block)
   %      on input types, make the settings in the "inputTypesKnown" code block.
   %      The addGeneric function takes  3 parameters, generic name, type and constant value.
   %      Supported types are boolean, real, integer and string.
-  this_block.addGeneric('re_multiplicator','INTEGER','-15000');
-  this_block.addGeneric('im_multiplicator','INTEGER','17000');
+  this_block.addGeneric('re_multiplicator','INTEGER','-11585');
+  this_block.addGeneric('im_multiplicator','INTEGER','-11585');
   this_block.addGeneric('ctrl_start','INTEGER','0');
 
   % Add addtional source files as needed.

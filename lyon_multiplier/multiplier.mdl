@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.26"
+    ComputedModelVersion    "1.27"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -58,16 +58,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		6
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1688.0, 847.0]
-	ZoomFactor		[1.0]
-	Offset			[1592.938995039171, -133.91636784062558]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1688.0, 842.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [1744.3333333333339, 59.263333805402112]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "1"
+	  Extents		  [1688.0, 842.0]
+	  ZoomFactor		  [1.0]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -77,16 +89,16 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Oct 14 21:59:17 2015"
-  RTWModifiedTimeStamp	  366758079
-  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  LastModifiedDate	  "Tue Nov 10 17:05:54 2015"
+  RTWModifiedTimeStamp	  369075953
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
   WideLines		  off
   ShowLineDimensions	  off
-  ShowPortDataTypes	  off
+  ShowPortDataTypes	  on
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -114,7 +126,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "multiplier"
     signals_		    []
@@ -174,13 +186,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
+      $ObjectID		      9
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "50"
@@ -215,7 +227,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -247,7 +259,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -303,7 +315,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -393,7 +405,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -430,7 +442,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -445,7 +457,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -460,7 +472,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
+	  $ObjectID		  17
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -529,7 +541,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -597,7 +609,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
+	      $ObjectID		      19
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -677,7 +689,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  19
+	  $ObjectID		  20
 	  Version		  "1.12.1"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -699,11 +711,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    21
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -787,6 +799,17 @@ Model {
       SampleTime	      "inf"
       FramePeriod	      "inf"
       PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      FromWorkspace
@@ -883,6 +906,16 @@ Model {
       GeneratePreprocessorConditionals off
     }
     Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
+    Block {
       BlockType		      UnitDelay
       InitialCondition	      "0"
       InputProcessing	      "Inherited"
@@ -908,12 +941,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "766"
+    SIDHighWatermark	    "769"
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "121"
-      Position		      [120, 225, 150, 255]
+      Position		      [225, 225, 255, 255]
       ZOrder		      31
       BlockRotation	      270
       BlockMirror	      on
@@ -924,7 +957,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant10"
       SID		      "425"
-      Position		      [1870, 225, 1900, 255]
+      Position		      [1975, 225, 2005, 255]
       ZOrder		      53
       BlockRotation	      270
       BlockMirror	      on
@@ -935,7 +968,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant11"
       SID		      "426"
-      Position		      [2065, 225, 2095, 255]
+      Position		      [2170, 225, 2200, 255]
       ZOrder		      55
       BlockRotation	      270
       BlockMirror	      on
@@ -947,7 +980,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant12"
       SID		      "427"
-      Position		      [2260, 225, 2290, 255]
+      Position		      [2365, 225, 2395, 255]
       ZOrder		      57
       BlockRotation	      270
       BlockMirror	      on
@@ -958,7 +991,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant13"
       SID		      "428"
-      Position		      [2455, 225, 2485, 255]
+      Position		      [2560, 225, 2590, 255]
       ZOrder		      59
       BlockRotation	      270
       BlockMirror	      on
@@ -969,7 +1002,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant14"
       SID		      "565"
-      Position		      [2650, 225, 2680, 255]
+      Position		      [2755, 225, 2785, 255]
       ZOrder		      61
       BlockRotation	      270
       BlockMirror	      on
@@ -980,7 +1013,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant15"
       SID		      "566"
-      Position		      [2845, 225, 2875, 255]
+      Position		      [2950, 225, 2980, 255]
       ZOrder		      63
       BlockRotation	      270
       BlockMirror	      on
@@ -991,7 +1024,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant16"
       SID		      "747"
-      Position		      [3050, 225, 3080, 255]
+      Position		      [3155, 225, 3185, 255]
       ZOrder		      96
       BlockRotation	      270
       BlockMirror	      on
@@ -1002,7 +1035,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "139"
-      Position		      [505, 225, 535, 255]
+      Position		      [610, 225, 640, 255]
       ZOrder		      32
       BlockRotation	      270
       BlockMirror	      on
@@ -1014,7 +1047,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant3"
       SID		      "128"
-      Position		      [275, 225, 305, 255]
+      Position		      [380, 225, 410, 255]
       ZOrder		      31
       BlockRotation	      270
       BlockMirror	      on
@@ -1025,7 +1058,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant4"
       SID		      "140"
-      Position		      [700, 225, 730, 255]
+      Position		      [805, 225, 835, 255]
       ZOrder		      33
       BlockRotation	      270
       BlockMirror	      on
@@ -1036,7 +1069,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant5"
       SID		      "215"
-      Position		      [895, 225, 925, 255]
+      Position		      [1000, 225, 1030, 255]
       ZOrder		      41
       BlockRotation	      270
       BlockMirror	      on
@@ -1047,7 +1080,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant6"
       SID		      "250"
-      Position		      [1090, 225, 1120, 255]
+      Position		      [1195, 225, 1225, 255]
       ZOrder		      43
       BlockRotation	      270
       BlockMirror	      on
@@ -1059,7 +1092,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant7"
       SID		      "285"
-      Position		      [1285, 225, 1315, 255]
+      Position		      [1390, 225, 1420, 255]
       ZOrder		      45
       BlockRotation	      270
       BlockMirror	      on
@@ -1070,7 +1103,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant8"
       SID		      "320"
-      Position		      [1480, 225, 1510, 255]
+      Position		      [1585, 225, 1615, 255]
       ZOrder		      47
       BlockRotation	      270
       BlockMirror	      on
@@ -1081,7 +1114,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant9"
       SID		      "355"
-      Position		      [1675, 225, 1705, 255]
+      Position		      [1780, 225, 1810, 255]
       ZOrder		      49
       BlockRotation	      270
       BlockMirror	      on
@@ -1089,13 +1122,32 @@ Model {
       OutDataTypeStr	      "boolean"
     }
     Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion"
+      SID		      "767"
+      Position		      [145, 468, 220, 502]
+      ZOrder		      115
+      OutDataTypeStr	      "boolean"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion1"
+      SID		      "768"
+      Position		      [145, 533, 220, 567]
+      ZOrder		      116
+      OutDataTypeStr	      "boolean"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
       SID		      "118"
-      Position		      [50, 473, 115, 497]
+      Position		      [20, 473, 85, 497]
       ZOrder		      28
       VariableName	      "d1_in"
-      OutDataTypeStr	      "boolean"
       SampleTime	      "1"
       ZeroCross		      on
     }
@@ -1103,10 +1155,9 @@ Model {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace2"
       SID		      "119"
-      Position		      [50, 538, 115, 562]
+      Position		      [20, 538, 85, 562]
       ZOrder		      29
       VariableName	      "ctrl"
-      OutDataTypeStr	      "boolean"
       SampleTime	      "1"
       ZeroCross		      on
     }
@@ -1115,7 +1166,7 @@ Model {
       Name		      "LAST"
       SID		      "180"
       Ports		      [4, 1]
-      Position		      [3100, 319, 3200, 361]
+      Position		      [3205, 319, 3305, 361]
       ZOrder		      95
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1738,7 +1789,7 @@ Model {
       Name		      "Logical\nOperator"
       SID		      "117"
       Ports		      [2, 1]
-      Position		      [205, 307, 235, 338]
+      Position		      [310, 307, 340, 338]
       ZOrder		      27
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -1748,7 +1799,7 @@ Model {
       Name		      "Scope"
       SID		      "748"
       Ports		      [1]
-      Position		      [765, 304, 795, 336]
+      Position		      [870, 304, 900, 336]
       ZOrder		      -16
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -1767,7 +1818,7 @@ Model {
       Name		      "Scope1"
       SID		      "749"
       Ports		      [1]
-      Position		      [340, 149, 370, 181]
+      Position		      [445, 149, 475, 181]
       ZOrder		      97
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -1797,11 +1848,11 @@ Model {
       Name		      "Scope10"
       SID		      "758"
       Ports		      [1]
-      Position		      [1860, 149, 1890, 181]
+      Position		      [1965, 149, 1995, 181]
       ZOrder		      106
       Floating		      off
       Location		      [1201, 579, 1525, 818]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1827,7 +1878,7 @@ Model {
       Name		      "Scope11"
       SID		      "759"
       Ports		      [1]
-      Position		      [720, 149, 750, 181]
+      Position		      [825, 149, 855, 181]
       ZOrder		      107
       Floating		      off
       Location		      [2401, 488, 4109, 1342]
@@ -1857,11 +1908,11 @@ Model {
       Name		      "Scope12"
       SID		      "760"
       Ports		      [1]
-      Position		      [2240, 149, 2270, 181]
+      Position		      [2345, 149, 2375, 181]
       ZOrder		      108
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1887,11 +1938,11 @@ Model {
       Name		      "Scope13"
       SID		      "761"
       Ports		      [1]
-      Position		      [2430, 149, 2460, 181]
+      Position		      [2535, 149, 2565, 181]
       ZOrder		      109
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1917,11 +1968,11 @@ Model {
       Name		      "Scope14"
       SID		      "762"
       Ports		      [1]
-      Position		      [3235, 154, 3265, 186]
+      Position		      [3340, 154, 3370, 186]
       ZOrder		      110
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1947,11 +1998,11 @@ Model {
       Name		      "Scope15"
       SID		      "763"
       Ports		      [1]
-      Position		      [2620, 149, 2650, 181]
+      Position		      [2725, 149, 2755, 181]
       ZOrder		      111
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1977,7 +2028,7 @@ Model {
       Name		      "Scope16"
       SID		      "764"
       Ports		      [1]
-      Position		      [1480, 149, 1510, 181]
+      Position		      [1585, 149, 1615, 181]
       ZOrder		      112
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -2007,7 +2058,7 @@ Model {
       Name		      "Scope17"
       SID		      "766"
       Ports		      [1]
-      Position		      [345, 579, 375, 611]
+      Position		      [450, 579, 480, 611]
       ZOrder		      114
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -2037,7 +2088,7 @@ Model {
       Name		      "Scope2"
       SID		      "750"
       Ports		      [1]
-      Position		      [910, 149, 940, 181]
+      Position		      [1015, 149, 1045, 181]
       ZOrder		      98
       Floating		      off
       Location		      [2491, 1033, 2815, 1272]
@@ -2067,7 +2118,7 @@ Model {
       Name		      "Scope3"
       SID		      "751"
       Ports		      [1]
-      Position		      [530, 149, 560, 181]
+      Position		      [635, 149, 665, 181]
       ZOrder		      99
       Floating		      off
       Location		      [1, 105, 1921, 1079]
@@ -2097,11 +2148,11 @@ Model {
       Name		      "Scope4"
       SID		      "752"
       Ports		      [1]
-      Position		      [1670, 149, 1700, 181]
+      Position		      [1775, 149, 1805, 181]
       ZOrder		      100
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2127,7 +2178,7 @@ Model {
       Name		      "Scope5"
       SID		      "753"
       Ports		      [1]
-      Position		      [1100, 149, 1130, 181]
+      Position		      [1205, 149, 1235, 181]
       ZOrder		      101
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -2157,7 +2208,7 @@ Model {
       Name		      "Scope6"
       SID		      "754"
       Ports		      [1]
-      Position		      [1290, 149, 1320, 181]
+      Position		      [1395, 149, 1425, 181]
       ZOrder		      102
       Floating		      off
       Location		      [188, 390, 512, 629]
@@ -2187,11 +2238,11 @@ Model {
       Name		      "Scope7"
       SID		      "755"
       Ports		      [1]
-      Position		      [3000, 149, 3030, 181]
+      Position		      [3105, 149, 3135, 181]
       ZOrder		      103
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2217,11 +2268,11 @@ Model {
       Name		      "Scope8"
       SID		      "756"
       Ports		      [1]
-      Position		      [2050, 149, 2080, 181]
+      Position		      [2155, 149, 2185, 181]
       ZOrder		      104
       Floating		      off
-      Location		      [877, 628, 1201, 867]
-      Open		      on
+      Location		      [877, 619, 1201, 858]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2247,11 +2298,11 @@ Model {
       Name		      "Scope9"
       SID		      "757"
       Ports		      [1]
-      Position		      [2810, 149, 2840, 181]
+      Position		      [2915, 149, 2945, 181]
       ZOrder		      105
       Floating		      off
       Location		      [188, 390, 512, 629]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -2277,7 +2328,7 @@ Model {
       Name		      "Subsystem"
       SID		      "1"
       Ports		      [4, 1]
-      Position		      [360, 319, 460, 361]
+      Position		      [465, 319, 565, 361]
       ZOrder		      -17
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2288,8 +2339,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[2391, 424, 4117, 1352]
-	Open			off
+	Location		[-9, 41, 1929, 1089]
+	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2528,7 +2579,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Selector"
-	    Location		    [16, 52, 1335, 1389]
+	    Location		    [-9, 41, 1929, 1089]
 	    Open		    off
 	    ModelBrowserVisibility  on
 	    ModelBrowserWidth	    200
@@ -2891,7 +2942,7 @@ Model {
       Name		      "Subsystem1"
       SID		      "49"
       Ports		      [4, 1]
-      Position		      [555, 319, 655, 361]
+      Position		      [660, 319, 760, 361]
       ZOrder		      25
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -3505,7 +3556,7 @@ Model {
       Name		      "Subsystem10"
       SID		      "497"
       Ports		      [4, 1]
-      Position		      [2310, 319, 2410, 361]
+      Position		      [2415, 319, 2515, 361]
       ZOrder		      56
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4119,7 +4170,7 @@ Model {
       Name		      "Subsystem11"
       SID		      "531"
       Ports		      [4, 1]
-      Position		      [2505, 319, 2605, 361]
+      Position		      [2610, 319, 2710, 361]
       ZOrder		      58
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -4733,7 +4784,7 @@ Model {
       Name		      "Subsystem12"
       SID		      "569"
       Ports		      [4, 1]
-      Position		      [2700, 319, 2800, 361]
+      Position		      [2805, 319, 2905, 361]
       ZOrder		      60
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -5347,7 +5398,7 @@ Model {
       Name		      "Subsystem13"
       SID		      "603"
       Ports		      [4, 1]
-      Position		      [2895, 319, 2995, 361]
+      Position		      [3000, 319, 3100, 361]
       ZOrder		      62
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -5961,7 +6012,7 @@ Model {
       Name		      "Subsystem2"
       SID		      "83"
       Ports		      [4, 1]
-      Position		      [755, 319, 855, 361]
+      Position		      [860, 319, 960, 361]
       ZOrder		      26
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -6575,7 +6626,7 @@ Model {
       Name		      "Subsystem3"
       SID		      "216"
       Ports		      [4, 1]
-      Position		      [945, 319, 1045, 361]
+      Position		      [1050, 319, 1150, 361]
       ZOrder		      40
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7189,7 +7240,7 @@ Model {
       Name		      "Subsystem4"
       SID		      "251"
       Ports		      [4, 1]
-      Position		      [1140, 319, 1240, 361]
+      Position		      [1245, 319, 1345, 361]
       ZOrder		      42
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -7803,7 +7854,7 @@ Model {
       Name		      "Subsystem5"
       SID		      "286"
       Ports		      [4, 1]
-      Position		      [1335, 319, 1435, 361]
+      Position		      [1440, 319, 1540, 361]
       ZOrder		      44
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -8417,7 +8468,7 @@ Model {
       Name		      "Subsystem6"
       SID		      "321"
       Ports		      [4, 1]
-      Position		      [1530, 319, 1630, 361]
+      Position		      [1635, 319, 1735, 361]
       ZOrder		      46
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -9031,7 +9082,7 @@ Model {
       Name		      "Subsystem7"
       SID		      "356"
       Ports		      [4, 1]
-      Position		      [1725, 319, 1825, 361]
+      Position		      [1830, 319, 1930, 361]
       ZOrder		      48
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -9645,7 +9696,7 @@ Model {
       Name		      "Subsystem8"
       SID		      "429"
       Ports		      [4, 1]
-      Position		      [1920, 319, 2020, 361]
+      Position		      [2025, 319, 2125, 361]
       ZOrder		      52
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -10259,7 +10310,7 @@ Model {
       Name		      "Subsystem9"
       SID		      "463"
       Ports		      [4, 1]
-      Position		      [2115, 319, 2215, 361]
+      Position		      [2220, 319, 2320, 361]
       ZOrder		      54
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -10869,10 +10920,22 @@ Model {
       }
     }
     Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "769"
+      Ports		      [1]
+      Position		      [3345, 485, 3405, 515]
+      ZOrder		      117
+      VariableName	      "simout"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
       BlockType		      UnitDelay
       Name		      "Unit Delay1"
       SID		      "47"
-      Position		      [490, 468, 525, 502]
+      Position		      [595, 468, 630, 502]
       ZOrder		      23
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10880,7 +10943,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay10"
       SID		      "709"
-      Position		      [1855, 468, 1890, 502]
+      Position		      [1960, 468, 1995, 502]
       ZOrder		      73
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10888,7 +10951,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay11"
       SID		      "710"
-      Position		      [1465, 468, 1500, 502]
+      Position		      [1570, 468, 1605, 502]
       ZOrder		      71
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10896,7 +10959,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay12"
       SID		      "711"
-      Position		      [2440, 468, 2475, 502]
+      Position		      [2545, 468, 2580, 502]
       ZOrder		      75
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10904,7 +10967,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay13"
       SID		      "712"
-      Position		      [2830, 468, 2865, 502]
+      Position		      [2935, 468, 2970, 502]
       ZOrder		      76
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10912,7 +10975,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay14"
       SID		      "713"
-      Position		      [2245, 468, 2280, 502]
+      Position		      [2350, 468, 2385, 502]
       ZOrder		      74
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10920,7 +10983,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay15"
       SID		      "714"
-      Position		      [2635, 468, 2670, 502]
+      Position		      [2740, 468, 2775, 502]
       ZOrder		      78
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10928,7 +10991,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay16"
       SID		      "715"
-      Position		      [2050, 468, 2085, 502]
+      Position		      [2155, 468, 2190, 502]
       ZOrder		      79
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10936,7 +10999,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay17"
       SID		      "716"
-      Position		      [3025, 468, 3060, 502]
+      Position		      [3130, 468, 3165, 502]
       ZOrder		      77
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10944,7 +11007,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay18"
       SID		      "733"
-      Position		      [880, 533, 915, 567]
+      Position		      [985, 533, 1020, 567]
       ZOrder		      81
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10952,7 +11015,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay19"
       SID		      "734"
-      Position		      [1270, 533, 1305, 567]
+      Position		      [1375, 533, 1410, 567]
       ZOrder		      82
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10960,7 +11023,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay2"
       SID		      "48"
-      Position		      [685, 468, 720, 502]
+      Position		      [790, 468, 825, 502]
       ZOrder		      24
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10968,7 +11031,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay20"
       SID		      "735"
-      Position		      [1660, 533, 1695, 567]
+      Position		      [1765, 533, 1800, 567]
       ZOrder		      85
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10976,7 +11039,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay21"
       SID		      "736"
-      Position		      [1855, 533, 1890, 567]
+      Position		      [1960, 533, 1995, 567]
       ZOrder		      86
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10984,7 +11047,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay22"
       SID		      "737"
-      Position		      [1075, 533, 1110, 567]
+      Position		      [1180, 533, 1215, 567]
       ZOrder		      83
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -10992,7 +11055,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay23"
       SID		      "738"
-      Position		      [1465, 533, 1500, 567]
+      Position		      [1570, 533, 1605, 567]
       ZOrder		      84
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11000,7 +11063,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay24"
       SID		      "739"
-      Position		      [2440, 533, 2475, 567]
+      Position		      [2545, 533, 2580, 567]
       ZOrder		      89
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11008,7 +11071,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay25"
       SID		      "740"
-      Position		      [2830, 533, 2865, 567]
+      Position		      [2935, 533, 2970, 567]
       ZOrder		      90
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11016,7 +11079,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay28"
       SID		      "743"
-      Position		      [2635, 533, 2670, 567]
+      Position		      [2740, 533, 2775, 567]
       ZOrder		      91
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11024,7 +11087,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay29"
       SID		      "744"
-      Position		      [3025, 533, 3060, 567]
+      Position		      [3130, 533, 3165, 567]
       ZOrder		      92
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11032,7 +11095,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay3"
       SID		      "46"
-      Position		      [245, 468, 280, 502]
+      Position		      [350, 468, 385, 502]
       ZOrder		      22
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11040,7 +11103,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay30"
       SID		      "745"
-      Position		      [2050, 533, 2085, 567]
+      Position		      [2155, 533, 2190, 567]
       ZOrder		      87
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11048,7 +11111,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay31"
       SID		      "746"
-      Position		      [2245, 533, 2280, 567]
+      Position		      [2350, 533, 2385, 567]
       ZOrder		      88
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11056,7 +11119,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay4"
       SID		      "705"
-      Position		      [1075, 468, 1110, 502]
+      Position		      [1180, 468, 1215, 502]
       ZOrder		      69
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11064,7 +11127,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay5"
       SID		      "124"
-      Position		      [490, 533, 525, 567]
+      Position		      [595, 533, 630, 567]
       ZOrder		      23
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11072,7 +11135,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay6"
       SID		      "125"
-      Position		      [685, 533, 720, 567]
+      Position		      [790, 533, 825, 567]
       ZOrder		      23
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11080,7 +11143,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay7"
       SID		      "706"
-      Position		      [1270, 468, 1305, 502]
+      Position		      [1375, 468, 1410, 502]
       ZOrder		      70
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11088,7 +11151,7 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay8"
       SID		      "707"
-      Position		      [880, 468, 915, 502]
+      Position		      [985, 468, 1020, 502]
       ZOrder		      68
       InputProcessing	      "Elements as channels (sample based)"
     }
@@ -11096,23 +11159,15 @@ Model {
       BlockType		      UnitDelay
       Name		      "Unit Delay9"
       SID		      "708"
-      Position		      [1660, 468, 1695, 502]
+      Position		      [1765, 468, 1800, 502]
       ZOrder		      72
       InputProcessing	      "Elements as channels (sample based)"
     }
     Line {
       SrcBlock		      "From\nWorkspace"
       SrcPort		      1
-      Points		      [67, 0]
-      Branch {
-	Points			[0, -155]
-	DstBlock		"Logical\nOperator"
-	DstPort			2
-      }
-      Branch {
-	DstBlock		"Unit Delay3"
-	DstPort			1
-      }
+      DstBlock		      "Data Type Conversion"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Logical\nOperator"
@@ -11216,21 +11271,8 @@ Model {
     Line {
       SrcBlock		      "From\nWorkspace2"
       SrcPort		      1
-      Points		      [205, 0]
-      Branch {
-	Points			[0, 45]
-	DstBlock		"Scope17"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -195]
-	DstBlock		"Subsystem"
-	DstPort			4
-      }
-      Branch {
-	DstBlock		"Unit Delay5"
-	DstPort			1
-      }
+      DstBlock		      "Data Type Conversion1"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Unit Delay1"
@@ -11862,9 +11904,50 @@ Model {
     Line {
       SrcBlock		      "LAST"
       SrcPort		      1
-      Points		      [9, 0; 0, -170]
-      DstBlock		      "Scope14"
-      DstPort		      1
+      Points		      [9, 0]
+      Branch {
+	Points			[0, -170]
+	DstBlock		"Scope14"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 160]
+	DstBlock		"To Workspace"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Data Type Conversion"
+      SrcPort		      1
+      Points		      [67, 0]
+      Branch {
+	Points			[0, -155]
+	DstBlock		"Logical\nOperator"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Unit Delay3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Data Type Conversion1"
+      SrcPort		      1
+      Points		      [205, 0]
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Scope17"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -195]
+	DstBlock		"Subsystem"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Unit Delay5"
+	DstPort			1
+      }
     }
   }
 }

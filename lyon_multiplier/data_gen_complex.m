@@ -2,7 +2,7 @@ clc;
 clear all;
 
 % input data
-d=[6161-6151i 5013-2845i -2593-2812i];
+d=[-7841+9346i 5013-2845i -2593-2812i];
 
 % convert data to signed fixed-point num
 d_fp=sfi(d,16,0);
