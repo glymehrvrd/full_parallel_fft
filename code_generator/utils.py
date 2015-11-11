@@ -97,7 +97,7 @@ def bintocsd(binary):
     return ''.join(csd)
 
 
-def cal_delay(pt, structure={2048:(64,32),32:(8,4),64:(8,8),8:(4,2),4:1,2:1}):
+def cal_delay(pt, structure={2048:(64,32),512:(32,16),16:(4,4),32:(8,4),64:(8,8),8:(4,2),4:1,2:1}):
     try:
         lhspt, rhspt=structure[pt]
     except:
