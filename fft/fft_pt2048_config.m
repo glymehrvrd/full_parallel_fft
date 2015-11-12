@@ -86,6 +86,7 @@ function fft_pt2048_config(this_block)
   this_block.addFile('Dff_preload_1.vhd');
   this_block.addFile('Dff_preload_1_init_1.vhd');
   this_block.addFile('fft_pt2.vhd');
+  this_block.addFile('fft_pt2_nodelay.vhd');
   this_block.addFile('fft_pt4.vhd');
   
   this_block.addFile('Dff_1.vhd');

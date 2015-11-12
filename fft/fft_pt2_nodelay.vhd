@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY fft_pt2 IS
+ENTITY fft_pt2_nodelay IS
     GENERIC (
         ctrl_start       : INTEGER
     );
@@ -17,9 +17,9 @@ ENTITY fft_pt2 IS
         data_re_out  : OUT std_logic_vector(1 DOWNTO 0);
         data_im_out  : OUT std_logic_vector(1 DOWNTO 0)
     );
-END fft_pt2;
+END fft_pt2_nodelay;
 
-ARCHITECTURE Behavioral OF fft_pt2 IS
+ARCHITECTURE Behavioral OF fft_pt2_nodelay IS
 
     COMPONENT adder_bit1 IS
         PORT (
@@ -59,25 +59,9 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
     SIGNAL not_data_re_in1 : std_logic;
     SIGNAL not_data_im_in1 : std_logic;
 
-    SIGNAL data_re_out_buff : std_logic_vector(1 DOWNTO 0);
-    SIGNAL data_im_out_buff : std_logic_vector(1 DOWNTO 0);
-
 BEGIN
     not_data_re_in1 <= NOT data_re_in(1);
     not_data_im_in1 <= NOT data_im_in(1);
-
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                data_re_out <= (OTHERS => '0');
-                data_im_out <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                data_re_out <= data_re_out_buff;
-                data_im_out <= data_im_out_buff;
-            END IF;
-        END IF;
-    END PROCESS;
 
     --- Re(X[0])=Re(x[0])+Re(x[1])
     C_BUFF0_RE : Dff_preload_reg1
@@ -95,7 +79,7 @@ BEGIN
         data1_in  => data_re_in(0), 
         data2_in  => data_re_in(1), 
         c_in      => c_buff(0), 
-        sum_out   => data_re_out_buff(0), 
+        sum_out   => data_re_out(0), 
         c_out     => c(0)
     );
 
@@ -115,7 +99,7 @@ BEGIN
         data1_in  => data_im_in(0), 
         data2_in  => data_im_in(1), 
         c_in      => c_buff(1), 
-        sum_out   => data_im_out_buff(0), 
+        sum_out   => data_im_out(0), 
         c_out     => c(1)
     );
 
@@ -135,7 +119,7 @@ BEGIN
         data1_in  => data_re_in(0), 
         data2_in  => not_data_re_in1, 
         c_in      => c_buff(2), 
-        sum_out   => data_re_out_buff(1), 
+        sum_out   => data_re_out(1), 
         c_out     => c(2)
     );
 
@@ -155,7 +139,7 @@ BEGIN
         data1_in  => data_im_in(0), 
         data2_in  => not_data_im_in1, 
         c_in      => c_buff(3), 
-        sum_out   => data_im_out_buff(1), 
+        sum_out   => data_im_out(1), 
         c_out     => c(3)
     );
 END Behavioral;

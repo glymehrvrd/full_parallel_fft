@@ -85,6 +85,7 @@ function fft_pt4_config(this_block)
   this_block.addFile('adder_bit1.vhd');
   this_block.addFile('Dff_preload_1.vhd');
   this_block.addFile('Dff_preload_1_init_1.vhd');
+  this_block.addFile('fft_pt2_nodelay.vhd');
   this_block.addFile('fft_pt4.vhd');
 
 return;
