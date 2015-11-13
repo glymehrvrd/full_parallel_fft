@@ -1,5 +1,5 @@
 % set number of input data
-d_num=100;
+d_num=1000;
 beginner=22;
 beginner_stage=5;
 beginner_mul=21;

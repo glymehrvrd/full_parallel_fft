@@ -18,7 +18,7 @@ function fft_pt8_config(this_block)
   this_block.tagAsCombinational;
 
   this_block.addSimulinkInport('rst');
-  this_block.addSimulinkInport('ctrl');
+  this_block.addSimulinkInport('ctrl_delay');
   this_block.addSimulinkInport('data_re_in');
   this_block.addSimulinkInport('data_im_in');
 
@@ -52,11 +52,9 @@ function fft_pt8_config(this_block)
 
     this_block.port('rst').useHDLVector(false);
 
-    if (this_block.port('ctrl').width ~= 1);
-      this_block.setError('Input data type for port "ctrl" must have width=1.');
+    if (this_block.port('ctrl_delay').width ~= 16);
+      this_block.setError('Input data type for port "ctrl_delay" must have width=1.');
     end
-
-    this_block.port('ctrl').useHDLVector(false);
 
     if (this_block.port('data_re_in').width ~= 8);
       this_block.setError('Input data type for port "data_re_in" must have width=8.');
