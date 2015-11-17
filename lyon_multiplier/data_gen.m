@@ -1,7 +1,7 @@
 clear all;
 
 % input data
-d=[-7841-9346, 15221, -5013, 10284]';
+d=[-7841, 15221, -5013, 10284]';
 
 % calculate the should-be result
 result1=bitshift(d*(-11586),-15,'int32');
@@ -29,9 +29,9 @@ t=t';
 d1_in=timeseries([0;0; d_bool; 0],t);
 
 % ctrl signal
-d_ctrl=repmat(eye(16),size(d_fp,2)+10,1);
+d_ctrl=repmat(1-eye(16),size(d_fp,2)+10,1);
 d_ctrl=fliplr(d_ctrl);
 
 t=0:size(d_ctrl,1)+2;
-ctrl=[zeros(2,16);d_ctrl;zeros(1,16)];
+ctrl=[ones(2,16);d_ctrl;ones(1,16)];
 ctrl=[t' ctrl];

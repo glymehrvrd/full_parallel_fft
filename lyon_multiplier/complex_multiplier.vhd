@@ -4,9 +4,9 @@ USE ieee.numeric_std.ALL;
 
 ENTITY complex_multiplier IS
     GENERIC (
-        re_multiplicator : INTEGER := -15000;
+        re_multiplicator : INTEGER := - 15000;
         im_multiplicator : INTEGER := 17000;
-        ctrl_start: INTEGER:=0
+        ctrl_start : INTEGER := 0
     );
     PORT (
         clk             : IN std_logic;
@@ -24,8 +24,8 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
 
     COMPONENT lyon_multiplier IS
         GENERIC (
-            multiplicator : INTEGER;
-            ctrl_start: INTEGER
+            multiplicator   : INTEGER;
+            ctrl_start      : INTEGER
         );
         PORT (
             clk          : IN std_logic;
@@ -47,24 +47,13 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         );
     END COMPONENT;
 
-    component Dff_reg1 is
-        PORT (
-            D    : IN STD_LOGIC;
-            clk  : IN STD_LOGIC;
-            ce   : IN STD_LOGIC;
-            rst  : IN STD_LOGIC;
-            Q    : OUT STD_LOGIC
-        );
-    end component;
-
     COMPONENT Dff_preload_reg1 IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
-            preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            preload  : IN STD_LOGIC; --- active low
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -72,10 +61,9 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
-            preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            preload  : IN STD_LOGIC; --- active low
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -90,49 +78,49 @@ BEGIN
     --- x = a(c-d)+d(a-b)
     --- y = b(c+d)+d(a-b)
 
-    not_b <= not data_im_in;
+    not_b <= NOT data_im_in;
 
     --- calculate a(c-d)
     UMUL0 : lyon_multiplier
     GENERIC MAP(
-        multiplicator => re_multiplicator - im_multiplicator,
-        ctrl_start => (ctrl_start+1) mod 16
+        multiplicator => re_multiplicator - im_multiplicator, 
+        ctrl_start => ctrl_start MOD 16
     )
     PORT MAP(
-        clk          => clk, 
-        rst          => rst, 
-        ce           => ce, 
-        ctrl_delay         => ctrl_delay, 
-        data_in      => data_re_in, 
-        product_out  => acd
+        clk            => clk, 
+        rst            => rst, 
+        ce             => ce, 
+        ctrl_delay     => ctrl_delay, 
+        data_in        => data_re_in, 
+        product_out    => acd
     );
 
     --- calculate b(c+d)
     UMUL1 : lyon_multiplier
     GENERIC MAP(
-        multiplicator => re_multiplicator + im_multiplicator,
-        ctrl_start => (ctrl_start+1) mod 16
+        multiplicator  => re_multiplicator + im_multiplicator, 
+        ctrl_start     => ctrl_start MOD 16
     )
     PORT MAP(
-        clk          => clk, 
-        rst          => rst, 
-        ce           => ce, 
-        ctrl_delay         => ctrl_delay, 
-        data_in      => data_im_in, 
-        product_out  => bcd
+        clk            => clk, 
+        rst            => rst, 
+        ce             => ce, 
+        ctrl_delay     => ctrl_delay, 
+        data_in        => data_im_in, 
+        product_out    => bcd
     );
 
     --- calculate d(a-b)
     UMUL2 : lyon_multiplier
     GENERIC MAP(
-        multiplicator => im_multiplicator,
-        ctrl_start => (ctrl_start+1) mod 16
+        multiplicator  => im_multiplicator, 
+        ctrl_start     => ctrl_start MOD 16
     )
     PORT MAP(
         clk          => clk, 
         rst          => rst, 
         ce           => ce, 
-        ctrl_delay         => ctrl_delay, 
+        ctrl_delay   => ctrl_delay, 
         data_in      => ab, 
         product_out  => dab
     );
@@ -142,8 +130,6 @@ BEGIN
     PORT MAP(
         D        => c(0), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(0)
     );
@@ -162,8 +148,6 @@ BEGIN
     PORT MAP(
         D        => c(1), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(1)
     );
@@ -182,8 +166,6 @@ BEGIN
     PORT MAP(
         D        => c(2), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(2)
     );

@@ -1,0 +1,22 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY DFFQXLTL IS
+    PORT (
+        D   : IN STD_LOGIC;
+        CK  : IN STD_LOGIC;
+        Q   : OUT STD_LOGIC
+    );
+END DFFQXLTL;
+
+ARCHITECTURE Behavioral OF DFFQXLTL IS
+
+BEGIN
+    PROCESS (CK)
+    BEGIN
+        IF CK'EVENT AND CK = '1' THEN
+            Q <= D;
+        END IF;
+    END PROCESS;
+
+END Behavioral;

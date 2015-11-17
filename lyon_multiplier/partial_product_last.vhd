@@ -3,17 +3,17 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY partial_product_last IS
     GENERIC (
-        ctrl_start: INTEGER:=0
+        ctrl_start : INTEGER := 0
     );
     PORT (
-        clk       : IN std_logic;
-        rst       : IN std_logic;
-        ce        : IN std_logic;
-        ctrl_delay: IN std_logic_vector(15 DOWNTO 0);
-        data1_in  : IN std_logic;
-        data2_in  : IN STD_LOGIC;
-        data3_in  : IN std_logic;
-        pp_out    : OUT STD_LOGIC --- partial product
+        clk         : IN std_logic;
+        rst         : IN std_logic;
+        ce          : IN std_logic;
+        ctrl_delay  : IN std_logic_vector(15 DOWNTO 0);
+        data1_in    : IN std_logic;
+        data2_in    : IN STD_LOGIC;
+        data3_in    : IN std_logic;
+        pp_out      : OUT STD_LOGIC --- partial product
     );
 END partial_product_last;
 
@@ -33,8 +33,6 @@ ARCHITECTURE Behavioral OF partial_product_last IS
         PORT (
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
-            rst  : IN STD_LOGIC;
-            ce   : IN STD_LOGIC;
             Q    : OUT STD_LOGIC
         );
     END COMPONENT;
@@ -59,13 +57,10 @@ ARCHITECTURE Behavioral OF partial_product_last IS
     SIGNAL c_buff : std_logic;
 
 BEGIN
-
     BUFF_DIN1 : Dff_reg1
     PORT MAP(
         D    => data1_in, 
         clk  => clk, 
-        rst  => rst, 
-        ce   => ce, 
         Q    => d1_in_delay1
     );
 
@@ -83,14 +78,12 @@ BEGIN
     PORT MAP(
         D    => c_out, 
         clk  => clk, 
-        rst  => rst, 
-        ce   => ce, 
         Q    => c_buff
     );
 
     MUX_ADDER_C_IN : mux_in2
     PORT MAP(
-        sel       => ctrl_delay((ctrl_start+1) mod 16), 
+        sel       => ctrl_delay((ctrl_start + 1) MOD 16), 
         data1_in  => c_buff, 
         data2_in  => data3_in, 
         data_out  => adder_c_in
