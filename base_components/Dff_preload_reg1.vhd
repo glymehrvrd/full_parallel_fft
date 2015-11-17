@@ -12,7 +12,7 @@ ENTITY Dff_preload_reg1 IS
 END Dff_preload_reg1;
 
 ARCHITECTURE Behavioral OF Dff_preload_reg1 IS
- 
+
     COMPONENT DFFRXLTL IS
         PORT (
             D   : IN STD_LOGIC;

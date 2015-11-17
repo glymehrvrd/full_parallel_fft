@@ -14,7 +14,6 @@ END DFFRXLTL;
 ARCHITECTURE Behavioral OF DFFRXLTL IS
 
 BEGIN
-
     PROCESS (CK, RN)
     BEGIN
         IF RN = '0' THEN
@@ -22,7 +21,7 @@ BEGIN
             QN <= '1';
         ELSIF CK'EVENT AND CK = '1' THEN
             Q <= D;
-            QN <= not D;
+            QN <= NOT D;
         END IF;
     END PROCESS;
 

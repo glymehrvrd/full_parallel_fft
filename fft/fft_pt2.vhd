@@ -35,10 +35,9 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
             preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -46,10 +45,17 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
             preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+    COMPONENT Dff_reg1 IS
+        PORT (
+            D    : IN STD_LOGIC;
+            clk  : IN STD_LOGIC;
+            Q    : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -66,26 +72,26 @@ BEGIN
     not_data_re_in1 <= NOT data_re_in(1);
     not_data_im_in1 <= NOT data_im_in(1);
 
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                data_re_out <= (OTHERS => '0');
-                data_im_out <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                data_re_out <= data_re_out_buff;
-                data_im_out <= data_im_out_buff;
-            END IF;
-        END IF;
-    END PROCESS;
+    GEN_OUT_BUFF : for I in 0 to 1 generate
+        UDFF_RE_OUT : Dff_reg1 port map(
+                D=>data_re_out_buff(I),
+                clk=>clk,
+                Q=>data_re_out(I)
+            );
+
+        UDFF_IM_OUT : Dff_reg1 port map(
+                D=>data_im_out_buff(I),
+                clk=>clk,
+                Q=>data_im_out(I)
+            );
+    end generate ; -- GEN_OUT_BUFF
+
 
     --- Re(X[0])=Re(x[0])+Re(x[1])
     C_BUFF0_RE : Dff_preload_reg1
     PORT MAP(
         D        => c(0), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(0)
     );
@@ -104,8 +110,6 @@ BEGIN
     PORT MAP(
         D        => c(1), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(1)
     );
@@ -124,8 +128,6 @@ BEGIN
     PORT MAP(
         D        => c(2), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(2)
     );
@@ -144,8 +146,6 @@ BEGIN
     PORT MAP(
         D        => c(3), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(3)
     );

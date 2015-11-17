@@ -14,3 +14,6 @@ for i=1:size(d_re_fp,1)
 end;
 
 d_out=d_re+d_im*1i;
+
+float_out=fft(d);
+hardware_out=d_out;

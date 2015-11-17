@@ -35,10 +35,9 @@ ARCHITECTURE Behavioral OF fft_pt2_nodelay IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
             preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -46,10 +45,9 @@ ARCHITECTURE Behavioral OF fft_pt2_nodelay IS
         PORT (
             D        : IN STD_LOGIC;
             clk      : IN STD_LOGIC;
-            rst      : IN STD_LOGIC;
-            ce       : IN STD_LOGIC;
             preload  : IN STD_LOGIC;
-            Q        : OUT STD_LOGIC
+            Q        : OUT STD_LOGIC;
+            QN       : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -68,8 +66,6 @@ BEGIN
     PORT MAP(
         D        => c(0), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(0)
     );
@@ -88,8 +84,6 @@ BEGIN
     PORT MAP(
         D        => c(1), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(1)
     );
@@ -108,8 +102,6 @@ BEGIN
     PORT MAP(
         D        => c(2), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(2)
     );
@@ -128,8 +120,6 @@ BEGIN
     PORT MAP(
         D        => c(3), 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start), 
         Q        => c_buff(3)
     );

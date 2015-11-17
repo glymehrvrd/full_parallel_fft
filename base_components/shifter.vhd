@@ -34,7 +34,7 @@ BEGIN
         Q    => data_in_delay
     );
 
-    data_out <= data_in_delay WHEN ctrl = '1'
+    data_out <= data_in_delay WHEN ctrl = '0'
                 ELSE data_in;
 
 END Behavioral;

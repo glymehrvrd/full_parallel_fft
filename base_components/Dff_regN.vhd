@@ -24,23 +24,23 @@ ARCHITECTURE Behavioral OF Dff_regN IS
 BEGIN
     reg(0) <= D;
     GEN_DFF : FOR I IN 0 TO N - 1 GENERATE
-        IF I < N - 1 GENERATE
-         DFF_X : Dff_reg1
-         PORT MAP(
-             D    => reg(I), 
-             clk  => clk, 
-             Q    => reg(I + 1)
-         );
-     END GENERATE;
+        DFFX : IF I < N - 1 GENERATE
+        DFF_X : Dff_reg1
+        PORT MAP(
+            D    => reg(I), 
+            clk  => clk, 
+            Q    => reg(I + 1)
+        );
+    END GENERATE DFFX;
 
-     LAST_DFF : IF I = N - 1 GENERATE
-     DFF_LAST : Dff_reg1
-     PORT MAP(
-         D    => reg(I), 
-         clk  => clk, 
-         Q    => Q
-     );
- END GENERATE LAST_DFF;
- END GENERATE; -- GEN_DFF
+    LAST_DFF : IF I = N - 1 GENERATE
+    DFF_LAST : Dff_reg1
+    PORT MAP(
+        D    => reg(I), 
+        clk  => clk, 
+        Q    => Q
+    );
+END GENERATE LAST_DFF;
+END GENERATE; -- GEN_DFF
 
- END Behavioral;
+END Behavioral;

@@ -21,9 +21,9 @@ for lhs_point, rhs_point, istop in fft_list:
     delay = cal_delay(lhs_point)
 
     data_arrival_time = {
-        'mul': delay, 'shifter': delay + 15, 'rhs_fft': delay + 16}
-    ctrl_delay_offset = {'mul': -1, 'shifter': 0, 'rhs_fft': -1}
-    ctrl_delay = dict([(k, (data_arrival_time[k] + v + 1) % 16)
+        'mul': delay, 'shifter': delay, 'rhs_fft': delay + 16}
+    ctrl_delay_offset = {'mul': 0, 'shifter': 0, 'rhs_fft': 0}
+    ctrl_delay = dict([(k, (data_arrival_time[k] + v) % 16)
                        for k, v in ctrl_delay_offset.iteritems()])
     print ctrl_delay
 

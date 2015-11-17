@@ -65,6 +65,11 @@ function fft_pt4_config(this_block)
     %     rate. Change the following code if this is untrue.
     uniqueInputRates = unique(this_block.getInputRates);
 
+  % (!) Custimize the following generic settings as appropriate. If any settings depend
+  %      on input types, make the settings in the "inputTypesKnown" code block.
+  %      The addGeneric function takes  3 parameters, generic name, type and constant value.
+  %      Supported types are boolean, real, integer and string.
+  this_block.addGeneric('ctrl_start','INTEGER','0');
 
   % Add addtional source files as needed.
   %  |-------------
@@ -79,10 +84,22 @@ function fft_pt4_config(this_block)
 
   %    this_block.addFile('');
   %    this_block.addFile('');
-  this_block.addFile('adder_half_bit1.vhd');
-  this_block.addFile('adder_bit1.vhd');
-  this_block.addFile('Dff_preload_1.vhd');
-  this_block.addFile('Dff_preload_1_init_1.vhd');
+
+  this_block.addFile('../base_components/DC/ADDFXLTL.vhd');
+  this_block.addFile('../base_components/DC/ADDHXLTL.vhd');
+  this_block.addFile('../base_components/DC/DFFQXLTL.vhd');
+  this_block.addFile('../base_components/DC/DFFRXLTL.vhd');
+  this_block.addFile('../base_components/DC/DFFSXLTL.vhd');
+  this_block.addFile('../base_components/DC/MX2XLTL.vhd');
+
+  this_block.addFile('../base_components/adder_bit1.vhd');
+  this_block.addFile('../base_components/adder_half_bit1.vhd');
+  this_block.addFile('../base_components/Dff_reg1.vhd');
+  this_block.addFile('../base_components/Dff_regN_Nout.vhd');
+  this_block.addFile('../base_components/Dff_preload_reg1.vhd');
+  this_block.addFile('../base_components/Dff_preload_reg1_init_1.vhd')
+  this_block.addFile('../base_components/mux_in2.vhd');
+  
   this_block.addFile('fft_pt2_nodelay.vhd');
   this_block.addFile('fft_pt4.vhd');
 

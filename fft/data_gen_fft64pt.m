@@ -30,9 +30,9 @@ d_im_in=[zeros(3,size(d_im,1)); d_im'; zeros(1,size(d_im,1))];
 d_im_in=[t d_im_in];
 
 % ctrl signal
-d_ctrl=repmat(eye(16),size(d_fp,2)+10,1);
+d_ctrl=repmat(1-eye(16),size(d_fp,2)+10,1);
 d_ctrl=fliplr(d_ctrl);
 
-t=0:size(d_ctrl,1)+2;
-ctrl=[zeros(2,16);d_ctrl;zeros(1,16)];
+t=0:size(d_ctrl,1)+3;
+ctrl=[ones(3,16);d_ctrl;ones(1,16)];
 ctrl=[t' ctrl];

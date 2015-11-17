@@ -26,10 +26,17 @@ COMPONENT Dff_preload_reg1_init_1 IS
     PORT (
         D        : IN STD_LOGIC;
         clk      : IN STD_LOGIC;
-        rst      : IN STD_LOGIC;
-        ce       : IN STD_LOGIC;
         preload  : IN STD_LOGIC;
-        Q        : OUT STD_LOGIC
+        Q        : OUT STD_LOGIC;
+        QN       : OUT STD_LOGIC
+    );
+END COMPONENT;
+
+COMPONENT Dff_reg1 IS
+    PORT (
+        D    : IN STD_LOGIC;
+        clk  : IN STD_LOGIC;
+        Q    : OUT STD_LOGIC
     );
 END COMPONENT;
 
@@ -71,6 +78,20 @@ SIGNAL data_re_out_buff : std_logic_vector(3 DOWNTO 0);
 SIGNAL data_im_out_buff : std_logic_vector(3 DOWNTO 0);
 
 begin
+
+    GEN_OUT_BUFF : for I in 0 to 3 generate
+        UDFF_RE_OUT : Dff_reg1 port map(
+                D=>data_re_out_buff(I),
+                clk=>clk,
+                Q=>data_re_out(I)
+            );
+
+        UDFF_IM_OUT : Dff_reg1 port map(
+                D=>data_im_out_buff(I),
+                clk=>clk,
+                Q=>data_im_out(I)
+            );
+    end generate ; -- GEN_OUT_BUFF
 
     PROCESS (clk, rst, ce)
     BEGIN
@@ -167,8 +188,6 @@ begin
     PORT MAP(
         D        => c, 
         clk      => clk, 
-        rst      => rst, 
-        ce       => ce, 
         preload  => ctrl_delay(ctrl_start mod 16), 
         Q        => c_buff
     );

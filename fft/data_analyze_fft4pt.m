@@ -1,5 +1,5 @@
 % set number of input data
-d_num=2;
+d_num=100;
 beginner=5;
 
 d_re_fp=fi2vec(d_re_out.data(beginner:beginner+16*d_num-1));
@@ -14,3 +14,6 @@ for i=1:size(d_re_fp,1)
 end;
 
 d_out=d_re+d_im*1i;
+
+float_out=fft(d);
+hardware_out=d_out;

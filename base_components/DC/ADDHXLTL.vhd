@@ -1,0 +1,20 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY ADDHXLTL IS
+    PORT (
+        A   : IN STD_LOGIC;
+        B   : IN STD_LOGIC;
+        S   : OUT STD_LOGIC;
+        CO  : OUT STD_LOGIC
+    );
+END ADDHXLTL;
+
+ARCHITECTURE Behavioral OF ADDHXLTL IS
+
+BEGIN
+    S <= (A OR B) AND (A NAND B);
+    CO <= NOT (A NAND B);
+
+END Behavioral;
+
