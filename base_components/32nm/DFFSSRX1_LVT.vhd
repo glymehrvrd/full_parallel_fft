@@ -21,7 +21,7 @@ BEGIN
             IF SETB = '0' THEN
                 Q <= '1';
                 QN <= '0';
-            ELSIF RSTB = '1' THEN
+            ELSIF RSTB = '0' THEN
                 Q <= '0';
                 QN <= '1';
             ELSE
