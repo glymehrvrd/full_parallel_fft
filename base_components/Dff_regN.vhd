@@ -6,7 +6,8 @@ ENTITY Dff_regN IS
     PORT (
         D    : IN STD_LOGIC;
         clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC
+        Q    : OUT STD_LOGIC;
+        QN : OUT STD_LOGIC
     );
 END Dff_regN;
 
@@ -16,7 +17,8 @@ ARCHITECTURE Behavioral OF Dff_regN IS
         PORT (
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
-            Q    : OUT STD_LOGIC
+            Q    : OUT STD_LOGIC;
+            QN : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -38,7 +40,8 @@ BEGIN
     PORT MAP(
         D    => reg(I), 
         clk  => clk, 
-        Q    => Q
+        Q    => Q,
+        QN   => QN
     );
 END GENERATE LAST_DFF;
 END GENERATE; -- GEN_DFF

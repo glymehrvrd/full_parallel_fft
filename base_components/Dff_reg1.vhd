@@ -5,28 +5,29 @@ ENTITY Dff_reg1 IS
     PORT (
         D    : IN STD_LOGIC;
         clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC
+        Q    : OUT STD_LOGIC;
+        QN : OUT STD_LOGIC
     );
 END Dff_reg1;
 
 ARCHITECTURE Behavioral OF Dff_reg1 IS
 
-    SIGNAL reg : std_logic_vector(0 DOWNTO 0);
-
-    COMPONENT DFFQXLTL IS
+    COMPONENT DFFX1_LVT IS
         PORT (
             D   : IN STD_LOGIC;
-            CK  : IN STD_LOGIC;
-            Q   : OUT STD_LOGIC
+            CLK  : IN STD_LOGIC;
+            Q   : OUT STD_LOGIC;
+            QN : OUT STD_LOGIC
         );
     END COMPONENT;
 
 BEGIN
-    UDFF : DFFQXLTL
+    UDFF : DFFX1_LVT
     PORT MAP(
         D   => D, 
-        CK  => clk, 
-        Q   => Q
+        CLK  => clk, 
+        Q   => Q,
+        QN  => QN
     );
 
 END Behavioral;

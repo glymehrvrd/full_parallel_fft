@@ -13,20 +13,20 @@ END mux_in2;
 
 ARCHITECTURE Behavioral OF mux_in2 IS
 
-    COMPONENT MX2XLTL IS
+    COMPONENT MUX21X1_LVT IS
         PORT (
-            A   : IN STD_LOGIC;
-            B   : IN std_logic;
-            S0  : IN STD_LOGIC;
+            A1   : IN STD_LOGIC;
+            A2   : IN std_logic;
+            S  : IN STD_LOGIC;
             Y   : OUT STD_LOGIC
         );
     END COMPONENT;
 BEGIN
-    UMX2 : MX2XLTL
+    UMX2 : MUX21X1_LVT
     PORT MAP(
-        A   => data2_in, 
-        B   => data1_in, 
-        S0  => sel, 
+        A1   => data2_in, 
+        A2   => data1_in, 
+        S  => sel, 
         Y   => data_out
     );
 

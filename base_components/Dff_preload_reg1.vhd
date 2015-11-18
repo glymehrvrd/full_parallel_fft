@@ -1,4 +1,4 @@
-LIBRARY IEEE;
+    LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY Dff_preload_reg1 IS
@@ -13,22 +13,24 @@ END Dff_preload_reg1;
 
 ARCHITECTURE Behavioral OF Dff_preload_reg1 IS
 
-    COMPONENT DFFRXLTL IS
+    COMPONENT DFFSSRX1_LVT IS
         PORT (
             D   : IN STD_LOGIC;
-            CK  : IN STD_LOGIC;
-            RN  : IN STD_LOGIC;
+            CLK  : IN STD_LOGIC;
+            SETB  : IN STD_LOGIC;
+            RSTB: IN STD_LOGIC;
             Q   : OUT STD_LOGIC;
             QN  : OUT STD_LOGIC
         );
     END COMPONENT;
 
 BEGIN
-    UDFFR : DFFRXLTL
+    UDFFR : DFFSSRX1_LVT
     PORT MAP(
         D   => D, 
-        CK  => clk, 
-        RN  => preload, 
+        CLK  => clk, 
+        SETB  => '1',
+        RSTB  => preload,
         Q   => Q, 
         QN  => QN
     );

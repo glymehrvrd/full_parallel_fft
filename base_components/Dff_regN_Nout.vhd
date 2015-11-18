@@ -6,7 +6,8 @@ ENTITY Dff_regN_Nout IS
     PORT (
         D    : IN STD_LOGIC;
         clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END Dff_regN_Nout;
 
@@ -16,20 +17,25 @@ ARCHITECTURE Behavioral OF Dff_regN_Nout IS
         PORT (
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
-            Q    : OUT STD_LOGIC
+            Q    : OUT STD_LOGIC;
+            QN : OUT STD_LOGIC
         );
     END COMPONENT;
 
     SIGNAL reg : std_logic_vector(N DOWNTO 0);
+    SIGNAL nreg : std_logic_vector(N DOWNTO 1);
 BEGIN
     reg(0) <= D;
     Q <= reg(N DOWNTO 1);
+    QN <= nreg(N DOWNTO 1);
+
     GEN_DFF : FOR I IN 0 TO N - 1 GENERATE
         DFF_X : Dff_reg1
         PORT MAP(
             D    => reg(I), 
             clk  => clk, 
-            Q    => reg(I + 1)
+            Q    => reg(I + 1),
+            QN   => nreg(I+1)
         );
     END GENERATE; -- GEN_DFF
 

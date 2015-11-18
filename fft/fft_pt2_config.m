@@ -85,19 +85,8 @@ function fft_pt2_config(this_block)
   %    this_block.addFile('');
   %    this_block.addFile('');
 
-  this_block.addFile('../base_components/DC/ADDFXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFQXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFRXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFSXLTL.vhd');
-  this_block.addFile('../base_components/DC/MX2XLTL.vhd');
-
-  this_block.addFile('../base_components/adder_bit1.vhd');
-  this_block.addFile('../base_components/Dff_reg1.vhd');
-  this_block.addFile('../base_components/Dff_regN_Nout.vhd');
-  this_block.addFile('../base_components/Dff_preload_reg1.vhd');
-  this_block.addFile('../base_components/Dff_preload_reg1_init_1.vhd')
-  this_block.addFile('../base_components/mux_in2.vhd');
-
+  sysgen_add_components(this_block,'lib','base','mul');
+  
   this_block.addFile('fft_pt2.vhd');
 
 return;

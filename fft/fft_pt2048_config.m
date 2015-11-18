@@ -81,28 +81,8 @@ function fft_pt2048_config(this_block)
 
   %    this_block.addFile('');
   %    this_block.addFile('');
-  this_block.addFile('../base_components/DC/ADDFXLTL.vhd');
-  this_block.addFile('../base_components/DC/ADDHXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFQXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFRXLTL.vhd');
-  this_block.addFile('../base_components/DC/DFFSXLTL.vhd');
-  this_block.addFile('../base_components/DC/MX2XLTL.vhd');
-
-  this_block.addFile('../base_components/adder_bit1.vhd');
-  this_block.addFile('../base_components/adder_half_bit1.vhd');
-  this_block.addFile('../base_components/Dff_reg1.vhd');
-  this_block.addFile('../base_components/Dff_regN_Nout.vhd');
-  this_block.addFile('../base_components/Dff_preload_reg1.vhd');
-  this_block.addFile('../base_components/Dff_preload_reg1_init_1.vhd')
-  this_block.addFile('../base_components/mux_in2.vhd');
-  this_block.addFile('../base_components/Dff_regN.vhd');
-  this_block.addFile('../base_components/shifter.vhd');
-
-  this_block.addFile('../lyon_multiplier/partial_product.vhd');
-  this_block.addFile('../lyon_multiplier/partial_product_last.vhd');
-  this_block.addFile('../lyon_multiplier/lyon_multiplier.vhd');
-  this_block.addFile('../lyon_multiplier/complex_multiplier.vhd');
-
+  sysgen_add_components(this_block,'lib','base','mul');
+  
   this_block.addFile('fft_pt2.vhd');
   this_block.addFile('fft_pt2_nodelay.vhd');
   this_block.addFile('fft_pt4.vhd');
