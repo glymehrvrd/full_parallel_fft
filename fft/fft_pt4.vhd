@@ -7,6 +7,9 @@ entity fft_pt4 is
         ctrl_start     : INTEGER := 0
     );
     PORT (
+        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector(3 downto 0);
+        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector(3 downto 0);
+
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
@@ -79,6 +82,9 @@ SIGNAL data_im_out_buff : std_logic_vector(3 DOWNTO 0);
 
 begin
 
+    tmp_first_stage_re_out <= first_stage_re_out;
+    tmp_first_stage_im_out <= first_stage_im_out;
+
     GEN_OUT_BUFF : for I in 0 to 3 generate
         UDFF_RE_OUT : Dff_reg1 port map(
                 D=>data_re_out_buff(I),
@@ -92,19 +98,6 @@ begin
                 Q=>data_im_out(I)
             );
     end generate ; -- GEN_OUT_BUFF
-
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                data_re_out <= (OTHERS => '0');
-                data_im_out <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                data_re_out <= data_re_out_buff;
-                data_im_out <= data_im_out_buff;
-            END IF;
-        END IF;
-    END PROCESS;
 
     --- left-hand-side processors
     ULFFT_PT2_0 : fft_pt2_nodelay

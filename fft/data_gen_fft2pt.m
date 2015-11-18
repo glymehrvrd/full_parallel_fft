@@ -2,8 +2,9 @@ clc;
 clear all;
 
 % input data, each row an input port, each column a data
-d=[-15014+15221i, -5013-10284i;
-   -5013+10284i -15014-15221i];
+d_num=100;
+% input data, each row an input port, each column a data
+d=(rand(2,d_num)-0.5)*2^13+(rand(2,d_num)-0.5)*1j*2^13;
 
 % convert data to signed fixed-point num
 d_fp=sfi(d,16,0);
@@ -26,6 +27,6 @@ d_im_in=timeseries([0; 0; 0; vec2fi(d_im)'; 0],t);
 d_ctrl=repmat(1-eye(16),size(d_fp,2)+10,1);
 d_ctrl=fliplr(d_ctrl);
 
-t=0:size(d_ctrl,1)+3;
-ctrl=[ones(3,16);d_ctrl;ones(1,16)];
+t=0:size(d_ctrl,1)+2;
+ctrl=[ones(2,16);d_ctrl;ones(1,16)];
 ctrl=[t' ctrl];
