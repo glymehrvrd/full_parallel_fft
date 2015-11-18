@@ -56,11 +56,22 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
         PORT (
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
-            Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+            Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+            QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT Dff_reg1 IS
+        PORT (
+            D    : IN STD_LOGIC;
+            clk  : IN STD_LOGIC;
+            Q    : OUT STD_LOGIC;
+            QN   : OUT STD_LOGIC
         );
     END COMPONENT;
 
     SIGNAL data_in_delay : std_logic_vector(15 DOWNTO 0);
+    SIGNAL ndata_in_delay: std_logic_vector(15 downto 1);
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
@@ -78,7 +89,8 @@ BEGIN
     PORT MAP(
         D           => data_in, 
         clk         => clk, 
-        Q           => data_in_delay(15 DOWNTO 1)
+        Q           => data_in_delay(15 DOWNTO 1),
+        QN          => ndata_in_delay(15 DOWNTO 1)
     );
 
     pp(0) <= mul_vec(0) AND data_in;
@@ -110,22 +122,17 @@ BEGIN
         rst         => rst, 
         ce          => ce, 
         data1_in    => pp(14), 
-        data2_in    => data_in_delay(15), 
+        data2_in    => ndata_in_delay(15), 
         data3_in    => mul_vec(15), 
         ctrl_delay  => ctrl_delay, 
         pp_out      => pp(15)
     );
 
     --- output
-    PROCESS (clk, rst, ce)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                product_out <= '0';
-            ELSIF ce = '1' THEN
-                product_out <= pp(15);
-            END IF;
-        END IF;
-    END PROCESS;
+    UDFF_OUT : Dff_reg1 port map(
+            D=>pp(15),
+            clk=>clk,
+            Q=>product_out
+        );
 
 END Behavioral;

@@ -67,7 +67,8 @@ component Dff_regN is
     Port (
             D : in  STD_LOGIC;
             clk : in  STD_LOGIC;
-            Q : out  STD_LOGIC
+            Q : out  STD_LOGIC;
+            QN : out STD_LOGIC
         );
 end component;
 

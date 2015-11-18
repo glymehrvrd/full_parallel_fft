@@ -33,7 +33,8 @@ ARCHITECTURE Behavioral OF partial_product_last IS
         PORT (
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
-            Q    : OUT STD_LOGIC
+            Q    : OUT STD_LOGIC;
+            QN   : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -72,7 +73,7 @@ BEGIN
         data_out  => adder_in1
     );
 
-    adder_in2 <= (NOT data2_in) AND data3_in;
+    adder_in2 <= data2_in AND data3_in;
 
     BUFF_C : Dff_reg1
     PORT MAP(

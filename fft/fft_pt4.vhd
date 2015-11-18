@@ -39,7 +39,8 @@ COMPONENT Dff_reg1 IS
     PORT (
         D    : IN STD_LOGIC;
         clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC
+        Q    : OUT STD_LOGIC;
+        QN   : OUT STD_LOGIC
     );
 END COMPONENT;
 
