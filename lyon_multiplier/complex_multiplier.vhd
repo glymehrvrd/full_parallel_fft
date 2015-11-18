@@ -84,7 +84,7 @@ BEGIN
     UMUL0 : lyon_multiplier
     GENERIC MAP(
         multiplicator => re_multiplicator - im_multiplicator, 
-        ctrl_start => ctrl_start MOD 16
+        ctrl_start => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
         clk            => clk, 
@@ -99,7 +99,7 @@ BEGIN
     UMUL1 : lyon_multiplier
     GENERIC MAP(
         multiplicator  => re_multiplicator + im_multiplicator, 
-        ctrl_start     => ctrl_start MOD 16
+        ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
         clk            => clk, 
@@ -114,7 +114,7 @@ BEGIN
     UMUL2 : lyon_multiplier
     GENERIC MAP(
         multiplicator  => im_multiplicator, 
-        ctrl_start     => ctrl_start MOD 16
+        ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
         clk          => clk, 

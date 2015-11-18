@@ -19,6 +19,6 @@ d_im_in=timeseries([0; 0; 0; d_im; 0],t);
 d_ctrl=repmat(1-eye(16),size(d_fp,2)+10,1);
 d_ctrl=fliplr(d_ctrl);
 
-t=0:size(d_ctrl,1)+3;
-ctrl=[ones(3,16);d_ctrl;ones(1,16)];
+t=0:size(d_ctrl,1)+2;
+ctrl=[ones(2,16);d_ctrl;ones(1,16)];
 ctrl=[t' ctrl];

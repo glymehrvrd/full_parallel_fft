@@ -30,9 +30,4 @@ d_im_in=[zeros(3,size(d_im,1)); d_im'; zeros(1,size(d_im,1))];
 d_im_in=[t d_im_in];
 
 % ctrl signal
-d_ctrl=repmat([0 ones(1,15)],size(d_fp,2)+10,1);
-d_ctrl=d_ctrl';
-d_ctrl=boolean(d_ctrl(:));
-
-t=0:numel(d_ctrl)+3;
-ctrl=timeseries([1; 1; 1; d_ctrl; 1],t);
+ctrl=gen_ctrl(size(d_fp,2),'ctrl');

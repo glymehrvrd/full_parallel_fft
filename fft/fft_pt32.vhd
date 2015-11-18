@@ -479,14 +479,28 @@ begin
 
 
     --- multipliers
+    UDELAY_0_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(0),
+            clk=>clk,
+            Q=>shifter_re(0)
+        );
+    UDELAY_0_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(0),
+            clk=>clk,
+            Q=>shifter_im(0)
+        );
     USHIFTER_0_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(0),
-            data_out=>shifter_re(0)
+            data_in=>shifter_re(0),
+            data_out=>mul_re_out(0)
         );
     USHIFTER_0_IM: shifter
     port map(
@@ -494,32 +508,32 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(0),
-            data_out=>shifter_im(0)
-        );
-    UDELAY_0_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(0),
-            clk=>clk,
-            Q=>mul_re_out(0)
-        );
-    UDELAY_0_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(0),
-            clk=>clk,
-            Q=>mul_im_out(0)
+            data_in=>shifter_im(0),
+            data_out=>mul_im_out(0)
         );
 
+    UDELAY_1_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(1),
+            clk=>clk,
+            Q=>shifter_re(1)
+        );
+    UDELAY_1_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(1),
+            clk=>clk,
+            Q=>shifter_im(1)
+        );
     USHIFTER_1_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(1),
-            data_out=>shifter_re(1)
+            data_in=>shifter_re(1),
+            data_out=>mul_re_out(1)
         );
     USHIFTER_1_IM: shifter
     port map(
@@ -527,32 +541,32 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(1),
-            data_out=>shifter_im(1)
-        );
-    UDELAY_1_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(1),
-            clk=>clk,
-            Q=>mul_re_out(1)
-        );
-    UDELAY_1_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(1),
-            clk=>clk,
-            Q=>mul_im_out(1)
+            data_in=>shifter_im(1),
+            data_out=>mul_im_out(1)
         );
 
+    UDELAY_2_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(2),
+            clk=>clk,
+            Q=>shifter_re(2)
+        );
+    UDELAY_2_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(2),
+            clk=>clk,
+            Q=>shifter_im(2)
+        );
     USHIFTER_2_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(2),
-            data_out=>shifter_re(2)
+            data_in=>shifter_re(2),
+            data_out=>mul_re_out(2)
         );
     USHIFTER_2_IM: shifter
     port map(
@@ -560,32 +574,32 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(2),
-            data_out=>shifter_im(2)
-        );
-    UDELAY_2_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(2),
-            clk=>clk,
-            Q=>mul_re_out(2)
-        );
-    UDELAY_2_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(2),
-            clk=>clk,
-            Q=>mul_im_out(2)
+            data_in=>shifter_im(2),
+            data_out=>mul_im_out(2)
         );
 
+    UDELAY_3_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(3),
+            clk=>clk,
+            Q=>shifter_re(3)
+        );
+    UDELAY_3_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(3),
+            clk=>clk,
+            Q=>shifter_im(3)
+        );
     USHIFTER_3_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(3),
-            data_out=>shifter_re(3)
+            data_in=>shifter_re(3),
+            data_out=>mul_re_out(3)
         );
     USHIFTER_3_IM: shifter
     port map(
@@ -593,32 +607,32 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(3),
-            data_out=>shifter_im(3)
-        );
-    UDELAY_3_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(3),
-            clk=>clk,
-            Q=>mul_re_out(3)
-        );
-    UDELAY_3_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(3),
-            clk=>clk,
-            Q=>mul_im_out(3)
+            data_in=>shifter_im(3),
+            data_out=>mul_im_out(3)
         );
 
+    UDELAY_4_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(4),
+            clk=>clk,
+            Q=>shifter_re(4)
+        );
+    UDELAY_4_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(4),
+            clk=>clk,
+            Q=>shifter_im(4)
+        );
     USHIFTER_4_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(4),
-            data_out=>shifter_re(4)
+            data_in=>shifter_re(4),
+            data_out=>mul_re_out(4)
         );
     USHIFTER_4_IM: shifter
     port map(
@@ -626,22 +640,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(4),
-            data_out=>shifter_im(4)
-        );
-    UDELAY_4_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(4),
-            clk=>clk,
-            Q=>mul_re_out(4)
-        );
-    UDELAY_4_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(4),
-            clk=>clk,
-            Q=>mul_im_out(4)
+            data_in=>shifter_im(4),
+            data_out=>mul_im_out(4)
         );
 
     UMUL_5 : complex_multiplier
@@ -695,14 +695,28 @@ begin
             product_im_out=>mul_im_out(7)
         );
 
+    UDELAY_8_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(8),
+            clk=>clk,
+            Q=>shifter_re(8)
+        );
+    UDELAY_8_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(8),
+            clk=>clk,
+            Q=>shifter_im(8)
+        );
     USHIFTER_8_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(8),
-            data_out=>shifter_re(8)
+            data_in=>shifter_re(8),
+            data_out=>mul_re_out(8)
         );
     USHIFTER_8_IM: shifter
     port map(
@@ -710,22 +724,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(8),
-            data_out=>shifter_im(8)
-        );
-    UDELAY_8_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(8),
-            clk=>clk,
-            Q=>mul_re_out(8)
-        );
-    UDELAY_8_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(8),
-            clk=>clk,
-            Q=>mul_im_out(8)
+            data_in=>shifter_im(8),
+            data_out=>mul_im_out(8)
         );
 
     UMUL_9 : complex_multiplier
@@ -779,14 +779,28 @@ begin
             product_im_out=>mul_im_out(11)
         );
 
+    UDELAY_12_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(12),
+            clk=>clk,
+            Q=>shifter_re(12)
+        );
+    UDELAY_12_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(12),
+            clk=>clk,
+            Q=>shifter_im(12)
+        );
     USHIFTER_12_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(12),
-            data_out=>shifter_re(12)
+            data_in=>shifter_re(12),
+            data_out=>mul_re_out(12)
         );
     USHIFTER_12_IM: shifter
     port map(
@@ -794,22 +808,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(12),
-            data_out=>shifter_im(12)
-        );
-    UDELAY_12_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(12),
-            clk=>clk,
-            Q=>mul_re_out(12)
-        );
-    UDELAY_12_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(12),
-            clk=>clk,
-            Q=>mul_im_out(12)
+            data_in=>shifter_im(12),
+            data_out=>mul_im_out(12)
         );
 
     UMUL_13 : complex_multiplier
@@ -863,14 +863,28 @@ begin
             product_im_out=>mul_im_out(15)
         );
 
+    UDELAY_16_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(16),
+            clk=>clk,
+            Q=>shifter_re(16)
+        );
+    UDELAY_16_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(16),
+            clk=>clk,
+            Q=>shifter_im(16)
+        );
     USHIFTER_16_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(16),
-            data_out=>shifter_re(16)
+            data_in=>shifter_re(16),
+            data_out=>mul_re_out(16)
         );
     USHIFTER_16_IM: shifter
     port map(
@@ -878,22 +892,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(16),
-            data_out=>shifter_im(16)
-        );
-    UDELAY_16_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(16),
-            clk=>clk,
-            Q=>mul_re_out(16)
-        );
-    UDELAY_16_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(16),
-            clk=>clk,
-            Q=>mul_im_out(16)
+            data_in=>shifter_im(16),
+            data_out=>mul_im_out(16)
         );
 
     UMUL_17 : complex_multiplier
@@ -928,14 +928,28 @@ begin
         sum_out   => opp_first_stage_re_out(18), 
         c_out     => c(18)
     );
+    UDELAY_18_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(18),
+            clk=>clk,
+            Q=>shifter_re(18)
+        );
+    UDELAY_18_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>opp_first_stage_re_out(18),
+            clk=>clk,
+            Q=>shifter_im(18)
+        );
     USHIFTER_18_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(18),
-            data_out=>shifter_re(18)
+            data_in=>shifter_re(18),
+            data_out=>mul_re_out(18)
         );
     USHIFTER_18_IM: shifter
     port map(
@@ -943,22 +957,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>opp_first_stage_re_out(18),
-            data_out=>shifter_im(18)
-        );
-    UDELAY_18_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(18),
-            clk=>clk,
-            Q=>mul_re_out(18)
-        );
-    UDELAY_18_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(18),
-            clk=>clk,
-            Q=>mul_im_out(18)
+            data_in=>shifter_im(18),
+            data_out=>mul_im_out(18)
         );
 
     UMUL_19 : complex_multiplier
@@ -978,14 +978,28 @@ begin
             product_im_out=>mul_im_out(19)
         );
 
+    UDELAY_20_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(20),
+            clk=>clk,
+            Q=>shifter_re(20)
+        );
+    UDELAY_20_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(20),
+            clk=>clk,
+            Q=>shifter_im(20)
+        );
     USHIFTER_20_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(20),
-            data_out=>shifter_re(20)
+            data_in=>shifter_re(20),
+            data_out=>mul_re_out(20)
         );
     USHIFTER_20_IM: shifter
     port map(
@@ -993,22 +1007,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(20),
-            data_out=>shifter_im(20)
-        );
-    UDELAY_20_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(20),
-            clk=>clk,
-            Q=>mul_re_out(20)
-        );
-    UDELAY_20_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(20),
-            clk=>clk,
-            Q=>mul_im_out(20)
+            data_in=>shifter_im(20),
+            data_out=>mul_im_out(20)
         );
 
     UMUL_21 : complex_multiplier
@@ -1062,14 +1062,28 @@ begin
             product_im_out=>mul_im_out(23)
         );
 
+    UDELAY_24_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(24),
+            clk=>clk,
+            Q=>shifter_re(24)
+        );
+    UDELAY_24_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(24),
+            clk=>clk,
+            Q=>shifter_im(24)
+        );
     USHIFTER_24_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(24),
-            data_out=>shifter_re(24)
+            data_in=>shifter_re(24),
+            data_out=>mul_re_out(24)
         );
     USHIFTER_24_IM: shifter
     port map(
@@ -1077,22 +1091,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(24),
-            data_out=>shifter_im(24)
-        );
-    UDELAY_24_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(24),
-            clk=>clk,
-            Q=>mul_re_out(24)
-        );
-    UDELAY_24_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(24),
-            clk=>clk,
-            Q=>mul_im_out(24)
+            data_in=>shifter_im(24),
+            data_out=>mul_im_out(24)
         );
 
     UMUL_25 : complex_multiplier
@@ -1146,14 +1146,28 @@ begin
             product_im_out=>mul_im_out(27)
         );
 
+    UDELAY_28_RE : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_re_out(28),
+            clk=>clk,
+            Q=>shifter_re(28)
+        );
+    UDELAY_28_IM : Dff_regN
+    generic map(N=>15)
+    port map(
+            D=>first_stage_im_out(28),
+            clk=>clk,
+            Q=>shifter_im(28)
+        );
     USHIFTER_28_RE: shifter
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_re_out(28),
-            data_out=>shifter_re(28)
+            data_in=>shifter_re(28),
+            data_out=>mul_re_out(28)
         );
     USHIFTER_28_IM: shifter
     port map(
@@ -1161,22 +1175,8 @@ begin
             rst=>rst,
             ce=>ce,
             ctrl=>ctrl_delay((ctrl_start+1) mod 16),
-            data_in=>first_stage_im_out(28),
-            data_out=>shifter_im(28)
-        );
-    UDELAY_28_RE : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_re(28),
-            clk=>clk,
-            Q=>mul_re_out(28)
-        );
-    UDELAY_28_IM : Dff_regN
-    generic map(N=>15)
-    port map(
-            D=>shifter_im(28),
-            clk=>clk,
-            Q=>mul_im_out(28)
+            data_in=>shifter_im(28),
+            data_out=>mul_im_out(28)
         );
 
     UMUL_29 : complex_multiplier
