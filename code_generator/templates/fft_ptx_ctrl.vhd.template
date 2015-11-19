@@ -33,14 +33,11 @@ end {{ component_name }};
 architecture Behavioral of {{ component_name }} is
 
 component {{ lhs_component_name }} is
-    GENERIC (
-        ctrl_start       : INTEGER
-    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl           : IN STD_LOGIC;
 
         data_re_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
         data_im_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
@@ -52,14 +49,11 @@ end component;
 
 {% if lhs_point!=rhs_point %}
 component {{ rhs_component_name }} is
-    GENERIC (
-        ctrl_start       : INTEGER
-    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl           : IN STD_LOGIC;
 
         data_re_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
         data_im_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
@@ -107,7 +101,7 @@ COMPONENT Dff_regN_Nout IS
         QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END COMPONENT;
-    
+
 component shifter is
     port(
             clk            : IN STD_LOGIC;
@@ -164,7 +158,6 @@ begin
         clk         => clk, 
         Q           => ctrl_delay(15 DOWNTO 1)
     );
-
     {% endif %}
 
     tmp_first_stage_re_out <= first_stage_re_out;
@@ -175,14 +168,11 @@ begin
     --- left-hand-side processors
     {% for i in range(rhs_point) %}
     UL{{lhs_component_name|upper}}_{{i}} : {{ lhs_component_name }}
-    generic map(
-        ctrl_start => ctrl_start
-    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl_delay=>ctrl_delay,
+            ctrl=>ctrl_delay(ctrl_start),
             {% for j in range(0,lhs_point) %}
             data_re_in({{j}})=>data_re_in({{i+j*rhs_point}}),
             {% endfor %}
@@ -198,14 +188,11 @@ begin
     --- right-hand-side processors
     {% for i in range(lhs_point) %}
     UR{{rhs_component_name|upper}}_{{i}} : {{ rhs_component_name }}
-    generic map(
-        ctrl_start => (ctrl_start+{{delay}}) mod 16
-    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl_delay=>ctrl_delay,
+            ctrl=>ctrl_delay((ctrl_start+{{delay}}) mod 16),
             {% for j in range(rhs_point) %}
             data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
             {% endfor %}

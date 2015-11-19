@@ -13,7 +13,7 @@ entity fft_pt64 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl           : IN STD_LOGIC;
 
         data_re_in:in std_logic_vector(63 downto 0);
         data_im_in:in std_logic_vector(63 downto 0);
@@ -72,6 +72,16 @@ component Dff_regN is
         );
 end component;
 
+COMPONENT Dff_regN_Nout IS
+    GENERIC (N : INTEGER);
+    PORT (
+        D    : IN STD_LOGIC;
+        clk  : IN STD_LOGIC;
+        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    );
+END COMPONENT;
+    
 component shifter is
     port(
             clk            : IN STD_LOGIC;
@@ -110,8 +120,22 @@ signal opp_first_stage_re_out: std_logic_vector(63 downto 0);
 signal c: std_logic_vector(63 downto 0);
 signal c_buff: std_logic_vector(63 downto 0);
 
+SIGNAL ctrl_delay : std_logic_vector(15 downto 0);
 
 begin
+    --- create ctrl_delay signal in top module
+    ctrl_delay(0) <= ctrl;
+    --- buffer for ctrl
+    UDFF_CTRL : Dff_regN_Nout
+    GENERIC MAP(
+        N => 15
+    )
+    PORT MAP(
+        D           => ctrl, 
+        clk         => clk, 
+        Q           => ctrl_delay(15 DOWNTO 1)
+    );
+
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;

@@ -89,6 +89,16 @@ component Dff_regN is
         );
 end component;
 
+COMPONENT Dff_regN_Nout IS
+    GENERIC (N : INTEGER);
+    PORT (
+        D    : IN STD_LOGIC;
+        clk  : IN STD_LOGIC;
+        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    );
+END COMPONENT;
+    
 component shifter is
     port(
             clk            : IN STD_LOGIC;

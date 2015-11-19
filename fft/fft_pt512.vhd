@@ -89,6 +89,16 @@ component Dff_regN is
         );
 end component;
 
+COMPONENT Dff_regN_Nout IS
+    GENERIC (N : INTEGER);
+    PORT (
+        D    : IN STD_LOGIC;
+        clk  : IN STD_LOGIC;
+        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    );
+END COMPONENT;
+    
 component shifter is
     port(
             clk            : IN STD_LOGIC;
@@ -133,16 +143,16 @@ begin
     --- create ctrl_delay signal in top module
     ctrl_delay(0) <= ctrl;
     --- buffer for ctrl
-    PROCESS (clk, rst, ce, ctrl)
-    BEGIN
-        IF clk'EVENT AND clk = '1' THEN
-            IF rst = '0' THEN
-                ctrl_delay(15 DOWNTO 1) <= (OTHERS => '0');
-            ELSIF ce = '1' THEN
-                ctrl_delay(15 DOWNTO 1) <= ctrl_delay(14 DOWNTO 0);
-            END IF;
-        END IF;
-    END PROCESS;
+    UDFF_CTRL : Dff_regN_Nout
+    GENERIC MAP(
+        N => 15
+    )
+    PORT MAP(
+        D           => ctrl, 
+        clk         => clk, 
+        Q           => ctrl_delay(15 DOWNTO 1)
+    );
+
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
