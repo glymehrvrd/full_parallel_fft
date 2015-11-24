@@ -26,11 +26,14 @@ end fft_pt2048;
 architecture Behavioral of fft_pt2048 is
 
 component fft_pt32 is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(31 downto 0);
         data_im_in:in std_logic_vector(31 downto 0);
@@ -41,11 +44,14 @@ component fft_pt32 is
 end component;
 
 component fft_pt64 is
+    GENERIC (
+        ctrl_start       : INTEGER
+    );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in     : in std_logic_vector(63 downto 0);
         data_im_in     : in std_logic_vector(63 downto 0);
@@ -92,7 +98,7 @@ COMPONENT Dff_regN_Nout IS
         QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END COMPONENT;
-
+    
 component shifter is
     port(
             clk            : IN STD_LOGIC;
@@ -147,6 +153,7 @@ begin
         Q           => ctrl_delay(15 DOWNTO 1)
     );
 
+
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
     tmp_mul_re_out <= mul_re_out;
@@ -154,11 +161,14 @@ begin
 
     --- left-hand-side processors
     ULFFT_PT32_0 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(0),
             data_re_in(1)=>data_re_in(64),
             data_re_in(2)=>data_re_in(128),
@@ -228,11 +238,14 @@ begin
         );
 
     ULFFT_PT32_1 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(1),
             data_re_in(1)=>data_re_in(65),
             data_re_in(2)=>data_re_in(129),
@@ -302,11 +315,14 @@ begin
         );
 
     ULFFT_PT32_2 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(2),
             data_re_in(1)=>data_re_in(66),
             data_re_in(2)=>data_re_in(130),
@@ -376,11 +392,14 @@ begin
         );
 
     ULFFT_PT32_3 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(3),
             data_re_in(1)=>data_re_in(67),
             data_re_in(2)=>data_re_in(131),
@@ -450,11 +469,14 @@ begin
         );
 
     ULFFT_PT32_4 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(4),
             data_re_in(1)=>data_re_in(68),
             data_re_in(2)=>data_re_in(132),
@@ -524,11 +546,14 @@ begin
         );
 
     ULFFT_PT32_5 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(5),
             data_re_in(1)=>data_re_in(69),
             data_re_in(2)=>data_re_in(133),
@@ -598,11 +623,14 @@ begin
         );
 
     ULFFT_PT32_6 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(6),
             data_re_in(1)=>data_re_in(70),
             data_re_in(2)=>data_re_in(134),
@@ -672,11 +700,14 @@ begin
         );
 
     ULFFT_PT32_7 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(7),
             data_re_in(1)=>data_re_in(71),
             data_re_in(2)=>data_re_in(135),
@@ -746,11 +777,14 @@ begin
         );
 
     ULFFT_PT32_8 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(8),
             data_re_in(1)=>data_re_in(72),
             data_re_in(2)=>data_re_in(136),
@@ -820,11 +854,14 @@ begin
         );
 
     ULFFT_PT32_9 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(9),
             data_re_in(1)=>data_re_in(73),
             data_re_in(2)=>data_re_in(137),
@@ -894,11 +931,14 @@ begin
         );
 
     ULFFT_PT32_10 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(10),
             data_re_in(1)=>data_re_in(74),
             data_re_in(2)=>data_re_in(138),
@@ -968,11 +1008,14 @@ begin
         );
 
     ULFFT_PT32_11 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(11),
             data_re_in(1)=>data_re_in(75),
             data_re_in(2)=>data_re_in(139),
@@ -1042,11 +1085,14 @@ begin
         );
 
     ULFFT_PT32_12 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(12),
             data_re_in(1)=>data_re_in(76),
             data_re_in(2)=>data_re_in(140),
@@ -1116,11 +1162,14 @@ begin
         );
 
     ULFFT_PT32_13 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(13),
             data_re_in(1)=>data_re_in(77),
             data_re_in(2)=>data_re_in(141),
@@ -1190,11 +1239,14 @@ begin
         );
 
     ULFFT_PT32_14 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(14),
             data_re_in(1)=>data_re_in(78),
             data_re_in(2)=>data_re_in(142),
@@ -1264,11 +1316,14 @@ begin
         );
 
     ULFFT_PT32_15 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(15),
             data_re_in(1)=>data_re_in(79),
             data_re_in(2)=>data_re_in(143),
@@ -1338,11 +1393,14 @@ begin
         );
 
     ULFFT_PT32_16 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(16),
             data_re_in(1)=>data_re_in(80),
             data_re_in(2)=>data_re_in(144),
@@ -1412,11 +1470,14 @@ begin
         );
 
     ULFFT_PT32_17 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(17),
             data_re_in(1)=>data_re_in(81),
             data_re_in(2)=>data_re_in(145),
@@ -1486,11 +1547,14 @@ begin
         );
 
     ULFFT_PT32_18 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(18),
             data_re_in(1)=>data_re_in(82),
             data_re_in(2)=>data_re_in(146),
@@ -1560,11 +1624,14 @@ begin
         );
 
     ULFFT_PT32_19 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(19),
             data_re_in(1)=>data_re_in(83),
             data_re_in(2)=>data_re_in(147),
@@ -1634,11 +1701,14 @@ begin
         );
 
     ULFFT_PT32_20 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(20),
             data_re_in(1)=>data_re_in(84),
             data_re_in(2)=>data_re_in(148),
@@ -1708,11 +1778,14 @@ begin
         );
 
     ULFFT_PT32_21 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(21),
             data_re_in(1)=>data_re_in(85),
             data_re_in(2)=>data_re_in(149),
@@ -1782,11 +1855,14 @@ begin
         );
 
     ULFFT_PT32_22 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(22),
             data_re_in(1)=>data_re_in(86),
             data_re_in(2)=>data_re_in(150),
@@ -1856,11 +1932,14 @@ begin
         );
 
     ULFFT_PT32_23 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(23),
             data_re_in(1)=>data_re_in(87),
             data_re_in(2)=>data_re_in(151),
@@ -1930,11 +2009,14 @@ begin
         );
 
     ULFFT_PT32_24 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(24),
             data_re_in(1)=>data_re_in(88),
             data_re_in(2)=>data_re_in(152),
@@ -2004,11 +2086,14 @@ begin
         );
 
     ULFFT_PT32_25 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(25),
             data_re_in(1)=>data_re_in(89),
             data_re_in(2)=>data_re_in(153),
@@ -2078,11 +2163,14 @@ begin
         );
 
     ULFFT_PT32_26 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(26),
             data_re_in(1)=>data_re_in(90),
             data_re_in(2)=>data_re_in(154),
@@ -2152,11 +2240,14 @@ begin
         );
 
     ULFFT_PT32_27 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(27),
             data_re_in(1)=>data_re_in(91),
             data_re_in(2)=>data_re_in(155),
@@ -2226,11 +2317,14 @@ begin
         );
 
     ULFFT_PT32_28 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(28),
             data_re_in(1)=>data_re_in(92),
             data_re_in(2)=>data_re_in(156),
@@ -2300,11 +2394,14 @@ begin
         );
 
     ULFFT_PT32_29 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(29),
             data_re_in(1)=>data_re_in(93),
             data_re_in(2)=>data_re_in(157),
@@ -2374,11 +2471,14 @@ begin
         );
 
     ULFFT_PT32_30 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(30),
             data_re_in(1)=>data_re_in(94),
             data_re_in(2)=>data_re_in(158),
@@ -2448,11 +2548,14 @@ begin
         );
 
     ULFFT_PT32_31 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(31),
             data_re_in(1)=>data_re_in(95),
             data_re_in(2)=>data_re_in(159),
@@ -2522,11 +2625,14 @@ begin
         );
 
     ULFFT_PT32_32 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(32),
             data_re_in(1)=>data_re_in(96),
             data_re_in(2)=>data_re_in(160),
@@ -2596,11 +2702,14 @@ begin
         );
 
     ULFFT_PT32_33 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(33),
             data_re_in(1)=>data_re_in(97),
             data_re_in(2)=>data_re_in(161),
@@ -2670,11 +2779,14 @@ begin
         );
 
     ULFFT_PT32_34 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(34),
             data_re_in(1)=>data_re_in(98),
             data_re_in(2)=>data_re_in(162),
@@ -2744,11 +2856,14 @@ begin
         );
 
     ULFFT_PT32_35 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(35),
             data_re_in(1)=>data_re_in(99),
             data_re_in(2)=>data_re_in(163),
@@ -2818,11 +2933,14 @@ begin
         );
 
     ULFFT_PT32_36 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(36),
             data_re_in(1)=>data_re_in(100),
             data_re_in(2)=>data_re_in(164),
@@ -2892,11 +3010,14 @@ begin
         );
 
     ULFFT_PT32_37 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(37),
             data_re_in(1)=>data_re_in(101),
             data_re_in(2)=>data_re_in(165),
@@ -2966,11 +3087,14 @@ begin
         );
 
     ULFFT_PT32_38 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(38),
             data_re_in(1)=>data_re_in(102),
             data_re_in(2)=>data_re_in(166),
@@ -3040,11 +3164,14 @@ begin
         );
 
     ULFFT_PT32_39 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(39),
             data_re_in(1)=>data_re_in(103),
             data_re_in(2)=>data_re_in(167),
@@ -3114,11 +3241,14 @@ begin
         );
 
     ULFFT_PT32_40 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(40),
             data_re_in(1)=>data_re_in(104),
             data_re_in(2)=>data_re_in(168),
@@ -3188,11 +3318,14 @@ begin
         );
 
     ULFFT_PT32_41 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(41),
             data_re_in(1)=>data_re_in(105),
             data_re_in(2)=>data_re_in(169),
@@ -3262,11 +3395,14 @@ begin
         );
 
     ULFFT_PT32_42 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(42),
             data_re_in(1)=>data_re_in(106),
             data_re_in(2)=>data_re_in(170),
@@ -3336,11 +3472,14 @@ begin
         );
 
     ULFFT_PT32_43 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(43),
             data_re_in(1)=>data_re_in(107),
             data_re_in(2)=>data_re_in(171),
@@ -3410,11 +3549,14 @@ begin
         );
 
     ULFFT_PT32_44 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(44),
             data_re_in(1)=>data_re_in(108),
             data_re_in(2)=>data_re_in(172),
@@ -3484,11 +3626,14 @@ begin
         );
 
     ULFFT_PT32_45 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(45),
             data_re_in(1)=>data_re_in(109),
             data_re_in(2)=>data_re_in(173),
@@ -3558,11 +3703,14 @@ begin
         );
 
     ULFFT_PT32_46 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(46),
             data_re_in(1)=>data_re_in(110),
             data_re_in(2)=>data_re_in(174),
@@ -3632,11 +3780,14 @@ begin
         );
 
     ULFFT_PT32_47 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(47),
             data_re_in(1)=>data_re_in(111),
             data_re_in(2)=>data_re_in(175),
@@ -3706,11 +3857,14 @@ begin
         );
 
     ULFFT_PT32_48 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(48),
             data_re_in(1)=>data_re_in(112),
             data_re_in(2)=>data_re_in(176),
@@ -3780,11 +3934,14 @@ begin
         );
 
     ULFFT_PT32_49 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(49),
             data_re_in(1)=>data_re_in(113),
             data_re_in(2)=>data_re_in(177),
@@ -3854,11 +4011,14 @@ begin
         );
 
     ULFFT_PT32_50 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(50),
             data_re_in(1)=>data_re_in(114),
             data_re_in(2)=>data_re_in(178),
@@ -3928,11 +4088,14 @@ begin
         );
 
     ULFFT_PT32_51 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(51),
             data_re_in(1)=>data_re_in(115),
             data_re_in(2)=>data_re_in(179),
@@ -4002,11 +4165,14 @@ begin
         );
 
     ULFFT_PT32_52 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(52),
             data_re_in(1)=>data_re_in(116),
             data_re_in(2)=>data_re_in(180),
@@ -4076,11 +4242,14 @@ begin
         );
 
     ULFFT_PT32_53 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(53),
             data_re_in(1)=>data_re_in(117),
             data_re_in(2)=>data_re_in(181),
@@ -4150,11 +4319,14 @@ begin
         );
 
     ULFFT_PT32_54 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(54),
             data_re_in(1)=>data_re_in(118),
             data_re_in(2)=>data_re_in(182),
@@ -4224,11 +4396,14 @@ begin
         );
 
     ULFFT_PT32_55 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(55),
             data_re_in(1)=>data_re_in(119),
             data_re_in(2)=>data_re_in(183),
@@ -4298,11 +4473,14 @@ begin
         );
 
     ULFFT_PT32_56 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(56),
             data_re_in(1)=>data_re_in(120),
             data_re_in(2)=>data_re_in(184),
@@ -4372,11 +4550,14 @@ begin
         );
 
     ULFFT_PT32_57 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(57),
             data_re_in(1)=>data_re_in(121),
             data_re_in(2)=>data_re_in(185),
@@ -4446,11 +4627,14 @@ begin
         );
 
     ULFFT_PT32_58 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(58),
             data_re_in(1)=>data_re_in(122),
             data_re_in(2)=>data_re_in(186),
@@ -4520,11 +4704,14 @@ begin
         );
 
     ULFFT_PT32_59 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(59),
             data_re_in(1)=>data_re_in(123),
             data_re_in(2)=>data_re_in(187),
@@ -4594,11 +4781,14 @@ begin
         );
 
     ULFFT_PT32_60 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(60),
             data_re_in(1)=>data_re_in(124),
             data_re_in(2)=>data_re_in(188),
@@ -4668,11 +4858,14 @@ begin
         );
 
     ULFFT_PT32_61 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(61),
             data_re_in(1)=>data_re_in(125),
             data_re_in(2)=>data_re_in(189),
@@ -4742,11 +4935,14 @@ begin
         );
 
     ULFFT_PT32_62 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(62),
             data_re_in(1)=>data_re_in(126),
             data_re_in(2)=>data_re_in(190),
@@ -4816,11 +5012,14 @@ begin
         );
 
     ULFFT_PT32_63 : fft_pt32
+    generic map(
+        ctrl_start => ctrl_start
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(63),
             data_re_in(1)=>data_re_in(127),
             data_re_in(2)=>data_re_in(191),
@@ -4892,11 +5091,14 @@ begin
 
     --- right-hand-side processors
     URFFT_PT64_0 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(0),
             data_re_in(1)=>mul_re_out(32),
             data_re_in(2)=>mul_re_out(64),
@@ -5156,11 +5358,14 @@ begin
         );           
 
     URFFT_PT64_1 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(1),
             data_re_in(1)=>mul_re_out(33),
             data_re_in(2)=>mul_re_out(65),
@@ -5420,11 +5625,14 @@ begin
         );           
 
     URFFT_PT64_2 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(2),
             data_re_in(1)=>mul_re_out(34),
             data_re_in(2)=>mul_re_out(66),
@@ -5684,11 +5892,14 @@ begin
         );           
 
     URFFT_PT64_3 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(3),
             data_re_in(1)=>mul_re_out(35),
             data_re_in(2)=>mul_re_out(67),
@@ -5948,11 +6159,14 @@ begin
         );           
 
     URFFT_PT64_4 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(4),
             data_re_in(1)=>mul_re_out(36),
             data_re_in(2)=>mul_re_out(68),
@@ -6212,11 +6426,14 @@ begin
         );           
 
     URFFT_PT64_5 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(5),
             data_re_in(1)=>mul_re_out(37),
             data_re_in(2)=>mul_re_out(69),
@@ -6476,11 +6693,14 @@ begin
         );           
 
     URFFT_PT64_6 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(6),
             data_re_in(1)=>mul_re_out(38),
             data_re_in(2)=>mul_re_out(70),
@@ -6740,11 +6960,14 @@ begin
         );           
 
     URFFT_PT64_7 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(7),
             data_re_in(1)=>mul_re_out(39),
             data_re_in(2)=>mul_re_out(71),
@@ -7004,11 +7227,14 @@ begin
         );           
 
     URFFT_PT64_8 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(8),
             data_re_in(1)=>mul_re_out(40),
             data_re_in(2)=>mul_re_out(72),
@@ -7268,11 +7494,14 @@ begin
         );           
 
     URFFT_PT64_9 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(9),
             data_re_in(1)=>mul_re_out(41),
             data_re_in(2)=>mul_re_out(73),
@@ -7532,11 +7761,14 @@ begin
         );           
 
     URFFT_PT64_10 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(10),
             data_re_in(1)=>mul_re_out(42),
             data_re_in(2)=>mul_re_out(74),
@@ -7796,11 +8028,14 @@ begin
         );           
 
     URFFT_PT64_11 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(11),
             data_re_in(1)=>mul_re_out(43),
             data_re_in(2)=>mul_re_out(75),
@@ -8060,11 +8295,14 @@ begin
         );           
 
     URFFT_PT64_12 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(12),
             data_re_in(1)=>mul_re_out(44),
             data_re_in(2)=>mul_re_out(76),
@@ -8324,11 +8562,14 @@ begin
         );           
 
     URFFT_PT64_13 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(13),
             data_re_in(1)=>mul_re_out(45),
             data_re_in(2)=>mul_re_out(77),
@@ -8588,11 +8829,14 @@ begin
         );           
 
     URFFT_PT64_14 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(14),
             data_re_in(1)=>mul_re_out(46),
             data_re_in(2)=>mul_re_out(78),
@@ -8852,11 +9096,14 @@ begin
         );           
 
     URFFT_PT64_15 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(15),
             data_re_in(1)=>mul_re_out(47),
             data_re_in(2)=>mul_re_out(79),
@@ -9116,11 +9363,14 @@ begin
         );           
 
     URFFT_PT64_16 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(16),
             data_re_in(1)=>mul_re_out(48),
             data_re_in(2)=>mul_re_out(80),
@@ -9380,11 +9630,14 @@ begin
         );           
 
     URFFT_PT64_17 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(17),
             data_re_in(1)=>mul_re_out(49),
             data_re_in(2)=>mul_re_out(81),
@@ -9644,11 +9897,14 @@ begin
         );           
 
     URFFT_PT64_18 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(18),
             data_re_in(1)=>mul_re_out(50),
             data_re_in(2)=>mul_re_out(82),
@@ -9908,11 +10164,14 @@ begin
         );           
 
     URFFT_PT64_19 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(19),
             data_re_in(1)=>mul_re_out(51),
             data_re_in(2)=>mul_re_out(83),
@@ -10172,11 +10431,14 @@ begin
         );           
 
     URFFT_PT64_20 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(20),
             data_re_in(1)=>mul_re_out(52),
             data_re_in(2)=>mul_re_out(84),
@@ -10436,11 +10698,14 @@ begin
         );           
 
     URFFT_PT64_21 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(21),
             data_re_in(1)=>mul_re_out(53),
             data_re_in(2)=>mul_re_out(85),
@@ -10700,11 +10965,14 @@ begin
         );           
 
     URFFT_PT64_22 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(22),
             data_re_in(1)=>mul_re_out(54),
             data_re_in(2)=>mul_re_out(86),
@@ -10964,11 +11232,14 @@ begin
         );           
 
     URFFT_PT64_23 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(23),
             data_re_in(1)=>mul_re_out(55),
             data_re_in(2)=>mul_re_out(87),
@@ -11228,11 +11499,14 @@ begin
         );           
 
     URFFT_PT64_24 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(24),
             data_re_in(1)=>mul_re_out(56),
             data_re_in(2)=>mul_re_out(88),
@@ -11492,11 +11766,14 @@ begin
         );           
 
     URFFT_PT64_25 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(25),
             data_re_in(1)=>mul_re_out(57),
             data_re_in(2)=>mul_re_out(89),
@@ -11756,11 +12033,14 @@ begin
         );           
 
     URFFT_PT64_26 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(26),
             data_re_in(1)=>mul_re_out(58),
             data_re_in(2)=>mul_re_out(90),
@@ -12020,11 +12300,14 @@ begin
         );           
 
     URFFT_PT64_27 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(27),
             data_re_in(1)=>mul_re_out(59),
             data_re_in(2)=>mul_re_out(91),
@@ -12284,11 +12567,14 @@ begin
         );           
 
     URFFT_PT64_28 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(28),
             data_re_in(1)=>mul_re_out(60),
             data_re_in(2)=>mul_re_out(92),
@@ -12548,11 +12834,14 @@ begin
         );           
 
     URFFT_PT64_29 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(29),
             data_re_in(1)=>mul_re_out(61),
             data_re_in(2)=>mul_re_out(93),
@@ -12812,11 +13101,14 @@ begin
         );           
 
     URFFT_PT64_30 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(30),
             data_re_in(1)=>mul_re_out(62),
             data_re_in(2)=>mul_re_out(94),
@@ -13076,11 +13368,14 @@ begin
         );           
 
     URFFT_PT64_31 : fft_pt64
+    generic map(
+        ctrl_start => (ctrl_start+3) mod 16
+    )
     port map(
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay((ctrl_start+3) mod 16),
+            ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(31),
             data_re_in(1)=>mul_re_out(63),
             data_re_in(2)=>mul_re_out(95),

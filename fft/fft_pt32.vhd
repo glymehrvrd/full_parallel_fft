@@ -13,7 +13,7 @@ entity fft_pt32 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        ctrl           : IN STD_LOGIC;
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(31 downto 0);
         data_im_in:in std_logic_vector(31 downto 0);
@@ -137,22 +137,8 @@ signal opp_first_stage_re_out: std_logic_vector(31 downto 0);
 signal c: std_logic_vector(31 downto 0);
 signal c_buff: std_logic_vector(31 downto 0);
 
-SIGNAL ctrl_delay : std_logic_vector(15 downto 0);
 
 begin
-    --- create ctrl_delay signal in top module
-    ctrl_delay(0) <= ctrl;
-    --- buffer for ctrl
-    UDFF_CTRL : Dff_regN_Nout
-    GENERIC MAP(
-        N => 15
-    )
-    PORT MAP(
-        D           => ctrl, 
-        clk         => clk, 
-        Q           => ctrl_delay(15 DOWNTO 1)
-    );
-
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;

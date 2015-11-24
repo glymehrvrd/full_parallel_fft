@@ -5,38 +5,36 @@
     },
     "dff_1_preload_1": {
         "dff": 1,
-        "gate": 5
+        "gate": 0
     },
     "dff_1": {
         "dff": 1,
         "gate": 0
     },
     "mux": {
-        "gate": 4
+        "gate": 3
     },
     "HA": {
         "gate": 3
     },
     "FA": {
-        "HA": 0,
         "gate": 5
     },
     "dff_16": {
-        "dff": 15,
-        "gate": 15
+        "dff": 15
     },
     "complex_multiplier": {
-        "gate": 0,
-        "dff_1_preload_1": 0,
-        "FA": 0,
-        "mul": 4
+        "gate": 1,
+        "dff_1_preload_1": 3,
+        "FA": 3,
+        "mul": 3
     },
     "mul":{
         "dff_1":15,
         "partial_product":15
     },
     "partial_product": {
-        "gate": 3,
+        "gate": 2,
         "dff_1": 2,
         "mux": 1,
         "FA": 1
