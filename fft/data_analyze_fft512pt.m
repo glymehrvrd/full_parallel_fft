@@ -1,6 +1,6 @@
  % set number of input data
 d_num=20;
-beginner=22+51;
+beginner=23+54;
 
 d_out=[];
 for i=1:8

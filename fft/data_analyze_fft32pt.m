@@ -1,6 +1,6 @@
 % set number of input data
 d_num=2;
-beginner=22+17;
+beginner=23+18;
 
 d_re_out.data=fi(d_re_out.data,0,32,0);
 d_im_out.data=fi(d_im_out.data,0,32,0);

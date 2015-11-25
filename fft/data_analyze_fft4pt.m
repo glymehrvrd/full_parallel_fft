@@ -1,6 +1,6 @@
 % set number of input data
 d_num=100;
-beginner=5;
+beginner=6;
 beginner_stage=5;
 
 d_re_fp=fi2vec(d_re_out.data(beginner:beginner+16*d_num-1));

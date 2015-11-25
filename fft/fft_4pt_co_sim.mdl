@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-9.0, 41.0, 1612.0, 1048.0]
+      Location		      [-8.0, 32.0, 1296.0, 1000.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1362.0, 847.0]
-	ZoomFactor		[1.75]
-	Offset			[301.58928571428572, 132.05714695794217]
+	Extents			[1049.0, 821.0]
+	ZoomFactor		[0.8]
+	Offset			[97.339285714285722, -276.44285304205789]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 17 21:15:21 2015"
-  RTWModifiedTimeStamp	  369695719
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Tue Nov 24 23:26:03 2015"
+  RTWModifiedTimeStamp	  370308114
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -857,7 +857,7 @@ Model {
   }
   System {
     Name		    "fft_4pt_co_sim"
-    Location		    [-9, 41, 1603, 1089]
+    Location		    [-8, 32, 1288, 1032]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -869,7 +869,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "175"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "72"
     Block {
@@ -961,7 +961,8 @@ Model {
       "e\", you will typically want to provide a separate simulation model by using a Simulation Multiplexer.<br>When \""
       "Simulation mode\" is set to \"External co-simulator\", you must include a ModelSim block in the design."
       init_code		      "fft_pt4_config"
-      sim_method	      "Inactive"
+      sim_method	      "External co-simulator"
+      engine_block	      "ModelSim"
       verbose		      off
       xl_use_area	      off
       xl_area		      "[0,0,0,0,0,0,0]"

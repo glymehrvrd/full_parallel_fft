@@ -95,7 +95,6 @@ function fft_pt64_config(this_block)
   sysgen_add_components(this_block,'lib','base','mul');
   
   this_block.addFile('fft_pt2.vhd');
-  this_block.addFile('fft_pt2_nodelay.vhd');
   this_block.addFile('fft_pt4.vhd');
   this_block.addFile('fft_pt8.vhd');
   

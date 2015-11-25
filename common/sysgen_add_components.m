@@ -28,6 +28,8 @@ function add_base_components(this_block)
   this_block.addFile('../base_components/Dff_preload_reg1_init_1.vhd')
   this_block.addFile('../base_components/mux_in2.vhd');
   this_block.addFile('../base_components/shifter.vhd');
+  this_block.addFile('../base_components/multiplier_mul1.vhd');
+  this_block.addFile('../base_components/multiplier_mulminusj.vhd');
 return;
  
 function add_library_components(this_block)

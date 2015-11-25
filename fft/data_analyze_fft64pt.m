@@ -1,6 +1,6 @@
 % set number of input data
 d_num=2;
-beginner=22+34;
+beginner=23+35;
 beginner_stage=5+17;
 beginner_mul=21+17;
 

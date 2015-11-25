@@ -1,8 +1,8 @@
 % set number of input data
-d_num=1000;
-beginner=22;
-beginner_stage=5;
-beginner_mul=21;
+d_num=10;
+beginner=23;
+beginner_stage=6;
+beginner_mul=22;
 
 d_re_out.data=fi(d_re_out.data,0,8,0);
 d_im_out.data=fi(d_im_out.data,0,8,0);

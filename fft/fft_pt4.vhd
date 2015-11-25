@@ -35,16 +35,7 @@ COMPONENT Dff_preload_reg1_init_1 IS
     );
 END COMPONENT;
 
-COMPONENT Dff_reg1 IS
-    PORT (
-        D    : IN STD_LOGIC;
-        clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC;
-        QN   : OUT STD_LOGIC
-    );
-END COMPONENT;
-
-component fft_pt2_nodelay is
+component fft_pt2 is
     GENERIC (
         ctrl_start       : INTEGER
     );
@@ -78,30 +69,13 @@ signal c: std_logic;
 signal c_buff: std_logic;
 signal opp_first_stage_re_out: std_logic;
 
-SIGNAL data_re_out_buff : std_logic_vector(3 DOWNTO 0);
-SIGNAL data_im_out_buff : std_logic_vector(3 DOWNTO 0);
-
 begin
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
 
-    GEN_OUT_BUFF : for I in 0 to 3 generate
-        UDFF_RE_OUT : Dff_reg1 port map(
-                D=>data_re_out_buff(I),
-                clk=>clk,
-                Q=>data_re_out(I)
-            );
-
-        UDFF_IM_OUT : Dff_reg1 port map(
-                D=>data_im_out_buff(I),
-                clk=>clk,
-                Q=>data_im_out(I)
-            );
-    end generate ; -- GEN_OUT_BUFF
-
     --- left-hand-side processors
-    ULFFT_PT2_0 : fft_pt2_nodelay
+    ULFFT_PT2_0 : fft_pt2
     generic map(
         ctrl_start => ctrl_start
     )
@@ -118,7 +92,7 @@ begin
             data_im_out=>first_stage_im_out(1 downto 0)
         );
 
-    ULFFT_PT2_1 : fft_pt2_nodelay
+    ULFFT_PT2_1 : fft_pt2
     generic map(
         ctrl_start => ctrl_start
     )
@@ -137,9 +111,9 @@ begin
 
 
     --- right-hand-side processors
-    URFFT_PT2_0 : fft_pt2_nodelay
+    URFFT_PT2_0 : fft_pt2
     generic map(
-        ctrl_start => ctrl_start mod 16
+        ctrl_start => (ctrl_start+1) mod 16
     )
     port map(
             clk=>clk,
@@ -150,15 +124,15 @@ begin
             data_re_in(1)=>first_stage_re_out(2),
             data_im_in(0)=>first_stage_im_out(0),
             data_im_in(1)=>first_stage_im_out(2),
-            data_re_out(0)=>data_re_out_buff(0),
-            data_re_out(1)=>data_re_out_buff(2),
-            data_im_out(0)=>data_im_out_buff(0),
-            data_im_out(1)=>data_im_out_buff(2)
+            data_re_out(0)=>data_re_out(0),
+            data_re_out(1)=>data_re_out(2),
+            data_im_out(0)=>data_im_out(0),
+            data_im_out(1)=>data_im_out(2)
         );           
 
-    URFFT_PT2_1 : fft_pt2_nodelay
+    URFFT_PT2_1 : fft_pt2
     generic map(
-        ctrl_start => ctrl_start mod 16
+        ctrl_start => (ctrl_start+1) mod 16
     )
     port map(
             clk=>clk,
@@ -169,10 +143,10 @@ begin
             data_re_in(1)=>first_stage_im_out(3),
             data_im_in(0)=>first_stage_im_out(1),
             data_im_in(1)=>opp_first_stage_re_out,
-            data_re_out(0)=>data_re_out_buff(1),
-            data_re_out(1)=>data_re_out_buff(3),
-            data_im_out(0)=>data_im_out_buff(1),
-            data_im_out(1)=>data_im_out_buff(3)
+            data_re_out(0)=>data_re_out(1),
+            data_re_out(1)=>data_re_out(3),
+            data_im_out(0)=>data_im_out(1),
+            data_im_out(1)=>data_im_out(3)
         );           
 
 
@@ -182,7 +156,7 @@ begin
     PORT MAP(
         D        => c, 
         clk      => clk, 
-        preload  => ctrl_delay(ctrl_start mod 16), 
+        preload  => ctrl_delay((ctrl_start+1) mod 16), 
         Q        => c_buff
     );
     ADDER_3 : adder_half_bit1

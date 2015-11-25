@@ -97,7 +97,7 @@ def bintocsd(binary):
     return ''.join(csd)
 
 
-def cal_delay(pt, structure={2048:(64,32),512:(32,16),16:(4,4),32:(8,4),64:(8,8),8:(4,2),4:1,2:1}):
+def calc_delay(pt, structure={2048:(64,32),512:(32,16),16:(4,4),32:(8,4),64:(8,8),8:(4,2),4:2,2:1}):
     try:
         lhspt, rhspt=structure[pt]
     except:
@@ -105,13 +105,13 @@ def cal_delay(pt, structure={2048:(64,32),512:(32,16),16:(4,4),32:(8,4),64:(8,8)
 
     try:
         l, r = structure[lhspt]
-        delay_l = cal_delay(l*r, structure)
+        delay_l = calc_delay(l*r, structure)
     except:
         delay_l = structure[lhspt]
         
     try:
         l, r = structure[rhspt]
-        delay_r = cal_delay(l*r, structure)
+        delay_r = calc_delay(l*r, structure)
     except:
         delay_r = structure[rhspt]
 
@@ -119,7 +119,7 @@ def cal_delay(pt, structure={2048:(64,32),512:(32,16),16:(4,4),32:(8,4),64:(8,8)
 
 
 def test():
-    print cal_delay(4)
+    print calc_delay(4)
     fxnum = sfi(-0.707, 16, 14)
     print calc_starter('10-0-01010000000')
     print fxnum
@@ -128,4 +128,4 @@ def test():
 if __name__ == '__main__':
     print bintocsd('1101')
     # test()
-    print cal_delay(8)
+    print calc_delay(8)

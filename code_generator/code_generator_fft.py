@@ -19,7 +19,7 @@ fft_list = [(4, 2, False),
             (32, 64, True)]
 
 for lhs_point, rhs_point, istop in fft_list:
-    delay = cal_delay(lhs_point)
+    delay = calc_delay(lhs_point)
 
     data_arrival_time = {
         'mul': delay, 'shifter': delay + 15, 'rhs_fft': delay + 16}
@@ -33,12 +33,12 @@ for lhs_point, rhs_point, istop in fft_list:
         index, w = calculate_fft_structure(lhs_point, rhs_point)
         w = [(sfi(i.real, 16, 14), sfi(i.imag, 16, 14)) for i in w]
         f.write(temp_fft_ptx.render(
-            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w, delay=ctrl_delay['mul'], istop=istop))
+            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w, delay=ctrl_delay, istop=istop))
 
 # lhs_point, rhs_point, _ = fft_list[-1]
 # point = lhs_point * rhs_point
 # with open('gen/fft_pt%d.vhd' % point, 'w') as f:
-#     delay = cal_delay(lhs_point)
+#     delay = calc_delay(lhs_point)
 
 #     data_arrival_time = {
 #         'mul': delay, 'shifter': delay + 15, 'rhs_fft': delay + 16}

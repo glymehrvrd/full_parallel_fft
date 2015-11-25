@@ -1,7 +1,7 @@
 clc;
 clear all;
 
-d_num=1000;
+d_num=10;
 % input data, each row an input port, each column a data
 d=(rand(8,d_num)-0.5)*2^10+(rand(8,d_num)-0.5)*1j*2^10;
 
