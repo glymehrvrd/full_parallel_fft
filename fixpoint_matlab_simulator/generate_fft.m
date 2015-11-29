@@ -1,5 +1,4 @@
 function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
-    w=reshape(w,m,n);
     w=int16(w*2^14);
     function [result]=fftn(data)
         for i=1:n

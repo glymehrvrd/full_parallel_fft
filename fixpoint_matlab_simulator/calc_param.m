@@ -7,5 +7,4 @@ function [index,w]=calc_param(m,n)
             w(row,col)=exp(-1i*2*pi*(row-1)*(col-1)/(m*n));
         end
     end
-    w=w(:);
 end

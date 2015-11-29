@@ -31,9 +31,14 @@ for lhs_point, rhs_point, istop in fft_list:
     point = lhs_point * rhs_point
     with open('gen/fft_pt%d.vhd' % point, 'w') as f:
         index, w = calculate_fft_structure(lhs_point, rhs_point)
-        w = [(sfi(i.real, 16, 14), sfi(i.imag, 16, 14)) for i in w]
+        w_fp=[]
+        for i,_ in enumerate(w):
+            w_fp_ln=[]
+            for j,_ in enumerate(w[i]):
+                w_fp_ln.append((sfi(w[i,j].real, 16, 14), sfi(w[i,j].imag, 16, 14)))
+            w_fp.append(w_fp_ln)
         f.write(temp_fft_ptx.render(
-            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w, delay=ctrl_delay, istop=istop))
+            point=point, lhs_point=lhs_point, rhs_point=rhs_point, index=index, w=w_fp, delay=ctrl_delay, istop=istop))
 
 # lhs_point, rhs_point, _ = fft_list[-1]
 # point = lhs_point * rhs_point

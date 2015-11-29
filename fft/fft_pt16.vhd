@@ -121,20 +121,26 @@ begin
         ctrl_start => ctrl_start
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>data_re_in(0),
-            data_re_in(1)=>data_re_in(4),
-            data_re_in(2)=>data_re_in(8),
-            data_re_in(3)=>data_re_in(12),
-            data_im_in(0)=>data_im_in(0),
-            data_im_in(1)=>data_im_in(4),
-            data_im_in(2)=>data_im_in(8),
-            data_im_in(3)=>data_im_in(12),
-            data_re_out=>first_stage_re_out(3 downto 0),
-            data_im_out=>first_stage_im_out(3 downto 0)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0) => data_re_in(0),
+            data_re_in(1) => data_re_in(4),
+            data_re_in(2) => data_re_in(8),
+            data_re_in(3) => data_re_in(12),
+            data_im_in(0) => data_im_in(0),
+            data_im_in(1) => data_im_in(4),
+            data_im_in(2) => data_im_in(8),
+            data_im_in(3) => data_im_in(12),
+            data_re_out(0) => first_stage_re_out(0),
+            data_re_out(1) => first_stage_re_out(4),
+            data_re_out(2) => first_stage_re_out(8),
+            data_re_out(3) => first_stage_re_out(12),
+            data_im_out(0) => first_stage_im_out(0),
+            data_im_out(1) => first_stage_im_out(4),
+            data_im_out(2) => first_stage_im_out(8),
+            data_im_out(3) => first_stage_im_out(12)
         );
 
     ULFFT_PT4_1 : fft_pt4
@@ -142,20 +148,26 @@ begin
         ctrl_start => ctrl_start
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>data_re_in(1),
-            data_re_in(1)=>data_re_in(5),
-            data_re_in(2)=>data_re_in(9),
-            data_re_in(3)=>data_re_in(13),
-            data_im_in(0)=>data_im_in(1),
-            data_im_in(1)=>data_im_in(5),
-            data_im_in(2)=>data_im_in(9),
-            data_im_in(3)=>data_im_in(13),
-            data_re_out=>first_stage_re_out(7 downto 4),
-            data_im_out=>first_stage_im_out(7 downto 4)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0) => data_re_in(1),
+            data_re_in(1) => data_re_in(5),
+            data_re_in(2) => data_re_in(9),
+            data_re_in(3) => data_re_in(13),
+            data_im_in(0) => data_im_in(1),
+            data_im_in(1) => data_im_in(5),
+            data_im_in(2) => data_im_in(9),
+            data_im_in(3) => data_im_in(13),
+            data_re_out(0) => first_stage_re_out(1),
+            data_re_out(1) => first_stage_re_out(5),
+            data_re_out(2) => first_stage_re_out(9),
+            data_re_out(3) => first_stage_re_out(13),
+            data_im_out(0) => first_stage_im_out(1),
+            data_im_out(1) => first_stage_im_out(5),
+            data_im_out(2) => first_stage_im_out(9),
+            data_im_out(3) => first_stage_im_out(13)
         );
 
     ULFFT_PT4_2 : fft_pt4
@@ -163,20 +175,26 @@ begin
         ctrl_start => ctrl_start
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>data_re_in(2),
-            data_re_in(1)=>data_re_in(6),
-            data_re_in(2)=>data_re_in(10),
-            data_re_in(3)=>data_re_in(14),
-            data_im_in(0)=>data_im_in(2),
-            data_im_in(1)=>data_im_in(6),
-            data_im_in(2)=>data_im_in(10),
-            data_im_in(3)=>data_im_in(14),
-            data_re_out=>first_stage_re_out(11 downto 8),
-            data_im_out=>first_stage_im_out(11 downto 8)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0) => data_re_in(2),
+            data_re_in(1) => data_re_in(6),
+            data_re_in(2) => data_re_in(10),
+            data_re_in(3) => data_re_in(14),
+            data_im_in(0) => data_im_in(2),
+            data_im_in(1) => data_im_in(6),
+            data_im_in(2) => data_im_in(10),
+            data_im_in(3) => data_im_in(14),
+            data_re_out(0) => first_stage_re_out(2),
+            data_re_out(1) => first_stage_re_out(6),
+            data_re_out(2) => first_stage_re_out(10),
+            data_re_out(3) => first_stage_re_out(14),
+            data_im_out(0) => first_stage_im_out(2),
+            data_im_out(1) => first_stage_im_out(6),
+            data_im_out(2) => first_stage_im_out(10),
+            data_im_out(3) => first_stage_im_out(14)
         );
 
     ULFFT_PT4_3 : fft_pt4
@@ -184,20 +202,26 @@ begin
         ctrl_start => ctrl_start
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>data_re_in(3),
-            data_re_in(1)=>data_re_in(7),
-            data_re_in(2)=>data_re_in(11),
-            data_re_in(3)=>data_re_in(15),
-            data_im_in(0)=>data_im_in(3),
-            data_im_in(1)=>data_im_in(7),
-            data_im_in(2)=>data_im_in(11),
-            data_im_in(3)=>data_im_in(15),
-            data_re_out=>first_stage_re_out(15 downto 12),
-            data_im_out=>first_stage_im_out(15 downto 12)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0) => data_re_in(3),
+            data_re_in(1) => data_re_in(7),
+            data_re_in(2) => data_re_in(11),
+            data_re_in(3) => data_re_in(15),
+            data_im_in(0) => data_im_in(3),
+            data_im_in(1) => data_im_in(7),
+            data_im_in(2) => data_im_in(11),
+            data_im_in(3) => data_im_in(15),
+            data_re_out(0) => first_stage_re_out(3),
+            data_re_out(1) => first_stage_re_out(7),
+            data_re_out(2) => first_stage_re_out(11),
+            data_re_out(3) => first_stage_re_out(15),
+            data_im_out(0) => first_stage_im_out(3),
+            data_im_out(1) => first_stage_im_out(7),
+            data_im_out(2) => first_stage_im_out(11),
+            data_im_out(3) => first_stage_im_out(15)
         );
 
 
@@ -207,26 +231,26 @@ begin
         ctrl_start => (ctrl_start+2) mod 16
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
             data_re_in(0)=>mul_re_out(0),
-            data_re_in(1)=>mul_re_out(4),
-            data_re_in(2)=>mul_re_out(8),
-            data_re_in(3)=>mul_re_out(12),
+            data_re_in(1)=>mul_re_out(1),
+            data_re_in(2)=>mul_re_out(2),
+            data_re_in(3)=>mul_re_out(3),
             data_im_in(0)=>mul_im_out(0),
-            data_im_in(1)=>mul_im_out(4),
-            data_im_in(2)=>mul_im_out(8),
-            data_im_in(3)=>mul_im_out(12),
-            data_re_out(0)=>data_re_out(0),
-            data_re_out(1)=>data_re_out(4),
-            data_re_out(2)=>data_re_out(8),
-            data_re_out(3)=>data_re_out(12),
-            data_im_out(0)=>data_im_out(0),
-            data_im_out(1)=>data_im_out(4),
-            data_im_out(2)=>data_im_out(8),
-            data_im_out(3)=>data_im_out(12)
+            data_im_in(1)=>mul_im_out(1),
+            data_im_in(2)=>mul_im_out(2),
+            data_im_in(3)=>mul_im_out(3),
+            data_re_out(0) => data_re_out(0),
+            data_re_out(1) => data_re_out(4),
+            data_re_out(2) => data_re_out(8),
+            data_re_out(3) => data_re_out(12),
+            data_im_out(0) => data_im_out(0),
+            data_im_out(1) => data_im_out(4),
+            data_im_out(2) => data_im_out(8),
+            data_im_out(3) => data_im_out(12)
         );           
 
     URFFT_PT4_1 : fft_pt4
@@ -234,26 +258,26 @@ begin
         ctrl_start => (ctrl_start+2) mod 16
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>mul_re_out(1),
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0)=>mul_re_out(4),
             data_re_in(1)=>mul_re_out(5),
-            data_re_in(2)=>mul_re_out(9),
-            data_re_in(3)=>mul_re_out(13),
-            data_im_in(0)=>mul_im_out(1),
+            data_re_in(2)=>mul_re_out(6),
+            data_re_in(3)=>mul_re_out(7),
+            data_im_in(0)=>mul_im_out(4),
             data_im_in(1)=>mul_im_out(5),
-            data_im_in(2)=>mul_im_out(9),
-            data_im_in(3)=>mul_im_out(13),
-            data_re_out(0)=>data_re_out(1),
-            data_re_out(1)=>data_re_out(5),
-            data_re_out(2)=>data_re_out(9),
-            data_re_out(3)=>data_re_out(13),
-            data_im_out(0)=>data_im_out(1),
-            data_im_out(1)=>data_im_out(5),
-            data_im_out(2)=>data_im_out(9),
-            data_im_out(3)=>data_im_out(13)
+            data_im_in(2)=>mul_im_out(6),
+            data_im_in(3)=>mul_im_out(7),
+            data_re_out(0) => data_re_out(1),
+            data_re_out(1) => data_re_out(5),
+            data_re_out(2) => data_re_out(9),
+            data_re_out(3) => data_re_out(13),
+            data_im_out(0) => data_im_out(1),
+            data_im_out(1) => data_im_out(5),
+            data_im_out(2) => data_im_out(9),
+            data_im_out(3) => data_im_out(13)
         );           
 
     URFFT_PT4_2 : fft_pt4
@@ -261,26 +285,26 @@ begin
         ctrl_start => (ctrl_start+2) mod 16
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>mul_re_out(2),
-            data_re_in(1)=>mul_re_out(6),
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0)=>mul_re_out(8),
+            data_re_in(1)=>mul_re_out(9),
             data_re_in(2)=>mul_re_out(10),
-            data_re_in(3)=>mul_re_out(14),
-            data_im_in(0)=>mul_im_out(2),
-            data_im_in(1)=>mul_im_out(6),
+            data_re_in(3)=>mul_re_out(11),
+            data_im_in(0)=>mul_im_out(8),
+            data_im_in(1)=>mul_im_out(9),
             data_im_in(2)=>mul_im_out(10),
-            data_im_in(3)=>mul_im_out(14),
-            data_re_out(0)=>data_re_out(2),
-            data_re_out(1)=>data_re_out(6),
-            data_re_out(2)=>data_re_out(10),
-            data_re_out(3)=>data_re_out(14),
-            data_im_out(0)=>data_im_out(2),
-            data_im_out(1)=>data_im_out(6),
-            data_im_out(2)=>data_im_out(10),
-            data_im_out(3)=>data_im_out(14)
+            data_im_in(3)=>mul_im_out(11),
+            data_re_out(0) => data_re_out(2),
+            data_re_out(1) => data_re_out(6),
+            data_re_out(2) => data_re_out(10),
+            data_re_out(3) => data_re_out(14),
+            data_im_out(0) => data_im_out(2),
+            data_im_out(1) => data_im_out(6),
+            data_im_out(2) => data_im_out(10),
+            data_im_out(3) => data_im_out(14)
         );           
 
     URFFT_PT4_3 : fft_pt4
@@ -288,284 +312,300 @@ begin
         ctrl_start => (ctrl_start+2) mod 16
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>mul_re_out(3),
-            data_re_in(1)=>mul_re_out(7),
-            data_re_in(2)=>mul_re_out(11),
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in(0)=>mul_re_out(12),
+            data_re_in(1)=>mul_re_out(13),
+            data_re_in(2)=>mul_re_out(14),
             data_re_in(3)=>mul_re_out(15),
-            data_im_in(0)=>mul_im_out(3),
-            data_im_in(1)=>mul_im_out(7),
-            data_im_in(2)=>mul_im_out(11),
+            data_im_in(0)=>mul_im_out(12),
+            data_im_in(1)=>mul_im_out(13),
+            data_im_in(2)=>mul_im_out(14),
             data_im_in(3)=>mul_im_out(15),
-            data_re_out(0)=>data_re_out(3),
-            data_re_out(1)=>data_re_out(7),
-            data_re_out(2)=>data_re_out(11),
-            data_re_out(3)=>data_re_out(15),
-            data_im_out(0)=>data_im_out(3),
-            data_im_out(1)=>data_im_out(7),
-            data_im_out(2)=>data_im_out(11),
-            data_im_out(3)=>data_im_out(15)
+            data_re_out(0) => data_re_out(3),
+            data_re_out(1) => data_re_out(7),
+            data_re_out(2) => data_re_out(11),
+            data_re_out(3) => data_re_out(15),
+            data_im_out(0) => data_im_out(3),
+            data_im_out(1) => data_im_out(7),
+            data_im_out(2) => data_im_out(11),
+            data_im_out(3) => data_im_out(15)
         );           
 
 
     --- multipliers
+ 
     UMUL_0 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(0),
-            data_im_in=>first_stage_im_out(0),
-            product_re_out=>mul_re_out(0),
-            product_im_out=>mul_im_out(0)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(0),
+            data_im_in => first_stage_im_out(0),
+            product_re_out => mul_re_out(0),
+            product_im_out => mul_im_out(0)
         );
 
+ 
     UMUL_1 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(1),
-            data_im_in=>first_stage_im_out(1),
-            product_re_out=>mul_re_out(1),
-            product_im_out=>mul_im_out(1)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(1),
+            data_im_in => first_stage_im_out(1),
+            product_re_out => mul_re_out(1),
+            product_im_out => mul_im_out(1)
         );
 
+ 
     UMUL_2 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(2),
-            data_im_in=>first_stage_im_out(2),
-            product_re_out=>mul_re_out(2),
-            product_im_out=>mul_im_out(2)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(2),
+            data_im_in => first_stage_im_out(2),
+            product_re_out => mul_re_out(2),
+            product_im_out => mul_im_out(2)
         );
 
+ 
     UMUL_3 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(3),
-            data_im_in=>first_stage_im_out(3),
-            product_re_out=>mul_re_out(3),
-            product_im_out=>mul_im_out(3)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(3),
+            data_im_in => first_stage_im_out(3),
+            product_re_out => mul_re_out(3),
+            product_im_out => mul_im_out(3)
         );
 
+ 
     UMUL_4 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(4),
-            data_im_in=>first_stage_im_out(4),
-            product_re_out=>mul_re_out(4),
-            product_im_out=>mul_im_out(4)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(4),
+            data_im_in => first_stage_im_out(4),
+            product_re_out => mul_re_out(4),
+            product_im_out => mul_im_out(4)
         );
 
+ 
     UMUL_5 : complex_multiplier
     generic map(
-            re_multiplicator=>15136, --- 0.923828125 + j-0.382629394531
-            im_multiplicator=>-6269,
+            re_multiplicator => 15136, --- 0.923828125 + j-0.382629394531
+            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(5),
-            data_im_in=>first_stage_im_out(5),
-            product_re_out=>mul_re_out(5),
-            product_im_out=>mul_im_out(5)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(5),
+            data_im_in => first_stage_im_out(5),
+            product_re_out => mul_re_out(5),
+            product_im_out => mul_im_out(5)
         );
 
+ 
     UMUL_6 : complex_multiplier
     generic map(
-            re_multiplicator=>11585, --- 0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585,
+            re_multiplicator => 11585, --- 0.707092285156 + j-0.707092285156
+            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(6),
-            data_im_in=>first_stage_im_out(6),
-            product_re_out=>mul_re_out(6),
-            product_im_out=>mul_im_out(6)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(6),
+            data_im_in => first_stage_im_out(6),
+            product_re_out => mul_re_out(6),
+            product_im_out => mul_im_out(6)
         );
 
+ 
     UMUL_7 : complex_multiplier
     generic map(
-            re_multiplicator=>6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator=>-15136,
+            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
+            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(7),
-            data_im_in=>first_stage_im_out(7),
-            product_re_out=>mul_re_out(7),
-            product_im_out=>mul_im_out(7)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(7),
+            data_im_in => first_stage_im_out(7),
+            product_re_out => mul_re_out(7),
+            product_im_out => mul_im_out(7)
         );
 
+ 
     UMUL_8 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(8),
-            data_im_in=>first_stage_im_out(8),
-            product_re_out=>mul_re_out(8),
-            product_im_out=>mul_im_out(8)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(8),
+            data_im_in => first_stage_im_out(8),
+            product_re_out => mul_re_out(8),
+            product_im_out => mul_im_out(8)
         );
 
+ 
     UMUL_9 : complex_multiplier
     generic map(
-            re_multiplicator=>11585, --- 0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585,
+            re_multiplicator => 11585, --- 0.707092285156 + j-0.707092285156
+            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(9),
-            data_im_in=>first_stage_im_out(9),
-            product_re_out=>mul_re_out(9),
-            product_im_out=>mul_im_out(9)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(9),
+            data_im_in => first_stage_im_out(9),
+            product_re_out => mul_re_out(9),
+            product_im_out => mul_im_out(9)
         );
 
+ 
     UMUL_10 : multiplier_mulminusj
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(10),
-            data_im_in=>first_stage_im_out(10),
-            product_re_out=>mul_re_out(10),
-            product_im_out=>mul_im_out(10)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(10),
+            data_im_in => first_stage_im_out(10),
+            product_re_out => mul_re_out(10),
+            product_im_out => mul_im_out(10)
         );
 
+ 
     UMUL_11 : complex_multiplier
     generic map(
-            re_multiplicator=>-11585, --- -0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585,
+            re_multiplicator => -11585, --- -0.707092285156 + j-0.707092285156
+            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(11),
-            data_im_in=>first_stage_im_out(11),
-            product_re_out=>mul_re_out(11),
-            product_im_out=>mul_im_out(11)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(11),
+            data_im_in => first_stage_im_out(11),
+            product_re_out => mul_re_out(11),
+            product_im_out => mul_im_out(11)
         );
 
+ 
     UMUL_12 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(12),
-            data_im_in=>first_stage_im_out(12),
-            product_re_out=>mul_re_out(12),
-            product_im_out=>mul_im_out(12)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(12),
+            data_im_in => first_stage_im_out(12),
+            product_re_out => mul_re_out(12),
+            product_im_out => mul_im_out(12)
         );
 
+ 
     UMUL_13 : complex_multiplier
     generic map(
-            re_multiplicator=>6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator=>-15136,
+            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
+            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(13),
-            data_im_in=>first_stage_im_out(13),
-            product_re_out=>mul_re_out(13),
-            product_im_out=>mul_im_out(13)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(13),
+            data_im_in => first_stage_im_out(13),
+            product_re_out => mul_re_out(13),
+            product_im_out => mul_im_out(13)
         );
 
+ 
     UMUL_14 : complex_multiplier
     generic map(
-            re_multiplicator=>-11585, --- -0.707092285156 + j-0.707092285156
-            im_multiplicator=>-11585,
+            re_multiplicator => -11585, --- -0.707092285156 + j-0.707092285156
+            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(14),
-            data_im_in=>first_stage_im_out(14),
-            product_re_out=>mul_re_out(14),
-            product_im_out=>mul_im_out(14)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(14),
+            data_im_in => first_stage_im_out(14),
+            product_re_out => mul_re_out(14),
+            product_im_out => mul_im_out(14)
         );
 
+ 
     UMUL_15 : complex_multiplier
     generic map(
-            re_multiplicator=>-15136, --- -0.923828125 + j0.382629394531
-            im_multiplicator=>6269,
+            re_multiplicator => -15136, --- -0.923828125 + j0.382629394531
+            im_multiplicator => 6269,
             ctrl_start => (ctrl_start+2) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out(15),
-            data_im_in=>first_stage_im_out(15),
-            product_re_out=>mul_re_out(15),
-            product_im_out=>mul_im_out(15)
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out(15),
+            data_im_in => first_stage_im_out(15),
+            product_re_out => mul_re_out(15),
+            product_im_out => mul_im_out(15)
         );
 
 end Behavioral;

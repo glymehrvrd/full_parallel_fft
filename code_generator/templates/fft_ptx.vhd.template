@@ -166,18 +166,22 @@ begin
         ctrl_start => ctrl_start
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            {% for j in range(0,lhs_point) %}
-            data_re_in({{j}})=>data_re_in({{i+j*rhs_point}}),
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            {% for j in range(lhs_point) %}
+            data_re_in({{j}}) => data_re_in({{i+j*rhs_point}}),
             {% endfor %}
-            {% for j in range(0,lhs_point) %}
-            data_im_in({{j}})=>data_im_in({{i+j*rhs_point}}),
+            {% for j in range(lhs_point) %}
+            data_im_in({{j}}) => data_im_in({{i+j*rhs_point}}),
             {% endfor %}
-            data_re_out=>first_stage_re_out({{lhs_point*(i+1)-1}} downto {{lhs_point*i}}),
-            data_im_out=>first_stage_im_out({{lhs_point*(i+1)-1}} downto {{lhs_point*i}})
+            {% for j in range(lhs_point) %}
+            data_re_out({{j}}) => first_stage_re_out({{i+j*rhs_point}}),
+            {% endfor %}
+            {% for j in range(lhs_point) %}
+            data_im_out({{j}}) => first_stage_im_out({{i+j*rhs_point}}){{',' if not loop.last}}
+            {% endfor %}
         );
 
     {% endfor %}
@@ -189,10 +193,10 @@ begin
         ctrl_start => (ctrl_start+{{delay['rhs_fft']}}) mod 16
     )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
             {% for j in range(rhs_point) %}
             data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
             {% endfor %}
@@ -200,65 +204,65 @@ begin
             data_im_in({{j}})=>mul_im_out({{index[i][j]}}),
             {% endfor %}
             {% for j in range(rhs_point) %}
-            data_re_out({{j}})=>data_re_out({{i+j*lhs_point}}),
+            data_re_out({{j}}) => data_re_out({{i+j*lhs_point}}),
             {% endfor %}
             {% for j in range(rhs_point) %}
-            data_im_out({{j}})=>data_im_out({{i+j*lhs_point}}){{',' if not loop.last}}
+            data_im_out({{j}}) => data_im_out({{i+j*lhs_point}}){{',' if not loop.last}}
             {% endfor %}
         );           
 
     {% endfor %}
 
     --- multipliers
-    {% for i in range(point) %}
-    {% if w[i]==(2**14,0) %} {#- TODO: judge if w[i] is identity other than 1, e.g. j, -1, -j #}
+    {% for i in range(point) %} 
+   {% if w[(i/rhs_point)|int][i%rhs_point]==(2**14,0) %}
     UMUL_{{i}} : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+{{delay['shifter']}}) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out({{i}}),
-            data_im_in=>first_stage_im_out({{i}}),
-            product_re_out=>mul_re_out({{i}}),
-            product_im_out=>mul_im_out({{i}})
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out({{i}}),
+            data_im_in => first_stage_im_out({{i}}),
+            product_re_out => mul_re_out({{i}}),
+            product_im_out => mul_im_out({{i}})
         );
 
-    {% elif w[i]==(0,-(2**14)) %}
+    {% elif w[(i/rhs_point)|int][i%rhs_point]==(0,-(2**14)) %}
     UMUL_{{i}} : multiplier_mulminusj
     generic map(
             ctrl_start => (ctrl_start+{{delay['shifter']}}) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out({{i}}),
-            data_im_in=>first_stage_im_out({{i}}),
-            product_re_out=>mul_re_out({{i}}),
-            product_im_out=>mul_im_out({{i}})
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out({{i}}),
+            data_im_in => first_stage_im_out({{i}}),
+            product_re_out => mul_re_out({{i}}),
+            product_im_out => mul_im_out({{i}})
         );
 
     {% else %}
     UMUL_{{i}} : complex_multiplier
     generic map(
-            re_multiplicator=>{{w[i][0]}}, --- {{w[i][0]/2.0**14}} + j{{w[i][1]/2.0**14}}
-            im_multiplicator=>{{w[i][1]}},
+            re_multiplicator => {{w[(i/rhs_point)|int][i%rhs_point][0]}}, --- {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}} + j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
+            im_multiplicator => {{w[(i/rhs_point)|int][i%rhs_point][1]}},
             ctrl_start => (ctrl_start+{{delay['mul']}}) mod 16
         )
     port map(
-            clk=>clk,
-            rst=>rst,
-            ce=>ce,
-            ctrl_delay=>ctrl_delay,
-            data_re_in=>first_stage_re_out({{i}}),
-            data_im_in=>first_stage_im_out({{i}}),
-            product_re_out=>mul_re_out({{i}}),
-            product_im_out=>mul_im_out({{i}})
+            clk => clk,
+            rst => rst,
+            ce => ce,
+            ctrl_delay => ctrl_delay,
+            data_re_in => first_stage_re_out({{i}}),
+            data_im_in => first_stage_im_out({{i}}),
+            product_re_out => mul_re_out({{i}}),
+            product_im_out => mul_im_out({{i}})
         );
 
     {% endif %}
