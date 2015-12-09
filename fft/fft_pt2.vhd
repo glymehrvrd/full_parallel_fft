@@ -9,6 +9,7 @@ ENTITY fft_pt2 IS
         clk          : IN STD_LOGIC;
         rst          : IN STD_LOGIC;
         ce           : IN STD_LOGIC;
+        bypass       : IN std_logic;
         ctrl_delay   : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in   : IN std_logic_vector(1 DOWNTO 0);
@@ -60,6 +61,17 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
         );
     END COMPONENT;
 
+
+    COMPONENT mux_in2 IS
+        PORT (
+            sel       : IN STD_LOGIC;
+
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN std_logic;
+            data_out  : OUT std_logic
+        );
+    END COMPONENT;
+
     SIGNAL c : std_logic_vector(3 DOWNTO 0);
     SIGNAL c_buff : std_logic_vector(3 DOWNTO 0);
 
@@ -69,7 +81,27 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
     SIGNAL data_re_out_buff : std_logic_vector(1 DOWNTO 0);
     SIGNAL data_im_out_buff : std_logic_vector(1 DOWNTO 0);
 
+    SIGNAL data_re_out_nobypass : std_logic_vector(1 DOWNTO 0);
+    SIGNAL data_im_out_nobypass : std_logic_vector(1 DOWNTO 0);
 BEGIN
+    GEN_OUT_MUX : for I in 0 to 1 generate
+        UMUXRE : mux_in2
+        port map(
+            sel=>bypass,
+            data1_in=>data_re_out_nobypass(I),
+            data2_in=>data_re_in(I),
+            data_out=>data_re_out(I)
+        );
+
+        UMUXIM : mux_in2
+        port map(
+            sel=>bypass,
+            data1_in=>data_im_out_nobypass(I),
+            data2_in=>data_im_in(I),
+            data_out=>data_im_out(I)
+        );
+    end generate ; -- GEN_OUT_MUX
+
     not_data_re_in1 <= NOT data_re_in(1);
     not_data_im_in1 <= NOT data_im_in(1);
 
@@ -77,13 +109,13 @@ BEGIN
         UDFF_RE_OUT : Dff_reg1 port map(
                 D=>data_re_out_buff(I),
                 clk=>clk,
-                Q=>data_re_out(I)
+                Q=>data_re_out_nobypass(I)
             );
 
         UDFF_IM_OUT : Dff_reg1 port map(
                 D=>data_im_out_buff(I),
                 clk=>clk,
-                Q=>data_im_out(I)
+                Q=>data_im_out_nobypass(I)
             );
     end generate ; -- GEN_OUT_BUFF
 

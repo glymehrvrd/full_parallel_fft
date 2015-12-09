@@ -13,6 +13,7 @@ entity fft_pt64 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        bypass         : IN STD_LOGIC_VECTOR(5 downto 0);
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(63 downto 0);
@@ -33,6 +34,7 @@ component fft_pt8 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        bypass         : IN STD_LOGIC_VECTOR(2 downto 0);
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(7 downto 0);
@@ -46,8 +48,6 @@ end component;
 
 component complex_multiplier is
     GENERIC (
-        re_multiplicator : INTEGER;
-        im_multiplicator : INTEGER;
         ctrl_start       : INTEGER
     );
     PORT (
@@ -57,6 +57,8 @@ component complex_multiplier is
         ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
+        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
+        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         product_re_out  : OUT STD_LOGIC;
         product_im_out  : OUT STD_LOGIC
     );
@@ -124,6 +126,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(0),
             data_re_in(1) => data_re_in(8),
@@ -167,6 +170,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(1),
             data_re_in(1) => data_re_in(9),
@@ -210,6 +214,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(2),
             data_re_in(1) => data_re_in(10),
@@ -253,6 +258,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(3),
             data_re_in(1) => data_re_in(11),
@@ -296,6 +302,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(4),
             data_re_in(1) => data_re_in(12),
@@ -339,6 +346,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(5),
             data_re_in(1) => data_re_in(13),
@@ -382,6 +390,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(6),
             data_re_in(1) => data_re_in(14),
@@ -425,6 +434,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(5 downto 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(7),
             data_re_in(1) => data_re_in(15),
@@ -470,23 +480,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(0),
-            data_re_in(1)=>mul_re_out(1),
-            data_re_in(2)=>mul_re_out(2),
-            data_re_in(3)=>mul_re_out(3),
-            data_re_in(4)=>mul_re_out(4),
-            data_re_in(5)=>mul_re_out(5),
-            data_re_in(6)=>mul_re_out(6),
-            data_re_in(7)=>mul_re_out(7),
-            data_im_in(0)=>mul_im_out(0),
-            data_im_in(1)=>mul_im_out(1),
-            data_im_in(2)=>mul_im_out(2),
-            data_im_in(3)=>mul_im_out(3),
-            data_im_in(4)=>mul_im_out(4),
-            data_im_in(5)=>mul_im_out(5),
-            data_im_in(6)=>mul_im_out(6),
-            data_im_in(7)=>mul_im_out(7),
+            data_re_in(0) => mul_re_out(0),
+            data_re_in(1) => mul_re_out(1),
+            data_re_in(2) => mul_re_out(2),
+            data_re_in(3) => mul_re_out(3),
+            data_re_in(4) => mul_re_out(4),
+            data_re_in(5) => mul_re_out(5),
+            data_re_in(6) => mul_re_out(6),
+            data_re_in(7) => mul_re_out(7),
+            data_im_in(0) => mul_im_out(0),
+            data_im_in(1) => mul_im_out(1),
+            data_im_in(2) => mul_im_out(2),
+            data_im_in(3) => mul_im_out(3),
+            data_im_in(4) => mul_im_out(4),
+            data_im_in(5) => mul_im_out(5),
+            data_im_in(6) => mul_im_out(6),
+            data_im_in(7) => mul_im_out(7),
             data_re_out(0) => data_re_out(0),
             data_re_out(1) => data_re_out(8),
             data_re_out(2) => data_re_out(16),
@@ -513,23 +524,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(8),
-            data_re_in(1)=>mul_re_out(9),
-            data_re_in(2)=>mul_re_out(10),
-            data_re_in(3)=>mul_re_out(11),
-            data_re_in(4)=>mul_re_out(12),
-            data_re_in(5)=>mul_re_out(13),
-            data_re_in(6)=>mul_re_out(14),
-            data_re_in(7)=>mul_re_out(15),
-            data_im_in(0)=>mul_im_out(8),
-            data_im_in(1)=>mul_im_out(9),
-            data_im_in(2)=>mul_im_out(10),
-            data_im_in(3)=>mul_im_out(11),
-            data_im_in(4)=>mul_im_out(12),
-            data_im_in(5)=>mul_im_out(13),
-            data_im_in(6)=>mul_im_out(14),
-            data_im_in(7)=>mul_im_out(15),
+            data_re_in(0) => mul_re_out(8),
+            data_re_in(1) => mul_re_out(9),
+            data_re_in(2) => mul_re_out(10),
+            data_re_in(3) => mul_re_out(11),
+            data_re_in(4) => mul_re_out(12),
+            data_re_in(5) => mul_re_out(13),
+            data_re_in(6) => mul_re_out(14),
+            data_re_in(7) => mul_re_out(15),
+            data_im_in(0) => mul_im_out(8),
+            data_im_in(1) => mul_im_out(9),
+            data_im_in(2) => mul_im_out(10),
+            data_im_in(3) => mul_im_out(11),
+            data_im_in(4) => mul_im_out(12),
+            data_im_in(5) => mul_im_out(13),
+            data_im_in(6) => mul_im_out(14),
+            data_im_in(7) => mul_im_out(15),
             data_re_out(0) => data_re_out(1),
             data_re_out(1) => data_re_out(9),
             data_re_out(2) => data_re_out(17),
@@ -556,23 +568,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(16),
-            data_re_in(1)=>mul_re_out(17),
-            data_re_in(2)=>mul_re_out(18),
-            data_re_in(3)=>mul_re_out(19),
-            data_re_in(4)=>mul_re_out(20),
-            data_re_in(5)=>mul_re_out(21),
-            data_re_in(6)=>mul_re_out(22),
-            data_re_in(7)=>mul_re_out(23),
-            data_im_in(0)=>mul_im_out(16),
-            data_im_in(1)=>mul_im_out(17),
-            data_im_in(2)=>mul_im_out(18),
-            data_im_in(3)=>mul_im_out(19),
-            data_im_in(4)=>mul_im_out(20),
-            data_im_in(5)=>mul_im_out(21),
-            data_im_in(6)=>mul_im_out(22),
-            data_im_in(7)=>mul_im_out(23),
+            data_re_in(0) => mul_re_out(16),
+            data_re_in(1) => mul_re_out(17),
+            data_re_in(2) => mul_re_out(18),
+            data_re_in(3) => mul_re_out(19),
+            data_re_in(4) => mul_re_out(20),
+            data_re_in(5) => mul_re_out(21),
+            data_re_in(6) => mul_re_out(22),
+            data_re_in(7) => mul_re_out(23),
+            data_im_in(0) => mul_im_out(16),
+            data_im_in(1) => mul_im_out(17),
+            data_im_in(2) => mul_im_out(18),
+            data_im_in(3) => mul_im_out(19),
+            data_im_in(4) => mul_im_out(20),
+            data_im_in(5) => mul_im_out(21),
+            data_im_in(6) => mul_im_out(22),
+            data_im_in(7) => mul_im_out(23),
             data_re_out(0) => data_re_out(2),
             data_re_out(1) => data_re_out(10),
             data_re_out(2) => data_re_out(18),
@@ -599,23 +612,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(24),
-            data_re_in(1)=>mul_re_out(25),
-            data_re_in(2)=>mul_re_out(26),
-            data_re_in(3)=>mul_re_out(27),
-            data_re_in(4)=>mul_re_out(28),
-            data_re_in(5)=>mul_re_out(29),
-            data_re_in(6)=>mul_re_out(30),
-            data_re_in(7)=>mul_re_out(31),
-            data_im_in(0)=>mul_im_out(24),
-            data_im_in(1)=>mul_im_out(25),
-            data_im_in(2)=>mul_im_out(26),
-            data_im_in(3)=>mul_im_out(27),
-            data_im_in(4)=>mul_im_out(28),
-            data_im_in(5)=>mul_im_out(29),
-            data_im_in(6)=>mul_im_out(30),
-            data_im_in(7)=>mul_im_out(31),
+            data_re_in(0) => mul_re_out(24),
+            data_re_in(1) => mul_re_out(25),
+            data_re_in(2) => mul_re_out(26),
+            data_re_in(3) => mul_re_out(27),
+            data_re_in(4) => mul_re_out(28),
+            data_re_in(5) => mul_re_out(29),
+            data_re_in(6) => mul_re_out(30),
+            data_re_in(7) => mul_re_out(31),
+            data_im_in(0) => mul_im_out(24),
+            data_im_in(1) => mul_im_out(25),
+            data_im_in(2) => mul_im_out(26),
+            data_im_in(3) => mul_im_out(27),
+            data_im_in(4) => mul_im_out(28),
+            data_im_in(5) => mul_im_out(29),
+            data_im_in(6) => mul_im_out(30),
+            data_im_in(7) => mul_im_out(31),
             data_re_out(0) => data_re_out(3),
             data_re_out(1) => data_re_out(11),
             data_re_out(2) => data_re_out(19),
@@ -642,23 +656,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(32),
-            data_re_in(1)=>mul_re_out(33),
-            data_re_in(2)=>mul_re_out(34),
-            data_re_in(3)=>mul_re_out(35),
-            data_re_in(4)=>mul_re_out(36),
-            data_re_in(5)=>mul_re_out(37),
-            data_re_in(6)=>mul_re_out(38),
-            data_re_in(7)=>mul_re_out(39),
-            data_im_in(0)=>mul_im_out(32),
-            data_im_in(1)=>mul_im_out(33),
-            data_im_in(2)=>mul_im_out(34),
-            data_im_in(3)=>mul_im_out(35),
-            data_im_in(4)=>mul_im_out(36),
-            data_im_in(5)=>mul_im_out(37),
-            data_im_in(6)=>mul_im_out(38),
-            data_im_in(7)=>mul_im_out(39),
+            data_re_in(0) => mul_re_out(32),
+            data_re_in(1) => mul_re_out(33),
+            data_re_in(2) => mul_re_out(34),
+            data_re_in(3) => mul_re_out(35),
+            data_re_in(4) => mul_re_out(36),
+            data_re_in(5) => mul_re_out(37),
+            data_re_in(6) => mul_re_out(38),
+            data_re_in(7) => mul_re_out(39),
+            data_im_in(0) => mul_im_out(32),
+            data_im_in(1) => mul_im_out(33),
+            data_im_in(2) => mul_im_out(34),
+            data_im_in(3) => mul_im_out(35),
+            data_im_in(4) => mul_im_out(36),
+            data_im_in(5) => mul_im_out(37),
+            data_im_in(6) => mul_im_out(38),
+            data_im_in(7) => mul_im_out(39),
             data_re_out(0) => data_re_out(4),
             data_re_out(1) => data_re_out(12),
             data_re_out(2) => data_re_out(20),
@@ -685,23 +700,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(40),
-            data_re_in(1)=>mul_re_out(41),
-            data_re_in(2)=>mul_re_out(42),
-            data_re_in(3)=>mul_re_out(43),
-            data_re_in(4)=>mul_re_out(44),
-            data_re_in(5)=>mul_re_out(45),
-            data_re_in(6)=>mul_re_out(46),
-            data_re_in(7)=>mul_re_out(47),
-            data_im_in(0)=>mul_im_out(40),
-            data_im_in(1)=>mul_im_out(41),
-            data_im_in(2)=>mul_im_out(42),
-            data_im_in(3)=>mul_im_out(43),
-            data_im_in(4)=>mul_im_out(44),
-            data_im_in(5)=>mul_im_out(45),
-            data_im_in(6)=>mul_im_out(46),
-            data_im_in(7)=>mul_im_out(47),
+            data_re_in(0) => mul_re_out(40),
+            data_re_in(1) => mul_re_out(41),
+            data_re_in(2) => mul_re_out(42),
+            data_re_in(3) => mul_re_out(43),
+            data_re_in(4) => mul_re_out(44),
+            data_re_in(5) => mul_re_out(45),
+            data_re_in(6) => mul_re_out(46),
+            data_re_in(7) => mul_re_out(47),
+            data_im_in(0) => mul_im_out(40),
+            data_im_in(1) => mul_im_out(41),
+            data_im_in(2) => mul_im_out(42),
+            data_im_in(3) => mul_im_out(43),
+            data_im_in(4) => mul_im_out(44),
+            data_im_in(5) => mul_im_out(45),
+            data_im_in(6) => mul_im_out(46),
+            data_im_in(7) => mul_im_out(47),
             data_re_out(0) => data_re_out(5),
             data_re_out(1) => data_re_out(13),
             data_re_out(2) => data_re_out(21),
@@ -728,23 +744,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(48),
-            data_re_in(1)=>mul_re_out(49),
-            data_re_in(2)=>mul_re_out(50),
-            data_re_in(3)=>mul_re_out(51),
-            data_re_in(4)=>mul_re_out(52),
-            data_re_in(5)=>mul_re_out(53),
-            data_re_in(6)=>mul_re_out(54),
-            data_re_in(7)=>mul_re_out(55),
-            data_im_in(0)=>mul_im_out(48),
-            data_im_in(1)=>mul_im_out(49),
-            data_im_in(2)=>mul_im_out(50),
-            data_im_in(3)=>mul_im_out(51),
-            data_im_in(4)=>mul_im_out(52),
-            data_im_in(5)=>mul_im_out(53),
-            data_im_in(6)=>mul_im_out(54),
-            data_im_in(7)=>mul_im_out(55),
+            data_re_in(0) => mul_re_out(48),
+            data_re_in(1) => mul_re_out(49),
+            data_re_in(2) => mul_re_out(50),
+            data_re_in(3) => mul_re_out(51),
+            data_re_in(4) => mul_re_out(52),
+            data_re_in(5) => mul_re_out(53),
+            data_re_in(6) => mul_re_out(54),
+            data_re_in(7) => mul_re_out(55),
+            data_im_in(0) => mul_im_out(48),
+            data_im_in(1) => mul_im_out(49),
+            data_im_in(2) => mul_im_out(50),
+            data_im_in(3) => mul_im_out(51),
+            data_im_in(4) => mul_im_out(52),
+            data_im_in(5) => mul_im_out(53),
+            data_im_in(6) => mul_im_out(54),
+            data_im_in(7) => mul_im_out(55),
             data_re_out(0) => data_re_out(6),
             data_re_out(1) => data_re_out(14),
             data_re_out(2) => data_re_out(22),
@@ -771,23 +788,24 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2 downto 0),
             ctrl_delay => ctrl_delay,
-            data_re_in(0)=>mul_re_out(56),
-            data_re_in(1)=>mul_re_out(57),
-            data_re_in(2)=>mul_re_out(58),
-            data_re_in(3)=>mul_re_out(59),
-            data_re_in(4)=>mul_re_out(60),
-            data_re_in(5)=>mul_re_out(61),
-            data_re_in(6)=>mul_re_out(62),
-            data_re_in(7)=>mul_re_out(63),
-            data_im_in(0)=>mul_im_out(56),
-            data_im_in(1)=>mul_im_out(57),
-            data_im_in(2)=>mul_im_out(58),
-            data_im_in(3)=>mul_im_out(59),
-            data_im_in(4)=>mul_im_out(60),
-            data_im_in(5)=>mul_im_out(61),
-            data_im_in(6)=>mul_im_out(62),
-            data_im_in(7)=>mul_im_out(63),
+            data_re_in(0) => mul_re_out(56),
+            data_re_in(1) => mul_re_out(57),
+            data_re_in(2) => mul_re_out(58),
+            data_re_in(3) => mul_re_out(59),
+            data_re_in(4) => mul_re_out(60),
+            data_re_in(5) => mul_re_out(61),
+            data_re_in(6) => mul_re_out(62),
+            data_re_in(7) => mul_re_out(63),
+            data_im_in(0) => mul_im_out(56),
+            data_im_in(1) => mul_im_out(57),
+            data_im_in(2) => mul_im_out(58),
+            data_im_in(3) => mul_im_out(59),
+            data_im_in(4) => mul_im_out(60),
+            data_im_in(5) => mul_im_out(61),
+            data_im_in(6) => mul_im_out(62),
+            data_im_in(7) => mul_im_out(63),
             data_re_out(0) => data_re_out(7),
             data_re_out(1) => data_re_out(15),
             data_re_out(2) => data_re_out(23),
@@ -955,8 +973,6 @@ begin
  
     UMUL_9 : complex_multiplier
     generic map(
-            re_multiplicator => 16305, --- 0.995178222656 + j-0.0979614257812
-            im_multiplicator => -1605,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -966,6 +982,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(9),
             data_im_in => first_stage_im_out(9),
+            re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
+            im_multiplicator => "1111100110111011",
             product_re_out => mul_re_out(9),
             product_im_out => mul_im_out(9)
         );
@@ -973,8 +991,6 @@ begin
  
     UMUL_10 : complex_multiplier
     generic map(
-            re_multiplicator => 16069, --- 0.980773925781 + j-0.195068359375
-            im_multiplicator => -3196,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -984,6 +1000,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(10),
             data_im_in => first_stage_im_out(10),
+            re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
+            im_multiplicator => "1111001110000100",
             product_re_out => mul_re_out(10),
             product_im_out => mul_im_out(10)
         );
@@ -991,8 +1009,6 @@ begin
  
     UMUL_11 : complex_multiplier
     generic map(
-            re_multiplicator => 15678, --- 0.956909179688 + j-0.290283203125
-            im_multiplicator => -4756,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1002,6 +1018,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(11),
             data_im_in => first_stage_im_out(11),
+            re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
+            im_multiplicator => "1110110101101100",
             product_re_out => mul_re_out(11),
             product_im_out => mul_im_out(11)
         );
@@ -1009,8 +1027,6 @@ begin
  
     UMUL_12 : complex_multiplier
     generic map(
-            re_multiplicator => 15136, --- 0.923828125 + j-0.382629394531
-            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1020,6 +1036,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(12),
             data_im_in => first_stage_im_out(12),
+            re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
+            im_multiplicator => "1110011110000011",
             product_re_out => mul_re_out(12),
             product_im_out => mul_im_out(12)
         );
@@ -1027,8 +1045,6 @@ begin
  
     UMUL_13 : complex_multiplier
     generic map(
-            re_multiplicator => 14449, --- 0.881896972656 + j-0.471374511719
-            im_multiplicator => -7723,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1038,6 +1054,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(13),
             data_im_in => first_stage_im_out(13),
+            re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
+            im_multiplicator => "1110000111010101",
             product_re_out => mul_re_out(13),
             product_im_out => mul_im_out(13)
         );
@@ -1045,8 +1063,6 @@ begin
  
     UMUL_14 : complex_multiplier
     generic map(
-            re_multiplicator => 13622, --- 0.831420898438 + j-0.555541992188
-            im_multiplicator => -9102,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1056,6 +1072,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(14),
             data_im_in => first_stage_im_out(14),
+            re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
+            im_multiplicator => "1101110001110010",
             product_re_out => mul_re_out(14),
             product_im_out => mul_im_out(14)
         );
@@ -1063,8 +1081,6 @@ begin
  
     UMUL_15 : complex_multiplier
     generic map(
-            re_multiplicator => 12665, --- 0.773010253906 + j-0.634338378906
-            im_multiplicator => -10393,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1074,6 +1090,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(15),
             data_im_in => first_stage_im_out(15),
+            re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
+            im_multiplicator => "1101011101100111",
             product_re_out => mul_re_out(15),
             product_im_out => mul_im_out(15)
         );
@@ -1097,8 +1115,6 @@ begin
  
     UMUL_17 : complex_multiplier
     generic map(
-            re_multiplicator => 16069, --- 0.980773925781 + j-0.195068359375
-            im_multiplicator => -3196,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1108,6 +1124,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(17),
             data_im_in => first_stage_im_out(17),
+            re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
+            im_multiplicator => "1111001110000100",
             product_re_out => mul_re_out(17),
             product_im_out => mul_im_out(17)
         );
@@ -1115,8 +1133,6 @@ begin
  
     UMUL_18 : complex_multiplier
     generic map(
-            re_multiplicator => 15136, --- 0.923828125 + j-0.382629394531
-            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1126,6 +1142,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(18),
             data_im_in => first_stage_im_out(18),
+            re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
+            im_multiplicator => "1110011110000011",
             product_re_out => mul_re_out(18),
             product_im_out => mul_im_out(18)
         );
@@ -1133,8 +1151,6 @@ begin
  
     UMUL_19 : complex_multiplier
     generic map(
-            re_multiplicator => 13622, --- 0.831420898438 + j-0.555541992188
-            im_multiplicator => -9102,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1144,6 +1160,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(19),
             data_im_in => first_stage_im_out(19),
+            re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
+            im_multiplicator => "1101110001110010",
             product_re_out => mul_re_out(19),
             product_im_out => mul_im_out(19)
         );
@@ -1151,8 +1169,6 @@ begin
  
     UMUL_20 : complex_multiplier
     generic map(
-            re_multiplicator => 11585, --- 0.707092285156 + j-0.707092285156
-            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1162,6 +1178,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(20),
             data_im_in => first_stage_im_out(20),
+            re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
+            im_multiplicator => "1101001010111111",
             product_re_out => mul_re_out(20),
             product_im_out => mul_im_out(20)
         );
@@ -1169,8 +1187,6 @@ begin
  
     UMUL_21 : complex_multiplier
     generic map(
-            re_multiplicator => 9102, --- 0.555541992188 + j-0.831420898438
-            im_multiplicator => -13622,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1180,6 +1196,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(21),
             data_im_in => first_stage_im_out(21),
+            re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
+            im_multiplicator => "1100101011001010",
             product_re_out => mul_re_out(21),
             product_im_out => mul_im_out(21)
         );
@@ -1187,8 +1205,6 @@ begin
  
     UMUL_22 : complex_multiplier
     generic map(
-            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1198,6 +1214,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(22),
             data_im_in => first_stage_im_out(22),
+            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(22),
             product_im_out => mul_im_out(22)
         );
@@ -1205,8 +1223,6 @@ begin
  
     UMUL_23 : complex_multiplier
     generic map(
-            re_multiplicator => 3196, --- 0.195068359375 + j-0.980773925781
-            im_multiplicator => -16069,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1216,6 +1232,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(23),
             data_im_in => first_stage_im_out(23),
+            re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
+            im_multiplicator => "1100000100111011",
             product_re_out => mul_re_out(23),
             product_im_out => mul_im_out(23)
         );
@@ -1239,8 +1257,6 @@ begin
  
     UMUL_25 : complex_multiplier
     generic map(
-            re_multiplicator => 15678, --- 0.956909179688 + j-0.290283203125
-            im_multiplicator => -4756,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1250,6 +1266,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(25),
             data_im_in => first_stage_im_out(25),
+            re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
+            im_multiplicator => "1110110101101100",
             product_re_out => mul_re_out(25),
             product_im_out => mul_im_out(25)
         );
@@ -1257,8 +1275,6 @@ begin
  
     UMUL_26 : complex_multiplier
     generic map(
-            re_multiplicator => 13622, --- 0.831420898438 + j-0.555541992188
-            im_multiplicator => -9102,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1268,6 +1284,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(26),
             data_im_in => first_stage_im_out(26),
+            re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
+            im_multiplicator => "1101110001110010",
             product_re_out => mul_re_out(26),
             product_im_out => mul_im_out(26)
         );
@@ -1275,8 +1293,6 @@ begin
  
     UMUL_27 : complex_multiplier
     generic map(
-            re_multiplicator => 10393, --- 0.634338378906 + j-0.773010253906
-            im_multiplicator => -12665,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1286,6 +1302,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(27),
             data_im_in => first_stage_im_out(27),
+            re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
+            im_multiplicator => "1100111010000111",
             product_re_out => mul_re_out(27),
             product_im_out => mul_im_out(27)
         );
@@ -1293,8 +1311,6 @@ begin
  
     UMUL_28 : complex_multiplier
     generic map(
-            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1304,6 +1320,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(28),
             data_im_in => first_stage_im_out(28),
+            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(28),
             product_im_out => mul_im_out(28)
         );
@@ -1311,8 +1329,6 @@ begin
  
     UMUL_29 : complex_multiplier
     generic map(
-            re_multiplicator => 1605, --- 0.0979614257812 + j-0.995178222656
-            im_multiplicator => -16305,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1322,6 +1338,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(29),
             data_im_in => first_stage_im_out(29),
+            re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
+            im_multiplicator => "1100000001001111",
             product_re_out => mul_re_out(29),
             product_im_out => mul_im_out(29)
         );
@@ -1329,8 +1347,6 @@ begin
  
     UMUL_30 : complex_multiplier
     generic map(
-            re_multiplicator => -3196, --- -0.195068359375 + j-0.980773925781
-            im_multiplicator => -16069,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1340,6 +1356,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(30),
             data_im_in => first_stage_im_out(30),
+            re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
+            im_multiplicator => "1100000100111011",
             product_re_out => mul_re_out(30),
             product_im_out => mul_im_out(30)
         );
@@ -1347,8 +1365,6 @@ begin
  
     UMUL_31 : complex_multiplier
     generic map(
-            re_multiplicator => -7723, --- -0.471374511719 + j-0.881896972656
-            im_multiplicator => -14449,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1358,6 +1374,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(31),
             data_im_in => first_stage_im_out(31),
+            re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
+            im_multiplicator => "1100011110001111",
             product_re_out => mul_re_out(31),
             product_im_out => mul_im_out(31)
         );
@@ -1381,8 +1399,6 @@ begin
  
     UMUL_33 : complex_multiplier
     generic map(
-            re_multiplicator => 15136, --- 0.923828125 + j-0.382629394531
-            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1392,6 +1408,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(33),
             data_im_in => first_stage_im_out(33),
+            re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
+            im_multiplicator => "1110011110000011",
             product_re_out => mul_re_out(33),
             product_im_out => mul_im_out(33)
         );
@@ -1399,8 +1417,6 @@ begin
  
     UMUL_34 : complex_multiplier
     generic map(
-            re_multiplicator => 11585, --- 0.707092285156 + j-0.707092285156
-            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1410,6 +1426,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(34),
             data_im_in => first_stage_im_out(34),
+            re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
+            im_multiplicator => "1101001010111111",
             product_re_out => mul_re_out(34),
             product_im_out => mul_im_out(34)
         );
@@ -1417,8 +1435,6 @@ begin
  
     UMUL_35 : complex_multiplier
     generic map(
-            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1428,6 +1444,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(35),
             data_im_in => first_stage_im_out(35),
+            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(35),
             product_im_out => mul_im_out(35)
         );
@@ -1451,8 +1469,6 @@ begin
  
     UMUL_37 : complex_multiplier
     generic map(
-            re_multiplicator => -6269, --- -0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1462,6 +1478,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(37),
             data_im_in => first_stage_im_out(37),
+            re_multiplicator => "1110011110000011", --- -0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(37),
             product_im_out => mul_im_out(37)
         );
@@ -1469,8 +1487,6 @@ begin
  
     UMUL_38 : complex_multiplier
     generic map(
-            re_multiplicator => -11585, --- -0.707092285156 + j-0.707092285156
-            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1480,6 +1496,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(38),
             data_im_in => first_stage_im_out(38),
+            re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
+            im_multiplicator => "1101001010111111",
             product_re_out => mul_re_out(38),
             product_im_out => mul_im_out(38)
         );
@@ -1487,8 +1505,6 @@ begin
  
     UMUL_39 : complex_multiplier
     generic map(
-            re_multiplicator => -15136, --- -0.923828125 + j-0.382629394531
-            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1498,6 +1514,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(39),
             data_im_in => first_stage_im_out(39),
+            re_multiplicator => "1100010011100000", --- -0.923828125 + j-0.382629394531
+            im_multiplicator => "1110011110000011",
             product_re_out => mul_re_out(39),
             product_im_out => mul_im_out(39)
         );
@@ -1521,8 +1539,6 @@ begin
  
     UMUL_41 : complex_multiplier
     generic map(
-            re_multiplicator => 14449, --- 0.881896972656 + j-0.471374511719
-            im_multiplicator => -7723,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1532,6 +1548,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(41),
             data_im_in => first_stage_im_out(41),
+            re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
+            im_multiplicator => "1110000111010101",
             product_re_out => mul_re_out(41),
             product_im_out => mul_im_out(41)
         );
@@ -1539,8 +1557,6 @@ begin
  
     UMUL_42 : complex_multiplier
     generic map(
-            re_multiplicator => 9102, --- 0.555541992188 + j-0.831420898438
-            im_multiplicator => -13622,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1550,6 +1566,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(42),
             data_im_in => first_stage_im_out(42),
+            re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
+            im_multiplicator => "1100101011001010",
             product_re_out => mul_re_out(42),
             product_im_out => mul_im_out(42)
         );
@@ -1557,8 +1575,6 @@ begin
  
     UMUL_43 : complex_multiplier
     generic map(
-            re_multiplicator => 1605, --- 0.0979614257812 + j-0.995178222656
-            im_multiplicator => -16305,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1568,6 +1584,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(43),
             data_im_in => first_stage_im_out(43),
+            re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
+            im_multiplicator => "1100000001001111",
             product_re_out => mul_re_out(43),
             product_im_out => mul_im_out(43)
         );
@@ -1575,8 +1593,6 @@ begin
  
     UMUL_44 : complex_multiplier
     generic map(
-            re_multiplicator => -6269, --- -0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1586,6 +1602,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(44),
             data_im_in => first_stage_im_out(44),
+            re_multiplicator => "1110011110000011", --- -0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(44),
             product_im_out => mul_im_out(44)
         );
@@ -1593,8 +1611,6 @@ begin
  
     UMUL_45 : complex_multiplier
     generic map(
-            re_multiplicator => -12665, --- -0.773010253906 + j-0.634338378906
-            im_multiplicator => -10393,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1604,6 +1620,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(45),
             data_im_in => first_stage_im_out(45),
+            re_multiplicator => "1100111010000111", --- -0.773010253906 + j-0.634338378906
+            im_multiplicator => "1101011101100111",
             product_re_out => mul_re_out(45),
             product_im_out => mul_im_out(45)
         );
@@ -1611,8 +1629,6 @@ begin
  
     UMUL_46 : complex_multiplier
     generic map(
-            re_multiplicator => -16069, --- -0.980773925781 + j-0.195068359375
-            im_multiplicator => -3196,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1622,6 +1638,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(46),
             data_im_in => first_stage_im_out(46),
+            re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
+            im_multiplicator => "1111001110000100",
             product_re_out => mul_re_out(46),
             product_im_out => mul_im_out(46)
         );
@@ -1629,8 +1647,6 @@ begin
  
     UMUL_47 : complex_multiplier
     generic map(
-            re_multiplicator => -15678, --- -0.956909179688 + j0.290283203125
-            im_multiplicator => 4756,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1640,6 +1656,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(47),
             data_im_in => first_stage_im_out(47),
+            re_multiplicator => "1100001011000010", --- -0.956909179688 + j0.290283203125
+            im_multiplicator => "0001001010010100",
             product_re_out => mul_re_out(47),
             product_im_out => mul_im_out(47)
         );
@@ -1663,8 +1681,6 @@ begin
  
     UMUL_49 : complex_multiplier
     generic map(
-            re_multiplicator => 13622, --- 0.831420898438 + j-0.555541992188
-            im_multiplicator => -9102,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1674,6 +1690,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(49),
             data_im_in => first_stage_im_out(49),
+            re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
+            im_multiplicator => "1101110001110010",
             product_re_out => mul_re_out(49),
             product_im_out => mul_im_out(49)
         );
@@ -1681,8 +1699,6 @@ begin
  
     UMUL_50 : complex_multiplier
     generic map(
-            re_multiplicator => 6269, --- 0.382629394531 + j-0.923828125
-            im_multiplicator => -15136,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1692,6 +1708,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(50),
             data_im_in => first_stage_im_out(50),
+            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
+            im_multiplicator => "1100010011100000",
             product_re_out => mul_re_out(50),
             product_im_out => mul_im_out(50)
         );
@@ -1699,8 +1717,6 @@ begin
  
     UMUL_51 : complex_multiplier
     generic map(
-            re_multiplicator => -3196, --- -0.195068359375 + j-0.980773925781
-            im_multiplicator => -16069,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1710,6 +1726,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(51),
             data_im_in => first_stage_im_out(51),
+            re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
+            im_multiplicator => "1100000100111011",
             product_re_out => mul_re_out(51),
             product_im_out => mul_im_out(51)
         );
@@ -1717,8 +1735,6 @@ begin
  
     UMUL_52 : complex_multiplier
     generic map(
-            re_multiplicator => -11585, --- -0.707092285156 + j-0.707092285156
-            im_multiplicator => -11585,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1728,6 +1744,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(52),
             data_im_in => first_stage_im_out(52),
+            re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
+            im_multiplicator => "1101001010111111",
             product_re_out => mul_re_out(52),
             product_im_out => mul_im_out(52)
         );
@@ -1735,8 +1753,6 @@ begin
  
     UMUL_53 : complex_multiplier
     generic map(
-            re_multiplicator => -16069, --- -0.980773925781 + j-0.195068359375
-            im_multiplicator => -3196,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1746,6 +1762,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(53),
             data_im_in => first_stage_im_out(53),
+            re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
+            im_multiplicator => "1111001110000100",
             product_re_out => mul_re_out(53),
             product_im_out => mul_im_out(53)
         );
@@ -1753,8 +1771,6 @@ begin
  
     UMUL_54 : complex_multiplier
     generic map(
-            re_multiplicator => -15136, --- -0.923828125 + j0.382629394531
-            im_multiplicator => 6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1764,6 +1780,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(54),
             data_im_in => first_stage_im_out(54),
+            re_multiplicator => "1100010011100000", --- -0.923828125 + j0.382629394531
+            im_multiplicator => "0001100001111101",
             product_re_out => mul_re_out(54),
             product_im_out => mul_im_out(54)
         );
@@ -1771,8 +1789,6 @@ begin
  
     UMUL_55 : complex_multiplier
     generic map(
-            re_multiplicator => -9102, --- -0.555541992188 + j0.831420898438
-            im_multiplicator => 13622,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1782,6 +1798,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(55),
             data_im_in => first_stage_im_out(55),
+            re_multiplicator => "1101110001110010", --- -0.555541992188 + j0.831420898438
+            im_multiplicator => "0011010100110110",
             product_re_out => mul_re_out(55),
             product_im_out => mul_im_out(55)
         );
@@ -1805,8 +1823,6 @@ begin
  
     UMUL_57 : complex_multiplier
     generic map(
-            re_multiplicator => 12665, --- 0.773010253906 + j-0.634338378906
-            im_multiplicator => -10393,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1816,6 +1832,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(57),
             data_im_in => first_stage_im_out(57),
+            re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
+            im_multiplicator => "1101011101100111",
             product_re_out => mul_re_out(57),
             product_im_out => mul_im_out(57)
         );
@@ -1823,8 +1841,6 @@ begin
  
     UMUL_58 : complex_multiplier
     generic map(
-            re_multiplicator => 3196, --- 0.195068359375 + j-0.980773925781
-            im_multiplicator => -16069,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1834,6 +1850,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(58),
             data_im_in => first_stage_im_out(58),
+            re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
+            im_multiplicator => "1100000100111011",
             product_re_out => mul_re_out(58),
             product_im_out => mul_im_out(58)
         );
@@ -1841,8 +1859,6 @@ begin
  
     UMUL_59 : complex_multiplier
     generic map(
-            re_multiplicator => -7723, --- -0.471374511719 + j-0.881896972656
-            im_multiplicator => -14449,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1852,6 +1868,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(59),
             data_im_in => first_stage_im_out(59),
+            re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
+            im_multiplicator => "1100011110001111",
             product_re_out => mul_re_out(59),
             product_im_out => mul_im_out(59)
         );
@@ -1859,8 +1877,6 @@ begin
  
     UMUL_60 : complex_multiplier
     generic map(
-            re_multiplicator => -15136, --- -0.923828125 + j-0.382629394531
-            im_multiplicator => -6269,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1870,6 +1886,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(60),
             data_im_in => first_stage_im_out(60),
+            re_multiplicator => "1100010011100000", --- -0.923828125 + j-0.382629394531
+            im_multiplicator => "1110011110000011",
             product_re_out => mul_re_out(60),
             product_im_out => mul_im_out(60)
         );
@@ -1877,8 +1895,6 @@ begin
  
     UMUL_61 : complex_multiplier
     generic map(
-            re_multiplicator => -15678, --- -0.956909179688 + j0.290283203125
-            im_multiplicator => 4756,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1888,6 +1904,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(61),
             data_im_in => first_stage_im_out(61),
+            re_multiplicator => "1100001011000010", --- -0.956909179688 + j0.290283203125
+            im_multiplicator => "0001001010010100",
             product_re_out => mul_re_out(61),
             product_im_out => mul_im_out(61)
         );
@@ -1895,8 +1913,6 @@ begin
  
     UMUL_62 : complex_multiplier
     generic map(
-            re_multiplicator => -9102, --- -0.555541992188 + j0.831420898438
-            im_multiplicator => 13622,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1906,6 +1922,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(62),
             data_im_in => first_stage_im_out(62),
+            re_multiplicator => "1101110001110010", --- -0.555541992188 + j0.831420898438
+            im_multiplicator => "0011010100110110",
             product_re_out => mul_re_out(62),
             product_im_out => mul_im_out(62)
         );
@@ -1913,8 +1931,6 @@ begin
  
     UMUL_63 : complex_multiplier
     generic map(
-            re_multiplicator => 1605, --- 0.0979614257812 + j0.995178222656
-            im_multiplicator => 16305,
             ctrl_start => (ctrl_start+3) mod 16
         )
     port map(
@@ -1924,6 +1940,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(63),
             data_im_in => first_stage_im_out(63),
+            re_multiplicator => "0000011001000101", --- 0.0979614257812 + j0.995178222656
+            im_multiplicator => "0011111110110001",
             product_re_out => mul_re_out(63),
             product_im_out => mul_im_out(63)
         );

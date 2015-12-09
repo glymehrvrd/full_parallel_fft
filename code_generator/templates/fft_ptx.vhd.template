@@ -17,8 +17,10 @@ entity {{ component_name }} is
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
         {% if istop %}
+        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} downto 0);
         ctrl           : IN STD_LOGIC;
         {% else %}
+        bypass         : IN STD_LOGIC_VECTOR({{point|log2-1}} downto 0);
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
         {% endif %}
 
@@ -40,6 +42,11 @@ component {{ lhs_component_name }} is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        {% if lhs_point==2%}
+        bypass         : IN STD_LOGIC;
+        {% else %}
+        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} downto 0);
+        {% endif %}
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
@@ -59,6 +66,11 @@ component {{ rhs_component_name }} is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        {% if rhs_point==2%}
+        bypass         : IN STD_LOGIC;
+        {% else %}
+        bypass         : IN STD_LOGIC_VECTOR({{rhs_point|log2-1}} downto 0);
+        {% endif %}
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
@@ -72,8 +84,6 @@ end component;
 
 component complex_multiplier is
     GENERIC (
-        re_multiplicator : INTEGER;
-        im_multiplicator : INTEGER;
         ctrl_start       : INTEGER
     );
     PORT (
@@ -83,6 +93,8 @@ component complex_multiplier is
         ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
+        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
+        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         product_re_out  : OUT STD_LOGIC;
         product_im_out  : OUT STD_LOGIC
     );
@@ -169,6 +181,15 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            {% if not istop %}
+            {% if lhs_point==2 %}
+            bypass => bypass({{rhs_point|log2}}),
+            {% else %}
+            bypass => bypass({{point|log2-1}} downto {{rhs_point|log2}}),
+            {% endif %}
+            {% else %}
+            bypass => bypass,
+            {% endif %}
             ctrl_delay => ctrl_delay,
             {% for j in range(lhs_point) %}
             data_re_in({{j}}) => data_re_in({{i+j*rhs_point}}),
@@ -196,12 +217,21 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            {% if not istop %}
+            {% if rhs_point==2 %}
+            bypass => bypass(0),
+            {% else %}
+            bypass => bypass({{rhs_point|log2-1}} downto 0),
+            {% endif %}
+            {% else %}
+            bypass => (others => '1'),
+            {% endif %}
             ctrl_delay => ctrl_delay,
             {% for j in range(rhs_point) %}
-            data_re_in({{j}})=>mul_re_out({{index[i][j]}}),
+            data_re_in({{j}}) => mul_re_out({{index[i][j]}}),
             {% endfor %}
             {% for j in range(rhs_point) %}
-            data_im_in({{j}})=>mul_im_out({{index[i][j]}}),
+            data_im_in({{j}}) => mul_im_out({{index[i][j]}}),
             {% endfor %}
             {% for j in range(rhs_point) %}
             data_re_out({{j}}) => data_re_out({{i+j*lhs_point}}),
@@ -250,8 +280,6 @@ begin
     {% else %}
     UMUL_{{i}} : complex_multiplier
     generic map(
-            re_multiplicator => {{w[(i/rhs_point)|int][i%rhs_point][0]}}, --- {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}} + j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
-            im_multiplicator => {{w[(i/rhs_point)|int][i%rhs_point][1]}},
             ctrl_start => (ctrl_start+{{delay['mul']}}) mod 16
         )
     port map(
@@ -261,6 +289,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
+            re_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][0]|to_bin}}", --- {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}} + j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
+            im_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][1]|to_bin}}",
             product_re_out => mul_re_out({{i}}),
             product_im_out => mul_im_out({{i}})
         );

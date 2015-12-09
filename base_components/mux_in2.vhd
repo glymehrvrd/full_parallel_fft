@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY mux_in2 IS
     PORT (
-        sel       : IN STD_LOGIC;
+        sel       : IN STD_LOGIC; --- select data1 when sel is '1', select data2 when sel is '0'.
 
         data1_in  : IN STD_LOGIC;
         data2_in  : IN std_logic;

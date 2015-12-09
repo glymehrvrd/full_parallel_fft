@@ -4,7 +4,6 @@ USE ieee.numeric_std.ALL;
 
 ENTITY lyon_multiplier IS
     GENERIC (
-        multiplicator : INTEGER := 17000;
         ctrl_start : INTEGER := 0
     );
     PORT (
@@ -13,6 +12,7 @@ ENTITY lyon_multiplier IS
         ce           : IN std_logic;
         ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
         data_in      : IN std_logic;
+        multiplicator: IN std_logic_vector(15 DOWNTO 0);
         product_out  : OUT STD_LOGIC
     );
 END lyon_multiplier;
@@ -75,11 +75,7 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
-    --- multiplicator in std_logic_vector
-    SIGNAL mul_vec : std_logic_vector(15 DOWNTO 0);
-
 BEGIN
-    mul_vec <= std_logic_vector(to_signed(multiplicator, 16));
     data_in_delay(0) <= data_in;
     --- buffer for data_in
     UDFF15 : Dff_regN_Nout
@@ -93,7 +89,7 @@ BEGIN
         QN          => ndata_in_delay(15 DOWNTO 1)
     );
 
-    pp(0) <= mul_vec(0) AND data_in;
+    pp(0) <= multiplicator(0) AND data_in;
 
     GEN_PP : 
     FOR I IN 0 TO 13 GENERATE
@@ -107,7 +103,7 @@ BEGIN
             ce          => ce, 
             data1_in    => pp(I), 
             data2_in    => data_in_delay(I + 1), 
-            data3_in    => mul_vec(I + 1), 
+            data3_in    => multiplicator(I + 1), 
             ctrl_delay  => ctrl_delay, 
             pp_out      => pp(I + 1)
         );
@@ -123,7 +119,7 @@ BEGIN
         ce          => ce, 
         data1_in    => pp(14), 
         data2_in    => ndata_in_delay(15), 
-        data3_in    => mul_vec(15), 
+        data3_in    => multiplicator(15), 
         ctrl_delay  => ctrl_delay, 
         pp_out      => pp(15)
     );

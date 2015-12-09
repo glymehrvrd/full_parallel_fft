@@ -13,6 +13,7 @@ entity fft_pt4 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        bypass         : IN STD_LOGIC_VECTOR(1 downto 0);
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(3 downto 0);
@@ -43,6 +44,7 @@ component fft_pt2 is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
+        bypass         : IN std_logic;
         ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
 
         data_re_in:in std_logic_vector(1 downto 0);
@@ -63,6 +65,7 @@ component adder_half_bit1
 end component;
 
 signal first_stage_re_out, first_stage_im_out: std_logic_vector(3 downto 0);
+signal mul_re_out, mul_im_out : std_logic_vector(3 downto 0);
 
 signal not_first_stage_re_out: std_logic;
 signal c: std_logic;
@@ -83,6 +86,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
+            bypass=>bypass(0),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(0),
             data_re_in(1)=>data_re_in(2),
@@ -100,6 +104,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
+            bypass=>bypass(0),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(1),
             data_re_in(1)=>data_re_in(3),
@@ -119,11 +124,12 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
+            bypass=>bypass(1),
             ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>first_stage_re_out(0),
-            data_re_in(1)=>first_stage_re_out(2),
-            data_im_in(0)=>first_stage_im_out(0),
-            data_im_in(1)=>first_stage_im_out(2),
+            data_re_in(0)=>mul_re_out(0),
+            data_re_in(1)=>mul_re_out(2),
+            data_im_in(0)=>mul_im_out(0),
+            data_im_in(1)=>mul_im_out(2),
             data_re_out(0)=>data_re_out(0),
             data_re_out(1)=>data_re_out(2),
             data_im_out(0)=>data_im_out(0),
@@ -138,11 +144,12 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
+            bypass=>bypass(1),
             ctrl_delay=>ctrl_delay,
-            data_re_in(0)=>first_stage_re_out(1),
-            data_re_in(1)=>first_stage_im_out(3),
-            data_im_in(0)=>first_stage_im_out(1),
-            data_im_in(1)=>opp_first_stage_re_out,
+            data_re_in(0)=>mul_re_out(1),
+            data_re_in(1)=>mul_re_out(3),
+            data_im_in(0)=>mul_im_out(1),
+            data_im_in(1)=>mul_im_out(3),
             data_re_out(0)=>data_re_out(1),
             data_re_out(1)=>data_re_out(3),
             data_im_out(0)=>data_im_out(1),
@@ -151,6 +158,11 @@ begin
 
 
     --- multipliers
+    mul_re_out(2 downto 0) <= first_stage_re_out(2 downto 0);
+    mul_im_out(2 downto 0) <= first_stage_im_out(2 downto 0);
+    mul_re_out(3) <= first_stage_im_out(3);
+    mul_im_out(3) <= opp_first_stage_re_out;
+    
     not_first_stage_re_out <= not first_stage_re_out(3);
     C_BUFF_3 : Dff_preload_reg1_init_1
     PORT MAP(

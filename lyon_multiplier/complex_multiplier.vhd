@@ -4,8 +4,6 @@ USE ieee.numeric_std.ALL;
 
 ENTITY complex_multiplier IS
     GENERIC (
-        re_multiplicator : INTEGER := - 15000;
-        im_multiplicator : INTEGER := 17000;
         ctrl_start : INTEGER := 0
     );
     PORT (
@@ -15,6 +13,8 @@ ENTITY complex_multiplier IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
+        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
+        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         product_re_out  : OUT STD_LOGIC;
         product_im_out  : OUT STD_LOGIC
     );
@@ -24,7 +24,6 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
 
     COMPONENT lyon_multiplier IS
         GENERIC (
-            multiplicator   : INTEGER;
             ctrl_start      : INTEGER
         );
         PORT (
@@ -33,6 +32,7 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
             ce           : IN std_logic;
             ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
             data_in      : IN std_logic;
+            multiplicator: IN std_logic_vector(15 DOWNTO 0);
             product_out  : OUT STD_LOGIC
         );
     END COMPONENT;
@@ -83,7 +83,6 @@ BEGIN
     --- calculate a(c-d)
     UMUL0 : lyon_multiplier
     GENERIC MAP(
-        multiplicator => re_multiplicator - im_multiplicator, 
         ctrl_start => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
@@ -92,13 +91,13 @@ BEGIN
         ce             => ce, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
+        multiplicator  => std_logic_vector(signed(re_multiplicator) - signed(im_multiplicator)), 
         product_out    => acd
     );
 
     --- calculate b(c+d)
     UMUL1 : lyon_multiplier
     GENERIC MAP(
-        multiplicator  => re_multiplicator + im_multiplicator, 
         ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
@@ -107,13 +106,13 @@ BEGIN
         ce             => ce, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
+        multiplicator  => std_logic_vector(signed(re_multiplicator) + signed(im_multiplicator)), 
         product_out    => bcd
     );
 
     --- calculate d(a-b)
     UMUL2 : lyon_multiplier
     GENERIC MAP(
-        multiplicator  => im_multiplicator, 
         ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
@@ -122,6 +121,7 @@ BEGIN
         ce           => ce, 
         ctrl_delay   => ctrl_delay, 
         data_in      => ab, 
+        multiplicator  => im_multiplicator, 
         product_out  => dab
     );
 
