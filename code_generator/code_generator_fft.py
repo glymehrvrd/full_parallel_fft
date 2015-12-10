@@ -35,7 +35,6 @@ env.filters['find_subsets'] = find_subsets
 env.filters['to_bin'] = to_bin
 env.filters['log2'] = log2
 temp_fft_ptx = env.get_template('fft_ptx.vhd.template')
-temp_fft_ptx_ctrl = env.get_template('fft_ptx_ctrl.vhd.template')
 
 # (lhs_point, rhs_point, delay)
 # delay indicates the delay caused by the left-hand-side fft component

@@ -18,6 +18,7 @@ function fft_pt4_config(this_block)
   this_block.tagAsCombinational;
 
   this_block.addSimulinkInport('rst');
+  this_block.addSimulinkInport('bypass');
   this_block.addSimulinkInport('ctrl_delay');
   this_block.addSimulinkInport('data_re_in');
   this_block.addSimulinkInport('data_im_in');
@@ -51,6 +52,10 @@ function fft_pt4_config(this_block)
     end
 
     this_block.port('rst').useHDLVector(false);
+
+    if (this_block.port('bypass').width ~= 2);
+      this_block.setError('Input data type for port "bypass" must have width=1.');
+    end
 
     if (this_block.port('ctrl_delay').width ~= 16);
       this_block.setError('Input data type for port "ctrl_delay" must have width=16.');

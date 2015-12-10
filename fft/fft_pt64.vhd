@@ -7,20 +7,20 @@ entity fft_pt64 is
         ctrl_start     : INTEGER := 0
     );
     PORT (
-        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector(63 downto 0);
-        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector(63 downto 0);
+        tmp_first_stage_re_out, tmp_first_stage_im_out: OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+        tmp_mul_re_out, tmp_mul_im_out : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
 
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        bypass         : IN STD_LOGIC_VECTOR(5 downto 0);
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        bypass         : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in:in std_logic_vector(63 downto 0);
-        data_im_in:in std_logic_vector(63 downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
 
-        data_re_out:out std_logic_vector(63 downto 0);
-        data_im_out:out std_logic_vector(63 downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR(63 DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
     );
 end fft_pt64;
 
@@ -28,20 +28,20 @@ architecture Behavioral of fft_pt64 is
 
 component fft_pt8 is
     GENERIC (
-        ctrl_start       : INTEGER
+        ctrl_start     : INTEGER
     );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        bypass         : IN STD_LOGIC_VECTOR(2 downto 0);
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        bypass         : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in:in std_logic_vector(7 downto 0);
-        data_im_in:in std_logic_vector(7 downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-        data_re_out:out std_logic_vector(7 downto 0);
-        data_im_out:out std_logic_vector(7 downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
 end component;
 
@@ -51,16 +51,17 @@ component complex_multiplier is
         ctrl_start       : INTEGER
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk              : IN STD_LOGIC;
+        rst              : IN STD_LOGIC;
+        ce               : IN STD_LOGIC;
+        bypass           : IN STD_LOGIC;
+        ctrl_delay       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in       : IN STD_LOGIC;
+        data_im_in       : IN STD_LOGIC;
+        re_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        im_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_out      : OUT STD_LOGIC;
+        data_im_out      : OUT STD_LOGIC
     );
 end component;
 
@@ -69,14 +70,15 @@ component multiplier_mul1 IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
@@ -85,29 +87,30 @@ component multiplier_mulminusj IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
 COMPONENT Dff_regN_Nout IS
     GENERIC (N : INTEGER);
-    PORT (
-        D    : IN STD_LOGIC;
-        clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    PORT (  
+        D      : IN STD_LOGIC;
+        clk    : IN STD_LOGIC;
+        Q      : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN     : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END COMPONENT;
 
-signal first_stage_re_out, first_stage_im_out: std_logic_vector(63 downto 0);
-signal mul_re_out, mul_im_out : std_logic_vector(63 downto 0);
+signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR(63 DOWNTO 0);
+signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR(63 DOWNTO 0);
 
 
 begin
@@ -126,7 +129,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(0),
             data_re_in(1) => data_re_in(8),
@@ -170,7 +173,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(1),
             data_re_in(1) => data_re_in(9),
@@ -214,7 +217,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(2),
             data_re_in(1) => data_re_in(10),
@@ -258,7 +261,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(3),
             data_re_in(1) => data_re_in(11),
@@ -302,7 +305,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(4),
             data_re_in(1) => data_re_in(12),
@@ -346,7 +349,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(5),
             data_re_in(1) => data_re_in(13),
@@ -390,7 +393,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(6),
             data_re_in(1) => data_re_in(14),
@@ -434,7 +437,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(5 downto 3),
+            bypass => bypass(5 DOWNTO 3),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(7),
             data_re_in(1) => data_re_in(15),
@@ -480,7 +483,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(0),
             data_re_in(1) => mul_re_out(1),
@@ -524,7 +527,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(8),
             data_re_in(1) => mul_re_out(9),
@@ -568,7 +571,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(16),
             data_re_in(1) => mul_re_out(17),
@@ -612,7 +615,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(24),
             data_re_in(1) => mul_re_out(25),
@@ -656,7 +659,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(32),
             data_re_in(1) => mul_re_out(33),
@@ -700,7 +703,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(40),
             data_re_in(1) => mul_re_out(41),
@@ -744,7 +747,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(48),
             data_re_in(1) => mul_re_out(49),
@@ -788,7 +791,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(2 downto 0),
+            bypass => bypass(2 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(56),
             data_re_in(1) => mul_re_out(57),
@@ -835,6 +838,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(0),
             data_im_in => first_stage_im_out(0),
@@ -851,6 +855,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1),
             data_im_in => first_stage_im_out(1),
@@ -867,6 +872,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(2),
             data_im_in => first_stage_im_out(2),
@@ -883,6 +889,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(3),
             data_im_in => first_stage_im_out(3),
@@ -899,6 +906,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(4),
             data_im_in => first_stage_im_out(4),
@@ -915,6 +923,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
@@ -931,6 +940,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(6),
             data_im_in => first_stage_im_out(6),
@@ -947,6 +957,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
@@ -963,6 +974,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(8),
             data_im_in => first_stage_im_out(8),
@@ -979,6 +991,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(9),
             data_im_in => first_stage_im_out(9),
@@ -997,6 +1010,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(10),
             data_im_in => first_stage_im_out(10),
@@ -1015,6 +1029,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(11),
             data_im_in => first_stage_im_out(11),
@@ -1033,6 +1048,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(12),
             data_im_in => first_stage_im_out(12),
@@ -1051,6 +1067,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(13),
             data_im_in => first_stage_im_out(13),
@@ -1069,6 +1086,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(14),
             data_im_in => first_stage_im_out(14),
@@ -1087,6 +1105,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(15),
             data_im_in => first_stage_im_out(15),
@@ -1105,6 +1124,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(16),
             data_im_in => first_stage_im_out(16),
@@ -1121,6 +1141,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(17),
             data_im_in => first_stage_im_out(17),
@@ -1139,6 +1160,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(18),
             data_im_in => first_stage_im_out(18),
@@ -1157,6 +1179,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(19),
             data_im_in => first_stage_im_out(19),
@@ -1175,6 +1198,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(20),
             data_im_in => first_stage_im_out(20),
@@ -1193,6 +1217,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(21),
             data_im_in => first_stage_im_out(21),
@@ -1211,6 +1236,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(22),
             data_im_in => first_stage_im_out(22),
@@ -1229,6 +1255,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(23),
             data_im_in => first_stage_im_out(23),
@@ -1247,6 +1274,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(24),
             data_im_in => first_stage_im_out(24),
@@ -1263,6 +1291,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(25),
             data_im_in => first_stage_im_out(25),
@@ -1281,6 +1310,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(26),
             data_im_in => first_stage_im_out(26),
@@ -1299,6 +1329,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(27),
             data_im_in => first_stage_im_out(27),
@@ -1317,6 +1348,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(28),
             data_im_in => first_stage_im_out(28),
@@ -1335,6 +1367,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(29),
             data_im_in => first_stage_im_out(29),
@@ -1353,6 +1386,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(30),
             data_im_in => first_stage_im_out(30),
@@ -1371,6 +1405,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(31),
             data_im_in => first_stage_im_out(31),
@@ -1389,6 +1424,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(32),
             data_im_in => first_stage_im_out(32),
@@ -1405,6 +1441,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(33),
             data_im_in => first_stage_im_out(33),
@@ -1423,6 +1460,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(34),
             data_im_in => first_stage_im_out(34),
@@ -1441,6 +1479,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(35),
             data_im_in => first_stage_im_out(35),
@@ -1459,6 +1498,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(36),
             data_im_in => first_stage_im_out(36),
@@ -1475,6 +1515,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(37),
             data_im_in => first_stage_im_out(37),
@@ -1493,6 +1534,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(38),
             data_im_in => first_stage_im_out(38),
@@ -1511,6 +1553,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(39),
             data_im_in => first_stage_im_out(39),
@@ -1529,6 +1572,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(40),
             data_im_in => first_stage_im_out(40),
@@ -1545,6 +1589,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(41),
             data_im_in => first_stage_im_out(41),
@@ -1563,6 +1608,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(42),
             data_im_in => first_stage_im_out(42),
@@ -1581,6 +1627,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(43),
             data_im_in => first_stage_im_out(43),
@@ -1599,6 +1646,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(44),
             data_im_in => first_stage_im_out(44),
@@ -1617,6 +1665,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(45),
             data_im_in => first_stage_im_out(45),
@@ -1635,6 +1684,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(46),
             data_im_in => first_stage_im_out(46),
@@ -1653,6 +1703,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(47),
             data_im_in => first_stage_im_out(47),
@@ -1671,6 +1722,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(48),
             data_im_in => first_stage_im_out(48),
@@ -1687,6 +1739,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(49),
             data_im_in => first_stage_im_out(49),
@@ -1705,6 +1758,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(50),
             data_im_in => first_stage_im_out(50),
@@ -1723,6 +1777,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(51),
             data_im_in => first_stage_im_out(51),
@@ -1741,6 +1796,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(52),
             data_im_in => first_stage_im_out(52),
@@ -1759,6 +1815,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(53),
             data_im_in => first_stage_im_out(53),
@@ -1777,6 +1834,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(54),
             data_im_in => first_stage_im_out(54),
@@ -1795,6 +1853,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(55),
             data_im_in => first_stage_im_out(55),
@@ -1813,6 +1872,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(56),
             data_im_in => first_stage_im_out(56),
@@ -1829,6 +1889,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(57),
             data_im_in => first_stage_im_out(57),
@@ -1847,6 +1908,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(58),
             data_im_in => first_stage_im_out(58),
@@ -1865,6 +1927,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(59),
             data_im_in => first_stage_im_out(59),
@@ -1883,6 +1946,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(60),
             data_im_in => first_stage_im_out(60),
@@ -1901,6 +1965,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(61),
             data_im_in => first_stage_im_out(61),
@@ -1919,6 +1984,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(62),
             data_im_in => first_stage_im_out(62),
@@ -1937,6 +2003,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(3),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(63),
             data_im_in => first_stage_im_out(63),

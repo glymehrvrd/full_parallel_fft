@@ -10,6 +10,7 @@ ENTITY multiplier_mul1 IS
         clk             : IN std_logic;
         rst             : IN std_logic;
         ce              : IN std_logic;
+        bypass          : IN std_logic;
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
@@ -42,8 +43,11 @@ component shifter is
 end component;
 
 signal shifter_re,shifter_im:STD_LOGIC;
+signal sel: std_logic;
 
 BEGIN
+
+    sel<=ctrl_delay(ctrl_start) and bypass;
 
     UDELAY_RE : Dff_regN
     generic map(N=>15)
@@ -64,7 +68,7 @@ BEGIN
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl=>sel,
             data_in=>shifter_re,
             data_out=>data_re_out
         );
@@ -73,7 +77,7 @@ BEGIN
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            ctrl=>ctrl_delay(ctrl_start),
+            ctrl=>sel,
             data_in=>shifter_im,
             data_out=>data_im_out
         );

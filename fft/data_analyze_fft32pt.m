@@ -50,4 +50,4 @@ d_out=d_re+d_im*1i;
 % (d_stage_re+1i*d_stage_im).*w-(d_mul_re+1j*d_mul_im)*2
 
 float_out=fft(d);
-hardware_out=d_out*4;
+hardware_out=d_out*4/4;

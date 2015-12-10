@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.20"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-7.0, 40.0, 1292.0, 991.0]
+      Location		      [1912.0, 210.0, 1616.0, 873.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1045.0, 812.0]
+	Extents			[1369.0, 687.0]
 	ZoomFactor		[1.0]
-	Offset			[-2.125, -76.0]
+	Offset			[-39.925000000000011, -28.0]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 24 23:44:27 2015"
-  RTWModifiedTimeStamp	  370309467
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  LastModifiedDate	  "Thu Dec 10 21:30:11 2015"
+  RTWModifiedTimeStamp	  371683809
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -763,6 +763,19 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -857,7 +870,7 @@ Model {
   }
   System {
     Name		    "fft_8pt_co_sim"
-    Location		    [-7, 40, 1285, 1031]
+    Location		    [1912, 210, 3528, 1083]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -871,12 +884,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "67"
+    SIDHighWatermark	    "69"
     Block {
       BlockType		      FromWorkspace
       Name		      "\n"
       SID		      "1"
-      Position		      [60, 328, 125, 352]
+      Position		      [60, 378, 125, 402]
       ZOrder		      99
       VariableName	      "d_re_in"
       SampleTime	      "1"
@@ -888,7 +901,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "\n1"
       SID		      "2"
-      Position		      [60, 383, 125, 407]
+      Position		      [60, 433, 125, 457]
       ZOrder		      105
       VariableName	      "d_im_in"
       SampleTime	      "1"
@@ -943,13 +956,13 @@ Model {
       "6.655 26.155 ],[0.698039 0.0313725 0.219608 ]);\npatch([1.6375 16.81 27.31 12.1375 1.6375 ],[15.655 15.655 26.15"
       "5 26.155 15.655 ],[0.933333 0.203922 0.141176 ]);\npatch([12.1375 48.31 37.81 27.31 16.81 1.6375 12.1375 ],[5.15"
       "5 5.155 15.655 5.155 15.655 15.655 5.155 ],[0.698039 0.0313725 0.219608 ]);\nfprintf('','COMMENT: end icon graph"
-      "ics');\nfprintf('','COMMENT: begin icon text');\n\nfprintf('','COMMENT: end icon text');"
+      "ics');\nfprintf('','COMMENT: begin icon text');\nfprintf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
       Name		      "Black Box"
       SID		      "45"
-      Ports		      [4, 6]
+      Ports		      [5, 6]
       Position		      [465, 181, 625, 479]
       ZOrder		      183
       LibraryVersion	      "1.2"
@@ -969,19 +982,27 @@ Model {
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "blackbox2"
-      sg_icon_stat	      "160,300,4,6,white,blue,0,f03219b5,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 160 160 0 0 ],[0 0 300 300 0 ],[0.7"
-      "7 0.82 0.91 ]);\nplot([0 160 160 0 0 ],[0 0 300 300 0 ]);\npatch([31.05 62.84 84.84 106.84 128.84 84.84 53.05 31"
-      ".05 ],[174.42 174.42 196.42 174.42 196.42 196.42 196.42 174.42 ],[1 1 1 ]);\npatch([53.05 84.84 62.84 31.05 53.0"
-      "5 ],[152.42 152.42 174.42 174.42 152.42 ],[0.931 0.946 0.973 ]);\npatch([31.05 62.84 84.84 53.05 31.05 ],[130.42"
-      " 130.42 152.42 152.42 130.42 ],[1 1 1 ]);\npatch([53.05 128.84 106.84 84.84 62.84 31.05 53.05 ],[108.42 108.42 1"
-      "30.42 108.42 130.42 130.42 108.42 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('"
+      sg_icon_stat	      "160,298,5,6,white,blue,0,92e5ded6,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 160 160 0 0 ],[0 0 298 298 0 ],[0.7"
+      "7 0.82 0.91 ]);\nplot([0 160 160 0 0 ],[0 0 298 298 0 ]);\npatch([31.05 62.84 84.84 106.84 128.84 84.84 53.05 31"
+      ".05 ],[173.42 173.42 195.42 173.42 195.42 195.42 195.42 173.42 ],[1 1 1 ]);\npatch([53.05 84.84 62.84 31.05 53.0"
+      "5 ],[151.42 151.42 173.42 173.42 151.42 ],[0.931 0.946 0.973 ]);\npatch([31.05 62.84 84.84 53.05 31.05 ],[129.42"
+      " 129.42 151.42 151.42 129.42 ],[1 1 1 ]);\npatch([53.05 128.84 106.84 84.84 62.84 31.05 53.05 ],[107.42 107.42 1"
+      "29.42 107.42 129.42 129.42 107.42 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('"
       "','COMMENT: begin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2"
-      ",'ctrl_delay');\ncolor('black');port_label('input',3,'data_re_in');\ncolor('black');port_label('input',4,'data_i"
-      "m_in');\ncolor('black');port_label('output',1,'tmp_first_stage_re_out');\ncolor('black');port_label('output',2,'"
-      "tmp_first_stage_im_out');\ncolor('black');port_label('output',3,'tmp_mul_re_out');\ncolor('black');port_label('o"
-      "utput',4,'tmp_mul_im_out');\ncolor('black');port_label('output',5,'data_re_out');\ncolor('black');port_label('ou"
-      "tput',6,'data_im_out');\nfprintf('','COMMENT: end icon text');"
+      ",'bypass');\ncolor('black');port_label('input',3,'ctrl_delay');\ncolor('black');port_label('input',4,'data_re_in"
+      "');\ncolor('black');port_label('input',5,'data_im_in');\ncolor('black');port_label('output',1,'tmp_first_stage_r"
+      "e_out');\ncolor('black');port_label('output',2,'tmp_first_stage_im_out');\ncolor('black');port_label('output',3,"
+      "'tmp_mul_re_out');\ncolor('black');port_label('output',4,'tmp_mul_im_out');\ncolor('black');port_label('output',"
+      "5,'data_re_out');\ncolor('black');port_label('output',6,'data_im_out');\nfprintf('','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "68"
+      Position		      [75, 255, 105, 285]
+      ZOrder		      205
+      Value		      "0"
     }
     Block {
       BlockType		      Reference
@@ -1231,7 +1252,7 @@ Model {
       BlockType		      Step
       Name		      "Step1"
       SID		      "8"
-      Position		      [75, 215, 105, 245]
+      Position		      [75, 190, 105, 220]
       ZOrder		      102
       SampleTime	      "1"
     }
@@ -1240,7 +1261,7 @@ Model {
       Name		      "Subsystem"
       SID		      "46"
       Ports		      [1, 1]
-      Position		      [200, 264, 300, 306]
+      Position		      [200, 314, 300, 356]
       ZOrder		      186
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2352,7 +2373,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "ctrl1"
       SID		      "12"
-      Position		      [60, 273, 125, 297]
+      Position		      [60, 323, 125, 347]
       ZOrder		      100
       VariableName	      "ctrl"
       SampleTime	      "1"
@@ -2363,7 +2384,7 @@ Model {
       Name		      "d0_re_in\n1"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [235, 384, 290, 406]
+      Position		      [235, 434, 290, 456]
       ZOrder		      106
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
@@ -2410,7 +2431,7 @@ Model {
       Name		      "d0_re_in\n2"
       SID		      "67"
       Ports		      [1, 1]
-      Position		      [235, 329, 290, 351]
+      Position		      [235, 379, 290, 401]
       ZOrder		      187
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
@@ -2457,7 +2478,7 @@ Model {
       Name		      "rst (active low)1"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [235, 216, 290, 244]
+      Position		      [235, 191, 290, 219]
       ZOrder		      101
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
@@ -2469,6 +2490,53 @@ Model {
       arith_type	      "Boolean"
       n_bits		      "10"
       bin_pt		      "8"
+      preci_type	      "Single"
+      exp_width		      "8"
+      frac_width	      "24"
+      quantization	      "Round  (unbiased: +/- Inf)"
+      overflow		      "Saturate"
+      period		      "1"
+      dbl_ovrd		      off
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsADC		      off
+      ADCChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0, 0, 0, 0, 0, 0, 0]"
+      inherit_from_input      off
+      hdl_port		      "on"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayin"
+      block_version	      "VER_STRING_GOES_HERE"
+      sg_icon_stat	      "55,28,1,1,white,yellow,1,00d3666e,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 55 55 0 0 ],[0 0 28 28 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 55 55 0 0 ],[0 0 28 28 0 ]);\npatch([18.1 23.88 27.88 31.88 35.88 27.88 22.1 18.1 ],[18.44 "
+      "18.44 22.44 18.44 22.44 22.44 22.44 18.44 ],[1 1 1 ]);\npatch([22.1 27.88 23.88 18.1 22.1 ],[14.44 14.44 18.44 1"
+      "8.44 14.44 ],[0.985 0.979 0.895 ]);\npatch([18.1 23.88 27.88 22.1 18.1 ],[10.44 10.44 14.44 14.44 10.44 ],[1 1 1"
+      " ]);\npatch([22.1 35.88 31.88 27.88 23.88 18.1 22.1 ],[6.44 6.44 10.44 6.44 10.44 10.44 6.44 ],[0.985 0.979 0.89"
+      "5 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');port_l"
+      "abel('input',1,'\\fontsize{11pt}\\bf In ','texmode','on');\ncolor('black');port_label('output',1,' ');\nfprintf("
+      "'','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "rst (active low)2"
+      SID		      "69"
+      Ports		      [1, 1]
+      Position		      [235, 256, 290, 284]
+      ZOrder		      204
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway In"
+      SourceType	      "Xilinx Gateway In Block"
+      infoedit		      "Gateway in block.  Converts inputs of type Simulink integer, single, double and fixed-point to "
+      " Xilinx fixed-point or floating-point data type.<br><br>Hardware notes:  In hardware these blocks become top lev"
+      "el input ports."
+      gui_display_data_type   "Fixed-point"
+      arith_type	      "Unsigned"
+      n_bits		      "3"
+      bin_pt		      "0"
       preci_type	      "Single"
       exp_width		      "8"
       frac_width	      "24"
@@ -2518,38 +2586,10 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Subsystem"
-      SrcPort		      1
-      Points		      [77, 0; 0, 10]
-      DstBlock		      "Black Box"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "rst (active low)1"
-      SrcPort		      1
-      Points		      [82, 0; 0, -10]
-      DstBlock		      "Black Box"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "\n1"
       SrcPort		      1
       DstBlock		      "d0_re_in\n1"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "d0_re_in\n1"
-      SrcPort		      1
-      Points		      [82, 0; 0, 50]
-      DstBlock		      "Black Box"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "d0_re_in\n2"
-      SrcPort		      1
-      Points		      [82, 0; 0, 30]
-      DstBlock		      "Black Box"
-      DstPort		      3
     }
     Line {
       SrcBlock		      "Gateway Out2"
@@ -2627,6 +2667,45 @@ Model {
       Points		      [52, 0; 0, 30]
       DstBlock		      "Gateway Out6"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "rst (active low)2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [77, 0; 0, -5]
+      DstBlock		      "Black Box"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "d0_re_in\n2"
+      SrcPort		      1
+      DstBlock		      "Black Box"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "rst (active low)2"
+      SrcPort		      1
+      DstBlock		      "Black Box"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "rst (active low)1"
+      SrcPort		      1
+      Points		      [82, 0; 0, 5]
+      DstBlock		      "Black Box"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "d0_re_in\n1"
+      SrcPort		      1
+      Points		      [82, 0; 0, 5]
+      DstBlock		      "Black Box"
+      DstPort		      5
     }
   }
 }

@@ -10,25 +10,25 @@ entity {{ component_name }} is
         ctrl_start     : INTEGER := 0
     );
     PORT (
-        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector({{ point-1 }} downto 0);
-        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector({{ point-1 }} downto 0);
+        tmp_first_stage_re_out, tmp_first_stage_im_out: OUT STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
+        tmp_mul_re_out, tmp_mul_im_out : OUT STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
 
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
         {% if istop %}
-        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} downto 0);
+        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} DOWNTO 0);
         ctrl           : IN STD_LOGIC;
         {% else %}
-        bypass         : IN STD_LOGIC_VECTOR({{point|log2-1}} downto 0);
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        bypass         : IN STD_LOGIC_VECTOR({{point|log2-1}} DOWNTO 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         {% endif %}
 
-        data_re_in:in std_logic_vector({{ point-1 }} downto 0);
-        data_im_in:in std_logic_vector({{ point-1 }} downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
 
-        data_re_out:out std_logic_vector({{ point-1 }} downto 0);
-        data_im_out:out std_logic_vector({{ point-1 }} downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0)
     );
 end {{ component_name }};
 
@@ -36,7 +36,7 @@ architecture Behavioral of {{ component_name }} is
 
 component {{ lhs_component_name }} is
     GENERIC (
-        ctrl_start       : INTEGER
+        ctrl_start     : INTEGER
     );
     PORT (
         clk            : IN STD_LOGIC;
@@ -45,15 +45,15 @@ component {{ lhs_component_name }} is
         {% if lhs_point==2%}
         bypass         : IN STD_LOGIC;
         {% else %}
-        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} downto 0);
+        bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} DOWNTO 0);
         {% endif %}
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
-        data_im_in:in std_logic_vector({{ lhs_point-1 }} downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR({{ lhs_point-1 }} DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR({{ lhs_point-1 }} DOWNTO 0);
 
-        data_re_out:out std_logic_vector({{ lhs_point-1 }} downto 0);
-        data_im_out:out std_logic_vector({{ lhs_point-1 }} downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR({{ lhs_point-1 }} DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR({{ lhs_point-1 }} DOWNTO 0)
     );
 end component;
 
@@ -69,15 +69,15 @@ component {{ rhs_component_name }} is
         {% if rhs_point==2%}
         bypass         : IN STD_LOGIC;
         {% else %}
-        bypass         : IN STD_LOGIC_VECTOR({{rhs_point|log2-1}} downto 0);
+        bypass         : IN STD_LOGIC_VECTOR({{rhs_point|log2-1}} DOWNTO 0);
         {% endif %}
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
-        data_im_in     : in std_logic_vector({{ rhs_point-1 }} downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR({{ rhs_point-1 }} DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR({{ rhs_point-1 }} DOWNTO 0);
 
-        data_re_out     : out std_logic_vector({{ rhs_point-1 }} downto 0);
-        data_im_out     : out std_logic_vector({{ rhs_point-1 }} downto 0)
+        data_re_out     : OUT STD_LOGIC_VECTOR({{ rhs_point-1 }} DOWNTO 0);
+        data_im_out     : OUT STD_LOGIC_VECTOR({{ rhs_point-1 }} DOWNTO 0)
     );
 end component;
 {% endif %}
@@ -87,16 +87,17 @@ component complex_multiplier is
         ctrl_start       : INTEGER
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk              : IN STD_LOGIC;
+        rst              : IN STD_LOGIC;
+        ce               : IN STD_LOGIC;
+        bypass           : IN STD_LOGIC;
+        ctrl_delay       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in       : IN STD_LOGIC;
+        data_im_in       : IN STD_LOGIC;
+        re_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        im_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_out      : OUT STD_LOGIC;
+        data_im_out      : OUT STD_LOGIC
     );
 end component;
 
@@ -105,14 +106,15 @@ component multiplier_mul1 IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
@@ -121,37 +123,38 @@ component multiplier_mulminusj IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
 COMPONENT Dff_regN_Nout IS
     GENERIC (N : INTEGER);
-    PORT (
-        D    : IN STD_LOGIC;
-        clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    PORT (  
+        D      : IN STD_LOGIC;
+        clk    : IN STD_LOGIC;
+        Q      : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN     : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END COMPONENT;
 
-signal first_stage_re_out, first_stage_im_out: std_logic_vector({{ point-1 }} downto 0);
-signal mul_re_out, mul_im_out : std_logic_vector({{ point-1 }} downto 0);
+signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
+signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
 
 {% if istop %}
-SIGNAL ctrl_delay : std_logic_vector(15 downto 0);
+SIGNAL ctrl_delay : STD_LOGIC_VECTOR(15 DOWNTO 0);
 {% endif %}
 
 begin
     {% if istop %}
-    --- create ctrl_delay signal in top module
+    --- create ctrl_delay signal IN top module
     ctrl_delay(0) <= ctrl;
     --- buffer for ctrl
     UDFF_CTRL : Dff_regN_Nout
@@ -185,7 +188,7 @@ begin
             {% if lhs_point==2 %}
             bypass => bypass({{rhs_point|log2}}),
             {% else %}
-            bypass => bypass({{point|log2-1}} downto {{rhs_point|log2}}),
+            bypass => bypass({{point|log2-1}} DOWNTO {{rhs_point|log2}}),
             {% endif %}
             {% else %}
             bypass => bypass,
@@ -221,7 +224,7 @@ begin
             {% if rhs_point==2 %}
             bypass => bypass(0),
             {% else %}
-            bypass => bypass({{rhs_point|log2-1}} downto 0),
+            bypass => bypass({{rhs_point|log2-1}} DOWNTO 0),
             {% endif %}
             {% else %}
             bypass => (others => '1'),
@@ -254,6 +257,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass({{rhs_point|log2 if not istop else 0}}),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
@@ -270,6 +274,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass({{rhs_point|log2 if not istop else 0}}),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
@@ -286,6 +291,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass({{rhs_point|log2 if not istop else 0}}),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),

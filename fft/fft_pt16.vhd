@@ -7,20 +7,20 @@ entity fft_pt16 is
         ctrl_start     : INTEGER := 0
     );
     PORT (
-        tmp_first_stage_re_out, tmp_first_stage_im_out: out std_logic_vector(15 downto 0);
-        tmp_mul_re_out, tmp_mul_im_out : out std_logic_vector(15 downto 0);
+        tmp_first_stage_re_out, tmp_first_stage_im_out: OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        tmp_mul_re_out, tmp_mul_im_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        bypass         : IN STD_LOGIC_VECTOR(3 downto 0);
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        bypass         : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in:in std_logic_vector(15 downto 0);
-        data_im_in:in std_logic_vector(15 downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_out:out std_logic_vector(15 downto 0);
-        data_im_out:out std_logic_vector(15 downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 end fft_pt16;
 
@@ -28,20 +28,20 @@ architecture Behavioral of fft_pt16 is
 
 component fft_pt4 is
     GENERIC (
-        ctrl_start       : INTEGER
+        ctrl_start     : INTEGER
     );
     PORT (
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        bypass         : IN STD_LOGIC_VECTOR(1 downto 0);
-        ctrl_delay     : IN STD_LOGIC_VECTOR(15 downto 0);
+        bypass         : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+        ctrl_delay     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-        data_re_in:in std_logic_vector(3 downto 0);
-        data_im_in:in std_logic_vector(3 downto 0);
+        data_re_in     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        data_im_in     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 
-        data_re_out:out std_logic_vector(3 downto 0);
-        data_im_out:out std_logic_vector(3 downto 0)
+        data_re_out    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+        data_im_out    : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 end component;
 
@@ -51,16 +51,17 @@ component complex_multiplier is
         ctrl_start       : INTEGER
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN STD_LOGIC_VECTOR(15 downto 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk              : IN STD_LOGIC;
+        rst              : IN STD_LOGIC;
+        ce               : IN STD_LOGIC;
+        bypass           : IN STD_LOGIC;
+        ctrl_delay       : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in       : IN STD_LOGIC;
+        data_im_in       : IN STD_LOGIC;
+        re_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        im_multiplicator : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_out      : OUT STD_LOGIC;
+        data_im_out      : OUT STD_LOGIC
     );
 end component;
 
@@ -69,14 +70,15 @@ component multiplier_mul1 IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
@@ -85,29 +87,30 @@ component multiplier_mulminusj IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk             : IN STD_LOGIC;
+        rst             : IN STD_LOGIC;
+        ce              : IN STD_LOGIC;
+        bypass          : IN STD_LOGIC;
+        ctrl_delay      : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        data_re_in      : IN STD_LOGIC;
+        data_im_in      : IN STD_LOGIC;
+        data_re_out     : OUT STD_LOGIC;
+        data_im_out     : OUT STD_LOGIC
     );
 END component;
 
 COMPONENT Dff_regN_Nout IS
     GENERIC (N : INTEGER);
-    PORT (
-        D    : IN STD_LOGIC;
-        clk  : IN STD_LOGIC;
-        Q    : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
-        QN   : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
+    PORT (  
+        D      : IN STD_LOGIC;
+        clk    : IN STD_LOGIC;
+        Q      : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
+        QN     : OUT STD_LOGIC_VECTOR(N - 1 DOWNTO 0)
     );
 END COMPONENT;
 
-signal first_stage_re_out, first_stage_im_out: std_logic_vector(15 downto 0);
-signal mul_re_out, mul_im_out : std_logic_vector(15 downto 0);
+signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR(15 DOWNTO 0);
+signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 
 begin
@@ -126,7 +129,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(3 downto 2),
+            bypass => bypass(3 DOWNTO 2),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(0),
             data_re_in(1) => data_re_in(4),
@@ -154,7 +157,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(3 downto 2),
+            bypass => bypass(3 DOWNTO 2),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(1),
             data_re_in(1) => data_re_in(5),
@@ -182,7 +185,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(3 downto 2),
+            bypass => bypass(3 DOWNTO 2),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(2),
             data_re_in(1) => data_re_in(6),
@@ -210,7 +213,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(3 downto 2),
+            bypass => bypass(3 DOWNTO 2),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => data_re_in(3),
             data_re_in(1) => data_re_in(7),
@@ -240,7 +243,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(1 downto 0),
+            bypass => bypass(1 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(0),
             data_re_in(1) => mul_re_out(1),
@@ -268,7 +271,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(1 downto 0),
+            bypass => bypass(1 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(4),
             data_re_in(1) => mul_re_out(5),
@@ -296,7 +299,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(1 downto 0),
+            bypass => bypass(1 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(8),
             data_re_in(1) => mul_re_out(9),
@@ -324,7 +327,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
-            bypass => bypass(1 downto 0),
+            bypass => bypass(1 DOWNTO 0),
             ctrl_delay => ctrl_delay,
             data_re_in(0) => mul_re_out(12),
             data_re_in(1) => mul_re_out(13),
@@ -355,6 +358,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(0),
             data_im_in => first_stage_im_out(0),
@@ -371,6 +375,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1),
             data_im_in => first_stage_im_out(1),
@@ -387,6 +392,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(2),
             data_im_in => first_stage_im_out(2),
@@ -403,6 +409,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(3),
             data_im_in => first_stage_im_out(3),
@@ -419,6 +426,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(4),
             data_im_in => first_stage_im_out(4),
@@ -435,6 +443,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
@@ -453,6 +462,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(6),
             data_im_in => first_stage_im_out(6),
@@ -471,6 +481,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
@@ -489,6 +500,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(8),
             data_im_in => first_stage_im_out(8),
@@ -505,6 +517,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(9),
             data_im_in => first_stage_im_out(9),
@@ -523,6 +536,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(10),
             data_im_in => first_stage_im_out(10),
@@ -539,6 +553,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(11),
             data_im_in => first_stage_im_out(11),
@@ -557,6 +572,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(12),
             data_im_in => first_stage_im_out(12),
@@ -573,6 +589,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(13),
             data_im_in => first_stage_im_out(13),
@@ -591,6 +608,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(14),
             data_im_in => first_stage_im_out(14),
@@ -609,6 +627,7 @@ begin
             clk => clk,
             rst => rst,
             ce => ce,
+            bypass => bypass(2),
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(15),
             data_im_in => first_stage_im_out(15),

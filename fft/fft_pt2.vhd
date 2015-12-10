@@ -81,24 +81,24 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
     SIGNAL data_re_out_buff : std_logic_vector(1 DOWNTO 0);
     SIGNAL data_im_out_buff : std_logic_vector(1 DOWNTO 0);
 
-    SIGNAL data_re_out_nobypass : std_logic_vector(1 DOWNTO 0);
-    SIGNAL data_im_out_nobypass : std_logic_vector(1 DOWNTO 0);
+    SIGNAL data_re_out_fft : std_logic_vector(1 DOWNTO 0);
+    SIGNAL data_im_out_fft : std_logic_vector(1 DOWNTO 0);
 BEGIN
     GEN_OUT_MUX : for I in 0 to 1 generate
         UMUXRE : mux_in2
         port map(
             sel=>bypass,
-            data1_in=>data_re_out_nobypass(I),
+            data1_in=>data_re_out_fft(I),
             data2_in=>data_re_in(I),
-            data_out=>data_re_out(I)
+            data_out=>data_re_out_buff(I)
         );
 
         UMUXIM : mux_in2
         port map(
             sel=>bypass,
-            data1_in=>data_im_out_nobypass(I),
+            data1_in=>data_im_out_fft(I),
             data2_in=>data_im_in(I),
-            data_out=>data_im_out(I)
+            data_out=>data_im_out_buff(I)
         );
     end generate ; -- GEN_OUT_MUX
 
@@ -109,16 +109,15 @@ BEGIN
         UDFF_RE_OUT : Dff_reg1 port map(
                 D=>data_re_out_buff(I),
                 clk=>clk,
-                Q=>data_re_out_nobypass(I)
+                Q=>data_re_out(I)
             );
 
         UDFF_IM_OUT : Dff_reg1 port map(
                 D=>data_im_out_buff(I),
                 clk=>clk,
-                Q=>data_im_out_nobypass(I)
+                Q=>data_im_out(I)
             );
     end generate ; -- GEN_OUT_BUFF
-
 
     --- Re(X[0])=Re(x[0])+Re(x[1])
     C_BUFF0_RE : Dff_preload_reg1
@@ -134,7 +133,7 @@ BEGIN
         data1_in  => data_re_in(0), 
         data2_in  => data_re_in(1), 
         c_in      => c_buff(0), 
-        sum_out   => data_re_out_buff(0), 
+        sum_out   => data_re_out_fft(0), 
         c_out     => c(0)
     );
 
@@ -152,7 +151,7 @@ BEGIN
         data1_in  => data_im_in(0), 
         data2_in  => data_im_in(1), 
         c_in      => c_buff(1), 
-        sum_out   => data_im_out_buff(0), 
+        sum_out   => data_im_out_fft(0), 
         c_out     => c(1)
     );
 
@@ -170,7 +169,7 @@ BEGIN
         data1_in  => data_re_in(0), 
         data2_in  => not_data_re_in1, 
         c_in      => c_buff(2), 
-        sum_out   => data_re_out_buff(1), 
+        sum_out   => data_re_out_fft(1), 
         c_out     => c(2)
     );
 
@@ -188,8 +187,7 @@ BEGIN
         data1_in  => data_im_in(0), 
         data2_in  => not_data_im_in1, 
         c_in      => c_buff(3), 
-        sum_out   => data_im_out_buff(1), 
+        sum_out   => data_im_out_fft(1), 
         c_out     => c(3)
     );
 END Behavioral;
-

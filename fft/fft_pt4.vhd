@@ -64,6 +64,16 @@ component adder_half_bit1
     );
 end component;
 
+    COMPONENT mux_in2 IS
+        PORT (
+            sel       : IN STD_LOGIC;
+
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN std_logic;
+            data_out  : OUT std_logic
+        );
+    END COMPONENT;
+
 signal first_stage_re_out, first_stage_im_out: std_logic_vector(3 downto 0);
 signal mul_re_out, mul_im_out : std_logic_vector(3 downto 0);
 
@@ -86,7 +96,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            bypass=>bypass(0),
+            bypass=>bypass(1),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(0),
             data_re_in(1)=>data_re_in(2),
@@ -104,7 +114,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            bypass=>bypass(0),
+            bypass=>bypass(1),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>data_re_in(1),
             data_re_in(1)=>data_re_in(3),
@@ -124,7 +134,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            bypass=>bypass(1),
+            bypass=>bypass(0),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(0),
             data_re_in(1)=>mul_re_out(2),
@@ -144,7 +154,7 @@ begin
             clk=>clk,
             rst=>rst,
             ce=>ce,
-            bypass=>bypass(1),
+            bypass=>bypass(0),
             ctrl_delay=>ctrl_delay,
             data_re_in(0)=>mul_re_out(1),
             data_re_in(1)=>mul_re_out(3),
@@ -160,8 +170,22 @@ begin
     --- multipliers
     mul_re_out(2 downto 0) <= first_stage_re_out(2 downto 0);
     mul_im_out(2 downto 0) <= first_stage_im_out(2 downto 0);
-    mul_re_out(3) <= first_stage_im_out(3);
-    mul_im_out(3) <= opp_first_stage_re_out;
+
+    UMUX_RE : mux_in2
+    port map(
+        sel=>bypass(1),
+        data1_in=>first_stage_im_out(3),
+        data2_in=>first_stage_re_out(3),
+        data_out=>mul_re_out(3)
+    );
+
+    UMUX_IM : mux_in2
+    port map(
+        sel=>bypass(1),
+        data1_in=>opp_first_stage_re_out,
+        data2_in=>first_stage_im_out(3),
+        data_out=>mul_im_out(3)
+    );
     
     not_first_stage_re_out <= not first_stage_re_out(3);
     C_BUFF_3 : Dff_preload_reg1_init_1
