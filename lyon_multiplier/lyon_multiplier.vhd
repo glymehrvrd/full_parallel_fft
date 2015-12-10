@@ -10,6 +10,7 @@ ENTITY lyon_multiplier IS
         clk          : IN std_logic;
         rst          : IN std_logic;
         ce           : IN std_logic;
+        bypass       : IN std_logic;
         ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
         data_in      : IN std_logic;
         multiplicator: IN std_logic_vector(15 DOWNTO 0);
@@ -70,11 +71,22 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
         );
     END COMPONENT;
 
+    COMPONENT mux_in2 IS
+        PORT (
+            sel       : IN STD_LOGIC;
+
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN std_logic;
+            data_out  : OUT std_logic
+        );
+    END COMPONENT;
+
     SIGNAL data_in_delay : std_logic_vector(15 DOWNTO 0);
     SIGNAL ndata_in_delay: std_logic_vector(15 downto 1);
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
+    SIGNAL data_output : STD_LOGIC;
 BEGIN
     data_in_delay(0) <= data_in;
     --- buffer for data_in
@@ -124,9 +136,16 @@ BEGIN
         pp_out      => pp(15)
     );
 
+    UMUX : mux_in2 port map(
+            sel=>bypass,
+            data1_in=>pp(15),
+            data2_in=>data_in_delay(15),
+            data_out=>data_output
+        );
+
     --- output
     UDFF_OUT : Dff_reg1 port map(
-            D=>pp(15),
+            D=>data_output,
             clk=>clk,
             Q=>product_out
         );

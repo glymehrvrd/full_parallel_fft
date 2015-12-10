@@ -77,8 +77,8 @@ component complex_multiplier is
         data_im_in      : IN std_logic;
         re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 end component;
 
@@ -93,8 +93,8 @@ component multiplier_mul1 IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -109,8 +109,8 @@ component multiplier_mulminusj IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -17702,8 +17702,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(0),
             data_im_in => first_stage_im_out(0),
-            product_re_out => mul_re_out(0),
-            product_im_out => mul_im_out(0)
+            data_re_out => mul_re_out(0),
+            data_im_out => mul_im_out(0)
         );
 
  
@@ -17718,8 +17718,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1),
             data_im_in => first_stage_im_out(1),
-            product_re_out => mul_re_out(1),
-            product_im_out => mul_im_out(1)
+            data_re_out => mul_re_out(1),
+            data_im_out => mul_im_out(1)
         );
 
  
@@ -17734,8 +17734,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(2),
             data_im_in => first_stage_im_out(2),
-            product_re_out => mul_re_out(2),
-            product_im_out => mul_im_out(2)
+            data_re_out => mul_re_out(2),
+            data_im_out => mul_im_out(2)
         );
 
  
@@ -17750,8 +17750,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(3),
             data_im_in => first_stage_im_out(3),
-            product_re_out => mul_re_out(3),
-            product_im_out => mul_im_out(3)
+            data_re_out => mul_re_out(3),
+            data_im_out => mul_im_out(3)
         );
 
  
@@ -17766,8 +17766,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(4),
             data_im_in => first_stage_im_out(4),
-            product_re_out => mul_re_out(4),
-            product_im_out => mul_im_out(4)
+            data_re_out => mul_re_out(4),
+            data_im_out => mul_im_out(4)
         );
 
  
@@ -17782,8 +17782,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
-            product_re_out => mul_re_out(5),
-            product_im_out => mul_im_out(5)
+            data_re_out => mul_re_out(5),
+            data_im_out => mul_im_out(5)
         );
 
  
@@ -17798,8 +17798,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(6),
             data_im_in => first_stage_im_out(6),
-            product_re_out => mul_re_out(6),
-            product_im_out => mul_im_out(6)
+            data_re_out => mul_re_out(6),
+            data_im_out => mul_im_out(6)
         );
 
  
@@ -17814,8 +17814,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
-            product_re_out => mul_re_out(7),
-            product_im_out => mul_im_out(7)
+            data_re_out => mul_re_out(7),
+            data_im_out => mul_im_out(7)
         );
 
  
@@ -17830,8 +17830,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(8),
             data_im_in => first_stage_im_out(8),
-            product_re_out => mul_re_out(8),
-            product_im_out => mul_im_out(8)
+            data_re_out => mul_re_out(8),
+            data_im_out => mul_im_out(8)
         );
 
  
@@ -17846,8 +17846,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(9),
             data_im_in => first_stage_im_out(9),
-            product_re_out => mul_re_out(9),
-            product_im_out => mul_im_out(9)
+            data_re_out => mul_re_out(9),
+            data_im_out => mul_im_out(9)
         );
 
  
@@ -17862,8 +17862,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(10),
             data_im_in => first_stage_im_out(10),
-            product_re_out => mul_re_out(10),
-            product_im_out => mul_im_out(10)
+            data_re_out => mul_re_out(10),
+            data_im_out => mul_im_out(10)
         );
 
  
@@ -17878,8 +17878,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(11),
             data_im_in => first_stage_im_out(11),
-            product_re_out => mul_re_out(11),
-            product_im_out => mul_im_out(11)
+            data_re_out => mul_re_out(11),
+            data_im_out => mul_im_out(11)
         );
 
  
@@ -17894,8 +17894,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(12),
             data_im_in => first_stage_im_out(12),
-            product_re_out => mul_re_out(12),
-            product_im_out => mul_im_out(12)
+            data_re_out => mul_re_out(12),
+            data_im_out => mul_im_out(12)
         );
 
  
@@ -17910,8 +17910,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(13),
             data_im_in => first_stage_im_out(13),
-            product_re_out => mul_re_out(13),
-            product_im_out => mul_im_out(13)
+            data_re_out => mul_re_out(13),
+            data_im_out => mul_im_out(13)
         );
 
  
@@ -17926,8 +17926,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(14),
             data_im_in => first_stage_im_out(14),
-            product_re_out => mul_re_out(14),
-            product_im_out => mul_im_out(14)
+            data_re_out => mul_re_out(14),
+            data_im_out => mul_im_out(14)
         );
 
  
@@ -17942,8 +17942,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(15),
             data_im_in => first_stage_im_out(15),
-            product_re_out => mul_re_out(15),
-            product_im_out => mul_im_out(15)
+            data_re_out => mul_re_out(15),
+            data_im_out => mul_im_out(15)
         );
 
  
@@ -17958,8 +17958,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(16),
             data_im_in => first_stage_im_out(16),
-            product_re_out => mul_re_out(16),
-            product_im_out => mul_im_out(16)
+            data_re_out => mul_re_out(16),
+            data_im_out => mul_im_out(16)
         );
 
  
@@ -17974,8 +17974,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(17),
             data_im_in => first_stage_im_out(17),
-            product_re_out => mul_re_out(17),
-            product_im_out => mul_im_out(17)
+            data_re_out => mul_re_out(17),
+            data_im_out => mul_im_out(17)
         );
 
  
@@ -17990,8 +17990,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(18),
             data_im_in => first_stage_im_out(18),
-            product_re_out => mul_re_out(18),
-            product_im_out => mul_im_out(18)
+            data_re_out => mul_re_out(18),
+            data_im_out => mul_im_out(18)
         );
 
  
@@ -18006,8 +18006,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(19),
             data_im_in => first_stage_im_out(19),
-            product_re_out => mul_re_out(19),
-            product_im_out => mul_im_out(19)
+            data_re_out => mul_re_out(19),
+            data_im_out => mul_im_out(19)
         );
 
  
@@ -18022,8 +18022,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(20),
             data_im_in => first_stage_im_out(20),
-            product_re_out => mul_re_out(20),
-            product_im_out => mul_im_out(20)
+            data_re_out => mul_re_out(20),
+            data_im_out => mul_im_out(20)
         );
 
  
@@ -18038,8 +18038,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(21),
             data_im_in => first_stage_im_out(21),
-            product_re_out => mul_re_out(21),
-            product_im_out => mul_im_out(21)
+            data_re_out => mul_re_out(21),
+            data_im_out => mul_im_out(21)
         );
 
  
@@ -18054,8 +18054,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(22),
             data_im_in => first_stage_im_out(22),
-            product_re_out => mul_re_out(22),
-            product_im_out => mul_im_out(22)
+            data_re_out => mul_re_out(22),
+            data_im_out => mul_im_out(22)
         );
 
  
@@ -18070,8 +18070,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(23),
             data_im_in => first_stage_im_out(23),
-            product_re_out => mul_re_out(23),
-            product_im_out => mul_im_out(23)
+            data_re_out => mul_re_out(23),
+            data_im_out => mul_im_out(23)
         );
 
  
@@ -18086,8 +18086,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(24),
             data_im_in => first_stage_im_out(24),
-            product_re_out => mul_re_out(24),
-            product_im_out => mul_im_out(24)
+            data_re_out => mul_re_out(24),
+            data_im_out => mul_im_out(24)
         );
 
  
@@ -18102,8 +18102,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(25),
             data_im_in => first_stage_im_out(25),
-            product_re_out => mul_re_out(25),
-            product_im_out => mul_im_out(25)
+            data_re_out => mul_re_out(25),
+            data_im_out => mul_im_out(25)
         );
 
  
@@ -18118,8 +18118,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(26),
             data_im_in => first_stage_im_out(26),
-            product_re_out => mul_re_out(26),
-            product_im_out => mul_im_out(26)
+            data_re_out => mul_re_out(26),
+            data_im_out => mul_im_out(26)
         );
 
  
@@ -18134,8 +18134,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(27),
             data_im_in => first_stage_im_out(27),
-            product_re_out => mul_re_out(27),
-            product_im_out => mul_im_out(27)
+            data_re_out => mul_re_out(27),
+            data_im_out => mul_im_out(27)
         );
 
  
@@ -18150,8 +18150,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(28),
             data_im_in => first_stage_im_out(28),
-            product_re_out => mul_re_out(28),
-            product_im_out => mul_im_out(28)
+            data_re_out => mul_re_out(28),
+            data_im_out => mul_im_out(28)
         );
 
  
@@ -18166,8 +18166,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(29),
             data_im_in => first_stage_im_out(29),
-            product_re_out => mul_re_out(29),
-            product_im_out => mul_im_out(29)
+            data_re_out => mul_re_out(29),
+            data_im_out => mul_im_out(29)
         );
 
  
@@ -18182,8 +18182,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(30),
             data_im_in => first_stage_im_out(30),
-            product_re_out => mul_re_out(30),
-            product_im_out => mul_im_out(30)
+            data_re_out => mul_re_out(30),
+            data_im_out => mul_im_out(30)
         );
 
  
@@ -18198,8 +18198,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(31),
             data_im_in => first_stage_im_out(31),
-            product_re_out => mul_re_out(31),
-            product_im_out => mul_im_out(31)
+            data_re_out => mul_re_out(31),
+            data_im_out => mul_im_out(31)
         );
 
  
@@ -18214,8 +18214,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(32),
             data_im_in => first_stage_im_out(32),
-            product_re_out => mul_re_out(32),
-            product_im_out => mul_im_out(32)
+            data_re_out => mul_re_out(32),
+            data_im_out => mul_im_out(32)
         );
 
  
@@ -18230,8 +18230,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(33),
             data_im_in => first_stage_im_out(33),
-            product_re_out => mul_re_out(33),
-            product_im_out => mul_im_out(33)
+            data_re_out => mul_re_out(33),
+            data_im_out => mul_im_out(33)
         );
 
  
@@ -18246,8 +18246,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(34),
             data_im_in => first_stage_im_out(34),
-            product_re_out => mul_re_out(34),
-            product_im_out => mul_im_out(34)
+            data_re_out => mul_re_out(34),
+            data_im_out => mul_im_out(34)
         );
 
  
@@ -18262,8 +18262,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(35),
             data_im_in => first_stage_im_out(35),
-            product_re_out => mul_re_out(35),
-            product_im_out => mul_im_out(35)
+            data_re_out => mul_re_out(35),
+            data_im_out => mul_im_out(35)
         );
 
  
@@ -18278,8 +18278,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(36),
             data_im_in => first_stage_im_out(36),
-            product_re_out => mul_re_out(36),
-            product_im_out => mul_im_out(36)
+            data_re_out => mul_re_out(36),
+            data_im_out => mul_im_out(36)
         );
 
  
@@ -18294,8 +18294,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(37),
             data_im_in => first_stage_im_out(37),
-            product_re_out => mul_re_out(37),
-            product_im_out => mul_im_out(37)
+            data_re_out => mul_re_out(37),
+            data_im_out => mul_im_out(37)
         );
 
  
@@ -18310,8 +18310,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(38),
             data_im_in => first_stage_im_out(38),
-            product_re_out => mul_re_out(38),
-            product_im_out => mul_im_out(38)
+            data_re_out => mul_re_out(38),
+            data_im_out => mul_im_out(38)
         );
 
  
@@ -18326,8 +18326,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(39),
             data_im_in => first_stage_im_out(39),
-            product_re_out => mul_re_out(39),
-            product_im_out => mul_im_out(39)
+            data_re_out => mul_re_out(39),
+            data_im_out => mul_im_out(39)
         );
 
  
@@ -18342,8 +18342,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(40),
             data_im_in => first_stage_im_out(40),
-            product_re_out => mul_re_out(40),
-            product_im_out => mul_im_out(40)
+            data_re_out => mul_re_out(40),
+            data_im_out => mul_im_out(40)
         );
 
  
@@ -18358,8 +18358,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(41),
             data_im_in => first_stage_im_out(41),
-            product_re_out => mul_re_out(41),
-            product_im_out => mul_im_out(41)
+            data_re_out => mul_re_out(41),
+            data_im_out => mul_im_out(41)
         );
 
  
@@ -18374,8 +18374,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(42),
             data_im_in => first_stage_im_out(42),
-            product_re_out => mul_re_out(42),
-            product_im_out => mul_im_out(42)
+            data_re_out => mul_re_out(42),
+            data_im_out => mul_im_out(42)
         );
 
  
@@ -18390,8 +18390,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(43),
             data_im_in => first_stage_im_out(43),
-            product_re_out => mul_re_out(43),
-            product_im_out => mul_im_out(43)
+            data_re_out => mul_re_out(43),
+            data_im_out => mul_im_out(43)
         );
 
  
@@ -18406,8 +18406,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(44),
             data_im_in => first_stage_im_out(44),
-            product_re_out => mul_re_out(44),
-            product_im_out => mul_im_out(44)
+            data_re_out => mul_re_out(44),
+            data_im_out => mul_im_out(44)
         );
 
  
@@ -18422,8 +18422,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(45),
             data_im_in => first_stage_im_out(45),
-            product_re_out => mul_re_out(45),
-            product_im_out => mul_im_out(45)
+            data_re_out => mul_re_out(45),
+            data_im_out => mul_im_out(45)
         );
 
  
@@ -18438,8 +18438,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(46),
             data_im_in => first_stage_im_out(46),
-            product_re_out => mul_re_out(46),
-            product_im_out => mul_im_out(46)
+            data_re_out => mul_re_out(46),
+            data_im_out => mul_im_out(46)
         );
 
  
@@ -18454,8 +18454,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(47),
             data_im_in => first_stage_im_out(47),
-            product_re_out => mul_re_out(47),
-            product_im_out => mul_im_out(47)
+            data_re_out => mul_re_out(47),
+            data_im_out => mul_im_out(47)
         );
 
  
@@ -18470,8 +18470,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(48),
             data_im_in => first_stage_im_out(48),
-            product_re_out => mul_re_out(48),
-            product_im_out => mul_im_out(48)
+            data_re_out => mul_re_out(48),
+            data_im_out => mul_im_out(48)
         );
 
  
@@ -18486,8 +18486,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(49),
             data_im_in => first_stage_im_out(49),
-            product_re_out => mul_re_out(49),
-            product_im_out => mul_im_out(49)
+            data_re_out => mul_re_out(49),
+            data_im_out => mul_im_out(49)
         );
 
  
@@ -18502,8 +18502,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(50),
             data_im_in => first_stage_im_out(50),
-            product_re_out => mul_re_out(50),
-            product_im_out => mul_im_out(50)
+            data_re_out => mul_re_out(50),
+            data_im_out => mul_im_out(50)
         );
 
  
@@ -18518,8 +18518,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(51),
             data_im_in => first_stage_im_out(51),
-            product_re_out => mul_re_out(51),
-            product_im_out => mul_im_out(51)
+            data_re_out => mul_re_out(51),
+            data_im_out => mul_im_out(51)
         );
 
  
@@ -18534,8 +18534,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(52),
             data_im_in => first_stage_im_out(52),
-            product_re_out => mul_re_out(52),
-            product_im_out => mul_im_out(52)
+            data_re_out => mul_re_out(52),
+            data_im_out => mul_im_out(52)
         );
 
  
@@ -18550,8 +18550,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(53),
             data_im_in => first_stage_im_out(53),
-            product_re_out => mul_re_out(53),
-            product_im_out => mul_im_out(53)
+            data_re_out => mul_re_out(53),
+            data_im_out => mul_im_out(53)
         );
 
  
@@ -18566,8 +18566,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(54),
             data_im_in => first_stage_im_out(54),
-            product_re_out => mul_re_out(54),
-            product_im_out => mul_im_out(54)
+            data_re_out => mul_re_out(54),
+            data_im_out => mul_im_out(54)
         );
 
  
@@ -18582,8 +18582,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(55),
             data_im_in => first_stage_im_out(55),
-            product_re_out => mul_re_out(55),
-            product_im_out => mul_im_out(55)
+            data_re_out => mul_re_out(55),
+            data_im_out => mul_im_out(55)
         );
 
  
@@ -18598,8 +18598,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(56),
             data_im_in => first_stage_im_out(56),
-            product_re_out => mul_re_out(56),
-            product_im_out => mul_im_out(56)
+            data_re_out => mul_re_out(56),
+            data_im_out => mul_im_out(56)
         );
 
  
@@ -18614,8 +18614,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(57),
             data_im_in => first_stage_im_out(57),
-            product_re_out => mul_re_out(57),
-            product_im_out => mul_im_out(57)
+            data_re_out => mul_re_out(57),
+            data_im_out => mul_im_out(57)
         );
 
  
@@ -18630,8 +18630,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(58),
             data_im_in => first_stage_im_out(58),
-            product_re_out => mul_re_out(58),
-            product_im_out => mul_im_out(58)
+            data_re_out => mul_re_out(58),
+            data_im_out => mul_im_out(58)
         );
 
  
@@ -18646,8 +18646,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(59),
             data_im_in => first_stage_im_out(59),
-            product_re_out => mul_re_out(59),
-            product_im_out => mul_im_out(59)
+            data_re_out => mul_re_out(59),
+            data_im_out => mul_im_out(59)
         );
 
  
@@ -18662,8 +18662,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(60),
             data_im_in => first_stage_im_out(60),
-            product_re_out => mul_re_out(60),
-            product_im_out => mul_im_out(60)
+            data_re_out => mul_re_out(60),
+            data_im_out => mul_im_out(60)
         );
 
  
@@ -18678,8 +18678,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(61),
             data_im_in => first_stage_im_out(61),
-            product_re_out => mul_re_out(61),
-            product_im_out => mul_im_out(61)
+            data_re_out => mul_re_out(61),
+            data_im_out => mul_im_out(61)
         );
 
  
@@ -18694,8 +18694,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(62),
             data_im_in => first_stage_im_out(62),
-            product_re_out => mul_re_out(62),
-            product_im_out => mul_im_out(62)
+            data_re_out => mul_re_out(62),
+            data_im_out => mul_im_out(62)
         );
 
  
@@ -18710,8 +18710,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(63),
             data_im_in => first_stage_im_out(63),
-            product_re_out => mul_re_out(63),
-            product_im_out => mul_im_out(63)
+            data_re_out => mul_re_out(63),
+            data_im_out => mul_im_out(63)
         );
 
  
@@ -18726,8 +18726,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(64),
             data_im_in => first_stage_im_out(64),
-            product_re_out => mul_re_out(64),
-            product_im_out => mul_im_out(64)
+            data_re_out => mul_re_out(64),
+            data_im_out => mul_im_out(64)
         );
 
  
@@ -18744,8 +18744,8 @@ begin
             data_im_in => first_stage_im_out(65),
             re_multiplicator => "0011111111111111", --- 0.999938964844 + j-0.0030517578125
             im_multiplicator => "1111111111001110",
-            product_re_out => mul_re_out(65),
-            product_im_out => mul_im_out(65)
+            data_re_out => mul_re_out(65),
+            data_im_out => mul_im_out(65)
         );
 
  
@@ -18762,8 +18762,8 @@ begin
             data_im_in => first_stage_im_out(66),
             re_multiplicator => "0011111111111111", --- 0.999938964844 + j-0.006103515625
             im_multiplicator => "1111111110011100",
-            product_re_out => mul_re_out(66),
-            product_im_out => mul_im_out(66)
+            data_re_out => mul_re_out(66),
+            data_im_out => mul_im_out(66)
         );
 
  
@@ -18780,8 +18780,8 @@ begin
             data_im_in => first_stage_im_out(67),
             re_multiplicator => "0011111111111111", --- 0.999938964844 + j-0.0091552734375
             im_multiplicator => "1111111101101010",
-            product_re_out => mul_re_out(67),
-            product_im_out => mul_im_out(67)
+            data_re_out => mul_re_out(67),
+            data_im_out => mul_im_out(67)
         );
 
  
@@ -18798,8 +18798,8 @@ begin
             data_im_in => first_stage_im_out(68),
             re_multiplicator => "0011111111111110", --- 0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(68),
-            product_im_out => mul_im_out(68)
+            data_re_out => mul_re_out(68),
+            data_im_out => mul_im_out(68)
         );
 
  
@@ -18816,8 +18816,8 @@ begin
             data_im_in => first_stage_im_out(69),
             re_multiplicator => "0011111111111110", --- 0.999877929688 + j-0.0153198242188
             im_multiplicator => "1111111100000101",
-            product_re_out => mul_re_out(69),
-            product_im_out => mul_im_out(69)
+            data_re_out => mul_re_out(69),
+            data_im_out => mul_im_out(69)
         );
 
  
@@ -18834,8 +18834,8 @@ begin
             data_im_in => first_stage_im_out(70),
             re_multiplicator => "0011111111111101", --- 0.999816894531 + j-0.0183715820312
             im_multiplicator => "1111111011010011",
-            product_re_out => mul_re_out(70),
-            product_im_out => mul_im_out(70)
+            data_re_out => mul_re_out(70),
+            data_im_out => mul_im_out(70)
         );
 
  
@@ -18852,8 +18852,8 @@ begin
             data_im_in => first_stage_im_out(71),
             re_multiplicator => "0011111111111100", --- 0.999755859375 + j-0.0214233398438
             im_multiplicator => "1111111010100001",
-            product_re_out => mul_re_out(71),
-            product_im_out => mul_im_out(71)
+            data_re_out => mul_re_out(71),
+            data_im_out => mul_im_out(71)
         );
 
  
@@ -18870,8 +18870,8 @@ begin
             data_im_in => first_stage_im_out(72),
             re_multiplicator => "0011111111111011", --- 0.999694824219 + j-0.0245361328125
             im_multiplicator => "1111111001101110",
-            product_re_out => mul_re_out(72),
-            product_im_out => mul_im_out(72)
+            data_re_out => mul_re_out(72),
+            data_im_out => mul_im_out(72)
         );
 
  
@@ -18888,8 +18888,8 @@ begin
             data_im_in => first_stage_im_out(73),
             re_multiplicator => "0011111111111001", --- 0.999572753906 + j-0.027587890625
             im_multiplicator => "1111111000111100",
-            product_re_out => mul_re_out(73),
-            product_im_out => mul_im_out(73)
+            data_re_out => mul_re_out(73),
+            data_im_out => mul_im_out(73)
         );
 
  
@@ -18906,8 +18906,8 @@ begin
             data_im_in => first_stage_im_out(74),
             re_multiplicator => "0011111111111000", --- 0.99951171875 + j-0.0306396484375
             im_multiplicator => "1111111000001010",
-            product_re_out => mul_re_out(74),
-            product_im_out => mul_im_out(74)
+            data_re_out => mul_re_out(74),
+            data_im_out => mul_im_out(74)
         );
 
  
@@ -18924,8 +18924,8 @@ begin
             data_im_in => first_stage_im_out(75),
             re_multiplicator => "0011111111110110", --- 0.999389648438 + j-0.03369140625
             im_multiplicator => "1111110111011000",
-            product_re_out => mul_re_out(75),
-            product_im_out => mul_im_out(75)
+            data_re_out => mul_re_out(75),
+            data_im_out => mul_im_out(75)
         );
 
  
@@ -18942,8 +18942,8 @@ begin
             data_im_in => first_stage_im_out(76),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(76),
-            product_im_out => mul_im_out(76)
+            data_re_out => mul_re_out(76),
+            data_im_out => mul_im_out(76)
         );
 
  
@@ -18960,8 +18960,8 @@ begin
             data_im_in => first_stage_im_out(77),
             re_multiplicator => "0011111111110010", --- 0.999145507812 + j-0.0398559570312
             im_multiplicator => "1111110101110011",
-            product_re_out => mul_re_out(77),
-            product_im_out => mul_im_out(77)
+            data_re_out => mul_re_out(77),
+            data_im_out => mul_im_out(77)
         );
 
  
@@ -18978,8 +18978,8 @@ begin
             data_im_in => first_stage_im_out(78),
             re_multiplicator => "0011111111110000", --- 0.9990234375 + j-0.0429077148438
             im_multiplicator => "1111110101000001",
-            product_re_out => mul_re_out(78),
-            product_im_out => mul_im_out(78)
+            data_re_out => mul_re_out(78),
+            data_im_out => mul_im_out(78)
         );
 
  
@@ -18996,8 +18996,8 @@ begin
             data_im_in => first_stage_im_out(79),
             re_multiplicator => "0011111111101110", --- 0.998901367188 + j-0.0459594726562
             im_multiplicator => "1111110100001111",
-            product_re_out => mul_re_out(79),
-            product_im_out => mul_im_out(79)
+            data_re_out => mul_re_out(79),
+            data_im_out => mul_im_out(79)
         );
 
  
@@ -19014,8 +19014,8 @@ begin
             data_im_in => first_stage_im_out(80),
             re_multiplicator => "0011111111101100", --- 0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(80),
-            product_im_out => mul_im_out(80)
+            data_re_out => mul_re_out(80),
+            data_im_out => mul_im_out(80)
         );
 
  
@@ -19032,8 +19032,8 @@ begin
             data_im_in => first_stage_im_out(81),
             re_multiplicator => "0011111111101001", --- 0.998596191406 + j-0.0521240234375
             im_multiplicator => "1111110010101010",
-            product_re_out => mul_re_out(81),
-            product_im_out => mul_im_out(81)
+            data_re_out => mul_re_out(81),
+            data_im_out => mul_im_out(81)
         );
 
  
@@ -19050,8 +19050,8 @@ begin
             data_im_in => first_stage_im_out(82),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(82),
-            product_im_out => mul_im_out(82)
+            data_re_out => mul_re_out(82),
+            data_im_out => mul_im_out(82)
         );
 
  
@@ -19068,8 +19068,8 @@ begin
             data_im_in => first_stage_im_out(83),
             re_multiplicator => "0011111111100100", --- 0.998291015625 + j-0.0582275390625
             im_multiplicator => "1111110001000110",
-            product_re_out => mul_re_out(83),
-            product_im_out => mul_im_out(83)
+            data_re_out => mul_re_out(83),
+            data_im_out => mul_im_out(83)
         );
 
  
@@ -19086,8 +19086,8 @@ begin
             data_im_in => first_stage_im_out(84),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(84),
-            product_im_out => mul_im_out(84)
+            data_re_out => mul_re_out(84),
+            data_im_out => mul_im_out(84)
         );
 
  
@@ -19104,8 +19104,8 @@ begin
             data_im_in => first_stage_im_out(85),
             re_multiplicator => "0011111111011110", --- 0.997924804688 + j-0.0643310546875
             im_multiplicator => "1111101111100010",
-            product_re_out => mul_re_out(85),
-            product_im_out => mul_im_out(85)
+            data_re_out => mul_re_out(85),
+            data_im_out => mul_im_out(85)
         );
 
  
@@ -19122,8 +19122,8 @@ begin
             data_im_in => first_stage_im_out(86),
             re_multiplicator => "0011111111011010", --- 0.997680664062 + j-0.0674438476562
             im_multiplicator => "1111101110101111",
-            product_re_out => mul_re_out(86),
-            product_im_out => mul_im_out(86)
+            data_re_out => mul_re_out(86),
+            data_im_out => mul_im_out(86)
         );
 
  
@@ -19140,8 +19140,8 @@ begin
             data_im_in => first_stage_im_out(87),
             re_multiplicator => "0011111111010111", --- 0.997497558594 + j-0.0704956054688
             im_multiplicator => "1111101101111101",
-            product_re_out => mul_re_out(87),
-            product_im_out => mul_im_out(87)
+            data_re_out => mul_re_out(87),
+            data_im_out => mul_im_out(87)
         );
 
  
@@ -19158,8 +19158,8 @@ begin
             data_im_in => first_stage_im_out(88),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(88),
-            product_im_out => mul_im_out(88)
+            data_re_out => mul_re_out(88),
+            data_im_out => mul_im_out(88)
         );
 
  
@@ -19176,8 +19176,8 @@ begin
             data_im_in => first_stage_im_out(89),
             re_multiplicator => "0011111111001111", --- 0.997009277344 + j-0.0765991210938
             im_multiplicator => "1111101100011001",
-            product_re_out => mul_re_out(89),
-            product_im_out => mul_im_out(89)
+            data_re_out => mul_re_out(89),
+            data_im_out => mul_im_out(89)
         );
 
  
@@ -19194,8 +19194,8 @@ begin
             data_im_in => first_stage_im_out(90),
             re_multiplicator => "0011111111001011", --- 0.996765136719 + j-0.0796508789062
             im_multiplicator => "1111101011100111",
-            product_re_out => mul_re_out(90),
-            product_im_out => mul_im_out(90)
+            data_re_out => mul_re_out(90),
+            data_im_out => mul_im_out(90)
         );
 
  
@@ -19212,8 +19212,8 @@ begin
             data_im_in => first_stage_im_out(91),
             re_multiplicator => "0011111111000111", --- 0.996520996094 + j-0.0827026367188
             im_multiplicator => "1111101010110101",
-            product_re_out => mul_re_out(91),
-            product_im_out => mul_im_out(91)
+            data_re_out => mul_re_out(91),
+            data_im_out => mul_im_out(91)
         );
 
  
@@ -19230,8 +19230,8 @@ begin
             data_im_in => first_stage_im_out(92),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(92),
-            product_im_out => mul_im_out(92)
+            data_re_out => mul_re_out(92),
+            data_im_out => mul_im_out(92)
         );
 
  
@@ -19248,8 +19248,8 @@ begin
             data_im_in => first_stage_im_out(93),
             re_multiplicator => "0011111110111111", --- 0.996032714844 + j-0.0888061523438
             im_multiplicator => "1111101001010001",
-            product_re_out => mul_re_out(93),
-            product_im_out => mul_im_out(93)
+            data_re_out => mul_re_out(93),
+            data_im_out => mul_im_out(93)
         );
 
  
@@ -19266,8 +19266,8 @@ begin
             data_im_in => first_stage_im_out(94),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(94),
-            product_im_out => mul_im_out(94)
+            data_re_out => mul_re_out(94),
+            data_im_out => mul_im_out(94)
         );
 
  
@@ -19284,8 +19284,8 @@ begin
             data_im_in => first_stage_im_out(95),
             re_multiplicator => "0011111110110101", --- 0.995422363281 + j-0.0949096679688
             im_multiplicator => "1111100111101101",
-            product_re_out => mul_re_out(95),
-            product_im_out => mul_im_out(95)
+            data_re_out => mul_re_out(95),
+            data_im_out => mul_im_out(95)
         );
 
  
@@ -19302,8 +19302,8 @@ begin
             data_im_in => first_stage_im_out(96),
             re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(96),
-            product_im_out => mul_im_out(96)
+            data_re_out => mul_re_out(96),
+            data_im_out => mul_im_out(96)
         );
 
  
@@ -19320,8 +19320,8 @@ begin
             data_im_in => first_stage_im_out(97),
             re_multiplicator => "0011111110101100", --- 0.994873046875 + j-0.101013183594
             im_multiplicator => "1111100110001001",
-            product_re_out => mul_re_out(97),
-            product_im_out => mul_im_out(97)
+            data_re_out => mul_re_out(97),
+            data_im_out => mul_im_out(97)
         );
 
  
@@ -19338,8 +19338,8 @@ begin
             data_im_in => first_stage_im_out(98),
             re_multiplicator => "0011111110100110", --- 0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(98),
-            product_im_out => mul_im_out(98)
+            data_re_out => mul_re_out(98),
+            data_im_out => mul_im_out(98)
         );
 
  
@@ -19356,8 +19356,8 @@ begin
             data_im_in => first_stage_im_out(99),
             re_multiplicator => "0011111110100001", --- 0.994201660156 + j-0.107116699219
             im_multiplicator => "1111100100100101",
-            product_re_out => mul_re_out(99),
-            product_im_out => mul_im_out(99)
+            data_re_out => mul_re_out(99),
+            data_im_out => mul_im_out(99)
         );
 
  
@@ -19374,8 +19374,8 @@ begin
             data_im_in => first_stage_im_out(100),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(100),
-            product_im_out => mul_im_out(100)
+            data_re_out => mul_re_out(100),
+            data_im_out => mul_im_out(100)
         );
 
  
@@ -19392,8 +19392,8 @@ begin
             data_im_in => first_stage_im_out(101),
             re_multiplicator => "0011111110010110", --- 0.993530273438 + j-0.113220214844
             im_multiplicator => "1111100011000001",
-            product_re_out => mul_re_out(101),
-            product_im_out => mul_im_out(101)
+            data_re_out => mul_re_out(101),
+            data_im_out => mul_im_out(101)
         );
 
  
@@ -19410,8 +19410,8 @@ begin
             data_im_in => first_stage_im_out(102),
             re_multiplicator => "0011111110010000", --- 0.9931640625 + j-0.116271972656
             im_multiplicator => "1111100010001111",
-            product_re_out => mul_re_out(102),
-            product_im_out => mul_im_out(102)
+            data_re_out => mul_re_out(102),
+            data_im_out => mul_im_out(102)
         );
 
  
@@ -19428,8 +19428,8 @@ begin
             data_im_in => first_stage_im_out(103),
             re_multiplicator => "0011111110001010", --- 0.992797851562 + j-0.119323730469
             im_multiplicator => "1111100001011101",
-            product_re_out => mul_re_out(103),
-            product_im_out => mul_im_out(103)
+            data_re_out => mul_re_out(103),
+            data_im_out => mul_im_out(103)
         );
 
  
@@ -19446,8 +19446,8 @@ begin
             data_im_in => first_stage_im_out(104),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(104),
-            product_im_out => mul_im_out(104)
+            data_re_out => mul_re_out(104),
+            data_im_out => mul_im_out(104)
         );
 
  
@@ -19464,8 +19464,8 @@ begin
             data_im_in => first_stage_im_out(105),
             re_multiplicator => "0011111101111110", --- 0.992065429688 + j-0.125427246094
             im_multiplicator => "1111011111111001",
-            product_re_out => mul_re_out(105),
-            product_im_out => mul_im_out(105)
+            data_re_out => mul_re_out(105),
+            data_im_out => mul_im_out(105)
         );
 
  
@@ -19482,8 +19482,8 @@ begin
             data_im_in => first_stage_im_out(106),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(106),
-            product_im_out => mul_im_out(106)
+            data_re_out => mul_re_out(106),
+            data_im_out => mul_im_out(106)
         );
 
  
@@ -19500,8 +19500,8 @@ begin
             data_im_in => first_stage_im_out(107),
             re_multiplicator => "0011111101110001", --- 0.991271972656 + j-0.131530761719
             im_multiplicator => "1111011110010101",
-            product_re_out => mul_re_out(107),
-            product_im_out => mul_im_out(107)
+            data_re_out => mul_re_out(107),
+            data_im_out => mul_im_out(107)
         );
 
  
@@ -19518,8 +19518,8 @@ begin
             data_im_in => first_stage_im_out(108),
             re_multiplicator => "0011111101101010", --- 0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(108),
-            product_im_out => mul_im_out(108)
+            data_re_out => mul_re_out(108),
+            data_im_out => mul_im_out(108)
         );
 
  
@@ -19536,8 +19536,8 @@ begin
             data_im_in => first_stage_im_out(109),
             re_multiplicator => "0011111101100100", --- 0.990478515625 + j-0.137573242188
             im_multiplicator => "1111011100110010",
-            product_re_out => mul_re_out(109),
-            product_im_out => mul_im_out(109)
+            data_re_out => mul_re_out(109),
+            data_im_out => mul_im_out(109)
         );
 
  
@@ -19554,8 +19554,8 @@ begin
             data_im_in => first_stage_im_out(110),
             re_multiplicator => "0011111101011101", --- 0.990051269531 + j-0.140625
             im_multiplicator => "1111011100000000",
-            product_re_out => mul_re_out(110),
-            product_im_out => mul_im_out(110)
+            data_re_out => mul_re_out(110),
+            data_im_out => mul_im_out(110)
         );
 
  
@@ -19572,8 +19572,8 @@ begin
             data_im_in => first_stage_im_out(111),
             re_multiplicator => "0011111101010101", --- 0.989562988281 + j-0.143676757812
             im_multiplicator => "1111011011001110",
-            product_re_out => mul_re_out(111),
-            product_im_out => mul_im_out(111)
+            data_re_out => mul_re_out(111),
+            data_im_out => mul_im_out(111)
         );
 
  
@@ -19590,8 +19590,8 @@ begin
             data_im_in => first_stage_im_out(112),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(112),
-            product_im_out => mul_im_out(112)
+            data_re_out => mul_re_out(112),
+            data_im_out => mul_im_out(112)
         );
 
  
@@ -19608,8 +19608,8 @@ begin
             data_im_in => first_stage_im_out(113),
             re_multiplicator => "0011111101000111", --- 0.988708496094 + j-0.149719238281
             im_multiplicator => "1111011001101011",
-            product_re_out => mul_re_out(113),
-            product_im_out => mul_im_out(113)
+            data_re_out => mul_re_out(113),
+            data_im_out => mul_im_out(113)
         );
 
  
@@ -19626,8 +19626,8 @@ begin
             data_im_in => first_stage_im_out(114),
             re_multiplicator => "0011111100111111", --- 0.988220214844 + j-0.152770996094
             im_multiplicator => "1111011000111001",
-            product_re_out => mul_re_out(114),
-            product_im_out => mul_im_out(114)
+            data_re_out => mul_re_out(114),
+            data_im_out => mul_im_out(114)
         );
 
  
@@ -19644,8 +19644,8 @@ begin
             data_im_in => first_stage_im_out(115),
             re_multiplicator => "0011111100110111", --- 0.987731933594 + j-0.155822753906
             im_multiplicator => "1111011000000111",
-            product_re_out => mul_re_out(115),
-            product_im_out => mul_im_out(115)
+            data_re_out => mul_re_out(115),
+            data_im_out => mul_im_out(115)
         );
 
  
@@ -19662,8 +19662,8 @@ begin
             data_im_in => first_stage_im_out(116),
             re_multiplicator => "0011111100101111", --- 0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(116),
-            product_im_out => mul_im_out(116)
+            data_re_out => mul_re_out(116),
+            data_im_out => mul_im_out(116)
         );
 
  
@@ -19680,8 +19680,8 @@ begin
             data_im_in => first_stage_im_out(117),
             re_multiplicator => "0011111100100111", --- 0.986755371094 + j-0.161865234375
             im_multiplicator => "1111010110100100",
-            product_re_out => mul_re_out(117),
-            product_im_out => mul_im_out(117)
+            data_re_out => mul_re_out(117),
+            data_im_out => mul_im_out(117)
         );
 
  
@@ -19698,8 +19698,8 @@ begin
             data_im_in => first_stage_im_out(118),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(118),
-            product_im_out => mul_im_out(118)
+            data_re_out => mul_re_out(118),
+            data_im_out => mul_im_out(118)
         );
 
  
@@ -19716,8 +19716,8 @@ begin
             data_im_in => first_stage_im_out(119),
             re_multiplicator => "0011111100010111", --- 0.985778808594 + j-0.167907714844
             im_multiplicator => "1111010101000001",
-            product_re_out => mul_re_out(119),
-            product_im_out => mul_im_out(119)
+            data_re_out => mul_re_out(119),
+            data_im_out => mul_im_out(119)
         );
 
  
@@ -19734,8 +19734,8 @@ begin
             data_im_in => first_stage_im_out(120),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(120),
-            product_im_out => mul_im_out(120)
+            data_re_out => mul_re_out(120),
+            data_im_out => mul_im_out(120)
         );
 
  
@@ -19752,8 +19752,8 @@ begin
             data_im_in => first_stage_im_out(121),
             re_multiplicator => "0011111100000110", --- 0.984741210938 + j-0.173950195312
             im_multiplicator => "1111010011011110",
-            product_re_out => mul_re_out(121),
-            product_im_out => mul_im_out(121)
+            data_re_out => mul_re_out(121),
+            data_im_out => mul_im_out(121)
         );
 
  
@@ -19770,8 +19770,8 @@ begin
             data_im_in => first_stage_im_out(122),
             re_multiplicator => "0011111011111101", --- 0.984191894531 + j-0.177001953125
             im_multiplicator => "1111010010101100",
-            product_re_out => mul_re_out(122),
-            product_im_out => mul_im_out(122)
+            data_re_out => mul_re_out(122),
+            data_im_out => mul_im_out(122)
         );
 
  
@@ -19788,8 +19788,8 @@ begin
             data_im_in => first_stage_im_out(123),
             re_multiplicator => "0011111011110100", --- 0.983642578125 + j-0.179992675781
             im_multiplicator => "1111010001111011",
-            product_re_out => mul_re_out(123),
-            product_im_out => mul_im_out(123)
+            data_re_out => mul_re_out(123),
+            data_im_out => mul_im_out(123)
         );
 
  
@@ -19806,8 +19806,8 @@ begin
             data_im_in => first_stage_im_out(124),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(124),
-            product_im_out => mul_im_out(124)
+            data_re_out => mul_re_out(124),
+            data_im_out => mul_im_out(124)
         );
 
  
@@ -19824,8 +19824,8 @@ begin
             data_im_in => first_stage_im_out(125),
             re_multiplicator => "0011111011100001", --- 0.982482910156 + j-0.18603515625
             im_multiplicator => "1111010000011000",
-            product_re_out => mul_re_out(125),
-            product_im_out => mul_im_out(125)
+            data_re_out => mul_re_out(125),
+            data_im_out => mul_im_out(125)
         );
 
  
@@ -19842,8 +19842,8 @@ begin
             data_im_in => first_stage_im_out(126),
             re_multiplicator => "0011111011011000", --- 0.98193359375 + j-0.189025878906
             im_multiplicator => "1111001111100111",
-            product_re_out => mul_re_out(126),
-            product_im_out => mul_im_out(126)
+            data_re_out => mul_re_out(126),
+            data_im_out => mul_im_out(126)
         );
 
  
@@ -19860,8 +19860,8 @@ begin
             data_im_in => first_stage_im_out(127),
             re_multiplicator => "0011111011001110", --- 0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(127),
-            product_im_out => mul_im_out(127)
+            data_re_out => mul_re_out(127),
+            data_im_out => mul_im_out(127)
         );
 
  
@@ -19876,8 +19876,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(128),
             data_im_in => first_stage_im_out(128),
-            product_re_out => mul_re_out(128),
-            product_im_out => mul_im_out(128)
+            data_re_out => mul_re_out(128),
+            data_im_out => mul_im_out(128)
         );
 
  
@@ -19894,8 +19894,8 @@ begin
             data_im_in => first_stage_im_out(129),
             re_multiplicator => "0011111111111111", --- 0.999938964844 + j-0.006103515625
             im_multiplicator => "1111111110011100",
-            product_re_out => mul_re_out(129),
-            product_im_out => mul_im_out(129)
+            data_re_out => mul_re_out(129),
+            data_im_out => mul_im_out(129)
         );
 
  
@@ -19912,8 +19912,8 @@ begin
             data_im_in => first_stage_im_out(130),
             re_multiplicator => "0011111111111110", --- 0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(130),
-            product_im_out => mul_im_out(130)
+            data_re_out => mul_re_out(130),
+            data_im_out => mul_im_out(130)
         );
 
  
@@ -19930,8 +19930,8 @@ begin
             data_im_in => first_stage_im_out(131),
             re_multiplicator => "0011111111111101", --- 0.999816894531 + j-0.0183715820312
             im_multiplicator => "1111111011010011",
-            product_re_out => mul_re_out(131),
-            product_im_out => mul_im_out(131)
+            data_re_out => mul_re_out(131),
+            data_im_out => mul_im_out(131)
         );
 
  
@@ -19948,8 +19948,8 @@ begin
             data_im_in => first_stage_im_out(132),
             re_multiplicator => "0011111111111011", --- 0.999694824219 + j-0.0245361328125
             im_multiplicator => "1111111001101110",
-            product_re_out => mul_re_out(132),
-            product_im_out => mul_im_out(132)
+            data_re_out => mul_re_out(132),
+            data_im_out => mul_im_out(132)
         );
 
  
@@ -19966,8 +19966,8 @@ begin
             data_im_in => first_stage_im_out(133),
             re_multiplicator => "0011111111111000", --- 0.99951171875 + j-0.0306396484375
             im_multiplicator => "1111111000001010",
-            product_re_out => mul_re_out(133),
-            product_im_out => mul_im_out(133)
+            data_re_out => mul_re_out(133),
+            data_im_out => mul_im_out(133)
         );
 
  
@@ -19984,8 +19984,8 @@ begin
             data_im_in => first_stage_im_out(134),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(134),
-            product_im_out => mul_im_out(134)
+            data_re_out => mul_re_out(134),
+            data_im_out => mul_im_out(134)
         );
 
  
@@ -20002,8 +20002,8 @@ begin
             data_im_in => first_stage_im_out(135),
             re_multiplicator => "0011111111110000", --- 0.9990234375 + j-0.0429077148438
             im_multiplicator => "1111110101000001",
-            product_re_out => mul_re_out(135),
-            product_im_out => mul_im_out(135)
+            data_re_out => mul_re_out(135),
+            data_im_out => mul_im_out(135)
         );
 
  
@@ -20020,8 +20020,8 @@ begin
             data_im_in => first_stage_im_out(136),
             re_multiplicator => "0011111111101100", --- 0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(136),
-            product_im_out => mul_im_out(136)
+            data_re_out => mul_re_out(136),
+            data_im_out => mul_im_out(136)
         );
 
  
@@ -20038,8 +20038,8 @@ begin
             data_im_in => first_stage_im_out(137),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(137),
-            product_im_out => mul_im_out(137)
+            data_re_out => mul_re_out(137),
+            data_im_out => mul_im_out(137)
         );
 
  
@@ -20056,8 +20056,8 @@ begin
             data_im_in => first_stage_im_out(138),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(138),
-            product_im_out => mul_im_out(138)
+            data_re_out => mul_re_out(138),
+            data_im_out => mul_im_out(138)
         );
 
  
@@ -20074,8 +20074,8 @@ begin
             data_im_in => first_stage_im_out(139),
             re_multiplicator => "0011111111011010", --- 0.997680664062 + j-0.0674438476562
             im_multiplicator => "1111101110101111",
-            product_re_out => mul_re_out(139),
-            product_im_out => mul_im_out(139)
+            data_re_out => mul_re_out(139),
+            data_im_out => mul_im_out(139)
         );
 
  
@@ -20092,8 +20092,8 @@ begin
             data_im_in => first_stage_im_out(140),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(140),
-            product_im_out => mul_im_out(140)
+            data_re_out => mul_re_out(140),
+            data_im_out => mul_im_out(140)
         );
 
  
@@ -20110,8 +20110,8 @@ begin
             data_im_in => first_stage_im_out(141),
             re_multiplicator => "0011111111001011", --- 0.996765136719 + j-0.0796508789062
             im_multiplicator => "1111101011100111",
-            product_re_out => mul_re_out(141),
-            product_im_out => mul_im_out(141)
+            data_re_out => mul_re_out(141),
+            data_im_out => mul_im_out(141)
         );
 
  
@@ -20128,8 +20128,8 @@ begin
             data_im_in => first_stage_im_out(142),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(142),
-            product_im_out => mul_im_out(142)
+            data_re_out => mul_re_out(142),
+            data_im_out => mul_im_out(142)
         );
 
  
@@ -20146,8 +20146,8 @@ begin
             data_im_in => first_stage_im_out(143),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(143),
-            product_im_out => mul_im_out(143)
+            data_re_out => mul_re_out(143),
+            data_im_out => mul_im_out(143)
         );
 
  
@@ -20164,8 +20164,8 @@ begin
             data_im_in => first_stage_im_out(144),
             re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(144),
-            product_im_out => mul_im_out(144)
+            data_re_out => mul_re_out(144),
+            data_im_out => mul_im_out(144)
         );
 
  
@@ -20182,8 +20182,8 @@ begin
             data_im_in => first_stage_im_out(145),
             re_multiplicator => "0011111110100110", --- 0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(145),
-            product_im_out => mul_im_out(145)
+            data_re_out => mul_re_out(145),
+            data_im_out => mul_im_out(145)
         );
 
  
@@ -20200,8 +20200,8 @@ begin
             data_im_in => first_stage_im_out(146),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(146),
-            product_im_out => mul_im_out(146)
+            data_re_out => mul_re_out(146),
+            data_im_out => mul_im_out(146)
         );
 
  
@@ -20218,8 +20218,8 @@ begin
             data_im_in => first_stage_im_out(147),
             re_multiplicator => "0011111110010000", --- 0.9931640625 + j-0.116271972656
             im_multiplicator => "1111100010001111",
-            product_re_out => mul_re_out(147),
-            product_im_out => mul_im_out(147)
+            data_re_out => mul_re_out(147),
+            data_im_out => mul_im_out(147)
         );
 
  
@@ -20236,8 +20236,8 @@ begin
             data_im_in => first_stage_im_out(148),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(148),
-            product_im_out => mul_im_out(148)
+            data_re_out => mul_re_out(148),
+            data_im_out => mul_im_out(148)
         );
 
  
@@ -20254,8 +20254,8 @@ begin
             data_im_in => first_stage_im_out(149),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(149),
-            product_im_out => mul_im_out(149)
+            data_re_out => mul_re_out(149),
+            data_im_out => mul_im_out(149)
         );
 
  
@@ -20272,8 +20272,8 @@ begin
             data_im_in => first_stage_im_out(150),
             re_multiplicator => "0011111101101010", --- 0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(150),
-            product_im_out => mul_im_out(150)
+            data_re_out => mul_re_out(150),
+            data_im_out => mul_im_out(150)
         );
 
  
@@ -20290,8 +20290,8 @@ begin
             data_im_in => first_stage_im_out(151),
             re_multiplicator => "0011111101011101", --- 0.990051269531 + j-0.140625
             im_multiplicator => "1111011100000000",
-            product_re_out => mul_re_out(151),
-            product_im_out => mul_im_out(151)
+            data_re_out => mul_re_out(151),
+            data_im_out => mul_im_out(151)
         );
 
  
@@ -20308,8 +20308,8 @@ begin
             data_im_in => first_stage_im_out(152),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(152),
-            product_im_out => mul_im_out(152)
+            data_re_out => mul_re_out(152),
+            data_im_out => mul_im_out(152)
         );
 
  
@@ -20326,8 +20326,8 @@ begin
             data_im_in => first_stage_im_out(153),
             re_multiplicator => "0011111100111111", --- 0.988220214844 + j-0.152770996094
             im_multiplicator => "1111011000111001",
-            product_re_out => mul_re_out(153),
-            product_im_out => mul_im_out(153)
+            data_re_out => mul_re_out(153),
+            data_im_out => mul_im_out(153)
         );
 
  
@@ -20344,8 +20344,8 @@ begin
             data_im_in => first_stage_im_out(154),
             re_multiplicator => "0011111100101111", --- 0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(154),
-            product_im_out => mul_im_out(154)
+            data_re_out => mul_re_out(154),
+            data_im_out => mul_im_out(154)
         );
 
  
@@ -20362,8 +20362,8 @@ begin
             data_im_in => first_stage_im_out(155),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(155),
-            product_im_out => mul_im_out(155)
+            data_re_out => mul_re_out(155),
+            data_im_out => mul_im_out(155)
         );
 
  
@@ -20380,8 +20380,8 @@ begin
             data_im_in => first_stage_im_out(156),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(156),
-            product_im_out => mul_im_out(156)
+            data_re_out => mul_re_out(156),
+            data_im_out => mul_im_out(156)
         );
 
  
@@ -20398,8 +20398,8 @@ begin
             data_im_in => first_stage_im_out(157),
             re_multiplicator => "0011111011111101", --- 0.984191894531 + j-0.177001953125
             im_multiplicator => "1111010010101100",
-            product_re_out => mul_re_out(157),
-            product_im_out => mul_im_out(157)
+            data_re_out => mul_re_out(157),
+            data_im_out => mul_im_out(157)
         );
 
  
@@ -20416,8 +20416,8 @@ begin
             data_im_in => first_stage_im_out(158),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(158),
-            product_im_out => mul_im_out(158)
+            data_re_out => mul_re_out(158),
+            data_im_out => mul_im_out(158)
         );
 
  
@@ -20434,8 +20434,8 @@ begin
             data_im_in => first_stage_im_out(159),
             re_multiplicator => "0011111011011000", --- 0.98193359375 + j-0.189025878906
             im_multiplicator => "1111001111100111",
-            product_re_out => mul_re_out(159),
-            product_im_out => mul_im_out(159)
+            data_re_out => mul_re_out(159),
+            data_im_out => mul_im_out(159)
         );
 
  
@@ -20452,8 +20452,8 @@ begin
             data_im_in => first_stage_im_out(160),
             re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(160),
-            product_im_out => mul_im_out(160)
+            data_re_out => mul_re_out(160),
+            data_im_out => mul_im_out(160)
         );
 
  
@@ -20470,8 +20470,8 @@ begin
             data_im_in => first_stage_im_out(161),
             re_multiplicator => "0011111010110001", --- 0.979553222656 + j-0.201049804688
             im_multiplicator => "1111001100100010",
-            product_re_out => mul_re_out(161),
-            product_im_out => mul_im_out(161)
+            data_re_out => mul_re_out(161),
+            data_im_out => mul_im_out(161)
         );
 
  
@@ -20488,8 +20488,8 @@ begin
             data_im_in => first_stage_im_out(162),
             re_multiplicator => "0011111010011100", --- 0.978271484375 + j-0.207092285156
             im_multiplicator => "1111001010111111",
-            product_re_out => mul_re_out(162),
-            product_im_out => mul_im_out(162)
+            data_re_out => mul_re_out(162),
+            data_im_out => mul_im_out(162)
         );
 
  
@@ -20506,8 +20506,8 @@ begin
             data_im_in => first_stage_im_out(163),
             re_multiplicator => "0011111010000111", --- 0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(163),
-            product_im_out => mul_im_out(163)
+            data_re_out => mul_re_out(163),
+            data_im_out => mul_im_out(163)
         );
 
  
@@ -20524,8 +20524,8 @@ begin
             data_im_in => first_stage_im_out(164),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(164),
-            product_im_out => mul_im_out(164)
+            data_re_out => mul_re_out(164),
+            data_im_out => mul_im_out(164)
         );
 
  
@@ -20542,8 +20542,8 @@ begin
             data_im_in => first_stage_im_out(165),
             re_multiplicator => "0011111001011011", --- 0.974304199219 + j-0.225036621094
             im_multiplicator => "1111000110011001",
-            product_re_out => mul_re_out(165),
-            product_im_out => mul_im_out(165)
+            data_re_out => mul_re_out(165),
+            data_im_out => mul_im_out(165)
         );
 
  
@@ -20560,8 +20560,8 @@ begin
             data_im_in => first_stage_im_out(166),
             re_multiplicator => "0011111001000100", --- 0.972900390625 + j-0.231018066406
             im_multiplicator => "1111000100110111",
-            product_re_out => mul_re_out(166),
-            product_im_out => mul_im_out(166)
+            data_re_out => mul_re_out(166),
+            data_im_out => mul_im_out(166)
         );
 
  
@@ -20578,8 +20578,8 @@ begin
             data_im_in => first_stage_im_out(167),
             re_multiplicator => "0011111000101101", --- 0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(167),
-            product_im_out => mul_im_out(167)
+            data_re_out => mul_re_out(167),
+            data_im_out => mul_im_out(167)
         );
 
  
@@ -20596,8 +20596,8 @@ begin
             data_im_in => first_stage_im_out(168),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(168),
-            product_im_out => mul_im_out(168)
+            data_re_out => mul_re_out(168),
+            data_im_out => mul_im_out(168)
         );
 
  
@@ -20614,8 +20614,8 @@ begin
             data_im_in => first_stage_im_out(169),
             re_multiplicator => "0011110111111100", --- 0.968505859375 + j-0.248901367188
             im_multiplicator => "1111000000010010",
-            product_re_out => mul_re_out(169),
-            product_im_out => mul_im_out(169)
+            data_re_out => mul_re_out(169),
+            data_im_out => mul_im_out(169)
         );
 
  
@@ -20632,8 +20632,8 @@ begin
             data_im_in => first_stage_im_out(170),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(170),
-            product_im_out => mul_im_out(170)
+            data_re_out => mul_re_out(170),
+            data_im_out => mul_im_out(170)
         );
 
  
@@ -20650,8 +20650,8 @@ begin
             data_im_in => first_stage_im_out(171),
             re_multiplicator => "0011110111001001", --- 0.965393066406 + j-0.2607421875
             im_multiplicator => "1110111101010000",
-            product_re_out => mul_re_out(171),
-            product_im_out => mul_im_out(171)
+            data_re_out => mul_re_out(171),
+            data_im_out => mul_im_out(171)
         );
 
  
@@ -20668,8 +20668,8 @@ begin
             data_im_in => first_stage_im_out(172),
             re_multiplicator => "0011110110101110", --- 0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(172),
-            product_im_out => mul_im_out(172)
+            data_re_out => mul_re_out(172),
+            data_im_out => mul_im_out(172)
         );
 
  
@@ -20686,8 +20686,8 @@ begin
             data_im_in => first_stage_im_out(173),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(173),
-            product_im_out => mul_im_out(173)
+            data_re_out => mul_re_out(173),
+            data_im_out => mul_im_out(173)
         );
 
  
@@ -20704,8 +20704,8 @@ begin
             data_im_in => first_stage_im_out(174),
             re_multiplicator => "0011110101110111", --- 0.960388183594 + j-0.278503417969
             im_multiplicator => "1110111000101101",
-            product_re_out => mul_re_out(174),
-            product_im_out => mul_im_out(174)
+            data_re_out => mul_re_out(174),
+            data_im_out => mul_im_out(174)
         );
 
  
@@ -20722,8 +20722,8 @@ begin
             data_im_in => first_stage_im_out(175),
             re_multiplicator => "0011110101011011", --- 0.958679199219 + j-0.284362792969
             im_multiplicator => "1110110111001101",
-            product_re_out => mul_re_out(175),
-            product_im_out => mul_im_out(175)
+            data_re_out => mul_re_out(175),
+            data_im_out => mul_im_out(175)
         );
 
  
@@ -20740,8 +20740,8 @@ begin
             data_im_in => first_stage_im_out(176),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(176),
-            product_im_out => mul_im_out(176)
+            data_re_out => mul_re_out(176),
+            data_im_out => mul_im_out(176)
         );
 
  
@@ -20758,8 +20758,8 @@ begin
             data_im_in => first_stage_im_out(177),
             re_multiplicator => "0011110100100001", --- 0.955139160156 + j-0.296142578125
             im_multiplicator => "1110110100001100",
-            product_re_out => mul_re_out(177),
-            product_im_out => mul_im_out(177)
+            data_re_out => mul_re_out(177),
+            data_im_out => mul_im_out(177)
         );
 
  
@@ -20776,8 +20776,8 @@ begin
             data_im_in => first_stage_im_out(178),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(178),
-            product_im_out => mul_im_out(178)
+            data_re_out => mul_re_out(178),
+            data_im_out => mul_im_out(178)
         );
 
  
@@ -20794,8 +20794,8 @@ begin
             data_im_in => first_stage_im_out(179),
             re_multiplicator => "0011110011100100", --- 0.951416015625 + j-0.307800292969
             im_multiplicator => "1110110001001101",
-            product_re_out => mul_re_out(179),
-            product_im_out => mul_im_out(179)
+            data_re_out => mul_re_out(179),
+            data_im_out => mul_im_out(179)
         );
 
  
@@ -20812,8 +20812,8 @@ begin
             data_im_in => first_stage_im_out(180),
             re_multiplicator => "0011110011000101", --- 0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(180),
-            product_im_out => mul_im_out(180)
+            data_re_out => mul_re_out(180),
+            data_im_out => mul_im_out(180)
         );
 
  
@@ -20830,8 +20830,8 @@ begin
             data_im_in => first_stage_im_out(181),
             re_multiplicator => "0011110010100101", --- 0.947570800781 + j-0.319458007812
             im_multiplicator => "1110101110001110",
-            product_re_out => mul_re_out(181),
-            product_im_out => mul_im_out(181)
+            data_re_out => mul_re_out(181),
+            data_im_out => mul_im_out(181)
         );
 
  
@@ -20848,8 +20848,8 @@ begin
             data_im_in => first_stage_im_out(182),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(182),
-            product_im_out => mul_im_out(182)
+            data_re_out => mul_re_out(182),
+            data_im_out => mul_im_out(182)
         );
 
  
@@ -20866,8 +20866,8 @@ begin
             data_im_in => first_stage_im_out(183),
             re_multiplicator => "0011110001100011", --- 0.943542480469 + j-0.3310546875
             im_multiplicator => "1110101011010000",
-            product_re_out => mul_re_out(183),
-            product_im_out => mul_im_out(183)
+            data_re_out => mul_re_out(183),
+            data_im_out => mul_im_out(183)
         );
 
  
@@ -20884,8 +20884,8 @@ begin
             data_im_in => first_stage_im_out(184),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(184),
-            product_im_out => mul_im_out(184)
+            data_re_out => mul_re_out(184),
+            data_im_out => mul_im_out(184)
         );
 
  
@@ -20902,8 +20902,8 @@ begin
             data_im_in => first_stage_im_out(185),
             re_multiplicator => "0011110000100000", --- 0.939453125 + j-0.342651367188
             im_multiplicator => "1110101000010010",
-            product_re_out => mul_re_out(185),
-            product_im_out => mul_im_out(185)
+            data_re_out => mul_re_out(185),
+            data_im_out => mul_im_out(185)
         );
 
  
@@ -20920,8 +20920,8 @@ begin
             data_im_in => first_stage_im_out(186),
             re_multiplicator => "0011101111111101", --- 0.937316894531 + j-0.348388671875
             im_multiplicator => "1110100110110100",
-            product_re_out => mul_re_out(186),
-            product_im_out => mul_im_out(186)
+            data_re_out => mul_re_out(186),
+            data_im_out => mul_im_out(186)
         );
 
  
@@ -20938,8 +20938,8 @@ begin
             data_im_in => first_stage_im_out(187),
             re_multiplicator => "0011101111011010", --- 0.935180664062 + j-0.354125976562
             im_multiplicator => "1110100101010110",
-            product_re_out => mul_re_out(187),
-            product_im_out => mul_im_out(187)
+            data_re_out => mul_re_out(187),
+            data_im_out => mul_im_out(187)
         );
 
  
@@ -20956,8 +20956,8 @@ begin
             data_im_in => first_stage_im_out(188),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(188),
-            product_im_out => mul_im_out(188)
+            data_re_out => mul_re_out(188),
+            data_im_out => mul_im_out(188)
         );
 
  
@@ -20974,8 +20974,8 @@ begin
             data_im_in => first_stage_im_out(189),
             re_multiplicator => "0011101110010001", --- 0.930725097656 + j-0.365600585938
             im_multiplicator => "1110100010011010",
-            product_re_out => mul_re_out(189),
-            product_im_out => mul_im_out(189)
+            data_re_out => mul_re_out(189),
+            data_im_out => mul_im_out(189)
         );
 
  
@@ -20992,8 +20992,8 @@ begin
             data_im_in => first_stage_im_out(190),
             re_multiplicator => "0011101101101100", --- 0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(190),
-            product_im_out => mul_im_out(190)
+            data_re_out => mul_re_out(190),
+            data_im_out => mul_im_out(190)
         );
 
  
@@ -21010,8 +21010,8 @@ begin
             data_im_in => first_stage_im_out(191),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(191),
-            product_im_out => mul_im_out(191)
+            data_re_out => mul_re_out(191),
+            data_im_out => mul_im_out(191)
         );
 
  
@@ -21026,8 +21026,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(192),
             data_im_in => first_stage_im_out(192),
-            product_re_out => mul_re_out(192),
-            product_im_out => mul_im_out(192)
+            data_re_out => mul_re_out(192),
+            data_im_out => mul_im_out(192)
         );
 
  
@@ -21044,8 +21044,8 @@ begin
             data_im_in => first_stage_im_out(193),
             re_multiplicator => "0011111111111111", --- 0.999938964844 + j-0.0091552734375
             im_multiplicator => "1111111101101010",
-            product_re_out => mul_re_out(193),
-            product_im_out => mul_im_out(193)
+            data_re_out => mul_re_out(193),
+            data_im_out => mul_im_out(193)
         );
 
  
@@ -21062,8 +21062,8 @@ begin
             data_im_in => first_stage_im_out(194),
             re_multiplicator => "0011111111111101", --- 0.999816894531 + j-0.0183715820312
             im_multiplicator => "1111111011010011",
-            product_re_out => mul_re_out(194),
-            product_im_out => mul_im_out(194)
+            data_re_out => mul_re_out(194),
+            data_im_out => mul_im_out(194)
         );
 
  
@@ -21080,8 +21080,8 @@ begin
             data_im_in => first_stage_im_out(195),
             re_multiplicator => "0011111111111001", --- 0.999572753906 + j-0.027587890625
             im_multiplicator => "1111111000111100",
-            product_re_out => mul_re_out(195),
-            product_im_out => mul_im_out(195)
+            data_re_out => mul_re_out(195),
+            data_im_out => mul_im_out(195)
         );
 
  
@@ -21098,8 +21098,8 @@ begin
             data_im_in => first_stage_im_out(196),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(196),
-            product_im_out => mul_im_out(196)
+            data_re_out => mul_re_out(196),
+            data_im_out => mul_im_out(196)
         );
 
  
@@ -21116,8 +21116,8 @@ begin
             data_im_in => first_stage_im_out(197),
             re_multiplicator => "0011111111101110", --- 0.998901367188 + j-0.0459594726562
             im_multiplicator => "1111110100001111",
-            product_re_out => mul_re_out(197),
-            product_im_out => mul_im_out(197)
+            data_re_out => mul_re_out(197),
+            data_im_out => mul_im_out(197)
         );
 
  
@@ -21134,8 +21134,8 @@ begin
             data_im_in => first_stage_im_out(198),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(198),
-            product_im_out => mul_im_out(198)
+            data_re_out => mul_re_out(198),
+            data_im_out => mul_im_out(198)
         );
 
  
@@ -21152,8 +21152,8 @@ begin
             data_im_in => first_stage_im_out(199),
             re_multiplicator => "0011111111011110", --- 0.997924804688 + j-0.0643310546875
             im_multiplicator => "1111101111100010",
-            product_re_out => mul_re_out(199),
-            product_im_out => mul_im_out(199)
+            data_re_out => mul_re_out(199),
+            data_im_out => mul_im_out(199)
         );
 
  
@@ -21170,8 +21170,8 @@ begin
             data_im_in => first_stage_im_out(200),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(200),
-            product_im_out => mul_im_out(200)
+            data_re_out => mul_re_out(200),
+            data_im_out => mul_im_out(200)
         );
 
  
@@ -21188,8 +21188,8 @@ begin
             data_im_in => first_stage_im_out(201),
             re_multiplicator => "0011111111000111", --- 0.996520996094 + j-0.0827026367188
             im_multiplicator => "1111101010110101",
-            product_re_out => mul_re_out(201),
-            product_im_out => mul_im_out(201)
+            data_re_out => mul_re_out(201),
+            data_im_out => mul_im_out(201)
         );
 
  
@@ -21206,8 +21206,8 @@ begin
             data_im_in => first_stage_im_out(202),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(202),
-            product_im_out => mul_im_out(202)
+            data_re_out => mul_re_out(202),
+            data_im_out => mul_im_out(202)
         );
 
  
@@ -21224,8 +21224,8 @@ begin
             data_im_in => first_stage_im_out(203),
             re_multiplicator => "0011111110101100", --- 0.994873046875 + j-0.101013183594
             im_multiplicator => "1111100110001001",
-            product_re_out => mul_re_out(203),
-            product_im_out => mul_im_out(203)
+            data_re_out => mul_re_out(203),
+            data_im_out => mul_im_out(203)
         );
 
  
@@ -21242,8 +21242,8 @@ begin
             data_im_in => first_stage_im_out(204),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(204),
-            product_im_out => mul_im_out(204)
+            data_re_out => mul_re_out(204),
+            data_im_out => mul_im_out(204)
         );
 
  
@@ -21260,8 +21260,8 @@ begin
             data_im_in => first_stage_im_out(205),
             re_multiplicator => "0011111110001010", --- 0.992797851562 + j-0.119323730469
             im_multiplicator => "1111100001011101",
-            product_re_out => mul_re_out(205),
-            product_im_out => mul_im_out(205)
+            data_re_out => mul_re_out(205),
+            data_im_out => mul_im_out(205)
         );
 
  
@@ -21278,8 +21278,8 @@ begin
             data_im_in => first_stage_im_out(206),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(206),
-            product_im_out => mul_im_out(206)
+            data_re_out => mul_re_out(206),
+            data_im_out => mul_im_out(206)
         );
 
  
@@ -21296,8 +21296,8 @@ begin
             data_im_in => first_stage_im_out(207),
             re_multiplicator => "0011111101100100", --- 0.990478515625 + j-0.137573242188
             im_multiplicator => "1111011100110010",
-            product_re_out => mul_re_out(207),
-            product_im_out => mul_im_out(207)
+            data_re_out => mul_re_out(207),
+            data_im_out => mul_im_out(207)
         );
 
  
@@ -21314,8 +21314,8 @@ begin
             data_im_in => first_stage_im_out(208),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(208),
-            product_im_out => mul_im_out(208)
+            data_re_out => mul_re_out(208),
+            data_im_out => mul_im_out(208)
         );
 
  
@@ -21332,8 +21332,8 @@ begin
             data_im_in => first_stage_im_out(209),
             re_multiplicator => "0011111100110111", --- 0.987731933594 + j-0.155822753906
             im_multiplicator => "1111011000000111",
-            product_re_out => mul_re_out(209),
-            product_im_out => mul_im_out(209)
+            data_re_out => mul_re_out(209),
+            data_im_out => mul_im_out(209)
         );
 
  
@@ -21350,8 +21350,8 @@ begin
             data_im_in => first_stage_im_out(210),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(210),
-            product_im_out => mul_im_out(210)
+            data_re_out => mul_re_out(210),
+            data_im_out => mul_im_out(210)
         );
 
  
@@ -21368,8 +21368,8 @@ begin
             data_im_in => first_stage_im_out(211),
             re_multiplicator => "0011111100000110", --- 0.984741210938 + j-0.173950195312
             im_multiplicator => "1111010011011110",
-            product_re_out => mul_re_out(211),
-            product_im_out => mul_im_out(211)
+            data_re_out => mul_re_out(211),
+            data_im_out => mul_im_out(211)
         );
 
  
@@ -21386,8 +21386,8 @@ begin
             data_im_in => first_stage_im_out(212),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(212),
-            product_im_out => mul_im_out(212)
+            data_re_out => mul_re_out(212),
+            data_im_out => mul_im_out(212)
         );
 
  
@@ -21404,8 +21404,8 @@ begin
             data_im_in => first_stage_im_out(213),
             re_multiplicator => "0011111011001110", --- 0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(213),
-            product_im_out => mul_im_out(213)
+            data_re_out => mul_re_out(213),
+            data_im_out => mul_im_out(213)
         );
 
  
@@ -21422,8 +21422,8 @@ begin
             data_im_in => first_stage_im_out(214),
             re_multiplicator => "0011111010110001", --- 0.979553222656 + j-0.201049804688
             im_multiplicator => "1111001100100010",
-            product_re_out => mul_re_out(214),
-            product_im_out => mul_im_out(214)
+            data_re_out => mul_re_out(214),
+            data_im_out => mul_im_out(214)
         );
 
  
@@ -21440,8 +21440,8 @@ begin
             data_im_in => first_stage_im_out(215),
             re_multiplicator => "0011111010010010", --- 0.977661132812 + j-0.210083007812
             im_multiplicator => "1111001010001110",
-            product_re_out => mul_re_out(215),
-            product_im_out => mul_im_out(215)
+            data_re_out => mul_re_out(215),
+            data_im_out => mul_im_out(215)
         );
 
  
@@ -21458,8 +21458,8 @@ begin
             data_im_in => first_stage_im_out(216),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(216),
-            product_im_out => mul_im_out(216)
+            data_re_out => mul_re_out(216),
+            data_im_out => mul_im_out(216)
         );
 
  
@@ -21476,8 +21476,8 @@ begin
             data_im_in => first_stage_im_out(217),
             re_multiplicator => "0011111001010000", --- 0.9736328125 + j-0.22802734375
             im_multiplicator => "1111000101101000",
-            product_re_out => mul_re_out(217),
-            product_im_out => mul_im_out(217)
+            data_re_out => mul_re_out(217),
+            data_im_out => mul_im_out(217)
         );
 
  
@@ -21494,8 +21494,8 @@ begin
             data_im_in => first_stage_im_out(218),
             re_multiplicator => "0011111000101101", --- 0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(218),
-            product_im_out => mul_im_out(218)
+            data_re_out => mul_re_out(218),
+            data_im_out => mul_im_out(218)
         );
 
  
@@ -21512,8 +21512,8 @@ begin
             data_im_in => first_stage_im_out(219),
             re_multiplicator => "0011111000001000", --- 0.96923828125 + j-0.245910644531
             im_multiplicator => "1111000001000011",
-            product_re_out => mul_re_out(219),
-            product_im_out => mul_im_out(219)
+            data_re_out => mul_re_out(219),
+            data_im_out => mul_im_out(219)
         );
 
  
@@ -21530,8 +21530,8 @@ begin
             data_im_in => first_stage_im_out(220),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(220),
-            product_im_out => mul_im_out(220)
+            data_re_out => mul_re_out(220),
+            data_im_out => mul_im_out(220)
         );
 
  
@@ -21548,8 +21548,8 @@ begin
             data_im_in => first_stage_im_out(221),
             re_multiplicator => "0011110110111011", --- 0.964538574219 + j-0.263732910156
             im_multiplicator => "1110111100011111",
-            product_re_out => mul_re_out(221),
-            product_im_out => mul_im_out(221)
+            data_re_out => mul_re_out(221),
+            data_im_out => mul_im_out(221)
         );
 
  
@@ -21566,8 +21566,8 @@ begin
             data_im_in => first_stage_im_out(222),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(222),
-            product_im_out => mul_im_out(222)
+            data_re_out => mul_re_out(222),
+            data_im_out => mul_im_out(222)
         );
 
  
@@ -21584,8 +21584,8 @@ begin
             data_im_in => first_stage_im_out(223),
             re_multiplicator => "0011110101101001", --- 0.959533691406 + j-0.281433105469
             im_multiplicator => "1110110111111101",
-            product_re_out => mul_re_out(223),
-            product_im_out => mul_im_out(223)
+            data_re_out => mul_re_out(223),
+            data_im_out => mul_im_out(223)
         );
 
  
@@ -21602,8 +21602,8 @@ begin
             data_im_in => first_stage_im_out(224),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(224),
-            product_im_out => mul_im_out(224)
+            data_re_out => mul_re_out(224),
+            data_im_out => mul_im_out(224)
         );
 
  
@@ -21620,8 +21620,8 @@ begin
             data_im_in => first_stage_im_out(225),
             re_multiplicator => "0011110100010010", --- 0.954223632812 + j-0.299072265625
             im_multiplicator => "1110110011011100",
-            product_re_out => mul_re_out(225),
-            product_im_out => mul_im_out(225)
+            data_re_out => mul_re_out(225),
+            data_im_out => mul_im_out(225)
         );
 
  
@@ -21638,8 +21638,8 @@ begin
             data_im_in => first_stage_im_out(226),
             re_multiplicator => "0011110011100100", --- 0.951416015625 + j-0.307800292969
             im_multiplicator => "1110110001001101",
-            product_re_out => mul_re_out(226),
-            product_im_out => mul_im_out(226)
+            data_re_out => mul_re_out(226),
+            data_im_out => mul_im_out(226)
         );
 
  
@@ -21656,8 +21656,8 @@ begin
             data_im_in => first_stage_im_out(227),
             re_multiplicator => "0011110010110101", --- 0.948547363281 + j-0.316589355469
             im_multiplicator => "1110101110111101",
-            product_re_out => mul_re_out(227),
-            product_im_out => mul_im_out(227)
+            data_re_out => mul_re_out(227),
+            data_im_out => mul_im_out(227)
         );
 
  
@@ -21674,8 +21674,8 @@ begin
             data_im_in => first_stage_im_out(228),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(228),
-            product_im_out => mul_im_out(228)
+            data_re_out => mul_re_out(228),
+            data_im_out => mul_im_out(228)
         );
 
  
@@ -21692,8 +21692,8 @@ begin
             data_im_in => first_stage_im_out(229),
             re_multiplicator => "0011110001010011", --- 0.942565917969 + j-0.333984375
             im_multiplicator => "1110101010100000",
-            product_re_out => mul_re_out(229),
-            product_im_out => mul_im_out(229)
+            data_re_out => mul_re_out(229),
+            data_im_out => mul_im_out(229)
         );
 
  
@@ -21710,8 +21710,8 @@ begin
             data_im_in => first_stage_im_out(230),
             re_multiplicator => "0011110000100000", --- 0.939453125 + j-0.342651367188
             im_multiplicator => "1110101000010010",
-            product_re_out => mul_re_out(230),
-            product_im_out => mul_im_out(230)
+            data_re_out => mul_re_out(230),
+            data_im_out => mul_im_out(230)
         );
 
  
@@ -21728,8 +21728,8 @@ begin
             data_im_in => first_stage_im_out(231),
             re_multiplicator => "0011101111101011", --- 0.936218261719 + j-0.351257324219
             im_multiplicator => "1110100110000101",
-            product_re_out => mul_re_out(231),
-            product_im_out => mul_im_out(231)
+            data_re_out => mul_re_out(231),
+            data_im_out => mul_im_out(231)
         );
 
  
@@ -21746,8 +21746,8 @@ begin
             data_im_in => first_stage_im_out(232),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(232),
-            product_im_out => mul_im_out(232)
+            data_re_out => mul_re_out(232),
+            data_im_out => mul_im_out(232)
         );
 
  
@@ -21764,8 +21764,8 @@ begin
             data_im_in => first_stage_im_out(233),
             re_multiplicator => "0011101101111111", --- 0.929626464844 + j-0.368408203125
             im_multiplicator => "1110100001101100",
-            product_re_out => mul_re_out(233),
-            product_im_out => mul_im_out(233)
+            data_re_out => mul_re_out(233),
+            data_im_out => mul_im_out(233)
         );
 
  
@@ -21782,8 +21782,8 @@ begin
             data_im_in => first_stage_im_out(234),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(234),
-            product_im_out => mul_im_out(234)
+            data_re_out => mul_re_out(234),
+            data_im_out => mul_im_out(234)
         );
 
  
@@ -21800,8 +21800,8 @@ begin
             data_im_in => first_stage_im_out(235),
             re_multiplicator => "0011101100001101", --- 0.922668457031 + j-0.385498046875
             im_multiplicator => "1110011101010100",
-            product_re_out => mul_re_out(235),
-            product_im_out => mul_im_out(235)
+            data_re_out => mul_re_out(235),
+            data_im_out => mul_im_out(235)
         );
 
  
@@ -21818,8 +21818,8 @@ begin
             data_im_in => first_stage_im_out(236),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(236),
-            product_im_out => mul_im_out(236)
+            data_re_out => mul_re_out(236),
+            data_im_out => mul_im_out(236)
         );
 
  
@@ -21836,8 +21836,8 @@ begin
             data_im_in => first_stage_im_out(237),
             re_multiplicator => "0011101010010110", --- 0.915405273438 + j-0.402404785156
             im_multiplicator => "1110011000111111",
-            product_re_out => mul_re_out(237),
-            product_im_out => mul_im_out(237)
+            data_re_out => mul_re_out(237),
+            data_im_out => mul_im_out(237)
         );
 
  
@@ -21854,8 +21854,8 @@ begin
             data_im_in => first_stage_im_out(238),
             re_multiplicator => "0011101001011001", --- 0.911682128906 + j-0.410827636719
             im_multiplicator => "1110010110110101",
-            product_re_out => mul_re_out(238),
-            product_im_out => mul_im_out(238)
+            data_re_out => mul_re_out(238),
+            data_im_out => mul_im_out(238)
         );
 
  
@@ -21872,8 +21872,8 @@ begin
             data_im_in => first_stage_im_out(239),
             re_multiplicator => "0011101000011010", --- 0.907836914062 + j-0.419189453125
             im_multiplicator => "1110010100101100",
-            product_re_out => mul_re_out(239),
-            product_im_out => mul_im_out(239)
+            data_re_out => mul_re_out(239),
+            data_im_out => mul_im_out(239)
         );
 
  
@@ -21890,8 +21890,8 @@ begin
             data_im_in => first_stage_im_out(240),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(240),
-            product_im_out => mul_im_out(240)
+            data_re_out => mul_re_out(240),
+            data_im_out => mul_im_out(240)
         );
 
  
@@ -21908,8 +21908,8 @@ begin
             data_im_in => first_stage_im_out(241),
             re_multiplicator => "0011100110011001", --- 0.899963378906 + j-0.435852050781
             im_multiplicator => "1110010000011011",
-            product_re_out => mul_re_out(241),
-            product_im_out => mul_im_out(241)
+            data_re_out => mul_re_out(241),
+            data_im_out => mul_im_out(241)
         );
 
  
@@ -21926,8 +21926,8 @@ begin
             data_im_in => first_stage_im_out(242),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(242),
-            product_im_out => mul_im_out(242)
+            data_re_out => mul_re_out(242),
+            data_im_out => mul_im_out(242)
         );
 
  
@@ -21944,8 +21944,8 @@ begin
             data_im_in => first_stage_im_out(243),
             re_multiplicator => "0011100100010011", --- 0.891784667969 + j-0.452331542969
             im_multiplicator => "1110001100001101",
-            product_re_out => mul_re_out(243),
-            product_im_out => mul_im_out(243)
+            data_re_out => mul_re_out(243),
+            data_im_out => mul_im_out(243)
         );
 
  
@@ -21962,8 +21962,8 @@ begin
             data_im_in => first_stage_im_out(244),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(244),
-            product_im_out => mul_im_out(244)
+            data_re_out => mul_re_out(244),
+            data_im_out => mul_im_out(244)
         );
 
  
@@ -21980,8 +21980,8 @@ begin
             data_im_in => first_stage_im_out(245),
             re_multiplicator => "0011100010001001", --- 0.883361816406 + j-0.468627929688
             im_multiplicator => "1110001000000010",
-            product_re_out => mul_re_out(245),
-            product_im_out => mul_im_out(245)
+            data_re_out => mul_re_out(245),
+            data_im_out => mul_im_out(245)
         );
 
  
@@ -21998,8 +21998,8 @@ begin
             data_im_in => first_stage_im_out(246),
             re_multiplicator => "0011100001000001", --- 0.878967285156 + j-0.476745605469
             im_multiplicator => "1110000101111101",
-            product_re_out => mul_re_out(246),
-            product_im_out => mul_im_out(246)
+            data_re_out => mul_re_out(246),
+            data_im_out => mul_im_out(246)
         );
 
  
@@ -22016,8 +22016,8 @@ begin
             data_im_in => first_stage_im_out(247),
             re_multiplicator => "0011011111111001", --- 0.874572753906 + j-0.48486328125
             im_multiplicator => "1110000011111000",
-            product_re_out => mul_re_out(247),
-            product_im_out => mul_im_out(247)
+            data_re_out => mul_re_out(247),
+            data_im_out => mul_im_out(247)
         );
 
  
@@ -22034,8 +22034,8 @@ begin
             data_im_in => first_stage_im_out(248),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(248),
-            product_im_out => mul_im_out(248)
+            data_re_out => mul_re_out(248),
+            data_im_out => mul_im_out(248)
         );
 
  
@@ -22052,8 +22052,8 @@ begin
             data_im_in => first_stage_im_out(249),
             re_multiplicator => "0011011101100100", --- 0.865478515625 + j-0.500854492188
             im_multiplicator => "1101111111110010",
-            product_re_out => mul_re_out(249),
-            product_im_out => mul_im_out(249)
+            data_re_out => mul_re_out(249),
+            data_im_out => mul_im_out(249)
         );
 
  
@@ -22070,8 +22070,8 @@ begin
             data_im_in => first_stage_im_out(250),
             re_multiplicator => "0011011100011000", --- 0.86083984375 + j-0.5087890625
             im_multiplicator => "1101111101110000",
-            product_re_out => mul_re_out(250),
-            product_im_out => mul_im_out(250)
+            data_re_out => mul_re_out(250),
+            data_im_out => mul_im_out(250)
         );
 
  
@@ -22088,8 +22088,8 @@ begin
             data_im_in => first_stage_im_out(251),
             re_multiplicator => "0011011011001011", --- 0.856140136719 + j-0.516723632812
             im_multiplicator => "1101111011101110",
-            product_re_out => mul_re_out(251),
-            product_im_out => mul_im_out(251)
+            data_re_out => mul_re_out(251),
+            data_im_out => mul_im_out(251)
         );
 
  
@@ -22106,8 +22106,8 @@ begin
             data_im_in => first_stage_im_out(252),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(252),
-            product_im_out => mul_im_out(252)
+            data_re_out => mul_re_out(252),
+            data_im_out => mul_im_out(252)
         );
 
  
@@ -22124,8 +22124,8 @@ begin
             data_im_in => first_stage_im_out(253),
             re_multiplicator => "0011011000101100", --- 0.846435546875 + j-0.532348632812
             im_multiplicator => "1101110111101110",
-            product_re_out => mul_re_out(253),
-            product_im_out => mul_im_out(253)
+            data_re_out => mul_re_out(253),
+            data_im_out => mul_im_out(253)
         );
 
  
@@ -22142,8 +22142,8 @@ begin
             data_im_in => first_stage_im_out(254),
             re_multiplicator => "0011010111011100", --- 0.841552734375 + j-0.540161132812
             im_multiplicator => "1101110101101110",
-            product_re_out => mul_re_out(254),
-            product_im_out => mul_im_out(254)
+            data_re_out => mul_re_out(254),
+            data_im_out => mul_im_out(254)
         );
 
  
@@ -22160,8 +22160,8 @@ begin
             data_im_in => first_stage_im_out(255),
             re_multiplicator => "0011010110001001", --- 0.836486816406 + j-0.5478515625
             im_multiplicator => "1101110011110000",
-            product_re_out => mul_re_out(255),
-            product_im_out => mul_im_out(255)
+            data_re_out => mul_re_out(255),
+            data_im_out => mul_im_out(255)
         );
 
  
@@ -22176,8 +22176,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(256),
             data_im_in => first_stage_im_out(256),
-            product_re_out => mul_re_out(256),
-            product_im_out => mul_im_out(256)
+            data_re_out => mul_re_out(256),
+            data_im_out => mul_im_out(256)
         );
 
  
@@ -22194,8 +22194,8 @@ begin
             data_im_in => first_stage_im_out(257),
             re_multiplicator => "0011111111111110", --- 0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(257),
-            product_im_out => mul_im_out(257)
+            data_re_out => mul_re_out(257),
+            data_im_out => mul_im_out(257)
         );
 
  
@@ -22212,8 +22212,8 @@ begin
             data_im_in => first_stage_im_out(258),
             re_multiplicator => "0011111111111011", --- 0.999694824219 + j-0.0245361328125
             im_multiplicator => "1111111001101110",
-            product_re_out => mul_re_out(258),
-            product_im_out => mul_im_out(258)
+            data_re_out => mul_re_out(258),
+            data_im_out => mul_im_out(258)
         );
 
  
@@ -22230,8 +22230,8 @@ begin
             data_im_in => first_stage_im_out(259),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(259),
-            product_im_out => mul_im_out(259)
+            data_re_out => mul_re_out(259),
+            data_im_out => mul_im_out(259)
         );
 
  
@@ -22248,8 +22248,8 @@ begin
             data_im_in => first_stage_im_out(260),
             re_multiplicator => "0011111111101100", --- 0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(260),
-            product_im_out => mul_im_out(260)
+            data_re_out => mul_re_out(260),
+            data_im_out => mul_im_out(260)
         );
 
  
@@ -22266,8 +22266,8 @@ begin
             data_im_in => first_stage_im_out(261),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(261),
-            product_im_out => mul_im_out(261)
+            data_re_out => mul_re_out(261),
+            data_im_out => mul_im_out(261)
         );
 
  
@@ -22284,8 +22284,8 @@ begin
             data_im_in => first_stage_im_out(262),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(262),
-            product_im_out => mul_im_out(262)
+            data_re_out => mul_re_out(262),
+            data_im_out => mul_im_out(262)
         );
 
  
@@ -22302,8 +22302,8 @@ begin
             data_im_in => first_stage_im_out(263),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(263),
-            product_im_out => mul_im_out(263)
+            data_re_out => mul_re_out(263),
+            data_im_out => mul_im_out(263)
         );
 
  
@@ -22320,8 +22320,8 @@ begin
             data_im_in => first_stage_im_out(264),
             re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(264),
-            product_im_out => mul_im_out(264)
+            data_re_out => mul_re_out(264),
+            data_im_out => mul_im_out(264)
         );
 
  
@@ -22338,8 +22338,8 @@ begin
             data_im_in => first_stage_im_out(265),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(265),
-            product_im_out => mul_im_out(265)
+            data_re_out => mul_re_out(265),
+            data_im_out => mul_im_out(265)
         );
 
  
@@ -22356,8 +22356,8 @@ begin
             data_im_in => first_stage_im_out(266),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(266),
-            product_im_out => mul_im_out(266)
+            data_re_out => mul_re_out(266),
+            data_im_out => mul_im_out(266)
         );
 
  
@@ -22374,8 +22374,8 @@ begin
             data_im_in => first_stage_im_out(267),
             re_multiplicator => "0011111101101010", --- 0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(267),
-            product_im_out => mul_im_out(267)
+            data_re_out => mul_re_out(267),
+            data_im_out => mul_im_out(267)
         );
 
  
@@ -22392,8 +22392,8 @@ begin
             data_im_in => first_stage_im_out(268),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(268),
-            product_im_out => mul_im_out(268)
+            data_re_out => mul_re_out(268),
+            data_im_out => mul_im_out(268)
         );
 
  
@@ -22410,8 +22410,8 @@ begin
             data_im_in => first_stage_im_out(269),
             re_multiplicator => "0011111100101111", --- 0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(269),
-            product_im_out => mul_im_out(269)
+            data_re_out => mul_re_out(269),
+            data_im_out => mul_im_out(269)
         );
 
  
@@ -22428,8 +22428,8 @@ begin
             data_im_in => first_stage_im_out(270),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(270),
-            product_im_out => mul_im_out(270)
+            data_re_out => mul_re_out(270),
+            data_im_out => mul_im_out(270)
         );
 
  
@@ -22446,8 +22446,8 @@ begin
             data_im_in => first_stage_im_out(271),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(271),
-            product_im_out => mul_im_out(271)
+            data_re_out => mul_re_out(271),
+            data_im_out => mul_im_out(271)
         );
 
  
@@ -22464,8 +22464,8 @@ begin
             data_im_in => first_stage_im_out(272),
             re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(272),
-            product_im_out => mul_im_out(272)
+            data_re_out => mul_re_out(272),
+            data_im_out => mul_im_out(272)
         );
 
  
@@ -22482,8 +22482,8 @@ begin
             data_im_in => first_stage_im_out(273),
             re_multiplicator => "0011111010011100", --- 0.978271484375 + j-0.207092285156
             im_multiplicator => "1111001010111111",
-            product_re_out => mul_re_out(273),
-            product_im_out => mul_im_out(273)
+            data_re_out => mul_re_out(273),
+            data_im_out => mul_im_out(273)
         );
 
  
@@ -22500,8 +22500,8 @@ begin
             data_im_in => first_stage_im_out(274),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(274),
-            product_im_out => mul_im_out(274)
+            data_re_out => mul_re_out(274),
+            data_im_out => mul_im_out(274)
         );
 
  
@@ -22518,8 +22518,8 @@ begin
             data_im_in => first_stage_im_out(275),
             re_multiplicator => "0011111001000100", --- 0.972900390625 + j-0.231018066406
             im_multiplicator => "1111000100110111",
-            product_re_out => mul_re_out(275),
-            product_im_out => mul_im_out(275)
+            data_re_out => mul_re_out(275),
+            data_im_out => mul_im_out(275)
         );
 
  
@@ -22536,8 +22536,8 @@ begin
             data_im_in => first_stage_im_out(276),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(276),
-            product_im_out => mul_im_out(276)
+            data_re_out => mul_re_out(276),
+            data_im_out => mul_im_out(276)
         );
 
  
@@ -22554,8 +22554,8 @@ begin
             data_im_in => first_stage_im_out(277),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(277),
-            product_im_out => mul_im_out(277)
+            data_re_out => mul_re_out(277),
+            data_im_out => mul_im_out(277)
         );
 
  
@@ -22572,8 +22572,8 @@ begin
             data_im_in => first_stage_im_out(278),
             re_multiplicator => "0011110110101110", --- 0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(278),
-            product_im_out => mul_im_out(278)
+            data_re_out => mul_re_out(278),
+            data_im_out => mul_im_out(278)
         );
 
  
@@ -22590,8 +22590,8 @@ begin
             data_im_in => first_stage_im_out(279),
             re_multiplicator => "0011110101110111", --- 0.960388183594 + j-0.278503417969
             im_multiplicator => "1110111000101101",
-            product_re_out => mul_re_out(279),
-            product_im_out => mul_im_out(279)
+            data_re_out => mul_re_out(279),
+            data_im_out => mul_im_out(279)
         );
 
  
@@ -22608,8 +22608,8 @@ begin
             data_im_in => first_stage_im_out(280),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(280),
-            product_im_out => mul_im_out(280)
+            data_re_out => mul_re_out(280),
+            data_im_out => mul_im_out(280)
         );
 
  
@@ -22626,8 +22626,8 @@ begin
             data_im_in => first_stage_im_out(281),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(281),
-            product_im_out => mul_im_out(281)
+            data_re_out => mul_re_out(281),
+            data_im_out => mul_im_out(281)
         );
 
  
@@ -22644,8 +22644,8 @@ begin
             data_im_in => first_stage_im_out(282),
             re_multiplicator => "0011110011000101", --- 0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(282),
-            product_im_out => mul_im_out(282)
+            data_re_out => mul_re_out(282),
+            data_im_out => mul_im_out(282)
         );
 
  
@@ -22662,8 +22662,8 @@ begin
             data_im_in => first_stage_im_out(283),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(283),
-            product_im_out => mul_im_out(283)
+            data_re_out => mul_re_out(283),
+            data_im_out => mul_im_out(283)
         );
 
  
@@ -22680,8 +22680,8 @@ begin
             data_im_in => first_stage_im_out(284),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(284),
-            product_im_out => mul_im_out(284)
+            data_re_out => mul_re_out(284),
+            data_im_out => mul_im_out(284)
         );
 
  
@@ -22698,8 +22698,8 @@ begin
             data_im_in => first_stage_im_out(285),
             re_multiplicator => "0011101111111101", --- 0.937316894531 + j-0.348388671875
             im_multiplicator => "1110100110110100",
-            product_re_out => mul_re_out(285),
-            product_im_out => mul_im_out(285)
+            data_re_out => mul_re_out(285),
+            data_im_out => mul_im_out(285)
         );
 
  
@@ -22716,8 +22716,8 @@ begin
             data_im_in => first_stage_im_out(286),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(286),
-            product_im_out => mul_im_out(286)
+            data_re_out => mul_re_out(286),
+            data_im_out => mul_im_out(286)
         );
 
  
@@ -22734,8 +22734,8 @@ begin
             data_im_in => first_stage_im_out(287),
             re_multiplicator => "0011101101101100", --- 0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(287),
-            product_im_out => mul_im_out(287)
+            data_re_out => mul_re_out(287),
+            data_im_out => mul_im_out(287)
         );
 
  
@@ -22752,8 +22752,8 @@ begin
             data_im_in => first_stage_im_out(288),
             re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
             im_multiplicator => "1110011110000011",
-            product_re_out => mul_re_out(288),
-            product_im_out => mul_im_out(288)
+            data_re_out => mul_re_out(288),
+            data_im_out => mul_im_out(288)
         );
 
  
@@ -22770,8 +22770,8 @@ begin
             data_im_in => first_stage_im_out(289),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(289),
-            product_im_out => mul_im_out(289)
+            data_re_out => mul_re_out(289),
+            data_im_out => mul_im_out(289)
         );
 
  
@@ -22788,8 +22788,8 @@ begin
             data_im_in => first_stage_im_out(290),
             re_multiplicator => "0011101010000010", --- 0.914184570312 + j-0.405212402344
             im_multiplicator => "1110011000010001",
-            product_re_out => mul_re_out(290),
-            product_im_out => mul_im_out(290)
+            data_re_out => mul_re_out(290),
+            data_im_out => mul_im_out(290)
         );
 
  
@@ -22806,8 +22806,8 @@ begin
             data_im_in => first_stage_im_out(291),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(291),
-            product_im_out => mul_im_out(291)
+            data_re_out => mul_re_out(291),
+            data_im_out => mul_im_out(291)
         );
 
  
@@ -22824,8 +22824,8 @@ begin
             data_im_in => first_stage_im_out(292),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(292),
-            product_im_out => mul_im_out(292)
+            data_re_out => mul_re_out(292),
+            data_im_out => mul_im_out(292)
         );
 
  
@@ -22842,8 +22842,8 @@ begin
             data_im_in => first_stage_im_out(293),
             re_multiplicator => "0011100110000011", --- 0.898620605469 + j-0.438598632812
             im_multiplicator => "1110001111101110",
-            product_re_out => mul_re_out(293),
-            product_im_out => mul_im_out(293)
+            data_re_out => mul_re_out(293),
+            data_im_out => mul_im_out(293)
         );
 
  
@@ -22860,8 +22860,8 @@ begin
             data_im_in => first_stage_im_out(294),
             re_multiplicator => "0011100100101010", --- 0.893188476562 + j-0.449584960938
             im_multiplicator => "1110001100111010",
-            product_re_out => mul_re_out(294),
-            product_im_out => mul_im_out(294)
+            data_re_out => mul_re_out(294),
+            data_im_out => mul_im_out(294)
         );
 
  
@@ -22878,8 +22878,8 @@ begin
             data_im_in => first_stage_im_out(295),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(295),
-            product_im_out => mul_im_out(295)
+            data_re_out => mul_re_out(295),
+            data_im_out => mul_im_out(295)
         );
 
  
@@ -22896,8 +22896,8 @@ begin
             data_im_in => first_stage_im_out(296),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(296),
-            product_im_out => mul_im_out(296)
+            data_re_out => mul_re_out(296),
+            data_im_out => mul_im_out(296)
         );
 
  
@@ -22914,8 +22914,8 @@ begin
             data_im_in => first_stage_im_out(297),
             re_multiplicator => "0011100000010001", --- 0.876037597656 + j-0.482177734375
             im_multiplicator => "1110000100100100",
-            product_re_out => mul_re_out(297),
-            product_im_out => mul_im_out(297)
+            data_re_out => mul_re_out(297),
+            data_im_out => mul_im_out(297)
         );
 
  
@@ -22932,8 +22932,8 @@ begin
             data_im_in => first_stage_im_out(298),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(298),
-            product_im_out => mul_im_out(298)
+            data_re_out => mul_re_out(298),
+            data_im_out => mul_im_out(298)
         );
 
  
@@ -22950,8 +22950,8 @@ begin
             data_im_in => first_stage_im_out(299),
             re_multiplicator => "0011011101001011", --- 0.863952636719 + j-0.503479003906
             im_multiplicator => "1101111111000111",
-            product_re_out => mul_re_out(299),
-            product_im_out => mul_im_out(299)
+            data_re_out => mul_re_out(299),
+            data_im_out => mul_im_out(299)
         );
 
  
@@ -22968,8 +22968,8 @@ begin
             data_im_in => first_stage_im_out(300),
             re_multiplicator => "0011011011100101", --- 0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(300),
-            product_im_out => mul_im_out(300)
+            data_re_out => mul_re_out(300),
+            data_im_out => mul_im_out(300)
         );
 
  
@@ -22986,8 +22986,8 @@ begin
             data_im_in => first_stage_im_out(301),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(301),
-            product_im_out => mul_im_out(301)
+            data_re_out => mul_re_out(301),
+            data_im_out => mul_im_out(301)
         );
 
  
@@ -23004,8 +23004,8 @@ begin
             data_im_in => first_stage_im_out(302),
             re_multiplicator => "0011011000010010", --- 0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(302),
-            product_im_out => mul_im_out(302)
+            data_re_out => mul_re_out(302),
+            data_im_out => mul_im_out(302)
         );
 
  
@@ -23022,8 +23022,8 @@ begin
             data_im_in => first_stage_im_out(303),
             re_multiplicator => "0011010110100101", --- 0.838195800781 + j-0.545288085938
             im_multiplicator => "1101110100011010",
-            product_re_out => mul_re_out(303),
-            product_im_out => mul_im_out(303)
+            data_re_out => mul_re_out(303),
+            data_im_out => mul_im_out(303)
         );
 
  
@@ -23040,8 +23040,8 @@ begin
             data_im_in => first_stage_im_out(304),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(304),
-            product_im_out => mul_im_out(304)
+            data_re_out => mul_re_out(304),
+            data_im_out => mul_im_out(304)
         );
 
  
@@ -23058,8 +23058,8 @@ begin
             data_im_in => first_stage_im_out(305),
             re_multiplicator => "0011010011000110", --- 0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(305),
-            product_im_out => mul_im_out(305)
+            data_re_out => mul_re_out(305),
+            data_im_out => mul_im_out(305)
         );
 
  
@@ -23076,8 +23076,8 @@ begin
             data_im_in => first_stage_im_out(306),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(306),
-            product_im_out => mul_im_out(306)
+            data_re_out => mul_re_out(306),
+            data_im_out => mul_im_out(306)
         );
 
  
@@ -23094,8 +23094,8 @@ begin
             data_im_in => first_stage_im_out(307),
             re_multiplicator => "0011001111011110", --- 0.810424804688 + j-0.585754394531
             im_multiplicator => "1101101010000011",
-            product_re_out => mul_re_out(307),
-            product_im_out => mul_im_out(307)
+            data_re_out => mul_re_out(307),
+            data_im_out => mul_im_out(307)
         );
 
  
@@ -23112,8 +23112,8 @@ begin
             data_im_in => first_stage_im_out(308),
             re_multiplicator => "0011001101100111", --- 0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(308),
-            product_im_out => mul_im_out(308)
+            data_re_out => mul_re_out(308),
+            data_im_out => mul_im_out(308)
         );
 
  
@@ -23130,8 +23130,8 @@ begin
             data_im_in => first_stage_im_out(309),
             re_multiplicator => "0011001011101110", --- 0.795776367188 + j-0.60546875
             im_multiplicator => "1101100101000000",
-            product_re_out => mul_re_out(309),
-            product_im_out => mul_im_out(309)
+            data_re_out => mul_re_out(309),
+            data_im_out => mul_im_out(309)
         );
 
  
@@ -23148,8 +23148,8 @@ begin
             data_im_in => first_stage_im_out(310),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(310),
-            product_im_out => mul_im_out(310)
+            data_re_out => mul_re_out(310),
+            data_im_out => mul_im_out(310)
         );
 
  
@@ -23166,8 +23166,8 @@ begin
             data_im_in => first_stage_im_out(311),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(311),
-            product_im_out => mul_im_out(311)
+            data_re_out => mul_re_out(311),
+            data_im_out => mul_im_out(311)
         );
 
  
@@ -23184,8 +23184,8 @@ begin
             data_im_in => first_stage_im_out(312),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(312),
-            product_im_out => mul_im_out(312)
+            data_re_out => mul_re_out(312),
+            data_im_out => mul_im_out(312)
         );
 
  
@@ -23202,8 +23202,8 @@ begin
             data_im_in => first_stage_im_out(313),
             re_multiplicator => "0011000011111000", --- 0.76513671875 + j-0.643798828125
             im_multiplicator => "1101011011001100",
-            product_re_out => mul_re_out(313),
-            product_im_out => mul_im_out(313)
+            data_re_out => mul_re_out(313),
+            data_im_out => mul_im_out(313)
         );
 
  
@@ -23220,8 +23220,8 @@ begin
             data_im_in => first_stage_im_out(314),
             re_multiplicator => "0011000001110110", --- 0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(314),
-            product_im_out => mul_im_out(314)
+            data_re_out => mul_re_out(314),
+            data_im_out => mul_im_out(314)
         );
 
  
@@ -23238,8 +23238,8 @@ begin
             data_im_in => first_stage_im_out(315),
             re_multiplicator => "0010111111110001", --- 0.749084472656 + j-0.662414550781
             im_multiplicator => "1101010110011011",
-            product_re_out => mul_re_out(315),
-            product_im_out => mul_im_out(315)
+            data_re_out => mul_re_out(315),
+            data_im_out => mul_im_out(315)
         );
 
  
@@ -23256,8 +23256,8 @@ begin
             data_im_in => first_stage_im_out(316),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(316),
-            product_im_out => mul_im_out(316)
+            data_re_out => mul_re_out(316),
+            data_im_out => mul_im_out(316)
         );
 
  
@@ -23274,8 +23274,8 @@ begin
             data_im_in => first_stage_im_out(317),
             re_multiplicator => "0010111011100011", --- 0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(317),
-            product_im_out => mul_im_out(317)
+            data_re_out => mul_re_out(317),
+            data_im_out => mul_im_out(317)
         );
 
  
@@ -23292,8 +23292,8 @@ begin
             data_im_in => first_stage_im_out(318),
             re_multiplicator => "0010111001011010", --- 0.724243164062 + j-0.689514160156
             im_multiplicator => "1101001111011111",
-            product_re_out => mul_re_out(318),
-            product_im_out => mul_im_out(318)
+            data_re_out => mul_re_out(318),
+            data_im_out => mul_im_out(318)
         );
 
  
@@ -23310,8 +23310,8 @@ begin
             data_im_in => first_stage_im_out(319),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(319),
-            product_im_out => mul_im_out(319)
+            data_re_out => mul_re_out(319),
+            data_im_out => mul_im_out(319)
         );
 
  
@@ -23326,8 +23326,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(320),
             data_im_in => first_stage_im_out(320),
-            product_re_out => mul_re_out(320),
-            product_im_out => mul_im_out(320)
+            data_re_out => mul_re_out(320),
+            data_im_out => mul_im_out(320)
         );
 
  
@@ -23344,8 +23344,8 @@ begin
             data_im_in => first_stage_im_out(321),
             re_multiplicator => "0011111111111110", --- 0.999877929688 + j-0.0153198242188
             im_multiplicator => "1111111100000101",
-            product_re_out => mul_re_out(321),
-            product_im_out => mul_im_out(321)
+            data_re_out => mul_re_out(321),
+            data_im_out => mul_im_out(321)
         );
 
  
@@ -23362,8 +23362,8 @@ begin
             data_im_in => first_stage_im_out(322),
             re_multiplicator => "0011111111111000", --- 0.99951171875 + j-0.0306396484375
             im_multiplicator => "1111111000001010",
-            product_re_out => mul_re_out(322),
-            product_im_out => mul_im_out(322)
+            data_re_out => mul_re_out(322),
+            data_im_out => mul_im_out(322)
         );
 
  
@@ -23380,8 +23380,8 @@ begin
             data_im_in => first_stage_im_out(323),
             re_multiplicator => "0011111111101110", --- 0.998901367188 + j-0.0459594726562
             im_multiplicator => "1111110100001111",
-            product_re_out => mul_re_out(323),
-            product_im_out => mul_im_out(323)
+            data_re_out => mul_re_out(323),
+            data_im_out => mul_im_out(323)
         );
 
  
@@ -23398,8 +23398,8 @@ begin
             data_im_in => first_stage_im_out(324),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(324),
-            product_im_out => mul_im_out(324)
+            data_re_out => mul_re_out(324),
+            data_im_out => mul_im_out(324)
         );
 
  
@@ -23416,8 +23416,8 @@ begin
             data_im_in => first_stage_im_out(325),
             re_multiplicator => "0011111111001111", --- 0.997009277344 + j-0.0765991210938
             im_multiplicator => "1111101100011001",
-            product_re_out => mul_re_out(325),
-            product_im_out => mul_im_out(325)
+            data_re_out => mul_re_out(325),
+            data_im_out => mul_im_out(325)
         );
 
  
@@ -23434,8 +23434,8 @@ begin
             data_im_in => first_stage_im_out(326),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(326),
-            product_im_out => mul_im_out(326)
+            data_re_out => mul_re_out(326),
+            data_im_out => mul_im_out(326)
         );
 
  
@@ -23452,8 +23452,8 @@ begin
             data_im_in => first_stage_im_out(327),
             re_multiplicator => "0011111110100001", --- 0.994201660156 + j-0.107116699219
             im_multiplicator => "1111100100100101",
-            product_re_out => mul_re_out(327),
-            product_im_out => mul_im_out(327)
+            data_re_out => mul_re_out(327),
+            data_im_out => mul_im_out(327)
         );
 
  
@@ -23470,8 +23470,8 @@ begin
             data_im_in => first_stage_im_out(328),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(328),
-            product_im_out => mul_im_out(328)
+            data_re_out => mul_re_out(328),
+            data_im_out => mul_im_out(328)
         );
 
  
@@ -23488,8 +23488,8 @@ begin
             data_im_in => first_stage_im_out(329),
             re_multiplicator => "0011111101100100", --- 0.990478515625 + j-0.137573242188
             im_multiplicator => "1111011100110010",
-            product_re_out => mul_re_out(329),
-            product_im_out => mul_im_out(329)
+            data_re_out => mul_re_out(329),
+            data_im_out => mul_im_out(329)
         );
 
  
@@ -23506,8 +23506,8 @@ begin
             data_im_in => first_stage_im_out(330),
             re_multiplicator => "0011111100111111", --- 0.988220214844 + j-0.152770996094
             im_multiplicator => "1111011000111001",
-            product_re_out => mul_re_out(330),
-            product_im_out => mul_im_out(330)
+            data_re_out => mul_re_out(330),
+            data_im_out => mul_im_out(330)
         );
 
  
@@ -23524,8 +23524,8 @@ begin
             data_im_in => first_stage_im_out(331),
             re_multiplicator => "0011111100010111", --- 0.985778808594 + j-0.167907714844
             im_multiplicator => "1111010101000001",
-            product_re_out => mul_re_out(331),
-            product_im_out => mul_im_out(331)
+            data_re_out => mul_re_out(331),
+            data_im_out => mul_im_out(331)
         );
 
  
@@ -23542,8 +23542,8 @@ begin
             data_im_in => first_stage_im_out(332),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(332),
-            product_im_out => mul_im_out(332)
+            data_re_out => mul_re_out(332),
+            data_im_out => mul_im_out(332)
         );
 
  
@@ -23560,8 +23560,8 @@ begin
             data_im_in => first_stage_im_out(333),
             re_multiplicator => "0011111010111011", --- 0.980163574219 + j-0.198059082031
             im_multiplicator => "1111001101010011",
-            product_re_out => mul_re_out(333),
-            product_im_out => mul_im_out(333)
+            data_re_out => mul_re_out(333),
+            data_im_out => mul_im_out(333)
         );
 
  
@@ -23578,8 +23578,8 @@ begin
             data_im_in => first_stage_im_out(334),
             re_multiplicator => "0011111010000111", --- 0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(334),
-            product_im_out => mul_im_out(334)
+            data_re_out => mul_re_out(334),
+            data_im_out => mul_im_out(334)
         );
 
  
@@ -23596,8 +23596,8 @@ begin
             data_im_in => first_stage_im_out(335),
             re_multiplicator => "0011111001010000", --- 0.9736328125 + j-0.22802734375
             im_multiplicator => "1111000101101000",
-            product_re_out => mul_re_out(335),
-            product_im_out => mul_im_out(335)
+            data_re_out => mul_re_out(335),
+            data_im_out => mul_im_out(335)
         );
 
  
@@ -23614,8 +23614,8 @@ begin
             data_im_in => first_stage_im_out(336),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(336),
-            product_im_out => mul_im_out(336)
+            data_re_out => mul_re_out(336),
+            data_im_out => mul_im_out(336)
         );
 
  
@@ -23632,8 +23632,8 @@ begin
             data_im_in => first_stage_im_out(337),
             re_multiplicator => "0011110111010110", --- 0.966186523438 + j-0.2578125
             im_multiplicator => "1110111110000000",
-            product_re_out => mul_re_out(337),
-            product_im_out => mul_im_out(337)
+            data_re_out => mul_re_out(337),
+            data_im_out => mul_im_out(337)
         );
 
  
@@ -23650,8 +23650,8 @@ begin
             data_im_in => first_stage_im_out(338),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(338),
-            product_im_out => mul_im_out(338)
+            data_re_out => mul_re_out(338),
+            data_im_out => mul_im_out(338)
         );
 
  
@@ -23668,8 +23668,8 @@ begin
             data_im_in => first_stage_im_out(339),
             re_multiplicator => "0011110101001101", --- 0.957824707031 + j-0.287292480469
             im_multiplicator => "1110110110011101",
-            product_re_out => mul_re_out(339),
-            product_im_out => mul_im_out(339)
+            data_re_out => mul_re_out(339),
+            data_im_out => mul_im_out(339)
         );
 
  
@@ -23686,8 +23686,8 @@ begin
             data_im_in => first_stage_im_out(340),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(340),
-            product_im_out => mul_im_out(340)
+            data_re_out => mul_re_out(340),
+            data_im_out => mul_im_out(340)
         );
 
  
@@ -23704,8 +23704,8 @@ begin
             data_im_in => first_stage_im_out(341),
             re_multiplicator => "0011110010110101", --- 0.948547363281 + j-0.316589355469
             im_multiplicator => "1110101110111101",
-            product_re_out => mul_re_out(341),
-            product_im_out => mul_im_out(341)
+            data_re_out => mul_re_out(341),
+            data_im_out => mul_im_out(341)
         );
 
  
@@ -23722,8 +23722,8 @@ begin
             data_im_in => first_stage_im_out(342),
             re_multiplicator => "0011110001100011", --- 0.943542480469 + j-0.3310546875
             im_multiplicator => "1110101011010000",
-            product_re_out => mul_re_out(342),
-            product_im_out => mul_im_out(342)
+            data_re_out => mul_re_out(342),
+            data_im_out => mul_im_out(342)
         );
 
  
@@ -23740,8 +23740,8 @@ begin
             data_im_in => first_stage_im_out(343),
             re_multiplicator => "0011110000001110", --- 0.938354492188 + j-0.345520019531
             im_multiplicator => "1110100111100011",
-            product_re_out => mul_re_out(343),
-            product_im_out => mul_im_out(343)
+            data_re_out => mul_re_out(343),
+            data_im_out => mul_im_out(343)
         );
 
  
@@ -23758,8 +23758,8 @@ begin
             data_im_in => first_stage_im_out(344),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(344),
-            product_im_out => mul_im_out(344)
+            data_re_out => mul_re_out(344),
+            data_im_out => mul_im_out(344)
         );
 
  
@@ -23776,8 +23776,8 @@ begin
             data_im_in => first_stage_im_out(345),
             re_multiplicator => "0011101101011001", --- 0.927307128906 + j-0.374145507812
             im_multiplicator => "1110100000001110",
-            product_re_out => mul_re_out(345),
-            product_im_out => mul_im_out(345)
+            data_re_out => mul_re_out(345),
+            data_im_out => mul_im_out(345)
         );
 
  
@@ -23794,8 +23794,8 @@ begin
             data_im_in => first_stage_im_out(346),
             re_multiplicator => "0011101011111010", --- 0.921508789062 + j-0.388305664062
             im_multiplicator => "1110011100100110",
-            product_re_out => mul_re_out(346),
-            product_im_out => mul_im_out(346)
+            data_re_out => mul_re_out(346),
+            data_im_out => mul_im_out(346)
         );
 
  
@@ -23812,8 +23812,8 @@ begin
             data_im_in => first_stage_im_out(347),
             re_multiplicator => "0011101010010110", --- 0.915405273438 + j-0.402404785156
             im_multiplicator => "1110011000111111",
-            product_re_out => mul_re_out(347),
-            product_im_out => mul_im_out(347)
+            data_re_out => mul_re_out(347),
+            data_im_out => mul_im_out(347)
         );
 
  
@@ -23830,8 +23830,8 @@ begin
             data_im_in => first_stage_im_out(348),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(348),
-            product_im_out => mul_im_out(348)
+            data_re_out => mul_re_out(348),
+            data_im_out => mul_im_out(348)
         );
 
  
@@ -23848,8 +23848,8 @@ begin
             data_im_in => first_stage_im_out(349),
             re_multiplicator => "0011100111000101", --- 0.902648925781 + j-0.430297851562
             im_multiplicator => "1110010001110110",
-            product_re_out => mul_re_out(349),
-            product_im_out => mul_im_out(349)
+            data_re_out => mul_re_out(349),
+            data_im_out => mul_im_out(349)
         );
 
  
@@ -23866,8 +23866,8 @@ begin
             data_im_in => first_stage_im_out(350),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(350),
-            product_im_out => mul_im_out(350)
+            data_re_out => mul_re_out(350),
+            data_im_out => mul_im_out(350)
         );
 
  
@@ -23884,8 +23884,8 @@ begin
             data_im_in => first_stage_im_out(351),
             re_multiplicator => "0011100011100110", --- 0.889038085938 + j-0.457763671875
             im_multiplicator => "1110001010110100",
-            product_re_out => mul_re_out(351),
-            product_im_out => mul_im_out(351)
+            data_re_out => mul_re_out(351),
+            data_im_out => mul_im_out(351)
         );
 
  
@@ -23902,8 +23902,8 @@ begin
             data_im_in => first_stage_im_out(352),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(352),
-            product_im_out => mul_im_out(352)
+            data_re_out => mul_re_out(352),
+            data_im_out => mul_im_out(352)
         );
 
  
@@ -23920,8 +23920,8 @@ begin
             data_im_in => first_stage_im_out(353),
             re_multiplicator => "0011011111111001", --- 0.874572753906 + j-0.48486328125
             im_multiplicator => "1110000011111000",
-            product_re_out => mul_re_out(353),
-            product_im_out => mul_im_out(353)
+            data_re_out => mul_re_out(353),
+            data_im_out => mul_im_out(353)
         );
 
  
@@ -23938,8 +23938,8 @@ begin
             data_im_in => first_stage_im_out(354),
             re_multiplicator => "0011011101111101", --- 0.867004394531 + j-0.498168945312
             im_multiplicator => "1110000000011110",
-            product_re_out => mul_re_out(354),
-            product_im_out => mul_im_out(354)
+            data_re_out => mul_re_out(354),
+            data_im_out => mul_im_out(354)
         );
 
  
@@ -23956,8 +23956,8 @@ begin
             data_im_in => first_stage_im_out(355),
             re_multiplicator => "0011011011111110", --- 0.859252929688 + j-0.511413574219
             im_multiplicator => "1101111101000101",
-            product_re_out => mul_re_out(355),
-            product_im_out => mul_im_out(355)
+            data_re_out => mul_re_out(355),
+            data_im_out => mul_im_out(355)
         );
 
  
@@ -23974,8 +23974,8 @@ begin
             data_im_in => first_stage_im_out(356),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(356),
-            product_im_out => mul_im_out(356)
+            data_re_out => mul_re_out(356),
+            data_im_out => mul_im_out(356)
         );
 
  
@@ -23992,8 +23992,8 @@ begin
             data_im_in => first_stage_im_out(357),
             re_multiplicator => "0011010111110111", --- 0.843200683594 + j-0.537536621094
             im_multiplicator => "1101110110011001",
-            product_re_out => mul_re_out(357),
-            product_im_out => mul_im_out(357)
+            data_re_out => mul_re_out(357),
+            data_im_out => mul_im_out(357)
         );
 
  
@@ -24010,8 +24010,8 @@ begin
             data_im_in => first_stage_im_out(358),
             re_multiplicator => "0011010101101110", --- 0.834838867188 + j-0.550415039062
             im_multiplicator => "1101110011000110",
-            product_re_out => mul_re_out(358),
-            product_im_out => mul_im_out(358)
+            data_re_out => mul_re_out(358),
+            data_im_out => mul_im_out(358)
         );
 
  
@@ -24028,8 +24028,8 @@ begin
             data_im_in => first_stage_im_out(359),
             re_multiplicator => "0011010011100010", --- 0.826293945312 + j-0.563171386719
             im_multiplicator => "1101101111110101",
-            product_re_out => mul_re_out(359),
-            product_im_out => mul_im_out(359)
+            data_re_out => mul_re_out(359),
+            data_im_out => mul_im_out(359)
         );
 
  
@@ -24046,8 +24046,8 @@ begin
             data_im_in => first_stage_im_out(360),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(360),
-            product_im_out => mul_im_out(360)
+            data_re_out => mul_re_out(360),
+            data_im_out => mul_im_out(360)
         );
 
  
@@ -24064,8 +24064,8 @@ begin
             data_im_in => first_stage_im_out(361),
             re_multiplicator => "0011001111000001", --- 0.808654785156 + j-0.588256835938
             im_multiplicator => "1101101001011010",
-            product_re_out => mul_re_out(361),
-            product_im_out => mul_im_out(361)
+            data_re_out => mul_re_out(361),
+            data_im_out => mul_im_out(361)
         );
 
  
@@ -24082,8 +24082,8 @@ begin
             data_im_in => first_stage_im_out(362),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(362),
-            product_im_out => mul_im_out(362)
+            data_re_out => mul_re_out(362),
+            data_im_out => mul_im_out(362)
         );
 
  
@@ -24100,8 +24100,8 @@ begin
             data_im_in => first_stage_im_out(363),
             re_multiplicator => "0011001010010011", --- 0.790222167969 + j-0.61279296875
             im_multiplicator => "1101100011001000",
-            product_re_out => mul_re_out(363),
-            product_im_out => mul_im_out(363)
+            data_re_out => mul_re_out(363),
+            data_im_out => mul_im_out(363)
         );
 
  
@@ -24118,8 +24118,8 @@ begin
             data_im_in => first_stage_im_out(364),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(364),
-            product_im_out => mul_im_out(364)
+            data_re_out => mul_re_out(364),
+            data_im_out => mul_im_out(364)
         );
 
  
@@ -24136,8 +24136,8 @@ begin
             data_im_in => first_stage_im_out(365),
             re_multiplicator => "0011000101011001", --- 0.771057128906 + j-0.63671875
             im_multiplicator => "1101011101000000",
-            product_re_out => mul_re_out(365),
-            product_im_out => mul_im_out(365)
+            data_re_out => mul_re_out(365),
+            data_im_out => mul_im_out(365)
         );
 
  
@@ -24154,8 +24154,8 @@ begin
             data_im_in => first_stage_im_out(366),
             re_multiplicator => "0011000010110111", --- 0.761169433594 + j-0.648498535156
             im_multiplicator => "1101011001111111",
-            product_re_out => mul_re_out(366),
-            product_im_out => mul_im_out(366)
+            data_re_out => mul_re_out(366),
+            data_im_out => mul_im_out(366)
         );
 
  
@@ -24172,8 +24172,8 @@ begin
             data_im_in => first_stage_im_out(367),
             re_multiplicator => "0011000000010011", --- 0.751159667969 + j-0.660095214844
             im_multiplicator => "1101010111000001",
-            product_re_out => mul_re_out(367),
-            product_im_out => mul_im_out(367)
+            data_re_out => mul_re_out(367),
+            data_im_out => mul_im_out(367)
         );
 
  
@@ -24190,8 +24190,8 @@ begin
             data_im_in => first_stage_im_out(368),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(368),
-            product_im_out => mul_im_out(368)
+            data_re_out => mul_re_out(368),
+            data_im_out => mul_im_out(368)
         );
 
  
@@ -24208,8 +24208,8 @@ begin
             data_im_in => first_stage_im_out(369),
             re_multiplicator => "0010111011000001", --- 0.730529785156 + j-0.682800292969
             im_multiplicator => "1101010001001101",
-            product_re_out => mul_re_out(369),
-            product_im_out => mul_im_out(369)
+            data_re_out => mul_re_out(369),
+            data_im_out => mul_im_out(369)
         );
 
  
@@ -24226,8 +24226,8 @@ begin
             data_im_in => first_stage_im_out(370),
             re_multiplicator => "0010111000010100", --- 0.719970703125 + j-0.693969726562
             im_multiplicator => "1101001110010110",
-            product_re_out => mul_re_out(370),
-            product_im_out => mul_im_out(370)
+            data_re_out => mul_re_out(370),
+            data_im_out => mul_im_out(370)
         );
 
  
@@ -24244,8 +24244,8 @@ begin
             data_im_in => first_stage_im_out(371),
             re_multiplicator => "0010110101100100", --- 0.709228515625 + j-0.704895019531
             im_multiplicator => "1101001011100011",
-            product_re_out => mul_re_out(371),
-            product_im_out => mul_im_out(371)
+            data_re_out => mul_re_out(371),
+            data_im_out => mul_im_out(371)
         );
 
  
@@ -24262,8 +24262,8 @@ begin
             data_im_in => first_stage_im_out(372),
             re_multiplicator => "0010110010110010", --- 0.698364257812 + j-0.715698242188
             im_multiplicator => "1101001000110010",
-            product_re_out => mul_re_out(372),
-            product_im_out => mul_im_out(372)
+            data_re_out => mul_re_out(372),
+            data_im_out => mul_im_out(372)
         );
 
  
@@ -24280,8 +24280,8 @@ begin
             data_im_in => first_stage_im_out(373),
             re_multiplicator => "0010101111111100", --- 0.687255859375 + j-0.726318359375
             im_multiplicator => "1101000110000100",
-            product_re_out => mul_re_out(373),
-            product_im_out => mul_im_out(373)
+            data_re_out => mul_re_out(373),
+            data_im_out => mul_im_out(373)
         );
 
  
@@ -24298,8 +24298,8 @@ begin
             data_im_in => first_stage_im_out(374),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(374),
-            product_im_out => mul_im_out(374)
+            data_re_out => mul_re_out(374),
+            data_im_out => mul_im_out(374)
         );
 
  
@@ -24316,8 +24316,8 @@ begin
             data_im_in => first_stage_im_out(375),
             re_multiplicator => "0010101010001010", --- 0.664672851562 + j-0.7470703125
             im_multiplicator => "1101000000110000",
-            product_re_out => mul_re_out(375),
-            product_im_out => mul_im_out(375)
+            data_re_out => mul_re_out(375),
+            data_im_out => mul_im_out(375)
         );
 
  
@@ -24334,8 +24334,8 @@ begin
             data_im_in => first_stage_im_out(376),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(376),
-            product_im_out => mul_im_out(376)
+            data_re_out => mul_re_out(376),
+            data_im_out => mul_im_out(376)
         );
 
  
@@ -24352,8 +24352,8 @@ begin
             data_im_in => first_stage_im_out(377),
             re_multiplicator => "0010100100001110", --- 0.641479492188 + j-0.76708984375
             im_multiplicator => "1100111011101000",
-            product_re_out => mul_re_out(377),
-            product_im_out => mul_im_out(377)
+            data_re_out => mul_re_out(377),
+            data_im_out => mul_im_out(377)
         );
 
  
@@ -24370,8 +24370,8 @@ begin
             data_im_in => first_stage_im_out(378),
             re_multiplicator => "0010100001001011", --- 0.629577636719 + j-0.77685546875
             im_multiplicator => "1100111001001000",
-            product_re_out => mul_re_out(378),
-            product_im_out => mul_im_out(378)
+            data_re_out => mul_re_out(378),
+            data_im_out => mul_im_out(378)
         );
 
  
@@ -24388,8 +24388,8 @@ begin
             data_im_in => first_stage_im_out(379),
             re_multiplicator => "0010011110000111", --- 0.617614746094 + j-0.786437988281
             im_multiplicator => "1100110110101011",
-            product_re_out => mul_re_out(379),
-            product_im_out => mul_im_out(379)
+            data_re_out => mul_re_out(379),
+            data_im_out => mul_im_out(379)
         );
 
  
@@ -24406,8 +24406,8 @@ begin
             data_im_in => first_stage_im_out(380),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(380),
-            product_im_out => mul_im_out(380)
+            data_re_out => mul_re_out(380),
+            data_im_out => mul_im_out(380)
         );
 
  
@@ -24424,8 +24424,8 @@ begin
             data_im_in => first_stage_im_out(381),
             re_multiplicator => "0010010111110111", --- 0.593200683594 + j-0.804992675781
             im_multiplicator => "1100110001111011",
-            product_re_out => mul_re_out(381),
-            product_im_out => mul_im_out(381)
+            data_re_out => mul_re_out(381),
+            data_im_out => mul_im_out(381)
         );
 
  
@@ -24442,8 +24442,8 @@ begin
             data_im_in => first_stage_im_out(382),
             re_multiplicator => "0010010100101100", --- 0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(382),
-            product_im_out => mul_im_out(382)
+            data_re_out => mul_re_out(382),
+            data_im_out => mul_im_out(382)
         );
 
  
@@ -24460,8 +24460,8 @@ begin
             data_im_in => first_stage_im_out(383),
             re_multiplicator => "0010010001011110", --- 0.568237304688 + j-0.822814941406
             im_multiplicator => "1100101101010111",
-            product_re_out => mul_re_out(383),
-            product_im_out => mul_im_out(383)
+            data_re_out => mul_re_out(383),
+            data_im_out => mul_im_out(383)
         );
 
  
@@ -24476,8 +24476,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(384),
             data_im_in => first_stage_im_out(384),
-            product_re_out => mul_re_out(384),
-            product_im_out => mul_im_out(384)
+            data_re_out => mul_re_out(384),
+            data_im_out => mul_im_out(384)
         );
 
  
@@ -24494,8 +24494,8 @@ begin
             data_im_in => first_stage_im_out(385),
             re_multiplicator => "0011111111111101", --- 0.999816894531 + j-0.0183715820312
             im_multiplicator => "1111111011010011",
-            product_re_out => mul_re_out(385),
-            product_im_out => mul_im_out(385)
+            data_re_out => mul_re_out(385),
+            data_im_out => mul_im_out(385)
         );
 
  
@@ -24512,8 +24512,8 @@ begin
             data_im_in => first_stage_im_out(386),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(386),
-            product_im_out => mul_im_out(386)
+            data_re_out => mul_re_out(386),
+            data_im_out => mul_im_out(386)
         );
 
  
@@ -24530,8 +24530,8 @@ begin
             data_im_in => first_stage_im_out(387),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(387),
-            product_im_out => mul_im_out(387)
+            data_re_out => mul_re_out(387),
+            data_im_out => mul_im_out(387)
         );
 
  
@@ -24548,8 +24548,8 @@ begin
             data_im_in => first_stage_im_out(388),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(388),
-            product_im_out => mul_im_out(388)
+            data_re_out => mul_re_out(388),
+            data_im_out => mul_im_out(388)
         );
 
  
@@ -24566,8 +24566,8 @@ begin
             data_im_in => first_stage_im_out(389),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(389),
-            product_im_out => mul_im_out(389)
+            data_re_out => mul_re_out(389),
+            data_im_out => mul_im_out(389)
         );
 
  
@@ -24584,8 +24584,8 @@ begin
             data_im_in => first_stage_im_out(390),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(390),
-            product_im_out => mul_im_out(390)
+            data_re_out => mul_re_out(390),
+            data_im_out => mul_im_out(390)
         );
 
  
@@ -24602,8 +24602,8 @@ begin
             data_im_in => first_stage_im_out(391),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(391),
-            product_im_out => mul_im_out(391)
+            data_re_out => mul_re_out(391),
+            data_im_out => mul_im_out(391)
         );
 
  
@@ -24620,8 +24620,8 @@ begin
             data_im_in => first_stage_im_out(392),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(392),
-            product_im_out => mul_im_out(392)
+            data_re_out => mul_re_out(392),
+            data_im_out => mul_im_out(392)
         );
 
  
@@ -24638,8 +24638,8 @@ begin
             data_im_in => first_stage_im_out(393),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(393),
-            product_im_out => mul_im_out(393)
+            data_re_out => mul_re_out(393),
+            data_im_out => mul_im_out(393)
         );
 
  
@@ -24656,8 +24656,8 @@ begin
             data_im_in => first_stage_im_out(394),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(394),
-            product_im_out => mul_im_out(394)
+            data_re_out => mul_re_out(394),
+            data_im_out => mul_im_out(394)
         );
 
  
@@ -24674,8 +24674,8 @@ begin
             data_im_in => first_stage_im_out(395),
             re_multiplicator => "0011111010110001", --- 0.979553222656 + j-0.201049804688
             im_multiplicator => "1111001100100010",
-            product_re_out => mul_re_out(395),
-            product_im_out => mul_im_out(395)
+            data_re_out => mul_re_out(395),
+            data_im_out => mul_im_out(395)
         );
 
  
@@ -24692,8 +24692,8 @@ begin
             data_im_in => first_stage_im_out(396),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(396),
-            product_im_out => mul_im_out(396)
+            data_re_out => mul_re_out(396),
+            data_im_out => mul_im_out(396)
         );
 
  
@@ -24710,8 +24710,8 @@ begin
             data_im_in => first_stage_im_out(397),
             re_multiplicator => "0011111000101101", --- 0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(397),
-            product_im_out => mul_im_out(397)
+            data_re_out => mul_re_out(397),
+            data_im_out => mul_im_out(397)
         );
 
  
@@ -24728,8 +24728,8 @@ begin
             data_im_in => first_stage_im_out(398),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(398),
-            product_im_out => mul_im_out(398)
+            data_re_out => mul_re_out(398),
+            data_im_out => mul_im_out(398)
         );
 
  
@@ -24746,8 +24746,8 @@ begin
             data_im_in => first_stage_im_out(399),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(399),
-            product_im_out => mul_im_out(399)
+            data_re_out => mul_re_out(399),
+            data_im_out => mul_im_out(399)
         );
 
  
@@ -24764,8 +24764,8 @@ begin
             data_im_in => first_stage_im_out(400),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(400),
-            product_im_out => mul_im_out(400)
+            data_re_out => mul_re_out(400),
+            data_im_out => mul_im_out(400)
         );
 
  
@@ -24782,8 +24782,8 @@ begin
             data_im_in => first_stage_im_out(401),
             re_multiplicator => "0011110011100100", --- 0.951416015625 + j-0.307800292969
             im_multiplicator => "1110110001001101",
-            product_re_out => mul_re_out(401),
-            product_im_out => mul_im_out(401)
+            data_re_out => mul_re_out(401),
+            data_im_out => mul_im_out(401)
         );
 
  
@@ -24800,8 +24800,8 @@ begin
             data_im_in => first_stage_im_out(402),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(402),
-            product_im_out => mul_im_out(402)
+            data_re_out => mul_re_out(402),
+            data_im_out => mul_im_out(402)
         );
 
  
@@ -24818,8 +24818,8 @@ begin
             data_im_in => first_stage_im_out(403),
             re_multiplicator => "0011110000100000", --- 0.939453125 + j-0.342651367188
             im_multiplicator => "1110101000010010",
-            product_re_out => mul_re_out(403),
-            product_im_out => mul_im_out(403)
+            data_re_out => mul_re_out(403),
+            data_im_out => mul_im_out(403)
         );
 
  
@@ -24836,8 +24836,8 @@ begin
             data_im_in => first_stage_im_out(404),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(404),
-            product_im_out => mul_im_out(404)
+            data_re_out => mul_re_out(404),
+            data_im_out => mul_im_out(404)
         );
 
  
@@ -24854,8 +24854,8 @@ begin
             data_im_in => first_stage_im_out(405),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(405),
-            product_im_out => mul_im_out(405)
+            data_re_out => mul_re_out(405),
+            data_im_out => mul_im_out(405)
         );
 
  
@@ -24872,8 +24872,8 @@ begin
             data_im_in => first_stage_im_out(406),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(406),
-            product_im_out => mul_im_out(406)
+            data_re_out => mul_re_out(406),
+            data_im_out => mul_im_out(406)
         );
 
  
@@ -24890,8 +24890,8 @@ begin
             data_im_in => first_stage_im_out(407),
             re_multiplicator => "0011101001011001", --- 0.911682128906 + j-0.410827636719
             im_multiplicator => "1110010110110101",
-            product_re_out => mul_re_out(407),
-            product_im_out => mul_im_out(407)
+            data_re_out => mul_re_out(407),
+            data_im_out => mul_im_out(407)
         );
 
  
@@ -24908,8 +24908,8 @@ begin
             data_im_in => first_stage_im_out(408),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(408),
-            product_im_out => mul_im_out(408)
+            data_re_out => mul_re_out(408),
+            data_im_out => mul_im_out(408)
         );
 
  
@@ -24926,8 +24926,8 @@ begin
             data_im_in => first_stage_im_out(409),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(409),
-            product_im_out => mul_im_out(409)
+            data_re_out => mul_re_out(409),
+            data_im_out => mul_im_out(409)
         );
 
  
@@ -24944,8 +24944,8 @@ begin
             data_im_in => first_stage_im_out(410),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(410),
-            product_im_out => mul_im_out(410)
+            data_re_out => mul_re_out(410),
+            data_im_out => mul_im_out(410)
         );
 
  
@@ -24962,8 +24962,8 @@ begin
             data_im_in => first_stage_im_out(411),
             re_multiplicator => "0011100001000001", --- 0.878967285156 + j-0.476745605469
             im_multiplicator => "1110000101111101",
-            product_re_out => mul_re_out(411),
-            product_im_out => mul_im_out(411)
+            data_re_out => mul_re_out(411),
+            data_im_out => mul_im_out(411)
         );
 
  
@@ -24980,8 +24980,8 @@ begin
             data_im_in => first_stage_im_out(412),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(412),
-            product_im_out => mul_im_out(412)
+            data_re_out => mul_re_out(412),
+            data_im_out => mul_im_out(412)
         );
 
  
@@ -24998,8 +24998,8 @@ begin
             data_im_in => first_stage_im_out(413),
             re_multiplicator => "0011011100011000", --- 0.86083984375 + j-0.5087890625
             im_multiplicator => "1101111101110000",
-            product_re_out => mul_re_out(413),
-            product_im_out => mul_im_out(413)
+            data_re_out => mul_re_out(413),
+            data_im_out => mul_im_out(413)
         );
 
  
@@ -25016,8 +25016,8 @@ begin
             data_im_in => first_stage_im_out(414),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(414),
-            product_im_out => mul_im_out(414)
+            data_re_out => mul_re_out(414),
+            data_im_out => mul_im_out(414)
         );
 
  
@@ -25034,8 +25034,8 @@ begin
             data_im_in => first_stage_im_out(415),
             re_multiplicator => "0011010111011100", --- 0.841552734375 + j-0.540161132812
             im_multiplicator => "1101110101101110",
-            product_re_out => mul_re_out(415),
-            product_im_out => mul_im_out(415)
+            data_re_out => mul_re_out(415),
+            data_im_out => mul_im_out(415)
         );
 
  
@@ -25052,8 +25052,8 @@ begin
             data_im_in => first_stage_im_out(416),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(416),
-            product_im_out => mul_im_out(416)
+            data_re_out => mul_re_out(416),
+            data_im_out => mul_im_out(416)
         );
 
  
@@ -25070,8 +25070,8 @@ begin
             data_im_in => first_stage_im_out(417),
             re_multiplicator => "0011010010001100", --- 0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(417),
-            product_im_out => mul_im_out(417)
+            data_re_out => mul_re_out(417),
+            data_im_out => mul_im_out(417)
         );
 
  
@@ -25088,8 +25088,8 @@ begin
             data_im_in => first_stage_im_out(418),
             re_multiplicator => "0011001111011110", --- 0.810424804688 + j-0.585754394531
             im_multiplicator => "1101101010000011",
-            product_re_out => mul_re_out(418),
-            product_im_out => mul_im_out(418)
+            data_re_out => mul_re_out(418),
+            data_im_out => mul_im_out(418)
         );
 
  
@@ -25106,8 +25106,8 @@ begin
             data_im_in => first_stage_im_out(419),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(419),
-            product_im_out => mul_im_out(419)
+            data_re_out => mul_re_out(419),
+            data_im_out => mul_im_out(419)
         );
 
  
@@ -25124,8 +25124,8 @@ begin
             data_im_in => first_stage_im_out(420),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(420),
-            product_im_out => mul_im_out(420)
+            data_re_out => mul_re_out(420),
+            data_im_out => mul_im_out(420)
         );
 
  
@@ -25142,8 +25142,8 @@ begin
             data_im_in => first_stage_im_out(421),
             re_multiplicator => "0011000110111000", --- 0.77685546875 + j-0.629577636719
             im_multiplicator => "1101011110110101",
-            product_re_out => mul_re_out(421),
-            product_im_out => mul_im_out(421)
+            data_re_out => mul_re_out(421),
+            data_im_out => mul_im_out(421)
         );
 
  
@@ -25160,8 +25160,8 @@ begin
             data_im_in => first_stage_im_out(422),
             re_multiplicator => "0011000011111000", --- 0.76513671875 + j-0.643798828125
             im_multiplicator => "1101011011001100",
-            product_re_out => mul_re_out(422),
-            product_im_out => mul_im_out(422)
+            data_re_out => mul_re_out(422),
+            data_im_out => mul_im_out(422)
         );
 
  
@@ -25178,8 +25178,8 @@ begin
             data_im_in => first_stage_im_out(423),
             re_multiplicator => "0011000000110100", --- 0.753173828125 + j-0.657775878906
             im_multiplicator => "1101010111100111",
-            product_re_out => mul_re_out(423),
-            product_im_out => mul_im_out(423)
+            data_re_out => mul_re_out(423),
+            data_im_out => mul_im_out(423)
         );
 
  
@@ -25196,8 +25196,8 @@ begin
             data_im_in => first_stage_im_out(424),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(424),
-            product_im_out => mul_im_out(424)
+            data_re_out => mul_re_out(424),
+            data_im_out => mul_im_out(424)
         );
 
  
@@ -25214,8 +25214,8 @@ begin
             data_im_in => first_stage_im_out(425),
             re_multiplicator => "0010111010011111", --- 0.728454589844 + j-0.68505859375
             im_multiplicator => "1101010000101000",
-            product_re_out => mul_re_out(425),
-            product_im_out => mul_im_out(425)
+            data_re_out => mul_re_out(425),
+            data_im_out => mul_im_out(425)
         );
 
  
@@ -25232,8 +25232,8 @@ begin
             data_im_in => first_stage_im_out(426),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(426),
-            product_im_out => mul_im_out(426)
+            data_re_out => mul_re_out(426),
+            data_im_out => mul_im_out(426)
         );
 
  
@@ -25250,8 +25250,8 @@ begin
             data_im_in => first_stage_im_out(427),
             re_multiplicator => "0010110011111001", --- 0.702697753906 + j-0.71142578125
             im_multiplicator => "1101001001111000",
-            product_re_out => mul_re_out(427),
-            product_im_out => mul_im_out(427)
+            data_re_out => mul_re_out(427),
+            data_im_out => mul_im_out(427)
         );
 
  
@@ -25268,8 +25268,8 @@ begin
             data_im_in => first_stage_im_out(428),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(428),
-            product_im_out => mul_im_out(428)
+            data_re_out => mul_re_out(428),
+            data_im_out => mul_im_out(428)
         );
 
  
@@ -25286,8 +25286,8 @@ begin
             data_im_in => first_stage_im_out(429),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(429),
-            product_im_out => mul_im_out(429)
+            data_re_out => mul_re_out(429),
+            data_im_out => mul_im_out(429)
         );
 
  
@@ -25304,8 +25304,8 @@ begin
             data_im_in => first_stage_im_out(430),
             re_multiplicator => "0010101001100101", --- 0.662414550781 + j-0.749084472656
             im_multiplicator => "1101000000001111",
-            product_re_out => mul_re_out(430),
-            product_im_out => mul_im_out(430)
+            data_re_out => mul_re_out(430),
+            data_im_out => mul_im_out(430)
         );
 
  
@@ -25322,8 +25322,8 @@ begin
             data_im_in => first_stage_im_out(431),
             re_multiplicator => "0010100110000001", --- 0.648498535156 + j-0.761169433594
             im_multiplicator => "1100111101001001",
-            product_re_out => mul_re_out(431),
-            product_im_out => mul_im_out(431)
+            data_re_out => mul_re_out(431),
+            data_im_out => mul_im_out(431)
         );
 
  
@@ -25340,8 +25340,8 @@ begin
             data_im_in => first_stage_im_out(432),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(432),
-            product_im_out => mul_im_out(432)
+            data_re_out => mul_re_out(432),
+            data_im_out => mul_im_out(432)
         );
 
  
@@ -25358,8 +25358,8 @@ begin
             data_im_in => first_stage_im_out(433),
             re_multiplicator => "0010011110101111", --- 0.620056152344 + j-0.784545898438
             im_multiplicator => "1100110111001010",
-            product_re_out => mul_re_out(433),
-            product_im_out => mul_im_out(433)
+            data_re_out => mul_re_out(433),
+            data_im_out => mul_im_out(433)
         );
 
  
@@ -25376,8 +25376,8 @@ begin
             data_im_in => first_stage_im_out(434),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(434),
-            product_im_out => mul_im_out(434)
+            data_re_out => mul_re_out(434),
+            data_im_out => mul_im_out(434)
         );
 
  
@@ -25394,8 +25394,8 @@ begin
             data_im_in => first_stage_im_out(435),
             re_multiplicator => "0010010111001111", --- 0.590759277344 + j-0.806823730469
             im_multiplicator => "1100110001011101",
-            product_re_out => mul_re_out(435),
-            product_im_out => mul_im_out(435)
+            data_re_out => mul_re_out(435),
+            data_im_out => mul_im_out(435)
         );
 
  
@@ -25412,8 +25412,8 @@ begin
             data_im_in => first_stage_im_out(436),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(436),
-            product_im_out => mul_im_out(436)
+            data_re_out => mul_re_out(436),
+            data_im_out => mul_im_out(436)
         );
 
  
@@ -25430,8 +25430,8 @@ begin
             data_im_in => first_stage_im_out(437),
             re_multiplicator => "0010001111100001", --- 0.560607910156 + j-0.828002929688
             im_multiplicator => "1100101100000010",
-            product_re_out => mul_re_out(437),
-            product_im_out => mul_im_out(437)
+            data_re_out => mul_re_out(437),
+            data_im_out => mul_im_out(437)
         );
 
  
@@ -25448,8 +25448,8 @@ begin
             data_im_in => first_stage_im_out(438),
             re_multiplicator => "0010001011100110", --- 0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(438),
-            product_im_out => mul_im_out(438)
+            data_re_out => mul_re_out(438),
+            data_im_out => mul_im_out(438)
         );
 
  
@@ -25466,8 +25466,8 @@ begin
             data_im_in => first_stage_im_out(439),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(439),
-            product_im_out => mul_im_out(439)
+            data_re_out => mul_re_out(439),
+            data_im_out => mul_im_out(439)
         );
 
  
@@ -25484,8 +25484,8 @@ begin
             data_im_in => first_stage_im_out(440),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(440),
-            product_im_out => mul_im_out(440)
+            data_re_out => mul_re_out(440),
+            data_im_out => mul_im_out(440)
         );
 
  
@@ -25502,8 +25502,8 @@ begin
             data_im_in => first_stage_im_out(441),
             re_multiplicator => "0001111111100010", --- 0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(441),
-            product_im_out => mul_im_out(441)
+            data_re_out => mul_re_out(441),
+            data_im_out => mul_im_out(441)
         );
 
  
@@ -25520,8 +25520,8 @@ begin
             data_im_in => first_stage_im_out(442),
             re_multiplicator => "0001111011011100", --- 0.482177734375 + j-0.876037597656
             im_multiplicator => "1100011111101111",
-            product_re_out => mul_re_out(442),
-            product_im_out => mul_im_out(442)
+            data_re_out => mul_re_out(442),
+            data_im_out => mul_im_out(442)
         );
 
  
@@ -25538,8 +25538,8 @@ begin
             data_im_in => first_stage_im_out(443),
             re_multiplicator => "0001110111010010", --- 0.465942382812 + j-0.884765625
             im_multiplicator => "1100011101100000",
-            product_re_out => mul_re_out(443),
-            product_im_out => mul_im_out(443)
+            data_re_out => mul_re_out(443),
+            data_im_out => mul_im_out(443)
         );
 
  
@@ -25556,8 +25556,8 @@ begin
             data_im_in => first_stage_im_out(444),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(444),
-            product_im_out => mul_im_out(444)
+            data_re_out => mul_re_out(444),
+            data_im_out => mul_im_out(444)
         );
 
  
@@ -25574,8 +25574,8 @@ begin
             data_im_in => first_stage_im_out(445),
             re_multiplicator => "0001101110110111", --- 0.433044433594 + j-0.901306152344
             im_multiplicator => "1100011001010001",
-            product_re_out => mul_re_out(445),
-            product_im_out => mul_im_out(445)
+            data_re_out => mul_re_out(445),
+            data_im_out => mul_im_out(445)
         );
 
  
@@ -25592,8 +25592,8 @@ begin
             data_im_in => first_stage_im_out(446),
             re_multiplicator => "0001101010100110", --- 0.416381835938 + j-0.909118652344
             im_multiplicator => "1100010111010001",
-            product_re_out => mul_re_out(446),
-            product_im_out => mul_im_out(446)
+            data_re_out => mul_re_out(446),
+            data_im_out => mul_im_out(446)
         );
 
  
@@ -25610,8 +25610,8 @@ begin
             data_im_in => first_stage_im_out(447),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(447),
-            product_im_out => mul_im_out(447)
+            data_re_out => mul_re_out(447),
+            data_im_out => mul_im_out(447)
         );
 
  
@@ -25626,8 +25626,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(448),
             data_im_in => first_stage_im_out(448),
-            product_re_out => mul_re_out(448),
-            product_im_out => mul_im_out(448)
+            data_re_out => mul_re_out(448),
+            data_im_out => mul_im_out(448)
         );
 
  
@@ -25644,8 +25644,8 @@ begin
             data_im_in => first_stage_im_out(449),
             re_multiplicator => "0011111111111100", --- 0.999755859375 + j-0.0214233398438
             im_multiplicator => "1111111010100001",
-            product_re_out => mul_re_out(449),
-            product_im_out => mul_im_out(449)
+            data_re_out => mul_re_out(449),
+            data_im_out => mul_im_out(449)
         );
 
  
@@ -25662,8 +25662,8 @@ begin
             data_im_in => first_stage_im_out(450),
             re_multiplicator => "0011111111110000", --- 0.9990234375 + j-0.0429077148438
             im_multiplicator => "1111110101000001",
-            product_re_out => mul_re_out(450),
-            product_im_out => mul_im_out(450)
+            data_re_out => mul_re_out(450),
+            data_im_out => mul_im_out(450)
         );
 
  
@@ -25680,8 +25680,8 @@ begin
             data_im_in => first_stage_im_out(451),
             re_multiplicator => "0011111111011110", --- 0.997924804688 + j-0.0643310546875
             im_multiplicator => "1111101111100010",
-            product_re_out => mul_re_out(451),
-            product_im_out => mul_im_out(451)
+            data_re_out => mul_re_out(451),
+            data_im_out => mul_im_out(451)
         );
 
  
@@ -25698,8 +25698,8 @@ begin
             data_im_in => first_stage_im_out(452),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(452),
-            product_im_out => mul_im_out(452)
+            data_re_out => mul_re_out(452),
+            data_im_out => mul_im_out(452)
         );
 
  
@@ -25716,8 +25716,8 @@ begin
             data_im_in => first_stage_im_out(453),
             re_multiplicator => "0011111110100001", --- 0.994201660156 + j-0.107116699219
             im_multiplicator => "1111100100100101",
-            product_re_out => mul_re_out(453),
-            product_im_out => mul_im_out(453)
+            data_re_out => mul_re_out(453),
+            data_im_out => mul_im_out(453)
         );
 
  
@@ -25734,8 +25734,8 @@ begin
             data_im_in => first_stage_im_out(454),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(454),
-            product_im_out => mul_im_out(454)
+            data_re_out => mul_re_out(454),
+            data_im_out => mul_im_out(454)
         );
 
  
@@ -25752,8 +25752,8 @@ begin
             data_im_in => first_stage_im_out(455),
             re_multiplicator => "0011111101000111", --- 0.988708496094 + j-0.149719238281
             im_multiplicator => "1111011001101011",
-            product_re_out => mul_re_out(455),
-            product_im_out => mul_im_out(455)
+            data_re_out => mul_re_out(455),
+            data_im_out => mul_im_out(455)
         );
 
  
@@ -25770,8 +25770,8 @@ begin
             data_im_in => first_stage_im_out(456),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(456),
-            product_im_out => mul_im_out(456)
+            data_re_out => mul_re_out(456),
+            data_im_out => mul_im_out(456)
         );
 
  
@@ -25788,8 +25788,8 @@ begin
             data_im_in => first_stage_im_out(457),
             re_multiplicator => "0011111011001110", --- 0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(457),
-            product_im_out => mul_im_out(457)
+            data_re_out => mul_re_out(457),
+            data_im_out => mul_im_out(457)
         );
 
  
@@ -25806,8 +25806,8 @@ begin
             data_im_in => first_stage_im_out(458),
             re_multiplicator => "0011111010000111", --- 0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(458),
-            product_im_out => mul_im_out(458)
+            data_re_out => mul_re_out(458),
+            data_im_out => mul_im_out(458)
         );
 
  
@@ -25824,8 +25824,8 @@ begin
             data_im_in => first_stage_im_out(459),
             re_multiplicator => "0011111000111000", --- 0.97216796875 + j-0.234008789062
             im_multiplicator => "1111000100000110",
-            product_re_out => mul_re_out(459),
-            product_im_out => mul_im_out(459)
+            data_re_out => mul_re_out(459),
+            data_im_out => mul_im_out(459)
         );
 
  
@@ -25842,8 +25842,8 @@ begin
             data_im_in => first_stage_im_out(460),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(460),
-            product_im_out => mul_im_out(460)
+            data_re_out => mul_re_out(460),
+            data_im_out => mul_im_out(460)
         );
 
  
@@ -25860,8 +25860,8 @@ begin
             data_im_in => first_stage_im_out(461),
             re_multiplicator => "0011110110000101", --- 0.961242675781 + j-0.275512695312
             im_multiplicator => "1110111001011110",
-            product_re_out => mul_re_out(461),
-            product_im_out => mul_im_out(461)
+            data_re_out => mul_re_out(461),
+            data_im_out => mul_im_out(461)
         );
 
  
@@ -25878,8 +25878,8 @@ begin
             data_im_in => first_stage_im_out(462),
             re_multiplicator => "0011110100100001", --- 0.955139160156 + j-0.296142578125
             im_multiplicator => "1110110100001100",
-            product_re_out => mul_re_out(462),
-            product_im_out => mul_im_out(462)
+            data_re_out => mul_re_out(462),
+            data_im_out => mul_im_out(462)
         );
 
  
@@ -25896,8 +25896,8 @@ begin
             data_im_in => first_stage_im_out(463),
             re_multiplicator => "0011110010110101", --- 0.948547363281 + j-0.316589355469
             im_multiplicator => "1110101110111101",
-            product_re_out => mul_re_out(463),
-            product_im_out => mul_im_out(463)
+            data_re_out => mul_re_out(463),
+            data_im_out => mul_im_out(463)
         );
 
  
@@ -25914,8 +25914,8 @@ begin
             data_im_in => first_stage_im_out(464),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(464),
-            product_im_out => mul_im_out(464)
+            data_re_out => mul_re_out(464),
+            data_im_out => mul_im_out(464)
         );
 
  
@@ -25932,8 +25932,8 @@ begin
             data_im_in => first_stage_im_out(465),
             re_multiplicator => "0011101111001000", --- 0.93408203125 + j-0.356994628906
             im_multiplicator => "1110100100100111",
-            product_re_out => mul_re_out(465),
-            product_im_out => mul_im_out(465)
+            data_re_out => mul_re_out(465),
+            data_im_out => mul_im_out(465)
         );
 
  
@@ -25950,8 +25950,8 @@ begin
             data_im_in => first_stage_im_out(466),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(466),
-            product_im_out => mul_im_out(466)
+            data_re_out => mul_re_out(466),
+            data_im_out => mul_im_out(466)
         );
 
  
@@ -25968,8 +25968,8 @@ begin
             data_im_in => first_stage_im_out(467),
             re_multiplicator => "0011101010111110", --- 0.917846679688 + j-0.396789550781
             im_multiplicator => "1110011010011011",
-            product_re_out => mul_re_out(467),
-            product_im_out => mul_im_out(467)
+            data_re_out => mul_re_out(467),
+            data_im_out => mul_im_out(467)
         );
 
  
@@ -25986,8 +25986,8 @@ begin
             data_im_in => first_stage_im_out(468),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(468),
-            product_im_out => mul_im_out(468)
+            data_re_out => mul_re_out(468),
+            data_im_out => mul_im_out(468)
         );
 
  
@@ -26004,8 +26004,8 @@ begin
             data_im_in => first_stage_im_out(469),
             re_multiplicator => "0011100110011001", --- 0.899963378906 + j-0.435852050781
             im_multiplicator => "1110010000011011",
-            product_re_out => mul_re_out(469),
-            product_im_out => mul_im_out(469)
+            data_re_out => mul_re_out(469),
+            data_im_out => mul_im_out(469)
         );
 
  
@@ -26022,8 +26022,8 @@ begin
             data_im_in => first_stage_im_out(470),
             re_multiplicator => "0011100011111101", --- 0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(470),
-            product_im_out => mul_im_out(470)
+            data_re_out => mul_re_out(470),
+            data_im_out => mul_im_out(470)
         );
 
  
@@ -26040,8 +26040,8 @@ begin
             data_im_in => first_stage_im_out(471),
             re_multiplicator => "0011100001011001", --- 0.880432128906 + j-0.474060058594
             im_multiplicator => "1110000110101001",
-            product_re_out => mul_re_out(471),
-            product_im_out => mul_im_out(471)
+            data_re_out => mul_re_out(471),
+            data_im_out => mul_im_out(471)
         );
 
  
@@ -26058,8 +26058,8 @@ begin
             data_im_in => first_stage_im_out(472),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(472),
-            product_im_out => mul_im_out(472)
+            data_re_out => mul_re_out(472),
+            data_im_out => mul_im_out(472)
         );
 
  
@@ -26076,8 +26076,8 @@ begin
             data_im_in => first_stage_im_out(473),
             re_multiplicator => "0011011011111110", --- 0.859252929688 + j-0.511413574219
             im_multiplicator => "1101111101000101",
-            product_re_out => mul_re_out(473),
-            product_im_out => mul_im_out(473)
+            data_re_out => mul_re_out(473),
+            data_im_out => mul_im_out(473)
         );
 
  
@@ -26094,8 +26094,8 @@ begin
             data_im_in => first_stage_im_out(474),
             re_multiplicator => "0011011001000111", --- 0.848083496094 + j-0.52978515625
             im_multiplicator => "1101111000011000",
-            product_re_out => mul_re_out(474),
-            product_im_out => mul_im_out(474)
+            data_re_out => mul_re_out(474),
+            data_im_out => mul_im_out(474)
         );
 
  
@@ -26112,8 +26112,8 @@ begin
             data_im_in => first_stage_im_out(475),
             re_multiplicator => "0011010110001001", --- 0.836486816406 + j-0.5478515625
             im_multiplicator => "1101110011110000",
-            product_re_out => mul_re_out(475),
-            product_im_out => mul_im_out(475)
+            data_re_out => mul_re_out(475),
+            data_im_out => mul_im_out(475)
         );
 
  
@@ -26130,8 +26130,8 @@ begin
             data_im_in => first_stage_im_out(476),
             re_multiplicator => "0011010011000110", --- 0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(476),
-            product_im_out => mul_im_out(476)
+            data_re_out => mul_re_out(476),
+            data_im_out => mul_im_out(476)
         );
 
  
@@ -26148,8 +26148,8 @@ begin
             data_im_in => first_stage_im_out(477),
             re_multiplicator => "0011001111111011", --- 0.812194824219 + j-0.583251953125
             im_multiplicator => "1101101010101100",
-            product_re_out => mul_re_out(477),
-            product_im_out => mul_im_out(477)
+            data_re_out => mul_re_out(477),
+            data_im_out => mul_im_out(477)
         );
 
  
@@ -26166,8 +26166,8 @@ begin
             data_im_in => first_stage_im_out(478),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(478),
-            product_im_out => mul_im_out(478)
+            data_re_out => mul_re_out(478),
+            data_im_out => mul_im_out(478)
         );
 
  
@@ -26184,8 +26184,8 @@ begin
             data_im_in => first_stage_im_out(479),
             re_multiplicator => "0011001001010101", --- 0.786437988281 + j-0.617614746094
             im_multiplicator => "1101100001111001",
-            product_re_out => mul_re_out(479),
-            product_im_out => mul_im_out(479)
+            data_re_out => mul_re_out(479),
+            data_im_out => mul_im_out(479)
         );
 
  
@@ -26202,8 +26202,8 @@ begin
             data_im_in => first_stage_im_out(480),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(480),
-            product_im_out => mul_im_out(480)
+            data_re_out => mul_re_out(480),
+            data_im_out => mul_im_out(480)
         );
 
  
@@ -26220,8 +26220,8 @@ begin
             data_im_in => first_stage_im_out(481),
             re_multiplicator => "0011000010010110", --- 0.759155273438 + j-0.650817871094
             im_multiplicator => "1101011001011001",
-            product_re_out => mul_re_out(481),
-            product_im_out => mul_im_out(481)
+            data_re_out => mul_re_out(481),
+            data_im_out => mul_im_out(481)
         );
 
  
@@ -26238,8 +26238,8 @@ begin
             data_im_in => first_stage_im_out(482),
             re_multiplicator => "0010111110101111", --- 0.745056152344 + j-0.6669921875
             im_multiplicator => "1101010101010000",
-            product_re_out => mul_re_out(482),
-            product_im_out => mul_im_out(482)
+            data_re_out => mul_re_out(482),
+            data_im_out => mul_im_out(482)
         );
 
  
@@ -26256,8 +26256,8 @@ begin
             data_im_in => first_stage_im_out(483),
             re_multiplicator => "0010111011000001", --- 0.730529785156 + j-0.682800292969
             im_multiplicator => "1101010001001101",
-            product_re_out => mul_re_out(483),
-            product_im_out => mul_im_out(483)
+            data_re_out => mul_re_out(483),
+            data_im_out => mul_im_out(483)
         );
 
  
@@ -26274,8 +26274,8 @@ begin
             data_im_in => first_stage_im_out(484),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(484),
-            product_im_out => mul_im_out(484)
+            data_re_out => mul_re_out(484),
+            data_im_out => mul_im_out(484)
         );
 
  
@@ -26292,8 +26292,8 @@ begin
             data_im_in => first_stage_im_out(485),
             re_multiplicator => "0010110011010110", --- 0.700561523438 + j-0.713562011719
             im_multiplicator => "1101001001010101",
-            product_re_out => mul_re_out(485),
-            product_im_out => mul_im_out(485)
+            data_re_out => mul_re_out(485),
+            data_im_out => mul_im_out(485)
         );
 
  
@@ -26310,8 +26310,8 @@ begin
             data_im_in => first_stage_im_out(486),
             re_multiplicator => "0010101111011000", --- 0.68505859375 + j-0.728454589844
             im_multiplicator => "1101000101100001",
-            product_re_out => mul_re_out(486),
-            product_im_out => mul_im_out(486)
+            data_re_out => mul_re_out(486),
+            data_im_out => mul_im_out(486)
         );
 
  
@@ -26328,8 +26328,8 @@ begin
             data_im_in => first_stage_im_out(487),
             re_multiplicator => "0010101011010101", --- 0.669250488281 + j-0.742980957031
             im_multiplicator => "1101000001110011",
-            product_re_out => mul_re_out(487),
-            product_im_out => mul_im_out(487)
+            data_re_out => mul_re_out(487),
+            data_im_out => mul_im_out(487)
         );
 
  
@@ -26346,8 +26346,8 @@ begin
             data_im_in => first_stage_im_out(488),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(488),
-            product_im_out => mul_im_out(488)
+            data_re_out => mul_re_out(488),
+            data_im_out => mul_im_out(488)
         );
 
  
@@ -26364,8 +26364,8 @@ begin
             data_im_in => first_stage_im_out(489),
             re_multiplicator => "0010100011000000", --- 0.63671875 + j-0.771057128906
             im_multiplicator => "1100111010100111",
-            product_re_out => mul_re_out(489),
-            product_im_out => mul_im_out(489)
+            data_re_out => mul_re_out(489),
+            data_im_out => mul_im_out(489)
         );
 
  
@@ -26382,8 +26382,8 @@ begin
             data_im_in => first_stage_im_out(490),
             re_multiplicator => "0010011110101111", --- 0.620056152344 + j-0.784545898438
             im_multiplicator => "1100110111001010",
-            product_re_out => mul_re_out(490),
-            product_im_out => mul_im_out(490)
+            data_re_out => mul_re_out(490),
+            data_im_out => mul_im_out(490)
         );
 
  
@@ -26400,8 +26400,8 @@ begin
             data_im_in => first_stage_im_out(491),
             re_multiplicator => "0010011010011000", --- 0.60302734375 + j-0.797668457031
             im_multiplicator => "1100110011110011",
-            product_re_out => mul_re_out(491),
-            product_im_out => mul_im_out(491)
+            data_re_out => mul_re_out(491),
+            data_im_out => mul_im_out(491)
         );
 
  
@@ -26418,8 +26418,8 @@ begin
             data_im_in => first_stage_im_out(492),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j-0.810424804688
             im_multiplicator => "1100110000100010",
-            product_re_out => mul_re_out(492),
-            product_im_out => mul_im_out(492)
+            data_re_out => mul_re_out(492),
+            data_im_out => mul_im_out(492)
         );
 
  
@@ -26436,8 +26436,8 @@ begin
             data_im_in => first_stage_im_out(493),
             re_multiplicator => "0010010001011110", --- 0.568237304688 + j-0.822814941406
             im_multiplicator => "1100101101010111",
-            product_re_out => mul_re_out(493),
-            product_im_out => mul_im_out(493)
+            data_re_out => mul_re_out(493),
+            data_im_out => mul_im_out(493)
         );
 
  
@@ -26454,8 +26454,8 @@ begin
             data_im_in => first_stage_im_out(494),
             re_multiplicator => "0010001100111010", --- 0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(494),
-            product_im_out => mul_im_out(494)
+            data_re_out => mul_re_out(494),
+            data_im_out => mul_im_out(494)
         );
 
  
@@ -26472,8 +26472,8 @@ begin
             data_im_in => first_stage_im_out(495),
             re_multiplicator => "0010001000010010", --- 0.532348632812 + j-0.846435546875
             im_multiplicator => "1100100111010100",
-            product_re_out => mul_re_out(495),
-            product_im_out => mul_im_out(495)
+            data_re_out => mul_re_out(495),
+            data_im_out => mul_im_out(495)
         );
 
  
@@ -26490,8 +26490,8 @@ begin
             data_im_in => first_stage_im_out(496),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(496),
-            product_im_out => mul_im_out(496)
+            data_re_out => mul_re_out(496),
+            data_im_out => mul_im_out(496)
         );
 
  
@@ -26508,8 +26508,8 @@ begin
             data_im_in => first_stage_im_out(497),
             re_multiplicator => "0001111110110111", --- 0.495544433594 + j-0.868530273438
             im_multiplicator => "1100100001101010",
-            product_re_out => mul_re_out(497),
-            product_im_out => mul_im_out(497)
+            data_re_out => mul_re_out(497),
+            data_im_out => mul_im_out(497)
         );
 
  
@@ -26526,8 +26526,8 @@ begin
             data_im_in => first_stage_im_out(498),
             re_multiplicator => "0001111010000011", --- 0.476745605469 + j-0.878967285156
             im_multiplicator => "1100011110111111",
-            product_re_out => mul_re_out(498),
-            product_im_out => mul_im_out(498)
+            data_re_out => mul_re_out(498),
+            data_im_out => mul_im_out(498)
         );
 
  
@@ -26544,8 +26544,8 @@ begin
             data_im_in => first_stage_im_out(499),
             re_multiplicator => "0001110101001100", --- 0.457763671875 + j-0.889038085938
             im_multiplicator => "1100011100011010",
-            product_re_out => mul_re_out(499),
-            product_im_out => mul_im_out(499)
+            data_re_out => mul_re_out(499),
+            data_im_out => mul_im_out(499)
         );
 
  
@@ -26562,8 +26562,8 @@ begin
             data_im_in => first_stage_im_out(500),
             re_multiplicator => "0001110000010010", --- 0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(500),
-            product_im_out => mul_im_out(500)
+            data_re_out => mul_re_out(500),
+            data_im_out => mul_im_out(500)
         );
 
  
@@ -26580,8 +26580,8 @@ begin
             data_im_in => first_stage_im_out(501),
             re_multiplicator => "0001101011010100", --- 0.419189453125 + j-0.907836914062
             im_multiplicator => "1100010111100110",
-            product_re_out => mul_re_out(501),
-            product_im_out => mul_im_out(501)
+            data_re_out => mul_re_out(501),
+            data_im_out => mul_im_out(501)
         );
 
  
@@ -26598,8 +26598,8 @@ begin
             data_im_in => first_stage_im_out(502),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(502),
-            product_im_out => mul_im_out(502)
+            data_re_out => mul_re_out(502),
+            data_im_out => mul_im_out(502)
         );
 
  
@@ -26616,8 +26616,8 @@ begin
             data_im_in => first_stage_im_out(503),
             re_multiplicator => "0001100001001111", --- 0.379821777344 + j-0.925048828125
             im_multiplicator => "1100010011001100",
-            product_re_out => mul_re_out(503),
-            product_im_out => mul_im_out(503)
+            data_re_out => mul_re_out(503),
+            data_im_out => mul_im_out(503)
         );
 
  
@@ -26634,8 +26634,8 @@ begin
             data_im_in => first_stage_im_out(504),
             re_multiplicator => "0001011100001000", --- 0.35986328125 + j-0.932983398438
             im_multiplicator => "1100010001001010",
-            product_re_out => mul_re_out(504),
-            product_im_out => mul_im_out(504)
+            data_re_out => mul_re_out(504),
+            data_im_out => mul_im_out(504)
         );
 
  
@@ -26652,8 +26652,8 @@ begin
             data_im_in => first_stage_im_out(505),
             re_multiplicator => "0001010110111110", --- 0.339721679688 + j-0.940490722656
             im_multiplicator => "1100001111001111",
-            product_re_out => mul_re_out(505),
-            product_im_out => mul_im_out(505)
+            data_re_out => mul_re_out(505),
+            data_im_out => mul_im_out(505)
         );
 
  
@@ -26670,8 +26670,8 @@ begin
             data_im_in => first_stage_im_out(506),
             re_multiplicator => "0001010001110010", --- 0.319458007812 + j-0.947570800781
             im_multiplicator => "1100001101011011",
-            product_re_out => mul_re_out(506),
-            product_im_out => mul_im_out(506)
+            data_re_out => mul_re_out(506),
+            data_im_out => mul_im_out(506)
         );
 
  
@@ -26688,8 +26688,8 @@ begin
             data_im_in => first_stage_im_out(507),
             re_multiplicator => "0001001100100100", --- 0.299072265625 + j-0.954223632812
             im_multiplicator => "1100001011101110",
-            product_re_out => mul_re_out(507),
-            product_im_out => mul_im_out(507)
+            data_re_out => mul_re_out(507),
+            data_im_out => mul_im_out(507)
         );
 
  
@@ -26706,8 +26706,8 @@ begin
             data_im_in => first_stage_im_out(508),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(508),
-            product_im_out => mul_im_out(508)
+            data_re_out => mul_re_out(508),
+            data_im_out => mul_im_out(508)
         );
 
  
@@ -26724,8 +26724,8 @@ begin
             data_im_in => first_stage_im_out(509),
             re_multiplicator => "0001000010000000", --- 0.2578125 + j-0.966186523438
             im_multiplicator => "1100001000101010",
-            product_re_out => mul_re_out(509),
-            product_im_out => mul_im_out(509)
+            data_re_out => mul_re_out(509),
+            data_im_out => mul_im_out(509)
         );
 
  
@@ -26742,8 +26742,8 @@ begin
             data_im_in => first_stage_im_out(510),
             re_multiplicator => "0000111100101011", --- 0.236999511719 + j-0.971496582031
             im_multiplicator => "1100000111010011",
-            product_re_out => mul_re_out(510),
-            product_im_out => mul_im_out(510)
+            data_re_out => mul_re_out(510),
+            data_im_out => mul_im_out(510)
         );
 
  
@@ -26760,8 +26760,8 @@ begin
             data_im_in => first_stage_im_out(511),
             re_multiplicator => "0000110111010100", --- 0.216064453125 + j-0.976318359375
             im_multiplicator => "1100000110000100",
-            product_re_out => mul_re_out(511),
-            product_im_out => mul_im_out(511)
+            data_re_out => mul_re_out(511),
+            data_im_out => mul_im_out(511)
         );
 
  
@@ -26776,8 +26776,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(512),
             data_im_in => first_stage_im_out(512),
-            product_re_out => mul_re_out(512),
-            product_im_out => mul_im_out(512)
+            data_re_out => mul_re_out(512),
+            data_im_out => mul_im_out(512)
         );
 
  
@@ -26794,8 +26794,8 @@ begin
             data_im_in => first_stage_im_out(513),
             re_multiplicator => "0011111111111011", --- 0.999694824219 + j-0.0245361328125
             im_multiplicator => "1111111001101110",
-            product_re_out => mul_re_out(513),
-            product_im_out => mul_im_out(513)
+            data_re_out => mul_re_out(513),
+            data_im_out => mul_im_out(513)
         );
 
  
@@ -26812,8 +26812,8 @@ begin
             data_im_in => first_stage_im_out(514),
             re_multiplicator => "0011111111101100", --- 0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(514),
-            product_im_out => mul_im_out(514)
+            data_re_out => mul_re_out(514),
+            data_im_out => mul_im_out(514)
         );
 
  
@@ -26830,8 +26830,8 @@ begin
             data_im_in => first_stage_im_out(515),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(515),
-            product_im_out => mul_im_out(515)
+            data_re_out => mul_re_out(515),
+            data_im_out => mul_im_out(515)
         );
 
  
@@ -26848,8 +26848,8 @@ begin
             data_im_in => first_stage_im_out(516),
             re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(516),
-            product_im_out => mul_im_out(516)
+            data_re_out => mul_re_out(516),
+            data_im_out => mul_im_out(516)
         );
 
  
@@ -26866,8 +26866,8 @@ begin
             data_im_in => first_stage_im_out(517),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(517),
-            product_im_out => mul_im_out(517)
+            data_re_out => mul_re_out(517),
+            data_im_out => mul_im_out(517)
         );
 
  
@@ -26884,8 +26884,8 @@ begin
             data_im_in => first_stage_im_out(518),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(518),
-            product_im_out => mul_im_out(518)
+            data_re_out => mul_re_out(518),
+            data_im_out => mul_im_out(518)
         );
 
  
@@ -26902,8 +26902,8 @@ begin
             data_im_in => first_stage_im_out(519),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(519),
-            product_im_out => mul_im_out(519)
+            data_re_out => mul_re_out(519),
+            data_im_out => mul_im_out(519)
         );
 
  
@@ -26920,8 +26920,8 @@ begin
             data_im_in => first_stage_im_out(520),
             re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(520),
-            product_im_out => mul_im_out(520)
+            data_re_out => mul_re_out(520),
+            data_im_out => mul_im_out(520)
         );
 
  
@@ -26938,8 +26938,8 @@ begin
             data_im_in => first_stage_im_out(521),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(521),
-            product_im_out => mul_im_out(521)
+            data_re_out => mul_re_out(521),
+            data_im_out => mul_im_out(521)
         );
 
  
@@ -26956,8 +26956,8 @@ begin
             data_im_in => first_stage_im_out(522),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(522),
-            product_im_out => mul_im_out(522)
+            data_re_out => mul_re_out(522),
+            data_im_out => mul_im_out(522)
         );
 
  
@@ -26974,8 +26974,8 @@ begin
             data_im_in => first_stage_im_out(523),
             re_multiplicator => "0011110110101110", --- 0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(523),
-            product_im_out => mul_im_out(523)
+            data_re_out => mul_re_out(523),
+            data_im_out => mul_im_out(523)
         );
 
  
@@ -26992,8 +26992,8 @@ begin
             data_im_in => first_stage_im_out(524),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(524),
-            product_im_out => mul_im_out(524)
+            data_re_out => mul_re_out(524),
+            data_im_out => mul_im_out(524)
         );
 
  
@@ -27010,8 +27010,8 @@ begin
             data_im_in => first_stage_im_out(525),
             re_multiplicator => "0011110011000101", --- 0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(525),
-            product_im_out => mul_im_out(525)
+            data_re_out => mul_re_out(525),
+            data_im_out => mul_im_out(525)
         );
 
  
@@ -27028,8 +27028,8 @@ begin
             data_im_in => first_stage_im_out(526),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(526),
-            product_im_out => mul_im_out(526)
+            data_re_out => mul_re_out(526),
+            data_im_out => mul_im_out(526)
         );
 
  
@@ -27046,8 +27046,8 @@ begin
             data_im_in => first_stage_im_out(527),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(527),
-            product_im_out => mul_im_out(527)
+            data_re_out => mul_re_out(527),
+            data_im_out => mul_im_out(527)
         );
 
  
@@ -27064,8 +27064,8 @@ begin
             data_im_in => first_stage_im_out(528),
             re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
             im_multiplicator => "1110011110000011",
-            product_re_out => mul_re_out(528),
-            product_im_out => mul_im_out(528)
+            data_re_out => mul_re_out(528),
+            data_im_out => mul_im_out(528)
         );
 
  
@@ -27082,8 +27082,8 @@ begin
             data_im_in => first_stage_im_out(529),
             re_multiplicator => "0011101010000010", --- 0.914184570312 + j-0.405212402344
             im_multiplicator => "1110011000010001",
-            product_re_out => mul_re_out(529),
-            product_im_out => mul_im_out(529)
+            data_re_out => mul_re_out(529),
+            data_im_out => mul_im_out(529)
         );
 
  
@@ -27100,8 +27100,8 @@ begin
             data_im_in => first_stage_im_out(530),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(530),
-            product_im_out => mul_im_out(530)
+            data_re_out => mul_re_out(530),
+            data_im_out => mul_im_out(530)
         );
 
  
@@ -27118,8 +27118,8 @@ begin
             data_im_in => first_stage_im_out(531),
             re_multiplicator => "0011100100101010", --- 0.893188476562 + j-0.449584960938
             im_multiplicator => "1110001100111010",
-            product_re_out => mul_re_out(531),
-            product_im_out => mul_im_out(531)
+            data_re_out => mul_re_out(531),
+            data_im_out => mul_im_out(531)
         );
 
  
@@ -27136,8 +27136,8 @@ begin
             data_im_in => first_stage_im_out(532),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(532),
-            product_im_out => mul_im_out(532)
+            data_re_out => mul_re_out(532),
+            data_im_out => mul_im_out(532)
         );
 
  
@@ -27154,8 +27154,8 @@ begin
             data_im_in => first_stage_im_out(533),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(533),
-            product_im_out => mul_im_out(533)
+            data_re_out => mul_re_out(533),
+            data_im_out => mul_im_out(533)
         );
 
  
@@ -27172,8 +27172,8 @@ begin
             data_im_in => first_stage_im_out(534),
             re_multiplicator => "0011011011100101", --- 0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(534),
-            product_im_out => mul_im_out(534)
+            data_re_out => mul_re_out(534),
+            data_im_out => mul_im_out(534)
         );
 
  
@@ -27190,8 +27190,8 @@ begin
             data_im_in => first_stage_im_out(535),
             re_multiplicator => "0011011000010010", --- 0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(535),
-            product_im_out => mul_im_out(535)
+            data_re_out => mul_re_out(535),
+            data_im_out => mul_im_out(535)
         );
 
  
@@ -27208,8 +27208,8 @@ begin
             data_im_in => first_stage_im_out(536),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(536),
-            product_im_out => mul_im_out(536)
+            data_re_out => mul_re_out(536),
+            data_im_out => mul_im_out(536)
         );
 
  
@@ -27226,8 +27226,8 @@ begin
             data_im_in => first_stage_im_out(537),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(537),
-            product_im_out => mul_im_out(537)
+            data_re_out => mul_re_out(537),
+            data_im_out => mul_im_out(537)
         );
 
  
@@ -27244,8 +27244,8 @@ begin
             data_im_in => first_stage_im_out(538),
             re_multiplicator => "0011001101100111", --- 0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(538),
-            product_im_out => mul_im_out(538)
+            data_re_out => mul_re_out(538),
+            data_im_out => mul_im_out(538)
         );
 
  
@@ -27262,8 +27262,8 @@ begin
             data_im_in => first_stage_im_out(539),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(539),
-            product_im_out => mul_im_out(539)
+            data_re_out => mul_re_out(539),
+            data_im_out => mul_im_out(539)
         );
 
  
@@ -27280,8 +27280,8 @@ begin
             data_im_in => first_stage_im_out(540),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(540),
-            product_im_out => mul_im_out(540)
+            data_re_out => mul_re_out(540),
+            data_im_out => mul_im_out(540)
         );
 
  
@@ -27298,8 +27298,8 @@ begin
             data_im_in => first_stage_im_out(541),
             re_multiplicator => "0011000001110110", --- 0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(541),
-            product_im_out => mul_im_out(541)
+            data_re_out => mul_re_out(541),
+            data_im_out => mul_im_out(541)
         );
 
  
@@ -27316,8 +27316,8 @@ begin
             data_im_in => first_stage_im_out(542),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(542),
-            product_im_out => mul_im_out(542)
+            data_re_out => mul_re_out(542),
+            data_im_out => mul_im_out(542)
         );
 
  
@@ -27334,8 +27334,8 @@ begin
             data_im_in => first_stage_im_out(543),
             re_multiplicator => "0010111001011010", --- 0.724243164062 + j-0.689514160156
             im_multiplicator => "1101001111011111",
-            product_re_out => mul_re_out(543),
-            product_im_out => mul_im_out(543)
+            data_re_out => mul_re_out(543),
+            data_im_out => mul_im_out(543)
         );
 
  
@@ -27352,8 +27352,8 @@ begin
             data_im_in => first_stage_im_out(544),
             re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(544),
-            product_im_out => mul_im_out(544)
+            data_re_out => mul_re_out(544),
+            data_im_out => mul_im_out(544)
         );
 
  
@@ -27370,8 +27370,8 @@ begin
             data_im_in => first_stage_im_out(545),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(545),
-            product_im_out => mul_im_out(545)
+            data_re_out => mul_re_out(545),
+            data_im_out => mul_im_out(545)
         );
 
  
@@ -27388,8 +27388,8 @@ begin
             data_im_in => first_stage_im_out(546),
             re_multiplicator => "0010101011111010", --- 0.671508789062 + j-0.740905761719
             im_multiplicator => "1101000010010101",
-            product_re_out => mul_re_out(546),
-            product_im_out => mul_im_out(546)
+            data_re_out => mul_re_out(546),
+            data_im_out => mul_im_out(546)
         );
 
  
@@ -27406,8 +27406,8 @@ begin
             data_im_in => first_stage_im_out(547),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(547),
-            product_im_out => mul_im_out(547)
+            data_re_out => mul_re_out(547),
+            data_im_out => mul_im_out(547)
         );
 
  
@@ -27424,8 +27424,8 @@ begin
             data_im_in => first_stage_im_out(548),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(548),
-            product_im_out => mul_im_out(548)
+            data_re_out => mul_re_out(548),
+            data_im_out => mul_im_out(548)
         );
 
  
@@ -27442,8 +27442,8 @@ begin
             data_im_in => first_stage_im_out(549),
             re_multiplicator => "0010011101011111", --- 0.615173339844 + j-0.788330078125
             im_multiplicator => "1100110110001100",
-            product_re_out => mul_re_out(549),
-            product_im_out => mul_im_out(549)
+            data_re_out => mul_re_out(549),
+            data_im_out => mul_im_out(549)
         );
 
  
@@ -27460,8 +27460,8 @@ begin
             data_im_in => first_stage_im_out(550),
             re_multiplicator => "0010011000011111", --- 0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(550),
-            product_im_out => mul_im_out(550)
+            data_re_out => mul_re_out(550),
+            data_im_out => mul_im_out(550)
         );
 
  
@@ -27478,8 +27478,8 @@ begin
             data_im_in => first_stage_im_out(551),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(551),
-            product_im_out => mul_im_out(551)
+            data_re_out => mul_re_out(551),
+            data_im_out => mul_im_out(551)
         );
 
  
@@ -27496,8 +27496,8 @@ begin
             data_im_in => first_stage_im_out(552),
             re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(552),
-            product_im_out => mul_im_out(552)
+            data_re_out => mul_re_out(552),
+            data_im_out => mul_im_out(552)
         );
 
  
@@ -27514,8 +27514,8 @@ begin
             data_im_in => first_stage_im_out(553),
             re_multiplicator => "0010001000111101", --- 0.534973144531 + j-0.844848632812
             im_multiplicator => "1100100111101110",
-            product_re_out => mul_re_out(553),
-            product_im_out => mul_im_out(553)
+            data_re_out => mul_re_out(553),
+            data_im_out => mul_im_out(553)
         );
 
  
@@ -27532,8 +27532,8 @@ begin
             data_im_in => first_stage_im_out(554),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(554),
-            product_im_out => mul_im_out(554)
+            data_re_out => mul_re_out(554),
+            data_im_out => mul_im_out(554)
         );
 
  
@@ -27550,8 +27550,8 @@ begin
             data_im_in => first_stage_im_out(555),
             re_multiplicator => "0001111110001011", --- 0.492858886719 + j-0.870056152344
             im_multiplicator => "1100100001010001",
-            product_re_out => mul_re_out(555),
-            product_im_out => mul_im_out(555)
+            data_re_out => mul_re_out(555),
+            data_im_out => mul_im_out(555)
         );
 
  
@@ -27568,8 +27568,8 @@ begin
             data_im_in => first_stage_im_out(556),
             re_multiplicator => "0001111000101011", --- 0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(556),
-            product_im_out => mul_im_out(556)
+            data_re_out => mul_re_out(556),
+            data_im_out => mul_im_out(556)
         );
 
  
@@ -27586,8 +27586,8 @@ begin
             data_im_in => first_stage_im_out(557),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(557),
-            product_im_out => mul_im_out(557)
+            data_re_out => mul_re_out(557),
+            data_im_out => mul_im_out(557)
         );
 
  
@@ -27604,8 +27604,8 @@ begin
             data_im_in => first_stage_im_out(558),
             re_multiplicator => "0001101101011101", --- 0.427551269531 + j-0.903930664062
             im_multiplicator => "1100011000100110",
-            product_re_out => mul_re_out(558),
-            product_im_out => mul_im_out(558)
+            data_re_out => mul_re_out(558),
+            data_im_out => mul_im_out(558)
         );
 
  
@@ -27622,8 +27622,8 @@ begin
             data_im_in => first_stage_im_out(559),
             re_multiplicator => "0001100111101111", --- 0.405212402344 + j-0.914184570312
             im_multiplicator => "1100010101111110",
-            product_re_out => mul_re_out(559),
-            product_im_out => mul_im_out(559)
+            data_re_out => mul_re_out(559),
+            data_im_out => mul_im_out(559)
         );
 
  
@@ -27640,8 +27640,8 @@ begin
             data_im_in => first_stage_im_out(560),
             re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(560),
-            product_im_out => mul_im_out(560)
+            data_re_out => mul_re_out(560),
+            data_im_out => mul_im_out(560)
         );
 
  
@@ -27658,8 +27658,8 @@ begin
             data_im_in => first_stage_im_out(561),
             re_multiplicator => "0001011100001000", --- 0.35986328125 + j-0.932983398438
             im_multiplicator => "1100010001001010",
-            product_re_out => mul_re_out(561),
-            product_im_out => mul_im_out(561)
+            data_re_out => mul_re_out(561),
+            data_im_out => mul_im_out(561)
         );
 
  
@@ -27676,8 +27676,8 @@ begin
             data_im_in => first_stage_im_out(562),
             re_multiplicator => "0001010110001111", --- 0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(562),
-            product_im_out => mul_im_out(562)
+            data_re_out => mul_re_out(562),
+            data_im_out => mul_im_out(562)
         );
 
  
@@ -27694,8 +27694,8 @@ begin
             data_im_in => first_stage_im_out(563),
             re_multiplicator => "0001010000010011", --- 0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(563),
-            product_im_out => mul_im_out(563)
+            data_re_out => mul_re_out(563),
+            data_im_out => mul_im_out(563)
         );
 
  
@@ -27712,8 +27712,8 @@ begin
             data_im_in => first_stage_im_out(564),
             re_multiplicator => "0001001010010100", --- 0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(564),
-            product_im_out => mul_im_out(564)
+            data_re_out => mul_re_out(564),
+            data_im_out => mul_im_out(564)
         );
 
  
@@ -27730,8 +27730,8 @@ begin
             data_im_in => first_stage_im_out(565),
             re_multiplicator => "0001000100010001", --- 0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(565),
-            product_im_out => mul_im_out(565)
+            data_re_out => mul_re_out(565),
+            data_im_out => mul_im_out(565)
         );
 
  
@@ -27748,8 +27748,8 @@ begin
             data_im_in => first_stage_im_out(566),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(566),
-            product_im_out => mul_im_out(566)
+            data_re_out => mul_re_out(566),
+            data_im_out => mul_im_out(566)
         );
 
  
@@ -27766,8 +27766,8 @@ begin
             data_im_in => first_stage_im_out(567),
             re_multiplicator => "0000111000000101", --- 0.219055175781 + j-0.975646972656
             im_multiplicator => "1100000110001111",
-            product_re_out => mul_re_out(567),
-            product_im_out => mul_im_out(567)
+            data_re_out => mul_re_out(567),
+            data_im_out => mul_im_out(567)
         );
 
  
@@ -27784,8 +27784,8 @@ begin
             data_im_in => first_stage_im_out(568),
             re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(568),
-            product_im_out => mul_im_out(568)
+            data_re_out => mul_re_out(568),
+            data_im_out => mul_im_out(568)
         );
 
  
@@ -27802,8 +27802,8 @@ begin
             data_im_in => first_stage_im_out(569),
             re_multiplicator => "0000101011110001", --- 0.170959472656 + j-0.985229492188
             im_multiplicator => "1100000011110010",
-            product_re_out => mul_re_out(569),
-            product_im_out => mul_im_out(569)
+            data_re_out => mul_re_out(569),
+            data_im_out => mul_im_out(569)
         );
 
  
@@ -27820,8 +27820,8 @@ begin
             data_im_in => first_stage_im_out(570),
             re_multiplicator => "0000100101100100", --- 0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(570),
-            product_im_out => mul_im_out(570)
+            data_re_out => mul_re_out(570),
+            data_im_out => mul_im_out(570)
         );
 
  
@@ -27838,8 +27838,8 @@ begin
             data_im_in => first_stage_im_out(571),
             re_multiplicator => "0000011111010101", --- 0.122375488281 + j-0.992431640625
             im_multiplicator => "1100000001111100",
-            product_re_out => mul_re_out(571),
-            product_im_out => mul_im_out(571)
+            data_re_out => mul_re_out(571),
+            data_im_out => mul_im_out(571)
         );
 
  
@@ -27856,8 +27856,8 @@ begin
             data_im_in => first_stage_im_out(572),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(572),
-            product_im_out => mul_im_out(572)
+            data_re_out => mul_re_out(572),
+            data_im_out => mul_im_out(572)
         );
 
  
@@ -27874,8 +27874,8 @@ begin
             data_im_in => first_stage_im_out(573),
             re_multiplicator => "0000010010110101", --- 0.0735473632812 + j-0.997253417969
             im_multiplicator => "1100000000101101",
-            product_re_out => mul_re_out(573),
-            product_im_out => mul_im_out(573)
+            data_re_out => mul_re_out(573),
+            data_im_out => mul_im_out(573)
         );
 
  
@@ -27892,8 +27892,8 @@ begin
             data_im_in => first_stage_im_out(574),
             re_multiplicator => "0000001100100011", --- 0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(574),
-            product_im_out => mul_im_out(574)
+            data_re_out => mul_re_out(574),
+            data_im_out => mul_im_out(574)
         );
 
  
@@ -27910,8 +27910,8 @@ begin
             data_im_in => first_stage_im_out(575),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(575),
-            product_im_out => mul_im_out(575)
+            data_re_out => mul_re_out(575),
+            data_im_out => mul_im_out(575)
         );
 
  
@@ -27926,8 +27926,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(576),
             data_im_in => first_stage_im_out(576),
-            product_re_out => mul_re_out(576),
-            product_im_out => mul_im_out(576)
+            data_re_out => mul_re_out(576),
+            data_im_out => mul_im_out(576)
         );
 
  
@@ -27944,8 +27944,8 @@ begin
             data_im_in => first_stage_im_out(577),
             re_multiplicator => "0011111111111001", --- 0.999572753906 + j-0.027587890625
             im_multiplicator => "1111111000111100",
-            product_re_out => mul_re_out(577),
-            product_im_out => mul_im_out(577)
+            data_re_out => mul_re_out(577),
+            data_im_out => mul_im_out(577)
         );
 
  
@@ -27962,8 +27962,8 @@ begin
             data_im_in => first_stage_im_out(578),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(578),
-            product_im_out => mul_im_out(578)
+            data_re_out => mul_re_out(578),
+            data_im_out => mul_im_out(578)
         );
 
  
@@ -27980,8 +27980,8 @@ begin
             data_im_in => first_stage_im_out(579),
             re_multiplicator => "0011111111000111", --- 0.996520996094 + j-0.0827026367188
             im_multiplicator => "1111101010110101",
-            product_re_out => mul_re_out(579),
-            product_im_out => mul_im_out(579)
+            data_re_out => mul_re_out(579),
+            data_im_out => mul_im_out(579)
         );
 
  
@@ -27998,8 +27998,8 @@ begin
             data_im_in => first_stage_im_out(580),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(580),
-            product_im_out => mul_im_out(580)
+            data_re_out => mul_re_out(580),
+            data_im_out => mul_im_out(580)
         );
 
  
@@ -28016,8 +28016,8 @@ begin
             data_im_in => first_stage_im_out(581),
             re_multiplicator => "0011111101100100", --- 0.990478515625 + j-0.137573242188
             im_multiplicator => "1111011100110010",
-            product_re_out => mul_re_out(581),
-            product_im_out => mul_im_out(581)
+            data_re_out => mul_re_out(581),
+            data_im_out => mul_im_out(581)
         );
 
  
@@ -28034,8 +28034,8 @@ begin
             data_im_in => first_stage_im_out(582),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(582),
-            product_im_out => mul_im_out(582)
+            data_re_out => mul_re_out(582),
+            data_im_out => mul_im_out(582)
         );
 
  
@@ -28052,8 +28052,8 @@ begin
             data_im_in => first_stage_im_out(583),
             re_multiplicator => "0011111011001110", --- 0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(583),
-            product_im_out => mul_im_out(583)
+            data_re_out => mul_re_out(583),
+            data_im_out => mul_im_out(583)
         );
 
  
@@ -28070,8 +28070,8 @@ begin
             data_im_in => first_stage_im_out(584),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(584),
-            product_im_out => mul_im_out(584)
+            data_re_out => mul_re_out(584),
+            data_im_out => mul_im_out(584)
         );
 
  
@@ -28088,8 +28088,8 @@ begin
             data_im_in => first_stage_im_out(585),
             re_multiplicator => "0011111000001000", --- 0.96923828125 + j-0.245910644531
             im_multiplicator => "1111000001000011",
-            product_re_out => mul_re_out(585),
-            product_im_out => mul_im_out(585)
+            data_re_out => mul_re_out(585),
+            data_im_out => mul_im_out(585)
         );
 
  
@@ -28106,8 +28106,8 @@ begin
             data_im_in => first_stage_im_out(586),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(586),
-            product_im_out => mul_im_out(586)
+            data_re_out => mul_re_out(586),
+            data_im_out => mul_im_out(586)
         );
 
  
@@ -28124,8 +28124,8 @@ begin
             data_im_in => first_stage_im_out(587),
             re_multiplicator => "0011110100010010", --- 0.954223632812 + j-0.299072265625
             im_multiplicator => "1110110011011100",
-            product_re_out => mul_re_out(587),
-            product_im_out => mul_im_out(587)
+            data_re_out => mul_re_out(587),
+            data_im_out => mul_im_out(587)
         );
 
  
@@ -28142,8 +28142,8 @@ begin
             data_im_in => first_stage_im_out(588),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(588),
-            product_im_out => mul_im_out(588)
+            data_re_out => mul_re_out(588),
+            data_im_out => mul_im_out(588)
         );
 
  
@@ -28160,8 +28160,8 @@ begin
             data_im_in => first_stage_im_out(589),
             re_multiplicator => "0011101111101011", --- 0.936218261719 + j-0.351257324219
             im_multiplicator => "1110100110000101",
-            product_re_out => mul_re_out(589),
-            product_im_out => mul_im_out(589)
+            data_re_out => mul_re_out(589),
+            data_im_out => mul_im_out(589)
         );
 
  
@@ -28178,8 +28178,8 @@ begin
             data_im_in => first_stage_im_out(590),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(590),
-            product_im_out => mul_im_out(590)
+            data_re_out => mul_re_out(590),
+            data_im_out => mul_im_out(590)
         );
 
  
@@ -28196,8 +28196,8 @@ begin
             data_im_in => first_stage_im_out(591),
             re_multiplicator => "0011101010010110", --- 0.915405273438 + j-0.402404785156
             im_multiplicator => "1110011000111111",
-            product_re_out => mul_re_out(591),
-            product_im_out => mul_im_out(591)
+            data_re_out => mul_re_out(591),
+            data_im_out => mul_im_out(591)
         );
 
  
@@ -28214,8 +28214,8 @@ begin
             data_im_in => first_stage_im_out(592),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(592),
-            product_im_out => mul_im_out(592)
+            data_re_out => mul_re_out(592),
+            data_im_out => mul_im_out(592)
         );
 
  
@@ -28232,8 +28232,8 @@ begin
             data_im_in => first_stage_im_out(593),
             re_multiplicator => "0011100100010011", --- 0.891784667969 + j-0.452331542969
             im_multiplicator => "1110001100001101",
-            product_re_out => mul_re_out(593),
-            product_im_out => mul_im_out(593)
+            data_re_out => mul_re_out(593),
+            data_im_out => mul_im_out(593)
         );
 
  
@@ -28250,8 +28250,8 @@ begin
             data_im_in => first_stage_im_out(594),
             re_multiplicator => "0011100001000001", --- 0.878967285156 + j-0.476745605469
             im_multiplicator => "1110000101111101",
-            product_re_out => mul_re_out(594),
-            product_im_out => mul_im_out(594)
+            data_re_out => mul_re_out(594),
+            data_im_out => mul_im_out(594)
         );
 
  
@@ -28268,8 +28268,8 @@ begin
             data_im_in => first_stage_im_out(595),
             re_multiplicator => "0011011101100100", --- 0.865478515625 + j-0.500854492188
             im_multiplicator => "1101111111110010",
-            product_re_out => mul_re_out(595),
-            product_im_out => mul_im_out(595)
+            data_re_out => mul_re_out(595),
+            data_im_out => mul_im_out(595)
         );
 
  
@@ -28286,8 +28286,8 @@ begin
             data_im_in => first_stage_im_out(596),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(596),
-            product_im_out => mul_im_out(596)
+            data_re_out => mul_re_out(596),
+            data_im_out => mul_im_out(596)
         );
 
  
@@ -28304,8 +28304,8 @@ begin
             data_im_in => first_stage_im_out(597),
             re_multiplicator => "0011010110001001", --- 0.836486816406 + j-0.5478515625
             im_multiplicator => "1101110011110000",
-            product_re_out => mul_re_out(597),
-            product_im_out => mul_im_out(597)
+            data_re_out => mul_re_out(597),
+            data_im_out => mul_im_out(597)
         );
 
  
@@ -28322,8 +28322,8 @@ begin
             data_im_in => first_stage_im_out(598),
             re_multiplicator => "0011010010001100", --- 0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(598),
-            product_im_out => mul_im_out(598)
+            data_re_out => mul_re_out(598),
+            data_im_out => mul_im_out(598)
         );
 
  
@@ -28340,8 +28340,8 @@ begin
             data_im_in => first_stage_im_out(599),
             re_multiplicator => "0011001110000101", --- 0.804992675781 + j-0.593200683594
             im_multiplicator => "1101101000001001",
-            product_re_out => mul_re_out(599),
-            product_im_out => mul_im_out(599)
+            data_re_out => mul_re_out(599),
+            data_im_out => mul_im_out(599)
         );
 
  
@@ -28358,8 +28358,8 @@ begin
             data_im_in => first_stage_im_out(600),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(600),
-            product_im_out => mul_im_out(600)
+            data_re_out => mul_re_out(600),
+            data_im_out => mul_im_out(600)
         );
 
  
@@ -28376,8 +28376,8 @@ begin
             data_im_in => first_stage_im_out(601),
             re_multiplicator => "0011000101011001", --- 0.771057128906 + j-0.63671875
             im_multiplicator => "1101011101000000",
-            product_re_out => mul_re_out(601),
-            product_im_out => mul_im_out(601)
+            data_re_out => mul_re_out(601),
+            data_im_out => mul_im_out(601)
         );
 
  
@@ -28394,8 +28394,8 @@ begin
             data_im_in => first_stage_im_out(602),
             re_multiplicator => "0011000000110100", --- 0.753173828125 + j-0.657775878906
             im_multiplicator => "1101010111100111",
-            product_re_out => mul_re_out(602),
-            product_im_out => mul_im_out(602)
+            data_re_out => mul_re_out(602),
+            data_im_out => mul_im_out(602)
         );
 
  
@@ -28412,8 +28412,8 @@ begin
             data_im_in => first_stage_im_out(603),
             re_multiplicator => "0010111100000101", --- 0.734680175781 + j-0.678344726562
             im_multiplicator => "1101010010010110",
-            product_re_out => mul_re_out(603),
-            product_im_out => mul_im_out(603)
+            data_re_out => mul_re_out(603),
+            data_im_out => mul_im_out(603)
         );
 
  
@@ -28430,8 +28430,8 @@ begin
             data_im_in => first_stage_im_out(604),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(604),
-            product_im_out => mul_im_out(604)
+            data_re_out => mul_re_out(604),
+            data_im_out => mul_im_out(604)
         );
 
  
@@ -28448,8 +28448,8 @@ begin
             data_im_in => first_stage_im_out(605),
             re_multiplicator => "0010110010001110", --- 0.696166992188 + j-0.717834472656
             im_multiplicator => "1101001000001111",
-            product_re_out => mul_re_out(605),
-            product_im_out => mul_im_out(605)
+            data_re_out => mul_re_out(605),
+            data_im_out => mul_im_out(605)
         );
 
  
@@ -28466,8 +28466,8 @@ begin
             data_im_in => first_stage_im_out(606),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(606),
-            product_im_out => mul_im_out(606)
+            data_re_out => mul_re_out(606),
+            data_im_out => mul_im_out(606)
         );
 
  
@@ -28484,8 +28484,8 @@ begin
             data_im_in => first_stage_im_out(607),
             re_multiplicator => "0010100111110011", --- 0.655456542969 + j-0.755187988281
             im_multiplicator => "1100111110101011",
-            product_re_out => mul_re_out(607),
-            product_im_out => mul_im_out(607)
+            data_re_out => mul_re_out(607),
+            data_im_out => mul_im_out(607)
         );
 
  
@@ -28502,8 +28502,8 @@ begin
             data_im_in => first_stage_im_out(608),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(608),
-            product_im_out => mul_im_out(608)
+            data_re_out => mul_re_out(608),
+            data_im_out => mul_im_out(608)
         );
 
  
@@ -28520,8 +28520,8 @@ begin
             data_im_in => first_stage_im_out(609),
             re_multiplicator => "0010011100111000", --- 0.61279296875 + j-0.790222167969
             im_multiplicator => "1100110101101101",
-            product_re_out => mul_re_out(609),
-            product_im_out => mul_im_out(609)
+            data_re_out => mul_re_out(609),
+            data_im_out => mul_im_out(609)
         );
 
  
@@ -28538,8 +28538,8 @@ begin
             data_im_in => first_stage_im_out(610),
             re_multiplicator => "0010010111001111", --- 0.590759277344 + j-0.806823730469
             im_multiplicator => "1100110001011101",
-            product_re_out => mul_re_out(610),
-            product_im_out => mul_im_out(610)
+            data_re_out => mul_re_out(610),
+            data_im_out => mul_im_out(610)
         );
 
  
@@ -28556,8 +28556,8 @@ begin
             data_im_in => first_stage_im_out(611),
             re_multiplicator => "0010010001011110", --- 0.568237304688 + j-0.822814941406
             im_multiplicator => "1100101101010111",
-            product_re_out => mul_re_out(611),
-            product_im_out => mul_im_out(611)
+            data_re_out => mul_re_out(611),
+            data_im_out => mul_im_out(611)
         );
 
  
@@ -28574,8 +28574,8 @@ begin
             data_im_in => first_stage_im_out(612),
             re_multiplicator => "0010001011100110", --- 0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(612),
-            product_im_out => mul_im_out(612)
+            data_re_out => mul_re_out(612),
+            data_im_out => mul_im_out(612)
         );
 
  
@@ -28592,8 +28592,8 @@ begin
             data_im_in => first_stage_im_out(613),
             re_multiplicator => "0010000101101000", --- 0.52197265625 + j-0.852905273438
             im_multiplicator => "1100100101101010",
-            product_re_out => mul_re_out(613),
-            product_im_out => mul_im_out(613)
+            data_re_out => mul_re_out(613),
+            data_im_out => mul_im_out(613)
         );
 
  
@@ -28610,8 +28610,8 @@ begin
             data_im_in => first_stage_im_out(614),
             re_multiplicator => "0001111111100010", --- 0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(614),
-            product_im_out => mul_im_out(614)
+            data_re_out => mul_re_out(614),
+            data_im_out => mul_im_out(614)
         );
 
  
@@ -28628,8 +28628,8 @@ begin
             data_im_in => first_stage_im_out(615),
             re_multiplicator => "0001111001010111", --- 0.474060058594 + j-0.880432128906
             im_multiplicator => "1100011110100111",
-            product_re_out => mul_re_out(615),
-            product_im_out => mul_im_out(615)
+            data_re_out => mul_re_out(615),
+            data_im_out => mul_im_out(615)
         );
 
  
@@ -28646,8 +28646,8 @@ begin
             data_im_in => first_stage_im_out(616),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(616),
-            product_im_out => mul_im_out(616)
+            data_re_out => mul_re_out(616),
+            data_im_out => mul_im_out(616)
         );
 
  
@@ -28664,8 +28664,8 @@ begin
             data_im_in => first_stage_im_out(617),
             re_multiplicator => "0001101100101111", --- 0.424743652344 + j-0.9052734375
             im_multiplicator => "1100011000010000",
-            product_re_out => mul_re_out(617),
-            product_im_out => mul_im_out(617)
+            data_re_out => mul_re_out(617),
+            data_im_out => mul_im_out(617)
         );
 
  
@@ -28682,8 +28682,8 @@ begin
             data_im_in => first_stage_im_out(618),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(618),
-            product_im_out => mul_im_out(618)
+            data_re_out => mul_re_out(618),
+            data_im_out => mul_im_out(618)
         );
 
  
@@ -28700,8 +28700,8 @@ begin
             data_im_in => first_stage_im_out(619),
             re_multiplicator => "0001011111110010", --- 0.374145507812 + j-0.927307128906
             im_multiplicator => "1100010010100111",
-            product_re_out => mul_re_out(619),
-            product_im_out => mul_im_out(619)
+            data_re_out => mul_re_out(619),
+            data_im_out => mul_im_out(619)
         );
 
  
@@ -28718,8 +28718,8 @@ begin
             data_im_in => first_stage_im_out(620),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j-0.937316894531
             im_multiplicator => "1100010000000011",
-            product_re_out => mul_re_out(620),
-            product_im_out => mul_im_out(620)
+            data_re_out => mul_re_out(620),
+            data_im_out => mul_im_out(620)
         );
 
  
@@ -28736,8 +28736,8 @@ begin
             data_im_in => first_stage_im_out(621),
             re_multiplicator => "0001010010100010", --- 0.322387695312 + j-0.946594238281
             im_multiplicator => "1100001101101011",
-            product_re_out => mul_re_out(621),
-            product_im_out => mul_im_out(621)
+            data_re_out => mul_re_out(621),
+            data_im_out => mul_im_out(621)
         );
 
  
@@ -28754,8 +28754,8 @@ begin
             data_im_in => first_stage_im_out(622),
             re_multiplicator => "0001001011110100", --- 0.296142578125 + j-0.955139160156
             im_multiplicator => "1100001011011111",
-            product_re_out => mul_re_out(622),
-            product_im_out => mul_im_out(622)
+            data_re_out => mul_re_out(622),
+            data_im_out => mul_im_out(622)
         );
 
  
@@ -28772,8 +28772,8 @@ begin
             data_im_in => first_stage_im_out(623),
             re_multiplicator => "0001000101000010", --- 0.269653320312 + j-0.962951660156
             im_multiplicator => "1100001001011111",
-            product_re_out => mul_re_out(623),
-            product_im_out => mul_im_out(623)
+            data_re_out => mul_re_out(623),
+            data_im_out => mul_im_out(623)
         );
 
  
@@ -28790,8 +28790,8 @@ begin
             data_im_in => first_stage_im_out(624),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(624),
-            product_im_out => mul_im_out(624)
+            data_re_out => mul_re_out(624),
+            data_im_out => mul_im_out(624)
         );
 
  
@@ -28808,8 +28808,8 @@ begin
             data_im_in => first_stage_im_out(625),
             re_multiplicator => "0000110111010100", --- 0.216064453125 + j-0.976318359375
             im_multiplicator => "1100000110000100",
-            product_re_out => mul_re_out(625),
-            product_im_out => mul_im_out(625)
+            data_re_out => mul_re_out(625),
+            data_im_out => mul_im_out(625)
         );
 
  
@@ -28826,8 +28826,8 @@ begin
             data_im_in => first_stage_im_out(626),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(626),
-            product_im_out => mul_im_out(626)
+            data_re_out => mul_re_out(626),
+            data_im_out => mul_im_out(626)
         );
 
  
@@ -28844,8 +28844,8 @@ begin
             data_im_in => first_stage_im_out(627),
             re_multiplicator => "0000101001011100", --- 0.161865234375 + j-0.986755371094
             im_multiplicator => "1100000011011001",
-            product_re_out => mul_re_out(627),
-            product_im_out => mul_im_out(627)
+            data_re_out => mul_re_out(627),
+            data_im_out => mul_im_out(627)
         );
 
  
@@ -28862,8 +28862,8 @@ begin
             data_im_in => first_stage_im_out(628),
             re_multiplicator => "0000100010011100", --- 0.134521484375 + j-0.990844726562
             im_multiplicator => "1100000010010110",
-            product_re_out => mul_re_out(628),
-            product_im_out => mul_im_out(628)
+            data_re_out => mul_re_out(628),
+            data_im_out => mul_im_out(628)
         );
 
  
@@ -28880,8 +28880,8 @@ begin
             data_im_in => first_stage_im_out(629),
             re_multiplicator => "0000011011011011", --- 0.107116699219 + j-0.994201660156
             im_multiplicator => "1100000001011111",
-            product_re_out => mul_re_out(629),
-            product_im_out => mul_im_out(629)
+            data_re_out => mul_re_out(629),
+            data_im_out => mul_im_out(629)
         );
 
  
@@ -28898,8 +28898,8 @@ begin
             data_im_in => first_stage_im_out(630),
             re_multiplicator => "0000010100011001", --- 0.0796508789062 + j-0.996765136719
             im_multiplicator => "1100000000110101",
-            product_re_out => mul_re_out(630),
-            product_im_out => mul_im_out(630)
+            data_re_out => mul_re_out(630),
+            data_im_out => mul_im_out(630)
         );
 
  
@@ -28916,8 +28916,8 @@ begin
             data_im_in => first_stage_im_out(631),
             re_multiplicator => "0000001101010110", --- 0.0521240234375 + j-0.998596191406
             im_multiplicator => "1100000000010111",
-            product_re_out => mul_re_out(631),
-            product_im_out => mul_im_out(631)
+            data_re_out => mul_re_out(631),
+            data_im_out => mul_im_out(631)
         );
 
  
@@ -28934,8 +28934,8 @@ begin
             data_im_in => first_stage_im_out(632),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(632),
-            product_im_out => mul_im_out(632)
+            data_re_out => mul_re_out(632),
+            data_im_out => mul_im_out(632)
         );
 
  
@@ -28952,8 +28952,8 @@ begin
             data_im_in => first_stage_im_out(633),
             re_multiplicator => "1111111111001110", --- -0.0030517578125 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(633),
-            product_im_out => mul_im_out(633)
+            data_re_out => mul_re_out(633),
+            data_im_out => mul_im_out(633)
         );
 
  
@@ -28970,8 +28970,8 @@ begin
             data_im_in => first_stage_im_out(634),
             re_multiplicator => "1111111000001010", --- -0.0306396484375 + j-0.99951171875
             im_multiplicator => "1100000000001000",
-            product_re_out => mul_re_out(634),
-            product_im_out => mul_im_out(634)
+            data_re_out => mul_re_out(634),
+            data_im_out => mul_im_out(634)
         );
 
  
@@ -28988,8 +28988,8 @@ begin
             data_im_in => first_stage_im_out(635),
             re_multiplicator => "1111110001000110", --- -0.0582275390625 + j-0.998291015625
             im_multiplicator => "1100000000011100",
-            product_re_out => mul_re_out(635),
-            product_im_out => mul_im_out(635)
+            data_re_out => mul_re_out(635),
+            data_im_out => mul_im_out(635)
         );
 
  
@@ -29006,8 +29006,8 @@ begin
             data_im_in => first_stage_im_out(636),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(636),
-            product_im_out => mul_im_out(636)
+            data_re_out => mul_re_out(636),
+            data_im_out => mul_im_out(636)
         );
 
  
@@ -29024,8 +29024,8 @@ begin
             data_im_in => first_stage_im_out(637),
             re_multiplicator => "1111100011000001", --- -0.113220214844 + j-0.993530273438
             im_multiplicator => "1100000001101010",
-            product_re_out => mul_re_out(637),
-            product_im_out => mul_im_out(637)
+            data_re_out => mul_re_out(637),
+            data_im_out => mul_im_out(637)
         );
 
  
@@ -29042,8 +29042,8 @@ begin
             data_im_in => first_stage_im_out(638),
             re_multiplicator => "1111011100000000", --- -0.140625 + j-0.990051269531
             im_multiplicator => "1100000010100011",
-            product_re_out => mul_re_out(638),
-            product_im_out => mul_im_out(638)
+            data_re_out => mul_re_out(638),
+            data_im_out => mul_im_out(638)
         );
 
  
@@ -29060,8 +29060,8 @@ begin
             data_im_in => first_stage_im_out(639),
             re_multiplicator => "1111010101000001", --- -0.167907714844 + j-0.985778808594
             im_multiplicator => "1100000011101001",
-            product_re_out => mul_re_out(639),
-            product_im_out => mul_im_out(639)
+            data_re_out => mul_re_out(639),
+            data_im_out => mul_im_out(639)
         );
 
  
@@ -29076,8 +29076,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(640),
             data_im_in => first_stage_im_out(640),
-            product_re_out => mul_re_out(640),
-            product_im_out => mul_im_out(640)
+            data_re_out => mul_re_out(640),
+            data_im_out => mul_im_out(640)
         );
 
  
@@ -29094,8 +29094,8 @@ begin
             data_im_in => first_stage_im_out(641),
             re_multiplicator => "0011111111111000", --- 0.99951171875 + j-0.0306396484375
             im_multiplicator => "1111111000001010",
-            product_re_out => mul_re_out(641),
-            product_im_out => mul_im_out(641)
+            data_re_out => mul_re_out(641),
+            data_im_out => mul_im_out(641)
         );
 
  
@@ -29112,8 +29112,8 @@ begin
             data_im_in => first_stage_im_out(642),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(642),
-            product_im_out => mul_im_out(642)
+            data_re_out => mul_re_out(642),
+            data_im_out => mul_im_out(642)
         );
 
  
@@ -29130,8 +29130,8 @@ begin
             data_im_in => first_stage_im_out(643),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(643),
-            product_im_out => mul_im_out(643)
+            data_re_out => mul_re_out(643),
+            data_im_out => mul_im_out(643)
         );
 
  
@@ -29148,8 +29148,8 @@ begin
             data_im_in => first_stage_im_out(644),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(644),
-            product_im_out => mul_im_out(644)
+            data_re_out => mul_re_out(644),
+            data_im_out => mul_im_out(644)
         );
 
  
@@ -29166,8 +29166,8 @@ begin
             data_im_in => first_stage_im_out(645),
             re_multiplicator => "0011111100111111", --- 0.988220214844 + j-0.152770996094
             im_multiplicator => "1111011000111001",
-            product_re_out => mul_re_out(645),
-            product_im_out => mul_im_out(645)
+            data_re_out => mul_re_out(645),
+            data_im_out => mul_im_out(645)
         );
 
  
@@ -29184,8 +29184,8 @@ begin
             data_im_in => first_stage_im_out(646),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(646),
-            product_im_out => mul_im_out(646)
+            data_re_out => mul_re_out(646),
+            data_im_out => mul_im_out(646)
         );
 
  
@@ -29202,8 +29202,8 @@ begin
             data_im_in => first_stage_im_out(647),
             re_multiplicator => "0011111010000111", --- 0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(647),
-            product_im_out => mul_im_out(647)
+            data_re_out => mul_re_out(647),
+            data_im_out => mul_im_out(647)
         );
 
  
@@ -29220,8 +29220,8 @@ begin
             data_im_in => first_stage_im_out(648),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(648),
-            product_im_out => mul_im_out(648)
+            data_re_out => mul_re_out(648),
+            data_im_out => mul_im_out(648)
         );
 
  
@@ -29238,8 +29238,8 @@ begin
             data_im_in => first_stage_im_out(649),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(649),
-            product_im_out => mul_im_out(649)
+            data_re_out => mul_re_out(649),
+            data_im_out => mul_im_out(649)
         );
 
  
@@ -29256,8 +29256,8 @@ begin
             data_im_in => first_stage_im_out(650),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(650),
-            product_im_out => mul_im_out(650)
+            data_re_out => mul_re_out(650),
+            data_im_out => mul_im_out(650)
         );
 
  
@@ -29274,8 +29274,8 @@ begin
             data_im_in => first_stage_im_out(651),
             re_multiplicator => "0011110001100011", --- 0.943542480469 + j-0.3310546875
             im_multiplicator => "1110101011010000",
-            product_re_out => mul_re_out(651),
-            product_im_out => mul_im_out(651)
+            data_re_out => mul_re_out(651),
+            data_im_out => mul_im_out(651)
         );
 
  
@@ -29292,8 +29292,8 @@ begin
             data_im_in => first_stage_im_out(652),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(652),
-            product_im_out => mul_im_out(652)
+            data_re_out => mul_re_out(652),
+            data_im_out => mul_im_out(652)
         );
 
  
@@ -29310,8 +29310,8 @@ begin
             data_im_in => first_stage_im_out(653),
             re_multiplicator => "0011101011111010", --- 0.921508789062 + j-0.388305664062
             im_multiplicator => "1110011100100110",
-            product_re_out => mul_re_out(653),
-            product_im_out => mul_im_out(653)
+            data_re_out => mul_re_out(653),
+            data_im_out => mul_im_out(653)
         );
 
  
@@ -29328,8 +29328,8 @@ begin
             data_im_in => first_stage_im_out(654),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(654),
-            product_im_out => mul_im_out(654)
+            data_re_out => mul_re_out(654),
+            data_im_out => mul_im_out(654)
         );
 
  
@@ -29346,8 +29346,8 @@ begin
             data_im_in => first_stage_im_out(655),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(655),
-            product_im_out => mul_im_out(655)
+            data_re_out => mul_re_out(655),
+            data_im_out => mul_im_out(655)
         );
 
  
@@ -29364,8 +29364,8 @@ begin
             data_im_in => first_stage_im_out(656),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(656),
-            product_im_out => mul_im_out(656)
+            data_re_out => mul_re_out(656),
+            data_im_out => mul_im_out(656)
         );
 
  
@@ -29382,8 +29382,8 @@ begin
             data_im_in => first_stage_im_out(657),
             re_multiplicator => "0011011101111101", --- 0.867004394531 + j-0.498168945312
             im_multiplicator => "1110000000011110",
-            product_re_out => mul_re_out(657),
-            product_im_out => mul_im_out(657)
+            data_re_out => mul_re_out(657),
+            data_im_out => mul_im_out(657)
         );
 
  
@@ -29400,8 +29400,8 @@ begin
             data_im_in => first_stage_im_out(658),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(658),
-            product_im_out => mul_im_out(658)
+            data_re_out => mul_re_out(658),
+            data_im_out => mul_im_out(658)
         );
 
  
@@ -29418,8 +29418,8 @@ begin
             data_im_in => first_stage_im_out(659),
             re_multiplicator => "0011010101101110", --- 0.834838867188 + j-0.550415039062
             im_multiplicator => "1101110011000110",
-            product_re_out => mul_re_out(659),
-            product_im_out => mul_im_out(659)
+            data_re_out => mul_re_out(659),
+            data_im_out => mul_im_out(659)
         );
 
  
@@ -29436,8 +29436,8 @@ begin
             data_im_in => first_stage_im_out(660),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(660),
-            product_im_out => mul_im_out(660)
+            data_re_out => mul_re_out(660),
+            data_im_out => mul_im_out(660)
         );
 
  
@@ -29454,8 +29454,8 @@ begin
             data_im_in => first_stage_im_out(661),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(661),
-            product_im_out => mul_im_out(661)
+            data_re_out => mul_re_out(661),
+            data_im_out => mul_im_out(661)
         );
 
  
@@ -29472,8 +29472,8 @@ begin
             data_im_in => first_stage_im_out(662),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(662),
-            product_im_out => mul_im_out(662)
+            data_re_out => mul_re_out(662),
+            data_im_out => mul_im_out(662)
         );
 
  
@@ -29490,8 +29490,8 @@ begin
             data_im_in => first_stage_im_out(663),
             re_multiplicator => "0011000010110111", --- 0.761169433594 + j-0.648498535156
             im_multiplicator => "1101011001111111",
-            product_re_out => mul_re_out(663),
-            product_im_out => mul_im_out(663)
+            data_re_out => mul_re_out(663),
+            data_im_out => mul_im_out(663)
         );
 
  
@@ -29508,8 +29508,8 @@ begin
             data_im_in => first_stage_im_out(664),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(664),
-            product_im_out => mul_im_out(664)
+            data_re_out => mul_re_out(664),
+            data_im_out => mul_im_out(664)
         );
 
  
@@ -29526,8 +29526,8 @@ begin
             data_im_in => first_stage_im_out(665),
             re_multiplicator => "0010111000010100", --- 0.719970703125 + j-0.693969726562
             im_multiplicator => "1101001110010110",
-            product_re_out => mul_re_out(665),
-            product_im_out => mul_im_out(665)
+            data_re_out => mul_re_out(665),
+            data_im_out => mul_im_out(665)
         );
 
  
@@ -29544,8 +29544,8 @@ begin
             data_im_in => first_stage_im_out(666),
             re_multiplicator => "0010110010110010", --- 0.698364257812 + j-0.715698242188
             im_multiplicator => "1101001000110010",
-            product_re_out => mul_re_out(666),
-            product_im_out => mul_im_out(666)
+            data_re_out => mul_re_out(666),
+            data_im_out => mul_im_out(666)
         );
 
  
@@ -29562,8 +29562,8 @@ begin
             data_im_in => first_stage_im_out(667),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(667),
-            product_im_out => mul_im_out(667)
+            data_re_out => mul_re_out(667),
+            data_im_out => mul_im_out(667)
         );
 
  
@@ -29580,8 +29580,8 @@ begin
             data_im_in => first_stage_im_out(668),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(668),
-            product_im_out => mul_im_out(668)
+            data_re_out => mul_re_out(668),
+            data_im_out => mul_im_out(668)
         );
 
  
@@ -29598,8 +29598,8 @@ begin
             data_im_in => first_stage_im_out(669),
             re_multiplicator => "0010100001001011", --- 0.629577636719 + j-0.77685546875
             im_multiplicator => "1100111001001000",
-            product_re_out => mul_re_out(669),
-            product_im_out => mul_im_out(669)
+            data_re_out => mul_re_out(669),
+            data_im_out => mul_im_out(669)
         );
 
  
@@ -29616,8 +29616,8 @@ begin
             data_im_in => first_stage_im_out(670),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(670),
-            product_im_out => mul_im_out(670)
+            data_re_out => mul_re_out(670),
+            data_im_out => mul_im_out(670)
         );
 
  
@@ -29634,8 +29634,8 @@ begin
             data_im_in => first_stage_im_out(671),
             re_multiplicator => "0010010100101100", --- 0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(671),
-            product_im_out => mul_im_out(671)
+            data_re_out => mul_re_out(671),
+            data_im_out => mul_im_out(671)
         );
 
  
@@ -29652,8 +29652,8 @@ begin
             data_im_in => first_stage_im_out(672),
             re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(672),
-            product_im_out => mul_im_out(672)
+            data_re_out => mul_re_out(672),
+            data_im_out => mul_im_out(672)
         );
 
  
@@ -29670,8 +29670,8 @@ begin
             data_im_in => first_stage_im_out(673),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(673),
-            product_im_out => mul_im_out(673)
+            data_re_out => mul_re_out(673),
+            data_im_out => mul_im_out(673)
         );
 
  
@@ -29688,8 +29688,8 @@ begin
             data_im_in => first_stage_im_out(674),
             re_multiplicator => "0010000000111001", --- 0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(674),
-            product_im_out => mul_im_out(674)
+            data_re_out => mul_re_out(674),
+            data_im_out => mul_im_out(674)
         );
 
  
@@ -29706,8 +29706,8 @@ begin
             data_im_in => first_stage_im_out(675),
             re_multiplicator => "0001111010000011", --- 0.476745605469 + j-0.878967285156
             im_multiplicator => "1100011110111111",
-            product_re_out => mul_re_out(675),
-            product_im_out => mul_im_out(675)
+            data_re_out => mul_re_out(675),
+            data_im_out => mul_im_out(675)
         );
 
  
@@ -29724,8 +29724,8 @@ begin
             data_im_in => first_stage_im_out(676),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(676),
-            product_im_out => mul_im_out(676)
+            data_re_out => mul_re_out(676),
+            data_im_out => mul_im_out(676)
         );
 
  
@@ -29742,8 +29742,8 @@ begin
             data_im_in => first_stage_im_out(677),
             re_multiplicator => "0001101100000010", --- 0.421997070312 + j-0.906555175781
             im_multiplicator => "1100010111111011",
-            product_re_out => mul_re_out(677),
-            product_im_out => mul_im_out(677)
+            data_re_out => mul_re_out(677),
+            data_im_out => mul_im_out(677)
         );
 
  
@@ -29760,8 +29760,8 @@ begin
             data_im_in => first_stage_im_out(678),
             re_multiplicator => "0001100100110111", --- 0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(678),
-            product_im_out => mul_im_out(678)
+            data_re_out => mul_re_out(678),
+            data_im_out => mul_im_out(678)
         );
 
  
@@ -29778,8 +29778,8 @@ begin
             data_im_in => first_stage_im_out(679),
             re_multiplicator => "0001011101100110", --- 0.365600585938 + j-0.930725097656
             im_multiplicator => "1100010001101111",
-            product_re_out => mul_re_out(679),
-            product_im_out => mul_im_out(679)
+            data_re_out => mul_re_out(679),
+            data_im_out => mul_im_out(679)
         );
 
  
@@ -29796,8 +29796,8 @@ begin
             data_im_in => first_stage_im_out(680),
             re_multiplicator => "0001010110001111", --- 0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(680),
-            product_im_out => mul_im_out(680)
+            data_re_out => mul_re_out(680),
+            data_im_out => mul_im_out(680)
         );
 
  
@@ -29814,8 +29814,8 @@ begin
             data_im_in => first_stage_im_out(681),
             re_multiplicator => "0001001110110011", --- 0.307800292969 + j-0.951416015625
             im_multiplicator => "1100001100011100",
-            product_re_out => mul_re_out(681),
-            product_im_out => mul_im_out(681)
+            data_re_out => mul_re_out(681),
+            data_im_out => mul_im_out(681)
         );
 
  
@@ -29832,8 +29832,8 @@ begin
             data_im_in => first_stage_im_out(682),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(682),
-            product_im_out => mul_im_out(682)
+            data_re_out => mul_re_out(682),
+            data_im_out => mul_im_out(682)
         );
 
  
@@ -29850,8 +29850,8 @@ begin
             data_im_in => first_stage_im_out(683),
             re_multiplicator => "0000111111101110", --- 0.248901367188 + j-0.968505859375
             im_multiplicator => "1100001000000100",
-            product_re_out => mul_re_out(683),
-            product_im_out => mul_im_out(683)
+            data_re_out => mul_re_out(683),
+            data_im_out => mul_im_out(683)
         );
 
  
@@ -29868,8 +29868,8 @@ begin
             data_im_in => first_stage_im_out(684),
             re_multiplicator => "0000111000000101", --- 0.219055175781 + j-0.975646972656
             im_multiplicator => "1100000110001111",
-            product_re_out => mul_re_out(684),
-            product_im_out => mul_im_out(684)
+            data_re_out => mul_re_out(684),
+            data_im_out => mul_im_out(684)
         );
 
  
@@ -29886,8 +29886,8 @@ begin
             data_im_in => first_stage_im_out(685),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(685),
-            product_im_out => mul_im_out(685)
+            data_re_out => mul_re_out(685),
+            data_im_out => mul_im_out(685)
         );
 
  
@@ -29904,8 +29904,8 @@ begin
             data_im_in => first_stage_im_out(686),
             re_multiplicator => "0000101000101010", --- 0.158813476562 + j-0.987243652344
             im_multiplicator => "1100000011010001",
-            product_re_out => mul_re_out(686),
-            product_im_out => mul_im_out(686)
+            data_re_out => mul_re_out(686),
+            data_im_out => mul_im_out(686)
         );
 
  
@@ -29922,8 +29922,8 @@ begin
             data_im_in => first_stage_im_out(687),
             re_multiplicator => "0000100000111001", --- 0.128479003906 + j-0.99169921875
             im_multiplicator => "1100000010001000",
-            product_re_out => mul_re_out(687),
-            product_im_out => mul_im_out(687)
+            data_re_out => mul_re_out(687),
+            data_im_out => mul_im_out(687)
         );
 
  
@@ -29940,8 +29940,8 @@ begin
             data_im_in => first_stage_im_out(688),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(688),
-            product_im_out => mul_im_out(688)
+            data_re_out => mul_re_out(688),
+            data_im_out => mul_im_out(688)
         );
 
  
@@ -29958,8 +29958,8 @@ begin
             data_im_in => first_stage_im_out(689),
             re_multiplicator => "0000010001010001", --- 0.0674438476562 + j-0.997680664062
             im_multiplicator => "1100000000100110",
-            product_re_out => mul_re_out(689),
-            product_im_out => mul_im_out(689)
+            data_re_out => mul_re_out(689),
+            data_im_out => mul_im_out(689)
         );
 
  
@@ -29976,8 +29976,8 @@ begin
             data_im_in => first_stage_im_out(690),
             re_multiplicator => "0000001001011011", --- 0.0368041992188 + j-0.999267578125
             im_multiplicator => "1100000000001100",
-            product_re_out => mul_re_out(690),
-            product_im_out => mul_im_out(690)
+            data_re_out => mul_re_out(690),
+            data_im_out => mul_im_out(690)
         );
 
  
@@ -29994,8 +29994,8 @@ begin
             data_im_in => first_stage_im_out(691),
             re_multiplicator => "0000000001100100", --- 0.006103515625 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(691),
-            product_im_out => mul_im_out(691)
+            data_re_out => mul_re_out(691),
+            data_im_out => mul_im_out(691)
         );
 
  
@@ -30012,8 +30012,8 @@ begin
             data_im_in => first_stage_im_out(692),
             re_multiplicator => "1111111001101110", --- -0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(692),
-            product_im_out => mul_im_out(692)
+            data_re_out => mul_re_out(692),
+            data_im_out => mul_im_out(692)
         );
 
  
@@ -30030,8 +30030,8 @@ begin
             data_im_in => first_stage_im_out(693),
             re_multiplicator => "1111110001111000", --- -0.05517578125 + j-0.998474121094
             im_multiplicator => "1100000000011001",
-            product_re_out => mul_re_out(693),
-            product_im_out => mul_im_out(693)
+            data_re_out => mul_re_out(693),
+            data_im_out => mul_im_out(693)
         );
 
  
@@ -30048,8 +30048,8 @@ begin
             data_im_in => first_stage_im_out(694),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(694),
-            product_im_out => mul_im_out(694)
+            data_re_out => mul_re_out(694),
+            data_im_out => mul_im_out(694)
         );
 
  
@@ -30066,8 +30066,8 @@ begin
             data_im_in => first_stage_im_out(695),
             re_multiplicator => "1111100010001111", --- -0.116271972656 + j-0.9931640625
             im_multiplicator => "1100000001110000",
-            product_re_out => mul_re_out(695),
-            product_im_out => mul_im_out(695)
+            data_re_out => mul_re_out(695),
+            data_im_out => mul_im_out(695)
         );
 
  
@@ -30084,8 +30084,8 @@ begin
             data_im_in => first_stage_im_out(696),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(696),
-            product_im_out => mul_im_out(696)
+            data_re_out => mul_re_out(696),
+            data_im_out => mul_im_out(696)
         );
 
  
@@ -30102,8 +30102,8 @@ begin
             data_im_in => first_stage_im_out(697),
             re_multiplicator => "1111010010101100", --- -0.177001953125 + j-0.984191894531
             im_multiplicator => "1100000100000011",
-            product_re_out => mul_re_out(697),
-            product_im_out => mul_im_out(697)
+            data_re_out => mul_re_out(697),
+            data_im_out => mul_im_out(697)
         );
 
  
@@ -30120,8 +30120,8 @@ begin
             data_im_in => first_stage_im_out(698),
             re_multiplicator => "1111001010111111", --- -0.207092285156 + j-0.978271484375
             im_multiplicator => "1100000101100100",
-            product_re_out => mul_re_out(698),
-            product_im_out => mul_im_out(698)
+            data_re_out => mul_re_out(698),
+            data_im_out => mul_im_out(698)
         );
 
  
@@ -30138,8 +30138,8 @@ begin
             data_im_in => first_stage_im_out(699),
             re_multiplicator => "1111000011010101", --- -0.236999511719 + j-0.971496582031
             im_multiplicator => "1100000111010011",
-            product_re_out => mul_re_out(699),
-            product_im_out => mul_im_out(699)
+            data_re_out => mul_re_out(699),
+            data_im_out => mul_im_out(699)
         );
 
  
@@ -30156,8 +30156,8 @@ begin
             data_im_in => first_stage_im_out(700),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(700),
-            product_im_out => mul_im_out(700)
+            data_re_out => mul_re_out(700),
+            data_im_out => mul_im_out(700)
         );
 
  
@@ -30174,8 +30174,8 @@ begin
             data_im_in => first_stage_im_out(701),
             re_multiplicator => "1110110100001100", --- -0.296142578125 + j-0.955139160156
             im_multiplicator => "1100001011011111",
-            product_re_out => mul_re_out(701),
-            product_im_out => mul_im_out(701)
+            data_re_out => mul_re_out(701),
+            data_im_out => mul_im_out(701)
         );
 
  
@@ -30192,8 +30192,8 @@ begin
             data_im_in => first_stage_im_out(702),
             re_multiplicator => "1110101100101111", --- -0.325256347656 + j-0.945556640625
             im_multiplicator => "1100001101111100",
-            product_re_out => mul_re_out(702),
-            product_im_out => mul_im_out(702)
+            data_re_out => mul_re_out(702),
+            data_im_out => mul_im_out(702)
         );
 
  
@@ -30210,8 +30210,8 @@ begin
             data_im_in => first_stage_im_out(703),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(703),
-            product_im_out => mul_im_out(703)
+            data_re_out => mul_re_out(703),
+            data_im_out => mul_im_out(703)
         );
 
  
@@ -30226,8 +30226,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(704),
             data_im_in => first_stage_im_out(704),
-            product_re_out => mul_re_out(704),
-            product_im_out => mul_im_out(704)
+            data_re_out => mul_re_out(704),
+            data_im_out => mul_im_out(704)
         );
 
  
@@ -30244,8 +30244,8 @@ begin
             data_im_in => first_stage_im_out(705),
             re_multiplicator => "0011111111110110", --- 0.999389648438 + j-0.03369140625
             im_multiplicator => "1111110111011000",
-            product_re_out => mul_re_out(705),
-            product_im_out => mul_im_out(705)
+            data_re_out => mul_re_out(705),
+            data_im_out => mul_im_out(705)
         );
 
  
@@ -30262,8 +30262,8 @@ begin
             data_im_in => first_stage_im_out(706),
             re_multiplicator => "0011111111011010", --- 0.997680664062 + j-0.0674438476562
             im_multiplicator => "1111101110101111",
-            product_re_out => mul_re_out(706),
-            product_im_out => mul_im_out(706)
+            data_re_out => mul_re_out(706),
+            data_im_out => mul_im_out(706)
         );
 
  
@@ -30280,8 +30280,8 @@ begin
             data_im_in => first_stage_im_out(707),
             re_multiplicator => "0011111110101100", --- 0.994873046875 + j-0.101013183594
             im_multiplicator => "1111100110001001",
-            product_re_out => mul_re_out(707),
-            product_im_out => mul_im_out(707)
+            data_re_out => mul_re_out(707),
+            data_im_out => mul_im_out(707)
         );
 
  
@@ -30298,8 +30298,8 @@ begin
             data_im_in => first_stage_im_out(708),
             re_multiplicator => "0011111101101010", --- 0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(708),
-            product_im_out => mul_im_out(708)
+            data_re_out => mul_re_out(708),
+            data_im_out => mul_im_out(708)
         );
 
  
@@ -30316,8 +30316,8 @@ begin
             data_im_in => first_stage_im_out(709),
             re_multiplicator => "0011111100010111", --- 0.985778808594 + j-0.167907714844
             im_multiplicator => "1111010101000001",
-            product_re_out => mul_re_out(709),
-            product_im_out => mul_im_out(709)
+            data_re_out => mul_re_out(709),
+            data_im_out => mul_im_out(709)
         );
 
  
@@ -30334,8 +30334,8 @@ begin
             data_im_in => first_stage_im_out(710),
             re_multiplicator => "0011111010110001", --- 0.979553222656 + j-0.201049804688
             im_multiplicator => "1111001100100010",
-            product_re_out => mul_re_out(710),
-            product_im_out => mul_im_out(710)
+            data_re_out => mul_re_out(710),
+            data_im_out => mul_im_out(710)
         );
 
  
@@ -30352,8 +30352,8 @@ begin
             data_im_in => first_stage_im_out(711),
             re_multiplicator => "0011111000111000", --- 0.97216796875 + j-0.234008789062
             im_multiplicator => "1111000100000110",
-            product_re_out => mul_re_out(711),
-            product_im_out => mul_im_out(711)
+            data_re_out => mul_re_out(711),
+            data_im_out => mul_im_out(711)
         );
 
  
@@ -30370,8 +30370,8 @@ begin
             data_im_in => first_stage_im_out(712),
             re_multiplicator => "0011110110101110", --- 0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(712),
-            product_im_out => mul_im_out(712)
+            data_re_out => mul_re_out(712),
+            data_im_out => mul_im_out(712)
         );
 
  
@@ -30388,8 +30388,8 @@ begin
             data_im_in => first_stage_im_out(713),
             re_multiplicator => "0011110100010010", --- 0.954223632812 + j-0.299072265625
             im_multiplicator => "1110110011011100",
-            product_re_out => mul_re_out(713),
-            product_im_out => mul_im_out(713)
+            data_re_out => mul_re_out(713),
+            data_im_out => mul_im_out(713)
         );
 
  
@@ -30406,8 +30406,8 @@ begin
             data_im_in => first_stage_im_out(714),
             re_multiplicator => "0011110001100011", --- 0.943542480469 + j-0.3310546875
             im_multiplicator => "1110101011010000",
-            product_re_out => mul_re_out(714),
-            product_im_out => mul_im_out(714)
+            data_re_out => mul_re_out(714),
+            data_im_out => mul_im_out(714)
         );
 
  
@@ -30424,8 +30424,8 @@ begin
             data_im_in => first_stage_im_out(715),
             re_multiplicator => "0011101110100011", --- 0.931823730469 + j-0.362731933594
             im_multiplicator => "1110100011001001",
-            product_re_out => mul_re_out(715),
-            product_im_out => mul_im_out(715)
+            data_re_out => mul_re_out(715),
+            data_im_out => mul_im_out(715)
         );
 
  
@@ -30442,8 +30442,8 @@ begin
             data_im_in => first_stage_im_out(716),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(716),
-            product_im_out => mul_im_out(716)
+            data_re_out => mul_re_out(716),
+            data_im_out => mul_im_out(716)
         );
 
  
@@ -30460,8 +30460,8 @@ begin
             data_im_in => first_stage_im_out(717),
             re_multiplicator => "0011100111110000", --- 0.9052734375 + j-0.424743652344
             im_multiplicator => "1110010011010001",
-            product_re_out => mul_re_out(717),
-            product_im_out => mul_im_out(717)
+            data_re_out => mul_re_out(717),
+            data_im_out => mul_im_out(717)
         );
 
  
@@ -30478,8 +30478,8 @@ begin
             data_im_in => first_stage_im_out(718),
             re_multiplicator => "0011100011111101", --- 0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(718),
-            product_im_out => mul_im_out(718)
+            data_re_out => mul_re_out(718),
+            data_im_out => mul_im_out(718)
         );
 
  
@@ -30496,8 +30496,8 @@ begin
             data_im_in => first_stage_im_out(719),
             re_multiplicator => "0011011111111001", --- 0.874572753906 + j-0.48486328125
             im_multiplicator => "1110000011111000",
-            product_re_out => mul_re_out(719),
-            product_im_out => mul_im_out(719)
+            data_re_out => mul_re_out(719),
+            data_im_out => mul_im_out(719)
         );
 
  
@@ -30514,8 +30514,8 @@ begin
             data_im_in => first_stage_im_out(720),
             re_multiplicator => "0011011011100101", --- 0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(720),
-            product_im_out => mul_im_out(720)
+            data_re_out => mul_re_out(720),
+            data_im_out => mul_im_out(720)
         );
 
  
@@ -30532,8 +30532,8 @@ begin
             data_im_in => first_stage_im_out(721),
             re_multiplicator => "0011010111000000", --- 0.83984375 + j-0.542724609375
             im_multiplicator => "1101110101000100",
-            product_re_out => mul_re_out(721),
-            product_im_out => mul_im_out(721)
+            data_re_out => mul_re_out(721),
+            data_im_out => mul_im_out(721)
         );
 
  
@@ -30550,8 +30550,8 @@ begin
             data_im_in => first_stage_im_out(722),
             re_multiplicator => "0011010010001100", --- 0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(722),
-            product_im_out => mul_im_out(722)
+            data_re_out => mul_re_out(722),
+            data_im_out => mul_im_out(722)
         );
 
  
@@ -30568,8 +30568,8 @@ begin
             data_im_in => first_stage_im_out(723),
             re_multiplicator => "0011001101001001", --- 0.801330566406 + j-0.59814453125
             im_multiplicator => "1101100110111000",
-            product_re_out => mul_re_out(723),
-            product_im_out => mul_im_out(723)
+            data_re_out => mul_re_out(723),
+            data_im_out => mul_im_out(723)
         );
 
  
@@ -30586,8 +30586,8 @@ begin
             data_im_in => first_stage_im_out(724),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(724),
-            product_im_out => mul_im_out(724)
+            data_re_out => mul_re_out(724),
+            data_im_out => mul_im_out(724)
         );
 
  
@@ -30604,8 +30604,8 @@ begin
             data_im_in => first_stage_im_out(725),
             re_multiplicator => "0011000010010110", --- 0.759155273438 + j-0.650817871094
             im_multiplicator => "1101011001011001",
-            product_re_out => mul_re_out(725),
-            product_im_out => mul_im_out(725)
+            data_re_out => mul_re_out(725),
+            data_im_out => mul_im_out(725)
         );
 
  
@@ -30622,8 +30622,8 @@ begin
             data_im_in => first_stage_im_out(726),
             re_multiplicator => "0010111100101000", --- 0.73681640625 + j-0.676086425781
             im_multiplicator => "1101010010111011",
-            product_re_out => mul_re_out(726),
-            product_im_out => mul_im_out(726)
+            data_re_out => mul_re_out(726),
+            data_im_out => mul_im_out(726)
         );
 
  
@@ -30640,8 +30640,8 @@ begin
             data_im_in => first_stage_im_out(727),
             re_multiplicator => "0010110110101011", --- 0.713562011719 + j-0.700561523438
             im_multiplicator => "1101001100101010",
-            product_re_out => mul_re_out(727),
-            product_im_out => mul_im_out(727)
+            data_re_out => mul_re_out(727),
+            data_im_out => mul_im_out(727)
         );
 
  
@@ -30658,8 +30658,8 @@ begin
             data_im_in => first_stage_im_out(728),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(728),
-            product_im_out => mul_im_out(728)
+            data_re_out => mul_re_out(728),
+            data_im_out => mul_im_out(728)
         );
 
  
@@ -30676,8 +30676,8 @@ begin
             data_im_in => first_stage_im_out(729),
             re_multiplicator => "0010101010001010", --- 0.664672851562 + j-0.7470703125
             im_multiplicator => "1101000000110000",
-            product_re_out => mul_re_out(729),
-            product_im_out => mul_im_out(729)
+            data_re_out => mul_re_out(729),
+            data_im_out => mul_im_out(729)
         );
 
  
@@ -30694,8 +30694,8 @@ begin
             data_im_in => first_stage_im_out(730),
             re_multiplicator => "0010100011100111", --- 0.639099121094 + j-0.76904296875
             im_multiplicator => "1100111011001000",
-            product_re_out => mul_re_out(730),
-            product_im_out => mul_im_out(730)
+            data_re_out => mul_re_out(730),
+            data_im_out => mul_im_out(730)
         );
 
  
@@ -30712,8 +30712,8 @@ begin
             data_im_in => first_stage_im_out(731),
             re_multiplicator => "0010011100111000", --- 0.61279296875 + j-0.790222167969
             im_multiplicator => "1100110101101101",
-            product_re_out => mul_re_out(731),
-            product_im_out => mul_im_out(731)
+            data_re_out => mul_re_out(731),
+            data_im_out => mul_im_out(731)
         );
 
  
@@ -30730,8 +30730,8 @@ begin
             data_im_in => first_stage_im_out(732),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j-0.810424804688
             im_multiplicator => "1100110000100010",
-            product_re_out => mul_re_out(732),
-            product_im_out => mul_im_out(732)
+            data_re_out => mul_re_out(732),
+            data_im_out => mul_im_out(732)
         );
 
  
@@ -30748,8 +30748,8 @@ begin
             data_im_in => first_stage_im_out(733),
             re_multiplicator => "0010001110111000", --- 0.55810546875 + j-0.829711914062
             im_multiplicator => "1100101011100110",
-            product_re_out => mul_re_out(733),
-            product_im_out => mul_im_out(733)
+            data_re_out => mul_re_out(733),
+            data_im_out => mul_im_out(733)
         );
 
  
@@ -30766,8 +30766,8 @@ begin
             data_im_in => first_stage_im_out(734),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(734),
-            product_im_out => mul_im_out(734)
+            data_re_out => mul_re_out(734),
+            data_im_out => mul_im_out(734)
         );
 
  
@@ -30784,8 +30784,8 @@ begin
             data_im_in => first_stage_im_out(735),
             re_multiplicator => "0010000000001110", --- 0.500854492188 + j-0.865478515625
             im_multiplicator => "1100100010011100",
-            product_re_out => mul_re_out(735),
-            product_im_out => mul_im_out(735)
+            data_re_out => mul_re_out(735),
+            data_im_out => mul_im_out(735)
         );
 
  
@@ -30802,8 +30802,8 @@ begin
             data_im_in => first_stage_im_out(736),
             re_multiplicator => "0001111000101011", --- 0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(736),
-            product_im_out => mul_im_out(736)
+            data_re_out => mul_re_out(736),
+            data_im_out => mul_im_out(736)
         );
 
  
@@ -30820,8 +30820,8 @@ begin
             data_im_in => first_stage_im_out(737),
             re_multiplicator => "0001110000111111", --- 0.441345214844 + j-0.897277832031
             im_multiplicator => "1100011010010011",
-            product_re_out => mul_re_out(737),
-            product_im_out => mul_im_out(737)
+            data_re_out => mul_re_out(737),
+            data_im_out => mul_im_out(737)
         );
 
  
@@ -30838,8 +30838,8 @@ begin
             data_im_in => first_stage_im_out(738),
             re_multiplicator => "0001101001001011", --- 0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(738),
-            product_im_out => mul_im_out(738)
+            data_re_out => mul_re_out(738),
+            data_im_out => mul_im_out(738)
         );
 
  
@@ -30856,8 +30856,8 @@ begin
             data_im_in => first_stage_im_out(739),
             re_multiplicator => "0001100001001111", --- 0.379821777344 + j-0.925048828125
             im_multiplicator => "1100010011001100",
-            product_re_out => mul_re_out(739),
-            product_im_out => mul_im_out(739)
+            data_re_out => mul_re_out(739),
+            data_im_out => mul_im_out(739)
         );
 
  
@@ -30874,8 +30874,8 @@ begin
             data_im_in => first_stage_im_out(740),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j-0.937316894531
             im_multiplicator => "1100010000000011",
-            product_re_out => mul_re_out(740),
-            product_im_out => mul_im_out(740)
+            data_re_out => mul_re_out(740),
+            data_im_out => mul_im_out(740)
         );
 
  
@@ -30892,8 +30892,8 @@ begin
             data_im_in => first_stage_im_out(741),
             re_multiplicator => "0001010001000011", --- 0.316589355469 + j-0.948547363281
             im_multiplicator => "1100001101001011",
-            product_re_out => mul_re_out(741),
-            product_im_out => mul_im_out(741)
+            data_re_out => mul_re_out(741),
+            data_im_out => mul_im_out(741)
         );
 
  
@@ -30910,8 +30910,8 @@ begin
             data_im_in => first_stage_im_out(742),
             re_multiplicator => "0001001000110011", --- 0.284362792969 + j-0.958679199219
             im_multiplicator => "1100001010100101",
-            product_re_out => mul_re_out(742),
-            product_im_out => mul_im_out(742)
+            data_re_out => mul_re_out(742),
+            data_im_out => mul_im_out(742)
         );
 
  
@@ -30928,8 +30928,8 @@ begin
             data_im_in => first_stage_im_out(743),
             re_multiplicator => "0001000000011111", --- 0.251892089844 + j-0.967712402344
             im_multiplicator => "1100001000010001",
-            product_re_out => mul_re_out(743),
-            product_im_out => mul_im_out(743)
+            data_re_out => mul_re_out(743),
+            data_im_out => mul_im_out(743)
         );
 
  
@@ -30946,8 +30946,8 @@ begin
             data_im_in => first_stage_im_out(744),
             re_multiplicator => "0000111000000101", --- 0.219055175781 + j-0.975646972656
             im_multiplicator => "1100000110001111",
-            product_re_out => mul_re_out(744),
-            product_im_out => mul_im_out(744)
+            data_re_out => mul_re_out(744),
+            data_im_out => mul_im_out(744)
         );
 
  
@@ -30964,8 +30964,8 @@ begin
             data_im_in => first_stage_im_out(745),
             re_multiplicator => "0000101111101000", --- 0.18603515625 + j-0.982482910156
             im_multiplicator => "1100000100011111",
-            product_re_out => mul_re_out(745),
-            product_im_out => mul_im_out(745)
+            data_re_out => mul_re_out(745),
+            data_im_out => mul_im_out(745)
         );
 
  
@@ -30982,8 +30982,8 @@ begin
             data_im_in => first_stage_im_out(746),
             re_multiplicator => "0000100111000111", --- 0.152770996094 + j-0.988220214844
             im_multiplicator => "1100000011000001",
-            product_re_out => mul_re_out(746),
-            product_im_out => mul_im_out(746)
+            data_re_out => mul_re_out(746),
+            data_im_out => mul_im_out(746)
         );
 
  
@@ -31000,8 +31000,8 @@ begin
             data_im_in => first_stage_im_out(747),
             re_multiplicator => "0000011110100011", --- 0.119323730469 + j-0.992797851562
             im_multiplicator => "1100000001110110",
-            product_re_out => mul_re_out(747),
-            product_im_out => mul_im_out(747)
+            data_re_out => mul_re_out(747),
+            data_im_out => mul_im_out(747)
         );
 
  
@@ -31018,8 +31018,8 @@ begin
             data_im_in => first_stage_im_out(748),
             re_multiplicator => "0000010101111101", --- 0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(748),
-            product_im_out => mul_im_out(748)
+            data_re_out => mul_re_out(748),
+            data_im_out => mul_im_out(748)
         );
 
  
@@ -31036,8 +31036,8 @@ begin
             data_im_in => first_stage_im_out(749),
             re_multiplicator => "0000001101010110", --- 0.0521240234375 + j-0.998596191406
             im_multiplicator => "1100000000010111",
-            product_re_out => mul_re_out(749),
-            product_im_out => mul_im_out(749)
+            data_re_out => mul_re_out(749),
+            data_im_out => mul_im_out(749)
         );
 
  
@@ -31054,8 +31054,8 @@ begin
             data_im_in => first_stage_im_out(750),
             re_multiplicator => "0000000100101101", --- 0.0183715820312 + j-0.999816894531
             im_multiplicator => "1100000000000011",
-            product_re_out => mul_re_out(750),
-            product_im_out => mul_im_out(750)
+            data_re_out => mul_re_out(750),
+            data_im_out => mul_im_out(750)
         );
 
  
@@ -31072,8 +31072,8 @@ begin
             data_im_in => first_stage_im_out(751),
             re_multiplicator => "1111111100000101", --- -0.0153198242188 + j-0.999877929688
             im_multiplicator => "1100000000000010",
-            product_re_out => mul_re_out(751),
-            product_im_out => mul_im_out(751)
+            data_re_out => mul_re_out(751),
+            data_im_out => mul_im_out(751)
         );
 
  
@@ -31090,8 +31090,8 @@ begin
             data_im_in => first_stage_im_out(752),
             re_multiplicator => "1111110011011101", --- -0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(752),
-            product_im_out => mul_im_out(752)
+            data_re_out => mul_re_out(752),
+            data_im_out => mul_im_out(752)
         );
 
  
@@ -31108,8 +31108,8 @@ begin
             data_im_in => first_stage_im_out(753),
             re_multiplicator => "1111101010110101", --- -0.0827026367188 + j-0.996520996094
             im_multiplicator => "1100000000111001",
-            product_re_out => mul_re_out(753),
-            product_im_out => mul_im_out(753)
+            data_re_out => mul_re_out(753),
+            data_im_out => mul_im_out(753)
         );
 
  
@@ -31126,8 +31126,8 @@ begin
             data_im_in => first_stage_im_out(754),
             re_multiplicator => "1111100010001111", --- -0.116271972656 + j-0.9931640625
             im_multiplicator => "1100000001110000",
-            product_re_out => mul_re_out(754),
-            product_im_out => mul_im_out(754)
+            data_re_out => mul_re_out(754),
+            data_im_out => mul_im_out(754)
         );
 
  
@@ -31144,8 +31144,8 @@ begin
             data_im_in => first_stage_im_out(755),
             re_multiplicator => "1111011001101011", --- -0.149719238281 + j-0.988708496094
             im_multiplicator => "1100000010111001",
-            product_re_out => mul_re_out(755),
-            product_im_out => mul_im_out(755)
+            data_re_out => mul_re_out(755),
+            data_im_out => mul_im_out(755)
         );
 
  
@@ -31162,8 +31162,8 @@ begin
             data_im_in => first_stage_im_out(756),
             re_multiplicator => "1111010001001010", --- -0.182983398438 + j-0.983093261719
             im_multiplicator => "1100000100010101",
-            product_re_out => mul_re_out(756),
-            product_im_out => mul_im_out(756)
+            data_re_out => mul_re_out(756),
+            data_im_out => mul_im_out(756)
         );
 
  
@@ -31180,8 +31180,8 @@ begin
             data_im_in => first_stage_im_out(757),
             re_multiplicator => "1111001000101100", --- -0.216064453125 + j-0.976318359375
             im_multiplicator => "1100000110000100",
-            product_re_out => mul_re_out(757),
-            product_im_out => mul_im_out(757)
+            data_re_out => mul_re_out(757),
+            data_im_out => mul_im_out(757)
         );
 
  
@@ -31198,8 +31198,8 @@ begin
             data_im_in => first_stage_im_out(758),
             re_multiplicator => "1111000000010010", --- -0.248901367188 + j-0.968505859375
             im_multiplicator => "1100001000000100",
-            product_re_out => mul_re_out(758),
-            product_im_out => mul_im_out(758)
+            data_re_out => mul_re_out(758),
+            data_im_out => mul_im_out(758)
         );
 
  
@@ -31216,8 +31216,8 @@ begin
             data_im_in => first_stage_im_out(759),
             re_multiplicator => "1110110111111101", --- -0.281433105469 + j-0.959533691406
             im_multiplicator => "1100001010010111",
-            product_re_out => mul_re_out(759),
-            product_im_out => mul_im_out(759)
+            data_re_out => mul_re_out(759),
+            data_im_out => mul_im_out(759)
         );
 
  
@@ -31234,8 +31234,8 @@ begin
             data_im_in => first_stage_im_out(760),
             re_multiplicator => "1110101111101101", --- -0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(760),
-            product_im_out => mul_im_out(760)
+            data_re_out => mul_re_out(760),
+            data_im_out => mul_im_out(760)
         );
 
  
@@ -31252,8 +31252,8 @@ begin
             data_im_in => first_stage_im_out(761),
             re_multiplicator => "1110100111100011", --- -0.345520019531 + j-0.938354492188
             im_multiplicator => "1100001111110010",
-            product_re_out => mul_re_out(761),
-            product_im_out => mul_im_out(761)
+            data_re_out => mul_re_out(761),
+            data_im_out => mul_im_out(761)
         );
 
  
@@ -31270,8 +31270,8 @@ begin
             data_im_in => first_stage_im_out(762),
             re_multiplicator => "1110011111100000", --- -0.376953125 + j-0.926208496094
             im_multiplicator => "1100010010111001",
-            product_re_out => mul_re_out(762),
-            product_im_out => mul_im_out(762)
+            data_re_out => mul_re_out(762),
+            data_im_out => mul_im_out(762)
         );
 
  
@@ -31288,8 +31288,8 @@ begin
             data_im_in => first_stage_im_out(763),
             re_multiplicator => "1110010111100011", --- -0.408020019531 + j-0.912902832031
             im_multiplicator => "1100010110010011",
-            product_re_out => mul_re_out(763),
-            product_im_out => mul_im_out(763)
+            data_re_out => mul_re_out(763),
+            data_im_out => mul_im_out(763)
         );
 
  
@@ -31306,8 +31306,8 @@ begin
             data_im_in => first_stage_im_out(764),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(764),
-            product_im_out => mul_im_out(764)
+            data_re_out => mul_re_out(764),
+            data_im_out => mul_im_out(764)
         );
 
  
@@ -31324,8 +31324,8 @@ begin
             data_im_in => first_stage_im_out(765),
             re_multiplicator => "1110001000000010", --- -0.468627929688 + j-0.883361816406
             im_multiplicator => "1100011101110111",
-            product_re_out => mul_re_out(765),
-            product_im_out => mul_im_out(765)
+            data_re_out => mul_re_out(765),
+            data_im_out => mul_im_out(765)
         );
 
  
@@ -31342,8 +31342,8 @@ begin
             data_im_in => first_stage_im_out(766),
             re_multiplicator => "1110000000011110", --- -0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(766),
-            product_im_out => mul_im_out(766)
+            data_re_out => mul_re_out(766),
+            data_im_out => mul_im_out(766)
         );
 
  
@@ -31360,8 +31360,8 @@ begin
             data_im_in => first_stage_im_out(767),
             re_multiplicator => "1101111001000011", --- -0.527160644531 + j-0.849731445312
             im_multiplicator => "1100100110011110",
-            product_re_out => mul_re_out(767),
-            product_im_out => mul_im_out(767)
+            data_re_out => mul_re_out(767),
+            data_im_out => mul_im_out(767)
         );
 
  
@@ -31376,8 +31376,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(768),
             data_im_in => first_stage_im_out(768),
-            product_re_out => mul_re_out(768),
-            product_im_out => mul_im_out(768)
+            data_re_out => mul_re_out(768),
+            data_im_out => mul_im_out(768)
         );
 
  
@@ -31394,8 +31394,8 @@ begin
             data_im_in => first_stage_im_out(769),
             re_multiplicator => "0011111111110100", --- 0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(769),
-            product_im_out => mul_im_out(769)
+            data_re_out => mul_re_out(769),
+            data_im_out => mul_im_out(769)
         );
 
  
@@ -31412,8 +31412,8 @@ begin
             data_im_in => first_stage_im_out(770),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(770),
-            product_im_out => mul_im_out(770)
+            data_re_out => mul_re_out(770),
+            data_im_out => mul_im_out(770)
         );
 
  
@@ -31430,8 +31430,8 @@ begin
             data_im_in => first_stage_im_out(771),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(771),
-            product_im_out => mul_im_out(771)
+            data_re_out => mul_re_out(771),
+            data_im_out => mul_im_out(771)
         );
 
  
@@ -31448,8 +31448,8 @@ begin
             data_im_in => first_stage_im_out(772),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(772),
-            product_im_out => mul_im_out(772)
+            data_re_out => mul_re_out(772),
+            data_im_out => mul_im_out(772)
         );
 
  
@@ -31466,8 +31466,8 @@ begin
             data_im_in => first_stage_im_out(773),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(773),
-            product_im_out => mul_im_out(773)
+            data_re_out => mul_re_out(773),
+            data_im_out => mul_im_out(773)
         );
 
  
@@ -31484,8 +31484,8 @@ begin
             data_im_in => first_stage_im_out(774),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(774),
-            product_im_out => mul_im_out(774)
+            data_re_out => mul_re_out(774),
+            data_im_out => mul_im_out(774)
         );
 
  
@@ -31502,8 +31502,8 @@ begin
             data_im_in => first_stage_im_out(775),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(775),
-            product_im_out => mul_im_out(775)
+            data_re_out => mul_re_out(775),
+            data_im_out => mul_im_out(775)
         );
 
  
@@ -31520,8 +31520,8 @@ begin
             data_im_in => first_stage_im_out(776),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(776),
-            product_im_out => mul_im_out(776)
+            data_re_out => mul_re_out(776),
+            data_im_out => mul_im_out(776)
         );
 
  
@@ -31538,8 +31538,8 @@ begin
             data_im_in => first_stage_im_out(777),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(777),
-            product_im_out => mul_im_out(777)
+            data_re_out => mul_re_out(777),
+            data_im_out => mul_im_out(777)
         );
 
  
@@ -31556,8 +31556,8 @@ begin
             data_im_in => first_stage_im_out(778),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(778),
-            product_im_out => mul_im_out(778)
+            data_re_out => mul_re_out(778),
+            data_im_out => mul_im_out(778)
         );
 
  
@@ -31574,8 +31574,8 @@ begin
             data_im_in => first_stage_im_out(779),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(779),
-            product_im_out => mul_im_out(779)
+            data_re_out => mul_re_out(779),
+            data_im_out => mul_im_out(779)
         );
 
  
@@ -31592,8 +31592,8 @@ begin
             data_im_in => first_stage_im_out(780),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(780),
-            product_im_out => mul_im_out(780)
+            data_re_out => mul_re_out(780),
+            data_im_out => mul_im_out(780)
         );
 
  
@@ -31610,8 +31610,8 @@ begin
             data_im_in => first_stage_im_out(781),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(781),
-            product_im_out => mul_im_out(781)
+            data_re_out => mul_re_out(781),
+            data_im_out => mul_im_out(781)
         );
 
  
@@ -31628,8 +31628,8 @@ begin
             data_im_in => first_stage_im_out(782),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(782),
-            product_im_out => mul_im_out(782)
+            data_re_out => mul_re_out(782),
+            data_im_out => mul_im_out(782)
         );
 
  
@@ -31646,8 +31646,8 @@ begin
             data_im_in => first_stage_im_out(783),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(783),
-            product_im_out => mul_im_out(783)
+            data_re_out => mul_re_out(783),
+            data_im_out => mul_im_out(783)
         );
 
  
@@ -31664,8 +31664,8 @@ begin
             data_im_in => first_stage_im_out(784),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(784),
-            product_im_out => mul_im_out(784)
+            data_re_out => mul_re_out(784),
+            data_im_out => mul_im_out(784)
         );
 
  
@@ -31682,8 +31682,8 @@ begin
             data_im_in => first_stage_im_out(785),
             re_multiplicator => "0011001111011110", --- 0.810424804688 + j-0.585754394531
             im_multiplicator => "1101101010000011",
-            product_re_out => mul_re_out(785),
-            product_im_out => mul_im_out(785)
+            data_re_out => mul_re_out(785),
+            data_im_out => mul_im_out(785)
         );
 
  
@@ -31700,8 +31700,8 @@ begin
             data_im_in => first_stage_im_out(786),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(786),
-            product_im_out => mul_im_out(786)
+            data_re_out => mul_re_out(786),
+            data_im_out => mul_im_out(786)
         );
 
  
@@ -31718,8 +31718,8 @@ begin
             data_im_in => first_stage_im_out(787),
             re_multiplicator => "0011000011111000", --- 0.76513671875 + j-0.643798828125
             im_multiplicator => "1101011011001100",
-            product_re_out => mul_re_out(787),
-            product_im_out => mul_im_out(787)
+            data_re_out => mul_re_out(787),
+            data_im_out => mul_im_out(787)
         );
 
  
@@ -31736,8 +31736,8 @@ begin
             data_im_in => first_stage_im_out(788),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(788),
-            product_im_out => mul_im_out(788)
+            data_re_out => mul_re_out(788),
+            data_im_out => mul_im_out(788)
         );
 
  
@@ -31754,8 +31754,8 @@ begin
             data_im_in => first_stage_im_out(789),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(789),
-            product_im_out => mul_im_out(789)
+            data_re_out => mul_re_out(789),
+            data_im_out => mul_im_out(789)
         );
 
  
@@ -31772,8 +31772,8 @@ begin
             data_im_in => first_stage_im_out(790),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(790),
-            product_im_out => mul_im_out(790)
+            data_re_out => mul_re_out(790),
+            data_im_out => mul_im_out(790)
         );
 
  
@@ -31790,8 +31790,8 @@ begin
             data_im_in => first_stage_im_out(791),
             re_multiplicator => "0010101001100101", --- 0.662414550781 + j-0.749084472656
             im_multiplicator => "1101000000001111",
-            product_re_out => mul_re_out(791),
-            product_im_out => mul_im_out(791)
+            data_re_out => mul_re_out(791),
+            data_im_out => mul_im_out(791)
         );
 
  
@@ -31808,8 +31808,8 @@ begin
             data_im_in => first_stage_im_out(792),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(792),
-            product_im_out => mul_im_out(792)
+            data_re_out => mul_re_out(792),
+            data_im_out => mul_im_out(792)
         );
 
  
@@ -31826,8 +31826,8 @@ begin
             data_im_in => first_stage_im_out(793),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(793),
-            product_im_out => mul_im_out(793)
+            data_re_out => mul_re_out(793),
+            data_im_out => mul_im_out(793)
         );
 
  
@@ -31844,8 +31844,8 @@ begin
             data_im_in => first_stage_im_out(794),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(794),
-            product_im_out => mul_im_out(794)
+            data_re_out => mul_re_out(794),
+            data_im_out => mul_im_out(794)
         );
 
  
@@ -31862,8 +31862,8 @@ begin
             data_im_in => first_stage_im_out(795),
             re_multiplicator => "0010001011100110", --- 0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(795),
-            product_im_out => mul_im_out(795)
+            data_re_out => mul_re_out(795),
+            data_im_out => mul_im_out(795)
         );
 
  
@@ -31880,8 +31880,8 @@ begin
             data_im_in => first_stage_im_out(796),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(796),
-            product_im_out => mul_im_out(796)
+            data_re_out => mul_re_out(796),
+            data_im_out => mul_im_out(796)
         );
 
  
@@ -31898,8 +31898,8 @@ begin
             data_im_in => first_stage_im_out(797),
             re_multiplicator => "0001111011011100", --- 0.482177734375 + j-0.876037597656
             im_multiplicator => "1100011111101111",
-            product_re_out => mul_re_out(797),
-            product_im_out => mul_im_out(797)
+            data_re_out => mul_re_out(797),
+            data_im_out => mul_im_out(797)
         );
 
  
@@ -31916,8 +31916,8 @@ begin
             data_im_in => first_stage_im_out(798),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(798),
-            product_im_out => mul_im_out(798)
+            data_re_out => mul_re_out(798),
+            data_im_out => mul_im_out(798)
         );
 
  
@@ -31934,8 +31934,8 @@ begin
             data_im_in => first_stage_im_out(799),
             re_multiplicator => "0001101010100110", --- 0.416381835938 + j-0.909118652344
             im_multiplicator => "1100010111010001",
-            product_re_out => mul_re_out(799),
-            product_im_out => mul_im_out(799)
+            data_re_out => mul_re_out(799),
+            data_im_out => mul_im_out(799)
         );
 
  
@@ -31952,8 +31952,8 @@ begin
             data_im_in => first_stage_im_out(800),
             re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(800),
-            product_im_out => mul_im_out(800)
+            data_re_out => mul_re_out(800),
+            data_im_out => mul_im_out(800)
         );
 
  
@@ -31970,8 +31970,8 @@ begin
             data_im_in => first_stage_im_out(801),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j-0.937316894531
             im_multiplicator => "1100010000000011",
-            product_re_out => mul_re_out(801),
-            product_im_out => mul_im_out(801)
+            data_re_out => mul_re_out(801),
+            data_im_out => mul_im_out(801)
         );
 
  
@@ -31988,8 +31988,8 @@ begin
             data_im_in => first_stage_im_out(802),
             re_multiplicator => "0001010000010011", --- 0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(802),
-            product_im_out => mul_im_out(802)
+            data_re_out => mul_re_out(802),
+            data_im_out => mul_im_out(802)
         );
 
  
@@ -32006,8 +32006,8 @@ begin
             data_im_in => first_stage_im_out(803),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(803),
-            product_im_out => mul_im_out(803)
+            data_re_out => mul_re_out(803),
+            data_im_out => mul_im_out(803)
         );
 
  
@@ -32024,8 +32024,8 @@ begin
             data_im_in => first_stage_im_out(804),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(804),
-            product_im_out => mul_im_out(804)
+            data_re_out => mul_re_out(804),
+            data_im_out => mul_im_out(804)
         );
 
  
@@ -32042,8 +32042,8 @@ begin
             data_im_in => first_stage_im_out(805),
             re_multiplicator => "0000110101000001", --- 0.207092285156 + j-0.978271484375
             im_multiplicator => "1100000101100100",
-            product_re_out => mul_re_out(805),
-            product_im_out => mul_im_out(805)
+            data_re_out => mul_re_out(805),
+            data_im_out => mul_im_out(805)
         );
 
  
@@ -32060,8 +32060,8 @@ begin
             data_im_in => first_stage_im_out(806),
             re_multiplicator => "0000101011110001", --- 0.170959472656 + j-0.985229492188
             im_multiplicator => "1100000011110010",
-            product_re_out => mul_re_out(806),
-            product_im_out => mul_im_out(806)
+            data_re_out => mul_re_out(806),
+            data_im_out => mul_im_out(806)
         );
 
  
@@ -32078,8 +32078,8 @@ begin
             data_im_in => first_stage_im_out(807),
             re_multiplicator => "0000100010011100", --- 0.134521484375 + j-0.990844726562
             im_multiplicator => "1100000010010110",
-            product_re_out => mul_re_out(807),
-            product_im_out => mul_im_out(807)
+            data_re_out => mul_re_out(807),
+            data_im_out => mul_im_out(807)
         );
 
  
@@ -32096,8 +32096,8 @@ begin
             data_im_in => first_stage_im_out(808),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(808),
-            product_im_out => mul_im_out(808)
+            data_re_out => mul_re_out(808),
+            data_im_out => mul_im_out(808)
         );
 
  
@@ -32114,8 +32114,8 @@ begin
             data_im_in => first_stage_im_out(809),
             re_multiplicator => "0000001111101100", --- 0.061279296875 + j-0.998107910156
             im_multiplicator => "1100000000011111",
-            product_re_out => mul_re_out(809),
-            product_im_out => mul_im_out(809)
+            data_re_out => mul_re_out(809),
+            data_im_out => mul_im_out(809)
         );
 
  
@@ -32132,8 +32132,8 @@ begin
             data_im_in => first_stage_im_out(810),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(810),
-            product_im_out => mul_im_out(810)
+            data_re_out => mul_re_out(810),
+            data_im_out => mul_im_out(810)
         );
 
  
@@ -32150,8 +32150,8 @@ begin
             data_im_in => first_stage_im_out(811),
             re_multiplicator => "1111111100110111", --- -0.0122680664062 + j-0.999877929688
             im_multiplicator => "1100000000000010",
-            product_re_out => mul_re_out(811),
-            product_im_out => mul_im_out(811)
+            data_re_out => mul_re_out(811),
+            data_im_out => mul_im_out(811)
         );
 
  
@@ -32168,8 +32168,8 @@ begin
             data_im_in => first_stage_im_out(812),
             re_multiplicator => "1111110011011101", --- -0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(812),
-            product_im_out => mul_im_out(812)
+            data_re_out => mul_re_out(812),
+            data_im_out => mul_im_out(812)
         );
 
  
@@ -32186,8 +32186,8 @@ begin
             data_im_in => first_stage_im_out(813),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(813),
-            product_im_out => mul_im_out(813)
+            data_re_out => mul_re_out(813),
+            data_im_out => mul_im_out(813)
         );
 
  
@@ -32204,8 +32204,8 @@ begin
             data_im_in => first_stage_im_out(814),
             re_multiplicator => "1111100000101011", --- -0.122375488281 + j-0.992431640625
             im_multiplicator => "1100000001111100",
-            product_re_out => mul_re_out(814),
-            product_im_out => mul_im_out(814)
+            data_re_out => mul_re_out(814),
+            data_im_out => mul_im_out(814)
         );
 
  
@@ -32222,8 +32222,8 @@ begin
             data_im_in => first_stage_im_out(815),
             re_multiplicator => "1111010111010110", --- -0.158813476562 + j-0.987243652344
             im_multiplicator => "1100000011010001",
-            product_re_out => mul_re_out(815),
-            product_im_out => mul_im_out(815)
+            data_re_out => mul_re_out(815),
+            data_im_out => mul_im_out(815)
         );
 
  
@@ -32240,8 +32240,8 @@ begin
             data_im_in => first_stage_im_out(816),
             re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(816),
-            product_im_out => mul_im_out(816)
+            data_re_out => mul_re_out(816),
+            data_im_out => mul_im_out(816)
         );
 
  
@@ -32258,8 +32258,8 @@ begin
             data_im_in => first_stage_im_out(817),
             re_multiplicator => "1111000100110111", --- -0.231018066406 + j-0.972900390625
             im_multiplicator => "1100000110111100",
-            product_re_out => mul_re_out(817),
-            product_im_out => mul_im_out(817)
+            data_re_out => mul_re_out(817),
+            data_im_out => mul_im_out(817)
         );
 
  
@@ -32276,8 +32276,8 @@ begin
             data_im_in => first_stage_im_out(818),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(818),
-            product_im_out => mul_im_out(818)
+            data_re_out => mul_re_out(818),
+            data_im_out => mul_im_out(818)
         );
 
  
@@ -32294,8 +32294,8 @@ begin
             data_im_in => first_stage_im_out(819),
             re_multiplicator => "1110110010101100", --- -0.302001953125 + j-0.953247070312
             im_multiplicator => "1100001011111110",
-            product_re_out => mul_re_out(819),
-            product_im_out => mul_im_out(819)
+            data_re_out => mul_re_out(819),
+            data_im_out => mul_im_out(819)
         );
 
  
@@ -32312,8 +32312,8 @@ begin
             data_im_in => first_stage_im_out(820),
             re_multiplicator => "1110101001110001", --- -0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(820),
-            product_im_out => mul_im_out(820)
+            data_re_out => mul_re_out(820),
+            data_im_out => mul_im_out(820)
         );
 
  
@@ -32330,8 +32330,8 @@ begin
             data_im_in => first_stage_im_out(821),
             re_multiplicator => "1110100000111101", --- -0.371276855469 + j-0.928466796875
             im_multiplicator => "1100010010010100",
-            product_re_out => mul_re_out(821),
-            product_im_out => mul_im_out(821)
+            data_re_out => mul_re_out(821),
+            data_im_out => mul_im_out(821)
         );
 
  
@@ -32348,8 +32348,8 @@ begin
             data_im_in => first_stage_im_out(822),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j-0.914184570312
             im_multiplicator => "1100010101111110",
-            product_re_out => mul_re_out(822),
-            product_im_out => mul_im_out(822)
+            data_re_out => mul_re_out(822),
+            data_im_out => mul_im_out(822)
         );
 
  
@@ -32366,8 +32366,8 @@ begin
             data_im_in => first_stage_im_out(823),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(823),
-            product_im_out => mul_im_out(823)
+            data_re_out => mul_re_out(823),
+            data_im_out => mul_im_out(823)
         );
 
  
@@ -32384,8 +32384,8 @@ begin
             data_im_in => first_stage_im_out(824),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(824),
-            product_im_out => mul_im_out(824)
+            data_re_out => mul_re_out(824),
+            data_im_out => mul_im_out(824)
         );
 
  
@@ -32402,8 +32402,8 @@ begin
             data_im_in => first_stage_im_out(825),
             re_multiplicator => "1101111111000111", --- -0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(825),
-            product_im_out => mul_im_out(825)
+            data_re_out => mul_re_out(825),
+            data_im_out => mul_im_out(825)
         );
 
  
@@ -32420,8 +32420,8 @@ begin
             data_im_in => first_stage_im_out(826),
             re_multiplicator => "1101110111000011", --- -0.534973144531 + j-0.844848632812
             im_multiplicator => "1100100111101110",
-            product_re_out => mul_re_out(826),
-            product_im_out => mul_im_out(826)
+            data_re_out => mul_re_out(826),
+            data_im_out => mul_im_out(826)
         );
 
  
@@ -32438,8 +32438,8 @@ begin
             data_im_in => first_stage_im_out(827),
             re_multiplicator => "1101101111001100", --- -0.565673828125 + j-0.824584960938
             im_multiplicator => "1100101100111010",
-            product_re_out => mul_re_out(827),
-            product_im_out => mul_im_out(827)
+            data_re_out => mul_re_out(827),
+            data_im_out => mul_im_out(827)
         );
 
  
@@ -32456,8 +32456,8 @@ begin
             data_im_in => first_stage_im_out(828),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(828),
-            product_im_out => mul_im_out(828)
+            data_re_out => mul_re_out(828),
+            data_im_out => mul_im_out(828)
         );
 
  
@@ -32474,8 +32474,8 @@ begin
             data_im_in => first_stage_im_out(829),
             re_multiplicator => "1101100000000011", --- -0.624816894531 + j-0.780700683594
             im_multiplicator => "1100111000001001",
-            product_re_out => mul_re_out(829),
-            product_im_out => mul_im_out(829)
+            data_re_out => mul_re_out(829),
+            data_im_out => mul_im_out(829)
         );
 
  
@@ -32492,8 +32492,8 @@ begin
             data_im_in => first_stage_im_out(830),
             re_multiplicator => "1101011000110011", --- -0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(830),
-            product_im_out => mul_im_out(830)
+            data_re_out => mul_re_out(830),
+            data_im_out => mul_im_out(830)
         );
 
  
@@ -32510,8 +32510,8 @@ begin
             data_im_in => first_stage_im_out(831),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(831),
-            product_im_out => mul_im_out(831)
+            data_re_out => mul_re_out(831),
+            data_im_out => mul_im_out(831)
         );
 
  
@@ -32526,8 +32526,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(832),
             data_im_in => first_stage_im_out(832),
-            product_re_out => mul_re_out(832),
-            product_im_out => mul_im_out(832)
+            data_re_out => mul_re_out(832),
+            data_im_out => mul_im_out(832)
         );
 
  
@@ -32544,8 +32544,8 @@ begin
             data_im_in => first_stage_im_out(833),
             re_multiplicator => "0011111111110010", --- 0.999145507812 + j-0.0398559570312
             im_multiplicator => "1111110101110011",
-            product_re_out => mul_re_out(833),
-            product_im_out => mul_im_out(833)
+            data_re_out => mul_re_out(833),
+            data_im_out => mul_im_out(833)
         );
 
  
@@ -32562,8 +32562,8 @@ begin
             data_im_in => first_stage_im_out(834),
             re_multiplicator => "0011111111001011", --- 0.996765136719 + j-0.0796508789062
             im_multiplicator => "1111101011100111",
-            product_re_out => mul_re_out(834),
-            product_im_out => mul_im_out(834)
+            data_re_out => mul_re_out(834),
+            data_im_out => mul_im_out(834)
         );
 
  
@@ -32580,8 +32580,8 @@ begin
             data_im_in => first_stage_im_out(835),
             re_multiplicator => "0011111110001010", --- 0.992797851562 + j-0.119323730469
             im_multiplicator => "1111100001011101",
-            product_re_out => mul_re_out(835),
-            product_im_out => mul_im_out(835)
+            data_re_out => mul_re_out(835),
+            data_im_out => mul_im_out(835)
         );
 
  
@@ -32598,8 +32598,8 @@ begin
             data_im_in => first_stage_im_out(836),
             re_multiplicator => "0011111100101111", --- 0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(836),
-            product_im_out => mul_im_out(836)
+            data_re_out => mul_re_out(836),
+            data_im_out => mul_im_out(836)
         );
 
  
@@ -32616,8 +32616,8 @@ begin
             data_im_in => first_stage_im_out(837),
             re_multiplicator => "0011111010111011", --- 0.980163574219 + j-0.198059082031
             im_multiplicator => "1111001101010011",
-            product_re_out => mul_re_out(837),
-            product_im_out => mul_im_out(837)
+            data_re_out => mul_re_out(837),
+            data_im_out => mul_im_out(837)
         );
 
  
@@ -32634,8 +32634,8 @@ begin
             data_im_in => first_stage_im_out(838),
             re_multiplicator => "0011111000101101", --- 0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(838),
-            product_im_out => mul_im_out(838)
+            data_re_out => mul_re_out(838),
+            data_im_out => mul_im_out(838)
         );
 
  
@@ -32652,8 +32652,8 @@ begin
             data_im_in => first_stage_im_out(839),
             re_multiplicator => "0011110110000101", --- 0.961242675781 + j-0.275512695312
             im_multiplicator => "1110111001011110",
-            product_re_out => mul_re_out(839),
-            product_im_out => mul_im_out(839)
+            data_re_out => mul_re_out(839),
+            data_im_out => mul_im_out(839)
         );
 
  
@@ -32670,8 +32670,8 @@ begin
             data_im_in => first_stage_im_out(840),
             re_multiplicator => "0011110011000101", --- 0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(840),
-            product_im_out => mul_im_out(840)
+            data_re_out => mul_re_out(840),
+            data_im_out => mul_im_out(840)
         );
 
  
@@ -32688,8 +32688,8 @@ begin
             data_im_in => first_stage_im_out(841),
             re_multiplicator => "0011101111101011", --- 0.936218261719 + j-0.351257324219
             im_multiplicator => "1110100110000101",
-            product_re_out => mul_re_out(841),
-            product_im_out => mul_im_out(841)
+            data_re_out => mul_re_out(841),
+            data_im_out => mul_im_out(841)
         );
 
  
@@ -32706,8 +32706,8 @@ begin
             data_im_in => first_stage_im_out(842),
             re_multiplicator => "0011101011111010", --- 0.921508789062 + j-0.388305664062
             im_multiplicator => "1110011100100110",
-            product_re_out => mul_re_out(842),
-            product_im_out => mul_im_out(842)
+            data_re_out => mul_re_out(842),
+            data_im_out => mul_im_out(842)
         );
 
  
@@ -32724,8 +32724,8 @@ begin
             data_im_in => first_stage_im_out(843),
             re_multiplicator => "0011100111110000", --- 0.9052734375 + j-0.424743652344
             im_multiplicator => "1110010011010001",
-            product_re_out => mul_re_out(843),
-            product_im_out => mul_im_out(843)
+            data_re_out => mul_re_out(843),
+            data_im_out => mul_im_out(843)
         );
 
  
@@ -32742,8 +32742,8 @@ begin
             data_im_in => first_stage_im_out(844),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(844),
-            product_im_out => mul_im_out(844)
+            data_re_out => mul_re_out(844),
+            data_im_out => mul_im_out(844)
         );
 
  
@@ -32760,8 +32760,8 @@ begin
             data_im_in => first_stage_im_out(845),
             re_multiplicator => "0011011110010110", --- 0.868530273438 + j-0.495544433594
             im_multiplicator => "1110000001001001",
-            product_re_out => mul_re_out(845),
-            product_im_out => mul_im_out(845)
+            data_re_out => mul_re_out(845),
+            data_im_out => mul_im_out(845)
         );
 
  
@@ -32778,8 +32778,8 @@ begin
             data_im_in => first_stage_im_out(846),
             re_multiplicator => "0011011001000111", --- 0.848083496094 + j-0.52978515625
             im_multiplicator => "1101111000011000",
-            product_re_out => mul_re_out(846),
-            product_im_out => mul_im_out(846)
+            data_re_out => mul_re_out(846),
+            data_im_out => mul_im_out(846)
         );
 
  
@@ -32796,8 +32796,8 @@ begin
             data_im_in => first_stage_im_out(847),
             re_multiplicator => "0011010011100010", --- 0.826293945312 + j-0.563171386719
             im_multiplicator => "1101101111110101",
-            product_re_out => mul_re_out(847),
-            product_im_out => mul_im_out(847)
+            data_re_out => mul_re_out(847),
+            data_im_out => mul_im_out(847)
         );
 
  
@@ -32814,8 +32814,8 @@ begin
             data_im_in => first_stage_im_out(848),
             re_multiplicator => "0011001101100111", --- 0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(848),
-            product_im_out => mul_im_out(848)
+            data_re_out => mul_re_out(848),
+            data_im_out => mul_im_out(848)
         );
 
  
@@ -32832,8 +32832,8 @@ begin
             data_im_in => first_stage_im_out(849),
             re_multiplicator => "0011000111011000", --- 0.77880859375 + j-0.627197265625
             im_multiplicator => "1101011111011100",
-            product_re_out => mul_re_out(849),
-            product_im_out => mul_im_out(849)
+            data_re_out => mul_re_out(849),
+            data_im_out => mul_im_out(849)
         );
 
  
@@ -32850,8 +32850,8 @@ begin
             data_im_in => first_stage_im_out(850),
             re_multiplicator => "0011000000110100", --- 0.753173828125 + j-0.657775878906
             im_multiplicator => "1101010111100111",
-            product_re_out => mul_re_out(850),
-            product_im_out => mul_im_out(850)
+            data_re_out => mul_re_out(850),
+            data_im_out => mul_im_out(850)
         );
 
  
@@ -32868,8 +32868,8 @@ begin
             data_im_in => first_stage_im_out(851),
             re_multiplicator => "0010111001111100", --- 0.726318359375 + j-0.687255859375
             im_multiplicator => "1101010000000100",
-            product_re_out => mul_re_out(851),
-            product_im_out => mul_im_out(851)
+            data_re_out => mul_re_out(851),
+            data_im_out => mul_im_out(851)
         );
 
  
@@ -32886,8 +32886,8 @@ begin
             data_im_in => first_stage_im_out(852),
             re_multiplicator => "0010110010110010", --- 0.698364257812 + j-0.715698242188
             im_multiplicator => "1101001000110010",
-            product_re_out => mul_re_out(852),
-            product_im_out => mul_im_out(852)
+            data_re_out => mul_re_out(852),
+            data_im_out => mul_im_out(852)
         );
 
  
@@ -32904,8 +32904,8 @@ begin
             data_im_in => first_stage_im_out(853),
             re_multiplicator => "0010101011010101", --- 0.669250488281 + j-0.742980957031
             im_multiplicator => "1101000001110011",
-            product_re_out => mul_re_out(853),
-            product_im_out => mul_im_out(853)
+            data_re_out => mul_re_out(853),
+            data_im_out => mul_im_out(853)
         );
 
  
@@ -32922,8 +32922,8 @@ begin
             data_im_in => first_stage_im_out(854),
             re_multiplicator => "0010100011100111", --- 0.639099121094 + j-0.76904296875
             im_multiplicator => "1100111011001000",
-            product_re_out => mul_re_out(854),
-            product_im_out => mul_im_out(854)
+            data_re_out => mul_re_out(854),
+            data_im_out => mul_im_out(854)
         );
 
  
@@ -32940,8 +32940,8 @@ begin
             data_im_in => first_stage_im_out(855),
             re_multiplicator => "0010011011101000", --- 0.60791015625 + j-0.7939453125
             im_multiplicator => "1100110100110000",
-            product_re_out => mul_re_out(855),
-            product_im_out => mul_im_out(855)
+            data_re_out => mul_re_out(855),
+            data_im_out => mul_im_out(855)
         );
 
  
@@ -32958,8 +32958,8 @@ begin
             data_im_in => first_stage_im_out(856),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(856),
-            product_im_out => mul_im_out(856)
+            data_re_out => mul_re_out(856),
+            data_im_out => mul_im_out(856)
         );
 
  
@@ -32976,8 +32976,8 @@ begin
             data_im_in => first_stage_im_out(857),
             re_multiplicator => "0010001010111100", --- 0.542724609375 + j-0.83984375
             im_multiplicator => "1100101001000000",
-            product_re_out => mul_re_out(857),
-            product_im_out => mul_im_out(857)
+            data_re_out => mul_re_out(857),
+            data_im_out => mul_im_out(857)
         );
 
  
@@ -32994,8 +32994,8 @@ begin
             data_im_in => first_stage_im_out(858),
             re_multiplicator => "0010000010010000", --- 0.5087890625 + j-0.86083984375
             im_multiplicator => "1100100011101000",
-            product_re_out => mul_re_out(858),
-            product_im_out => mul_im_out(858)
+            data_re_out => mul_re_out(858),
+            data_im_out => mul_im_out(858)
         );
 
  
@@ -33012,8 +33012,8 @@ begin
             data_im_in => first_stage_im_out(859),
             re_multiplicator => "0001111001010111", --- 0.474060058594 + j-0.880432128906
             im_multiplicator => "1100011110100111",
-            product_re_out => mul_re_out(859),
-            product_im_out => mul_im_out(859)
+            data_re_out => mul_re_out(859),
+            data_im_out => mul_im_out(859)
         );
 
  
@@ -33030,8 +33030,8 @@ begin
             data_im_in => first_stage_im_out(860),
             re_multiplicator => "0001110000010010", --- 0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(860),
-            product_im_out => mul_im_out(860)
+            data_re_out => mul_re_out(860),
+            data_im_out => mul_im_out(860)
         );
 
  
@@ -33048,8 +33048,8 @@ begin
             data_im_in => first_stage_im_out(861),
             re_multiplicator => "0001100111000001", --- 0.402404785156 + j-0.915405273438
             im_multiplicator => "1100010101101010",
-            product_re_out => mul_re_out(861),
-            product_im_out => mul_im_out(861)
+            data_re_out => mul_re_out(861),
+            data_im_out => mul_im_out(861)
         );
 
  
@@ -33066,8 +33066,8 @@ begin
             data_im_in => first_stage_im_out(862),
             re_multiplicator => "0001011101100110", --- 0.365600585938 + j-0.930725097656
             im_multiplicator => "1100010001101111",
-            product_re_out => mul_re_out(862),
-            product_im_out => mul_im_out(862)
+            data_re_out => mul_re_out(862),
+            data_im_out => mul_im_out(862)
         );
 
  
@@ -33084,8 +33084,8 @@ begin
             data_im_in => first_stage_im_out(863),
             re_multiplicator => "0001010100000001", --- 0.328186035156 + j-0.944580078125
             im_multiplicator => "1100001110001100",
-            product_re_out => mul_re_out(863),
-            product_im_out => mul_im_out(863)
+            data_re_out => mul_re_out(863),
+            data_im_out => mul_im_out(863)
         );
 
  
@@ -33102,8 +33102,8 @@ begin
             data_im_in => first_stage_im_out(864),
             re_multiplicator => "0001001010010100", --- 0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(864),
-            product_im_out => mul_im_out(864)
+            data_re_out => mul_re_out(864),
+            data_im_out => mul_im_out(864)
         );
 
  
@@ -33120,8 +33120,8 @@ begin
             data_im_in => first_stage_im_out(865),
             re_multiplicator => "0001000000011111", --- 0.251892089844 + j-0.967712402344
             im_multiplicator => "1100001000010001",
-            product_re_out => mul_re_out(865),
-            product_im_out => mul_im_out(865)
+            data_re_out => mul_re_out(865),
+            data_im_out => mul_im_out(865)
         );
 
  
@@ -33138,8 +33138,8 @@ begin
             data_im_in => first_stage_im_out(866),
             re_multiplicator => "0000110110100011", --- 0.213073730469 + j-0.976989746094
             im_multiplicator => "1100000101111001",
-            product_re_out => mul_re_out(866),
-            product_im_out => mul_im_out(866)
+            data_re_out => mul_re_out(866),
+            data_im_out => mul_im_out(866)
         );
 
  
@@ -33156,8 +33156,8 @@ begin
             data_im_in => first_stage_im_out(867),
             re_multiplicator => "0000101100100010", --- 0.173950195312 + j-0.984741210938
             im_multiplicator => "1100000011111010",
-            product_re_out => mul_re_out(867),
-            product_im_out => mul_im_out(867)
+            data_re_out => mul_re_out(867),
+            data_im_out => mul_im_out(867)
         );
 
  
@@ -33174,8 +33174,8 @@ begin
             data_im_in => first_stage_im_out(868),
             re_multiplicator => "0000100010011100", --- 0.134521484375 + j-0.990844726562
             im_multiplicator => "1100000010010110",
-            product_re_out => mul_re_out(868),
-            product_im_out => mul_im_out(868)
+            data_re_out => mul_re_out(868),
+            data_im_out => mul_im_out(868)
         );
 
  
@@ -33192,8 +33192,8 @@ begin
             data_im_in => first_stage_im_out(869),
             re_multiplicator => "0000011000010011", --- 0.0949096679688 + j-0.995422363281
             im_multiplicator => "1100000001001011",
-            product_re_out => mul_re_out(869),
-            product_im_out => mul_im_out(869)
+            data_re_out => mul_re_out(869),
+            data_im_out => mul_im_out(869)
         );
 
  
@@ -33210,8 +33210,8 @@ begin
             data_im_in => first_stage_im_out(870),
             re_multiplicator => "0000001110001000", --- 0.05517578125 + j-0.998474121094
             im_multiplicator => "1100000000011001",
-            product_re_out => mul_re_out(870),
-            product_im_out => mul_im_out(870)
+            data_re_out => mul_re_out(870),
+            data_im_out => mul_im_out(870)
         );
 
  
@@ -33228,8 +33228,8 @@ begin
             data_im_in => first_stage_im_out(871),
             re_multiplicator => "0000000011111011", --- 0.0153198242188 + j-0.999877929688
             im_multiplicator => "1100000000000010",
-            product_re_out => mul_re_out(871),
-            product_im_out => mul_im_out(871)
+            data_re_out => mul_re_out(871),
+            data_im_out => mul_im_out(871)
         );
 
  
@@ -33246,8 +33246,8 @@ begin
             data_im_in => first_stage_im_out(872),
             re_multiplicator => "1111111001101110", --- -0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(872),
-            product_im_out => mul_im_out(872)
+            data_re_out => mul_re_out(872),
+            data_im_out => mul_im_out(872)
         );
 
  
@@ -33264,8 +33264,8 @@ begin
             data_im_in => first_stage_im_out(873),
             re_multiplicator => "1111101111100010", --- -0.0643310546875 + j-0.997924804688
             im_multiplicator => "1100000000100010",
-            product_re_out => mul_re_out(873),
-            product_im_out => mul_im_out(873)
+            data_re_out => mul_re_out(873),
+            data_im_out => mul_im_out(873)
         );
 
  
@@ -33282,8 +33282,8 @@ begin
             data_im_in => first_stage_im_out(874),
             re_multiplicator => "1111100101010111", --- -0.104064941406 + j-0.994506835938
             im_multiplicator => "1100000001011010",
-            product_re_out => mul_re_out(874),
-            product_im_out => mul_im_out(874)
+            data_re_out => mul_re_out(874),
+            data_im_out => mul_im_out(874)
         );
 
  
@@ -33300,8 +33300,8 @@ begin
             data_im_in => first_stage_im_out(875),
             re_multiplicator => "1111011011001110", --- -0.143676757812 + j-0.989562988281
             im_multiplicator => "1100000010101011",
-            product_re_out => mul_re_out(875),
-            product_im_out => mul_im_out(875)
+            data_re_out => mul_re_out(875),
+            data_im_out => mul_im_out(875)
         );
 
  
@@ -33318,8 +33318,8 @@ begin
             data_im_in => first_stage_im_out(876),
             re_multiplicator => "1111010001001010", --- -0.182983398438 + j-0.983093261719
             im_multiplicator => "1100000100010101",
-            product_re_out => mul_re_out(876),
-            product_im_out => mul_im_out(876)
+            data_re_out => mul_re_out(876),
+            data_im_out => mul_im_out(876)
         );
 
  
@@ -33336,8 +33336,8 @@ begin
             data_im_in => first_stage_im_out(877),
             re_multiplicator => "1111000111001010", --- -0.222045898438 + j-0.974975585938
             im_multiplicator => "1100000110011010",
-            product_re_out => mul_re_out(877),
-            product_im_out => mul_im_out(877)
+            data_re_out => mul_re_out(877),
+            data_im_out => mul_im_out(877)
         );
 
  
@@ -33354,8 +33354,8 @@ begin
             data_im_in => first_stage_im_out(878),
             re_multiplicator => "1110111101010000", --- -0.2607421875 + j-0.965393066406
             im_multiplicator => "1100001000110111",
-            product_re_out => mul_re_out(878),
-            product_im_out => mul_im_out(878)
+            data_re_out => mul_re_out(878),
+            data_im_out => mul_im_out(878)
         );
 
  
@@ -33372,8 +33372,8 @@ begin
             data_im_in => first_stage_im_out(879),
             re_multiplicator => "1110110011011100", --- -0.299072265625 + j-0.954223632812
             im_multiplicator => "1100001011101110",
-            product_re_out => mul_re_out(879),
-            product_im_out => mul_im_out(879)
+            data_re_out => mul_re_out(879),
+            data_im_out => mul_im_out(879)
         );
 
  
@@ -33390,8 +33390,8 @@ begin
             data_im_in => first_stage_im_out(880),
             re_multiplicator => "1110101001110001", --- -0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(880),
-            product_im_out => mul_im_out(880)
+            data_re_out => mul_re_out(880),
+            data_im_out => mul_im_out(880)
         );
 
  
@@ -33408,8 +33408,8 @@ begin
             data_im_in => first_stage_im_out(881),
             re_multiplicator => "1110100000001110", --- -0.374145507812 + j-0.927307128906
             im_multiplicator => "1100010010100111",
-            product_re_out => mul_re_out(881),
-            product_im_out => mul_im_out(881)
+            data_re_out => mul_re_out(881),
+            data_im_out => mul_im_out(881)
         );
 
  
@@ -33426,8 +33426,8 @@ begin
             data_im_in => first_stage_im_out(882),
             re_multiplicator => "1110010110110101", --- -0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(882),
-            product_im_out => mul_im_out(882)
+            data_re_out => mul_re_out(882),
+            data_im_out => mul_im_out(882)
         );
 
  
@@ -33444,8 +33444,8 @@ begin
             data_im_in => first_stage_im_out(883),
             re_multiplicator => "1110001101100111", --- -0.446838378906 + j-0.894592285156
             im_multiplicator => "1100011010111111",
-            product_re_out => mul_re_out(883),
-            product_im_out => mul_im_out(883)
+            data_re_out => mul_re_out(883),
+            data_im_out => mul_im_out(883)
         );
 
  
@@ -33462,8 +33462,8 @@ begin
             data_im_in => first_stage_im_out(884),
             re_multiplicator => "1110000100100100", --- -0.482177734375 + j-0.876037597656
             im_multiplicator => "1100011111101111",
-            product_re_out => mul_re_out(884),
-            product_im_out => mul_im_out(884)
+            data_re_out => mul_re_out(884),
+            data_im_out => mul_im_out(884)
         );
 
  
@@ -33480,8 +33480,8 @@ begin
             data_im_in => first_stage_im_out(885),
             re_multiplicator => "1101111011101110", --- -0.516723632812 + j-0.856140136719
             im_multiplicator => "1100100100110101",
-            product_re_out => mul_re_out(885),
-            product_im_out => mul_im_out(885)
+            data_re_out => mul_re_out(885),
+            data_im_out => mul_im_out(885)
         );
 
  
@@ -33498,8 +33498,8 @@ begin
             data_im_in => first_stage_im_out(886),
             re_multiplicator => "1101110011000110", --- -0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(886),
-            product_im_out => mul_im_out(886)
+            data_re_out => mul_re_out(886),
+            data_im_out => mul_im_out(886)
         );
 
  
@@ -33516,8 +33516,8 @@ begin
             data_im_in => first_stage_im_out(887),
             re_multiplicator => "1101101010101100", --- -0.583251953125 + j-0.812194824219
             im_multiplicator => "1100110000000101",
-            product_re_out => mul_re_out(887),
-            product_im_out => mul_im_out(887)
+            data_re_out => mul_re_out(887),
+            data_im_out => mul_im_out(887)
         );
 
  
@@ -33534,8 +33534,8 @@ begin
             data_im_in => first_stage_im_out(888),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j-0.788330078125
             im_multiplicator => "1100110110001100",
-            product_re_out => mul_re_out(888),
-            product_im_out => mul_im_out(888)
+            data_re_out => mul_re_out(888),
+            data_im_out => mul_im_out(888)
         );
 
  
@@ -33552,8 +33552,8 @@ begin
             data_im_in => first_stage_im_out(889),
             re_multiplicator => "1101011010100110", --- -0.646118164062 + j-0.76318359375
             im_multiplicator => "1100111100101000",
-            product_re_out => mul_re_out(889),
-            product_im_out => mul_im_out(889)
+            data_re_out => mul_re_out(889),
+            data_im_out => mul_im_out(889)
         );
 
  
@@ -33570,8 +33570,8 @@ begin
             data_im_in => first_stage_im_out(890),
             re_multiplicator => "1101010010111011", --- -0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(890),
-            product_im_out => mul_im_out(890)
+            data_re_out => mul_re_out(890),
+            data_im_out => mul_im_out(890)
         );
 
  
@@ -33588,8 +33588,8 @@ begin
             data_im_in => first_stage_im_out(891),
             re_multiplicator => "1101001011100011", --- -0.704895019531 + j-0.709228515625
             im_multiplicator => "1101001010011100",
-            product_re_out => mul_re_out(891),
-            product_im_out => mul_im_out(891)
+            data_re_out => mul_re_out(891),
+            data_im_out => mul_im_out(891)
         );
 
  
@@ -33606,8 +33606,8 @@ begin
             data_im_in => first_stage_im_out(892),
             re_multiplicator => "1101000100011101", --- -0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(892),
-            product_im_out => mul_im_out(892)
+            data_re_out => mul_re_out(892),
+            data_im_out => mul_im_out(892)
         );
 
  
@@ -33624,8 +33624,8 @@ begin
             data_im_in => first_stage_im_out(893),
             re_multiplicator => "1100111101101010", --- -0.759155273438 + j-0.650817871094
             im_multiplicator => "1101011001011001",
-            product_re_out => mul_re_out(893),
-            product_im_out => mul_im_out(893)
+            data_re_out => mul_re_out(893),
+            data_im_out => mul_im_out(893)
         );
 
  
@@ -33642,8 +33642,8 @@ begin
             data_im_in => first_stage_im_out(894),
             re_multiplicator => "1100110111001010", --- -0.784545898438 + j-0.620056152344
             im_multiplicator => "1101100001010001",
-            product_re_out => mul_re_out(894),
-            product_im_out => mul_im_out(894)
+            data_re_out => mul_re_out(894),
+            data_im_out => mul_im_out(894)
         );
 
  
@@ -33660,8 +33660,8 @@ begin
             data_im_in => first_stage_im_out(895),
             re_multiplicator => "1100110000111111", --- -0.808654785156 + j-0.588256835938
             im_multiplicator => "1101101001011010",
-            product_re_out => mul_re_out(895),
-            product_im_out => mul_im_out(895)
+            data_re_out => mul_re_out(895),
+            data_im_out => mul_im_out(895)
         );
 
  
@@ -33676,8 +33676,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(896),
             data_im_in => first_stage_im_out(896),
-            product_re_out => mul_re_out(896),
-            product_im_out => mul_im_out(896)
+            data_re_out => mul_re_out(896),
+            data_im_out => mul_im_out(896)
         );
 
  
@@ -33694,8 +33694,8 @@ begin
             data_im_in => first_stage_im_out(897),
             re_multiplicator => "0011111111110000", --- 0.9990234375 + j-0.0429077148438
             im_multiplicator => "1111110101000001",
-            product_re_out => mul_re_out(897),
-            product_im_out => mul_im_out(897)
+            data_re_out => mul_re_out(897),
+            data_im_out => mul_im_out(897)
         );
 
  
@@ -33712,8 +33712,8 @@ begin
             data_im_in => first_stage_im_out(898),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(898),
-            product_im_out => mul_im_out(898)
+            data_re_out => mul_re_out(898),
+            data_im_out => mul_im_out(898)
         );
 
  
@@ -33730,8 +33730,8 @@ begin
             data_im_in => first_stage_im_out(899),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(899),
-            product_im_out => mul_im_out(899)
+            data_re_out => mul_re_out(899),
+            data_im_out => mul_im_out(899)
         );
 
  
@@ -33748,8 +33748,8 @@ begin
             data_im_in => first_stage_im_out(900),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(900),
-            product_im_out => mul_im_out(900)
+            data_re_out => mul_re_out(900),
+            data_im_out => mul_im_out(900)
         );
 
  
@@ -33766,8 +33766,8 @@ begin
             data_im_in => first_stage_im_out(901),
             re_multiplicator => "0011111010000111", --- 0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(901),
-            product_im_out => mul_im_out(901)
+            data_re_out => mul_re_out(901),
+            data_im_out => mul_im_out(901)
         );
 
  
@@ -33784,8 +33784,8 @@ begin
             data_im_in => first_stage_im_out(902),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(902),
-            product_im_out => mul_im_out(902)
+            data_re_out => mul_re_out(902),
+            data_im_out => mul_im_out(902)
         );
 
  
@@ -33802,8 +33802,8 @@ begin
             data_im_in => first_stage_im_out(903),
             re_multiplicator => "0011110100100001", --- 0.955139160156 + j-0.296142578125
             im_multiplicator => "1110110100001100",
-            product_re_out => mul_re_out(903),
-            product_im_out => mul_im_out(903)
+            data_re_out => mul_re_out(903),
+            data_im_out => mul_im_out(903)
         );
 
  
@@ -33820,8 +33820,8 @@ begin
             data_im_in => first_stage_im_out(904),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(904),
-            product_im_out => mul_im_out(904)
+            data_re_out => mul_re_out(904),
+            data_im_out => mul_im_out(904)
         );
 
  
@@ -33838,8 +33838,8 @@ begin
             data_im_in => first_stage_im_out(905),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(905),
-            product_im_out => mul_im_out(905)
+            data_re_out => mul_re_out(905),
+            data_im_out => mul_im_out(905)
         );
 
  
@@ -33856,8 +33856,8 @@ begin
             data_im_in => first_stage_im_out(906),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(906),
-            product_im_out => mul_im_out(906)
+            data_re_out => mul_re_out(906),
+            data_im_out => mul_im_out(906)
         );
 
  
@@ -33874,8 +33874,8 @@ begin
             data_im_in => first_stage_im_out(907),
             re_multiplicator => "0011100011111101", --- 0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(907),
-            product_im_out => mul_im_out(907)
+            data_re_out => mul_re_out(907),
+            data_im_out => mul_im_out(907)
         );
 
  
@@ -33892,8 +33892,8 @@ begin
             data_im_in => first_stage_im_out(908),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(908),
-            product_im_out => mul_im_out(908)
+            data_re_out => mul_re_out(908),
+            data_im_out => mul_im_out(908)
         );
 
  
@@ -33910,8 +33910,8 @@ begin
             data_im_in => first_stage_im_out(909),
             re_multiplicator => "0011011001000111", --- 0.848083496094 + j-0.52978515625
             im_multiplicator => "1101111000011000",
-            product_re_out => mul_re_out(909),
-            product_im_out => mul_im_out(909)
+            data_re_out => mul_re_out(909),
+            data_im_out => mul_im_out(909)
         );
 
  
@@ -33928,8 +33928,8 @@ begin
             data_im_in => first_stage_im_out(910),
             re_multiplicator => "0011010011000110", --- 0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(910),
-            product_im_out => mul_im_out(910)
+            data_re_out => mul_re_out(910),
+            data_im_out => mul_im_out(910)
         );
 
  
@@ -33946,8 +33946,8 @@ begin
             data_im_in => first_stage_im_out(911),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(911),
-            product_im_out => mul_im_out(911)
+            data_re_out => mul_re_out(911),
+            data_im_out => mul_im_out(911)
         );
 
  
@@ -33964,8 +33964,8 @@ begin
             data_im_in => first_stage_im_out(912),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(912),
-            product_im_out => mul_im_out(912)
+            data_re_out => mul_re_out(912),
+            data_im_out => mul_im_out(912)
         );
 
  
@@ -33982,8 +33982,8 @@ begin
             data_im_in => first_stage_im_out(913),
             re_multiplicator => "0010111110101111", --- 0.745056152344 + j-0.6669921875
             im_multiplicator => "1101010101010000",
-            product_re_out => mul_re_out(913),
-            product_im_out => mul_im_out(913)
+            data_re_out => mul_re_out(913),
+            data_im_out => mul_im_out(913)
         );
 
  
@@ -34000,8 +34000,8 @@ begin
             data_im_in => first_stage_im_out(914),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(914),
-            product_im_out => mul_im_out(914)
+            data_re_out => mul_re_out(914),
+            data_im_out => mul_im_out(914)
         );
 
  
@@ -34018,8 +34018,8 @@ begin
             data_im_in => first_stage_im_out(915),
             re_multiplicator => "0010101111011000", --- 0.68505859375 + j-0.728454589844
             im_multiplicator => "1101000101100001",
-            product_re_out => mul_re_out(915),
-            product_im_out => mul_im_out(915)
+            data_re_out => mul_re_out(915),
+            data_im_out => mul_im_out(915)
         );
 
  
@@ -34036,8 +34036,8 @@ begin
             data_im_in => first_stage_im_out(916),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(916),
-            product_im_out => mul_im_out(916)
+            data_re_out => mul_re_out(916),
+            data_im_out => mul_im_out(916)
         );
 
  
@@ -34054,8 +34054,8 @@ begin
             data_im_in => first_stage_im_out(917),
             re_multiplicator => "0010011110101111", --- 0.620056152344 + j-0.784545898438
             im_multiplicator => "1100110111001010",
-            product_re_out => mul_re_out(917),
-            product_im_out => mul_im_out(917)
+            data_re_out => mul_re_out(917),
+            data_im_out => mul_im_out(917)
         );
 
  
@@ -34072,8 +34072,8 @@ begin
             data_im_in => first_stage_im_out(918),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j-0.810424804688
             im_multiplicator => "1100110000100010",
-            product_re_out => mul_re_out(918),
-            product_im_out => mul_im_out(918)
+            data_re_out => mul_re_out(918),
+            data_im_out => mul_im_out(918)
         );
 
  
@@ -34090,8 +34090,8 @@ begin
             data_im_in => first_stage_im_out(919),
             re_multiplicator => "0010001100111010", --- 0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(919),
-            product_im_out => mul_im_out(919)
+            data_re_out => mul_re_out(919),
+            data_im_out => mul_im_out(919)
         );
 
  
@@ -34108,8 +34108,8 @@ begin
             data_im_in => first_stage_im_out(920),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(920),
-            product_im_out => mul_im_out(920)
+            data_re_out => mul_re_out(920),
+            data_im_out => mul_im_out(920)
         );
 
  
@@ -34126,8 +34126,8 @@ begin
             data_im_in => first_stage_im_out(921),
             re_multiplicator => "0001111010000011", --- 0.476745605469 + j-0.878967285156
             im_multiplicator => "1100011110111111",
-            product_re_out => mul_re_out(921),
-            product_im_out => mul_im_out(921)
+            data_re_out => mul_re_out(921),
+            data_im_out => mul_im_out(921)
         );
 
  
@@ -34144,8 +34144,8 @@ begin
             data_im_in => first_stage_im_out(922),
             re_multiplicator => "0001110000010010", --- 0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(922),
-            product_im_out => mul_im_out(922)
+            data_re_out => mul_re_out(922),
+            data_im_out => mul_im_out(922)
         );
 
  
@@ -34162,8 +34162,8 @@ begin
             data_im_in => first_stage_im_out(923),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(923),
-            product_im_out => mul_im_out(923)
+            data_re_out => mul_re_out(923),
+            data_im_out => mul_im_out(923)
         );
 
  
@@ -34180,8 +34180,8 @@ begin
             data_im_in => first_stage_im_out(924),
             re_multiplicator => "0001011100001000", --- 0.35986328125 + j-0.932983398438
             im_multiplicator => "1100010001001010",
-            product_re_out => mul_re_out(924),
-            product_im_out => mul_im_out(924)
+            data_re_out => mul_re_out(924),
+            data_im_out => mul_im_out(924)
         );
 
  
@@ -34198,8 +34198,8 @@ begin
             data_im_in => first_stage_im_out(925),
             re_multiplicator => "0001010001110010", --- 0.319458007812 + j-0.947570800781
             im_multiplicator => "1100001101011011",
-            product_re_out => mul_re_out(925),
-            product_im_out => mul_im_out(925)
+            data_re_out => mul_re_out(925),
+            data_im_out => mul_im_out(925)
         );
 
  
@@ -34216,8 +34216,8 @@ begin
             data_im_in => first_stage_im_out(926),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(926),
-            product_im_out => mul_im_out(926)
+            data_re_out => mul_re_out(926),
+            data_im_out => mul_im_out(926)
         );
 
  
@@ -34234,8 +34234,8 @@ begin
             data_im_in => first_stage_im_out(927),
             re_multiplicator => "0000111100101011", --- 0.236999511719 + j-0.971496582031
             im_multiplicator => "1100000111010011",
-            product_re_out => mul_re_out(927),
-            product_im_out => mul_im_out(927)
+            data_re_out => mul_re_out(927),
+            data_im_out => mul_im_out(927)
         );
 
  
@@ -34252,8 +34252,8 @@ begin
             data_im_in => first_stage_im_out(928),
             re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(928),
-            product_im_out => mul_im_out(928)
+            data_re_out => mul_re_out(928),
+            data_im_out => mul_im_out(928)
         );
 
  
@@ -34270,8 +34270,8 @@ begin
             data_im_in => first_stage_im_out(929),
             re_multiplicator => "0000100111000111", --- 0.152770996094 + j-0.988220214844
             im_multiplicator => "1100000011000001",
-            product_re_out => mul_re_out(929),
-            product_im_out => mul_im_out(929)
+            data_re_out => mul_re_out(929),
+            data_im_out => mul_im_out(929)
         );
 
  
@@ -34288,8 +34288,8 @@ begin
             data_im_in => first_stage_im_out(930),
             re_multiplicator => "0000011100001101", --- 0.110168457031 + j-0.993896484375
             im_multiplicator => "1100000001100100",
-            product_re_out => mul_re_out(930),
-            product_im_out => mul_im_out(930)
+            data_re_out => mul_re_out(930),
+            data_im_out => mul_im_out(930)
         );
 
  
@@ -34306,8 +34306,8 @@ begin
             data_im_in => first_stage_im_out(931),
             re_multiplicator => "0000010001010001", --- 0.0674438476562 + j-0.997680664062
             im_multiplicator => "1100000000100110",
-            product_re_out => mul_re_out(931),
-            product_im_out => mul_im_out(931)
+            data_re_out => mul_re_out(931),
+            data_im_out => mul_im_out(931)
         );
 
  
@@ -34324,8 +34324,8 @@ begin
             data_im_in => first_stage_im_out(932),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(932),
-            product_im_out => mul_im_out(932)
+            data_re_out => mul_re_out(932),
+            data_im_out => mul_im_out(932)
         );
 
  
@@ -34342,8 +34342,8 @@ begin
             data_im_in => first_stage_im_out(933),
             re_multiplicator => "1111111011010011", --- -0.0183715820312 + j-0.999816894531
             im_multiplicator => "1100000000000011",
-            product_re_out => mul_re_out(933),
-            product_im_out => mul_im_out(933)
+            data_re_out => mul_re_out(933),
+            data_im_out => mul_im_out(933)
         );
 
  
@@ -34360,8 +34360,8 @@ begin
             data_im_in => first_stage_im_out(934),
             re_multiplicator => "1111110000010100", --- -0.061279296875 + j-0.998107910156
             im_multiplicator => "1100000000011111",
-            product_re_out => mul_re_out(934),
-            product_im_out => mul_im_out(934)
+            data_re_out => mul_re_out(934),
+            data_im_out => mul_im_out(934)
         );
 
  
@@ -34378,8 +34378,8 @@ begin
             data_im_in => first_stage_im_out(935),
             re_multiplicator => "1111100101010111", --- -0.104064941406 + j-0.994506835938
             im_multiplicator => "1100000001011010",
-            product_re_out => mul_re_out(935),
-            product_im_out => mul_im_out(935)
+            data_re_out => mul_re_out(935),
+            data_im_out => mul_im_out(935)
         );
 
  
@@ -34396,8 +34396,8 @@ begin
             data_im_in => first_stage_im_out(936),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(936),
-            product_im_out => mul_im_out(936)
+            data_re_out => mul_re_out(936),
+            data_im_out => mul_im_out(936)
         );
 
  
@@ -34414,8 +34414,8 @@ begin
             data_im_in => first_stage_im_out(937),
             re_multiplicator => "1111001111100111", --- -0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(937),
-            product_im_out => mul_im_out(937)
+            data_re_out => mul_re_out(937),
+            data_im_out => mul_im_out(937)
         );
 
  
@@ -34432,8 +34432,8 @@ begin
             data_im_in => first_stage_im_out(938),
             re_multiplicator => "1111000100110111", --- -0.231018066406 + j-0.972900390625
             im_multiplicator => "1100000110111100",
-            product_re_out => mul_re_out(938),
-            product_im_out => mul_im_out(938)
+            data_re_out => mul_re_out(938),
+            data_im_out => mul_im_out(938)
         );
 
  
@@ -34450,8 +34450,8 @@ begin
             data_im_in => first_stage_im_out(939),
             re_multiplicator => "1110111010001110", --- -0.272583007812 + j-0.962097167969
             im_multiplicator => "1100001001101101",
-            product_re_out => mul_re_out(939),
-            product_im_out => mul_im_out(939)
+            data_re_out => mul_re_out(939),
+            data_im_out => mul_im_out(939)
         );
 
  
@@ -34468,8 +34468,8 @@ begin
             data_im_in => first_stage_im_out(940),
             re_multiplicator => "1110101111101101", --- -0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(940),
-            product_im_out => mul_im_out(940)
+            data_re_out => mul_re_out(940),
+            data_im_out => mul_im_out(940)
         );
 
  
@@ -34486,8 +34486,8 @@ begin
             data_im_in => first_stage_im_out(941),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(941),
-            product_im_out => mul_im_out(941)
+            data_re_out => mul_re_out(941),
+            data_im_out => mul_im_out(941)
         );
 
  
@@ -34504,8 +34504,8 @@ begin
             data_im_in => first_stage_im_out(942),
             re_multiplicator => "1110011011001001", --- -0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(942),
-            product_im_out => mul_im_out(942)
+            data_re_out => mul_re_out(942),
+            data_im_out => mul_im_out(942)
         );
 
  
@@ -34522,8 +34522,8 @@ begin
             data_im_in => first_stage_im_out(943),
             re_multiplicator => "1110010001001001", --- -0.433044433594 + j-0.901306152344
             im_multiplicator => "1100011001010001",
-            product_re_out => mul_re_out(943),
-            product_im_out => mul_im_out(943)
+            data_re_out => mul_re_out(943),
+            data_im_out => mul_im_out(943)
         );
 
  
@@ -34540,8 +34540,8 @@ begin
             data_im_in => first_stage_im_out(944),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(944),
-            product_im_out => mul_im_out(944)
+            data_re_out => mul_re_out(944),
+            data_im_out => mul_im_out(944)
         );
 
  
@@ -34558,8 +34558,8 @@ begin
             data_im_in => first_stage_im_out(945),
             re_multiplicator => "1101111101110000", --- -0.5087890625 + j-0.86083984375
             im_multiplicator => "1100100011101000",
-            product_re_out => mul_re_out(945),
-            product_im_out => mul_im_out(945)
+            data_re_out => mul_re_out(945),
+            data_im_out => mul_im_out(945)
         );
 
  
@@ -34576,8 +34576,8 @@ begin
             data_im_in => first_stage_im_out(946),
             re_multiplicator => "1101110100011010", --- -0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(946),
-            product_im_out => mul_im_out(946)
+            data_re_out => mul_re_out(946),
+            data_im_out => mul_im_out(946)
         );
 
  
@@ -34594,8 +34594,8 @@ begin
             data_im_in => first_stage_im_out(947),
             re_multiplicator => "1101101011010100", --- -0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(947),
-            product_im_out => mul_im_out(947)
+            data_re_out => mul_re_out(947),
+            data_im_out => mul_im_out(947)
         );
 
  
@@ -34612,8 +34612,8 @@ begin
             data_im_in => first_stage_im_out(948),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j-0.788330078125
             im_multiplicator => "1100110110001100",
-            product_re_out => mul_re_out(948),
-            product_im_out => mul_im_out(948)
+            data_re_out => mul_re_out(948),
+            data_im_out => mul_im_out(948)
         );
 
  
@@ -34630,8 +34630,8 @@ begin
             data_im_in => first_stage_im_out(949),
             re_multiplicator => "1101011001111111", --- -0.648498535156 + j-0.761169433594
             im_multiplicator => "1100111101001001",
-            product_re_out => mul_re_out(949),
-            product_im_out => mul_im_out(949)
+            data_re_out => mul_re_out(949),
+            data_im_out => mul_im_out(949)
         );
 
  
@@ -34648,8 +34648,8 @@ begin
             data_im_in => first_stage_im_out(950),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(950),
-            product_im_out => mul_im_out(950)
+            data_re_out => mul_re_out(950),
+            data_im_out => mul_im_out(950)
         );
 
  
@@ -34666,8 +34666,8 @@ begin
             data_im_in => first_stage_im_out(951),
             re_multiplicator => "1101001001111000", --- -0.71142578125 + j-0.702697753906
             im_multiplicator => "1101001100000111",
-            product_re_out => mul_re_out(951),
-            product_im_out => mul_im_out(951)
+            data_re_out => mul_re_out(951),
+            data_im_out => mul_im_out(951)
         );
 
  
@@ -34684,8 +34684,8 @@ begin
             data_im_in => first_stage_im_out(952),
             re_multiplicator => "1101000010010101", --- -0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(952),
-            product_im_out => mul_im_out(952)
+            data_re_out => mul_re_out(952),
+            data_im_out => mul_im_out(952)
         );
 
  
@@ -34702,8 +34702,8 @@ begin
             data_im_in => first_stage_im_out(953),
             re_multiplicator => "1100111011001000", --- -0.76904296875 + j-0.639099121094
             im_multiplicator => "1101011100011001",
-            product_re_out => mul_re_out(953),
-            product_im_out => mul_im_out(953)
+            data_re_out => mul_re_out(953),
+            data_im_out => mul_im_out(953)
         );
 
  
@@ -34720,8 +34720,8 @@ begin
             data_im_in => first_stage_im_out(954),
             re_multiplicator => "1100110100010010", --- -0.795776367188 + j-0.60546875
             im_multiplicator => "1101100101000000",
-            product_re_out => mul_re_out(954),
-            product_im_out => mul_im_out(954)
+            data_re_out => mul_re_out(954),
+            data_im_out => mul_im_out(954)
         );
 
  
@@ -34738,8 +34738,8 @@ begin
             data_im_in => first_stage_im_out(955),
             re_multiplicator => "1100101101110100", --- -0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(955),
-            product_im_out => mul_im_out(955)
+            data_re_out => mul_re_out(955),
+            data_im_out => mul_im_out(955)
         );
 
  
@@ -34756,8 +34756,8 @@ begin
             data_im_in => first_stage_im_out(956),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(956),
-            product_im_out => mul_im_out(956)
+            data_re_out => mul_re_out(956),
+            data_im_out => mul_im_out(956)
         );
 
  
@@ -34774,8 +34774,8 @@ begin
             data_im_in => first_stage_im_out(957),
             re_multiplicator => "1100100010000011", --- -0.867004394531 + j-0.498168945312
             im_multiplicator => "1110000000011110",
-            product_re_out => mul_re_out(957),
-            product_im_out => mul_im_out(957)
+            data_re_out => mul_re_out(957),
+            data_im_out => mul_im_out(957)
         );
 
  
@@ -34792,8 +34792,8 @@ begin
             data_im_in => first_stage_im_out(958),
             re_multiplicator => "1100011100110001", --- -0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(958),
-            product_im_out => mul_im_out(958)
+            data_re_out => mul_re_out(958),
+            data_im_out => mul_im_out(958)
         );
 
  
@@ -34810,8 +34810,8 @@ begin
             data_im_in => first_stage_im_out(959),
             re_multiplicator => "1100010111111011", --- -0.906555175781 + j-0.421997070312
             im_multiplicator => "1110010011111110",
-            product_re_out => mul_re_out(959),
-            product_im_out => mul_im_out(959)
+            data_re_out => mul_re_out(959),
+            data_im_out => mul_im_out(959)
         );
 
  
@@ -34826,8 +34826,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(960),
             data_im_in => first_stage_im_out(960),
-            product_re_out => mul_re_out(960),
-            product_im_out => mul_im_out(960)
+            data_re_out => mul_re_out(960),
+            data_im_out => mul_im_out(960)
         );
 
  
@@ -34844,8 +34844,8 @@ begin
             data_im_in => first_stage_im_out(961),
             re_multiplicator => "0011111111101110", --- 0.998901367188 + j-0.0459594726562
             im_multiplicator => "1111110100001111",
-            product_re_out => mul_re_out(961),
-            product_im_out => mul_im_out(961)
+            data_re_out => mul_re_out(961),
+            data_im_out => mul_im_out(961)
         );
 
  
@@ -34862,8 +34862,8 @@ begin
             data_im_in => first_stage_im_out(962),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(962),
-            product_im_out => mul_im_out(962)
+            data_re_out => mul_re_out(962),
+            data_im_out => mul_im_out(962)
         );
 
  
@@ -34880,8 +34880,8 @@ begin
             data_im_in => first_stage_im_out(963),
             re_multiplicator => "0011111101100100", --- 0.990478515625 + j-0.137573242188
             im_multiplicator => "1111011100110010",
-            product_re_out => mul_re_out(963),
-            product_im_out => mul_im_out(963)
+            data_re_out => mul_re_out(963),
+            data_im_out => mul_im_out(963)
         );
 
  
@@ -34898,8 +34898,8 @@ begin
             data_im_in => first_stage_im_out(964),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(964),
-            product_im_out => mul_im_out(964)
+            data_re_out => mul_re_out(964),
+            data_im_out => mul_im_out(964)
         );
 
  
@@ -34916,8 +34916,8 @@ begin
             data_im_in => first_stage_im_out(965),
             re_multiplicator => "0011111001010000", --- 0.9736328125 + j-0.22802734375
             im_multiplicator => "1111000101101000",
-            product_re_out => mul_re_out(965),
-            product_im_out => mul_im_out(965)
+            data_re_out => mul_re_out(965),
+            data_im_out => mul_im_out(965)
         );
 
  
@@ -34934,8 +34934,8 @@ begin
             data_im_in => first_stage_im_out(966),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(966),
-            product_im_out => mul_im_out(966)
+            data_re_out => mul_re_out(966),
+            data_im_out => mul_im_out(966)
         );
 
  
@@ -34952,8 +34952,8 @@ begin
             data_im_in => first_stage_im_out(967),
             re_multiplicator => "0011110010110101", --- 0.948547363281 + j-0.316589355469
             im_multiplicator => "1110101110111101",
-            product_re_out => mul_re_out(967),
-            product_im_out => mul_im_out(967)
+            data_re_out => mul_re_out(967),
+            data_im_out => mul_im_out(967)
         );
 
  
@@ -34970,8 +34970,8 @@ begin
             data_im_in => first_stage_im_out(968),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(968),
-            product_im_out => mul_im_out(968)
+            data_re_out => mul_re_out(968),
+            data_im_out => mul_im_out(968)
         );
 
  
@@ -34988,8 +34988,8 @@ begin
             data_im_in => first_stage_im_out(969),
             re_multiplicator => "0011101010010110", --- 0.915405273438 + j-0.402404785156
             im_multiplicator => "1110011000111111",
-            product_re_out => mul_re_out(969),
-            product_im_out => mul_im_out(969)
+            data_re_out => mul_re_out(969),
+            data_im_out => mul_im_out(969)
         );
 
  
@@ -35006,8 +35006,8 @@ begin
             data_im_in => first_stage_im_out(970),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(970),
-            product_im_out => mul_im_out(970)
+            data_re_out => mul_re_out(970),
+            data_im_out => mul_im_out(970)
         );
 
  
@@ -35024,8 +35024,8 @@ begin
             data_im_in => first_stage_im_out(971),
             re_multiplicator => "0011011111111001", --- 0.874572753906 + j-0.48486328125
             im_multiplicator => "1110000011111000",
-            product_re_out => mul_re_out(971),
-            product_im_out => mul_im_out(971)
+            data_re_out => mul_re_out(971),
+            data_im_out => mul_im_out(971)
         );
 
  
@@ -35042,8 +35042,8 @@ begin
             data_im_in => first_stage_im_out(972),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(972),
-            product_im_out => mul_im_out(972)
+            data_re_out => mul_re_out(972),
+            data_im_out => mul_im_out(972)
         );
 
  
@@ -35060,8 +35060,8 @@ begin
             data_im_in => first_stage_im_out(973),
             re_multiplicator => "0011010011100010", --- 0.826293945312 + j-0.563171386719
             im_multiplicator => "1101101111110101",
-            product_re_out => mul_re_out(973),
-            product_im_out => mul_im_out(973)
+            data_re_out => mul_re_out(973),
+            data_im_out => mul_im_out(973)
         );
 
  
@@ -35078,8 +35078,8 @@ begin
             data_im_in => first_stage_im_out(974),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(974),
-            product_im_out => mul_im_out(974)
+            data_re_out => mul_re_out(974),
+            data_im_out => mul_im_out(974)
         );
 
  
@@ -35096,8 +35096,8 @@ begin
             data_im_in => first_stage_im_out(975),
             re_multiplicator => "0011000101011001", --- 0.771057128906 + j-0.63671875
             im_multiplicator => "1101011101000000",
-            product_re_out => mul_re_out(975),
-            product_im_out => mul_im_out(975)
+            data_re_out => mul_re_out(975),
+            data_im_out => mul_im_out(975)
         );
 
  
@@ -35114,8 +35114,8 @@ begin
             data_im_in => first_stage_im_out(976),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(976),
-            product_im_out => mul_im_out(976)
+            data_re_out => mul_re_out(976),
+            data_im_out => mul_im_out(976)
         );
 
  
@@ -35132,8 +35132,8 @@ begin
             data_im_in => first_stage_im_out(977),
             re_multiplicator => "0010110101100100", --- 0.709228515625 + j-0.704895019531
             im_multiplicator => "1101001011100011",
-            product_re_out => mul_re_out(977),
-            product_im_out => mul_im_out(977)
+            data_re_out => mul_re_out(977),
+            data_im_out => mul_im_out(977)
         );
 
  
@@ -35150,8 +35150,8 @@ begin
             data_im_in => first_stage_im_out(978),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(978),
-            product_im_out => mul_im_out(978)
+            data_re_out => mul_re_out(978),
+            data_im_out => mul_im_out(978)
         );
 
  
@@ -35168,8 +35168,8 @@ begin
             data_im_in => first_stage_im_out(979),
             re_multiplicator => "0010100100001110", --- 0.641479492188 + j-0.76708984375
             im_multiplicator => "1100111011101000",
-            product_re_out => mul_re_out(979),
-            product_im_out => mul_im_out(979)
+            data_re_out => mul_re_out(979),
+            data_im_out => mul_im_out(979)
         );
 
  
@@ -35186,8 +35186,8 @@ begin
             data_im_in => first_stage_im_out(980),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(980),
-            product_im_out => mul_im_out(980)
+            data_re_out => mul_re_out(980),
+            data_im_out => mul_im_out(980)
         );
 
  
@@ -35204,8 +35204,8 @@ begin
             data_im_in => first_stage_im_out(981),
             re_multiplicator => "0010010001011110", --- 0.568237304688 + j-0.822814941406
             im_multiplicator => "1100101101010111",
-            product_re_out => mul_re_out(981),
-            product_im_out => mul_im_out(981)
+            data_re_out => mul_re_out(981),
+            data_im_out => mul_im_out(981)
         );
 
  
@@ -35222,8 +35222,8 @@ begin
             data_im_in => first_stage_im_out(982),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(982),
-            product_im_out => mul_im_out(982)
+            data_re_out => mul_re_out(982),
+            data_im_out => mul_im_out(982)
         );
 
  
@@ -35240,8 +35240,8 @@ begin
             data_im_in => first_stage_im_out(983),
             re_multiplicator => "0001111101011111", --- 0.490173339844 + j-0.87158203125
             im_multiplicator => "1100100000111000",
-            product_re_out => mul_re_out(983),
-            product_im_out => mul_im_out(983)
+            data_re_out => mul_re_out(983),
+            data_im_out => mul_im_out(983)
         );
 
  
@@ -35258,8 +35258,8 @@ begin
             data_im_in => first_stage_im_out(984),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(984),
-            product_im_out => mul_im_out(984)
+            data_re_out => mul_re_out(984),
+            data_im_out => mul_im_out(984)
         );
 
  
@@ -35276,8 +35276,8 @@ begin
             data_im_in => first_stage_im_out(985),
             re_multiplicator => "0001101000011101", --- 0.408020019531 + j-0.912902832031
             im_multiplicator => "1100010110010011",
-            product_re_out => mul_re_out(985),
-            product_im_out => mul_im_out(985)
+            data_re_out => mul_re_out(985),
+            data_im_out => mul_im_out(985)
         );
 
  
@@ -35294,8 +35294,8 @@ begin
             data_im_in => first_stage_im_out(986),
             re_multiplicator => "0001011101100110", --- 0.365600585938 + j-0.930725097656
             im_multiplicator => "1100010001101111",
-            product_re_out => mul_re_out(986),
-            product_im_out => mul_im_out(986)
+            data_re_out => mul_re_out(986),
+            data_im_out => mul_im_out(986)
         );
 
  
@@ -35312,8 +35312,8 @@ begin
             data_im_in => first_stage_im_out(987),
             re_multiplicator => "0001010010100010", --- 0.322387695312 + j-0.946594238281
             im_multiplicator => "1100001101101011",
-            product_re_out => mul_re_out(987),
-            product_im_out => mul_im_out(987)
+            data_re_out => mul_re_out(987),
+            data_im_out => mul_im_out(987)
         );
 
  
@@ -35330,8 +35330,8 @@ begin
             data_im_in => first_stage_im_out(988),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(988),
-            product_im_out => mul_im_out(988)
+            data_re_out => mul_re_out(988),
+            data_im_out => mul_im_out(988)
         );
 
  
@@ -35348,8 +35348,8 @@ begin
             data_im_in => first_stage_im_out(989),
             re_multiplicator => "0000111011111010", --- 0.234008789062 + j-0.97216796875
             im_multiplicator => "1100000111001000",
-            product_re_out => mul_re_out(989),
-            product_im_out => mul_im_out(989)
+            data_re_out => mul_re_out(989),
+            data_im_out => mul_im_out(989)
         );
 
  
@@ -35366,8 +35366,8 @@ begin
             data_im_in => first_stage_im_out(990),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(990),
-            product_im_out => mul_im_out(990)
+            data_re_out => mul_re_out(990),
+            data_im_out => mul_im_out(990)
         );
 
  
@@ -35384,8 +35384,8 @@ begin
             data_im_in => first_stage_im_out(991),
             re_multiplicator => "0000100100110010", --- 0.143676757812 + j-0.989562988281
             im_multiplicator => "1100000010101011",
-            product_re_out => mul_re_out(991),
-            product_im_out => mul_im_out(991)
+            data_re_out => mul_re_out(991),
+            data_im_out => mul_im_out(991)
         );
 
  
@@ -35402,8 +35402,8 @@ begin
             data_im_in => first_stage_im_out(992),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(992),
-            product_im_out => mul_im_out(992)
+            data_re_out => mul_re_out(992),
+            data_im_out => mul_im_out(992)
         );
 
  
@@ -35420,8 +35420,8 @@ begin
             data_im_in => first_stage_im_out(993),
             re_multiplicator => "0000001101010110", --- 0.0521240234375 + j-0.998596191406
             im_multiplicator => "1100000000010111",
-            product_re_out => mul_re_out(993),
-            product_im_out => mul_im_out(993)
+            data_re_out => mul_re_out(993),
+            data_im_out => mul_im_out(993)
         );
 
  
@@ -35438,8 +35438,8 @@ begin
             data_im_in => first_stage_im_out(994),
             re_multiplicator => "0000000001100100", --- 0.006103515625 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(994),
-            product_im_out => mul_im_out(994)
+            data_re_out => mul_re_out(994),
+            data_im_out => mul_im_out(994)
         );
 
  
@@ -35456,8 +35456,8 @@ begin
             data_im_in => first_stage_im_out(995),
             re_multiplicator => "1111110101110011", --- -0.0398559570312 + j-0.999145507812
             im_multiplicator => "1100000000001110",
-            product_re_out => mul_re_out(995),
-            product_im_out => mul_im_out(995)
+            data_re_out => mul_re_out(995),
+            data_im_out => mul_im_out(995)
         );
 
  
@@ -35474,8 +35474,8 @@ begin
             data_im_in => first_stage_im_out(996),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(996),
-            product_im_out => mul_im_out(996)
+            data_re_out => mul_re_out(996),
+            data_im_out => mul_im_out(996)
         );
 
  
@@ -35492,8 +35492,8 @@ begin
             data_im_in => first_stage_im_out(997),
             re_multiplicator => "1111011110010101", --- -0.131530761719 + j-0.991271972656
             im_multiplicator => "1100000010001111",
-            product_re_out => mul_re_out(997),
-            product_im_out => mul_im_out(997)
+            data_re_out => mul_re_out(997),
+            data_im_out => mul_im_out(997)
         );
 
  
@@ -35510,8 +35510,8 @@ begin
             data_im_in => first_stage_im_out(998),
             re_multiplicator => "1111010010101100", --- -0.177001953125 + j-0.984191894531
             im_multiplicator => "1100000100000011",
-            product_re_out => mul_re_out(998),
-            product_im_out => mul_im_out(998)
+            data_re_out => mul_re_out(998),
+            data_im_out => mul_im_out(998)
         );
 
  
@@ -35528,8 +35528,8 @@ begin
             data_im_in => first_stage_im_out(999),
             re_multiplicator => "1111000111001010", --- -0.222045898438 + j-0.974975585938
             im_multiplicator => "1100000110011010",
-            product_re_out => mul_re_out(999),
-            product_im_out => mul_im_out(999)
+            data_re_out => mul_re_out(999),
+            data_im_out => mul_im_out(999)
         );
 
  
@@ -35546,8 +35546,8 @@ begin
             data_im_in => first_stage_im_out(1000),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(1000),
-            product_im_out => mul_im_out(1000)
+            data_re_out => mul_re_out(1000),
+            data_im_out => mul_im_out(1000)
         );
 
  
@@ -35564,8 +35564,8 @@ begin
             data_im_in => first_stage_im_out(1001),
             re_multiplicator => "1110110000011101", --- -0.310729980469 + j-0.950439453125
             im_multiplicator => "1100001100101100",
-            product_re_out => mul_re_out(1001),
-            product_im_out => mul_im_out(1001)
+            data_re_out => mul_re_out(1001),
+            data_im_out => mul_im_out(1001)
         );
 
  
@@ -35582,8 +35582,8 @@ begin
             data_im_in => first_stage_im_out(1002),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(1002),
-            product_im_out => mul_im_out(1002)
+            data_re_out => mul_re_out(1002),
+            data_im_out => mul_im_out(1002)
         );
 
  
@@ -35600,8 +35600,8 @@ begin
             data_im_in => first_stage_im_out(1003),
             re_multiplicator => "1110011010011011", --- -0.396789550781 + j-0.917846679688
             im_multiplicator => "1100010101000010",
-            product_re_out => mul_re_out(1003),
-            product_im_out => mul_im_out(1003)
+            data_re_out => mul_re_out(1003),
+            data_im_out => mul_im_out(1003)
         );
 
  
@@ -35618,8 +35618,8 @@ begin
             data_im_in => first_stage_im_out(1004),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1004),
-            product_im_out => mul_im_out(1004)
+            data_re_out => mul_re_out(1004),
+            data_im_out => mul_im_out(1004)
         );
 
  
@@ -35636,8 +35636,8 @@ begin
             data_im_in => first_stage_im_out(1005),
             re_multiplicator => "1110000101010000", --- -0.4794921875 + j-0.877502441406
             im_multiplicator => "1100011111010111",
-            product_re_out => mul_re_out(1005),
-            product_im_out => mul_im_out(1005)
+            data_re_out => mul_re_out(1005),
+            data_im_out => mul_im_out(1005)
         );
 
  
@@ -35654,8 +35654,8 @@ begin
             data_im_in => first_stage_im_out(1006),
             re_multiplicator => "1101111011000011", --- -0.519348144531 + j-0.854553222656
             im_multiplicator => "1100100101001111",
-            product_re_out => mul_re_out(1006),
-            product_im_out => mul_im_out(1006)
+            data_re_out => mul_re_out(1006),
+            data_im_out => mul_im_out(1006)
         );
 
  
@@ -35672,8 +35672,8 @@ begin
             data_im_in => first_stage_im_out(1007),
             re_multiplicator => "1101110001001000", --- -0.55810546875 + j-0.829711914062
             im_multiplicator => "1100101011100110",
-            product_re_out => mul_re_out(1007),
-            product_im_out => mul_im_out(1007)
+            data_re_out => mul_re_out(1007),
+            data_im_out => mul_im_out(1007)
         );
 
  
@@ -35690,8 +35690,8 @@ begin
             data_im_in => first_stage_im_out(1008),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1008),
-            product_im_out => mul_im_out(1008)
+            data_re_out => mul_re_out(1008),
+            data_im_out => mul_im_out(1008)
         );
 
  
@@ -35708,8 +35708,8 @@ begin
             data_im_in => first_stage_im_out(1009),
             re_multiplicator => "1101011110001110", --- -0.631958007812 + j-0.77490234375
             im_multiplicator => "1100111001101000",
-            product_re_out => mul_re_out(1009),
-            product_im_out => mul_im_out(1009)
+            data_re_out => mul_re_out(1009),
+            data_im_out => mul_im_out(1009)
         );
 
  
@@ -35726,8 +35726,8 @@ begin
             data_im_in => first_stage_im_out(1010),
             re_multiplicator => "1101010101010000", --- -0.6669921875 + j-0.745056152344
             im_multiplicator => "1101000001010001",
-            product_re_out => mul_re_out(1010),
-            product_im_out => mul_im_out(1010)
+            data_re_out => mul_re_out(1010),
+            data_im_out => mul_im_out(1010)
         );
 
  
@@ -35744,8 +35744,8 @@ begin
             data_im_in => first_stage_im_out(1011),
             re_multiplicator => "1101001100101010", --- -0.700561523438 + j-0.713562011719
             im_multiplicator => "1101001001010101",
-            product_re_out => mul_re_out(1011),
-            product_im_out => mul_im_out(1011)
+            data_re_out => mul_re_out(1011),
+            data_im_out => mul_im_out(1011)
         );
 
  
@@ -35762,8 +35762,8 @@ begin
             data_im_in => first_stage_im_out(1012),
             re_multiplicator => "1101000100011101", --- -0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(1012),
-            product_im_out => mul_im_out(1012)
+            data_re_out => mul_re_out(1012),
+            data_im_out => mul_im_out(1012)
         );
 
  
@@ -35780,8 +35780,8 @@ begin
             data_im_in => first_stage_im_out(1013),
             re_multiplicator => "1100111100101000", --- -0.76318359375 + j-0.646118164062
             im_multiplicator => "1101011010100110",
-            product_re_out => mul_re_out(1013),
-            product_im_out => mul_im_out(1013)
+            data_re_out => mul_re_out(1013),
+            data_im_out => mul_im_out(1013)
         );
 
  
@@ -35798,8 +35798,8 @@ begin
             data_im_in => first_stage_im_out(1014),
             re_multiplicator => "1100110101001111", --- -0.792053222656 + j-0.6103515625
             im_multiplicator => "1101100011110000",
-            product_re_out => mul_re_out(1014),
-            product_im_out => mul_im_out(1014)
+            data_re_out => mul_re_out(1014),
+            data_im_out => mul_im_out(1014)
         );
 
  
@@ -35816,8 +35816,8 @@ begin
             data_im_in => first_stage_im_out(1015),
             re_multiplicator => "1100101110010000", --- -0.8193359375 + j-0.5732421875
             im_multiplicator => "1101101101010000",
-            product_re_out => mul_re_out(1015),
-            product_im_out => mul_im_out(1015)
+            data_re_out => mul_re_out(1015),
+            data_im_out => mul_im_out(1015)
         );
 
  
@@ -35834,8 +35834,8 @@ begin
             data_im_in => first_stage_im_out(1016),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1016),
-            product_im_out => mul_im_out(1016)
+            data_re_out => mul_re_out(1016),
+            data_im_out => mul_im_out(1016)
         );
 
  
@@ -35852,8 +35852,8 @@ begin
             data_im_in => first_stage_im_out(1017),
             re_multiplicator => "1100100001101010", --- -0.868530273438 + j-0.495544433594
             im_multiplicator => "1110000001001001",
-            product_re_out => mul_re_out(1017),
-            product_im_out => mul_im_out(1017)
+            data_re_out => mul_re_out(1017),
+            data_im_out => mul_im_out(1017)
         );
 
  
@@ -35870,8 +35870,8 @@ begin
             data_im_in => first_stage_im_out(1018),
             re_multiplicator => "1100011100000011", --- -0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(1018),
-            product_im_out => mul_im_out(1018)
+            data_re_out => mul_re_out(1018),
+            data_im_out => mul_im_out(1018)
         );
 
  
@@ -35888,8 +35888,8 @@ begin
             data_im_in => first_stage_im_out(1019),
             re_multiplicator => "1100010110111100", --- -0.910400390625 + j-0.413635253906
             im_multiplicator => "1110010110000111",
-            product_re_out => mul_re_out(1019),
-            product_im_out => mul_im_out(1019)
+            data_re_out => mul_re_out(1019),
+            data_im_out => mul_im_out(1019)
         );
 
  
@@ -35906,8 +35906,8 @@ begin
             data_im_in => first_stage_im_out(1020),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1020),
-            product_im_out => mul_im_out(1020)
+            data_re_out => mul_re_out(1020),
+            data_im_out => mul_im_out(1020)
         );
 
  
@@ -35924,8 +35924,8 @@ begin
             data_im_in => first_stage_im_out(1021),
             re_multiplicator => "1100001110001100", --- -0.944580078125 + j-0.328186035156
             im_multiplicator => "1110101011111111",
-            product_re_out => mul_re_out(1021),
-            product_im_out => mul_im_out(1021)
+            data_re_out => mul_re_out(1021),
+            data_im_out => mul_im_out(1021)
         );
 
  
@@ -35942,8 +35942,8 @@ begin
             data_im_in => first_stage_im_out(1022),
             re_multiplicator => "1100001010100101", --- -0.958679199219 + j-0.284362792969
             im_multiplicator => "1110110111001101",
-            product_re_out => mul_re_out(1022),
-            product_im_out => mul_im_out(1022)
+            data_re_out => mul_re_out(1022),
+            data_im_out => mul_im_out(1022)
         );
 
  
@@ -35960,8 +35960,8 @@ begin
             data_im_in => first_stage_im_out(1023),
             re_multiplicator => "1100000111011111", --- -0.970764160156 + j-0.239990234375
             im_multiplicator => "1111000010100100",
-            product_re_out => mul_re_out(1023),
-            product_im_out => mul_im_out(1023)
+            data_re_out => mul_re_out(1023),
+            data_im_out => mul_im_out(1023)
         );
 
  
@@ -35976,8 +35976,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1024),
             data_im_in => first_stage_im_out(1024),
-            product_re_out => mul_re_out(1024),
-            product_im_out => mul_im_out(1024)
+            data_re_out => mul_re_out(1024),
+            data_im_out => mul_im_out(1024)
         );
 
  
@@ -35994,8 +35994,8 @@ begin
             data_im_in => first_stage_im_out(1025),
             re_multiplicator => "0011111111101100", --- 0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1025),
-            product_im_out => mul_im_out(1025)
+            data_re_out => mul_re_out(1025),
+            data_im_out => mul_im_out(1025)
         );
 
  
@@ -36012,8 +36012,8 @@ begin
             data_im_in => first_stage_im_out(1026),
             re_multiplicator => "0011111110110001", --- 0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(1026),
-            product_im_out => mul_im_out(1026)
+            data_re_out => mul_re_out(1026),
+            data_im_out => mul_im_out(1026)
         );
 
  
@@ -36030,8 +36030,8 @@ begin
             data_im_in => first_stage_im_out(1027),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(1027),
-            product_im_out => mul_im_out(1027)
+            data_re_out => mul_re_out(1027),
+            data_im_out => mul_im_out(1027)
         );
 
  
@@ -36048,8 +36048,8 @@ begin
             data_im_in => first_stage_im_out(1028),
             re_multiplicator => "0011111011000101", --- 0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(1028),
-            product_im_out => mul_im_out(1028)
+            data_re_out => mul_re_out(1028),
+            data_im_out => mul_im_out(1028)
         );
 
  
@@ -36066,8 +36066,8 @@ begin
             data_im_in => first_stage_im_out(1029),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(1029),
-            product_im_out => mul_im_out(1029)
+            data_re_out => mul_re_out(1029),
+            data_im_out => mul_im_out(1029)
         );
 
  
@@ -36084,8 +36084,8 @@ begin
             data_im_in => first_stage_im_out(1030),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(1030),
-            product_im_out => mul_im_out(1030)
+            data_re_out => mul_re_out(1030),
+            data_im_out => mul_im_out(1030)
         );
 
  
@@ -36102,8 +36102,8 @@ begin
             data_im_in => first_stage_im_out(1031),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(1031),
-            product_im_out => mul_im_out(1031)
+            data_re_out => mul_re_out(1031),
+            data_im_out => mul_im_out(1031)
         );
 
  
@@ -36120,8 +36120,8 @@ begin
             data_im_in => first_stage_im_out(1032),
             re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
             im_multiplicator => "1110011110000011",
-            product_re_out => mul_re_out(1032),
-            product_im_out => mul_im_out(1032)
+            data_re_out => mul_re_out(1032),
+            data_im_out => mul_im_out(1032)
         );
 
  
@@ -36138,8 +36138,8 @@ begin
             data_im_in => first_stage_im_out(1033),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1033),
-            product_im_out => mul_im_out(1033)
+            data_re_out => mul_re_out(1033),
+            data_im_out => mul_im_out(1033)
         );
 
  
@@ -36156,8 +36156,8 @@ begin
             data_im_in => first_stage_im_out(1034),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1034),
-            product_im_out => mul_im_out(1034)
+            data_re_out => mul_re_out(1034),
+            data_im_out => mul_im_out(1034)
         );
 
  
@@ -36174,8 +36174,8 @@ begin
             data_im_in => first_stage_im_out(1035),
             re_multiplicator => "0011011011100101", --- 0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(1035),
-            product_im_out => mul_im_out(1035)
+            data_re_out => mul_re_out(1035),
+            data_im_out => mul_im_out(1035)
         );
 
  
@@ -36192,8 +36192,8 @@ begin
             data_im_in => first_stage_im_out(1036),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(1036),
-            product_im_out => mul_im_out(1036)
+            data_re_out => mul_re_out(1036),
+            data_im_out => mul_im_out(1036)
         );
 
  
@@ -36210,8 +36210,8 @@ begin
             data_im_in => first_stage_im_out(1037),
             re_multiplicator => "0011001101100111", --- 0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(1037),
-            product_im_out => mul_im_out(1037)
+            data_re_out => mul_re_out(1037),
+            data_im_out => mul_im_out(1037)
         );
 
  
@@ -36228,8 +36228,8 @@ begin
             data_im_in => first_stage_im_out(1038),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(1038),
-            product_im_out => mul_im_out(1038)
+            data_re_out => mul_re_out(1038),
+            data_im_out => mul_im_out(1038)
         );
 
  
@@ -36246,8 +36246,8 @@ begin
             data_im_in => first_stage_im_out(1039),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1039),
-            product_im_out => mul_im_out(1039)
+            data_re_out => mul_re_out(1039),
+            data_im_out => mul_im_out(1039)
         );
 
  
@@ -36264,8 +36264,8 @@ begin
             data_im_in => first_stage_im_out(1040),
             re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(1040),
-            product_im_out => mul_im_out(1040)
+            data_re_out => mul_re_out(1040),
+            data_im_out => mul_im_out(1040)
         );
 
  
@@ -36282,8 +36282,8 @@ begin
             data_im_in => first_stage_im_out(1041),
             re_multiplicator => "0010101011111010", --- 0.671508789062 + j-0.740905761719
             im_multiplicator => "1101000010010101",
-            product_re_out => mul_re_out(1041),
-            product_im_out => mul_im_out(1041)
+            data_re_out => mul_re_out(1041),
+            data_im_out => mul_im_out(1041)
         );
 
  
@@ -36300,8 +36300,8 @@ begin
             data_im_in => first_stage_im_out(1042),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(1042),
-            product_im_out => mul_im_out(1042)
+            data_re_out => mul_re_out(1042),
+            data_im_out => mul_im_out(1042)
         );
 
  
@@ -36318,8 +36318,8 @@ begin
             data_im_in => first_stage_im_out(1043),
             re_multiplicator => "0010011000011111", --- 0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1043),
-            product_im_out => mul_im_out(1043)
+            data_re_out => mul_re_out(1043),
+            data_im_out => mul_im_out(1043)
         );
 
  
@@ -36336,8 +36336,8 @@ begin
             data_im_in => first_stage_im_out(1044),
             re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(1044),
-            product_im_out => mul_im_out(1044)
+            data_re_out => mul_re_out(1044),
+            data_im_out => mul_im_out(1044)
         );
 
  
@@ -36354,8 +36354,8 @@ begin
             data_im_in => first_stage_im_out(1045),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(1045),
-            product_im_out => mul_im_out(1045)
+            data_re_out => mul_re_out(1045),
+            data_im_out => mul_im_out(1045)
         );
 
  
@@ -36372,8 +36372,8 @@ begin
             data_im_in => first_stage_im_out(1046),
             re_multiplicator => "0001111000101011", --- 0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1046),
-            product_im_out => mul_im_out(1046)
+            data_re_out => mul_re_out(1046),
+            data_im_out => mul_im_out(1046)
         );
 
  
@@ -36390,8 +36390,8 @@ begin
             data_im_in => first_stage_im_out(1047),
             re_multiplicator => "0001101101011101", --- 0.427551269531 + j-0.903930664062
             im_multiplicator => "1100011000100110",
-            product_re_out => mul_re_out(1047),
-            product_im_out => mul_im_out(1047)
+            data_re_out => mul_re_out(1047),
+            data_im_out => mul_im_out(1047)
         );
 
  
@@ -36408,8 +36408,8 @@ begin
             data_im_in => first_stage_im_out(1048),
             re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(1048),
-            product_im_out => mul_im_out(1048)
+            data_re_out => mul_re_out(1048),
+            data_im_out => mul_im_out(1048)
         );
 
  
@@ -36426,8 +36426,8 @@ begin
             data_im_in => first_stage_im_out(1049),
             re_multiplicator => "0001010110001111", --- 0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1049),
-            product_im_out => mul_im_out(1049)
+            data_re_out => mul_re_out(1049),
+            data_im_out => mul_im_out(1049)
         );
 
  
@@ -36444,8 +36444,8 @@ begin
             data_im_in => first_stage_im_out(1050),
             re_multiplicator => "0001001010010100", --- 0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(1050),
-            product_im_out => mul_im_out(1050)
+            data_re_out => mul_re_out(1050),
+            data_im_out => mul_im_out(1050)
         );
 
  
@@ -36462,8 +36462,8 @@ begin
             data_im_in => first_stage_im_out(1051),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(1051),
-            product_im_out => mul_im_out(1051)
+            data_re_out => mul_re_out(1051),
+            data_im_out => mul_im_out(1051)
         );
 
  
@@ -36480,8 +36480,8 @@ begin
             data_im_in => first_stage_im_out(1052),
             re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(1052),
-            product_im_out => mul_im_out(1052)
+            data_re_out => mul_re_out(1052),
+            data_im_out => mul_im_out(1052)
         );
 
  
@@ -36498,8 +36498,8 @@ begin
             data_im_in => first_stage_im_out(1053),
             re_multiplicator => "0000100101100100", --- 0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(1053),
-            product_im_out => mul_im_out(1053)
+            data_re_out => mul_re_out(1053),
+            data_im_out => mul_im_out(1053)
         );
 
  
@@ -36516,8 +36516,8 @@ begin
             data_im_in => first_stage_im_out(1054),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1054),
-            product_im_out => mul_im_out(1054)
+            data_re_out => mul_re_out(1054),
+            data_im_out => mul_im_out(1054)
         );
 
  
@@ -36534,8 +36534,8 @@ begin
             data_im_in => first_stage_im_out(1055),
             re_multiplicator => "0000001100100011", --- 0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(1055),
-            product_im_out => mul_im_out(1055)
+            data_re_out => mul_re_out(1055),
+            data_im_out => mul_im_out(1055)
         );
 
  
@@ -36550,8 +36550,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1056),
             data_im_in => first_stage_im_out(1056),
-            product_re_out => mul_re_out(1056),
-            product_im_out => mul_im_out(1056)
+            data_re_out => mul_re_out(1056),
+            data_im_out => mul_im_out(1056)
         );
 
  
@@ -36568,8 +36568,8 @@ begin
             data_im_in => first_stage_im_out(1057),
             re_multiplicator => "1111110011011101", --- -0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(1057),
-            product_im_out => mul_im_out(1057)
+            data_re_out => mul_re_out(1057),
+            data_im_out => mul_im_out(1057)
         );
 
  
@@ -36586,8 +36586,8 @@ begin
             data_im_in => first_stage_im_out(1058),
             re_multiplicator => "1111100110111011", --- -0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1058),
-            product_im_out => mul_im_out(1058)
+            data_re_out => mul_re_out(1058),
+            data_im_out => mul_im_out(1058)
         );
 
  
@@ -36604,8 +36604,8 @@ begin
             data_im_in => first_stage_im_out(1059),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(1059),
-            product_im_out => mul_im_out(1059)
+            data_re_out => mul_re_out(1059),
+            data_im_out => mul_im_out(1059)
         );
 
  
@@ -36622,8 +36622,8 @@ begin
             data_im_in => first_stage_im_out(1060),
             re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(1060),
-            product_im_out => mul_im_out(1060)
+            data_re_out => mul_re_out(1060),
+            data_im_out => mul_im_out(1060)
         );
 
  
@@ -36640,8 +36640,8 @@ begin
             data_im_in => first_stage_im_out(1061),
             re_multiplicator => "1111000001110100", --- -0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(1061),
-            product_im_out => mul_im_out(1061)
+            data_re_out => mul_re_out(1061),
+            data_im_out => mul_im_out(1061)
         );
 
  
@@ -36658,8 +36658,8 @@ begin
             data_im_in => first_stage_im_out(1062),
             re_multiplicator => "1110110101101100", --- -0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(1062),
-            product_im_out => mul_im_out(1062)
+            data_re_out => mul_re_out(1062),
+            data_im_out => mul_im_out(1062)
         );
 
  
@@ -36676,8 +36676,8 @@ begin
             data_im_in => first_stage_im_out(1063),
             re_multiplicator => "1110101001110001", --- -0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1063),
-            product_im_out => mul_im_out(1063)
+            data_re_out => mul_re_out(1063),
+            data_im_out => mul_im_out(1063)
         );
 
  
@@ -36694,8 +36694,8 @@ begin
             data_im_in => first_stage_im_out(1064),
             re_multiplicator => "1110011110000011", --- -0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(1064),
-            product_im_out => mul_im_out(1064)
+            data_re_out => mul_re_out(1064),
+            data_im_out => mul_im_out(1064)
         );
 
  
@@ -36712,8 +36712,8 @@ begin
             data_im_in => first_stage_im_out(1065),
             re_multiplicator => "1110010010100011", --- -0.427551269531 + j-0.903930664062
             im_multiplicator => "1100011000100110",
-            product_re_out => mul_re_out(1065),
-            product_im_out => mul_im_out(1065)
+            data_re_out => mul_re_out(1065),
+            data_im_out => mul_im_out(1065)
         );
 
  
@@ -36730,8 +36730,8 @@ begin
             data_im_in => first_stage_im_out(1066),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1066),
-            product_im_out => mul_im_out(1066)
+            data_re_out => mul_re_out(1066),
+            data_im_out => mul_im_out(1066)
         );
 
  
@@ -36748,8 +36748,8 @@ begin
             data_im_in => first_stage_im_out(1067),
             re_multiplicator => "1101111100011001", --- -0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(1067),
-            product_im_out => mul_im_out(1067)
+            data_re_out => mul_re_out(1067),
+            data_im_out => mul_im_out(1067)
         );
 
  
@@ -36766,8 +36766,8 @@ begin
             data_im_in => first_stage_im_out(1068),
             re_multiplicator => "1101110001110010", --- -0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(1068),
-            product_im_out => mul_im_out(1068)
+            data_re_out => mul_re_out(1068),
+            data_im_out => mul_im_out(1068)
         );
 
  
@@ -36784,8 +36784,8 @@ begin
             data_im_in => first_stage_im_out(1069),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1069),
-            product_im_out => mul_im_out(1069)
+            data_re_out => mul_re_out(1069),
+            data_im_out => mul_im_out(1069)
         );
 
  
@@ -36802,8 +36802,8 @@ begin
             data_im_in => first_stage_im_out(1070),
             re_multiplicator => "1101011101100111", --- -0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(1070),
-            product_im_out => mul_im_out(1070)
+            data_re_out => mul_re_out(1070),
+            data_im_out => mul_im_out(1070)
         );
 
  
@@ -36820,8 +36820,8 @@ begin
             data_im_in => first_stage_im_out(1071),
             re_multiplicator => "1101010100000110", --- -0.671508789062 + j-0.740905761719
             im_multiplicator => "1101000010010101",
-            product_re_out => mul_re_out(1071),
-            product_im_out => mul_im_out(1071)
+            data_re_out => mul_re_out(1071),
+            data_im_out => mul_im_out(1071)
         );
 
  
@@ -36838,8 +36838,8 @@ begin
             data_im_in => first_stage_im_out(1072),
             re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(1072),
-            product_im_out => mul_im_out(1072)
+            data_re_out => mul_re_out(1072),
+            data_im_out => mul_im_out(1072)
         );
 
  
@@ -36856,8 +36856,8 @@ begin
             data_im_in => first_stage_im_out(1073),
             re_multiplicator => "1101000010010101", --- -0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1073),
-            product_im_out => mul_im_out(1073)
+            data_re_out => mul_re_out(1073),
+            data_im_out => mul_im_out(1073)
         );
 
  
@@ -36874,8 +36874,8 @@ begin
             data_im_in => first_stage_im_out(1074),
             re_multiplicator => "1100111010000111", --- -0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(1074),
-            product_im_out => mul_im_out(1074)
+            data_re_out => mul_re_out(1074),
+            data_im_out => mul_im_out(1074)
         );
 
  
@@ -36892,8 +36892,8 @@ begin
             data_im_in => first_stage_im_out(1075),
             re_multiplicator => "1100110010011001", --- -0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(1075),
-            product_im_out => mul_im_out(1075)
+            data_re_out => mul_re_out(1075),
+            data_im_out => mul_im_out(1075)
         );
 
  
@@ -36910,8 +36910,8 @@ begin
             data_im_in => first_stage_im_out(1076),
             re_multiplicator => "1100101011001010", --- -0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(1076),
-            product_im_out => mul_im_out(1076)
+            data_re_out => mul_re_out(1076),
+            data_im_out => mul_im_out(1076)
         );
 
  
@@ -36928,8 +36928,8 @@ begin
             data_im_in => first_stage_im_out(1077),
             re_multiplicator => "1100100100011011", --- -0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(1077),
-            product_im_out => mul_im_out(1077)
+            data_re_out => mul_re_out(1077),
+            data_im_out => mul_im_out(1077)
         );
 
  
@@ -36946,8 +36946,8 @@ begin
             data_im_in => first_stage_im_out(1078),
             re_multiplicator => "1100011110001111", --- -0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1078),
-            product_im_out => mul_im_out(1078)
+            data_re_out => mul_re_out(1078),
+            data_im_out => mul_im_out(1078)
         );
 
  
@@ -36964,8 +36964,8 @@ begin
             data_im_in => first_stage_im_out(1079),
             re_multiplicator => "1100011000100110", --- -0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1079),
-            product_im_out => mul_im_out(1079)
+            data_re_out => mul_re_out(1079),
+            data_im_out => mul_im_out(1079)
         );
 
  
@@ -36982,8 +36982,8 @@ begin
             data_im_in => first_stage_im_out(1080),
             re_multiplicator => "1100010011100000", --- -0.923828125 + j-0.382629394531
             im_multiplicator => "1110011110000011",
-            product_re_out => mul_re_out(1080),
-            product_im_out => mul_im_out(1080)
+            data_re_out => mul_re_out(1080),
+            data_im_out => mul_im_out(1080)
         );
 
  
@@ -37000,8 +37000,8 @@ begin
             data_im_in => first_stage_im_out(1081),
             re_multiplicator => "1100001110111110", --- -0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(1081),
-            product_im_out => mul_im_out(1081)
+            data_re_out => mul_re_out(1081),
+            data_im_out => mul_im_out(1081)
         );
 
  
@@ -37018,8 +37018,8 @@ begin
             data_im_in => first_stage_im_out(1082),
             re_multiplicator => "1100001011000010", --- -0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(1082),
-            product_im_out => mul_im_out(1082)
+            data_re_out => mul_re_out(1082),
+            data_im_out => mul_im_out(1082)
         );
 
  
@@ -37036,8 +37036,8 @@ begin
             data_im_in => first_stage_im_out(1083),
             re_multiplicator => "1100000111101100", --- -0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(1083),
-            product_im_out => mul_im_out(1083)
+            data_re_out => mul_re_out(1083),
+            data_im_out => mul_im_out(1083)
         );
 
  
@@ -37054,8 +37054,8 @@ begin
             data_im_in => first_stage_im_out(1084),
             re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(1084),
-            product_im_out => mul_im_out(1084)
+            data_re_out => mul_re_out(1084),
+            data_im_out => mul_im_out(1084)
         );
 
  
@@ -37072,8 +37072,8 @@ begin
             data_im_in => first_stage_im_out(1085),
             re_multiplicator => "1100000010110010", --- -0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(1085),
-            product_im_out => mul_im_out(1085)
+            data_re_out => mul_re_out(1085),
+            data_im_out => mul_im_out(1085)
         );
 
  
@@ -37090,8 +37090,8 @@ begin
             data_im_in => first_stage_im_out(1086),
             re_multiplicator => "1100000001001111", --- -0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(1086),
-            product_im_out => mul_im_out(1086)
+            data_re_out => mul_re_out(1086),
+            data_im_out => mul_im_out(1086)
         );
 
  
@@ -37108,8 +37108,8 @@ begin
             data_im_in => first_stage_im_out(1087),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1087),
-            product_im_out => mul_im_out(1087)
+            data_re_out => mul_re_out(1087),
+            data_im_out => mul_im_out(1087)
         );
 
  
@@ -37124,8 +37124,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1088),
             data_im_in => first_stage_im_out(1088),
-            product_re_out => mul_re_out(1088),
-            product_im_out => mul_im_out(1088)
+            data_re_out => mul_re_out(1088),
+            data_im_out => mul_im_out(1088)
         );
 
  
@@ -37142,8 +37142,8 @@ begin
             data_im_in => first_stage_im_out(1089),
             re_multiplicator => "0011111111101001", --- 0.998596191406 + j-0.0521240234375
             im_multiplicator => "1111110010101010",
-            product_re_out => mul_re_out(1089),
-            product_im_out => mul_im_out(1089)
+            data_re_out => mul_re_out(1089),
+            data_im_out => mul_im_out(1089)
         );
 
  
@@ -37160,8 +37160,8 @@ begin
             data_im_in => first_stage_im_out(1090),
             re_multiplicator => "0011111110100110", --- 0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(1090),
-            product_im_out => mul_im_out(1090)
+            data_re_out => mul_re_out(1090),
+            data_im_out => mul_im_out(1090)
         );
 
  
@@ -37178,8 +37178,8 @@ begin
             data_im_in => first_stage_im_out(1091),
             re_multiplicator => "0011111100110111", --- 0.987731933594 + j-0.155822753906
             im_multiplicator => "1111011000000111",
-            product_re_out => mul_re_out(1091),
-            product_im_out => mul_im_out(1091)
+            data_re_out => mul_re_out(1091),
+            data_im_out => mul_im_out(1091)
         );
 
  
@@ -37196,8 +37196,8 @@ begin
             data_im_in => first_stage_im_out(1092),
             re_multiplicator => "0011111010011100", --- 0.978271484375 + j-0.207092285156
             im_multiplicator => "1111001010111111",
-            product_re_out => mul_re_out(1092),
-            product_im_out => mul_im_out(1092)
+            data_re_out => mul_re_out(1092),
+            data_im_out => mul_im_out(1092)
         );
 
  
@@ -37214,8 +37214,8 @@ begin
             data_im_in => first_stage_im_out(1093),
             re_multiplicator => "0011110111010110", --- 0.966186523438 + j-0.2578125
             im_multiplicator => "1110111110000000",
-            product_re_out => mul_re_out(1093),
-            product_im_out => mul_im_out(1093)
+            data_re_out => mul_re_out(1093),
+            data_im_out => mul_im_out(1093)
         );
 
  
@@ -37232,8 +37232,8 @@ begin
             data_im_in => first_stage_im_out(1094),
             re_multiplicator => "0011110011100100", --- 0.951416015625 + j-0.307800292969
             im_multiplicator => "1110110001001101",
-            product_re_out => mul_re_out(1094),
-            product_im_out => mul_im_out(1094)
+            data_re_out => mul_re_out(1094),
+            data_im_out => mul_im_out(1094)
         );
 
  
@@ -37250,8 +37250,8 @@ begin
             data_im_in => first_stage_im_out(1095),
             re_multiplicator => "0011101111001000", --- 0.93408203125 + j-0.356994628906
             im_multiplicator => "1110100100100111",
-            product_re_out => mul_re_out(1095),
-            product_im_out => mul_im_out(1095)
+            data_re_out => mul_re_out(1095),
+            data_im_out => mul_im_out(1095)
         );
 
  
@@ -37268,8 +37268,8 @@ begin
             data_im_in => first_stage_im_out(1096),
             re_multiplicator => "0011101010000010", --- 0.914184570312 + j-0.405212402344
             im_multiplicator => "1110011000010001",
-            product_re_out => mul_re_out(1096),
-            product_im_out => mul_im_out(1096)
+            data_re_out => mul_re_out(1096),
+            data_im_out => mul_im_out(1096)
         );
 
  
@@ -37286,8 +37286,8 @@ begin
             data_im_in => first_stage_im_out(1097),
             re_multiplicator => "0011100100010011", --- 0.891784667969 + j-0.452331542969
             im_multiplicator => "1110001100001101",
-            product_re_out => mul_re_out(1097),
-            product_im_out => mul_im_out(1097)
+            data_re_out => mul_re_out(1097),
+            data_im_out => mul_im_out(1097)
         );
 
  
@@ -37304,8 +37304,8 @@ begin
             data_im_in => first_stage_im_out(1098),
             re_multiplicator => "0011011101111101", --- 0.867004394531 + j-0.498168945312
             im_multiplicator => "1110000000011110",
-            product_re_out => mul_re_out(1098),
-            product_im_out => mul_im_out(1098)
+            data_re_out => mul_re_out(1098),
+            data_im_out => mul_im_out(1098)
         );
 
  
@@ -37322,8 +37322,8 @@ begin
             data_im_in => first_stage_im_out(1099),
             re_multiplicator => "0011010111000000", --- 0.83984375 + j-0.542724609375
             im_multiplicator => "1101110101000100",
-            product_re_out => mul_re_out(1099),
-            product_im_out => mul_im_out(1099)
+            data_re_out => mul_re_out(1099),
+            data_im_out => mul_im_out(1099)
         );
 
  
@@ -37340,8 +37340,8 @@ begin
             data_im_in => first_stage_im_out(1100),
             re_multiplicator => "0011001111011110", --- 0.810424804688 + j-0.585754394531
             im_multiplicator => "1101101010000011",
-            product_re_out => mul_re_out(1100),
-            product_im_out => mul_im_out(1100)
+            data_re_out => mul_re_out(1100),
+            data_im_out => mul_im_out(1100)
         );
 
  
@@ -37358,8 +37358,8 @@ begin
             data_im_in => first_stage_im_out(1101),
             re_multiplicator => "0011000111011000", --- 0.77880859375 + j-0.627197265625
             im_multiplicator => "1101011111011100",
-            product_re_out => mul_re_out(1101),
-            product_im_out => mul_im_out(1101)
+            data_re_out => mul_re_out(1101),
+            data_im_out => mul_im_out(1101)
         );
 
  
@@ -37376,8 +37376,8 @@ begin
             data_im_in => first_stage_im_out(1102),
             re_multiplicator => "0010111110101111", --- 0.745056152344 + j-0.6669921875
             im_multiplicator => "1101010101010000",
-            product_re_out => mul_re_out(1102),
-            product_im_out => mul_im_out(1102)
+            data_re_out => mul_re_out(1102),
+            data_im_out => mul_im_out(1102)
         );
 
  
@@ -37394,8 +37394,8 @@ begin
             data_im_in => first_stage_im_out(1103),
             re_multiplicator => "0010110101100100", --- 0.709228515625 + j-0.704895019531
             im_multiplicator => "1101001011100011",
-            product_re_out => mul_re_out(1103),
-            product_im_out => mul_im_out(1103)
+            data_re_out => mul_re_out(1103),
+            data_im_out => mul_im_out(1103)
         );
 
  
@@ -37412,8 +37412,8 @@ begin
             data_im_in => first_stage_im_out(1104),
             re_multiplicator => "0010101011111010", --- 0.671508789062 + j-0.740905761719
             im_multiplicator => "1101000010010101",
-            product_re_out => mul_re_out(1104),
-            product_im_out => mul_im_out(1104)
+            data_re_out => mul_re_out(1104),
+            data_im_out => mul_im_out(1104)
         );
 
  
@@ -37430,8 +37430,8 @@ begin
             data_im_in => first_stage_im_out(1105),
             re_multiplicator => "0010100001110010", --- 0.631958007812 + j-0.77490234375
             im_multiplicator => "1100111001101000",
-            product_re_out => mul_re_out(1105),
-            product_im_out => mul_im_out(1105)
+            data_re_out => mul_re_out(1105),
+            data_im_out => mul_im_out(1105)
         );
 
  
@@ -37448,8 +37448,8 @@ begin
             data_im_in => first_stage_im_out(1106),
             re_multiplicator => "0010010111001111", --- 0.590759277344 + j-0.806823730469
             im_multiplicator => "1100110001011101",
-            product_re_out => mul_re_out(1106),
-            product_im_out => mul_im_out(1106)
+            data_re_out => mul_re_out(1106),
+            data_im_out => mul_im_out(1106)
         );
 
  
@@ -37466,8 +37466,8 @@ begin
             data_im_in => first_stage_im_out(1107),
             re_multiplicator => "0010001100010000", --- 0.5478515625 + j-0.836486816406
             im_multiplicator => "1100101001110111",
-            product_re_out => mul_re_out(1107),
-            product_im_out => mul_im_out(1107)
+            data_re_out => mul_re_out(1107),
+            data_im_out => mul_im_out(1107)
         );
 
  
@@ -37484,8 +37484,8 @@ begin
             data_im_in => first_stage_im_out(1108),
             re_multiplicator => "0010000000111001", --- 0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(1108),
-            product_im_out => mul_im_out(1108)
+            data_re_out => mul_re_out(1108),
+            data_im_out => mul_im_out(1108)
         );
 
  
@@ -37502,8 +37502,8 @@ begin
             data_im_in => first_stage_im_out(1109),
             re_multiplicator => "0001110101001100", --- 0.457763671875 + j-0.889038085938
             im_multiplicator => "1100011100011010",
-            product_re_out => mul_re_out(1109),
-            product_im_out => mul_im_out(1109)
+            data_re_out => mul_re_out(1109),
+            data_im_out => mul_im_out(1109)
         );
 
  
@@ -37520,8 +37520,8 @@ begin
             data_im_in => first_stage_im_out(1110),
             re_multiplicator => "0001101001001011", --- 0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(1110),
-            product_im_out => mul_im_out(1110)
+            data_re_out => mul_re_out(1110),
+            data_im_out => mul_im_out(1110)
         );
 
  
@@ -37538,8 +37538,8 @@ begin
             data_im_in => first_stage_im_out(1111),
             re_multiplicator => "0001011100110111", --- 0.362731933594 + j-0.931823730469
             im_multiplicator => "1100010001011101",
-            product_re_out => mul_re_out(1111),
-            product_im_out => mul_im_out(1111)
+            data_re_out => mul_re_out(1111),
+            data_im_out => mul_im_out(1111)
         );
 
  
@@ -37556,8 +37556,8 @@ begin
             data_im_in => first_stage_im_out(1112),
             re_multiplicator => "0001010000010011", --- 0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(1112),
-            product_im_out => mul_im_out(1112)
+            data_re_out => mul_re_out(1112),
+            data_im_out => mul_im_out(1112)
         );
 
  
@@ -37574,8 +37574,8 @@ begin
             data_im_in => first_stage_im_out(1113),
             re_multiplicator => "0001000011100001", --- 0.263732910156 + j-0.964538574219
             im_multiplicator => "1100001001000101",
-            product_re_out => mul_re_out(1113),
-            product_im_out => mul_im_out(1113)
+            data_re_out => mul_re_out(1113),
+            data_im_out => mul_im_out(1113)
         );
 
  
@@ -37592,8 +37592,8 @@ begin
             data_im_in => first_stage_im_out(1114),
             re_multiplicator => "0000110110100011", --- 0.213073730469 + j-0.976989746094
             im_multiplicator => "1100000101111001",
-            product_re_out => mul_re_out(1114),
-            product_im_out => mul_im_out(1114)
+            data_re_out => mul_re_out(1114),
+            data_im_out => mul_im_out(1114)
         );
 
  
@@ -37610,8 +37610,8 @@ begin
             data_im_in => first_stage_im_out(1115),
             re_multiplicator => "0000101001011100", --- 0.161865234375 + j-0.986755371094
             im_multiplicator => "1100000011011001",
-            product_re_out => mul_re_out(1115),
-            product_im_out => mul_im_out(1115)
+            data_re_out => mul_re_out(1115),
+            data_im_out => mul_im_out(1115)
         );
 
  
@@ -37628,8 +37628,8 @@ begin
             data_im_in => first_stage_im_out(1116),
             re_multiplicator => "0000011100001101", --- 0.110168457031 + j-0.993896484375
             im_multiplicator => "1100000001100100",
-            product_re_out => mul_re_out(1116),
-            product_im_out => mul_im_out(1116)
+            data_re_out => mul_re_out(1116),
+            data_im_out => mul_im_out(1116)
         );
 
  
@@ -37646,8 +37646,8 @@ begin
             data_im_in => first_stage_im_out(1117),
             re_multiplicator => "0000001110111010", --- 0.0582275390625 + j-0.998291015625
             im_multiplicator => "1100000000011100",
-            product_re_out => mul_re_out(1117),
-            product_im_out => mul_im_out(1117)
+            data_re_out => mul_re_out(1117),
+            data_im_out => mul_im_out(1117)
         );
 
  
@@ -37664,8 +37664,8 @@ begin
             data_im_in => first_stage_im_out(1118),
             re_multiplicator => "0000000001100100", --- 0.006103515625 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(1118),
-            product_im_out => mul_im_out(1118)
+            data_re_out => mul_re_out(1118),
+            data_im_out => mul_im_out(1118)
         );
 
  
@@ -37682,8 +37682,8 @@ begin
             data_im_in => first_stage_im_out(1119),
             re_multiplicator => "1111110100001111", --- -0.0459594726562 + j-0.998901367188
             im_multiplicator => "1100000000010010",
-            product_re_out => mul_re_out(1119),
-            product_im_out => mul_im_out(1119)
+            data_re_out => mul_re_out(1119),
+            data_im_out => mul_im_out(1119)
         );
 
  
@@ -37700,8 +37700,8 @@ begin
             data_im_in => first_stage_im_out(1120),
             re_multiplicator => "1111100110111011", --- -0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1120),
-            product_im_out => mul_im_out(1120)
+            data_re_out => mul_re_out(1120),
+            data_im_out => mul_im_out(1120)
         );
 
  
@@ -37718,8 +37718,8 @@ begin
             data_im_in => first_stage_im_out(1121),
             re_multiplicator => "1111011001101011", --- -0.149719238281 + j-0.988708496094
             im_multiplicator => "1100000010111001",
-            product_re_out => mul_re_out(1121),
-            product_im_out => mul_im_out(1121)
+            data_re_out => mul_re_out(1121),
+            data_im_out => mul_im_out(1121)
         );
 
  
@@ -37736,8 +37736,8 @@ begin
             data_im_in => first_stage_im_out(1122),
             re_multiplicator => "1111001100100010", --- -0.201049804688 + j-0.979553222656
             im_multiplicator => "1100000101001111",
-            product_re_out => mul_re_out(1122),
-            product_im_out => mul_im_out(1122)
+            data_re_out => mul_re_out(1122),
+            data_im_out => mul_im_out(1122)
         );
 
  
@@ -37754,8 +37754,8 @@ begin
             data_im_in => first_stage_im_out(1123),
             re_multiplicator => "1110111111100001", --- -0.251892089844 + j-0.967712402344
             im_multiplicator => "1100001000010001",
-            product_re_out => mul_re_out(1123),
-            product_im_out => mul_im_out(1123)
+            data_re_out => mul_re_out(1123),
+            data_im_out => mul_im_out(1123)
         );
 
  
@@ -37772,8 +37772,8 @@ begin
             data_im_in => first_stage_im_out(1124),
             re_multiplicator => "1110110010101100", --- -0.302001953125 + j-0.953247070312
             im_multiplicator => "1100001011111110",
-            product_re_out => mul_re_out(1124),
-            product_im_out => mul_im_out(1124)
+            data_re_out => mul_re_out(1124),
+            data_im_out => mul_im_out(1124)
         );
 
  
@@ -37790,8 +37790,8 @@ begin
             data_im_in => first_stage_im_out(1125),
             re_multiplicator => "1110100110000101", --- -0.351257324219 + j-0.936218261719
             im_multiplicator => "1100010000010101",
-            product_re_out => mul_re_out(1125),
-            product_im_out => mul_im_out(1125)
+            data_re_out => mul_re_out(1125),
+            data_im_out => mul_im_out(1125)
         );
 
  
@@ -37808,8 +37808,8 @@ begin
             data_im_in => first_stage_im_out(1126),
             re_multiplicator => "1110011001101101", --- -0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(1126),
-            product_im_out => mul_im_out(1126)
+            data_re_out => mul_re_out(1126),
+            data_im_out => mul_im_out(1126)
         );
 
  
@@ -37826,8 +37826,8 @@ begin
             data_im_in => first_stage_im_out(1127),
             re_multiplicator => "1110001101100111", --- -0.446838378906 + j-0.894592285156
             im_multiplicator => "1100011010111111",
-            product_re_out => mul_re_out(1127),
-            product_im_out => mul_im_out(1127)
+            data_re_out => mul_re_out(1127),
+            data_im_out => mul_im_out(1127)
         );
 
  
@@ -37844,8 +37844,8 @@ begin
             data_im_in => first_stage_im_out(1128),
             re_multiplicator => "1110000001110101", --- -0.492858886719 + j-0.870056152344
             im_multiplicator => "1100100001010001",
-            product_re_out => mul_re_out(1128),
-            product_im_out => mul_im_out(1128)
+            data_re_out => mul_re_out(1128),
+            data_im_out => mul_im_out(1128)
         );
 
  
@@ -37862,8 +37862,8 @@ begin
             data_im_in => first_stage_im_out(1129),
             re_multiplicator => "1101110110011001", --- -0.537536621094 + j-0.843200683594
             im_multiplicator => "1100101000001001",
-            product_re_out => mul_re_out(1129),
-            product_im_out => mul_im_out(1129)
+            data_re_out => mul_re_out(1129),
+            data_im_out => mul_im_out(1129)
         );
 
  
@@ -37880,8 +37880,8 @@ begin
             data_im_in => first_stage_im_out(1130),
             re_multiplicator => "1101101011010100", --- -0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(1130),
-            product_im_out => mul_im_out(1130)
+            data_re_out => mul_re_out(1130),
+            data_im_out => mul_im_out(1130)
         );
 
  
@@ -37898,8 +37898,8 @@ begin
             data_im_in => first_stage_im_out(1131),
             re_multiplicator => "1101100000101010", --- -0.622436523438 + j-0.782592773438
             im_multiplicator => "1100110111101010",
-            product_re_out => mul_re_out(1131),
-            product_im_out => mul_im_out(1131)
+            data_re_out => mul_re_out(1131),
+            data_im_out => mul_im_out(1131)
         );
 
  
@@ -37916,8 +37916,8 @@ begin
             data_im_in => first_stage_im_out(1132),
             re_multiplicator => "1101010110011011", --- -0.662414550781 + j-0.749084472656
             im_multiplicator => "1101000000001111",
-            product_re_out => mul_re_out(1132),
-            product_im_out => mul_im_out(1132)
+            data_re_out => mul_re_out(1132),
+            data_im_out => mul_im_out(1132)
         );
 
  
@@ -37934,8 +37934,8 @@ begin
             data_im_in => first_stage_im_out(1133),
             re_multiplicator => "1101001100101010", --- -0.700561523438 + j-0.713562011719
             im_multiplicator => "1101001001010101",
-            product_re_out => mul_re_out(1133),
-            product_im_out => mul_im_out(1133)
+            data_re_out => mul_re_out(1133),
+            data_im_out => mul_im_out(1133)
         );
 
  
@@ -37952,8 +37952,8 @@ begin
             data_im_in => first_stage_im_out(1134),
             re_multiplicator => "1101000011011000", --- -0.73681640625 + j-0.676086425781
             im_multiplicator => "1101010010111011",
-            product_re_out => mul_re_out(1134),
-            product_im_out => mul_im_out(1134)
+            data_re_out => mul_re_out(1134),
+            data_im_out => mul_im_out(1134)
         );
 
  
@@ -37970,8 +37970,8 @@ begin
             data_im_in => first_stage_im_out(1135),
             re_multiplicator => "1100111010100111", --- -0.771057128906 + j-0.63671875
             im_multiplicator => "1101011101000000",
-            product_re_out => mul_re_out(1135),
-            product_im_out => mul_im_out(1135)
+            data_re_out => mul_re_out(1135),
+            data_im_out => mul_im_out(1135)
         );
 
  
@@ -37988,8 +37988,8 @@ begin
             data_im_in => first_stage_im_out(1136),
             re_multiplicator => "1100110010011001", --- -0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(1136),
-            product_im_out => mul_im_out(1136)
+            data_re_out => mul_re_out(1136),
+            data_im_out => mul_im_out(1136)
         );
 
  
@@ -38006,8 +38006,8 @@ begin
             data_im_in => first_stage_im_out(1137),
             re_multiplicator => "1100101010101110", --- -0.833129882812 + j-0.552978515625
             im_multiplicator => "1101110010011100",
-            product_re_out => mul_re_out(1137),
-            product_im_out => mul_im_out(1137)
+            data_re_out => mul_re_out(1137),
+            data_im_out => mul_im_out(1137)
         );
 
  
@@ -38024,8 +38024,8 @@ begin
             data_im_in => first_stage_im_out(1138),
             re_multiplicator => "1100100011101000", --- -0.86083984375 + j-0.5087890625
             im_multiplicator => "1101111101110000",
-            product_re_out => mul_re_out(1138),
-            product_im_out => mul_im_out(1138)
+            data_re_out => mul_re_out(1138),
+            data_im_out => mul_im_out(1138)
         );
 
  
@@ -38042,8 +38042,8 @@ begin
             data_im_in => first_stage_im_out(1139),
             re_multiplicator => "1100011101001001", --- -0.886169433594 + j-0.463256835938
             im_multiplicator => "1110001001011010",
-            product_re_out => mul_re_out(1139),
-            product_im_out => mul_im_out(1139)
+            data_re_out => mul_re_out(1139),
+            data_im_out => mul_im_out(1139)
         );
 
  
@@ -38060,8 +38060,8 @@ begin
             data_im_in => first_stage_im_out(1140),
             re_multiplicator => "1100010111010001", --- -0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(1140),
-            product_im_out => mul_im_out(1140)
+            data_re_out => mul_re_out(1140),
+            data_im_out => mul_im_out(1140)
         );
 
  
@@ -38078,8 +38078,8 @@ begin
             data_im_in => first_stage_im_out(1141),
             re_multiplicator => "1100010010000001", --- -0.929626464844 + j-0.368408203125
             im_multiplicator => "1110100001101100",
-            product_re_out => mul_re_out(1141),
-            product_im_out => mul_im_out(1141)
+            data_re_out => mul_re_out(1141),
+            data_im_out => mul_im_out(1141)
         );
 
  
@@ -38096,8 +38096,8 @@ begin
             data_im_in => first_stage_im_out(1142),
             re_multiplicator => "1100001101011011", --- -0.947570800781 + j-0.319458007812
             im_multiplicator => "1110101110001110",
-            product_re_out => mul_re_out(1142),
-            product_im_out => mul_im_out(1142)
+            data_re_out => mul_re_out(1142),
+            data_im_out => mul_im_out(1142)
         );
 
  
@@ -38114,8 +38114,8 @@ begin
             data_im_in => first_stage_im_out(1143),
             re_multiplicator => "1100001001011111", --- -0.962951660156 + j-0.269653320312
             im_multiplicator => "1110111010111110",
-            product_re_out => mul_re_out(1143),
-            product_im_out => mul_im_out(1143)
+            data_re_out => mul_re_out(1143),
+            data_im_out => mul_im_out(1143)
         );
 
  
@@ -38132,8 +38132,8 @@ begin
             data_im_in => first_stage_im_out(1144),
             re_multiplicator => "1100000110001111", --- -0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(1144),
-            product_im_out => mul_im_out(1144)
+            data_re_out => mul_re_out(1144),
+            data_im_out => mul_im_out(1144)
         );
 
  
@@ -38150,8 +38150,8 @@ begin
             data_im_in => first_stage_im_out(1145),
             re_multiplicator => "1100000011101001", --- -0.985778808594 + j-0.167907714844
             im_multiplicator => "1111010101000001",
-            product_re_out => mul_re_out(1145),
-            product_im_out => mul_im_out(1145)
+            data_re_out => mul_re_out(1145),
+            data_im_out => mul_im_out(1145)
         );
 
  
@@ -38168,8 +38168,8 @@ begin
             data_im_in => first_stage_im_out(1146),
             re_multiplicator => "1100000001110000", --- -0.9931640625 + j-0.116271972656
             im_multiplicator => "1111100010001111",
-            product_re_out => mul_re_out(1146),
-            product_im_out => mul_im_out(1146)
+            data_re_out => mul_re_out(1146),
+            data_im_out => mul_im_out(1146)
         );
 
  
@@ -38186,8 +38186,8 @@ begin
             data_im_in => first_stage_im_out(1147),
             re_multiplicator => "1100000000100010", --- -0.997924804688 + j-0.0643310546875
             im_multiplicator => "1111101111100010",
-            product_re_out => mul_re_out(1147),
-            product_im_out => mul_im_out(1147)
+            data_re_out => mul_re_out(1147),
+            data_im_out => mul_im_out(1147)
         );
 
  
@@ -38204,8 +38204,8 @@ begin
             data_im_in => first_stage_im_out(1148),
             re_multiplicator => "1100000000000010", --- -0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(1148),
-            product_im_out => mul_im_out(1148)
+            data_re_out => mul_re_out(1148),
+            data_im_out => mul_im_out(1148)
         );
 
  
@@ -38222,8 +38222,8 @@ begin
             data_im_in => first_stage_im_out(1149),
             re_multiplicator => "1100000000001110", --- -0.999145507812 + j0.0398559570312
             im_multiplicator => "0000001010001101",
-            product_re_out => mul_re_out(1149),
-            product_im_out => mul_im_out(1149)
+            data_re_out => mul_re_out(1149),
+            data_im_out => mul_im_out(1149)
         );
 
  
@@ -38240,8 +38240,8 @@ begin
             data_im_in => first_stage_im_out(1150),
             re_multiplicator => "1100000001000110", --- -0.995727539062 + j0.0918579101562
             im_multiplicator => "0000010111100001",
-            product_re_out => mul_re_out(1150),
-            product_im_out => mul_im_out(1150)
+            data_re_out => mul_re_out(1150),
+            data_im_out => mul_im_out(1150)
         );
 
  
@@ -38258,8 +38258,8 @@ begin
             data_im_in => first_stage_im_out(1151),
             re_multiplicator => "1100000010101011", --- -0.989562988281 + j0.143676757812
             im_multiplicator => "0000100100110010",
-            product_re_out => mul_re_out(1151),
-            product_im_out => mul_im_out(1151)
+            data_re_out => mul_re_out(1151),
+            data_im_out => mul_im_out(1151)
         );
 
  
@@ -38274,8 +38274,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1152),
             data_im_in => first_stage_im_out(1152),
-            product_re_out => mul_re_out(1152),
-            product_im_out => mul_im_out(1152)
+            data_re_out => mul_re_out(1152),
+            data_im_out => mul_im_out(1152)
         );
 
  
@@ -38292,8 +38292,8 @@ begin
             data_im_in => first_stage_im_out(1153),
             re_multiplicator => "0011111111100111", --- 0.998474121094 + j-0.05517578125
             im_multiplicator => "1111110001111000",
-            product_re_out => mul_re_out(1153),
-            product_im_out => mul_im_out(1153)
+            data_re_out => mul_re_out(1153),
+            data_im_out => mul_im_out(1153)
         );
 
  
@@ -38310,8 +38310,8 @@ begin
             data_im_in => first_stage_im_out(1154),
             re_multiplicator => "0011111110011100", --- 0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(1154),
-            product_im_out => mul_im_out(1154)
+            data_re_out => mul_re_out(1154),
+            data_im_out => mul_im_out(1154)
         );
 
  
@@ -38328,8 +38328,8 @@ begin
             data_im_in => first_stage_im_out(1155),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(1155),
-            product_im_out => mul_im_out(1155)
+            data_re_out => mul_re_out(1155),
+            data_im_out => mul_im_out(1155)
         );
 
  
@@ -38346,8 +38346,8 @@ begin
             data_im_in => first_stage_im_out(1156),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(1156),
-            product_im_out => mul_im_out(1156)
+            data_re_out => mul_re_out(1156),
+            data_im_out => mul_im_out(1156)
         );
 
  
@@ -38364,8 +38364,8 @@ begin
             data_im_in => first_stage_im_out(1157),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(1157),
-            product_im_out => mul_im_out(1157)
+            data_re_out => mul_re_out(1157),
+            data_im_out => mul_im_out(1157)
         );
 
  
@@ -38382,8 +38382,8 @@ begin
             data_im_in => first_stage_im_out(1158),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(1158),
-            product_im_out => mul_im_out(1158)
+            data_re_out => mul_re_out(1158),
+            data_im_out => mul_im_out(1158)
         );
 
  
@@ -38400,8 +38400,8 @@ begin
             data_im_in => first_stage_im_out(1159),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(1159),
-            product_im_out => mul_im_out(1159)
+            data_re_out => mul_re_out(1159),
+            data_im_out => mul_im_out(1159)
         );
 
  
@@ -38418,8 +38418,8 @@ begin
             data_im_in => first_stage_im_out(1160),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1160),
-            product_im_out => mul_im_out(1160)
+            data_re_out => mul_re_out(1160),
+            data_im_out => mul_im_out(1160)
         );
 
  
@@ -38436,8 +38436,8 @@ begin
             data_im_in => first_stage_im_out(1161),
             re_multiplicator => "0011100001000001", --- 0.878967285156 + j-0.476745605469
             im_multiplicator => "1110000101111101",
-            product_re_out => mul_re_out(1161),
-            product_im_out => mul_im_out(1161)
+            data_re_out => mul_re_out(1161),
+            data_im_out => mul_im_out(1161)
         );
 
  
@@ -38454,8 +38454,8 @@ begin
             data_im_in => first_stage_im_out(1162),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(1162),
-            product_im_out => mul_im_out(1162)
+            data_re_out => mul_re_out(1162),
+            data_im_out => mul_im_out(1162)
         );
 
  
@@ -38472,8 +38472,8 @@ begin
             data_im_in => first_stage_im_out(1163),
             re_multiplicator => "0011010010001100", --- 0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(1163),
-            product_im_out => mul_im_out(1163)
+            data_re_out => mul_re_out(1163),
+            data_im_out => mul_im_out(1163)
         );
 
  
@@ -38490,8 +38490,8 @@ begin
             data_im_in => first_stage_im_out(1164),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(1164),
-            product_im_out => mul_im_out(1164)
+            data_re_out => mul_re_out(1164),
+            data_im_out => mul_im_out(1164)
         );
 
  
@@ -38508,8 +38508,8 @@ begin
             data_im_in => first_stage_im_out(1165),
             re_multiplicator => "0011000000110100", --- 0.753173828125 + j-0.657775878906
             im_multiplicator => "1101010111100111",
-            product_re_out => mul_re_out(1165),
-            product_im_out => mul_im_out(1165)
+            data_re_out => mul_re_out(1165),
+            data_im_out => mul_im_out(1165)
         );
 
  
@@ -38526,8 +38526,8 @@ begin
             data_im_in => first_stage_im_out(1166),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(1166),
-            product_im_out => mul_im_out(1166)
+            data_re_out => mul_re_out(1166),
+            data_im_out => mul_im_out(1166)
         );
 
  
@@ -38544,8 +38544,8 @@ begin
             data_im_in => first_stage_im_out(1167),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(1167),
-            product_im_out => mul_im_out(1167)
+            data_re_out => mul_re_out(1167),
+            data_im_out => mul_im_out(1167)
         );
 
  
@@ -38562,8 +38562,8 @@ begin
             data_im_in => first_stage_im_out(1168),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(1168),
-            product_im_out => mul_im_out(1168)
+            data_re_out => mul_re_out(1168),
+            data_im_out => mul_im_out(1168)
         );
 
  
@@ -38580,8 +38580,8 @@ begin
             data_im_in => first_stage_im_out(1169),
             re_multiplicator => "0010010111001111", --- 0.590759277344 + j-0.806823730469
             im_multiplicator => "1100110001011101",
-            product_re_out => mul_re_out(1169),
-            product_im_out => mul_im_out(1169)
+            data_re_out => mul_re_out(1169),
+            data_im_out => mul_im_out(1169)
         );
 
  
@@ -38598,8 +38598,8 @@ begin
             data_im_in => first_stage_im_out(1170),
             re_multiplicator => "0010001011100110", --- 0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(1170),
-            product_im_out => mul_im_out(1170)
+            data_re_out => mul_re_out(1170),
+            data_im_out => mul_im_out(1170)
         );
 
  
@@ -38616,8 +38616,8 @@ begin
             data_im_in => first_stage_im_out(1171),
             re_multiplicator => "0001111111100010", --- 0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(1171),
-            product_im_out => mul_im_out(1171)
+            data_re_out => mul_re_out(1171),
+            data_im_out => mul_im_out(1171)
         );
 
  
@@ -38634,8 +38634,8 @@ begin
             data_im_in => first_stage_im_out(1172),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(1172),
-            product_im_out => mul_im_out(1172)
+            data_re_out => mul_re_out(1172),
+            data_im_out => mul_im_out(1172)
         );
 
  
@@ -38652,8 +38652,8 @@ begin
             data_im_in => first_stage_im_out(1173),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(1173),
-            product_im_out => mul_im_out(1173)
+            data_re_out => mul_re_out(1173),
+            data_im_out => mul_im_out(1173)
         );
 
  
@@ -38670,8 +38670,8 @@ begin
             data_im_in => first_stage_im_out(1174),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j-0.937316894531
             im_multiplicator => "1100010000000011",
-            product_re_out => mul_re_out(1174),
-            product_im_out => mul_im_out(1174)
+            data_re_out => mul_re_out(1174),
+            data_im_out => mul_im_out(1174)
         );
 
  
@@ -38688,8 +38688,8 @@ begin
             data_im_in => first_stage_im_out(1175),
             re_multiplicator => "0001001011110100", --- 0.296142578125 + j-0.955139160156
             im_multiplicator => "1100001011011111",
-            product_re_out => mul_re_out(1175),
-            product_im_out => mul_im_out(1175)
+            data_re_out => mul_re_out(1175),
+            data_im_out => mul_im_out(1175)
         );
 
  
@@ -38706,8 +38706,8 @@ begin
             data_im_in => first_stage_im_out(1176),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(1176),
-            product_im_out => mul_im_out(1176)
+            data_re_out => mul_re_out(1176),
+            data_im_out => mul_im_out(1176)
         );
 
  
@@ -38724,8 +38724,8 @@ begin
             data_im_in => first_stage_im_out(1177),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(1177),
-            product_im_out => mul_im_out(1177)
+            data_re_out => mul_re_out(1177),
+            data_im_out => mul_im_out(1177)
         );
 
  
@@ -38742,8 +38742,8 @@ begin
             data_im_in => first_stage_im_out(1178),
             re_multiplicator => "0000100010011100", --- 0.134521484375 + j-0.990844726562
             im_multiplicator => "1100000010010110",
-            product_re_out => mul_re_out(1178),
-            product_im_out => mul_im_out(1178)
+            data_re_out => mul_re_out(1178),
+            data_im_out => mul_im_out(1178)
         );
 
  
@@ -38760,8 +38760,8 @@ begin
             data_im_in => first_stage_im_out(1179),
             re_multiplicator => "0000010100011001", --- 0.0796508789062 + j-0.996765136719
             im_multiplicator => "1100000000110101",
-            product_re_out => mul_re_out(1179),
-            product_im_out => mul_im_out(1179)
+            data_re_out => mul_re_out(1179),
+            data_im_out => mul_im_out(1179)
         );
 
  
@@ -38778,8 +38778,8 @@ begin
             data_im_in => first_stage_im_out(1180),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1180),
-            product_im_out => mul_im_out(1180)
+            data_re_out => mul_re_out(1180),
+            data_im_out => mul_im_out(1180)
         );
 
  
@@ -38796,8 +38796,8 @@ begin
             data_im_in => first_stage_im_out(1181),
             re_multiplicator => "1111111000001010", --- -0.0306396484375 + j-0.99951171875
             im_multiplicator => "1100000000001000",
-            product_re_out => mul_re_out(1181),
-            product_im_out => mul_im_out(1181)
+            data_re_out => mul_re_out(1181),
+            data_im_out => mul_im_out(1181)
         );
 
  
@@ -38814,8 +38814,8 @@ begin
             data_im_in => first_stage_im_out(1182),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(1182),
-            product_im_out => mul_im_out(1182)
+            data_re_out => mul_re_out(1182),
+            data_im_out => mul_im_out(1182)
         );
 
  
@@ -38832,8 +38832,8 @@ begin
             data_im_in => first_stage_im_out(1183),
             re_multiplicator => "1111011100000000", --- -0.140625 + j-0.990051269531
             im_multiplicator => "1100000010100011",
-            product_re_out => mul_re_out(1183),
-            product_im_out => mul_im_out(1183)
+            data_re_out => mul_re_out(1183),
+            data_im_out => mul_im_out(1183)
         );
 
  
@@ -38850,8 +38850,8 @@ begin
             data_im_in => first_stage_im_out(1184),
             re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(1184),
-            product_im_out => mul_im_out(1184)
+            data_re_out => mul_re_out(1184),
+            data_im_out => mul_im_out(1184)
         );
 
  
@@ -38868,8 +38868,8 @@ begin
             data_im_in => first_stage_im_out(1185),
             re_multiplicator => "1111000000010010", --- -0.248901367188 + j-0.968505859375
             im_multiplicator => "1100001000000100",
-            product_re_out => mul_re_out(1185),
-            product_im_out => mul_im_out(1185)
+            data_re_out => mul_re_out(1185),
+            data_im_out => mul_im_out(1185)
         );
 
  
@@ -38886,8 +38886,8 @@ begin
             data_im_in => first_stage_im_out(1186),
             re_multiplicator => "1110110010101100", --- -0.302001953125 + j-0.953247070312
             im_multiplicator => "1100001011111110",
-            product_re_out => mul_re_out(1186),
-            product_im_out => mul_im_out(1186)
+            data_re_out => mul_re_out(1186),
+            data_im_out => mul_im_out(1186)
         );
 
  
@@ -38904,8 +38904,8 @@ begin
             data_im_in => first_stage_im_out(1187),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(1187),
-            product_im_out => mul_im_out(1187)
+            data_re_out => mul_re_out(1187),
+            data_im_out => mul_im_out(1187)
         );
 
  
@@ -38922,8 +38922,8 @@ begin
             data_im_in => first_stage_im_out(1188),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j-0.914184570312
             im_multiplicator => "1100010101111110",
-            product_re_out => mul_re_out(1188),
-            product_im_out => mul_im_out(1188)
+            data_re_out => mul_re_out(1188),
+            data_im_out => mul_im_out(1188)
         );
 
  
@@ -38940,8 +38940,8 @@ begin
             data_im_in => first_stage_im_out(1189),
             re_multiplicator => "1110001011100000", --- -0.455078125 + j-0.890441894531
             im_multiplicator => "1100011100000011",
-            product_re_out => mul_re_out(1189),
-            product_im_out => mul_im_out(1189)
+            data_re_out => mul_re_out(1189),
+            data_im_out => mul_im_out(1189)
         );
 
  
@@ -38958,8 +38958,8 @@ begin
             data_im_in => first_stage_im_out(1190),
             re_multiplicator => "1101111111000111", --- -0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(1190),
-            product_im_out => mul_im_out(1190)
+            data_re_out => mul_re_out(1190),
+            data_im_out => mul_im_out(1190)
         );
 
  
@@ -38976,8 +38976,8 @@ begin
             data_im_in => first_stage_im_out(1191),
             re_multiplicator => "1101110011000110", --- -0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(1191),
-            product_im_out => mul_im_out(1191)
+            data_re_out => mul_re_out(1191),
+            data_im_out => mul_im_out(1191)
         );
 
  
@@ -38994,8 +38994,8 @@ begin
             data_im_in => first_stage_im_out(1192),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1192),
-            product_im_out => mul_im_out(1192)
+            data_re_out => mul_re_out(1192),
+            data_im_out => mul_im_out(1192)
         );
 
  
@@ -39012,8 +39012,8 @@ begin
             data_im_in => first_stage_im_out(1193),
             re_multiplicator => "1101011100011001", --- -0.639099121094 + j-0.76904296875
             im_multiplicator => "1100111011001000",
-            product_re_out => mul_re_out(1193),
-            product_im_out => mul_im_out(1193)
+            data_re_out => mul_re_out(1193),
+            data_im_out => mul_im_out(1193)
         );
 
  
@@ -39030,8 +39030,8 @@ begin
             data_im_in => first_stage_im_out(1194),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(1194),
-            product_im_out => mul_im_out(1194)
+            data_re_out => mul_re_out(1194),
+            data_im_out => mul_im_out(1194)
         );
 
  
@@ -39048,8 +39048,8 @@ begin
             data_im_in => first_stage_im_out(1195),
             re_multiplicator => "1101000111101100", --- -0.719970703125 + j-0.693969726562
             im_multiplicator => "1101001110010110",
-            product_re_out => mul_re_out(1195),
-            product_im_out => mul_im_out(1195)
+            data_re_out => mul_re_out(1195),
+            data_im_out => mul_im_out(1195)
         );
 
  
@@ -39066,8 +39066,8 @@ begin
             data_im_in => first_stage_im_out(1196),
             re_multiplicator => "1100111110001010", --- -0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(1196),
-            product_im_out => mul_im_out(1196)
+            data_re_out => mul_re_out(1196),
+            data_im_out => mul_im_out(1196)
         );
 
  
@@ -39084,8 +39084,8 @@ begin
             data_im_in => first_stage_im_out(1197),
             re_multiplicator => "1100110101001111", --- -0.792053222656 + j-0.6103515625
             im_multiplicator => "1101100011110000",
-            product_re_out => mul_re_out(1197),
-            product_im_out => mul_im_out(1197)
+            data_re_out => mul_re_out(1197),
+            data_im_out => mul_im_out(1197)
         );
 
  
@@ -39102,8 +39102,8 @@ begin
             data_im_in => first_stage_im_out(1198),
             re_multiplicator => "1100101100111010", --- -0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(1198),
-            product_im_out => mul_im_out(1198)
+            data_re_out => mul_re_out(1198),
+            data_im_out => mul_im_out(1198)
         );
 
  
@@ -39120,8 +39120,8 @@ begin
             data_im_in => first_stage_im_out(1199),
             re_multiplicator => "1100100101001111", --- -0.854553222656 + j-0.519348144531
             im_multiplicator => "1101111011000011",
-            product_re_out => mul_re_out(1199),
-            product_im_out => mul_im_out(1199)
+            data_re_out => mul_re_out(1199),
+            data_im_out => mul_im_out(1199)
         );
 
  
@@ -39138,8 +39138,8 @@ begin
             data_im_in => first_stage_im_out(1200),
             re_multiplicator => "1100011110001111", --- -0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1200),
-            product_im_out => mul_im_out(1200)
+            data_re_out => mul_re_out(1200),
+            data_im_out => mul_im_out(1200)
         );
 
  
@@ -39156,8 +39156,8 @@ begin
             data_im_in => first_stage_im_out(1201),
             re_multiplicator => "1100010111111011", --- -0.906555175781 + j-0.421997070312
             im_multiplicator => "1110010011111110",
-            product_re_out => mul_re_out(1201),
-            product_im_out => mul_im_out(1201)
+            data_re_out => mul_re_out(1201),
+            data_im_out => mul_im_out(1201)
         );
 
  
@@ -39174,8 +39174,8 @@ begin
             data_im_in => first_stage_im_out(1202),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1202),
-            product_im_out => mul_im_out(1202)
+            data_re_out => mul_re_out(1202),
+            data_im_out => mul_im_out(1202)
         );
 
  
@@ -39192,8 +39192,8 @@ begin
             data_im_in => first_stage_im_out(1203),
             re_multiplicator => "1100001101011011", --- -0.947570800781 + j-0.319458007812
             im_multiplicator => "1110101110001110",
-            product_re_out => mul_re_out(1203),
-            product_im_out => mul_im_out(1203)
+            data_re_out => mul_re_out(1203),
+            data_im_out => mul_im_out(1203)
         );
 
  
@@ -39210,8 +39210,8 @@ begin
             data_im_in => first_stage_im_out(1204),
             re_multiplicator => "1100001001010010", --- -0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(1204),
-            product_im_out => mul_im_out(1204)
+            data_re_out => mul_re_out(1204),
+            data_im_out => mul_im_out(1204)
         );
 
  
@@ -39228,8 +39228,8 @@ begin
             data_im_in => first_stage_im_out(1205),
             re_multiplicator => "1100000101111001", --- -0.976989746094 + j-0.213073730469
             im_multiplicator => "1111001001011101",
-            product_re_out => mul_re_out(1205),
-            product_im_out => mul_im_out(1205)
+            data_re_out => mul_re_out(1205),
+            data_im_out => mul_im_out(1205)
         );
 
  
@@ -39246,8 +39246,8 @@ begin
             data_im_in => first_stage_im_out(1206),
             re_multiplicator => "1100000011010001", --- -0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(1206),
-            product_im_out => mul_im_out(1206)
+            data_re_out => mul_re_out(1206),
+            data_im_out => mul_im_out(1206)
         );
 
  
@@ -39264,8 +39264,8 @@ begin
             data_im_in => first_stage_im_out(1207),
             re_multiplicator => "1100000001011010", --- -0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(1207),
-            product_im_out => mul_im_out(1207)
+            data_re_out => mul_re_out(1207),
+            data_im_out => mul_im_out(1207)
         );
 
  
@@ -39282,8 +39282,8 @@ begin
             data_im_in => first_stage_im_out(1208),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1208),
-            product_im_out => mul_im_out(1208)
+            data_re_out => mul_re_out(1208),
+            data_im_out => mul_im_out(1208)
         );
 
  
@@ -39300,8 +39300,8 @@ begin
             data_im_in => first_stage_im_out(1209),
             re_multiplicator => "1100000000000001", --- -0.999938964844 + j0.006103515625
             im_multiplicator => "0000000001100100",
-            product_re_out => mul_re_out(1209),
-            product_im_out => mul_im_out(1209)
+            data_re_out => mul_re_out(1209),
+            data_im_out => mul_im_out(1209)
         );
 
  
@@ -39318,8 +39318,8 @@ begin
             data_im_in => first_stage_im_out(1210),
             re_multiplicator => "1100000000011111", --- -0.998107910156 + j0.061279296875
             im_multiplicator => "0000001111101100",
-            product_re_out => mul_re_out(1210),
-            product_im_out => mul_im_out(1210)
+            data_re_out => mul_re_out(1210),
+            data_im_out => mul_im_out(1210)
         );
 
  
@@ -39336,8 +39336,8 @@ begin
             data_im_in => first_stage_im_out(1211),
             re_multiplicator => "1100000001110000", --- -0.9931640625 + j0.116271972656
             im_multiplicator => "0000011101110001",
-            product_re_out => mul_re_out(1211),
-            product_im_out => mul_im_out(1211)
+            data_re_out => mul_re_out(1211),
+            data_im_out => mul_im_out(1211)
         );
 
  
@@ -39354,8 +39354,8 @@ begin
             data_im_in => first_stage_im_out(1212),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j0.170959472656
             im_multiplicator => "0000101011110001",
-            product_re_out => mul_re_out(1212),
-            product_im_out => mul_im_out(1212)
+            data_re_out => mul_re_out(1212),
+            data_im_out => mul_im_out(1212)
         );
 
  
@@ -39372,8 +39372,8 @@ begin
             data_im_in => first_stage_im_out(1213),
             re_multiplicator => "1100000110100101", --- -0.974304199219 + j0.225036621094
             im_multiplicator => "0000111001100111",
-            product_re_out => mul_re_out(1213),
-            product_im_out => mul_im_out(1213)
+            data_re_out => mul_re_out(1213),
+            data_im_out => mul_im_out(1213)
         );
 
  
@@ -39390,8 +39390,8 @@ begin
             data_im_in => first_stage_im_out(1214),
             re_multiplicator => "1100001010001001", --- -0.960388183594 + j0.278503417969
             im_multiplicator => "0001000111010011",
-            product_re_out => mul_re_out(1214),
-            product_im_out => mul_im_out(1214)
+            data_re_out => mul_re_out(1214),
+            data_im_out => mul_im_out(1214)
         );
 
  
@@ -39408,8 +39408,8 @@ begin
             data_im_in => first_stage_im_out(1215),
             re_multiplicator => "1100001110011101", --- -0.943542480469 + j0.3310546875
             im_multiplicator => "0001010100110000",
-            product_re_out => mul_re_out(1215),
-            product_im_out => mul_im_out(1215)
+            data_re_out => mul_re_out(1215),
+            data_im_out => mul_im_out(1215)
         );
 
  
@@ -39424,8 +39424,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1216),
             data_im_in => first_stage_im_out(1216),
-            product_re_out => mul_re_out(1216),
-            product_im_out => mul_im_out(1216)
+            data_re_out => mul_re_out(1216),
+            data_im_out => mul_im_out(1216)
         );
 
  
@@ -39442,8 +39442,8 @@ begin
             data_im_in => first_stage_im_out(1217),
             re_multiplicator => "0011111111100100", --- 0.998291015625 + j-0.0582275390625
             im_multiplicator => "1111110001000110",
-            product_re_out => mul_re_out(1217),
-            product_im_out => mul_im_out(1217)
+            data_re_out => mul_re_out(1217),
+            data_im_out => mul_im_out(1217)
         );
 
  
@@ -39460,8 +39460,8 @@ begin
             data_im_in => first_stage_im_out(1218),
             re_multiplicator => "0011111110010000", --- 0.9931640625 + j-0.116271972656
             im_multiplicator => "1111100010001111",
-            product_re_out => mul_re_out(1218),
-            product_im_out => mul_im_out(1218)
+            data_re_out => mul_re_out(1218),
+            data_im_out => mul_im_out(1218)
         );
 
  
@@ -39478,8 +39478,8 @@ begin
             data_im_in => first_stage_im_out(1219),
             re_multiplicator => "0011111100000110", --- 0.984741210938 + j-0.173950195312
             im_multiplicator => "1111010011011110",
-            product_re_out => mul_re_out(1219),
-            product_im_out => mul_im_out(1219)
+            data_re_out => mul_re_out(1219),
+            data_im_out => mul_im_out(1219)
         );
 
  
@@ -39496,8 +39496,8 @@ begin
             data_im_in => first_stage_im_out(1220),
             re_multiplicator => "0011111001000100", --- 0.972900390625 + j-0.231018066406
             im_multiplicator => "1111000100110111",
-            product_re_out => mul_re_out(1220),
-            product_im_out => mul_im_out(1220)
+            data_re_out => mul_re_out(1220),
+            data_im_out => mul_im_out(1220)
         );
 
  
@@ -39514,8 +39514,8 @@ begin
             data_im_in => first_stage_im_out(1221),
             re_multiplicator => "0011110101001101", --- 0.957824707031 + j-0.287292480469
             im_multiplicator => "1110110110011101",
-            product_re_out => mul_re_out(1221),
-            product_im_out => mul_im_out(1221)
+            data_re_out => mul_re_out(1221),
+            data_im_out => mul_im_out(1221)
         );
 
  
@@ -39532,8 +39532,8 @@ begin
             data_im_in => first_stage_im_out(1222),
             re_multiplicator => "0011110000100000", --- 0.939453125 + j-0.342651367188
             im_multiplicator => "1110101000010010",
-            product_re_out => mul_re_out(1222),
-            product_im_out => mul_im_out(1222)
+            data_re_out => mul_re_out(1222),
+            data_im_out => mul_im_out(1222)
         );
 
  
@@ -39550,8 +39550,8 @@ begin
             data_im_in => first_stage_im_out(1223),
             re_multiplicator => "0011101010111110", --- 0.917846679688 + j-0.396789550781
             im_multiplicator => "1110011010011011",
-            product_re_out => mul_re_out(1223),
-            product_im_out => mul_im_out(1223)
+            data_re_out => mul_re_out(1223),
+            data_im_out => mul_im_out(1223)
         );
 
  
@@ -39568,8 +39568,8 @@ begin
             data_im_in => first_stage_im_out(1224),
             re_multiplicator => "0011100100101010", --- 0.893188476562 + j-0.449584960938
             im_multiplicator => "1110001100111010",
-            product_re_out => mul_re_out(1224),
-            product_im_out => mul_im_out(1224)
+            data_re_out => mul_re_out(1224),
+            data_im_out => mul_im_out(1224)
         );
 
  
@@ -39586,8 +39586,8 @@ begin
             data_im_in => first_stage_im_out(1225),
             re_multiplicator => "0011011101100100", --- 0.865478515625 + j-0.500854492188
             im_multiplicator => "1101111111110010",
-            product_re_out => mul_re_out(1225),
-            product_im_out => mul_im_out(1225)
+            data_re_out => mul_re_out(1225),
+            data_im_out => mul_im_out(1225)
         );
 
  
@@ -39604,8 +39604,8 @@ begin
             data_im_in => first_stage_im_out(1226),
             re_multiplicator => "0011010101101110", --- 0.834838867188 + j-0.550415039062
             im_multiplicator => "1101110011000110",
-            product_re_out => mul_re_out(1226),
-            product_im_out => mul_im_out(1226)
+            data_re_out => mul_re_out(1226),
+            data_im_out => mul_im_out(1226)
         );
 
  
@@ -39622,8 +39622,8 @@ begin
             data_im_in => first_stage_im_out(1227),
             re_multiplicator => "0011001101001001", --- 0.801330566406 + j-0.59814453125
             im_multiplicator => "1101100110111000",
-            product_re_out => mul_re_out(1227),
-            product_im_out => mul_im_out(1227)
+            data_re_out => mul_re_out(1227),
+            data_im_out => mul_im_out(1227)
         );
 
  
@@ -39640,8 +39640,8 @@ begin
             data_im_in => first_stage_im_out(1228),
             re_multiplicator => "0011000011111000", --- 0.76513671875 + j-0.643798828125
             im_multiplicator => "1101011011001100",
-            product_re_out => mul_re_out(1228),
-            product_im_out => mul_im_out(1228)
+            data_re_out => mul_re_out(1228),
+            data_im_out => mul_im_out(1228)
         );
 
  
@@ -39658,8 +39658,8 @@ begin
             data_im_in => first_stage_im_out(1229),
             re_multiplicator => "0010111001111100", --- 0.726318359375 + j-0.687255859375
             im_multiplicator => "1101010000000100",
-            product_re_out => mul_re_out(1229),
-            product_im_out => mul_im_out(1229)
+            data_re_out => mul_re_out(1229),
+            data_im_out => mul_im_out(1229)
         );
 
  
@@ -39676,8 +39676,8 @@ begin
             data_im_in => first_stage_im_out(1230),
             re_multiplicator => "0010101111011000", --- 0.68505859375 + j-0.728454589844
             im_multiplicator => "1101000101100001",
-            product_re_out => mul_re_out(1230),
-            product_im_out => mul_im_out(1230)
+            data_re_out => mul_re_out(1230),
+            data_im_out => mul_im_out(1230)
         );
 
  
@@ -39694,8 +39694,8 @@ begin
             data_im_in => first_stage_im_out(1231),
             re_multiplicator => "0010100100001110", --- 0.641479492188 + j-0.76708984375
             im_multiplicator => "1100111011101000",
-            product_re_out => mul_re_out(1231),
-            product_im_out => mul_im_out(1231)
+            data_re_out => mul_re_out(1231),
+            data_im_out => mul_im_out(1231)
         );
 
  
@@ -39712,8 +39712,8 @@ begin
             data_im_in => first_stage_im_out(1232),
             re_multiplicator => "0010011000011111", --- 0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1232),
-            product_im_out => mul_im_out(1232)
+            data_re_out => mul_re_out(1232),
+            data_im_out => mul_im_out(1232)
         );
 
  
@@ -39730,8 +39730,8 @@ begin
             data_im_in => first_stage_im_out(1233),
             re_multiplicator => "0010001100010000", --- 0.5478515625 + j-0.836486816406
             im_multiplicator => "1100101001110111",
-            product_re_out => mul_re_out(1233),
-            product_im_out => mul_im_out(1233)
+            data_re_out => mul_re_out(1233),
+            data_im_out => mul_im_out(1233)
         );
 
  
@@ -39748,8 +39748,8 @@ begin
             data_im_in => first_stage_im_out(1234),
             re_multiplicator => "0001111111100010", --- 0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(1234),
-            product_im_out => mul_im_out(1234)
+            data_re_out => mul_re_out(1234),
+            data_im_out => mul_im_out(1234)
         );
 
  
@@ -39766,8 +39766,8 @@ begin
             data_im_in => first_stage_im_out(1235),
             re_multiplicator => "0001110010011001", --- 0.446838378906 + j-0.894592285156
             im_multiplicator => "1100011010111111",
-            product_re_out => mul_re_out(1235),
-            product_im_out => mul_im_out(1235)
+            data_re_out => mul_re_out(1235),
+            data_im_out => mul_im_out(1235)
         );
 
  
@@ -39784,8 +39784,8 @@ begin
             data_im_in => first_stage_im_out(1236),
             re_multiplicator => "0001100100110111", --- 0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(1236),
-            product_im_out => mul_im_out(1236)
+            data_re_out => mul_re_out(1236),
+            data_im_out => mul_im_out(1236)
         );
 
  
@@ -39802,8 +39802,8 @@ begin
             data_im_in => first_stage_im_out(1237),
             re_multiplicator => "0001010110111110", --- 0.339721679688 + j-0.940490722656
             im_multiplicator => "1100001111001111",
-            product_re_out => mul_re_out(1237),
-            product_im_out => mul_im_out(1237)
+            data_re_out => mul_re_out(1237),
+            data_im_out => mul_im_out(1237)
         );
 
  
@@ -39820,8 +39820,8 @@ begin
             data_im_in => first_stage_im_out(1238),
             re_multiplicator => "0001001000110011", --- 0.284362792969 + j-0.958679199219
             im_multiplicator => "1100001010100101",
-            product_re_out => mul_re_out(1238),
-            product_im_out => mul_im_out(1238)
+            data_re_out => mul_re_out(1238),
+            data_im_out => mul_im_out(1238)
         );
 
  
@@ -39838,8 +39838,8 @@ begin
             data_im_in => first_stage_im_out(1239),
             re_multiplicator => "0000111010011000", --- 0.22802734375 + j-0.9736328125
             im_multiplicator => "1100000110110000",
-            product_re_out => mul_re_out(1239),
-            product_im_out => mul_im_out(1239)
+            data_re_out => mul_re_out(1239),
+            data_im_out => mul_im_out(1239)
         );
 
  
@@ -39856,8 +39856,8 @@ begin
             data_im_in => first_stage_im_out(1240),
             re_multiplicator => "0000101011110001", --- 0.170959472656 + j-0.985229492188
             im_multiplicator => "1100000011110010",
-            product_re_out => mul_re_out(1240),
-            product_im_out => mul_im_out(1240)
+            data_re_out => mul_re_out(1240),
+            data_im_out => mul_im_out(1240)
         );
 
  
@@ -39874,8 +39874,8 @@ begin
             data_im_in => first_stage_im_out(1241),
             re_multiplicator => "0000011100111111", --- 0.113220214844 + j-0.993530273438
             im_multiplicator => "1100000001101010",
-            product_re_out => mul_re_out(1241),
-            product_im_out => mul_im_out(1241)
+            data_re_out => mul_re_out(1241),
+            data_im_out => mul_im_out(1241)
         );
 
  
@@ -39892,8 +39892,8 @@ begin
             data_im_in => first_stage_im_out(1242),
             re_multiplicator => "0000001110001000", --- 0.05517578125 + j-0.998474121094
             im_multiplicator => "1100000000011001",
-            product_re_out => mul_re_out(1242),
-            product_im_out => mul_im_out(1242)
+            data_re_out => mul_re_out(1242),
+            data_im_out => mul_im_out(1242)
         );
 
  
@@ -39910,8 +39910,8 @@ begin
             data_im_in => first_stage_im_out(1243),
             re_multiplicator => "1111111111001110", --- -0.0030517578125 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(1243),
-            product_im_out => mul_im_out(1243)
+            data_re_out => mul_re_out(1243),
+            data_im_out => mul_im_out(1243)
         );
 
  
@@ -39928,8 +39928,8 @@ begin
             data_im_in => first_stage_im_out(1244),
             re_multiplicator => "1111110000010100", --- -0.061279296875 + j-0.998107910156
             im_multiplicator => "1100000000011111",
-            product_re_out => mul_re_out(1244),
-            product_im_out => mul_im_out(1244)
+            data_re_out => mul_re_out(1244),
+            data_im_out => mul_im_out(1244)
         );
 
  
@@ -39946,8 +39946,8 @@ begin
             data_im_in => first_stage_im_out(1245),
             re_multiplicator => "1111100001011101", --- -0.119323730469 + j-0.992797851562
             im_multiplicator => "1100000001110110",
-            product_re_out => mul_re_out(1245),
-            product_im_out => mul_im_out(1245)
+            data_re_out => mul_re_out(1245),
+            data_im_out => mul_im_out(1245)
         );
 
  
@@ -39964,8 +39964,8 @@ begin
             data_im_in => first_stage_im_out(1246),
             re_multiplicator => "1111010010101100", --- -0.177001953125 + j-0.984191894531
             im_multiplicator => "1100000100000011",
-            product_re_out => mul_re_out(1246),
-            product_im_out => mul_im_out(1246)
+            data_re_out => mul_re_out(1246),
+            data_im_out => mul_im_out(1246)
         );
 
  
@@ -39982,8 +39982,8 @@ begin
             data_im_in => first_stage_im_out(1247),
             re_multiplicator => "1111000100000110", --- -0.234008789062 + j-0.97216796875
             im_multiplicator => "1100000111001000",
-            product_re_out => mul_re_out(1247),
-            product_im_out => mul_im_out(1247)
+            data_re_out => mul_re_out(1247),
+            data_im_out => mul_im_out(1247)
         );
 
  
@@ -40000,8 +40000,8 @@ begin
             data_im_in => first_stage_im_out(1248),
             re_multiplicator => "1110110101101100", --- -0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(1248),
-            product_im_out => mul_im_out(1248)
+            data_re_out => mul_re_out(1248),
+            data_im_out => mul_im_out(1248)
         );
 
  
@@ -40018,8 +40018,8 @@ begin
             data_im_in => first_stage_im_out(1249),
             re_multiplicator => "1110100111100011", --- -0.345520019531 + j-0.938354492188
             im_multiplicator => "1100001111110010",
-            product_re_out => mul_re_out(1249),
-            product_im_out => mul_im_out(1249)
+            data_re_out => mul_re_out(1249),
+            data_im_out => mul_im_out(1249)
         );
 
  
@@ -40036,8 +40036,8 @@ begin
             data_im_in => first_stage_im_out(1250),
             re_multiplicator => "1110011001101101", --- -0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(1250),
-            product_im_out => mul_im_out(1250)
+            data_re_out => mul_re_out(1250),
+            data_im_out => mul_im_out(1250)
         );
 
  
@@ -40054,8 +40054,8 @@ begin
             data_im_in => first_stage_im_out(1251),
             re_multiplicator => "1110001100001101", --- -0.452331542969 + j-0.891784667969
             im_multiplicator => "1100011011101101",
-            product_re_out => mul_re_out(1251),
-            product_im_out => mul_im_out(1251)
+            data_re_out => mul_re_out(1251),
+            data_im_out => mul_im_out(1251)
         );
 
  
@@ -40072,8 +40072,8 @@ begin
             data_im_in => first_stage_im_out(1252),
             re_multiplicator => "1101111111000111", --- -0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(1252),
-            product_im_out => mul_im_out(1252)
+            data_re_out => mul_re_out(1252),
+            data_im_out => mul_im_out(1252)
         );
 
  
@@ -40090,8 +40090,8 @@ begin
             data_im_in => first_stage_im_out(1253),
             re_multiplicator => "1101110010011100", --- -0.552978515625 + j-0.833129882812
             im_multiplicator => "1100101010101110",
-            product_re_out => mul_re_out(1253),
-            product_im_out => mul_im_out(1253)
+            data_re_out => mul_re_out(1253),
+            data_im_out => mul_im_out(1253)
         );
 
  
@@ -40108,8 +40108,8 @@ begin
             data_im_in => first_stage_im_out(1254),
             re_multiplicator => "1101100110010000", --- -0.6005859375 + j-0.799499511719
             im_multiplicator => "1100110011010101",
-            product_re_out => mul_re_out(1254),
-            product_im_out => mul_im_out(1254)
+            data_re_out => mul_re_out(1254),
+            data_im_out => mul_im_out(1254)
         );
 
  
@@ -40126,8 +40126,8 @@ begin
             data_im_in => first_stage_im_out(1255),
             re_multiplicator => "1101011010100110", --- -0.646118164062 + j-0.76318359375
             im_multiplicator => "1100111100101000",
-            product_re_out => mul_re_out(1255),
-            product_im_out => mul_im_out(1255)
+            data_re_out => mul_re_out(1255),
+            data_im_out => mul_im_out(1255)
         );
 
  
@@ -40144,8 +40144,8 @@ begin
             data_im_in => first_stage_im_out(1256),
             re_multiplicator => "1101001111011111", --- -0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(1256),
-            product_im_out => mul_im_out(1256)
+            data_re_out => mul_re_out(1256),
+            data_im_out => mul_im_out(1256)
         );
 
  
@@ -40162,8 +40162,8 @@ begin
             data_im_in => first_stage_im_out(1257),
             re_multiplicator => "1101000100111111", --- -0.730529785156 + j-0.682800292969
             im_multiplicator => "1101010001001101",
-            product_re_out => mul_re_out(1257),
-            product_im_out => mul_im_out(1257)
+            data_re_out => mul_re_out(1257),
+            data_im_out => mul_im_out(1257)
         );
 
  
@@ -40180,8 +40180,8 @@ begin
             data_im_in => first_stage_im_out(1258),
             re_multiplicator => "1100111011001000", --- -0.76904296875 + j-0.639099121094
             im_multiplicator => "1101011100011001",
-            product_re_out => mul_re_out(1258),
-            product_im_out => mul_im_out(1258)
+            data_re_out => mul_re_out(1258),
+            data_im_out => mul_im_out(1258)
         );
 
  
@@ -40198,8 +40198,8 @@ begin
             data_im_in => first_stage_im_out(1259),
             re_multiplicator => "1100110001111011", --- -0.804992675781 + j-0.593200683594
             im_multiplicator => "1101101000001001",
-            product_re_out => mul_re_out(1259),
-            product_im_out => mul_im_out(1259)
+            data_re_out => mul_re_out(1259),
+            data_im_out => mul_im_out(1259)
         );
 
  
@@ -40216,8 +40216,8 @@ begin
             data_im_in => first_stage_im_out(1260),
             re_multiplicator => "1100101001011011", --- -0.838195800781 + j-0.545288085938
             im_multiplicator => "1101110100011010",
-            product_re_out => mul_re_out(1260),
-            product_im_out => mul_im_out(1260)
+            data_re_out => mul_re_out(1260),
+            data_im_out => mul_im_out(1260)
         );
 
  
@@ -40234,8 +40234,8 @@ begin
             data_im_in => first_stage_im_out(1261),
             re_multiplicator => "1100100001101010", --- -0.868530273438 + j-0.495544433594
             im_multiplicator => "1110000001001001",
-            product_re_out => mul_re_out(1261),
-            product_im_out => mul_im_out(1261)
+            data_re_out => mul_re_out(1261),
+            data_im_out => mul_im_out(1261)
         );
 
  
@@ -40252,8 +40252,8 @@ begin
             data_im_in => first_stage_im_out(1262),
             re_multiplicator => "1100011010101001", --- -0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(1262),
-            product_im_out => mul_im_out(1262)
+            data_re_out => mul_re_out(1262),
+            data_im_out => mul_im_out(1262)
         );
 
  
@@ -40270,8 +40270,8 @@ begin
             data_im_in => first_stage_im_out(1263),
             re_multiplicator => "1100010100011010", --- -0.920288085938 + j-0.39111328125
             im_multiplicator => "1110011011111000",
-            product_re_out => mul_re_out(1263),
-            product_im_out => mul_im_out(1263)
+            data_re_out => mul_re_out(1263),
+            data_im_out => mul_im_out(1263)
         );
 
  
@@ -40288,8 +40288,8 @@ begin
             data_im_in => first_stage_im_out(1264),
             re_multiplicator => "1100001110111110", --- -0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(1264),
-            product_im_out => mul_im_out(1264)
+            data_re_out => mul_re_out(1264),
+            data_im_out => mul_im_out(1264)
         );
 
  
@@ -40306,8 +40306,8 @@ begin
             data_im_in => first_stage_im_out(1265),
             re_multiplicator => "1100001010010111", --- -0.959533691406 + j-0.281433105469
             im_multiplicator => "1110110111111101",
-            product_re_out => mul_re_out(1265),
-            product_im_out => mul_im_out(1265)
+            data_re_out => mul_re_out(1265),
+            data_im_out => mul_im_out(1265)
         );
 
  
@@ -40324,8 +40324,8 @@ begin
             data_im_in => first_stage_im_out(1266),
             re_multiplicator => "1100000110100101", --- -0.974304199219 + j-0.225036621094
             im_multiplicator => "1111000110011001",
-            product_re_out => mul_re_out(1266),
-            product_im_out => mul_im_out(1266)
+            data_re_out => mul_re_out(1266),
+            data_im_out => mul_im_out(1266)
         );
 
  
@@ -40342,8 +40342,8 @@ begin
             data_im_in => first_stage_im_out(1267),
             re_multiplicator => "1100000011101001", --- -0.985778808594 + j-0.167907714844
             im_multiplicator => "1111010101000001",
-            product_re_out => mul_re_out(1267),
-            product_im_out => mul_im_out(1267)
+            data_re_out => mul_re_out(1267),
+            data_im_out => mul_im_out(1267)
         );
 
  
@@ -40360,8 +40360,8 @@ begin
             data_im_in => first_stage_im_out(1268),
             re_multiplicator => "1100000001100100", --- -0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(1268),
-            product_im_out => mul_im_out(1268)
+            data_re_out => mul_re_out(1268),
+            data_im_out => mul_im_out(1268)
         );
 
  
@@ -40378,8 +40378,8 @@ begin
             data_im_in => first_stage_im_out(1269),
             re_multiplicator => "1100000000010111", --- -0.998596191406 + j-0.0521240234375
             im_multiplicator => "1111110010101010",
-            product_re_out => mul_re_out(1269),
-            product_im_out => mul_im_out(1269)
+            data_re_out => mul_re_out(1269),
+            data_im_out => mul_im_out(1269)
         );
 
  
@@ -40396,8 +40396,8 @@ begin
             data_im_in => first_stage_im_out(1270),
             re_multiplicator => "1100000000000001", --- -0.999938964844 + j0.006103515625
             im_multiplicator => "0000000001100100",
-            product_re_out => mul_re_out(1270),
-            product_im_out => mul_im_out(1270)
+            data_re_out => mul_re_out(1270),
+            data_im_out => mul_im_out(1270)
         );
 
  
@@ -40414,8 +40414,8 @@ begin
             data_im_in => first_stage_im_out(1271),
             re_multiplicator => "1100000000100010", --- -0.997924804688 + j0.0643310546875
             im_multiplicator => "0000010000011110",
-            product_re_out => mul_re_out(1271),
-            product_im_out => mul_im_out(1271)
+            data_re_out => mul_re_out(1271),
+            data_im_out => mul_im_out(1271)
         );
 
  
@@ -40432,8 +40432,8 @@ begin
             data_im_in => first_stage_im_out(1272),
             re_multiplicator => "1100000001111100", --- -0.992431640625 + j0.122375488281
             im_multiplicator => "0000011111010101",
-            product_re_out => mul_re_out(1272),
-            product_im_out => mul_im_out(1272)
+            data_re_out => mul_re_out(1272),
+            data_im_out => mul_im_out(1272)
         );
 
  
@@ -40450,8 +40450,8 @@ begin
             data_im_in => first_stage_im_out(1273),
             re_multiplicator => "1100000100001100", --- -0.983642578125 + j0.179992675781
             im_multiplicator => "0000101110000101",
-            product_re_out => mul_re_out(1273),
-            product_im_out => mul_im_out(1273)
+            data_re_out => mul_re_out(1273),
+            data_im_out => mul_im_out(1273)
         );
 
  
@@ -40468,8 +40468,8 @@ begin
             data_im_in => first_stage_im_out(1274),
             re_multiplicator => "1100000111010011", --- -0.971496582031 + j0.236999511719
             im_multiplicator => "0000111100101011",
-            product_re_out => mul_re_out(1274),
-            product_im_out => mul_im_out(1274)
+            data_re_out => mul_re_out(1274),
+            data_im_out => mul_im_out(1274)
         );
 
  
@@ -40486,8 +40486,8 @@ begin
             data_im_in => first_stage_im_out(1275),
             re_multiplicator => "1100001011010001", --- -0.955993652344 + j0.293212890625
             im_multiplicator => "0001001011000100",
-            product_re_out => mul_re_out(1275),
-            product_im_out => mul_im_out(1275)
+            data_re_out => mul_re_out(1275),
+            data_im_out => mul_im_out(1275)
         );
 
  
@@ -40504,8 +40504,8 @@ begin
             data_im_in => first_stage_im_out(1276),
             re_multiplicator => "1100010000000011", --- -0.937316894531 + j0.348388671875
             im_multiplicator => "0001011001001100",
-            product_re_out => mul_re_out(1276),
-            product_im_out => mul_im_out(1276)
+            data_re_out => mul_re_out(1276),
+            data_im_out => mul_im_out(1276)
         );
 
  
@@ -40522,8 +40522,8 @@ begin
             data_im_in => first_stage_im_out(1277),
             re_multiplicator => "1100010101101010", --- -0.915405273438 + j0.402404785156
             im_multiplicator => "0001100111000001",
-            product_re_out => mul_re_out(1277),
-            product_im_out => mul_im_out(1277)
+            data_re_out => mul_re_out(1277),
+            data_im_out => mul_im_out(1277)
         );
 
  
@@ -40540,8 +40540,8 @@ begin
             data_im_in => first_stage_im_out(1278),
             re_multiplicator => "1100011100000011", --- -0.890441894531 + j0.455078125
             im_multiplicator => "0001110100100000",
-            product_re_out => mul_re_out(1278),
-            product_im_out => mul_im_out(1278)
+            data_re_out => mul_re_out(1278),
+            data_im_out => mul_im_out(1278)
         );
 
  
@@ -40558,8 +40558,8 @@ begin
             data_im_in => first_stage_im_out(1279),
             re_multiplicator => "1100100011001111", --- -0.862365722656 + j0.506164550781
             im_multiplicator => "0010000001100101",
-            product_re_out => mul_re_out(1279),
-            product_im_out => mul_im_out(1279)
+            data_re_out => mul_re_out(1279),
+            data_im_out => mul_im_out(1279)
         );
 
  
@@ -40574,8 +40574,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1280),
             data_im_in => first_stage_im_out(1280),
-            product_re_out => mul_re_out(1280),
-            product_im_out => mul_im_out(1280)
+            data_re_out => mul_re_out(1280),
+            data_im_out => mul_im_out(1280)
         );
 
  
@@ -40592,8 +40592,8 @@ begin
             data_im_in => first_stage_im_out(1281),
             re_multiplicator => "0011111111100001", --- 0.998107910156 + j-0.061279296875
             im_multiplicator => "1111110000010100",
-            product_re_out => mul_re_out(1281),
-            product_im_out => mul_im_out(1281)
+            data_re_out => mul_re_out(1281),
+            data_im_out => mul_im_out(1281)
         );
 
  
@@ -40610,8 +40610,8 @@ begin
             data_im_in => first_stage_im_out(1282),
             re_multiplicator => "0011111110000100", --- 0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(1282),
-            product_im_out => mul_im_out(1282)
+            data_re_out => mul_re_out(1282),
+            data_im_out => mul_im_out(1282)
         );
 
  
@@ -40628,8 +40628,8 @@ begin
             data_im_in => first_stage_im_out(1283),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(1283),
-            product_im_out => mul_im_out(1283)
+            data_re_out => mul_re_out(1283),
+            data_im_out => mul_im_out(1283)
         );
 
  
@@ -40646,8 +40646,8 @@ begin
             data_im_in => first_stage_im_out(1284),
             re_multiplicator => "0011111000010100", --- 0.969970703125 + j-0.242919921875
             im_multiplicator => "1111000001110100",
-            product_re_out => mul_re_out(1284),
-            product_im_out => mul_im_out(1284)
+            data_re_out => mul_re_out(1284),
+            data_im_out => mul_im_out(1284)
         );
 
  
@@ -40664,8 +40664,8 @@ begin
             data_im_in => first_stage_im_out(1285),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(1285),
-            product_im_out => mul_im_out(1285)
+            data_re_out => mul_re_out(1285),
+            data_im_out => mul_im_out(1285)
         );
 
  
@@ -40682,8 +40682,8 @@ begin
             data_im_in => first_stage_im_out(1286),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(1286),
-            product_im_out => mul_im_out(1286)
+            data_re_out => mul_re_out(1286),
+            data_im_out => mul_im_out(1286)
         );
 
  
@@ -40700,8 +40700,8 @@ begin
             data_im_in => first_stage_im_out(1287),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(1287),
-            product_im_out => mul_im_out(1287)
+            data_re_out => mul_re_out(1287),
+            data_im_out => mul_im_out(1287)
         );
 
  
@@ -40718,8 +40718,8 @@ begin
             data_im_in => first_stage_im_out(1288),
             re_multiplicator => "0011100001110001", --- 0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1288),
-            product_im_out => mul_im_out(1288)
+            data_re_out => mul_re_out(1288),
+            data_im_out => mul_im_out(1288)
         );
 
  
@@ -40736,8 +40736,8 @@ begin
             data_im_in => first_stage_im_out(1289),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(1289),
-            product_im_out => mul_im_out(1289)
+            data_re_out => mul_re_out(1289),
+            data_im_out => mul_im_out(1289)
         );
 
  
@@ -40754,8 +40754,8 @@ begin
             data_im_in => first_stage_im_out(1290),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(1290),
-            product_im_out => mul_im_out(1290)
+            data_re_out => mul_re_out(1290),
+            data_im_out => mul_im_out(1290)
         );
 
  
@@ -40772,8 +40772,8 @@ begin
             data_im_in => first_stage_im_out(1291),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(1291),
-            product_im_out => mul_im_out(1291)
+            data_re_out => mul_re_out(1291),
+            data_im_out => mul_im_out(1291)
         );
 
  
@@ -40790,8 +40790,8 @@ begin
             data_im_in => first_stage_im_out(1292),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1292),
-            product_im_out => mul_im_out(1292)
+            data_re_out => mul_re_out(1292),
+            data_im_out => mul_im_out(1292)
         );
 
  
@@ -40808,8 +40808,8 @@ begin
             data_im_in => first_stage_im_out(1293),
             re_multiplicator => "0010110010110010", --- 0.698364257812 + j-0.715698242188
             im_multiplicator => "1101001000110010",
-            product_re_out => mul_re_out(1293),
-            product_im_out => mul_im_out(1293)
+            data_re_out => mul_re_out(1293),
+            data_im_out => mul_im_out(1293)
         );
 
  
@@ -40826,8 +40826,8 @@ begin
             data_im_in => first_stage_im_out(1294),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(1294),
-            product_im_out => mul_im_out(1294)
+            data_re_out => mul_re_out(1294),
+            data_im_out => mul_im_out(1294)
         );
 
  
@@ -40844,8 +40844,8 @@ begin
             data_im_in => first_stage_im_out(1295),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(1295),
-            product_im_out => mul_im_out(1295)
+            data_re_out => mul_re_out(1295),
+            data_im_out => mul_im_out(1295)
         );
 
  
@@ -40862,8 +40862,8 @@ begin
             data_im_in => first_stage_im_out(1296),
             re_multiplicator => "0010001110001110", --- 0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(1296),
-            product_im_out => mul_im_out(1296)
+            data_re_out => mul_re_out(1296),
+            data_im_out => mul_im_out(1296)
         );
 
  
@@ -40880,8 +40880,8 @@ begin
             data_im_in => first_stage_im_out(1297),
             re_multiplicator => "0010000000111001", --- 0.503479003906 + j-0.863952636719
             im_multiplicator => "1100100010110101",
-            product_re_out => mul_re_out(1297),
-            product_im_out => mul_im_out(1297)
+            data_re_out => mul_re_out(1297),
+            data_im_out => mul_im_out(1297)
         );
 
  
@@ -40898,8 +40898,8 @@ begin
             data_im_in => first_stage_im_out(1298),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(1298),
-            product_im_out => mul_im_out(1298)
+            data_re_out => mul_re_out(1298),
+            data_im_out => mul_im_out(1298)
         );
 
  
@@ -40916,8 +40916,8 @@ begin
             data_im_in => first_stage_im_out(1299),
             re_multiplicator => "0001100100110111", --- 0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(1299),
-            product_im_out => mul_im_out(1299)
+            data_re_out => mul_re_out(1299),
+            data_im_out => mul_im_out(1299)
         );
 
  
@@ -40934,8 +40934,8 @@ begin
             data_im_in => first_stage_im_out(1300),
             re_multiplicator => "0001010110001111", --- 0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1300),
-            product_im_out => mul_im_out(1300)
+            data_re_out => mul_re_out(1300),
+            data_im_out => mul_im_out(1300)
         );
 
  
@@ -40952,8 +40952,8 @@ begin
             data_im_in => first_stage_im_out(1301),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(1301),
-            product_im_out => mul_im_out(1301)
+            data_re_out => mul_re_out(1301),
+            data_im_out => mul_im_out(1301)
         );
 
  
@@ -40970,8 +40970,8 @@ begin
             data_im_in => first_stage_im_out(1302),
             re_multiplicator => "0000111000000101", --- 0.219055175781 + j-0.975646972656
             im_multiplicator => "1100000110001111",
-            product_re_out => mul_re_out(1302),
-            product_im_out => mul_im_out(1302)
+            data_re_out => mul_re_out(1302),
+            data_im_out => mul_im_out(1302)
         );
 
  
@@ -40988,8 +40988,8 @@ begin
             data_im_in => first_stage_im_out(1303),
             re_multiplicator => "0000101000101010", --- 0.158813476562 + j-0.987243652344
             im_multiplicator => "1100000011010001",
-            product_re_out => mul_re_out(1303),
-            product_im_out => mul_im_out(1303)
+            data_re_out => mul_re_out(1303),
+            data_im_out => mul_im_out(1303)
         );
 
  
@@ -41006,8 +41006,8 @@ begin
             data_im_in => first_stage_im_out(1304),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1304),
-            product_im_out => mul_im_out(1304)
+            data_re_out => mul_re_out(1304),
+            data_im_out => mul_im_out(1304)
         );
 
  
@@ -41024,8 +41024,8 @@ begin
             data_im_in => first_stage_im_out(1305),
             re_multiplicator => "0000001001011011", --- 0.0368041992188 + j-0.999267578125
             im_multiplicator => "1100000000001100",
-            product_re_out => mul_re_out(1305),
-            product_im_out => mul_im_out(1305)
+            data_re_out => mul_re_out(1305),
+            data_im_out => mul_im_out(1305)
         );
 
  
@@ -41042,8 +41042,8 @@ begin
             data_im_in => first_stage_im_out(1306),
             re_multiplicator => "1111111001101110", --- -0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1306),
-            product_im_out => mul_im_out(1306)
+            data_re_out => mul_re_out(1306),
+            data_im_out => mul_im_out(1306)
         );
 
  
@@ -41060,8 +41060,8 @@ begin
             data_im_in => first_stage_im_out(1307),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(1307),
-            product_im_out => mul_im_out(1307)
+            data_re_out => mul_re_out(1307),
+            data_im_out => mul_im_out(1307)
         );
 
  
@@ -41078,8 +41078,8 @@ begin
             data_im_in => first_stage_im_out(1308),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(1308),
-            product_im_out => mul_im_out(1308)
+            data_re_out => mul_re_out(1308),
+            data_im_out => mul_im_out(1308)
         );
 
  
@@ -41096,8 +41096,8 @@ begin
             data_im_in => first_stage_im_out(1309),
             re_multiplicator => "1111001010111111", --- -0.207092285156 + j-0.978271484375
             im_multiplicator => "1100000101100100",
-            product_re_out => mul_re_out(1309),
-            product_im_out => mul_im_out(1309)
+            data_re_out => mul_re_out(1309),
+            data_im_out => mul_im_out(1309)
         );
 
  
@@ -41114,8 +41114,8 @@ begin
             data_im_in => first_stage_im_out(1310),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(1310),
-            product_im_out => mul_im_out(1310)
+            data_re_out => mul_re_out(1310),
+            data_im_out => mul_im_out(1310)
         );
 
  
@@ -41132,8 +41132,8 @@ begin
             data_im_in => first_stage_im_out(1311),
             re_multiplicator => "1110101100101111", --- -0.325256347656 + j-0.945556640625
             im_multiplicator => "1100001101111100",
-            product_re_out => mul_re_out(1311),
-            product_im_out => mul_im_out(1311)
+            data_re_out => mul_re_out(1311),
+            data_im_out => mul_im_out(1311)
         );
 
  
@@ -41150,8 +41150,8 @@ begin
             data_im_in => first_stage_im_out(1312),
             re_multiplicator => "1110011110000011", --- -0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(1312),
-            product_im_out => mul_im_out(1312)
+            data_re_out => mul_re_out(1312),
+            data_im_out => mul_im_out(1312)
         );
 
  
@@ -41168,8 +41168,8 @@ begin
             data_im_in => first_stage_im_out(1313),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1313),
-            product_im_out => mul_im_out(1313)
+            data_re_out => mul_re_out(1313),
+            data_im_out => mul_im_out(1313)
         );
 
  
@@ -41186,8 +41186,8 @@ begin
             data_im_in => first_stage_im_out(1314),
             re_multiplicator => "1110000001110101", --- -0.492858886719 + j-0.870056152344
             im_multiplicator => "1100100001010001",
-            product_re_out => mul_re_out(1314),
-            product_im_out => mul_im_out(1314)
+            data_re_out => mul_re_out(1314),
+            data_im_out => mul_im_out(1314)
         );
 
  
@@ -41204,8 +41204,8 @@ begin
             data_im_in => first_stage_im_out(1315),
             re_multiplicator => "1101110100011010", --- -0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(1315),
-            product_im_out => mul_im_out(1315)
+            data_re_out => mul_re_out(1315),
+            data_im_out => mul_im_out(1315)
         );
 
  
@@ -41222,8 +41222,8 @@ begin
             data_im_in => first_stage_im_out(1316),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1316),
-            product_im_out => mul_im_out(1316)
+            data_re_out => mul_re_out(1316),
+            data_im_out => mul_im_out(1316)
         );
 
  
@@ -41240,8 +41240,8 @@ begin
             data_im_in => first_stage_im_out(1317),
             re_multiplicator => "1101011011001100", --- -0.643798828125 + j-0.76513671875
             im_multiplicator => "1100111100001000",
-            product_re_out => mul_re_out(1317),
-            product_im_out => mul_im_out(1317)
+            data_re_out => mul_re_out(1317),
+            data_im_out => mul_im_out(1317)
         );
 
  
@@ -41258,8 +41258,8 @@ begin
             data_im_in => first_stage_im_out(1318),
             re_multiplicator => "1101001111011111", --- -0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(1318),
-            product_im_out => mul_im_out(1318)
+            data_re_out => mul_re_out(1318),
+            data_im_out => mul_im_out(1318)
         );
 
  
@@ -41276,8 +41276,8 @@ begin
             data_im_in => first_stage_im_out(1319),
             re_multiplicator => "1101000100011101", --- -0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(1319),
-            product_im_out => mul_im_out(1319)
+            data_re_out => mul_re_out(1319),
+            data_im_out => mul_im_out(1319)
         );
 
  
@@ -41294,8 +41294,8 @@ begin
             data_im_in => first_stage_im_out(1320),
             re_multiplicator => "1100111010000111", --- -0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(1320),
-            product_im_out => mul_im_out(1320)
+            data_re_out => mul_re_out(1320),
+            data_im_out => mul_im_out(1320)
         );
 
  
@@ -41312,8 +41312,8 @@ begin
             data_im_in => first_stage_im_out(1321),
             re_multiplicator => "1100110000100010", --- -0.810424804688 + j-0.585754394531
             im_multiplicator => "1101101010000011",
-            product_re_out => mul_re_out(1321),
-            product_im_out => mul_im_out(1321)
+            data_re_out => mul_re_out(1321),
+            data_im_out => mul_im_out(1321)
         );
 
  
@@ -41330,8 +41330,8 @@ begin
             data_im_in => first_stage_im_out(1322),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1322),
-            product_im_out => mul_im_out(1322)
+            data_re_out => mul_re_out(1322),
+            data_im_out => mul_im_out(1322)
         );
 
  
@@ -41348,8 +41348,8 @@ begin
             data_im_in => first_stage_im_out(1323),
             re_multiplicator => "1100011111101111", --- -0.876037597656 + j-0.482177734375
             im_multiplicator => "1110000100100100",
-            product_re_out => mul_re_out(1323),
-            product_im_out => mul_im_out(1323)
+            data_re_out => mul_re_out(1323),
+            data_im_out => mul_im_out(1323)
         );
 
  
@@ -41366,8 +41366,8 @@ begin
             data_im_in => first_stage_im_out(1324),
             re_multiplicator => "1100011000100110", --- -0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1324),
-            product_im_out => mul_im_out(1324)
+            data_re_out => mul_re_out(1324),
+            data_im_out => mul_im_out(1324)
         );
 
  
@@ -41384,8 +41384,8 @@ begin
             data_im_in => first_stage_im_out(1325),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1325),
-            product_im_out => mul_im_out(1325)
+            data_re_out => mul_re_out(1325),
+            data_im_out => mul_im_out(1325)
         );
 
  
@@ -41402,8 +41402,8 @@ begin
             data_im_in => first_stage_im_out(1326),
             re_multiplicator => "1100001100111011", --- -0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(1326),
-            product_im_out => mul_im_out(1326)
+            data_re_out => mul_re_out(1326),
+            data_im_out => mul_im_out(1326)
         );
 
  
@@ -41420,8 +41420,8 @@ begin
             data_im_in => first_stage_im_out(1327),
             re_multiplicator => "1100001000011110", --- -0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(1327),
-            product_im_out => mul_im_out(1327)
+            data_re_out => mul_re_out(1327),
+            data_im_out => mul_im_out(1327)
         );
 
  
@@ -41438,8 +41438,8 @@ begin
             data_im_in => first_stage_im_out(1328),
             re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(1328),
-            product_im_out => mul_im_out(1328)
+            data_re_out => mul_re_out(1328),
+            data_im_out => mul_im_out(1328)
         );
 
  
@@ -41456,8 +41456,8 @@ begin
             data_im_in => first_stage_im_out(1329),
             re_multiplicator => "1100000010010110", --- -0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(1329),
-            product_im_out => mul_im_out(1329)
+            data_re_out => mul_re_out(1329),
+            data_im_out => mul_im_out(1329)
         );
 
  
@@ -41474,8 +41474,8 @@ begin
             data_im_in => first_stage_im_out(1330),
             re_multiplicator => "1100000000101101", --- -0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(1330),
-            product_im_out => mul_im_out(1330)
+            data_re_out => mul_re_out(1330),
+            data_im_out => mul_im_out(1330)
         );
 
  
@@ -41492,8 +41492,8 @@ begin
             data_im_in => first_stage_im_out(1331),
             re_multiplicator => "1100000000000010", --- -0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(1331),
-            product_im_out => mul_im_out(1331)
+            data_re_out => mul_re_out(1331),
+            data_im_out => mul_im_out(1331)
         );
 
  
@@ -41510,8 +41510,8 @@ begin
             data_im_in => first_stage_im_out(1332),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j0.0490112304688
             im_multiplicator => "0000001100100011",
-            product_re_out => mul_re_out(1332),
-            product_im_out => mul_im_out(1332)
+            data_re_out => mul_re_out(1332),
+            data_im_out => mul_im_out(1332)
         );
 
  
@@ -41528,8 +41528,8 @@ begin
             data_im_in => first_stage_im_out(1333),
             re_multiplicator => "1100000001100100", --- -0.993896484375 + j0.110168457031
             im_multiplicator => "0000011100001101",
-            product_re_out => mul_re_out(1333),
-            product_im_out => mul_im_out(1333)
+            data_re_out => mul_re_out(1333),
+            data_im_out => mul_im_out(1333)
         );
 
  
@@ -41546,8 +41546,8 @@ begin
             data_im_in => first_stage_im_out(1334),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j0.170959472656
             im_multiplicator => "0000101011110001",
-            product_re_out => mul_re_out(1334),
-            product_im_out => mul_im_out(1334)
+            data_re_out => mul_re_out(1334),
+            data_im_out => mul_im_out(1334)
         );
 
  
@@ -41564,8 +41564,8 @@ begin
             data_im_in => first_stage_im_out(1335),
             re_multiplicator => "1100000110111100", --- -0.972900390625 + j0.231018066406
             im_multiplicator => "0000111011001001",
-            product_re_out => mul_re_out(1335),
-            product_im_out => mul_im_out(1335)
+            data_re_out => mul_re_out(1335),
+            data_im_out => mul_im_out(1335)
         );
 
  
@@ -41582,8 +41582,8 @@ begin
             data_im_in => first_stage_im_out(1336),
             re_multiplicator => "1100001011000010", --- -0.956909179688 + j0.290283203125
             im_multiplicator => "0001001010010100",
-            product_re_out => mul_re_out(1336),
-            product_im_out => mul_im_out(1336)
+            data_re_out => mul_re_out(1336),
+            data_im_out => mul_im_out(1336)
         );
 
  
@@ -41600,8 +41600,8 @@ begin
             data_im_in => first_stage_im_out(1337),
             re_multiplicator => "1100010000000011", --- -0.937316894531 + j0.348388671875
             im_multiplicator => "0001011001001100",
-            product_re_out => mul_re_out(1337),
-            product_im_out => mul_im_out(1337)
+            data_re_out => mul_re_out(1337),
+            data_im_out => mul_im_out(1337)
         );
 
  
@@ -41618,8 +41618,8 @@ begin
             data_im_in => first_stage_im_out(1338),
             re_multiplicator => "1100010101111110", --- -0.914184570312 + j0.405212402344
             im_multiplicator => "0001100111101111",
-            product_re_out => mul_re_out(1338),
-            product_im_out => mul_im_out(1338)
+            data_re_out => mul_re_out(1338),
+            data_im_out => mul_im_out(1338)
         );
 
  
@@ -41636,8 +41636,8 @@ begin
             data_im_in => first_stage_im_out(1339),
             re_multiplicator => "1100011100110001", --- -0.887634277344 + j0.460510253906
             im_multiplicator => "0001110101111001",
-            product_re_out => mul_re_out(1339),
-            product_im_out => mul_im_out(1339)
+            data_re_out => mul_re_out(1339),
+            data_im_out => mul_im_out(1339)
         );
 
  
@@ -41654,8 +41654,8 @@ begin
             data_im_in => first_stage_im_out(1340),
             re_multiplicator => "1100100100011011", --- -0.857727050781 + j0.514099121094
             im_multiplicator => "0010000011100111",
-            product_re_out => mul_re_out(1340),
-            product_im_out => mul_im_out(1340)
+            data_re_out => mul_re_out(1340),
+            data_im_out => mul_im_out(1340)
         );
 
  
@@ -41672,8 +41672,8 @@ begin
             data_im_in => first_stage_im_out(1341),
             re_multiplicator => "1100101100111010", --- -0.824584960938 + j0.565673828125
             im_multiplicator => "0010010000110100",
-            product_re_out => mul_re_out(1341),
-            product_im_out => mul_im_out(1341)
+            data_re_out => mul_re_out(1341),
+            data_im_out => mul_im_out(1341)
         );
 
  
@@ -41690,8 +41690,8 @@ begin
             data_im_in => first_stage_im_out(1342),
             re_multiplicator => "1100110110001100", --- -0.788330078125 + j0.615173339844
             im_multiplicator => "0010011101011111",
-            product_re_out => mul_re_out(1342),
-            product_im_out => mul_im_out(1342)
+            data_re_out => mul_re_out(1342),
+            data_im_out => mul_im_out(1342)
         );
 
  
@@ -41708,8 +41708,8 @@ begin
             data_im_in => first_stage_im_out(1343),
             re_multiplicator => "1101000000001111", --- -0.749084472656 + j0.662414550781
             im_multiplicator => "0010101001100101",
-            product_re_out => mul_re_out(1343),
-            product_im_out => mul_im_out(1343)
+            data_re_out => mul_re_out(1343),
+            data_im_out => mul_im_out(1343)
         );
 
  
@@ -41724,8 +41724,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1344),
             data_im_in => first_stage_im_out(1344),
-            product_re_out => mul_re_out(1344),
-            product_im_out => mul_im_out(1344)
+            data_re_out => mul_re_out(1344),
+            data_im_out => mul_im_out(1344)
         );
 
  
@@ -41742,8 +41742,8 @@ begin
             data_im_in => first_stage_im_out(1345),
             re_multiplicator => "0011111111011110", --- 0.997924804688 + j-0.0643310546875
             im_multiplicator => "1111101111100010",
-            product_re_out => mul_re_out(1345),
-            product_im_out => mul_im_out(1345)
+            data_re_out => mul_re_out(1345),
+            data_im_out => mul_im_out(1345)
         );
 
  
@@ -41760,8 +41760,8 @@ begin
             data_im_in => first_stage_im_out(1346),
             re_multiplicator => "0011111101111000", --- 0.99169921875 + j-0.128479003906
             im_multiplicator => "1111011111000111",
-            product_re_out => mul_re_out(1346),
-            product_im_out => mul_im_out(1346)
+            data_re_out => mul_re_out(1346),
+            data_im_out => mul_im_out(1346)
         );
 
  
@@ -41778,8 +41778,8 @@ begin
             data_im_in => first_stage_im_out(1347),
             re_multiplicator => "0011111011001110", --- 0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(1347),
-            product_im_out => mul_im_out(1347)
+            data_re_out => mul_re_out(1347),
+            data_im_out => mul_im_out(1347)
         );
 
  
@@ -41796,8 +41796,8 @@ begin
             data_im_in => first_stage_im_out(1348),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(1348),
-            product_im_out => mul_im_out(1348)
+            data_re_out => mul_re_out(1348),
+            data_im_out => mul_im_out(1348)
         );
 
  
@@ -41814,8 +41814,8 @@ begin
             data_im_in => first_stage_im_out(1349),
             re_multiplicator => "0011110010110101", --- 0.948547363281 + j-0.316589355469
             im_multiplicator => "1110101110111101",
-            product_re_out => mul_re_out(1349),
-            product_im_out => mul_im_out(1349)
+            data_re_out => mul_re_out(1349),
+            data_im_out => mul_im_out(1349)
         );
 
  
@@ -41832,8 +41832,8 @@ begin
             data_im_in => first_stage_im_out(1350),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j-0.376953125
             im_multiplicator => "1110011111100000",
-            product_re_out => mul_re_out(1350),
-            product_im_out => mul_im_out(1350)
+            data_re_out => mul_re_out(1350),
+            data_im_out => mul_im_out(1350)
         );
 
  
@@ -41850,8 +41850,8 @@ begin
             data_im_in => first_stage_im_out(1351),
             re_multiplicator => "0011100110011001", --- 0.899963378906 + j-0.435852050781
             im_multiplicator => "1110010000011011",
-            product_re_out => mul_re_out(1351),
-            product_im_out => mul_im_out(1351)
+            data_re_out => mul_re_out(1351),
+            data_im_out => mul_im_out(1351)
         );
 
  
@@ -41868,8 +41868,8 @@ begin
             data_im_in => first_stage_im_out(1352),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(1352),
-            product_im_out => mul_im_out(1352)
+            data_re_out => mul_re_out(1352),
+            data_im_out => mul_im_out(1352)
         );
 
  
@@ -41886,8 +41886,8 @@ begin
             data_im_in => first_stage_im_out(1353),
             re_multiplicator => "0011010110001001", --- 0.836486816406 + j-0.5478515625
             im_multiplicator => "1101110011110000",
-            product_re_out => mul_re_out(1353),
-            product_im_out => mul_im_out(1353)
+            data_re_out => mul_re_out(1353),
+            data_im_out => mul_im_out(1353)
         );
 
  
@@ -41904,8 +41904,8 @@ begin
             data_im_in => first_stage_im_out(1354),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(1354),
-            product_im_out => mul_im_out(1354)
+            data_re_out => mul_re_out(1354),
+            data_im_out => mul_im_out(1354)
         );
 
  
@@ -41922,8 +41922,8 @@ begin
             data_im_in => first_stage_im_out(1355),
             re_multiplicator => "0011000010010110", --- 0.759155273438 + j-0.650817871094
             im_multiplicator => "1101011001011001",
-            product_re_out => mul_re_out(1355),
-            product_im_out => mul_im_out(1355)
+            data_re_out => mul_re_out(1355),
+            data_im_out => mul_im_out(1355)
         );
 
  
@@ -41940,8 +41940,8 @@ begin
             data_im_in => first_stage_im_out(1356),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(1356),
-            product_im_out => mul_im_out(1356)
+            data_re_out => mul_re_out(1356),
+            data_im_out => mul_im_out(1356)
         );
 
  
@@ -41958,8 +41958,8 @@ begin
             data_im_in => first_stage_im_out(1357),
             re_multiplicator => "0010101011010101", --- 0.669250488281 + j-0.742980957031
             im_multiplicator => "1101000001110011",
-            product_re_out => mul_re_out(1357),
-            product_im_out => mul_im_out(1357)
+            data_re_out => mul_re_out(1357),
+            data_im_out => mul_im_out(1357)
         );
 
  
@@ -41976,8 +41976,8 @@ begin
             data_im_in => first_stage_im_out(1358),
             re_multiplicator => "0010011110101111", --- 0.620056152344 + j-0.784545898438
             im_multiplicator => "1100110111001010",
-            product_re_out => mul_re_out(1358),
-            product_im_out => mul_im_out(1358)
+            data_re_out => mul_re_out(1358),
+            data_im_out => mul_im_out(1358)
         );
 
  
@@ -41994,8 +41994,8 @@ begin
             data_im_in => first_stage_im_out(1359),
             re_multiplicator => "0010010001011110", --- 0.568237304688 + j-0.822814941406
             im_multiplicator => "1100101101010111",
-            product_re_out => mul_re_out(1359),
-            product_im_out => mul_im_out(1359)
+            data_re_out => mul_re_out(1359),
+            data_im_out => mul_im_out(1359)
         );
 
  
@@ -42012,8 +42012,8 @@ begin
             data_im_in => first_stage_im_out(1360),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(1360),
-            product_im_out => mul_im_out(1360)
+            data_re_out => mul_re_out(1360),
+            data_im_out => mul_im_out(1360)
         );
 
  
@@ -42030,8 +42030,8 @@ begin
             data_im_in => first_stage_im_out(1361),
             re_multiplicator => "0001110101001100", --- 0.457763671875 + j-0.889038085938
             im_multiplicator => "1100011100011010",
-            product_re_out => mul_re_out(1361),
-            product_im_out => mul_im_out(1361)
+            data_re_out => mul_re_out(1361),
+            data_im_out => mul_im_out(1361)
         );
 
  
@@ -42048,8 +42048,8 @@ begin
             data_im_in => first_stage_im_out(1362),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(1362),
-            product_im_out => mul_im_out(1362)
+            data_re_out => mul_re_out(1362),
+            data_im_out => mul_im_out(1362)
         );
 
  
@@ -42066,8 +42066,8 @@ begin
             data_im_in => first_stage_im_out(1363),
             re_multiplicator => "0001010110111110", --- 0.339721679688 + j-0.940490722656
             im_multiplicator => "1100001111001111",
-            product_re_out => mul_re_out(1363),
-            product_im_out => mul_im_out(1363)
+            data_re_out => mul_re_out(1363),
+            data_im_out => mul_im_out(1363)
         );
 
  
@@ -42084,8 +42084,8 @@ begin
             data_im_in => first_stage_im_out(1364),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(1364),
-            product_im_out => mul_im_out(1364)
+            data_re_out => mul_re_out(1364),
+            data_im_out => mul_im_out(1364)
         );
 
  
@@ -42102,8 +42102,8 @@ begin
             data_im_in => first_stage_im_out(1365),
             re_multiplicator => "0000110111010100", --- 0.216064453125 + j-0.976318359375
             im_multiplicator => "1100000110000100",
-            product_re_out => mul_re_out(1365),
-            product_im_out => mul_im_out(1365)
+            data_re_out => mul_re_out(1365),
+            data_im_out => mul_im_out(1365)
         );
 
  
@@ -42120,8 +42120,8 @@ begin
             data_im_in => first_stage_im_out(1366),
             re_multiplicator => "0000100111000111", --- 0.152770996094 + j-0.988220214844
             im_multiplicator => "1100000011000001",
-            product_re_out => mul_re_out(1366),
-            product_im_out => mul_im_out(1366)
+            data_re_out => mul_re_out(1366),
+            data_im_out => mul_im_out(1366)
         );
 
  
@@ -42138,8 +42138,8 @@ begin
             data_im_in => first_stage_im_out(1367),
             re_multiplicator => "0000010110101111", --- 0.0888061523438 + j-0.996032714844
             im_multiplicator => "1100000001000001",
-            product_re_out => mul_re_out(1367),
-            product_im_out => mul_im_out(1367)
+            data_re_out => mul_re_out(1367),
+            data_im_out => mul_im_out(1367)
         );
 
  
@@ -42156,8 +42156,8 @@ begin
             data_im_in => first_stage_im_out(1368),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1368),
-            product_im_out => mul_im_out(1368)
+            data_re_out => mul_re_out(1368),
+            data_im_out => mul_im_out(1368)
         );
 
  
@@ -42174,8 +42174,8 @@ begin
             data_im_in => first_stage_im_out(1369),
             re_multiplicator => "1111110101110011", --- -0.0398559570312 + j-0.999145507812
             im_multiplicator => "1100000000001110",
-            product_re_out => mul_re_out(1369),
-            product_im_out => mul_im_out(1369)
+            data_re_out => mul_re_out(1369),
+            data_im_out => mul_im_out(1369)
         );
 
  
@@ -42192,8 +42192,8 @@ begin
             data_im_in => first_stage_im_out(1370),
             re_multiplicator => "1111100101010111", --- -0.104064941406 + j-0.994506835938
             im_multiplicator => "1100000001011010",
-            product_re_out => mul_re_out(1370),
-            product_im_out => mul_im_out(1370)
+            data_re_out => mul_re_out(1370),
+            data_im_out => mul_im_out(1370)
         );
 
  
@@ -42210,8 +42210,8 @@ begin
             data_im_in => first_stage_im_out(1371),
             re_multiplicator => "1111010101000001", --- -0.167907714844 + j-0.985778808594
             im_multiplicator => "1100000011101001",
-            product_re_out => mul_re_out(1371),
-            product_im_out => mul_im_out(1371)
+            data_re_out => mul_re_out(1371),
+            data_im_out => mul_im_out(1371)
         );
 
  
@@ -42228,8 +42228,8 @@ begin
             data_im_in => first_stage_im_out(1372),
             re_multiplicator => "1111000100110111", --- -0.231018066406 + j-0.972900390625
             im_multiplicator => "1100000110111100",
-            product_re_out => mul_re_out(1372),
-            product_im_out => mul_im_out(1372)
+            data_re_out => mul_re_out(1372),
+            data_im_out => mul_im_out(1372)
         );
 
  
@@ -42246,8 +42246,8 @@ begin
             data_im_in => first_stage_im_out(1373),
             re_multiplicator => "1110110100111100", --- -0.293212890625 + j-0.955993652344
             im_multiplicator => "1100001011010001",
-            product_re_out => mul_re_out(1373),
-            product_im_out => mul_im_out(1373)
+            data_re_out => mul_re_out(1373),
+            data_im_out => mul_im_out(1373)
         );
 
  
@@ -42264,8 +42264,8 @@ begin
             data_im_in => first_stage_im_out(1374),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(1374),
-            product_im_out => mul_im_out(1374)
+            data_re_out => mul_re_out(1374),
+            data_im_out => mul_im_out(1374)
         );
 
  
@@ -42282,8 +42282,8 @@ begin
             data_im_in => first_stage_im_out(1375),
             re_multiplicator => "1110010110000111", --- -0.413635253906 + j-0.910400390625
             im_multiplicator => "1100010110111100",
-            product_re_out => mul_re_out(1375),
-            product_im_out => mul_im_out(1375)
+            data_re_out => mul_re_out(1375),
+            data_im_out => mul_im_out(1375)
         );
 
  
@@ -42300,8 +42300,8 @@ begin
             data_im_in => first_stage_im_out(1376),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1376),
-            product_im_out => mul_im_out(1376)
+            data_re_out => mul_re_out(1376),
+            data_im_out => mul_im_out(1376)
         );
 
  
@@ -42318,8 +42318,8 @@ begin
             data_im_in => first_stage_im_out(1377),
             re_multiplicator => "1101111001000011", --- -0.527160644531 + j-0.849731445312
             im_multiplicator => "1100100110011110",
-            product_re_out => mul_re_out(1377),
-            product_im_out => mul_im_out(1377)
+            data_re_out => mul_re_out(1377),
+            data_im_out => mul_im_out(1377)
         );
 
  
@@ -42336,8 +42336,8 @@ begin
             data_im_in => first_stage_im_out(1378),
             re_multiplicator => "1101101011010100", --- -0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(1378),
-            product_im_out => mul_im_out(1378)
+            data_re_out => mul_re_out(1378),
+            data_im_out => mul_im_out(1378)
         );
 
  
@@ -42354,8 +42354,8 @@ begin
             data_im_in => first_stage_im_out(1379),
             re_multiplicator => "1101011110001110", --- -0.631958007812 + j-0.77490234375
             im_multiplicator => "1100111001101000",
-            product_re_out => mul_re_out(1379),
-            product_im_out => mul_im_out(1379)
+            data_re_out => mul_re_out(1379),
+            data_im_out => mul_im_out(1379)
         );
 
  
@@ -42372,8 +42372,8 @@ begin
             data_im_in => first_stage_im_out(1380),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(1380),
-            product_im_out => mul_im_out(1380)
+            data_re_out => mul_re_out(1380),
+            data_im_out => mul_im_out(1380)
         );
 
  
@@ -42390,8 +42390,8 @@ begin
             data_im_in => first_stage_im_out(1381),
             re_multiplicator => "1101000110000100", --- -0.726318359375 + j-0.687255859375
             im_multiplicator => "1101010000000100",
-            product_re_out => mul_re_out(1381),
-            product_im_out => mul_im_out(1381)
+            data_re_out => mul_re_out(1381),
+            data_im_out => mul_im_out(1381)
         );
 
  
@@ -42408,8 +42408,8 @@ begin
             data_im_in => first_stage_im_out(1382),
             re_multiplicator => "1100111011001000", --- -0.76904296875 + j-0.639099121094
             im_multiplicator => "1101011100011001",
-            product_re_out => mul_re_out(1382),
-            product_im_out => mul_im_out(1382)
+            data_re_out => mul_re_out(1382),
+            data_im_out => mul_im_out(1382)
         );
 
  
@@ -42426,8 +42426,8 @@ begin
             data_im_in => first_stage_im_out(1383),
             re_multiplicator => "1100110000111111", --- -0.808654785156 + j-0.588256835938
             im_multiplicator => "1101101001011010",
-            product_re_out => mul_re_out(1383),
-            product_im_out => mul_im_out(1383)
+            data_re_out => mul_re_out(1383),
+            data_im_out => mul_im_out(1383)
         );
 
  
@@ -42444,8 +42444,8 @@ begin
             data_im_in => first_stage_im_out(1384),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1384),
-            product_im_out => mul_im_out(1384)
+            data_re_out => mul_re_out(1384),
+            data_im_out => mul_im_out(1384)
         );
 
  
@@ -42462,8 +42462,8 @@ begin
             data_im_in => first_stage_im_out(1385),
             re_multiplicator => "1100011111010111", --- -0.877502441406 + j-0.4794921875
             im_multiplicator => "1110000101010000",
-            product_re_out => mul_re_out(1385),
-            product_im_out => mul_im_out(1385)
+            data_re_out => mul_re_out(1385),
+            data_im_out => mul_im_out(1385)
         );
 
  
@@ -42480,8 +42480,8 @@ begin
             data_im_in => first_stage_im_out(1386),
             re_multiplicator => "1100010111111011", --- -0.906555175781 + j-0.421997070312
             im_multiplicator => "1110010011111110",
-            product_re_out => mul_re_out(1386),
-            product_im_out => mul_im_out(1386)
+            data_re_out => mul_re_out(1386),
+            data_im_out => mul_im_out(1386)
         );
 
  
@@ -42498,8 +42498,8 @@ begin
             data_im_in => first_stage_im_out(1387),
             re_multiplicator => "1100010001011101", --- -0.931823730469 + j-0.362731933594
             im_multiplicator => "1110100011001001",
-            product_re_out => mul_re_out(1387),
-            product_im_out => mul_im_out(1387)
+            data_re_out => mul_re_out(1387),
+            data_im_out => mul_im_out(1387)
         );
 
  
@@ -42516,8 +42516,8 @@ begin
             data_im_in => first_stage_im_out(1388),
             re_multiplicator => "1100001011111110", --- -0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(1388),
-            product_im_out => mul_im_out(1388)
+            data_re_out => mul_re_out(1388),
+            data_im_out => mul_im_out(1388)
         );
 
  
@@ -42534,8 +42534,8 @@ begin
             data_im_in => first_stage_im_out(1389),
             re_multiplicator => "1100000111011111", --- -0.970764160156 + j-0.239990234375
             im_multiplicator => "1111000010100100",
-            product_re_out => mul_re_out(1389),
-            product_im_out => mul_im_out(1389)
+            data_re_out => mul_re_out(1389),
+            data_im_out => mul_im_out(1389)
         );
 
  
@@ -42552,8 +42552,8 @@ begin
             data_im_in => first_stage_im_out(1390),
             re_multiplicator => "1100000100000011", --- -0.984191894531 + j-0.177001953125
             im_multiplicator => "1111010010101100",
-            product_re_out => mul_re_out(1390),
-            product_im_out => mul_im_out(1390)
+            data_re_out => mul_re_out(1390),
+            data_im_out => mul_im_out(1390)
         );
 
  
@@ -42570,8 +42570,8 @@ begin
             data_im_in => first_stage_im_out(1391),
             re_multiplicator => "1100000001101010", --- -0.993530273438 + j-0.113220214844
             im_multiplicator => "1111100011000001",
-            product_re_out => mul_re_out(1391),
-            product_im_out => mul_im_out(1391)
+            data_re_out => mul_re_out(1391),
+            data_im_out => mul_im_out(1391)
         );
 
  
@@ -42588,8 +42588,8 @@ begin
             data_im_in => first_stage_im_out(1392),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1392),
-            product_im_out => mul_im_out(1392)
+            data_re_out => mul_re_out(1392),
+            data_im_out => mul_im_out(1392)
         );
 
  
@@ -42606,8 +42606,8 @@ begin
             data_im_in => first_stage_im_out(1393),
             re_multiplicator => "1100000000000010", --- -0.999877929688 + j0.0153198242188
             im_multiplicator => "0000000011111011",
-            product_re_out => mul_re_out(1393),
-            product_im_out => mul_im_out(1393)
+            data_re_out => mul_re_out(1393),
+            data_im_out => mul_im_out(1393)
         );
 
  
@@ -42624,8 +42624,8 @@ begin
             data_im_in => first_stage_im_out(1394),
             re_multiplicator => "1100000000110101", --- -0.996765136719 + j0.0796508789062
             im_multiplicator => "0000010100011001",
-            product_re_out => mul_re_out(1394),
-            product_im_out => mul_im_out(1394)
+            data_re_out => mul_re_out(1394),
+            data_im_out => mul_im_out(1394)
         );
 
  
@@ -42642,8 +42642,8 @@ begin
             data_im_in => first_stage_im_out(1395),
             re_multiplicator => "1100000010101011", --- -0.989562988281 + j0.143676757812
             im_multiplicator => "0000100100110010",
-            product_re_out => mul_re_out(1395),
-            product_im_out => mul_im_out(1395)
+            data_re_out => mul_re_out(1395),
+            data_im_out => mul_im_out(1395)
         );
 
  
@@ -42660,8 +42660,8 @@ begin
             data_im_in => first_stage_im_out(1396),
             re_multiplicator => "1100000101100100", --- -0.978271484375 + j0.207092285156
             im_multiplicator => "0000110101000001",
-            product_re_out => mul_re_out(1396),
-            product_im_out => mul_im_out(1396)
+            data_re_out => mul_re_out(1396),
+            data_im_out => mul_im_out(1396)
         );
 
  
@@ -42678,8 +42678,8 @@ begin
             data_im_in => first_stage_im_out(1397),
             re_multiplicator => "1100001001011111", --- -0.962951660156 + j0.269653320312
             im_multiplicator => "0001000101000010",
-            product_re_out => mul_re_out(1397),
-            product_im_out => mul_im_out(1397)
+            data_re_out => mul_re_out(1397),
+            data_im_out => mul_im_out(1397)
         );
 
  
@@ -42696,8 +42696,8 @@ begin
             data_im_in => first_stage_im_out(1398),
             re_multiplicator => "1100001110011101", --- -0.943542480469 + j0.3310546875
             im_multiplicator => "0001010100110000",
-            product_re_out => mul_re_out(1398),
-            product_im_out => mul_im_out(1398)
+            data_re_out => mul_re_out(1398),
+            data_im_out => mul_im_out(1398)
         );
 
  
@@ -42714,8 +42714,8 @@ begin
             data_im_in => first_stage_im_out(1399),
             re_multiplicator => "1100010100011010", --- -0.920288085938 + j0.39111328125
             im_multiplicator => "0001100100001000",
-            product_re_out => mul_re_out(1399),
-            product_im_out => mul_im_out(1399)
+            data_re_out => mul_re_out(1399),
+            data_im_out => mul_im_out(1399)
         );
 
  
@@ -42732,8 +42732,8 @@ begin
             data_im_in => first_stage_im_out(1400),
             re_multiplicator => "1100011011010110", --- -0.893188476562 + j0.449584960938
             im_multiplicator => "0001110011000110",
-            product_re_out => mul_re_out(1400),
-            product_im_out => mul_im_out(1400)
+            data_re_out => mul_re_out(1400),
+            data_im_out => mul_im_out(1400)
         );
 
  
@@ -42750,8 +42750,8 @@ begin
             data_im_in => first_stage_im_out(1401),
             re_multiplicator => "1100100011001111", --- -0.862365722656 + j0.506164550781
             im_multiplicator => "0010000001100101",
-            product_re_out => mul_re_out(1401),
-            product_im_out => mul_im_out(1401)
+            data_re_out => mul_re_out(1401),
+            data_im_out => mul_im_out(1401)
         );
 
  
@@ -42768,8 +42768,8 @@ begin
             data_im_in => first_stage_im_out(1402),
             re_multiplicator => "1100101100000010", --- -0.828002929688 + j0.560607910156
             im_multiplicator => "0010001111100001",
-            product_re_out => mul_re_out(1402),
-            product_im_out => mul_im_out(1402)
+            data_re_out => mul_re_out(1402),
+            data_im_out => mul_im_out(1402)
         );
 
  
@@ -42786,8 +42786,8 @@ begin
             data_im_in => first_stage_im_out(1403),
             re_multiplicator => "1100110101101101", --- -0.790222167969 + j0.61279296875
             im_multiplicator => "0010011100111000",
-            product_re_out => mul_re_out(1403),
-            product_im_out => mul_im_out(1403)
+            data_re_out => mul_re_out(1403),
+            data_im_out => mul_im_out(1403)
         );
 
  
@@ -42804,8 +42804,8 @@ begin
             data_im_in => first_stage_im_out(1404),
             re_multiplicator => "1101000000001111", --- -0.749084472656 + j0.662414550781
             im_multiplicator => "0010101001100101",
-            product_re_out => mul_re_out(1404),
-            product_im_out => mul_im_out(1404)
+            data_re_out => mul_re_out(1404),
+            data_im_out => mul_im_out(1404)
         );
 
  
@@ -42822,8 +42822,8 @@ begin
             data_im_in => first_stage_im_out(1405),
             re_multiplicator => "1101001011100011", --- -0.704895019531 + j0.709228515625
             im_multiplicator => "0010110101100100",
-            product_re_out => mul_re_out(1405),
-            product_im_out => mul_im_out(1405)
+            data_re_out => mul_re_out(1405),
+            data_im_out => mul_im_out(1405)
         );
 
  
@@ -42840,8 +42840,8 @@ begin
             data_im_in => first_stage_im_out(1406),
             re_multiplicator => "1101010111100111", --- -0.657775878906 + j0.753173828125
             im_multiplicator => "0011000000110100",
-            product_re_out => mul_re_out(1406),
-            product_im_out => mul_im_out(1406)
+            data_re_out => mul_re_out(1406),
+            data_im_out => mul_im_out(1406)
         );
 
  
@@ -42858,8 +42858,8 @@ begin
             data_im_in => first_stage_im_out(1407),
             re_multiplicator => "1101100100011000", --- -0.60791015625 + j0.7939453125
             im_multiplicator => "0011001011010000",
-            product_re_out => mul_re_out(1407),
-            product_im_out => mul_im_out(1407)
+            data_re_out => mul_re_out(1407),
+            data_im_out => mul_im_out(1407)
         );
 
  
@@ -42874,8 +42874,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1408),
             data_im_in => first_stage_im_out(1408),
-            product_re_out => mul_re_out(1408),
-            product_im_out => mul_im_out(1408)
+            data_re_out => mul_re_out(1408),
+            data_im_out => mul_im_out(1408)
         );
 
  
@@ -42892,8 +42892,8 @@ begin
             data_im_in => first_stage_im_out(1409),
             re_multiplicator => "0011111111011010", --- 0.997680664062 + j-0.0674438476562
             im_multiplicator => "1111101110101111",
-            product_re_out => mul_re_out(1409),
-            product_im_out => mul_im_out(1409)
+            data_re_out => mul_re_out(1409),
+            data_im_out => mul_im_out(1409)
         );
 
  
@@ -42910,8 +42910,8 @@ begin
             data_im_in => first_stage_im_out(1410),
             re_multiplicator => "0011111101101010", --- 0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(1410),
-            product_im_out => mul_im_out(1410)
+            data_re_out => mul_re_out(1410),
+            data_im_out => mul_im_out(1410)
         );
 
  
@@ -42928,8 +42928,8 @@ begin
             data_im_in => first_stage_im_out(1411),
             re_multiplicator => "0011111010110001", --- 0.979553222656 + j-0.201049804688
             im_multiplicator => "1111001100100010",
-            product_re_out => mul_re_out(1411),
-            product_im_out => mul_im_out(1411)
+            data_re_out => mul_re_out(1411),
+            data_im_out => mul_im_out(1411)
         );
 
  
@@ -42946,8 +42946,8 @@ begin
             data_im_in => first_stage_im_out(1412),
             re_multiplicator => "0011110110101110", --- 0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(1412),
-            product_im_out => mul_im_out(1412)
+            data_re_out => mul_re_out(1412),
+            data_im_out => mul_im_out(1412)
         );
 
  
@@ -42964,8 +42964,8 @@ begin
             data_im_in => first_stage_im_out(1413),
             re_multiplicator => "0011110001100011", --- 0.943542480469 + j-0.3310546875
             im_multiplicator => "1110101011010000",
-            product_re_out => mul_re_out(1413),
-            product_im_out => mul_im_out(1413)
+            data_re_out => mul_re_out(1413),
+            data_im_out => mul_im_out(1413)
         );
 
  
@@ -42982,8 +42982,8 @@ begin
             data_im_in => first_stage_im_out(1414),
             re_multiplicator => "0011101011010010", --- 0.919067382812 + j-0.393981933594
             im_multiplicator => "1110011011001001",
-            product_re_out => mul_re_out(1414),
-            product_im_out => mul_im_out(1414)
+            data_re_out => mul_re_out(1414),
+            data_im_out => mul_im_out(1414)
         );
 
  
@@ -43000,8 +43000,8 @@ begin
             data_im_in => first_stage_im_out(1415),
             re_multiplicator => "0011100011111101", --- 0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(1415),
-            product_im_out => mul_im_out(1415)
+            data_re_out => mul_re_out(1415),
+            data_im_out => mul_im_out(1415)
         );
 
  
@@ -43018,8 +43018,8 @@ begin
             data_im_in => first_stage_im_out(1416),
             re_multiplicator => "0011011011100101", --- 0.857727050781 + j-0.514099121094
             im_multiplicator => "1101111100011001",
-            product_re_out => mul_re_out(1416),
-            product_im_out => mul_im_out(1416)
+            data_re_out => mul_re_out(1416),
+            data_im_out => mul_im_out(1416)
         );
 
  
@@ -43036,8 +43036,8 @@ begin
             data_im_in => first_stage_im_out(1417),
             re_multiplicator => "0011010010001100", --- 0.821044921875 + j-0.570739746094
             im_multiplicator => "1101101101111001",
-            product_re_out => mul_re_out(1417),
-            product_im_out => mul_im_out(1417)
+            data_re_out => mul_re_out(1417),
+            data_im_out => mul_im_out(1417)
         );
 
  
@@ -43054,8 +43054,8 @@ begin
             data_im_in => first_stage_im_out(1418),
             re_multiplicator => "0011000111110111", --- 0.780700683594 + j-0.624816894531
             im_multiplicator => "1101100000000011",
-            product_re_out => mul_re_out(1418),
-            product_im_out => mul_im_out(1418)
+            data_re_out => mul_re_out(1418),
+            data_im_out => mul_im_out(1418)
         );
 
  
@@ -43072,8 +43072,8 @@ begin
             data_im_in => first_stage_im_out(1419),
             re_multiplicator => "0010111100101000", --- 0.73681640625 + j-0.676086425781
             im_multiplicator => "1101010010111011",
-            product_re_out => mul_re_out(1419),
-            product_im_out => mul_im_out(1419)
+            data_re_out => mul_re_out(1419),
+            data_im_out => mul_im_out(1419)
         );
 
  
@@ -43090,8 +43090,8 @@ begin
             data_im_in => first_stage_im_out(1420),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(1420),
-            product_im_out => mul_im_out(1420)
+            data_re_out => mul_re_out(1420),
+            data_im_out => mul_im_out(1420)
         );
 
  
@@ -43108,8 +43108,8 @@ begin
             data_im_in => first_stage_im_out(1421),
             re_multiplicator => "0010100011100111", --- 0.639099121094 + j-0.76904296875
             im_multiplicator => "1100111011001000",
-            product_re_out => mul_re_out(1421),
-            product_im_out => mul_im_out(1421)
+            data_re_out => mul_re_out(1421),
+            data_im_out => mul_im_out(1421)
         );
 
  
@@ -43126,8 +43126,8 @@ begin
             data_im_in => first_stage_im_out(1422),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j-0.810424804688
             im_multiplicator => "1100110000100010",
-            product_re_out => mul_re_out(1422),
-            product_im_out => mul_im_out(1422)
+            data_re_out => mul_re_out(1422),
+            data_im_out => mul_im_out(1422)
         );
 
  
@@ -43144,8 +43144,8 @@ begin
             data_im_in => first_stage_im_out(1423),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(1423),
-            product_im_out => mul_im_out(1423)
+            data_re_out => mul_re_out(1423),
+            data_im_out => mul_im_out(1423)
         );
 
  
@@ -43162,8 +43162,8 @@ begin
             data_im_in => first_stage_im_out(1424),
             re_multiplicator => "0001111000101011", --- 0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1424),
-            product_im_out => mul_im_out(1424)
+            data_re_out => mul_re_out(1424),
+            data_im_out => mul_im_out(1424)
         );
 
  
@@ -43180,8 +43180,8 @@ begin
             data_im_in => first_stage_im_out(1425),
             re_multiplicator => "0001101001001011", --- 0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(1425),
-            product_im_out => mul_im_out(1425)
+            data_re_out => mul_re_out(1425),
+            data_im_out => mul_im_out(1425)
         );
 
  
@@ -43198,8 +43198,8 @@ begin
             data_im_in => first_stage_im_out(1426),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j-0.937316894531
             im_multiplicator => "1100010000000011",
-            product_re_out => mul_re_out(1426),
-            product_im_out => mul_im_out(1426)
+            data_re_out => mul_re_out(1426),
+            data_im_out => mul_im_out(1426)
         );
 
  
@@ -43216,8 +43216,8 @@ begin
             data_im_in => first_stage_im_out(1427),
             re_multiplicator => "0001001000110011", --- 0.284362792969 + j-0.958679199219
             im_multiplicator => "1100001010100101",
-            product_re_out => mul_re_out(1427),
-            product_im_out => mul_im_out(1427)
+            data_re_out => mul_re_out(1427),
+            data_im_out => mul_im_out(1427)
         );
 
  
@@ -43234,8 +43234,8 @@ begin
             data_im_in => first_stage_im_out(1428),
             re_multiplicator => "0000111000000101", --- 0.219055175781 + j-0.975646972656
             im_multiplicator => "1100000110001111",
-            product_re_out => mul_re_out(1428),
-            product_im_out => mul_im_out(1428)
+            data_re_out => mul_re_out(1428),
+            data_im_out => mul_im_out(1428)
         );
 
  
@@ -43252,8 +43252,8 @@ begin
             data_im_in => first_stage_im_out(1429),
             re_multiplicator => "0000100111000111", --- 0.152770996094 + j-0.988220214844
             im_multiplicator => "1100000011000001",
-            product_re_out => mul_re_out(1429),
-            product_im_out => mul_im_out(1429)
+            data_re_out => mul_re_out(1429),
+            data_im_out => mul_im_out(1429)
         );
 
  
@@ -43270,8 +43270,8 @@ begin
             data_im_in => first_stage_im_out(1430),
             re_multiplicator => "0000010101111101", --- 0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(1430),
-            product_im_out => mul_im_out(1430)
+            data_re_out => mul_re_out(1430),
+            data_im_out => mul_im_out(1430)
         );
 
  
@@ -43288,8 +43288,8 @@ begin
             data_im_in => first_stage_im_out(1431),
             re_multiplicator => "0000000100101101", --- 0.0183715820312 + j-0.999816894531
             im_multiplicator => "1100000000000011",
-            product_re_out => mul_re_out(1431),
-            product_im_out => mul_im_out(1431)
+            data_re_out => mul_re_out(1431),
+            data_im_out => mul_im_out(1431)
         );
 
  
@@ -43306,8 +43306,8 @@ begin
             data_im_in => first_stage_im_out(1432),
             re_multiplicator => "1111110011011101", --- -0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(1432),
-            product_im_out => mul_im_out(1432)
+            data_re_out => mul_re_out(1432),
+            data_im_out => mul_im_out(1432)
         );
 
  
@@ -43324,8 +43324,8 @@ begin
             data_im_in => first_stage_im_out(1433),
             re_multiplicator => "1111100010001111", --- -0.116271972656 + j-0.9931640625
             im_multiplicator => "1100000001110000",
-            product_re_out => mul_re_out(1433),
-            product_im_out => mul_im_out(1433)
+            data_re_out => mul_re_out(1433),
+            data_im_out => mul_im_out(1433)
         );
 
  
@@ -43342,8 +43342,8 @@ begin
             data_im_in => first_stage_im_out(1434),
             re_multiplicator => "1111010001001010", --- -0.182983398438 + j-0.983093261719
             im_multiplicator => "1100000100010101",
-            product_re_out => mul_re_out(1434),
-            product_im_out => mul_im_out(1434)
+            data_re_out => mul_re_out(1434),
+            data_im_out => mul_im_out(1434)
         );
 
  
@@ -43360,8 +43360,8 @@ begin
             data_im_in => first_stage_im_out(1435),
             re_multiplicator => "1111000000010010", --- -0.248901367188 + j-0.968505859375
             im_multiplicator => "1100001000000100",
-            product_re_out => mul_re_out(1435),
-            product_im_out => mul_im_out(1435)
+            data_re_out => mul_re_out(1435),
+            data_im_out => mul_im_out(1435)
         );
 
  
@@ -43378,8 +43378,8 @@ begin
             data_im_in => first_stage_im_out(1436),
             re_multiplicator => "1110101111101101", --- -0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(1436),
-            product_im_out => mul_im_out(1436)
+            data_re_out => mul_re_out(1436),
+            data_im_out => mul_im_out(1436)
         );
 
  
@@ -43396,8 +43396,8 @@ begin
             data_im_in => first_stage_im_out(1437),
             re_multiplicator => "1110011111100000", --- -0.376953125 + j-0.926208496094
             im_multiplicator => "1100010010111001",
-            product_re_out => mul_re_out(1437),
-            product_im_out => mul_im_out(1437)
+            data_re_out => mul_re_out(1437),
+            data_im_out => mul_im_out(1437)
         );
 
  
@@ -43414,8 +43414,8 @@ begin
             data_im_in => first_stage_im_out(1438),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1438),
-            product_im_out => mul_im_out(1438)
+            data_re_out => mul_re_out(1438),
+            data_im_out => mul_im_out(1438)
         );
 
  
@@ -43432,8 +43432,8 @@ begin
             data_im_in => first_stage_im_out(1439),
             re_multiplicator => "1110000000011110", --- -0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(1439),
-            product_im_out => mul_im_out(1439)
+            data_re_out => mul_re_out(1439),
+            data_im_out => mul_im_out(1439)
         );
 
  
@@ -43450,8 +43450,8 @@ begin
             data_im_in => first_stage_im_out(1440),
             re_multiplicator => "1101110001110010", --- -0.555541992188 + j-0.831420898438
             im_multiplicator => "1100101011001010",
-            product_re_out => mul_re_out(1440),
-            product_im_out => mul_im_out(1440)
+            data_re_out => mul_re_out(1440),
+            data_im_out => mul_im_out(1440)
         );
 
  
@@ -43468,8 +43468,8 @@ begin
             data_im_in => first_stage_im_out(1441),
             re_multiplicator => "1101100011110000", --- -0.6103515625 + j-0.792053222656
             im_multiplicator => "1100110101001111",
-            product_re_out => mul_re_out(1441),
-            product_im_out => mul_im_out(1441)
+            data_re_out => mul_re_out(1441),
+            data_im_out => mul_im_out(1441)
         );
 
  
@@ -43486,8 +43486,8 @@ begin
             data_im_in => first_stage_im_out(1442),
             re_multiplicator => "1101010110011011", --- -0.662414550781 + j-0.749084472656
             im_multiplicator => "1101000000001111",
-            product_re_out => mul_re_out(1442),
-            product_im_out => mul_im_out(1442)
+            data_re_out => mul_re_out(1442),
+            data_im_out => mul_im_out(1442)
         );
 
  
@@ -43504,8 +43504,8 @@ begin
             data_im_in => first_stage_im_out(1443),
             re_multiplicator => "1101001001111000", --- -0.71142578125 + j-0.702697753906
             im_multiplicator => "1101001100000111",
-            product_re_out => mul_re_out(1443),
-            product_im_out => mul_im_out(1443)
+            data_re_out => mul_re_out(1443),
+            data_im_out => mul_im_out(1443)
         );
 
  
@@ -43522,8 +43522,8 @@ begin
             data_im_in => first_stage_im_out(1444),
             re_multiplicator => "1100111110001010", --- -0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(1444),
-            product_im_out => mul_im_out(1444)
+            data_re_out => mul_re_out(1444),
+            data_im_out => mul_im_out(1444)
         );
 
  
@@ -43540,8 +43540,8 @@ begin
             data_im_in => first_stage_im_out(1445),
             re_multiplicator => "1100110011010101", --- -0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(1445),
-            product_im_out => mul_im_out(1445)
+            data_re_out => mul_re_out(1445),
+            data_im_out => mul_im_out(1445)
         );
 
  
@@ -43558,8 +43558,8 @@ begin
             data_im_in => first_stage_im_out(1446),
             re_multiplicator => "1100101001011011", --- -0.838195800781 + j-0.545288085938
             im_multiplicator => "1101110100011010",
-            product_re_out => mul_re_out(1446),
-            product_im_out => mul_im_out(1446)
+            data_re_out => mul_re_out(1446),
+            data_im_out => mul_im_out(1446)
         );
 
  
@@ -43576,8 +43576,8 @@ begin
             data_im_in => first_stage_im_out(1447),
             re_multiplicator => "1100100000100000", --- -0.873046875 + j-0.487548828125
             im_multiplicator => "1110000011001100",
-            product_re_out => mul_re_out(1447),
-            product_im_out => mul_im_out(1447)
+            data_re_out => mul_re_out(1447),
+            data_im_out => mul_im_out(1447)
         );
 
  
@@ -43594,8 +43594,8 @@ begin
             data_im_in => first_stage_im_out(1448),
             re_multiplicator => "1100011000100110", --- -0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1448),
-            product_im_out => mul_im_out(1448)
+            data_re_out => mul_re_out(1448),
+            data_im_out => mul_im_out(1448)
         );
 
  
@@ -43612,8 +43612,8 @@ begin
             data_im_in => first_stage_im_out(1449),
             re_multiplicator => "1100010001101111", --- -0.930725097656 + j-0.365600585938
             im_multiplicator => "1110100010011010",
-            product_re_out => mul_re_out(1449),
-            product_im_out => mul_im_out(1449)
+            data_re_out => mul_re_out(1449),
+            data_im_out => mul_im_out(1449)
         );
 
  
@@ -43630,8 +43630,8 @@ begin
             data_im_in => first_stage_im_out(1450),
             re_multiplicator => "1100001011111110", --- -0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(1450),
-            product_im_out => mul_im_out(1450)
+            data_re_out => mul_re_out(1450),
+            data_im_out => mul_im_out(1450)
         );
 
  
@@ -43648,8 +43648,8 @@ begin
             data_im_in => first_stage_im_out(1451),
             re_multiplicator => "1100000111010011", --- -0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(1451),
-            product_im_out => mul_im_out(1451)
+            data_re_out => mul_re_out(1451),
+            data_im_out => mul_im_out(1451)
         );
 
  
@@ -43666,8 +43666,8 @@ begin
             data_im_in => first_stage_im_out(1452),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(1452),
-            product_im_out => mul_im_out(1452)
+            data_re_out => mul_re_out(1452),
+            data_im_out => mul_im_out(1452)
         );
 
  
@@ -43684,8 +43684,8 @@ begin
             data_im_in => first_stage_im_out(1453),
             re_multiplicator => "1100000001011010", --- -0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(1453),
-            product_im_out => mul_im_out(1453)
+            data_re_out => mul_re_out(1453),
+            data_im_out => mul_im_out(1453)
         );
 
  
@@ -43702,8 +43702,8 @@ begin
             data_im_in => first_stage_im_out(1454),
             re_multiplicator => "1100000000001100", --- -0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(1454),
-            product_im_out => mul_im_out(1454)
+            data_re_out => mul_re_out(1454),
+            data_im_out => mul_im_out(1454)
         );
 
  
@@ -43720,8 +43720,8 @@ begin
             data_im_in => first_stage_im_out(1455),
             re_multiplicator => "1100000000001000", --- -0.99951171875 + j0.0306396484375
             im_multiplicator => "0000000111110110",
-            product_re_out => mul_re_out(1455),
-            product_im_out => mul_im_out(1455)
+            data_re_out => mul_re_out(1455),
+            data_im_out => mul_im_out(1455)
         );
 
  
@@ -43738,8 +43738,8 @@ begin
             data_im_in => first_stage_im_out(1456),
             re_multiplicator => "1100000001001111", --- -0.995178222656 + j0.0979614257812
             im_multiplicator => "0000011001000101",
-            product_re_out => mul_re_out(1456),
-            product_im_out => mul_im_out(1456)
+            data_re_out => mul_re_out(1456),
+            data_im_out => mul_im_out(1456)
         );
 
  
@@ -43756,8 +43756,8 @@ begin
             data_im_in => first_stage_im_out(1457),
             re_multiplicator => "1100000011100001", --- -0.986267089844 + j0.164855957031
             im_multiplicator => "0000101010001101",
-            product_re_out => mul_re_out(1457),
-            product_im_out => mul_im_out(1457)
+            data_re_out => mul_re_out(1457),
+            data_im_out => mul_im_out(1457)
         );
 
  
@@ -43774,8 +43774,8 @@ begin
             data_im_in => first_stage_im_out(1458),
             re_multiplicator => "1100000110111100", --- -0.972900390625 + j0.231018066406
             im_multiplicator => "0000111011001001",
-            product_re_out => mul_re_out(1458),
-            product_im_out => mul_im_out(1458)
+            data_re_out => mul_re_out(1458),
+            data_im_out => mul_im_out(1458)
         );
 
  
@@ -43792,8 +43792,8 @@ begin
             data_im_in => first_stage_im_out(1459),
             re_multiplicator => "1100001011011111", --- -0.955139160156 + j0.296142578125
             im_multiplicator => "0001001011110100",
-            product_re_out => mul_re_out(1459),
-            product_im_out => mul_im_out(1459)
+            data_re_out => mul_re_out(1459),
+            data_im_out => mul_im_out(1459)
         );
 
  
@@ -43810,8 +43810,8 @@ begin
             data_im_in => first_stage_im_out(1460),
             re_multiplicator => "1100010001001010", --- -0.932983398438 + j0.35986328125
             im_multiplicator => "0001011100001000",
-            product_re_out => mul_re_out(1460),
-            product_im_out => mul_im_out(1460)
+            data_re_out => mul_re_out(1460),
+            data_im_out => mul_im_out(1460)
         );
 
  
@@ -43828,8 +43828,8 @@ begin
             data_im_in => first_stage_im_out(1461),
             re_multiplicator => "1100010111111011", --- -0.906555175781 + j0.421997070312
             im_multiplicator => "0001101100000010",
-            product_re_out => mul_re_out(1461),
-            product_im_out => mul_im_out(1461)
+            data_re_out => mul_re_out(1461),
+            data_im_out => mul_im_out(1461)
         );
 
  
@@ -43846,8 +43846,8 @@ begin
             data_im_in => first_stage_im_out(1462),
             re_multiplicator => "1100011111101111", --- -0.876037597656 + j0.482177734375
             im_multiplicator => "0001111011011100",
-            product_re_out => mul_re_out(1462),
-            product_im_out => mul_im_out(1462)
+            data_re_out => mul_re_out(1462),
+            data_im_out => mul_im_out(1462)
         );
 
  
@@ -43864,8 +43864,8 @@ begin
             data_im_in => first_stage_im_out(1463),
             re_multiplicator => "1100101000100100", --- -0.841552734375 + j0.540161132812
             im_multiplicator => "0010001010010010",
-            product_re_out => mul_re_out(1463),
-            product_im_out => mul_im_out(1463)
+            data_re_out => mul_re_out(1463),
+            data_im_out => mul_im_out(1463)
         );
 
  
@@ -43882,8 +43882,8 @@ begin
             data_im_in => first_stage_im_out(1464),
             re_multiplicator => "1100110010011001", --- -0.803161621094 + j0.595642089844
             im_multiplicator => "0010011000011111",
-            product_re_out => mul_re_out(1464),
-            product_im_out => mul_im_out(1464)
+            data_re_out => mul_re_out(1464),
+            data_im_out => mul_im_out(1464)
         );
 
  
@@ -43900,8 +43900,8 @@ begin
             data_im_in => first_stage_im_out(1465),
             re_multiplicator => "1100111101001001", --- -0.761169433594 + j0.648498535156
             im_multiplicator => "0010100110000001",
-            product_re_out => mul_re_out(1465),
-            product_im_out => mul_im_out(1465)
+            data_re_out => mul_re_out(1465),
+            data_im_out => mul_im_out(1465)
         );
 
  
@@ -43918,8 +43918,8 @@ begin
             data_im_in => first_stage_im_out(1466),
             re_multiplicator => "1101001000110010", --- -0.715698242188 + j0.698364257812
             im_multiplicator => "0010110010110010",
-            product_re_out => mul_re_out(1466),
-            product_im_out => mul_im_out(1466)
+            data_re_out => mul_re_out(1466),
+            data_im_out => mul_im_out(1466)
         );
 
  
@@ -43936,8 +43936,8 @@ begin
             data_im_in => first_stage_im_out(1467),
             re_multiplicator => "1101010101010000", --- -0.6669921875 + j0.745056152344
             im_multiplicator => "0010111110101111",
-            product_re_out => mul_re_out(1467),
-            product_im_out => mul_im_out(1467)
+            data_re_out => mul_re_out(1467),
+            data_im_out => mul_im_out(1467)
         );
 
  
@@ -43954,8 +43954,8 @@ begin
             data_im_in => first_stage_im_out(1468),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j0.788330078125
             im_multiplicator => "0011001001110100",
-            product_re_out => mul_re_out(1468),
-            product_im_out => mul_im_out(1468)
+            data_re_out => mul_re_out(1468),
+            data_im_out => mul_im_out(1468)
         );
 
  
@@ -43972,8 +43972,8 @@ begin
             data_im_in => first_stage_im_out(1469),
             re_multiplicator => "1101110000011111", --- -0.560607910156 + j0.828002929688
             im_multiplicator => "0011010011111110",
-            product_re_out => mul_re_out(1469),
-            product_im_out => mul_im_out(1469)
+            data_re_out => mul_re_out(1469),
+            data_im_out => mul_im_out(1469)
         );
 
  
@@ -43990,8 +43990,8 @@ begin
             data_im_in => first_stage_im_out(1470),
             re_multiplicator => "1101111111000111", --- -0.503479003906 + j0.863952636719
             im_multiplicator => "0011011101001011",
-            product_re_out => mul_re_out(1470),
-            product_im_out => mul_im_out(1470)
+            data_re_out => mul_re_out(1470),
+            data_im_out => mul_im_out(1470)
         );
 
  
@@ -44008,8 +44008,8 @@ begin
             data_im_in => first_stage_im_out(1471),
             re_multiplicator => "1110001110010100", --- -0.444091796875 + j0.895935058594
             im_multiplicator => "0011100101010111",
-            product_re_out => mul_re_out(1471),
-            product_im_out => mul_im_out(1471)
+            data_re_out => mul_re_out(1471),
+            data_im_out => mul_im_out(1471)
         );
 
  
@@ -44024,8 +44024,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1472),
             data_im_in => first_stage_im_out(1472),
-            product_re_out => mul_re_out(1472),
-            product_im_out => mul_im_out(1472)
+            data_re_out => mul_re_out(1472),
+            data_im_out => mul_im_out(1472)
         );
 
  
@@ -44042,8 +44042,8 @@ begin
             data_im_in => first_stage_im_out(1473),
             re_multiplicator => "0011111111010111", --- 0.997497558594 + j-0.0704956054688
             im_multiplicator => "1111101101111101",
-            product_re_out => mul_re_out(1473),
-            product_im_out => mul_im_out(1473)
+            data_re_out => mul_re_out(1473),
+            data_im_out => mul_im_out(1473)
         );
 
  
@@ -44060,8 +44060,8 @@ begin
             data_im_in => first_stage_im_out(1474),
             re_multiplicator => "0011111101011101", --- 0.990051269531 + j-0.140625
             im_multiplicator => "1111011100000000",
-            product_re_out => mul_re_out(1474),
-            product_im_out => mul_im_out(1474)
+            data_re_out => mul_re_out(1474),
+            data_im_out => mul_im_out(1474)
         );
 
  
@@ -44078,8 +44078,8 @@ begin
             data_im_in => first_stage_im_out(1475),
             re_multiplicator => "0011111010010010", --- 0.977661132812 + j-0.210083007812
             im_multiplicator => "1111001010001110",
-            product_re_out => mul_re_out(1475),
-            product_im_out => mul_im_out(1475)
+            data_re_out => mul_re_out(1475),
+            data_im_out => mul_im_out(1475)
         );
 
  
@@ -44096,8 +44096,8 @@ begin
             data_im_in => first_stage_im_out(1476),
             re_multiplicator => "0011110101110111", --- 0.960388183594 + j-0.278503417969
             im_multiplicator => "1110111000101101",
-            product_re_out => mul_re_out(1476),
-            product_im_out => mul_im_out(1476)
+            data_re_out => mul_re_out(1476),
+            data_im_out => mul_im_out(1476)
         );
 
  
@@ -44114,8 +44114,8 @@ begin
             data_im_in => first_stage_im_out(1477),
             re_multiplicator => "0011110000001110", --- 0.938354492188 + j-0.345520019531
             im_multiplicator => "1110100111100011",
-            product_re_out => mul_re_out(1477),
-            product_im_out => mul_im_out(1477)
+            data_re_out => mul_re_out(1477),
+            data_im_out => mul_im_out(1477)
         );
 
  
@@ -44132,8 +44132,8 @@ begin
             data_im_in => first_stage_im_out(1478),
             re_multiplicator => "0011101001011001", --- 0.911682128906 + j-0.410827636719
             im_multiplicator => "1110010110110101",
-            product_re_out => mul_re_out(1478),
-            product_im_out => mul_im_out(1478)
+            data_re_out => mul_re_out(1478),
+            data_im_out => mul_im_out(1478)
         );
 
  
@@ -44150,8 +44150,8 @@ begin
             data_im_in => first_stage_im_out(1479),
             re_multiplicator => "0011100001011001", --- 0.880432128906 + j-0.474060058594
             im_multiplicator => "1110000110101001",
-            product_re_out => mul_re_out(1479),
-            product_im_out => mul_im_out(1479)
+            data_re_out => mul_re_out(1479),
+            data_im_out => mul_im_out(1479)
         );
 
  
@@ -44168,8 +44168,8 @@ begin
             data_im_in => first_stage_im_out(1480),
             re_multiplicator => "0011011000010010", --- 0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1480),
-            product_im_out => mul_im_out(1480)
+            data_re_out => mul_re_out(1480),
+            data_im_out => mul_im_out(1480)
         );
 
  
@@ -44186,8 +44186,8 @@ begin
             data_im_in => first_stage_im_out(1481),
             re_multiplicator => "0011001110000101", --- 0.804992675781 + j-0.593200683594
             im_multiplicator => "1101101000001001",
-            product_re_out => mul_re_out(1481),
-            product_im_out => mul_im_out(1481)
+            data_re_out => mul_re_out(1481),
+            data_im_out => mul_im_out(1481)
         );
 
  
@@ -44204,8 +44204,8 @@ begin
             data_im_in => first_stage_im_out(1482),
             re_multiplicator => "0011000010110111", --- 0.761169433594 + j-0.648498535156
             im_multiplicator => "1101011001111111",
-            product_re_out => mul_re_out(1482),
-            product_im_out => mul_im_out(1482)
+            data_re_out => mul_re_out(1482),
+            data_im_out => mul_im_out(1482)
         );
 
  
@@ -44222,8 +44222,8 @@ begin
             data_im_in => first_stage_im_out(1483),
             re_multiplicator => "0010110110101011", --- 0.713562011719 + j-0.700561523438
             im_multiplicator => "1101001100101010",
-            product_re_out => mul_re_out(1483),
-            product_im_out => mul_im_out(1483)
+            data_re_out => mul_re_out(1483),
+            data_im_out => mul_im_out(1483)
         );
 
  
@@ -44240,8 +44240,8 @@ begin
             data_im_in => first_stage_im_out(1484),
             re_multiplicator => "0010101001100101", --- 0.662414550781 + j-0.749084472656
             im_multiplicator => "1101000000001111",
-            product_re_out => mul_re_out(1484),
-            product_im_out => mul_im_out(1484)
+            data_re_out => mul_re_out(1484),
+            data_im_out => mul_im_out(1484)
         );
 
  
@@ -44258,8 +44258,8 @@ begin
             data_im_in => first_stage_im_out(1485),
             re_multiplicator => "0010011011101000", --- 0.60791015625 + j-0.7939453125
             im_multiplicator => "1100110100110000",
-            product_re_out => mul_re_out(1485),
-            product_im_out => mul_im_out(1485)
+            data_re_out => mul_re_out(1485),
+            data_im_out => mul_im_out(1485)
         );
 
  
@@ -44276,8 +44276,8 @@ begin
             data_im_in => first_stage_im_out(1486),
             re_multiplicator => "0010001100111010", --- 0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(1486),
-            product_im_out => mul_im_out(1486)
+            data_re_out => mul_re_out(1486),
+            data_im_out => mul_im_out(1486)
         );
 
  
@@ -44294,8 +44294,8 @@ begin
             data_im_in => first_stage_im_out(1487),
             re_multiplicator => "0001111101011111", --- 0.490173339844 + j-0.87158203125
             im_multiplicator => "1100100000111000",
-            product_re_out => mul_re_out(1487),
-            product_im_out => mul_im_out(1487)
+            data_re_out => mul_re_out(1487),
+            data_im_out => mul_im_out(1487)
         );
 
  
@@ -44312,8 +44312,8 @@ begin
             data_im_in => first_stage_im_out(1488),
             re_multiplicator => "0001101101011101", --- 0.427551269531 + j-0.903930664062
             im_multiplicator => "1100011000100110",
-            product_re_out => mul_re_out(1488),
-            product_im_out => mul_im_out(1488)
+            data_re_out => mul_re_out(1488),
+            data_im_out => mul_im_out(1488)
         );
 
  
@@ -44330,8 +44330,8 @@ begin
             data_im_in => first_stage_im_out(1489),
             re_multiplicator => "0001011100110111", --- 0.362731933594 + j-0.931823730469
             im_multiplicator => "1100010001011101",
-            product_re_out => mul_re_out(1489),
-            product_im_out => mul_im_out(1489)
+            data_re_out => mul_re_out(1489),
+            data_im_out => mul_im_out(1489)
         );
 
  
@@ -44348,8 +44348,8 @@ begin
             data_im_in => first_stage_im_out(1490),
             re_multiplicator => "0001001011110100", --- 0.296142578125 + j-0.955139160156
             im_multiplicator => "1100001011011111",
-            product_re_out => mul_re_out(1490),
-            product_im_out => mul_im_out(1490)
+            data_re_out => mul_re_out(1490),
+            data_im_out => mul_im_out(1490)
         );
 
  
@@ -44366,8 +44366,8 @@ begin
             data_im_in => first_stage_im_out(1491),
             re_multiplicator => "0000111010011000", --- 0.22802734375 + j-0.9736328125
             im_multiplicator => "1100000110110000",
-            product_re_out => mul_re_out(1491),
-            product_im_out => mul_im_out(1491)
+            data_re_out => mul_re_out(1491),
+            data_im_out => mul_im_out(1491)
         );
 
  
@@ -44384,8 +44384,8 @@ begin
             data_im_in => first_stage_im_out(1492),
             re_multiplicator => "0000101000101010", --- 0.158813476562 + j-0.987243652344
             im_multiplicator => "1100000011010001",
-            product_re_out => mul_re_out(1492),
-            product_im_out => mul_im_out(1492)
+            data_re_out => mul_re_out(1492),
+            data_im_out => mul_im_out(1492)
         );
 
  
@@ -44402,8 +44402,8 @@ begin
             data_im_in => first_stage_im_out(1493),
             re_multiplicator => "0000010110101111", --- 0.0888061523438 + j-0.996032714844
             im_multiplicator => "1100000001000001",
-            product_re_out => mul_re_out(1493),
-            product_im_out => mul_im_out(1493)
+            data_re_out => mul_re_out(1493),
+            data_im_out => mul_im_out(1493)
         );
 
  
@@ -44420,8 +44420,8 @@ begin
             data_im_in => first_stage_im_out(1494),
             re_multiplicator => "0000000100101101", --- 0.0183715820312 + j-0.999816894531
             im_multiplicator => "1100000000000011",
-            product_re_out => mul_re_out(1494),
-            product_im_out => mul_im_out(1494)
+            data_re_out => mul_re_out(1494),
+            data_im_out => mul_im_out(1494)
         );
 
  
@@ -44438,8 +44438,8 @@ begin
             data_im_in => first_stage_im_out(1495),
             re_multiplicator => "1111110010101010", --- -0.0521240234375 + j-0.998596191406
             im_multiplicator => "1100000000010111",
-            product_re_out => mul_re_out(1495),
-            product_im_out => mul_im_out(1495)
+            data_re_out => mul_re_out(1495),
+            data_im_out => mul_im_out(1495)
         );
 
  
@@ -44456,8 +44456,8 @@ begin
             data_im_in => first_stage_im_out(1496),
             re_multiplicator => "1111100000101011", --- -0.122375488281 + j-0.992431640625
             im_multiplicator => "1100000001111100",
-            product_re_out => mul_re_out(1496),
-            product_im_out => mul_im_out(1496)
+            data_re_out => mul_re_out(1496),
+            data_im_out => mul_im_out(1496)
         );
 
  
@@ -44474,8 +44474,8 @@ begin
             data_im_in => first_stage_im_out(1497),
             re_multiplicator => "1111001110110101", --- -0.192077636719 + j-0.981323242188
             im_multiplicator => "1100000100110010",
-            product_re_out => mul_re_out(1497),
-            product_im_out => mul_im_out(1497)
+            data_re_out => mul_re_out(1497),
+            data_im_out => mul_im_out(1497)
         );
 
  
@@ -44492,8 +44492,8 @@ begin
             data_im_in => first_stage_im_out(1498),
             re_multiplicator => "1110111101010000", --- -0.2607421875 + j-0.965393066406
             im_multiplicator => "1100001000110111",
-            product_re_out => mul_re_out(1498),
-            product_im_out => mul_im_out(1498)
+            data_re_out => mul_re_out(1498),
+            data_im_out => mul_im_out(1498)
         );
 
  
@@ -44510,8 +44510,8 @@ begin
             data_im_in => first_stage_im_out(1499),
             re_multiplicator => "1110101011111111", --- -0.328186035156 + j-0.944580078125
             im_multiplicator => "1100001110001100",
-            product_re_out => mul_re_out(1499),
-            product_im_out => mul_im_out(1499)
+            data_re_out => mul_re_out(1499),
+            data_im_out => mul_im_out(1499)
         );
 
  
@@ -44528,8 +44528,8 @@ begin
             data_im_in => first_stage_im_out(1500),
             re_multiplicator => "1110011011001001", --- -0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(1500),
-            product_im_out => mul_im_out(1500)
+            data_re_out => mul_re_out(1500),
+            data_im_out => mul_im_out(1500)
         );
 
  
@@ -44546,8 +44546,8 @@ begin
             data_im_in => first_stage_im_out(1501),
             re_multiplicator => "1110001010110100", --- -0.457763671875 + j-0.889038085938
             im_multiplicator => "1100011100011010",
-            product_re_out => mul_re_out(1501),
-            product_im_out => mul_im_out(1501)
+            data_re_out => mul_re_out(1501),
+            data_im_out => mul_im_out(1501)
         );
 
  
@@ -44564,8 +44564,8 @@ begin
             data_im_in => first_stage_im_out(1502),
             re_multiplicator => "1101111011000011", --- -0.519348144531 + j-0.854553222656
             im_multiplicator => "1100100101001111",
-            product_re_out => mul_re_out(1502),
-            product_im_out => mul_im_out(1502)
+            data_re_out => mul_re_out(1502),
+            data_im_out => mul_im_out(1502)
         );
 
  
@@ -44582,8 +44582,8 @@ begin
             data_im_in => first_stage_im_out(1503),
             re_multiplicator => "1101101011111101", --- -0.578308105469 + j-0.815795898438
             im_multiplicator => "1100101111001010",
-            product_re_out => mul_re_out(1503),
-            product_im_out => mul_im_out(1503)
+            data_re_out => mul_re_out(1503),
+            data_im_out => mul_im_out(1503)
         );
 
  
@@ -44600,8 +44600,8 @@ begin
             data_im_in => first_stage_im_out(1504),
             re_multiplicator => "1101011101100111", --- -0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(1504),
-            product_im_out => mul_im_out(1504)
+            data_re_out => mul_re_out(1504),
+            data_im_out => mul_im_out(1504)
         );
 
  
@@ -44618,8 +44618,8 @@ begin
             data_im_in => first_stage_im_out(1505),
             re_multiplicator => "1101010000000100", --- -0.687255859375 + j-0.726318359375
             im_multiplicator => "1101000110000100",
-            product_re_out => mul_re_out(1505),
-            product_im_out => mul_im_out(1505)
+            data_re_out => mul_re_out(1505),
+            data_im_out => mul_im_out(1505)
         );
 
  
@@ -44636,8 +44636,8 @@ begin
             data_im_in => first_stage_im_out(1506),
             re_multiplicator => "1101000011011000", --- -0.73681640625 + j-0.676086425781
             im_multiplicator => "1101010010111011",
-            product_re_out => mul_re_out(1506),
-            product_im_out => mul_im_out(1506)
+            data_re_out => mul_re_out(1506),
+            data_im_out => mul_im_out(1506)
         );
 
  
@@ -44654,8 +44654,8 @@ begin
             data_im_in => first_stage_im_out(1507),
             re_multiplicator => "1100110111101010", --- -0.782592773438 + j-0.622436523438
             im_multiplicator => "1101100000101010",
-            product_re_out => mul_re_out(1507),
-            product_im_out => mul_im_out(1507)
+            data_re_out => mul_re_out(1507),
+            data_im_out => mul_im_out(1507)
         );
 
  
@@ -44672,8 +44672,8 @@ begin
             data_im_in => first_stage_im_out(1508),
             re_multiplicator => "1100101100111010", --- -0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(1508),
-            product_im_out => mul_im_out(1508)
+            data_re_out => mul_re_out(1508),
+            data_im_out => mul_im_out(1508)
         );
 
  
@@ -44690,8 +44690,8 @@ begin
             data_im_in => first_stage_im_out(1509),
             re_multiplicator => "1100100011001111", --- -0.862365722656 + j-0.506164550781
             im_multiplicator => "1101111110011011",
-            product_re_out => mul_re_out(1509),
-            product_im_out => mul_im_out(1509)
+            data_re_out => mul_re_out(1509),
+            data_im_out => mul_im_out(1509)
         );
 
  
@@ -44708,8 +44708,8 @@ begin
             data_im_in => first_stage_im_out(1510),
             re_multiplicator => "1100011010101001", --- -0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(1510),
-            product_im_out => mul_im_out(1510)
+            data_re_out => mul_re_out(1510),
+            data_im_out => mul_im_out(1510)
         );
 
  
@@ -44726,8 +44726,8 @@ begin
             data_im_in => first_stage_im_out(1511),
             re_multiplicator => "1100010011001100", --- -0.925048828125 + j-0.379821777344
             im_multiplicator => "1110011110110001",
-            product_re_out => mul_re_out(1511),
-            product_im_out => mul_im_out(1511)
+            data_re_out => mul_re_out(1511),
+            data_im_out => mul_im_out(1511)
         );
 
  
@@ -44744,8 +44744,8 @@ begin
             data_im_in => first_stage_im_out(1512),
             re_multiplicator => "1100001100111011", --- -0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(1512),
-            product_im_out => mul_im_out(1512)
+            data_re_out => mul_re_out(1512),
+            data_im_out => mul_im_out(1512)
         );
 
  
@@ -44762,8 +44762,8 @@ begin
             data_im_in => first_stage_im_out(1513),
             re_multiplicator => "1100000111111000", --- -0.96923828125 + j-0.245910644531
             im_multiplicator => "1111000001000011",
-            product_re_out => mul_re_out(1513),
-            product_im_out => mul_im_out(1513)
+            data_re_out => mul_re_out(1513),
+            data_im_out => mul_im_out(1513)
         );
 
  
@@ -44780,8 +44780,8 @@ begin
             data_im_in => first_stage_im_out(1514),
             re_multiplicator => "1100000100000011", --- -0.984191894531 + j-0.177001953125
             im_multiplicator => "1111010010101100",
-            product_re_out => mul_re_out(1514),
-            product_im_out => mul_im_out(1514)
+            data_re_out => mul_re_out(1514),
+            data_im_out => mul_im_out(1514)
         );
 
  
@@ -44798,8 +44798,8 @@ begin
             data_im_in => first_stage_im_out(1515),
             re_multiplicator => "1100000001011111", --- -0.994201660156 + j-0.107116699219
             im_multiplicator => "1111100100100101",
-            product_re_out => mul_re_out(1515),
-            product_im_out => mul_im_out(1515)
+            data_re_out => mul_re_out(1515),
+            data_im_out => mul_im_out(1515)
         );
 
  
@@ -44816,8 +44816,8 @@ begin
             data_im_in => first_stage_im_out(1516),
             re_multiplicator => "1100000000001100", --- -0.999267578125 + j-0.0368041992188
             im_multiplicator => "1111110110100101",
-            product_re_out => mul_re_out(1516),
-            product_im_out => mul_im_out(1516)
+            data_re_out => mul_re_out(1516),
+            data_im_out => mul_im_out(1516)
         );
 
  
@@ -44834,8 +44834,8 @@ begin
             data_im_in => first_stage_im_out(1517),
             re_multiplicator => "1100000000001010", --- -0.999389648438 + j0.03369140625
             im_multiplicator => "0000001000101000",
-            product_re_out => mul_re_out(1517),
-            product_im_out => mul_im_out(1517)
+            data_re_out => mul_re_out(1517),
+            data_im_out => mul_im_out(1517)
         );
 
  
@@ -44852,8 +44852,8 @@ begin
             data_im_in => first_stage_im_out(1518),
             re_multiplicator => "1100000001011010", --- -0.994506835938 + j0.104064941406
             im_multiplicator => "0000011010101001",
-            product_re_out => mul_re_out(1518),
-            product_im_out => mul_im_out(1518)
+            data_re_out => mul_re_out(1518),
+            data_im_out => mul_im_out(1518)
         );
 
  
@@ -44870,8 +44870,8 @@ begin
             data_im_in => first_stage_im_out(1519),
             re_multiplicator => "1100000011111010", --- -0.984741210938 + j0.173950195312
             im_multiplicator => "0000101100100010",
-            product_re_out => mul_re_out(1519),
-            product_im_out => mul_im_out(1519)
+            data_re_out => mul_re_out(1519),
+            data_im_out => mul_im_out(1519)
         );
 
  
@@ -44888,8 +44888,8 @@ begin
             data_im_in => first_stage_im_out(1520),
             re_multiplicator => "1100000111101100", --- -0.969970703125 + j0.242919921875
             im_multiplicator => "0000111110001100",
-            product_re_out => mul_re_out(1520),
-            product_im_out => mul_im_out(1520)
+            data_re_out => mul_re_out(1520),
+            data_im_out => mul_im_out(1520)
         );
 
  
@@ -44906,8 +44906,8 @@ begin
             data_im_in => first_stage_im_out(1521),
             re_multiplicator => "1100001100101100", --- -0.950439453125 + j0.310729980469
             im_multiplicator => "0001001111100011",
-            product_re_out => mul_re_out(1521),
-            product_im_out => mul_im_out(1521)
+            data_re_out => mul_re_out(1521),
+            data_im_out => mul_im_out(1521)
         );
 
  
@@ -44924,8 +44924,8 @@ begin
             data_im_in => first_stage_im_out(1522),
             re_multiplicator => "1100010010111001", --- -0.926208496094 + j0.376953125
             im_multiplicator => "0001100000100000",
-            product_re_out => mul_re_out(1522),
-            product_im_out => mul_im_out(1522)
+            data_re_out => mul_re_out(1522),
+            data_im_out => mul_im_out(1522)
         );
 
  
@@ -44942,8 +44942,8 @@ begin
             data_im_in => first_stage_im_out(1523),
             re_multiplicator => "1100011010010011", --- -0.897277832031 + j0.441345214844
             im_multiplicator => "0001110000111111",
-            product_re_out => mul_re_out(1523),
-            product_im_out => mul_im_out(1523)
+            data_re_out => mul_re_out(1523),
+            data_im_out => mul_im_out(1523)
         );
 
  
@@ -44960,8 +44960,8 @@ begin
             data_im_in => first_stage_im_out(1524),
             re_multiplicator => "1100100010110101", --- -0.863952636719 + j0.503479003906
             im_multiplicator => "0010000000111001",
-            product_re_out => mul_re_out(1524),
-            product_im_out => mul_im_out(1524)
+            data_re_out => mul_re_out(1524),
+            data_im_out => mul_im_out(1524)
         );
 
  
@@ -44978,8 +44978,8 @@ begin
             data_im_in => first_stage_im_out(1525),
             re_multiplicator => "1100101100011110", --- -0.826293945312 + j0.563171386719
             im_multiplicator => "0010010000001011",
-            product_re_out => mul_re_out(1525),
-            product_im_out => mul_im_out(1525)
+            data_re_out => mul_re_out(1525),
+            data_im_out => mul_im_out(1525)
         );
 
  
@@ -44996,8 +44996,8 @@ begin
             data_im_in => first_stage_im_out(1526),
             re_multiplicator => "1100110111001010", --- -0.784545898438 + j0.620056152344
             im_multiplicator => "0010011110101111",
-            product_re_out => mul_re_out(1526),
-            product_im_out => mul_im_out(1526)
+            data_re_out => mul_re_out(1526),
+            data_im_out => mul_im_out(1526)
         );
 
  
@@ -45014,8 +45014,8 @@ begin
             data_im_in => first_stage_im_out(1527),
             re_multiplicator => "1101000010110111", --- -0.738830566406 + j0.673828125
             im_multiplicator => "0010101100100000",
-            product_re_out => mul_re_out(1527),
-            product_im_out => mul_im_out(1527)
+            data_re_out => mul_re_out(1527),
+            data_im_out => mul_im_out(1527)
         );
 
  
@@ -45032,8 +45032,8 @@ begin
             data_im_in => first_stage_im_out(1528),
             re_multiplicator => "1101001111011111", --- -0.689514160156 + j0.724243164062
             im_multiplicator => "0010111001011010",
-            product_re_out => mul_re_out(1528),
-            product_im_out => mul_im_out(1528)
+            data_re_out => mul_re_out(1528),
+            data_im_out => mul_im_out(1528)
         );
 
  
@@ -45050,8 +45050,8 @@ begin
             data_im_in => first_stage_im_out(1529),
             re_multiplicator => "1101011101000000", --- -0.63671875 + j0.771057128906
             im_multiplicator => "0011000101011001",
-            product_re_out => mul_re_out(1529),
-            product_im_out => mul_im_out(1529)
+            data_re_out => mul_re_out(1529),
+            data_im_out => mul_im_out(1529)
         );
 
  
@@ -45068,8 +45068,8 @@ begin
             data_im_in => first_stage_im_out(1530),
             re_multiplicator => "1101101011010100", --- -0.580810546875 + j0.814025878906
             im_multiplicator => "0011010000011001",
-            product_re_out => mul_re_out(1530),
-            product_im_out => mul_im_out(1530)
+            data_re_out => mul_re_out(1530),
+            data_im_out => mul_im_out(1530)
         );
 
  
@@ -45086,8 +45086,8 @@ begin
             data_im_in => first_stage_im_out(1531),
             re_multiplicator => "1101111010011000", --- -0.52197265625 + j0.852905273438
             im_multiplicator => "0011011010010110",
-            product_re_out => mul_re_out(1531),
-            product_im_out => mul_im_out(1531)
+            data_re_out => mul_re_out(1531),
+            data_im_out => mul_im_out(1531)
         );
 
  
@@ -45104,8 +45104,8 @@ begin
             data_im_in => first_stage_im_out(1532),
             re_multiplicator => "1110001010000111", --- -0.460510253906 + j0.887634277344
             im_multiplicator => "0011100011001111",
-            product_re_out => mul_re_out(1532),
-            product_im_out => mul_im_out(1532)
+            data_re_out => mul_re_out(1532),
+            data_im_out => mul_im_out(1532)
         );
 
  
@@ -45122,8 +45122,8 @@ begin
             data_im_in => first_stage_im_out(1533),
             re_multiplicator => "1110011010011011", --- -0.396789550781 + j0.917846679688
             im_multiplicator => "0011101010111110",
-            product_re_out => mul_re_out(1533),
-            product_im_out => mul_im_out(1533)
+            data_re_out => mul_re_out(1533),
+            data_im_out => mul_im_out(1533)
         );
 
  
@@ -45140,8 +45140,8 @@ begin
             data_im_in => first_stage_im_out(1534),
             re_multiplicator => "1110101011010000", --- -0.3310546875 + j0.943542480469
             im_multiplicator => "0011110001100011",
-            product_re_out => mul_re_out(1534),
-            product_im_out => mul_im_out(1534)
+            data_re_out => mul_re_out(1534),
+            data_im_out => mul_im_out(1534)
         );
 
  
@@ -45158,8 +45158,8 @@ begin
             data_im_in => first_stage_im_out(1535),
             re_multiplicator => "1110111100011111", --- -0.263732910156 + j0.964538574219
             im_multiplicator => "0011110110111011",
-            product_re_out => mul_re_out(1535),
-            product_im_out => mul_im_out(1535)
+            data_re_out => mul_re_out(1535),
+            data_im_out => mul_im_out(1535)
         );
 
  
@@ -45174,8 +45174,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1536),
             data_im_in => first_stage_im_out(1536),
-            product_re_out => mul_re_out(1536),
-            product_im_out => mul_im_out(1536)
+            data_re_out => mul_re_out(1536),
+            data_im_out => mul_im_out(1536)
         );
 
  
@@ -45192,8 +45192,8 @@ begin
             data_im_in => first_stage_im_out(1537),
             re_multiplicator => "0011111111010011", --- 0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(1537),
-            product_im_out => mul_im_out(1537)
+            data_re_out => mul_re_out(1537),
+            data_im_out => mul_im_out(1537)
         );
 
  
@@ -45210,8 +45210,8 @@ begin
             data_im_in => first_stage_im_out(1538),
             re_multiplicator => "0011111101001110", --- 0.989135742188 + j-0.146728515625
             im_multiplicator => "1111011010011100",
-            product_re_out => mul_re_out(1538),
-            product_im_out => mul_im_out(1538)
+            data_re_out => mul_re_out(1538),
+            data_im_out => mul_im_out(1538)
         );
 
  
@@ -45228,8 +45228,8 @@ begin
             data_im_in => first_stage_im_out(1539),
             re_multiplicator => "0011111001110001", --- 0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(1539),
-            product_im_out => mul_im_out(1539)
+            data_re_out => mul_re_out(1539),
+            data_im_out => mul_im_out(1539)
         );
 
  
@@ -45246,8 +45246,8 @@ begin
             data_im_in => first_stage_im_out(1540),
             re_multiplicator => "0011110100111110", --- 0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(1540),
-            product_im_out => mul_im_out(1540)
+            data_re_out => mul_re_out(1540),
+            data_im_out => mul_im_out(1540)
         );
 
  
@@ -45264,8 +45264,8 @@ begin
             data_im_in => first_stage_im_out(1541),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(1541),
-            product_im_out => mul_im_out(1541)
+            data_re_out => mul_re_out(1541),
+            data_im_out => mul_im_out(1541)
         );
 
  
@@ -45282,8 +45282,8 @@ begin
             data_im_in => first_stage_im_out(1542),
             re_multiplicator => "0011100111011010", --- 0.903930664062 + j-0.427551269531
             im_multiplicator => "1110010010100011",
-            product_re_out => mul_re_out(1542),
-            product_im_out => mul_im_out(1542)
+            data_re_out => mul_re_out(1542),
+            data_im_out => mul_im_out(1542)
         );
 
  
@@ -45300,8 +45300,8 @@ begin
             data_im_in => first_stage_im_out(1543),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(1543),
-            product_im_out => mul_im_out(1543)
+            data_re_out => mul_re_out(1543),
+            data_im_out => mul_im_out(1543)
         );
 
  
@@ -45318,8 +45318,8 @@ begin
             data_im_in => first_stage_im_out(1544),
             re_multiplicator => "0011010100110110", --- 0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(1544),
-            product_im_out => mul_im_out(1544)
+            data_re_out => mul_re_out(1544),
+            data_im_out => mul_im_out(1544)
         );
 
  
@@ -45336,8 +45336,8 @@ begin
             data_im_in => first_stage_im_out(1545),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(1545),
-            product_im_out => mul_im_out(1545)
+            data_re_out => mul_re_out(1545),
+            data_im_out => mul_im_out(1545)
         );
 
  
@@ -45354,8 +45354,8 @@ begin
             data_im_in => first_stage_im_out(1546),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1546),
-            product_im_out => mul_im_out(1546)
+            data_re_out => mul_re_out(1546),
+            data_im_out => mul_im_out(1546)
         );
 
  
@@ -45372,8 +45372,8 @@ begin
             data_im_in => first_stage_im_out(1547),
             re_multiplicator => "0010110000100001", --- 0.689514160156 + j-0.724243164062
             im_multiplicator => "1101000110100110",
-            product_re_out => mul_re_out(1547),
-            product_im_out => mul_im_out(1547)
+            data_re_out => mul_re_out(1547),
+            data_im_out => mul_im_out(1547)
         );
 
  
@@ -45390,8 +45390,8 @@ begin
             data_im_in => first_stage_im_out(1548),
             re_multiplicator => "0010100010011001", --- 0.634338378906 + j-0.773010253906
             im_multiplicator => "1100111010000111",
-            product_re_out => mul_re_out(1548),
-            product_im_out => mul_im_out(1548)
+            data_re_out => mul_re_out(1548),
+            data_im_out => mul_im_out(1548)
         );
 
  
@@ -45408,8 +45408,8 @@ begin
             data_im_in => first_stage_im_out(1549),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(1549),
-            product_im_out => mul_im_out(1549)
+            data_re_out => mul_re_out(1549),
+            data_im_out => mul_im_out(1549)
         );
 
  
@@ -45426,8 +45426,8 @@ begin
             data_im_in => first_stage_im_out(1550),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(1550),
-            product_im_out => mul_im_out(1550)
+            data_re_out => mul_re_out(1550),
+            data_im_out => mul_im_out(1550)
         );
 
  
@@ -45444,8 +45444,8 @@ begin
             data_im_in => first_stage_im_out(1551),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(1551),
-            product_im_out => mul_im_out(1551)
+            data_re_out => mul_re_out(1551),
+            data_im_out => mul_im_out(1551)
         );
 
  
@@ -45462,8 +45462,8 @@ begin
             data_im_in => first_stage_im_out(1552),
             re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
             im_multiplicator => "1100010011100000",
-            product_re_out => mul_re_out(1552),
-            product_im_out => mul_im_out(1552)
+            data_re_out => mul_re_out(1552),
+            data_im_out => mul_im_out(1552)
         );
 
  
@@ -45480,8 +45480,8 @@ begin
             data_im_in => first_stage_im_out(1553),
             re_multiplicator => "0001010000010011", --- 0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(1553),
-            product_im_out => mul_im_out(1553)
+            data_re_out => mul_re_out(1553),
+            data_im_out => mul_im_out(1553)
         );
 
  
@@ -45498,8 +45498,8 @@ begin
             data_im_in => first_stage_im_out(1554),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(1554),
-            product_im_out => mul_im_out(1554)
+            data_re_out => mul_re_out(1554),
+            data_im_out => mul_im_out(1554)
         );
 
  
@@ -45516,8 +45516,8 @@ begin
             data_im_in => first_stage_im_out(1555),
             re_multiplicator => "0000101011110001", --- 0.170959472656 + j-0.985229492188
             im_multiplicator => "1100000011110010",
-            product_re_out => mul_re_out(1555),
-            product_im_out => mul_im_out(1555)
+            data_re_out => mul_re_out(1555),
+            data_im_out => mul_im_out(1555)
         );
 
  
@@ -45534,8 +45534,8 @@ begin
             data_im_in => first_stage_im_out(1556),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1556),
-            product_im_out => mul_im_out(1556)
+            data_re_out => mul_re_out(1556),
+            data_im_out => mul_im_out(1556)
         );
 
  
@@ -45552,8 +45552,8 @@ begin
             data_im_in => first_stage_im_out(1557),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1557),
-            product_im_out => mul_im_out(1557)
+            data_re_out => mul_re_out(1557),
+            data_im_out => mul_im_out(1557)
         );
 
  
@@ -45570,8 +45570,8 @@ begin
             data_im_in => first_stage_im_out(1558),
             re_multiplicator => "1111110011011101", --- -0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(1558),
-            product_im_out => mul_im_out(1558)
+            data_re_out => mul_re_out(1558),
+            data_im_out => mul_im_out(1558)
         );
 
  
@@ -45588,8 +45588,8 @@ begin
             data_im_in => first_stage_im_out(1559),
             re_multiplicator => "1111100000101011", --- -0.122375488281 + j-0.992431640625
             im_multiplicator => "1100000001111100",
-            product_re_out => mul_re_out(1559),
-            product_im_out => mul_im_out(1559)
+            data_re_out => mul_re_out(1559),
+            data_im_out => mul_im_out(1559)
         );
 
  
@@ -45606,8 +45606,8 @@ begin
             data_im_in => first_stage_im_out(1560),
             re_multiplicator => "1111001110000100", --- -0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(1560),
-            product_im_out => mul_im_out(1560)
+            data_re_out => mul_re_out(1560),
+            data_im_out => mul_im_out(1560)
         );
 
  
@@ -45624,8 +45624,8 @@ begin
             data_im_in => first_stage_im_out(1561),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(1561),
-            product_im_out => mul_im_out(1561)
+            data_re_out => mul_re_out(1561),
+            data_im_out => mul_im_out(1561)
         );
 
  
@@ -45642,8 +45642,8 @@ begin
             data_im_in => first_stage_im_out(1562),
             re_multiplicator => "1110101001110001", --- -0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1562),
-            product_im_out => mul_im_out(1562)
+            data_re_out => mul_re_out(1562),
+            data_im_out => mul_im_out(1562)
         );
 
  
@@ -45660,8 +45660,8 @@ begin
             data_im_in => first_stage_im_out(1563),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j-0.914184570312
             im_multiplicator => "1100010101111110",
-            product_re_out => mul_re_out(1563),
-            product_im_out => mul_im_out(1563)
+            data_re_out => mul_re_out(1563),
+            data_im_out => mul_im_out(1563)
         );
 
  
@@ -45678,8 +45678,8 @@ begin
             data_im_in => first_stage_im_out(1564),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1564),
-            product_im_out => mul_im_out(1564)
+            data_re_out => mul_re_out(1564),
+            data_im_out => mul_im_out(1564)
         );
 
  
@@ -45696,8 +45696,8 @@ begin
             data_im_in => first_stage_im_out(1565),
             re_multiplicator => "1101110111000011", --- -0.534973144531 + j-0.844848632812
             im_multiplicator => "1100100111101110",
-            product_re_out => mul_re_out(1565),
-            product_im_out => mul_im_out(1565)
+            data_re_out => mul_re_out(1565),
+            data_im_out => mul_im_out(1565)
         );
 
  
@@ -45714,8 +45714,8 @@ begin
             data_im_in => first_stage_im_out(1566),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1566),
-            product_im_out => mul_im_out(1566)
+            data_re_out => mul_re_out(1566),
+            data_im_out => mul_im_out(1566)
         );
 
  
@@ -45732,8 +45732,8 @@ begin
             data_im_in => first_stage_im_out(1567),
             re_multiplicator => "1101011000110011", --- -0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(1567),
-            product_im_out => mul_im_out(1567)
+            data_re_out => mul_re_out(1567),
+            data_im_out => mul_im_out(1567)
         );
 
  
@@ -45750,8 +45750,8 @@ begin
             data_im_in => first_stage_im_out(1568),
             re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(1568),
-            product_im_out => mul_im_out(1568)
+            data_re_out => mul_re_out(1568),
+            data_im_out => mul_im_out(1568)
         );
 
  
@@ -45768,8 +45768,8 @@ begin
             data_im_in => first_stage_im_out(1569),
             re_multiplicator => "1100111110001010", --- -0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(1569),
-            product_im_out => mul_im_out(1569)
+            data_re_out => mul_re_out(1569),
+            data_im_out => mul_im_out(1569)
         );
 
  
@@ -45786,8 +45786,8 @@ begin
             data_im_in => first_stage_im_out(1570),
             re_multiplicator => "1100110010011001", --- -0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(1570),
-            product_im_out => mul_im_out(1570)
+            data_re_out => mul_re_out(1570),
+            data_im_out => mul_im_out(1570)
         );
 
  
@@ -45804,8 +45804,8 @@ begin
             data_im_in => first_stage_im_out(1571),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1571),
-            product_im_out => mul_im_out(1571)
+            data_re_out => mul_re_out(1571),
+            data_im_out => mul_im_out(1571)
         );
 
  
@@ -45822,8 +45822,8 @@ begin
             data_im_in => first_stage_im_out(1572),
             re_multiplicator => "1100011110001111", --- -0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1572),
-            product_im_out => mul_im_out(1572)
+            data_re_out => mul_re_out(1572),
+            data_im_out => mul_im_out(1572)
         );
 
  
@@ -45840,8 +45840,8 @@ begin
             data_im_in => first_stage_im_out(1573),
             re_multiplicator => "1100010101111110", --- -0.914184570312 + j-0.405212402344
             im_multiplicator => "1110011000010001",
-            product_re_out => mul_re_out(1573),
-            product_im_out => mul_im_out(1573)
+            data_re_out => mul_re_out(1573),
+            data_im_out => mul_im_out(1573)
         );
 
  
@@ -45858,8 +45858,8 @@ begin
             data_im_in => first_stage_im_out(1574),
             re_multiplicator => "1100001110111110", --- -0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(1574),
-            product_im_out => mul_im_out(1574)
+            data_re_out => mul_re_out(1574),
+            data_im_out => mul_im_out(1574)
         );
 
  
@@ -45876,8 +45876,8 @@ begin
             data_im_in => first_stage_im_out(1575),
             re_multiplicator => "1100001001010010", --- -0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(1575),
-            product_im_out => mul_im_out(1575)
+            data_re_out => mul_re_out(1575),
+            data_im_out => mul_im_out(1575)
         );
 
  
@@ -45894,8 +45894,8 @@ begin
             data_im_in => first_stage_im_out(1576),
             re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(1576),
-            product_im_out => mul_im_out(1576)
+            data_re_out => mul_re_out(1576),
+            data_im_out => mul_im_out(1576)
         );
 
  
@@ -45912,8 +45912,8 @@ begin
             data_im_in => first_stage_im_out(1577),
             re_multiplicator => "1100000001111100", --- -0.992431640625 + j-0.122375488281
             im_multiplicator => "1111100000101011",
-            product_re_out => mul_re_out(1577),
-            product_im_out => mul_im_out(1577)
+            data_re_out => mul_re_out(1577),
+            data_im_out => mul_im_out(1577)
         );
 
  
@@ -45930,8 +45930,8 @@ begin
             data_im_in => first_stage_im_out(1578),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1578),
-            product_im_out => mul_im_out(1578)
+            data_re_out => mul_re_out(1578),
+            data_im_out => mul_im_out(1578)
         );
 
  
@@ -45948,8 +45948,8 @@ begin
             data_im_in => first_stage_im_out(1579),
             re_multiplicator => "1100000000000101", --- -0.999694824219 + j0.0245361328125
             im_multiplicator => "0000000110010010",
-            product_re_out => mul_re_out(1579),
-            product_im_out => mul_im_out(1579)
+            data_re_out => mul_re_out(1579),
+            data_im_out => mul_im_out(1579)
         );
 
  
@@ -45966,8 +45966,8 @@ begin
             data_im_in => first_stage_im_out(1580),
             re_multiplicator => "1100000001001111", --- -0.995178222656 + j0.0979614257812
             im_multiplicator => "0000011001000101",
-            product_re_out => mul_re_out(1580),
-            product_im_out => mul_im_out(1580)
+            data_re_out => mul_re_out(1580),
+            data_im_out => mul_im_out(1580)
         );
 
  
@@ -45984,8 +45984,8 @@ begin
             data_im_in => first_stage_im_out(1581),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j0.170959472656
             im_multiplicator => "0000101011110001",
-            product_re_out => mul_re_out(1581),
-            product_im_out => mul_im_out(1581)
+            data_re_out => mul_re_out(1581),
+            data_im_out => mul_im_out(1581)
         );
 
  
@@ -46002,8 +46002,8 @@ begin
             data_im_in => first_stage_im_out(1582),
             re_multiplicator => "1100000111101100", --- -0.969970703125 + j0.242919921875
             im_multiplicator => "0000111110001100",
-            product_re_out => mul_re_out(1582),
-            product_im_out => mul_im_out(1582)
+            data_re_out => mul_re_out(1582),
+            data_im_out => mul_im_out(1582)
         );
 
  
@@ -46020,8 +46020,8 @@ begin
             data_im_in => first_stage_im_out(1583),
             re_multiplicator => "1100001100111011", --- -0.949523925781 + j0.313659667969
             im_multiplicator => "0001010000010011",
-            product_re_out => mul_re_out(1583),
-            product_im_out => mul_im_out(1583)
+            data_re_out => mul_re_out(1583),
+            data_im_out => mul_im_out(1583)
         );
 
  
@@ -46038,8 +46038,8 @@ begin
             data_im_in => first_stage_im_out(1584),
             re_multiplicator => "1100010011100000", --- -0.923828125 + j0.382629394531
             im_multiplicator => "0001100001111101",
-            product_re_out => mul_re_out(1584),
-            product_im_out => mul_im_out(1584)
+            data_re_out => mul_re_out(1584),
+            data_im_out => mul_im_out(1584)
         );
 
  
@@ -46056,8 +46056,8 @@ begin
             data_im_in => first_stage_im_out(1585),
             re_multiplicator => "1100011011010110", --- -0.893188476562 + j0.449584960938
             im_multiplicator => "0001110011000110",
-            product_re_out => mul_re_out(1585),
-            product_im_out => mul_im_out(1585)
+            data_re_out => mul_re_out(1585),
+            data_im_out => mul_im_out(1585)
         );
 
  
@@ -46074,8 +46074,8 @@ begin
             data_im_in => first_stage_im_out(1586),
             re_multiplicator => "1100100100011011", --- -0.857727050781 + j0.514099121094
             im_multiplicator => "0010000011100111",
-            product_re_out => mul_re_out(1586),
-            product_im_out => mul_im_out(1586)
+            data_re_out => mul_re_out(1586),
+            data_im_out => mul_im_out(1586)
         );
 
  
@@ -46092,8 +46092,8 @@ begin
             data_im_in => first_stage_im_out(1587),
             re_multiplicator => "1100101110101101", --- -0.817565917969 + j0.575805664062
             im_multiplicator => "0010010011011010",
-            product_re_out => mul_re_out(1587),
-            product_im_out => mul_im_out(1587)
+            data_re_out => mul_re_out(1587),
+            data_im_out => mul_im_out(1587)
         );
 
  
@@ -46110,8 +46110,8 @@ begin
             data_im_in => first_stage_im_out(1588),
             re_multiplicator => "1100111010000111", --- -0.773010253906 + j0.634338378906
             im_multiplicator => "0010100010011001",
-            product_re_out => mul_re_out(1588),
-            product_im_out => mul_im_out(1588)
+            data_re_out => mul_re_out(1588),
+            data_im_out => mul_im_out(1588)
         );
 
  
@@ -46128,8 +46128,8 @@ begin
             data_im_in => first_stage_im_out(1589),
             re_multiplicator => "1101000110100110", --- -0.724243164062 + j0.689514160156
             im_multiplicator => "0010110000100001",
-            product_re_out => mul_re_out(1589),
-            product_im_out => mul_im_out(1589)
+            data_re_out => mul_re_out(1589),
+            data_im_out => mul_im_out(1589)
         );
 
  
@@ -46146,8 +46146,8 @@ begin
             data_im_in => first_stage_im_out(1590),
             re_multiplicator => "1101010100000110", --- -0.671508789062 + j0.740905761719
             im_multiplicator => "0010111101101011",
-            product_re_out => mul_re_out(1590),
-            product_im_out => mul_im_out(1590)
+            data_re_out => mul_re_out(1590),
+            data_im_out => mul_im_out(1590)
         );
 
  
@@ -46164,8 +46164,8 @@ begin
             data_im_in => first_stage_im_out(1591),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j0.788330078125
             im_multiplicator => "0011001001110100",
-            product_re_out => mul_re_out(1591),
-            product_im_out => mul_im_out(1591)
+            data_re_out => mul_re_out(1591),
+            data_im_out => mul_im_out(1591)
         );
 
  
@@ -46182,8 +46182,8 @@ begin
             data_im_in => first_stage_im_out(1592),
             re_multiplicator => "1101110001110010", --- -0.555541992188 + j0.831420898438
             im_multiplicator => "0011010100110110",
-            product_re_out => mul_re_out(1592),
-            product_im_out => mul_im_out(1592)
+            data_re_out => mul_re_out(1592),
+            data_im_out => mul_im_out(1592)
         );
 
  
@@ -46200,8 +46200,8 @@ begin
             data_im_in => first_stage_im_out(1593),
             re_multiplicator => "1110000001110101", --- -0.492858886719 + j0.870056152344
             im_multiplicator => "0011011110101111",
-            product_re_out => mul_re_out(1593),
-            product_im_out => mul_im_out(1593)
+            data_re_out => mul_re_out(1593),
+            data_im_out => mul_im_out(1593)
         );
 
  
@@ -46218,8 +46218,8 @@ begin
             data_im_in => first_stage_im_out(1594),
             re_multiplicator => "1110010010100011", --- -0.427551269531 + j0.903930664062
             im_multiplicator => "0011100111011010",
-            product_re_out => mul_re_out(1594),
-            product_im_out => mul_im_out(1594)
+            data_re_out => mul_re_out(1594),
+            data_im_out => mul_im_out(1594)
         );
 
  
@@ -46236,8 +46236,8 @@ begin
             data_im_in => first_stage_im_out(1595),
             re_multiplicator => "1110100011111000", --- -0.35986328125 + j0.932983398438
             im_multiplicator => "0011101110110110",
-            product_re_out => mul_re_out(1595),
-            product_im_out => mul_im_out(1595)
+            data_re_out => mul_re_out(1595),
+            data_im_out => mul_im_out(1595)
         );
 
  
@@ -46254,8 +46254,8 @@ begin
             data_im_in => first_stage_im_out(1596),
             re_multiplicator => "1110110101101100", --- -0.290283203125 + j0.956909179688
             im_multiplicator => "0011110100111110",
-            product_re_out => mul_re_out(1596),
-            product_im_out => mul_im_out(1596)
+            data_re_out => mul_re_out(1596),
+            data_im_out => mul_im_out(1596)
         );
 
  
@@ -46272,8 +46272,8 @@ begin
             data_im_in => first_stage_im_out(1597),
             re_multiplicator => "1111000111111011", --- -0.219055175781 + j0.975646972656
             im_multiplicator => "0011111001110001",
-            product_re_out => mul_re_out(1597),
-            product_im_out => mul_im_out(1597)
+            data_re_out => mul_re_out(1597),
+            data_im_out => mul_im_out(1597)
         );
 
  
@@ -46290,8 +46290,8 @@ begin
             data_im_in => first_stage_im_out(1598),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j0.989135742188
             im_multiplicator => "0011111101001110",
-            product_re_out => mul_re_out(1598),
-            product_im_out => mul_im_out(1598)
+            data_re_out => mul_re_out(1598),
+            data_im_out => mul_im_out(1598)
         );
 
  
@@ -46308,8 +46308,8 @@ begin
             data_im_in => first_stage_im_out(1599),
             re_multiplicator => "1111101101001011", --- -0.0735473632812 + j0.997253417969
             im_multiplicator => "0011111111010011",
-            product_re_out => mul_re_out(1599),
-            product_im_out => mul_im_out(1599)
+            data_re_out => mul_re_out(1599),
+            data_im_out => mul_im_out(1599)
         );
 
  
@@ -46324,8 +46324,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1600),
             data_im_in => first_stage_im_out(1600),
-            product_re_out => mul_re_out(1600),
-            product_im_out => mul_im_out(1600)
+            data_re_out => mul_re_out(1600),
+            data_im_out => mul_im_out(1600)
         );
 
  
@@ -46342,8 +46342,8 @@ begin
             data_im_in => first_stage_im_out(1601),
             re_multiplicator => "0011111111001111", --- 0.997009277344 + j-0.0765991210938
             im_multiplicator => "1111101100011001",
-            product_re_out => mul_re_out(1601),
-            product_im_out => mul_im_out(1601)
+            data_re_out => mul_re_out(1601),
+            data_im_out => mul_im_out(1601)
         );
 
  
@@ -46360,8 +46360,8 @@ begin
             data_im_in => first_stage_im_out(1602),
             re_multiplicator => "0011111100111111", --- 0.988220214844 + j-0.152770996094
             im_multiplicator => "1111011000111001",
-            product_re_out => mul_re_out(1602),
-            product_im_out => mul_im_out(1602)
+            data_re_out => mul_re_out(1602),
+            data_im_out => mul_im_out(1602)
         );
 
  
@@ -46378,8 +46378,8 @@ begin
             data_im_in => first_stage_im_out(1603),
             re_multiplicator => "0011111001010000", --- 0.9736328125 + j-0.22802734375
             im_multiplicator => "1111000101101000",
-            product_re_out => mul_re_out(1603),
-            product_im_out => mul_im_out(1603)
+            data_re_out => mul_re_out(1603),
+            data_im_out => mul_im_out(1603)
         );
 
  
@@ -46396,8 +46396,8 @@ begin
             data_im_in => first_stage_im_out(1604),
             re_multiplicator => "0011110100000010", --- 0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(1604),
-            product_im_out => mul_im_out(1604)
+            data_re_out => mul_re_out(1604),
+            data_im_out => mul_im_out(1604)
         );
 
  
@@ -46414,8 +46414,8 @@ begin
             data_im_in => first_stage_im_out(1605),
             re_multiplicator => "0011101101011001", --- 0.927307128906 + j-0.374145507812
             im_multiplicator => "1110100000001110",
-            product_re_out => mul_re_out(1605),
-            product_im_out => mul_im_out(1605)
+            data_re_out => mul_re_out(1605),
+            data_im_out => mul_im_out(1605)
         );
 
  
@@ -46432,8 +46432,8 @@ begin
             data_im_in => first_stage_im_out(1606),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(1606),
-            product_im_out => mul_im_out(1606)
+            data_re_out => mul_re_out(1606),
+            data_im_out => mul_im_out(1606)
         );
 
  
@@ -46450,8 +46450,8 @@ begin
             data_im_in => first_stage_im_out(1607),
             re_multiplicator => "0011011011111110", --- 0.859252929688 + j-0.511413574219
             im_multiplicator => "1101111101000101",
-            product_re_out => mul_re_out(1607),
-            product_im_out => mul_im_out(1607)
+            data_re_out => mul_re_out(1607),
+            data_im_out => mul_im_out(1607)
         );
 
  
@@ -46468,8 +46468,8 @@ begin
             data_im_in => first_stage_im_out(1608),
             re_multiplicator => "0011010001010011", --- 0.817565917969 + j-0.575805664062
             im_multiplicator => "1101101100100110",
-            product_re_out => mul_re_out(1608),
-            product_im_out => mul_im_out(1608)
+            data_re_out => mul_re_out(1608),
+            data_im_out => mul_im_out(1608)
         );
 
  
@@ -46486,8 +46486,8 @@ begin
             data_im_in => first_stage_im_out(1609),
             re_multiplicator => "0011000101011001", --- 0.771057128906 + j-0.63671875
             im_multiplicator => "1101011101000000",
-            product_re_out => mul_re_out(1609),
-            product_im_out => mul_im_out(1609)
+            data_re_out => mul_re_out(1609),
+            data_im_out => mul_im_out(1609)
         );
 
  
@@ -46504,8 +46504,8 @@ begin
             data_im_in => first_stage_im_out(1610),
             re_multiplicator => "0010111000010100", --- 0.719970703125 + j-0.693969726562
             im_multiplicator => "1101001110010110",
-            product_re_out => mul_re_out(1610),
-            product_im_out => mul_im_out(1610)
+            data_re_out => mul_re_out(1610),
+            data_im_out => mul_im_out(1610)
         );
 
  
@@ -46522,8 +46522,8 @@ begin
             data_im_in => first_stage_im_out(1611),
             re_multiplicator => "0010101010001010", --- 0.664672851562 + j-0.7470703125
             im_multiplicator => "1101000000110000",
-            product_re_out => mul_re_out(1611),
-            product_im_out => mul_im_out(1611)
+            data_re_out => mul_re_out(1611),
+            data_im_out => mul_im_out(1611)
         );
 
  
@@ -46540,8 +46540,8 @@ begin
             data_im_in => first_stage_im_out(1612),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(1612),
-            product_im_out => mul_im_out(1612)
+            data_re_out => mul_re_out(1612),
+            data_im_out => mul_im_out(1612)
         );
 
  
@@ -46558,8 +46558,8 @@ begin
             data_im_in => first_stage_im_out(1613),
             re_multiplicator => "0010001010111100", --- 0.542724609375 + j-0.83984375
             im_multiplicator => "1100101001000000",
-            product_re_out => mul_re_out(1613),
-            product_im_out => mul_im_out(1613)
+            data_re_out => mul_re_out(1613),
+            data_im_out => mul_im_out(1613)
         );
 
  
@@ -46576,8 +46576,8 @@ begin
             data_im_in => first_stage_im_out(1614),
             re_multiplicator => "0001111010000011", --- 0.476745605469 + j-0.878967285156
             im_multiplicator => "1100011110111111",
-            product_re_out => mul_re_out(1614),
-            product_im_out => mul_im_out(1614)
+            data_re_out => mul_re_out(1614),
+            data_im_out => mul_im_out(1614)
         );
 
  
@@ -46594,8 +46594,8 @@ begin
             data_im_in => first_stage_im_out(1615),
             re_multiplicator => "0001101000011101", --- 0.408020019531 + j-0.912902832031
             im_multiplicator => "1100010110010011",
-            product_re_out => mul_re_out(1615),
-            product_im_out => mul_im_out(1615)
+            data_re_out => mul_re_out(1615),
+            data_im_out => mul_im_out(1615)
         );
 
  
@@ -46612,8 +46612,8 @@ begin
             data_im_in => first_stage_im_out(1616),
             re_multiplicator => "0001010110001111", --- 0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1616),
-            product_im_out => mul_im_out(1616)
+            data_re_out => mul_re_out(1616),
+            data_im_out => mul_im_out(1616)
         );
 
  
@@ -46630,8 +46630,8 @@ begin
             data_im_in => first_stage_im_out(1617),
             re_multiplicator => "0001000011100001", --- 0.263732910156 + j-0.964538574219
             im_multiplicator => "1100001001000101",
-            product_re_out => mul_re_out(1617),
-            product_im_out => mul_im_out(1617)
+            data_re_out => mul_re_out(1617),
+            data_im_out => mul_im_out(1617)
         );
 
  
@@ -46648,8 +46648,8 @@ begin
             data_im_in => first_stage_im_out(1618),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(1618),
-            product_im_out => mul_im_out(1618)
+            data_re_out => mul_re_out(1618),
+            data_im_out => mul_im_out(1618)
         );
 
  
@@ -46666,8 +46666,8 @@ begin
             data_im_in => first_stage_im_out(1619),
             re_multiplicator => "0000011100111111", --- 0.113220214844 + j-0.993530273438
             im_multiplicator => "1100000001101010",
-            product_re_out => mul_re_out(1619),
-            product_im_out => mul_im_out(1619)
+            data_re_out => mul_re_out(1619),
+            data_im_out => mul_im_out(1619)
         );
 
  
@@ -46684,8 +46684,8 @@ begin
             data_im_in => first_stage_im_out(1620),
             re_multiplicator => "0000001001011011", --- 0.0368041992188 + j-0.999267578125
             im_multiplicator => "1100000000001100",
-            product_re_out => mul_re_out(1620),
-            product_im_out => mul_im_out(1620)
+            data_re_out => mul_re_out(1620),
+            data_im_out => mul_im_out(1620)
         );
 
  
@@ -46702,8 +46702,8 @@ begin
             data_im_in => first_stage_im_out(1621),
             re_multiplicator => "1111110101110011", --- -0.0398559570312 + j-0.999145507812
             im_multiplicator => "1100000000001110",
-            product_re_out => mul_re_out(1621),
-            product_im_out => mul_im_out(1621)
+            data_re_out => mul_re_out(1621),
+            data_im_out => mul_im_out(1621)
         );
 
  
@@ -46720,8 +46720,8 @@ begin
             data_im_in => first_stage_im_out(1622),
             re_multiplicator => "1111100010001111", --- -0.116271972656 + j-0.9931640625
             im_multiplicator => "1100000001110000",
-            product_re_out => mul_re_out(1622),
-            product_im_out => mul_im_out(1622)
+            data_re_out => mul_re_out(1622),
+            data_im_out => mul_im_out(1622)
         );
 
  
@@ -46738,8 +46738,8 @@ begin
             data_im_in => first_stage_im_out(1623),
             re_multiplicator => "1111001110110101", --- -0.192077636719 + j-0.981323242188
             im_multiplicator => "1100000100110010",
-            product_re_out => mul_re_out(1623),
-            product_im_out => mul_im_out(1623)
+            data_re_out => mul_re_out(1623),
+            data_im_out => mul_im_out(1623)
         );
 
  
@@ -46756,8 +46756,8 @@ begin
             data_im_in => first_stage_im_out(1624),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(1624),
-            product_im_out => mul_im_out(1624)
+            data_re_out => mul_re_out(1624),
+            data_im_out => mul_im_out(1624)
         );
 
  
@@ -46774,8 +46774,8 @@ begin
             data_im_in => first_stage_im_out(1625),
             re_multiplicator => "1110101001000010", --- -0.339721679688 + j-0.940490722656
             im_multiplicator => "1100001111001111",
-            product_re_out => mul_re_out(1625),
-            product_im_out => mul_im_out(1625)
+            data_re_out => mul_re_out(1625),
+            data_im_out => mul_im_out(1625)
         );
 
  
@@ -46792,8 +46792,8 @@ begin
             data_im_in => first_stage_im_out(1626),
             re_multiplicator => "1110010110110101", --- -0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(1626),
-            product_im_out => mul_im_out(1626)
+            data_re_out => mul_re_out(1626),
+            data_im_out => mul_im_out(1626)
         );
 
  
@@ -46810,8 +46810,8 @@ begin
             data_im_in => first_stage_im_out(1627),
             re_multiplicator => "1110000101010000", --- -0.4794921875 + j-0.877502441406
             im_multiplicator => "1100011111010111",
-            product_re_out => mul_re_out(1627),
-            product_im_out => mul_im_out(1627)
+            data_re_out => mul_re_out(1627),
+            data_im_out => mul_im_out(1627)
         );
 
  
@@ -46828,8 +46828,8 @@ begin
             data_im_in => first_stage_im_out(1628),
             re_multiplicator => "1101110100011010", --- -0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(1628),
-            product_im_out => mul_im_out(1628)
+            data_re_out => mul_re_out(1628),
+            data_im_out => mul_im_out(1628)
         );
 
  
@@ -46846,8 +46846,8 @@ begin
             data_im_in => first_stage_im_out(1629),
             re_multiplicator => "1101100100011000", --- -0.60791015625 + j-0.7939453125
             im_multiplicator => "1100110100110000",
-            product_re_out => mul_re_out(1629),
-            product_im_out => mul_im_out(1629)
+            data_re_out => mul_re_out(1629),
+            data_im_out => mul_im_out(1629)
         );
 
  
@@ -46864,8 +46864,8 @@ begin
             data_im_in => first_stage_im_out(1630),
             re_multiplicator => "1101010101010000", --- -0.6669921875 + j-0.745056152344
             im_multiplicator => "1101000001010001",
-            product_re_out => mul_re_out(1630),
-            product_im_out => mul_im_out(1630)
+            data_re_out => mul_re_out(1630),
+            data_im_out => mul_im_out(1630)
         );
 
  
@@ -46882,8 +46882,8 @@ begin
             data_im_in => first_stage_im_out(1631),
             re_multiplicator => "1101000111001001", --- -0.722106933594 + j-0.691711425781
             im_multiplicator => "1101001110111011",
-            product_re_out => mul_re_out(1631),
-            product_im_out => mul_im_out(1631)
+            data_re_out => mul_re_out(1631),
+            data_im_out => mul_im_out(1631)
         );
 
  
@@ -46900,8 +46900,8 @@ begin
             data_im_in => first_stage_im_out(1632),
             re_multiplicator => "1100111010000111", --- -0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(1632),
-            product_im_out => mul_im_out(1632)
+            data_re_out => mul_re_out(1632),
+            data_im_out => mul_im_out(1632)
         );
 
  
@@ -46918,8 +46918,8 @@ begin
             data_im_in => first_stage_im_out(1633),
             re_multiplicator => "1100101110010000", --- -0.8193359375 + j-0.5732421875
             im_multiplicator => "1101101101010000",
-            product_re_out => mul_re_out(1633),
-            product_im_out => mul_im_out(1633)
+            data_re_out => mul_re_out(1633),
+            data_im_out => mul_im_out(1633)
         );
 
  
@@ -46936,8 +46936,8 @@ begin
             data_im_in => first_stage_im_out(1634),
             re_multiplicator => "1100100011101000", --- -0.86083984375 + j-0.5087890625
             im_multiplicator => "1101111101110000",
-            product_re_out => mul_re_out(1634),
-            product_im_out => mul_im_out(1634)
+            data_re_out => mul_re_out(1634),
+            data_im_out => mul_im_out(1634)
         );
 
  
@@ -46954,8 +46954,8 @@ begin
             data_im_in => first_stage_im_out(1635),
             re_multiplicator => "1100011010010011", --- -0.897277832031 + j-0.441345214844
             im_multiplicator => "1110001111000001",
-            product_re_out => mul_re_out(1635),
-            product_im_out => mul_im_out(1635)
+            data_re_out => mul_re_out(1635),
+            data_im_out => mul_im_out(1635)
         );
 
  
@@ -46972,8 +46972,8 @@ begin
             data_im_in => first_stage_im_out(1636),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1636),
-            product_im_out => mul_im_out(1636)
+            data_re_out => mul_re_out(1636),
+            data_im_out => mul_im_out(1636)
         );
 
  
@@ -46990,8 +46990,8 @@ begin
             data_im_in => first_stage_im_out(1637),
             re_multiplicator => "1100001011101110", --- -0.954223632812 + j-0.299072265625
             im_multiplicator => "1110110011011100",
-            product_re_out => mul_re_out(1637),
-            product_im_out => mul_im_out(1637)
+            data_re_out => mul_re_out(1637),
+            data_im_out => mul_im_out(1637)
         );
 
  
@@ -47008,8 +47008,8 @@ begin
             data_im_in => first_stage_im_out(1638),
             re_multiplicator => "1100000110100101", --- -0.974304199219 + j-0.225036621094
             im_multiplicator => "1111000110011001",
-            product_re_out => mul_re_out(1638),
-            product_im_out => mul_im_out(1638)
+            data_re_out => mul_re_out(1638),
+            data_im_out => mul_im_out(1638)
         );
 
  
@@ -47026,8 +47026,8 @@ begin
             data_im_in => first_stage_im_out(1639),
             re_multiplicator => "1100000010111001", --- -0.988708496094 + j-0.149719238281
             im_multiplicator => "1111011001101011",
-            product_re_out => mul_re_out(1639),
-            product_im_out => mul_im_out(1639)
+            data_re_out => mul_re_out(1639),
+            data_im_out => mul_im_out(1639)
         );
 
  
@@ -47044,8 +47044,8 @@ begin
             data_im_in => first_stage_im_out(1640),
             re_multiplicator => "1100000000101101", --- -0.997253417969 + j-0.0735473632812
             im_multiplicator => "1111101101001011",
-            product_re_out => mul_re_out(1640),
-            product_im_out => mul_im_out(1640)
+            data_re_out => mul_re_out(1640),
+            data_im_out => mul_im_out(1640)
         );
 
  
@@ -47062,8 +47062,8 @@ begin
             data_im_in => first_stage_im_out(1641),
             re_multiplicator => "1100000000000001", --- -0.999938964844 + j0.0030517578125
             im_multiplicator => "0000000000110010",
-            product_re_out => mul_re_out(1641),
-            product_im_out => mul_im_out(1641)
+            data_re_out => mul_re_out(1641),
+            data_im_out => mul_im_out(1641)
         );
 
  
@@ -47080,8 +47080,8 @@ begin
             data_im_in => first_stage_im_out(1642),
             re_multiplicator => "1100000000110101", --- -0.996765136719 + j0.0796508789062
             im_multiplicator => "0000010100011001",
-            product_re_out => mul_re_out(1642),
-            product_im_out => mul_im_out(1642)
+            data_re_out => mul_re_out(1642),
+            data_im_out => mul_im_out(1642)
         );
 
  
@@ -47098,8 +47098,8 @@ begin
             data_im_in => first_stage_im_out(1643),
             re_multiplicator => "1100000011001001", --- -0.987731933594 + j0.155822753906
             im_multiplicator => "0000100111111001",
-            product_re_out => mul_re_out(1643),
-            product_im_out => mul_im_out(1643)
+            data_re_out => mul_re_out(1643),
+            data_im_out => mul_im_out(1643)
         );
 
  
@@ -47116,8 +47116,8 @@ begin
             data_im_in => first_stage_im_out(1644),
             re_multiplicator => "1100000110111100", --- -0.972900390625 + j0.231018066406
             im_multiplicator => "0000111011001001",
-            product_re_out => mul_re_out(1644),
-            product_im_out => mul_im_out(1644)
+            data_re_out => mul_re_out(1644),
+            data_im_out => mul_im_out(1644)
         );
 
  
@@ -47134,8 +47134,8 @@ begin
             data_im_in => first_stage_im_out(1645),
             re_multiplicator => "1100001100001101", --- -0.952331542969 + j0.304870605469
             im_multiplicator => "0001001110000011",
-            product_re_out => mul_re_out(1645),
-            product_im_out => mul_im_out(1645)
+            data_re_out => mul_re_out(1645),
+            data_im_out => mul_im_out(1645)
         );
 
  
@@ -47152,8 +47152,8 @@ begin
             data_im_in => first_stage_im_out(1646),
             re_multiplicator => "1100010010111001", --- -0.926208496094 + j0.376953125
             im_multiplicator => "0001100000100000",
-            product_re_out => mul_re_out(1646),
-            product_im_out => mul_im_out(1646)
+            data_re_out => mul_re_out(1646),
+            data_im_out => mul_im_out(1646)
         );
 
  
@@ -47170,8 +47170,8 @@ begin
             data_im_in => first_stage_im_out(1647),
             re_multiplicator => "1100011010111111", --- -0.894592285156 + j0.446838378906
             im_multiplicator => "0001110010011001",
-            product_re_out => mul_re_out(1647),
-            product_im_out => mul_im_out(1647)
+            data_re_out => mul_re_out(1647),
+            data_im_out => mul_im_out(1647)
         );
 
  
@@ -47188,8 +47188,8 @@ begin
             data_im_in => first_stage_im_out(1648),
             re_multiplicator => "1100100100011011", --- -0.857727050781 + j0.514099121094
             im_multiplicator => "0010000011100111",
-            product_re_out => mul_re_out(1648),
-            product_im_out => mul_im_out(1648)
+            data_re_out => mul_re_out(1648),
+            data_im_out => mul_im_out(1648)
         );
 
  
@@ -47206,8 +47206,8 @@ begin
             data_im_in => first_stage_im_out(1649),
             re_multiplicator => "1100101111001010", --- -0.815795898438 + j0.578308105469
             im_multiplicator => "0010010100000011",
-            product_re_out => mul_re_out(1649),
-            product_im_out => mul_im_out(1649)
+            data_re_out => mul_re_out(1649),
+            data_im_out => mul_im_out(1649)
         );
 
  
@@ -47224,8 +47224,8 @@ begin
             data_im_in => first_stage_im_out(1650),
             re_multiplicator => "1100111011001000", --- -0.76904296875 + j0.639099121094
             im_multiplicator => "0010100011100111",
-            product_re_out => mul_re_out(1650),
-            product_im_out => mul_im_out(1650)
+            data_re_out => mul_re_out(1650),
+            data_im_out => mul_im_out(1650)
         );
 
  
@@ -47242,8 +47242,8 @@ begin
             data_im_in => first_stage_im_out(1651),
             re_multiplicator => "1101001000001111", --- -0.717834472656 + j0.696166992188
             im_multiplicator => "0010110010001110",
-            product_re_out => mul_re_out(1651),
-            product_im_out => mul_im_out(1651)
+            data_re_out => mul_re_out(1651),
+            data_im_out => mul_im_out(1651)
         );
 
  
@@ -47260,8 +47260,8 @@ begin
             data_im_in => first_stage_im_out(1652),
             re_multiplicator => "1101010110011011", --- -0.662414550781 + j0.749084472656
             im_multiplicator => "0010111111110001",
-            product_re_out => mul_re_out(1652),
-            product_im_out => mul_im_out(1652)
+            data_re_out => mul_re_out(1652),
+            data_im_out => mul_im_out(1652)
         );
 
  
@@ -47278,8 +47278,8 @@ begin
             data_im_in => first_stage_im_out(1653),
             re_multiplicator => "1101100101101000", --- -0.60302734375 + j0.797668457031
             im_multiplicator => "0011001100001101",
-            product_re_out => mul_re_out(1653),
-            product_im_out => mul_im_out(1653)
+            data_re_out => mul_re_out(1653),
+            data_im_out => mul_im_out(1653)
         );
 
  
@@ -47296,8 +47296,8 @@ begin
             data_im_in => first_stage_im_out(1654),
             re_multiplicator => "1101110101101110", --- -0.540161132812 + j0.841552734375
             im_multiplicator => "0011010111011100",
-            product_re_out => mul_re_out(1654),
-            product_im_out => mul_im_out(1654)
+            data_re_out => mul_re_out(1654),
+            data_im_out => mul_im_out(1654)
         );
 
  
@@ -47314,8 +47314,8 @@ begin
             data_im_in => first_stage_im_out(1655),
             re_multiplicator => "1110000110101001", --- -0.474060058594 + j0.880432128906
             im_multiplicator => "0011100001011001",
-            product_re_out => mul_re_out(1655),
-            product_im_out => mul_im_out(1655)
+            data_re_out => mul_re_out(1655),
+            data_im_out => mul_im_out(1655)
         );
 
  
@@ -47332,8 +47332,8 @@ begin
             data_im_in => first_stage_im_out(1656),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j0.914184570312
             im_multiplicator => "0011101010000010",
-            product_re_out => mul_re_out(1656),
-            product_im_out => mul_im_out(1656)
+            data_re_out => mul_re_out(1656),
+            data_im_out => mul_im_out(1656)
         );
 
  
@@ -47350,8 +47350,8 @@ begin
             data_im_in => first_stage_im_out(1657),
             re_multiplicator => "1110101010100000", --- -0.333984375 + j0.942565917969
             im_multiplicator => "0011110001010011",
-            product_re_out => mul_re_out(1657),
-            product_im_out => mul_im_out(1657)
+            data_re_out => mul_re_out(1657),
+            data_im_out => mul_im_out(1657)
         );
 
  
@@ -47368,8 +47368,8 @@ begin
             data_im_in => first_stage_im_out(1658),
             re_multiplicator => "1110111101010000", --- -0.2607421875 + j0.965393066406
             im_multiplicator => "0011110111001001",
-            product_re_out => mul_re_out(1658),
-            product_im_out => mul_im_out(1658)
+            data_re_out => mul_re_out(1658),
+            data_im_out => mul_im_out(1658)
         );
 
  
@@ -47386,8 +47386,8 @@ begin
             data_im_in => first_stage_im_out(1659),
             re_multiplicator => "1111010000011000", --- -0.18603515625 + j0.982482910156
             im_multiplicator => "0011111011100001",
-            product_re_out => mul_re_out(1659),
-            product_im_out => mul_im_out(1659)
+            data_re_out => mul_re_out(1659),
+            data_im_out => mul_im_out(1659)
         );
 
  
@@ -47404,8 +47404,8 @@ begin
             data_im_in => first_stage_im_out(1660),
             re_multiplicator => "1111100011110011", --- -0.110168457031 + j0.993896484375
             im_multiplicator => "0011111110011100",
-            product_re_out => mul_re_out(1660),
-            product_im_out => mul_im_out(1660)
+            data_re_out => mul_re_out(1660),
+            data_im_out => mul_im_out(1660)
         );
 
  
@@ -47422,8 +47422,8 @@ begin
             data_im_in => first_stage_im_out(1661),
             re_multiplicator => "1111110111011000", --- -0.03369140625 + j0.999389648438
             im_multiplicator => "0011111111110110",
-            product_re_out => mul_re_out(1661),
-            product_im_out => mul_im_out(1661)
+            data_re_out => mul_re_out(1661),
+            data_im_out => mul_im_out(1661)
         );
 
  
@@ -47440,8 +47440,8 @@ begin
             data_im_in => first_stage_im_out(1662),
             re_multiplicator => "0000001010111111", --- 0.0429077148438 + j0.9990234375
             im_multiplicator => "0011111111110000",
-            product_re_out => mul_re_out(1662),
-            product_im_out => mul_im_out(1662)
+            data_re_out => mul_re_out(1662),
+            data_im_out => mul_im_out(1662)
         );
 
  
@@ -47458,8 +47458,8 @@ begin
             data_im_in => first_stage_im_out(1663),
             re_multiplicator => "0000011110100011", --- 0.119323730469 + j0.992797851562
             im_multiplicator => "0011111110001010",
-            product_re_out => mul_re_out(1663),
-            product_im_out => mul_im_out(1663)
+            data_re_out => mul_re_out(1663),
+            data_im_out => mul_im_out(1663)
         );
 
  
@@ -47474,8 +47474,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1664),
             data_im_in => first_stage_im_out(1664),
-            product_re_out => mul_re_out(1664),
-            product_im_out => mul_im_out(1664)
+            data_re_out => mul_re_out(1664),
+            data_im_out => mul_im_out(1664)
         );
 
  
@@ -47492,8 +47492,8 @@ begin
             data_im_in => first_stage_im_out(1665),
             re_multiplicator => "0011111111001011", --- 0.996765136719 + j-0.0796508789062
             im_multiplicator => "1111101011100111",
-            product_re_out => mul_re_out(1665),
-            product_im_out => mul_im_out(1665)
+            data_re_out => mul_re_out(1665),
+            data_im_out => mul_im_out(1665)
         );
 
  
@@ -47510,8 +47510,8 @@ begin
             data_im_in => first_stage_im_out(1666),
             re_multiplicator => "0011111100101111", --- 0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(1666),
-            product_im_out => mul_im_out(1666)
+            data_re_out => mul_re_out(1666),
+            data_im_out => mul_im_out(1666)
         );
 
  
@@ -47528,8 +47528,8 @@ begin
             data_im_in => first_stage_im_out(1667),
             re_multiplicator => "0011111000101101", --- 0.971496582031 + j-0.236999511719
             im_multiplicator => "1111000011010101",
-            product_re_out => mul_re_out(1667),
-            product_im_out => mul_im_out(1667)
+            data_re_out => mul_re_out(1667),
+            data_im_out => mul_im_out(1667)
         );
 
  
@@ -47546,8 +47546,8 @@ begin
             data_im_in => first_stage_im_out(1668),
             re_multiplicator => "0011110011000101", --- 0.949523925781 + j-0.313659667969
             im_multiplicator => "1110101111101101",
-            product_re_out => mul_re_out(1668),
-            product_im_out => mul_im_out(1668)
+            data_re_out => mul_re_out(1668),
+            data_im_out => mul_im_out(1668)
         );
 
  
@@ -47564,8 +47564,8 @@ begin
             data_im_in => first_stage_im_out(1669),
             re_multiplicator => "0011101011111010", --- 0.921508789062 + j-0.388305664062
             im_multiplicator => "1110011100100110",
-            product_re_out => mul_re_out(1669),
-            product_im_out => mul_im_out(1669)
+            data_re_out => mul_re_out(1669),
+            data_im_out => mul_im_out(1669)
         );
 
  
@@ -47582,8 +47582,8 @@ begin
             data_im_in => first_stage_im_out(1670),
             re_multiplicator => "0011100011001111", --- 0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(1670),
-            product_im_out => mul_im_out(1670)
+            data_re_out => mul_re_out(1670),
+            data_im_out => mul_im_out(1670)
         );
 
  
@@ -47600,8 +47600,8 @@ begin
             data_im_in => first_stage_im_out(1671),
             re_multiplicator => "0011011001000111", --- 0.848083496094 + j-0.52978515625
             im_multiplicator => "1101111000011000",
-            product_re_out => mul_re_out(1671),
-            product_im_out => mul_im_out(1671)
+            data_re_out => mul_re_out(1671),
+            data_im_out => mul_im_out(1671)
         );
 
  
@@ -47618,8 +47618,8 @@ begin
             data_im_in => first_stage_im_out(1672),
             re_multiplicator => "0011001101100111", --- 0.803161621094 + j-0.595642089844
             im_multiplicator => "1101100111100001",
-            product_re_out => mul_re_out(1672),
-            product_im_out => mul_im_out(1672)
+            data_re_out => mul_re_out(1672),
+            data_im_out => mul_im_out(1672)
         );
 
  
@@ -47636,8 +47636,8 @@ begin
             data_im_in => first_stage_im_out(1673),
             re_multiplicator => "0011000000110100", --- 0.753173828125 + j-0.657775878906
             im_multiplicator => "1101010111100111",
-            product_re_out => mul_re_out(1673),
-            product_im_out => mul_im_out(1673)
+            data_re_out => mul_re_out(1673),
+            data_im_out => mul_im_out(1673)
         );
 
  
@@ -47654,8 +47654,8 @@ begin
             data_im_in => first_stage_im_out(1674),
             re_multiplicator => "0010110010110010", --- 0.698364257812 + j-0.715698242188
             im_multiplicator => "1101001000110010",
-            product_re_out => mul_re_out(1674),
-            product_im_out => mul_im_out(1674)
+            data_re_out => mul_re_out(1674),
+            data_im_out => mul_im_out(1674)
         );
 
  
@@ -47672,8 +47672,8 @@ begin
             data_im_in => first_stage_im_out(1675),
             re_multiplicator => "0010100011100111", --- 0.639099121094 + j-0.76904296875
             im_multiplicator => "1100111011001000",
-            product_re_out => mul_re_out(1675),
-            product_im_out => mul_im_out(1675)
+            data_re_out => mul_re_out(1675),
+            data_im_out => mul_im_out(1675)
         );
 
  
@@ -47690,8 +47690,8 @@ begin
             data_im_in => first_stage_im_out(1676),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j-0.817565917969
             im_multiplicator => "1100101110101101",
-            product_re_out => mul_re_out(1676),
-            product_im_out => mul_im_out(1676)
+            data_re_out => mul_re_out(1676),
+            data_im_out => mul_im_out(1676)
         );
 
  
@@ -47708,8 +47708,8 @@ begin
             data_im_in => first_stage_im_out(1677),
             re_multiplicator => "0010000010010000", --- 0.5087890625 + j-0.86083984375
             im_multiplicator => "1100100011101000",
-            product_re_out => mul_re_out(1677),
-            product_im_out => mul_im_out(1677)
+            data_re_out => mul_re_out(1677),
+            data_im_out => mul_im_out(1677)
         );
 
  
@@ -47726,8 +47726,8 @@ begin
             data_im_in => first_stage_im_out(1678),
             re_multiplicator => "0001110000010010", --- 0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1678),
-            product_im_out => mul_im_out(1678)
+            data_re_out => mul_re_out(1678),
+            data_im_out => mul_im_out(1678)
         );
 
  
@@ -47744,8 +47744,8 @@ begin
             data_im_in => first_stage_im_out(1679),
             re_multiplicator => "0001011101100110", --- 0.365600585938 + j-0.930725097656
             im_multiplicator => "1100010001101111",
-            product_re_out => mul_re_out(1679),
-            product_im_out => mul_im_out(1679)
+            data_re_out => mul_re_out(1679),
+            data_im_out => mul_im_out(1679)
         );
 
  
@@ -47762,8 +47762,8 @@ begin
             data_im_in => first_stage_im_out(1680),
             re_multiplicator => "0001001010010100", --- 0.290283203125 + j-0.956909179688
             im_multiplicator => "1100001011000010",
-            product_re_out => mul_re_out(1680),
-            product_im_out => mul_im_out(1680)
+            data_re_out => mul_re_out(1680),
+            data_im_out => mul_im_out(1680)
         );
 
  
@@ -47780,8 +47780,8 @@ begin
             data_im_in => first_stage_im_out(1681),
             re_multiplicator => "0000110110100011", --- 0.213073730469 + j-0.976989746094
             im_multiplicator => "1100000101111001",
-            product_re_out => mul_re_out(1681),
-            product_im_out => mul_im_out(1681)
+            data_re_out => mul_re_out(1681),
+            data_im_out => mul_im_out(1681)
         );
 
  
@@ -47798,8 +47798,8 @@ begin
             data_im_in => first_stage_im_out(1682),
             re_multiplicator => "0000100010011100", --- 0.134521484375 + j-0.990844726562
             im_multiplicator => "1100000010010110",
-            product_re_out => mul_re_out(1682),
-            product_im_out => mul_im_out(1682)
+            data_re_out => mul_re_out(1682),
+            data_im_out => mul_im_out(1682)
         );
 
  
@@ -47816,8 +47816,8 @@ begin
             data_im_in => first_stage_im_out(1683),
             re_multiplicator => "0000001110001000", --- 0.05517578125 + j-0.998474121094
             im_multiplicator => "1100000000011001",
-            product_re_out => mul_re_out(1683),
-            product_im_out => mul_im_out(1683)
+            data_re_out => mul_re_out(1683),
+            data_im_out => mul_im_out(1683)
         );
 
  
@@ -47834,8 +47834,8 @@ begin
             data_im_in => first_stage_im_out(1684),
             re_multiplicator => "1111111001101110", --- -0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1684),
-            product_im_out => mul_im_out(1684)
+            data_re_out => mul_re_out(1684),
+            data_im_out => mul_im_out(1684)
         );
 
  
@@ -47852,8 +47852,8 @@ begin
             data_im_in => first_stage_im_out(1685),
             re_multiplicator => "1111100101010111", --- -0.104064941406 + j-0.994506835938
             im_multiplicator => "1100000001011010",
-            product_re_out => mul_re_out(1685),
-            product_im_out => mul_im_out(1685)
+            data_re_out => mul_re_out(1685),
+            data_im_out => mul_im_out(1685)
         );
 
  
@@ -47870,8 +47870,8 @@ begin
             data_im_in => first_stage_im_out(1686),
             re_multiplicator => "1111010001001010", --- -0.182983398438 + j-0.983093261719
             im_multiplicator => "1100000100010101",
-            product_re_out => mul_re_out(1686),
-            product_im_out => mul_im_out(1686)
+            data_re_out => mul_re_out(1686),
+            data_im_out => mul_im_out(1686)
         );
 
  
@@ -47888,8 +47888,8 @@ begin
             data_im_in => first_stage_im_out(1687),
             re_multiplicator => "1110111101010000", --- -0.2607421875 + j-0.965393066406
             im_multiplicator => "1100001000110111",
-            product_re_out => mul_re_out(1687),
-            product_im_out => mul_im_out(1687)
+            data_re_out => mul_re_out(1687),
+            data_im_out => mul_im_out(1687)
         );
 
  
@@ -47906,8 +47906,8 @@ begin
             data_im_in => first_stage_im_out(1688),
             re_multiplicator => "1110101001110001", --- -0.336853027344 + j-0.941528320312
             im_multiplicator => "1100001110111110",
-            product_re_out => mul_re_out(1688),
-            product_im_out => mul_im_out(1688)
+            data_re_out => mul_re_out(1688),
+            data_im_out => mul_im_out(1688)
         );
 
  
@@ -47924,8 +47924,8 @@ begin
             data_im_in => first_stage_im_out(1689),
             re_multiplicator => "1110010110110101", --- -0.410827636719 + j-0.911682128906
             im_multiplicator => "1100010110100111",
-            product_re_out => mul_re_out(1689),
-            product_im_out => mul_im_out(1689)
+            data_re_out => mul_re_out(1689),
+            data_im_out => mul_im_out(1689)
         );
 
  
@@ -47942,8 +47942,8 @@ begin
             data_im_in => first_stage_im_out(1690),
             re_multiplicator => "1110000100100100", --- -0.482177734375 + j-0.876037597656
             im_multiplicator => "1100011111101111",
-            product_re_out => mul_re_out(1690),
-            product_im_out => mul_im_out(1690)
+            data_re_out => mul_re_out(1690),
+            data_im_out => mul_im_out(1690)
         );
 
  
@@ -47960,8 +47960,8 @@ begin
             data_im_in => first_stage_im_out(1691),
             re_multiplicator => "1101110011000110", --- -0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(1691),
-            product_im_out => mul_im_out(1691)
+            data_re_out => mul_re_out(1691),
+            data_im_out => mul_im_out(1691)
         );
 
  
@@ -47978,8 +47978,8 @@ begin
             data_im_in => first_stage_im_out(1692),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j-0.788330078125
             im_multiplicator => "1100110110001100",
-            product_re_out => mul_re_out(1692),
-            product_im_out => mul_im_out(1692)
+            data_re_out => mul_re_out(1692),
+            data_im_out => mul_im_out(1692)
         );
 
  
@@ -47996,8 +47996,8 @@ begin
             data_im_in => first_stage_im_out(1693),
             re_multiplicator => "1101010010111011", --- -0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(1693),
-            product_im_out => mul_im_out(1693)
+            data_re_out => mul_re_out(1693),
+            data_im_out => mul_im_out(1693)
         );
 
  
@@ -48014,8 +48014,8 @@ begin
             data_im_in => first_stage_im_out(1694),
             re_multiplicator => "1101000100011101", --- -0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(1694),
-            product_im_out => mul_im_out(1694)
+            data_re_out => mul_re_out(1694),
+            data_im_out => mul_im_out(1694)
         );
 
  
@@ -48032,8 +48032,8 @@ begin
             data_im_in => first_stage_im_out(1695),
             re_multiplicator => "1100110111001010", --- -0.784545898438 + j-0.620056152344
             im_multiplicator => "1101100001010001",
-            product_re_out => mul_re_out(1695),
-            product_im_out => mul_im_out(1695)
+            data_re_out => mul_re_out(1695),
+            data_im_out => mul_im_out(1695)
         );
 
  
@@ -48050,8 +48050,8 @@ begin
             data_im_in => first_stage_im_out(1696),
             re_multiplicator => "1100101011001010", --- -0.831420898438 + j-0.555541992188
             im_multiplicator => "1101110001110010",
-            product_re_out => mul_re_out(1696),
-            product_im_out => mul_im_out(1696)
+            data_re_out => mul_re_out(1696),
+            data_im_out => mul_im_out(1696)
         );
 
  
@@ -48068,8 +48068,8 @@ begin
             data_im_in => first_stage_im_out(1697),
             re_multiplicator => "1100100000100000", --- -0.873046875 + j-0.487548828125
             im_multiplicator => "1110000011001100",
-            product_re_out => mul_re_out(1697),
-            product_im_out => mul_im_out(1697)
+            data_re_out => mul_re_out(1697),
+            data_im_out => mul_im_out(1697)
         );
 
  
@@ -48086,8 +48086,8 @@ begin
             data_im_in => first_stage_im_out(1698),
             re_multiplicator => "1100010111010001", --- -0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(1698),
-            product_im_out => mul_im_out(1698)
+            data_re_out => mul_re_out(1698),
+            data_im_out => mul_im_out(1698)
         );
 
  
@@ -48104,8 +48104,8 @@ begin
             data_im_in => first_stage_im_out(1699),
             re_multiplicator => "1100001111100000", --- -0.939453125 + j-0.342651367188
             im_multiplicator => "1110101000010010",
-            product_re_out => mul_re_out(1699),
-            product_im_out => mul_im_out(1699)
+            data_re_out => mul_re_out(1699),
+            data_im_out => mul_im_out(1699)
         );
 
  
@@ -48122,8 +48122,8 @@ begin
             data_im_in => first_stage_im_out(1700),
             re_multiplicator => "1100001001010010", --- -0.963745117188 + j-0.266662597656
             im_multiplicator => "1110111011101111",
-            product_re_out => mul_re_out(1700),
-            product_im_out => mul_im_out(1700)
+            data_re_out => mul_re_out(1700),
+            data_im_out => mul_im_out(1700)
         );
 
  
@@ -48140,8 +48140,8 @@ begin
             data_im_in => first_stage_im_out(1701),
             re_multiplicator => "1100000100101000", --- -0.98193359375 + j-0.189025878906
             im_multiplicator => "1111001111100111",
-            product_re_out => mul_re_out(1701),
-            product_im_out => mul_im_out(1701)
+            data_re_out => mul_re_out(1701),
+            data_im_out => mul_im_out(1701)
         );
 
  
@@ -48158,8 +48158,8 @@ begin
             data_im_in => first_stage_im_out(1702),
             re_multiplicator => "1100000001100100", --- -0.993896484375 + j-0.110168457031
             im_multiplicator => "1111100011110011",
-            product_re_out => mul_re_out(1702),
-            product_im_out => mul_im_out(1702)
+            data_re_out => mul_re_out(1702),
+            data_im_out => mul_im_out(1702)
         );
 
  
@@ -48176,8 +48176,8 @@ begin
             data_im_in => first_stage_im_out(1703),
             re_multiplicator => "1100000000001000", --- -0.99951171875 + j-0.0306396484375
             im_multiplicator => "1111111000001010",
-            product_re_out => mul_re_out(1703),
-            product_im_out => mul_im_out(1703)
+            data_re_out => mul_re_out(1703),
+            data_im_out => mul_im_out(1703)
         );
 
  
@@ -48194,8 +48194,8 @@ begin
             data_im_in => first_stage_im_out(1704),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j0.0490112304688
             im_multiplicator => "0000001100100011",
-            product_re_out => mul_re_out(1704),
-            product_im_out => mul_im_out(1704)
+            data_re_out => mul_re_out(1704),
+            data_im_out => mul_im_out(1704)
         );
 
  
@@ -48212,8 +48212,8 @@ begin
             data_im_in => first_stage_im_out(1705),
             re_multiplicator => "1100000010001000", --- -0.99169921875 + j0.128479003906
             im_multiplicator => "0000100000111001",
-            product_re_out => mul_re_out(1705),
-            product_im_out => mul_im_out(1705)
+            data_re_out => mul_re_out(1705),
+            data_im_out => mul_im_out(1705)
         );
 
  
@@ -48230,8 +48230,8 @@ begin
             data_im_in => first_stage_im_out(1706),
             re_multiplicator => "1100000101100100", --- -0.978271484375 + j0.207092285156
             im_multiplicator => "0000110101000001",
-            product_re_out => mul_re_out(1706),
-            product_im_out => mul_im_out(1706)
+            data_re_out => mul_re_out(1706),
+            data_im_out => mul_im_out(1706)
         );
 
  
@@ -48248,8 +48248,8 @@ begin
             data_im_in => first_stage_im_out(1707),
             re_multiplicator => "1100001010100101", --- -0.958679199219 + j0.284362792969
             im_multiplicator => "0001001000110011",
-            product_re_out => mul_re_out(1707),
-            product_im_out => mul_im_out(1707)
+            data_re_out => mul_re_out(1707),
+            data_im_out => mul_im_out(1707)
         );
 
  
@@ -48266,8 +48266,8 @@ begin
             data_im_in => first_stage_im_out(1708),
             re_multiplicator => "1100010001001010", --- -0.932983398438 + j0.35986328125
             im_multiplicator => "0001011100001000",
-            product_re_out => mul_re_out(1708),
-            product_im_out => mul_im_out(1708)
+            data_re_out => mul_re_out(1708),
+            data_im_out => mul_im_out(1708)
         );
 
  
@@ -48284,8 +48284,8 @@ begin
             data_im_in => first_stage_im_out(1709),
             re_multiplicator => "1100011001010001", --- -0.901306152344 + j0.433044433594
             im_multiplicator => "0001101110110111",
-            product_re_out => mul_re_out(1709),
-            product_im_out => mul_im_out(1709)
+            data_re_out => mul_re_out(1709),
+            data_im_out => mul_im_out(1709)
         );
 
  
@@ -48302,8 +48302,8 @@ begin
             data_im_in => first_stage_im_out(1710),
             re_multiplicator => "1100100010110101", --- -0.863952636719 + j0.503479003906
             im_multiplicator => "0010000000111001",
-            product_re_out => mul_re_out(1710),
-            product_im_out => mul_im_out(1710)
+            data_re_out => mul_re_out(1710),
+            data_im_out => mul_im_out(1710)
         );
 
  
@@ -48320,8 +48320,8 @@ begin
             data_im_in => first_stage_im_out(1711),
             re_multiplicator => "1100101101110100", --- -0.821044921875 + j0.570739746094
             im_multiplicator => "0010010010000111",
-            product_re_out => mul_re_out(1711),
-            product_im_out => mul_im_out(1711)
+            data_re_out => mul_re_out(1711),
+            data_im_out => mul_im_out(1711)
         );
 
  
@@ -48338,8 +48338,8 @@ begin
             data_im_in => first_stage_im_out(1712),
             re_multiplicator => "1100111010000111", --- -0.773010253906 + j0.634338378906
             im_multiplicator => "0010100010011001",
-            product_re_out => mul_re_out(1712),
-            product_im_out => mul_im_out(1712)
+            data_re_out => mul_re_out(1712),
+            data_im_out => mul_im_out(1712)
         );
 
  
@@ -48356,8 +48356,8 @@ begin
             data_im_in => first_stage_im_out(1713),
             re_multiplicator => "1101000111101100", --- -0.719970703125 + j0.693969726562
             im_multiplicator => "0010110001101010",
-            product_re_out => mul_re_out(1713),
-            product_im_out => mul_im_out(1713)
+            data_re_out => mul_re_out(1713),
+            data_im_out => mul_im_out(1713)
         );
 
  
@@ -48374,8 +48374,8 @@ begin
             data_im_in => first_stage_im_out(1714),
             re_multiplicator => "1101010110011011", --- -0.662414550781 + j0.749084472656
             im_multiplicator => "0010111111110001",
-            product_re_out => mul_re_out(1714),
-            product_im_out => mul_im_out(1714)
+            data_re_out => mul_re_out(1714),
+            data_im_out => mul_im_out(1714)
         );
 
  
@@ -48392,8 +48392,8 @@ begin
             data_im_in => first_stage_im_out(1715),
             re_multiplicator => "1101100110010000", --- -0.6005859375 + j0.799499511719
             im_multiplicator => "0011001100101011",
-            product_re_out => mul_re_out(1715),
-            product_im_out => mul_im_out(1715)
+            data_re_out => mul_re_out(1715),
+            data_im_out => mul_im_out(1715)
         );
 
  
@@ -48410,8 +48410,8 @@ begin
             data_im_in => first_stage_im_out(1716),
             re_multiplicator => "1101110111000011", --- -0.534973144531 + j0.844848632812
             im_multiplicator => "0011011000010010",
-            product_re_out => mul_re_out(1716),
-            product_im_out => mul_im_out(1716)
+            data_re_out => mul_re_out(1716),
+            data_im_out => mul_im_out(1716)
         );
 
  
@@ -48428,8 +48428,8 @@ begin
             data_im_in => first_stage_im_out(1717),
             re_multiplicator => "1110001000101110", --- -0.465942382812 + j0.884765625
             im_multiplicator => "0011100010100000",
-            product_re_out => mul_re_out(1717),
-            product_im_out => mul_im_out(1717)
+            data_re_out => mul_re_out(1717),
+            data_im_out => mul_im_out(1717)
         );
 
  
@@ -48446,8 +48446,8 @@ begin
             data_im_in => first_stage_im_out(1718),
             re_multiplicator => "1110011011001001", --- -0.393981933594 + j0.919067382812
             im_multiplicator => "0011101011010010",
-            product_re_out => mul_re_out(1718),
-            product_im_out => mul_im_out(1718)
+            data_re_out => mul_re_out(1718),
+            data_im_out => mul_im_out(1718)
         );
 
  
@@ -48464,8 +48464,8 @@ begin
             data_im_in => first_stage_im_out(1719),
             re_multiplicator => "1110101110001110", --- -0.319458007812 + j0.947570800781
             im_multiplicator => "0011110010100101",
-            product_re_out => mul_re_out(1719),
-            product_im_out => mul_im_out(1719)
+            data_re_out => mul_re_out(1719),
+            data_im_out => mul_im_out(1719)
         );
 
  
@@ -48482,8 +48482,8 @@ begin
             data_im_in => first_stage_im_out(1720),
             re_multiplicator => "1111000001110100", --- -0.242919921875 + j0.969970703125
             im_multiplicator => "0011111000010100",
-            product_re_out => mul_re_out(1720),
-            product_im_out => mul_im_out(1720)
+            data_re_out => mul_re_out(1720),
+            data_im_out => mul_im_out(1720)
         );
 
  
@@ -48500,8 +48500,8 @@ begin
             data_im_in => first_stage_im_out(1721),
             re_multiplicator => "1111010101110011", --- -0.164855957031 + j0.986267089844
             im_multiplicator => "0011111100011111",
-            product_re_out => mul_re_out(1721),
-            product_im_out => mul_im_out(1721)
+            data_re_out => mul_re_out(1721),
+            data_im_out => mul_im_out(1721)
         );
 
  
@@ -48518,8 +48518,8 @@ begin
             data_im_in => first_stage_im_out(1722),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j0.996276855469
             im_multiplicator => "0011111111000011",
-            product_re_out => mul_re_out(1722),
-            product_im_out => mul_im_out(1722)
+            data_re_out => mul_re_out(1722),
+            data_im_out => mul_im_out(1722)
         );
 
  
@@ -48536,8 +48536,8 @@ begin
             data_im_in => first_stage_im_out(1723),
             re_multiplicator => "1111111110011100", --- -0.006103515625 + j0.999938964844
             im_multiplicator => "0011111111111111",
-            product_re_out => mul_re_out(1723),
-            product_im_out => mul_im_out(1723)
+            data_re_out => mul_re_out(1723),
+            data_im_out => mul_im_out(1723)
         );
 
  
@@ -48554,8 +48554,8 @@ begin
             data_im_in => first_stage_im_out(1724),
             re_multiplicator => "0000010010110101", --- 0.0735473632812 + j0.997253417969
             im_multiplicator => "0011111111010011",
-            product_re_out => mul_re_out(1724),
-            product_im_out => mul_im_out(1724)
+            data_re_out => mul_re_out(1724),
+            data_im_out => mul_im_out(1724)
         );
 
  
@@ -48572,8 +48572,8 @@ begin
             data_im_in => first_stage_im_out(1725),
             re_multiplicator => "0000100111000111", --- 0.152770996094 + j0.988220214844
             im_multiplicator => "0011111100111111",
-            product_re_out => mul_re_out(1725),
-            product_im_out => mul_im_out(1725)
+            data_re_out => mul_re_out(1725),
+            data_im_out => mul_im_out(1725)
         );
 
  
@@ -48590,8 +48590,8 @@ begin
             data_im_in => first_stage_im_out(1726),
             re_multiplicator => "0000111011001001", --- 0.231018066406 + j0.972900390625
             im_multiplicator => "0011111001000100",
-            product_re_out => mul_re_out(1726),
-            product_im_out => mul_im_out(1726)
+            data_re_out => mul_re_out(1726),
+            data_im_out => mul_im_out(1726)
         );
 
  
@@ -48608,8 +48608,8 @@ begin
             data_im_in => first_stage_im_out(1727),
             re_multiplicator => "0001001110110011", --- 0.307800292969 + j0.951416015625
             im_multiplicator => "0011110011100100",
-            product_re_out => mul_re_out(1727),
-            product_im_out => mul_im_out(1727)
+            data_re_out => mul_re_out(1727),
+            data_im_out => mul_im_out(1727)
         );
 
  
@@ -48624,8 +48624,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1728),
             data_im_in => first_stage_im_out(1728),
-            product_re_out => mul_re_out(1728),
-            product_im_out => mul_im_out(1728)
+            data_re_out => mul_re_out(1728),
+            data_im_out => mul_im_out(1728)
         );
 
  
@@ -48642,8 +48642,8 @@ begin
             data_im_in => first_stage_im_out(1729),
             re_multiplicator => "0011111111000111", --- 0.996520996094 + j-0.0827026367188
             im_multiplicator => "1111101010110101",
-            product_re_out => mul_re_out(1729),
-            product_im_out => mul_im_out(1729)
+            data_re_out => mul_re_out(1729),
+            data_im_out => mul_im_out(1729)
         );
 
  
@@ -48660,8 +48660,8 @@ begin
             data_im_in => first_stage_im_out(1730),
             re_multiplicator => "0011111100011111", --- 0.986267089844 + j-0.164855957031
             im_multiplicator => "1111010101110011",
-            product_re_out => mul_re_out(1730),
-            product_im_out => mul_im_out(1730)
+            data_re_out => mul_re_out(1730),
+            data_im_out => mul_im_out(1730)
         );
 
  
@@ -48678,8 +48678,8 @@ begin
             data_im_in => first_stage_im_out(1731),
             re_multiplicator => "0011111000001000", --- 0.96923828125 + j-0.245910644531
             im_multiplicator => "1111000001000011",
-            product_re_out => mul_re_out(1731),
-            product_im_out => mul_im_out(1731)
+            data_re_out => mul_re_out(1731),
+            data_im_out => mul_im_out(1731)
         );
 
  
@@ -48696,8 +48696,8 @@ begin
             data_im_in => first_stage_im_out(1732),
             re_multiplicator => "0011110010000100", --- 0.945556640625 + j-0.325256347656
             im_multiplicator => "1110101100101111",
-            product_re_out => mul_re_out(1732),
-            product_im_out => mul_im_out(1732)
+            data_re_out => mul_re_out(1732),
+            data_im_out => mul_im_out(1732)
         );
 
  
@@ -48714,8 +48714,8 @@ begin
             data_im_in => first_stage_im_out(1733),
             re_multiplicator => "0011101010010110", --- 0.915405273438 + j-0.402404785156
             im_multiplicator => "1110011000111111",
-            product_re_out => mul_re_out(1733),
-            product_im_out => mul_im_out(1733)
+            data_re_out => mul_re_out(1733),
+            data_im_out => mul_im_out(1733)
         );
 
  
@@ -48732,8 +48732,8 @@ begin
             data_im_in => first_stage_im_out(1734),
             re_multiplicator => "0011100001000001", --- 0.878967285156 + j-0.476745605469
             im_multiplicator => "1110000101111101",
-            product_re_out => mul_re_out(1734),
-            product_im_out => mul_im_out(1734)
+            data_re_out => mul_re_out(1734),
+            data_im_out => mul_im_out(1734)
         );
 
  
@@ -48750,8 +48750,8 @@ begin
             data_im_in => first_stage_im_out(1735),
             re_multiplicator => "0011010110001001", --- 0.836486816406 + j-0.5478515625
             im_multiplicator => "1101110011110000",
-            product_re_out => mul_re_out(1735),
-            product_im_out => mul_im_out(1735)
+            data_re_out => mul_re_out(1735),
+            data_im_out => mul_im_out(1735)
         );
 
  
@@ -48768,8 +48768,8 @@ begin
             data_im_in => first_stage_im_out(1736),
             re_multiplicator => "0011001001110100", --- 0.788330078125 + j-0.615173339844
             im_multiplicator => "1101100010100001",
-            product_re_out => mul_re_out(1736),
-            product_im_out => mul_im_out(1736)
+            data_re_out => mul_re_out(1736),
+            data_im_out => mul_im_out(1736)
         );
 
  
@@ -48786,8 +48786,8 @@ begin
             data_im_in => first_stage_im_out(1737),
             re_multiplicator => "0010111100000101", --- 0.734680175781 + j-0.678344726562
             im_multiplicator => "1101010010010110",
-            product_re_out => mul_re_out(1737),
-            product_im_out => mul_im_out(1737)
+            data_re_out => mul_re_out(1737),
+            data_im_out => mul_im_out(1737)
         );
 
  
@@ -48804,8 +48804,8 @@ begin
             data_im_in => first_stage_im_out(1738),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(1738),
-            product_im_out => mul_im_out(1738)
+            data_re_out => mul_re_out(1738),
+            data_im_out => mul_im_out(1738)
         );
 
  
@@ -48822,8 +48822,8 @@ begin
             data_im_in => first_stage_im_out(1739),
             re_multiplicator => "0010011100111000", --- 0.61279296875 + j-0.790222167969
             im_multiplicator => "1100110101101101",
-            product_re_out => mul_re_out(1739),
-            product_im_out => mul_im_out(1739)
+            data_re_out => mul_re_out(1739),
+            data_im_out => mul_im_out(1739)
         );
 
  
@@ -48840,8 +48840,8 @@ begin
             data_im_in => first_stage_im_out(1740),
             re_multiplicator => "0010001011100110", --- 0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(1740),
-            product_im_out => mul_im_out(1740)
+            data_re_out => mul_re_out(1740),
+            data_im_out => mul_im_out(1740)
         );
 
  
@@ -48858,8 +48858,8 @@ begin
             data_im_in => first_stage_im_out(1741),
             re_multiplicator => "0001111001010111", --- 0.474060058594 + j-0.880432128906
             im_multiplicator => "1100011110100111",
-            product_re_out => mul_re_out(1741),
-            product_im_out => mul_im_out(1741)
+            data_re_out => mul_re_out(1741),
+            data_im_out => mul_im_out(1741)
         );
 
  
@@ -48876,8 +48876,8 @@ begin
             data_im_in => first_stage_im_out(1742),
             re_multiplicator => "0001100110010011", --- 0.399597167969 + j-0.916625976562
             im_multiplicator => "1100010101010110",
-            product_re_out => mul_re_out(1742),
-            product_im_out => mul_im_out(1742)
+            data_re_out => mul_re_out(1742),
+            data_im_out => mul_im_out(1742)
         );
 
  
@@ -48894,8 +48894,8 @@ begin
             data_im_in => first_stage_im_out(1743),
             re_multiplicator => "0001010010100010", --- 0.322387695312 + j-0.946594238281
             im_multiplicator => "1100001101101011",
-            product_re_out => mul_re_out(1743),
-            product_im_out => mul_im_out(1743)
+            data_re_out => mul_re_out(1743),
+            data_im_out => mul_im_out(1743)
         );
 
  
@@ -48912,8 +48912,8 @@ begin
             data_im_in => first_stage_im_out(1744),
             re_multiplicator => "0000111110001100", --- 0.242919921875 + j-0.969970703125
             im_multiplicator => "1100000111101100",
-            product_re_out => mul_re_out(1744),
-            product_im_out => mul_im_out(1744)
+            data_re_out => mul_re_out(1744),
+            data_im_out => mul_im_out(1744)
         );
 
  
@@ -48930,8 +48930,8 @@ begin
             data_im_in => first_stage_im_out(1745),
             re_multiplicator => "0000101001011100", --- 0.161865234375 + j-0.986755371094
             im_multiplicator => "1100000011011001",
-            product_re_out => mul_re_out(1745),
-            product_im_out => mul_im_out(1745)
+            data_re_out => mul_re_out(1745),
+            data_im_out => mul_im_out(1745)
         );
 
  
@@ -48948,8 +48948,8 @@ begin
             data_im_in => first_stage_im_out(1746),
             re_multiplicator => "0000010100011001", --- 0.0796508789062 + j-0.996765136719
             im_multiplicator => "1100000000110101",
-            product_re_out => mul_re_out(1746),
-            product_im_out => mul_im_out(1746)
+            data_re_out => mul_re_out(1746),
+            data_im_out => mul_im_out(1746)
         );
 
  
@@ -48966,8 +48966,8 @@ begin
             data_im_in => first_stage_im_out(1747),
             re_multiplicator => "1111111111001110", --- -0.0030517578125 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(1747),
-            product_im_out => mul_im_out(1747)
+            data_re_out => mul_re_out(1747),
+            data_im_out => mul_im_out(1747)
         );
 
  
@@ -48984,8 +48984,8 @@ begin
             data_im_in => first_stage_im_out(1748),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(1748),
-            product_im_out => mul_im_out(1748)
+            data_re_out => mul_re_out(1748),
+            data_im_out => mul_im_out(1748)
         );
 
  
@@ -49002,8 +49002,8 @@ begin
             data_im_in => first_stage_im_out(1749),
             re_multiplicator => "1111010101000001", --- -0.167907714844 + j-0.985778808594
             im_multiplicator => "1100000011101001",
-            product_re_out => mul_re_out(1749),
-            product_im_out => mul_im_out(1749)
+            data_re_out => mul_re_out(1749),
+            data_im_out => mul_im_out(1749)
         );
 
  
@@ -49020,8 +49020,8 @@ begin
             data_im_in => first_stage_im_out(1750),
             re_multiplicator => "1111000000010010", --- -0.248901367188 + j-0.968505859375
             im_multiplicator => "1100001000000100",
-            product_re_out => mul_re_out(1750),
-            product_im_out => mul_im_out(1750)
+            data_re_out => mul_re_out(1750),
+            data_im_out => mul_im_out(1750)
         );
 
  
@@ -49038,8 +49038,8 @@ begin
             data_im_in => first_stage_im_out(1751),
             re_multiplicator => "1110101011111111", --- -0.328186035156 + j-0.944580078125
             im_multiplicator => "1100001110001100",
-            product_re_out => mul_re_out(1751),
-            product_im_out => mul_im_out(1751)
+            data_re_out => mul_re_out(1751),
+            data_im_out => mul_im_out(1751)
         );
 
  
@@ -49056,8 +49056,8 @@ begin
             data_im_in => first_stage_im_out(1752),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j-0.914184570312
             im_multiplicator => "1100010101111110",
-            product_re_out => mul_re_out(1752),
-            product_im_out => mul_im_out(1752)
+            data_re_out => mul_re_out(1752),
+            data_im_out => mul_im_out(1752)
         );
 
  
@@ -49074,8 +49074,8 @@ begin
             data_im_in => first_stage_im_out(1753),
             re_multiplicator => "1110000101010000", --- -0.4794921875 + j-0.877502441406
             im_multiplicator => "1100011111010111",
-            product_re_out => mul_re_out(1753),
-            product_im_out => mul_im_out(1753)
+            data_re_out => mul_re_out(1753),
+            data_im_out => mul_im_out(1753)
         );
 
  
@@ -49092,8 +49092,8 @@ begin
             data_im_in => first_stage_im_out(1754),
             re_multiplicator => "1101110011000110", --- -0.550415039062 + j-0.834838867188
             im_multiplicator => "1100101010010010",
-            product_re_out => mul_re_out(1754),
-            product_im_out => mul_im_out(1754)
+            data_re_out => mul_re_out(1754),
+            data_im_out => mul_im_out(1754)
         );
 
  
@@ -49110,8 +49110,8 @@ begin
             data_im_in => first_stage_im_out(1755),
             re_multiplicator => "1101100001111001", --- -0.617614746094 + j-0.786437988281
             im_multiplicator => "1100110110101011",
-            product_re_out => mul_re_out(1755),
-            product_im_out => mul_im_out(1755)
+            data_re_out => mul_re_out(1755),
+            data_im_out => mul_im_out(1755)
         );
 
  
@@ -49128,8 +49128,8 @@ begin
             data_im_in => first_stage_im_out(1756),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(1756),
-            product_im_out => mul_im_out(1756)
+            data_re_out => mul_re_out(1756),
+            data_im_out => mul_im_out(1756)
         );
 
  
@@ -49146,8 +49146,8 @@ begin
             data_im_in => first_stage_im_out(1757),
             re_multiplicator => "1101000010110111", --- -0.738830566406 + j-0.673828125
             im_multiplicator => "1101010011100000",
-            product_re_out => mul_re_out(1757),
-            product_im_out => mul_im_out(1757)
+            data_re_out => mul_re_out(1757),
+            data_im_out => mul_im_out(1757)
         );
 
  
@@ -49164,8 +49164,8 @@ begin
             data_im_in => first_stage_im_out(1758),
             re_multiplicator => "1100110101001111", --- -0.792053222656 + j-0.6103515625
             im_multiplicator => "1101100011110000",
-            product_re_out => mul_re_out(1758),
-            product_im_out => mul_im_out(1758)
+            data_re_out => mul_re_out(1758),
+            data_im_out => mul_im_out(1758)
         );
 
  
@@ -49182,8 +49182,8 @@ begin
             data_im_in => first_stage_im_out(1759),
             re_multiplicator => "1100101001000000", --- -0.83984375 + j-0.542724609375
             im_multiplicator => "1101110101000100",
-            product_re_out => mul_re_out(1759),
-            product_im_out => mul_im_out(1759)
+            data_re_out => mul_re_out(1759),
+            data_im_out => mul_im_out(1759)
         );
 
  
@@ -49200,8 +49200,8 @@ begin
             data_im_in => first_stage_im_out(1760),
             re_multiplicator => "1100011110001111", --- -0.881896972656 + j-0.471374511719
             im_multiplicator => "1110000111010101",
-            product_re_out => mul_re_out(1760),
-            product_im_out => mul_im_out(1760)
+            data_re_out => mul_re_out(1760),
+            data_im_out => mul_im_out(1760)
         );
 
  
@@ -49218,8 +49218,8 @@ begin
             data_im_in => first_stage_im_out(1761),
             re_multiplicator => "1100010101000010", --- -0.917846679688 + j-0.396789550781
             im_multiplicator => "1110011010011011",
-            product_re_out => mul_re_out(1761),
-            product_im_out => mul_im_out(1761)
+            data_re_out => mul_re_out(1761),
+            data_im_out => mul_im_out(1761)
         );
 
  
@@ -49236,8 +49236,8 @@ begin
             data_im_in => first_stage_im_out(1762),
             re_multiplicator => "1100001101011011", --- -0.947570800781 + j-0.319458007812
             im_multiplicator => "1110101110001110",
-            product_re_out => mul_re_out(1762),
-            product_im_out => mul_im_out(1762)
+            data_re_out => mul_re_out(1762),
+            data_im_out => mul_im_out(1762)
         );
 
  
@@ -49254,8 +49254,8 @@ begin
             data_im_in => first_stage_im_out(1763),
             re_multiplicator => "1100000111011111", --- -0.970764160156 + j-0.239990234375
             im_multiplicator => "1111000010100100",
-            product_re_out => mul_re_out(1763),
-            product_im_out => mul_im_out(1763)
+            data_re_out => mul_re_out(1763),
+            data_im_out => mul_im_out(1763)
         );
 
  
@@ -49272,8 +49272,8 @@ begin
             data_im_in => first_stage_im_out(1764),
             re_multiplicator => "1100000011010001", --- -0.987243652344 + j-0.158813476562
             im_multiplicator => "1111010111010110",
-            product_re_out => mul_re_out(1764),
-            product_im_out => mul_im_out(1764)
+            data_re_out => mul_re_out(1764),
+            data_im_out => mul_im_out(1764)
         );
 
  
@@ -49290,8 +49290,8 @@ begin
             data_im_in => first_stage_im_out(1765),
             re_multiplicator => "1100000000110001", --- -0.997009277344 + j-0.0765991210938
             im_multiplicator => "1111101100011001",
-            product_re_out => mul_re_out(1765),
-            product_im_out => mul_im_out(1765)
+            data_re_out => mul_re_out(1765),
+            data_im_out => mul_im_out(1765)
         );
 
  
@@ -49308,8 +49308,8 @@ begin
             data_im_in => first_stage_im_out(1766),
             re_multiplicator => "1100000000000001", --- -0.999938964844 + j0.006103515625
             im_multiplicator => "0000000001100100",
-            product_re_out => mul_re_out(1766),
-            product_im_out => mul_im_out(1766)
+            data_re_out => mul_re_out(1766),
+            data_im_out => mul_im_out(1766)
         );
 
  
@@ -49326,8 +49326,8 @@ begin
             data_im_in => first_stage_im_out(1767),
             re_multiplicator => "1100000001000001", --- -0.996032714844 + j0.0888061523438
             im_multiplicator => "0000010110101111",
-            product_re_out => mul_re_out(1767),
-            product_im_out => mul_im_out(1767)
+            data_re_out => mul_re_out(1767),
+            data_im_out => mul_im_out(1767)
         );
 
  
@@ -49344,8 +49344,8 @@ begin
             data_im_in => first_stage_im_out(1768),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j0.170959472656
             im_multiplicator => "0000101011110001",
-            product_re_out => mul_re_out(1768),
-            product_im_out => mul_im_out(1768)
+            data_re_out => mul_re_out(1768),
+            data_im_out => mul_im_out(1768)
         );
 
  
@@ -49362,8 +49362,8 @@ begin
             data_im_in => first_stage_im_out(1769),
             re_multiplicator => "1100001000010001", --- -0.967712402344 + j0.251892089844
             im_multiplicator => "0001000000011111",
-            product_re_out => mul_re_out(1769),
-            product_im_out => mul_im_out(1769)
+            data_re_out => mul_re_out(1769),
+            data_im_out => mul_im_out(1769)
         );
 
  
@@ -49380,8 +49380,8 @@ begin
             data_im_in => first_stage_im_out(1770),
             re_multiplicator => "1100001110011101", --- -0.943542480469 + j0.3310546875
             im_multiplicator => "0001010100110000",
-            product_re_out => mul_re_out(1770),
-            product_im_out => mul_im_out(1770)
+            data_re_out => mul_re_out(1770),
+            data_im_out => mul_im_out(1770)
         );
 
  
@@ -49398,8 +49398,8 @@ begin
             data_im_in => first_stage_im_out(1771),
             re_multiplicator => "1100010110010011", --- -0.912902832031 + j0.408020019531
             im_multiplicator => "0001101000011101",
-            product_re_out => mul_re_out(1771),
-            product_im_out => mul_im_out(1771)
+            data_re_out => mul_re_out(1771),
+            data_im_out => mul_im_out(1771)
         );
 
  
@@ -49416,8 +49416,8 @@ begin
             data_im_in => first_stage_im_out(1772),
             re_multiplicator => "1100011111101111", --- -0.876037597656 + j0.482177734375
             im_multiplicator => "0001111011011100",
-            product_re_out => mul_re_out(1772),
-            product_im_out => mul_im_out(1772)
+            data_re_out => mul_re_out(1772),
+            data_im_out => mul_im_out(1772)
         );
 
  
@@ -49434,8 +49434,8 @@ begin
             data_im_in => first_stage_im_out(1773),
             re_multiplicator => "1100101010101110", --- -0.833129882812 + j0.552978515625
             im_multiplicator => "0010001101100100",
-            product_re_out => mul_re_out(1773),
-            product_im_out => mul_im_out(1773)
+            data_re_out => mul_re_out(1773),
+            data_im_out => mul_im_out(1773)
         );
 
  
@@ -49452,8 +49452,8 @@ begin
             data_im_in => first_stage_im_out(1774),
             re_multiplicator => "1100110111001010", --- -0.784545898438 + j0.620056152344
             im_multiplicator => "0010011110101111",
-            product_re_out => mul_re_out(1774),
-            product_im_out => mul_im_out(1774)
+            data_re_out => mul_re_out(1774),
+            data_im_out => mul_im_out(1774)
         );
 
  
@@ -49470,8 +49470,8 @@ begin
             data_im_in => first_stage_im_out(1775),
             re_multiplicator => "1101000100111111", --- -0.730529785156 + j0.682800292969
             im_multiplicator => "0010101110110011",
-            product_re_out => mul_re_out(1775),
-            product_im_out => mul_im_out(1775)
+            data_re_out => mul_re_out(1775),
+            data_im_out => mul_im_out(1775)
         );
 
  
@@ -49488,8 +49488,8 @@ begin
             data_im_in => first_stage_im_out(1776),
             re_multiplicator => "1101010100000110", --- -0.671508789062 + j0.740905761719
             im_multiplicator => "0010111101101011",
-            product_re_out => mul_re_out(1776),
-            product_im_out => mul_im_out(1776)
+            data_re_out => mul_re_out(1776),
+            data_im_out => mul_im_out(1776)
         );
 
  
@@ -49506,8 +49506,8 @@ begin
             data_im_in => first_stage_im_out(1777),
             re_multiplicator => "1101100100011000", --- -0.60791015625 + j0.7939453125
             im_multiplicator => "0011001011010000",
-            product_re_out => mul_re_out(1777),
-            product_im_out => mul_im_out(1777)
+            data_re_out => mul_re_out(1777),
+            data_im_out => mul_im_out(1777)
         );
 
  
@@ -49524,8 +49524,8 @@ begin
             data_im_in => first_stage_im_out(1778),
             re_multiplicator => "1101110101101110", --- -0.540161132812 + j0.841552734375
             im_multiplicator => "0011010111011100",
-            product_re_out => mul_re_out(1778),
-            product_im_out => mul_im_out(1778)
+            data_re_out => mul_re_out(1778),
+            data_im_out => mul_im_out(1778)
         );
 
  
@@ -49542,8 +49542,8 @@ begin
             data_im_in => first_stage_im_out(1779),
             re_multiplicator => "1110001000000010", --- -0.468627929688 + j0.883361816406
             im_multiplicator => "0011100010001001",
-            product_re_out => mul_re_out(1779),
-            product_im_out => mul_im_out(1779)
+            data_re_out => mul_re_out(1779),
+            data_im_out => mul_im_out(1779)
         );
 
  
@@ -49560,8 +49560,8 @@ begin
             data_im_in => first_stage_im_out(1780),
             re_multiplicator => "1110011011001001", --- -0.393981933594 + j0.919067382812
             im_multiplicator => "0011101011010010",
-            product_re_out => mul_re_out(1780),
-            product_im_out => mul_im_out(1780)
+            data_re_out => mul_re_out(1780),
+            data_im_out => mul_im_out(1780)
         );
 
  
@@ -49578,8 +49578,8 @@ begin
             data_im_in => first_stage_im_out(1781),
             re_multiplicator => "1110101110111101", --- -0.316589355469 + j0.948547363281
             im_multiplicator => "0011110010110101",
-            product_re_out => mul_re_out(1781),
-            product_im_out => mul_im_out(1781)
+            data_re_out => mul_re_out(1781),
+            data_im_out => mul_im_out(1781)
         );
 
  
@@ -49596,8 +49596,8 @@ begin
             data_im_in => first_stage_im_out(1782),
             re_multiplicator => "1111000011010101", --- -0.236999511719 + j0.971496582031
             im_multiplicator => "0011111000101101",
-            product_re_out => mul_re_out(1782),
-            product_im_out => mul_im_out(1782)
+            data_re_out => mul_re_out(1782),
+            data_im_out => mul_im_out(1782)
         );
 
  
@@ -49614,8 +49614,8 @@ begin
             data_im_in => first_stage_im_out(1783),
             re_multiplicator => "1111011000000111", --- -0.155822753906 + j0.987731933594
             im_multiplicator => "0011111100110111",
-            product_re_out => mul_re_out(1783),
-            product_im_out => mul_im_out(1783)
+            data_re_out => mul_re_out(1783),
+            data_im_out => mul_im_out(1783)
         );
 
  
@@ -49632,8 +49632,8 @@ begin
             data_im_in => first_stage_im_out(1784),
             re_multiplicator => "1111101101001011", --- -0.0735473632812 + j0.997253417969
             im_multiplicator => "0011111111010011",
-            product_re_out => mul_re_out(1784),
-            product_im_out => mul_im_out(1784)
+            data_re_out => mul_re_out(1784),
+            data_im_out => mul_im_out(1784)
         );
 
  
@@ -49650,8 +49650,8 @@ begin
             data_im_in => first_stage_im_out(1785),
             re_multiplicator => "0000000010010110", --- 0.0091552734375 + j0.999938964844
             im_multiplicator => "0011111111111111",
-            product_re_out => mul_re_out(1785),
-            product_im_out => mul_im_out(1785)
+            data_re_out => mul_re_out(1785),
+            data_im_out => mul_im_out(1785)
         );
 
  
@@ -49668,8 +49668,8 @@ begin
             data_im_in => first_stage_im_out(1786),
             re_multiplicator => "0000010111100001", --- 0.0918579101562 + j0.995727539062
             im_multiplicator => "0011111110111010",
-            product_re_out => mul_re_out(1786),
-            product_im_out => mul_im_out(1786)
+            data_re_out => mul_re_out(1786),
+            data_im_out => mul_im_out(1786)
         );
 
  
@@ -49686,8 +49686,8 @@ begin
             data_im_in => first_stage_im_out(1787),
             re_multiplicator => "0000101100100010", --- 0.173950195312 + j0.984741210938
             im_multiplicator => "0011111100000110",
-            product_re_out => mul_re_out(1787),
-            product_im_out => mul_im_out(1787)
+            data_re_out => mul_re_out(1787),
+            data_im_out => mul_im_out(1787)
         );
 
  
@@ -49704,8 +49704,8 @@ begin
             data_im_in => first_stage_im_out(1788),
             re_multiplicator => "0001000001001111", --- 0.254821777344 + j0.966918945312
             im_multiplicator => "0011110111100010",
-            product_re_out => mul_re_out(1788),
-            product_im_out => mul_im_out(1788)
+            data_re_out => mul_re_out(1788),
+            data_im_out => mul_im_out(1788)
         );
 
  
@@ -49722,8 +49722,8 @@ begin
             data_im_in => first_stage_im_out(1789),
             re_multiplicator => "0001010101100000", --- 0.333984375 + j0.942565917969
             im_multiplicator => "0011110001010011",
-            product_re_out => mul_re_out(1789),
-            product_im_out => mul_im_out(1789)
+            data_re_out => mul_re_out(1789),
+            data_im_out => mul_im_out(1789)
         );
 
  
@@ -49740,8 +49740,8 @@ begin
             data_im_in => first_stage_im_out(1790),
             re_multiplicator => "0001101001001011", --- 0.410827636719 + j0.911682128906
             im_multiplicator => "0011101001011001",
-            product_re_out => mul_re_out(1790),
-            product_im_out => mul_im_out(1790)
+            data_re_out => mul_re_out(1790),
+            data_im_out => mul_im_out(1790)
         );
 
  
@@ -49758,8 +49758,8 @@ begin
             data_im_in => first_stage_im_out(1791),
             re_multiplicator => "0001111100001000", --- 0.48486328125 + j0.874572753906
             im_multiplicator => "0011011111111001",
-            product_re_out => mul_re_out(1791),
-            product_im_out => mul_im_out(1791)
+            data_re_out => mul_re_out(1791),
+            data_im_out => mul_im_out(1791)
         );
 
  
@@ -49774,8 +49774,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1792),
             data_im_in => first_stage_im_out(1792),
-            product_re_out => mul_re_out(1792),
-            product_im_out => mul_im_out(1792)
+            data_re_out => mul_re_out(1792),
+            data_im_out => mul_im_out(1792)
         );
 
  
@@ -49792,8 +49792,8 @@ begin
             data_im_in => first_stage_im_out(1793),
             re_multiplicator => "0011111111000011", --- 0.996276855469 + j-0.0857543945312
             im_multiplicator => "1111101010000011",
-            product_re_out => mul_re_out(1793),
-            product_im_out => mul_im_out(1793)
+            data_re_out => mul_re_out(1793),
+            data_im_out => mul_im_out(1793)
         );
 
  
@@ -49810,8 +49810,8 @@ begin
             data_im_in => first_stage_im_out(1794),
             re_multiplicator => "0011111100001110", --- 0.985229492188 + j-0.170959472656
             im_multiplicator => "1111010100001111",
-            product_re_out => mul_re_out(1794),
-            product_im_out => mul_im_out(1794)
+            data_re_out => mul_re_out(1794),
+            data_im_out => mul_im_out(1794)
         );
 
  
@@ -49828,8 +49828,8 @@ begin
             data_im_in => first_stage_im_out(1795),
             re_multiplicator => "0011110111100010", --- 0.966918945312 + j-0.254821777344
             im_multiplicator => "1110111110110001",
-            product_re_out => mul_re_out(1795),
-            product_im_out => mul_im_out(1795)
+            data_re_out => mul_re_out(1795),
+            data_im_out => mul_im_out(1795)
         );
 
  
@@ -49846,8 +49846,8 @@ begin
             data_im_in => first_stage_im_out(1796),
             re_multiplicator => "0011110001000010", --- 0.941528320312 + j-0.336853027344
             im_multiplicator => "1110101001110001",
-            product_re_out => mul_re_out(1796),
-            product_im_out => mul_im_out(1796)
+            data_re_out => mul_re_out(1796),
+            data_im_out => mul_im_out(1796)
         );
 
  
@@ -49864,8 +49864,8 @@ begin
             data_im_in => first_stage_im_out(1797),
             re_multiplicator => "0011101000101111", --- 0.909118652344 + j-0.416381835938
             im_multiplicator => "1110010101011010",
-            product_re_out => mul_re_out(1797),
-            product_im_out => mul_im_out(1797)
+            data_re_out => mul_re_out(1797),
+            data_im_out => mul_im_out(1797)
         );
 
  
@@ -49882,8 +49882,8 @@ begin
             data_im_in => first_stage_im_out(1798),
             re_multiplicator => "0011011110101111", --- 0.870056152344 + j-0.492858886719
             im_multiplicator => "1110000001110101",
-            product_re_out => mul_re_out(1798),
-            product_im_out => mul_im_out(1798)
+            data_re_out => mul_re_out(1798),
+            data_im_out => mul_im_out(1798)
         );
 
  
@@ -49900,8 +49900,8 @@ begin
             data_im_in => first_stage_im_out(1799),
             re_multiplicator => "0011010011000110", --- 0.824584960938 + j-0.565673828125
             im_multiplicator => "1101101111001100",
-            product_re_out => mul_re_out(1799),
-            product_im_out => mul_im_out(1799)
+            data_re_out => mul_re_out(1799),
+            data_im_out => mul_im_out(1799)
         );
 
  
@@ -49918,8 +49918,8 @@ begin
             data_im_in => first_stage_im_out(1800),
             re_multiplicator => "0011000101111001", --- 0.773010253906 + j-0.634338378906
             im_multiplicator => "1101011101100111",
-            product_re_out => mul_re_out(1800),
-            product_im_out => mul_im_out(1800)
+            data_re_out => mul_re_out(1800),
+            data_im_out => mul_im_out(1800)
         );
 
  
@@ -49936,8 +49936,8 @@ begin
             data_im_in => first_stage_im_out(1801),
             re_multiplicator => "0010110111001110", --- 0.715698242188 + j-0.698364257812
             im_multiplicator => "1101001101001110",
-            product_re_out => mul_re_out(1801),
-            product_im_out => mul_im_out(1801)
+            data_re_out => mul_re_out(1801),
+            data_im_out => mul_im_out(1801)
         );
 
  
@@ -49954,8 +49954,8 @@ begin
             data_im_in => first_stage_im_out(1802),
             re_multiplicator => "0010100111001101", --- 0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(1802),
-            product_im_out => mul_im_out(1802)
+            data_re_out => mul_re_out(1802),
+            data_im_out => mul_im_out(1802)
         );
 
  
@@ -49972,8 +49972,8 @@ begin
             data_im_in => first_stage_im_out(1803),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j-0.810424804688
             im_multiplicator => "1100110000100010",
-            product_re_out => mul_re_out(1803),
-            product_im_out => mul_im_out(1803)
+            data_re_out => mul_re_out(1803),
+            data_im_out => mul_im_out(1803)
         );
 
  
@@ -49990,8 +49990,8 @@ begin
             data_im_in => first_stage_im_out(1804),
             re_multiplicator => "0010000011100111", --- 0.514099121094 + j-0.857727050781
             im_multiplicator => "1100100100011011",
-            product_re_out => mul_re_out(1804),
-            product_im_out => mul_im_out(1804)
+            data_re_out => mul_re_out(1804),
+            data_im_out => mul_im_out(1804)
         );
 
  
@@ -50008,8 +50008,8 @@ begin
             data_im_in => first_stage_im_out(1805),
             re_multiplicator => "0001110000010010", --- 0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1805),
-            product_im_out => mul_im_out(1805)
+            data_re_out => mul_re_out(1805),
+            data_im_out => mul_im_out(1805)
         );
 
  
@@ -50026,8 +50026,8 @@ begin
             data_im_in => first_stage_im_out(1806),
             re_multiplicator => "0001011100001000", --- 0.35986328125 + j-0.932983398438
             im_multiplicator => "1100010001001010",
-            product_re_out => mul_re_out(1806),
-            product_im_out => mul_im_out(1806)
+            data_re_out => mul_re_out(1806),
+            data_im_out => mul_im_out(1806)
         );
 
  
@@ -50044,8 +50044,8 @@ begin
             data_im_in => first_stage_im_out(1807),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(1807),
-            product_im_out => mul_im_out(1807)
+            data_re_out => mul_re_out(1807),
+            data_im_out => mul_im_out(1807)
         );
 
  
@@ -50062,8 +50062,8 @@ begin
             data_im_in => first_stage_im_out(1808),
             re_multiplicator => "0000110001111100", --- 0.195068359375 + j-0.980773925781
             im_multiplicator => "1100000100111011",
-            product_re_out => mul_re_out(1808),
-            product_im_out => mul_im_out(1808)
+            data_re_out => mul_re_out(1808),
+            data_im_out => mul_im_out(1808)
         );
 
  
@@ -50080,8 +50080,8 @@ begin
             data_im_in => first_stage_im_out(1809),
             re_multiplicator => "0000011100001101", --- 0.110168457031 + j-0.993896484375
             im_multiplicator => "1100000001100100",
-            product_re_out => mul_re_out(1809),
-            product_im_out => mul_im_out(1809)
+            data_re_out => mul_re_out(1809),
+            data_im_out => mul_im_out(1809)
         );
 
  
@@ -50098,8 +50098,8 @@ begin
             data_im_in => first_stage_im_out(1810),
             re_multiplicator => "0000000110010010", --- 0.0245361328125 + j-0.999694824219
             im_multiplicator => "1100000000000101",
-            product_re_out => mul_re_out(1810),
-            product_im_out => mul_im_out(1810)
+            data_re_out => mul_re_out(1810),
+            data_im_out => mul_im_out(1810)
         );
 
  
@@ -50116,8 +50116,8 @@ begin
             data_im_in => first_stage_im_out(1811),
             re_multiplicator => "1111110000010100", --- -0.061279296875 + j-0.998107910156
             im_multiplicator => "1100000000011111",
-            product_re_out => mul_re_out(1811),
-            product_im_out => mul_im_out(1811)
+            data_re_out => mul_re_out(1811),
+            data_im_out => mul_im_out(1811)
         );
 
  
@@ -50134,8 +50134,8 @@ begin
             data_im_in => first_stage_im_out(1812),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(1812),
-            product_im_out => mul_im_out(1812)
+            data_re_out => mul_re_out(1812),
+            data_im_out => mul_im_out(1812)
         );
 
  
@@ -50152,8 +50152,8 @@ begin
             data_im_in => first_stage_im_out(1813),
             re_multiplicator => "1111000100110111", --- -0.231018066406 + j-0.972900390625
             im_multiplicator => "1100000110111100",
-            product_re_out => mul_re_out(1813),
-            product_im_out => mul_im_out(1813)
+            data_re_out => mul_re_out(1813),
+            data_im_out => mul_im_out(1813)
         );
 
  
@@ -50170,8 +50170,8 @@ begin
             data_im_in => first_stage_im_out(1814),
             re_multiplicator => "1110101111101101", --- -0.313659667969 + j-0.949523925781
             im_multiplicator => "1100001100111011",
-            product_re_out => mul_re_out(1814),
-            product_im_out => mul_im_out(1814)
+            data_re_out => mul_re_out(1814),
+            data_im_out => mul_im_out(1814)
         );
 
  
@@ -50188,8 +50188,8 @@ begin
             data_im_in => first_stage_im_out(1815),
             re_multiplicator => "1110011011001001", --- -0.393981933594 + j-0.919067382812
             im_multiplicator => "1100010100101110",
-            product_re_out => mul_re_out(1815),
-            product_im_out => mul_im_out(1815)
+            data_re_out => mul_re_out(1815),
+            data_im_out => mul_im_out(1815)
         );
 
  
@@ -50206,8 +50206,8 @@ begin
             data_im_in => first_stage_im_out(1816),
             re_multiplicator => "1110000111010101", --- -0.471374511719 + j-0.881896972656
             im_multiplicator => "1100011110001111",
-            product_re_out => mul_re_out(1816),
-            product_im_out => mul_im_out(1816)
+            data_re_out => mul_re_out(1816),
+            data_im_out => mul_im_out(1816)
         );
 
  
@@ -50224,8 +50224,8 @@ begin
             data_im_in => first_stage_im_out(1817),
             re_multiplicator => "1101110100011010", --- -0.545288085938 + j-0.838195800781
             im_multiplicator => "1100101001011011",
-            product_re_out => mul_re_out(1817),
-            product_im_out => mul_im_out(1817)
+            data_re_out => mul_re_out(1817),
+            data_im_out => mul_im_out(1817)
         );
 
  
@@ -50242,8 +50242,8 @@ begin
             data_im_in => first_stage_im_out(1818),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j-0.788330078125
             im_multiplicator => "1100110110001100",
-            product_re_out => mul_re_out(1818),
-            product_im_out => mul_im_out(1818)
+            data_re_out => mul_re_out(1818),
+            data_im_out => mul_im_out(1818)
         );
 
  
@@ -50260,8 +50260,8 @@ begin
             data_im_in => first_stage_im_out(1819),
             re_multiplicator => "1101010001110010", --- -0.680541992188 + j-0.732604980469
             im_multiplicator => "1101000100011101",
-            product_re_out => mul_re_out(1819),
-            product_im_out => mul_im_out(1819)
+            data_re_out => mul_re_out(1819),
+            data_im_out => mul_im_out(1819)
         );
 
  
@@ -50278,8 +50278,8 @@ begin
             data_im_in => first_stage_im_out(1820),
             re_multiplicator => "1101000010010101", --- -0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1820),
-            product_im_out => mul_im_out(1820)
+            data_re_out => mul_re_out(1820),
+            data_im_out => mul_im_out(1820)
         );
 
  
@@ -50296,8 +50296,8 @@ begin
             data_im_in => first_stage_im_out(1821),
             re_multiplicator => "1100110100010010", --- -0.795776367188 + j-0.60546875
             im_multiplicator => "1101100101000000",
-            product_re_out => mul_re_out(1821),
-            product_im_out => mul_im_out(1821)
+            data_re_out => mul_re_out(1821),
+            data_im_out => mul_im_out(1821)
         );
 
  
@@ -50314,8 +50314,8 @@ begin
             data_im_in => first_stage_im_out(1822),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1822),
-            product_im_out => mul_im_out(1822)
+            data_re_out => mul_re_out(1822),
+            data_im_out => mul_im_out(1822)
         );
 
  
@@ -50332,8 +50332,8 @@ begin
             data_im_in => first_stage_im_out(1823),
             re_multiplicator => "1100011100110001", --- -0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(1823),
-            product_im_out => mul_im_out(1823)
+            data_re_out => mul_re_out(1823),
+            data_im_out => mul_im_out(1823)
         );
 
  
@@ -50350,8 +50350,8 @@ begin
             data_im_in => first_stage_im_out(1824),
             re_multiplicator => "1100010011100000", --- -0.923828125 + j-0.382629394531
             im_multiplicator => "1110011110000011",
-            product_re_out => mul_re_out(1824),
-            product_im_out => mul_im_out(1824)
+            data_re_out => mul_re_out(1824),
+            data_im_out => mul_im_out(1824)
         );
 
  
@@ -50368,8 +50368,8 @@ begin
             data_im_in => first_stage_im_out(1825),
             re_multiplicator => "1100001011111110", --- -0.953247070312 + j-0.302001953125
             im_multiplicator => "1110110010101100",
-            product_re_out => mul_re_out(1825),
-            product_im_out => mul_im_out(1825)
+            data_re_out => mul_re_out(1825),
+            data_im_out => mul_im_out(1825)
         );
 
  
@@ -50386,8 +50386,8 @@ begin
             data_im_in => first_stage_im_out(1826),
             re_multiplicator => "1100000110001111", --- -0.975646972656 + j-0.219055175781
             im_multiplicator => "1111000111111011",
-            product_re_out => mul_re_out(1826),
-            product_im_out => mul_im_out(1826)
+            data_re_out => mul_re_out(1826),
+            data_im_out => mul_im_out(1826)
         );
 
  
@@ -50404,8 +50404,8 @@ begin
             data_im_in => first_stage_im_out(1827),
             re_multiplicator => "1100000010010110", --- -0.990844726562 + j-0.134521484375
             im_multiplicator => "1111011101100100",
-            product_re_out => mul_re_out(1827),
-            product_im_out => mul_im_out(1827)
+            data_re_out => mul_re_out(1827),
+            data_im_out => mul_im_out(1827)
         );
 
  
@@ -50422,8 +50422,8 @@ begin
             data_im_in => first_stage_im_out(1828),
             re_multiplicator => "1100000000010100", --- -0.998779296875 + j-0.0490112304688
             im_multiplicator => "1111110011011101",
-            product_re_out => mul_re_out(1828),
-            product_im_out => mul_im_out(1828)
+            data_re_out => mul_re_out(1828),
+            data_im_out => mul_im_out(1828)
         );
 
  
@@ -50440,8 +50440,8 @@ begin
             data_im_in => first_stage_im_out(1829),
             re_multiplicator => "1100000000001100", --- -0.999267578125 + j0.0368041992188
             im_multiplicator => "0000001001011011",
-            product_re_out => mul_re_out(1829),
-            product_im_out => mul_im_out(1829)
+            data_re_out => mul_re_out(1829),
+            data_im_out => mul_im_out(1829)
         );
 
  
@@ -50458,8 +50458,8 @@ begin
             data_im_in => first_stage_im_out(1830),
             re_multiplicator => "1100000001111100", --- -0.992431640625 + j0.122375488281
             im_multiplicator => "0000011111010101",
-            product_re_out => mul_re_out(1830),
-            product_im_out => mul_im_out(1830)
+            data_re_out => mul_re_out(1830),
+            data_im_out => mul_im_out(1830)
         );
 
  
@@ -50476,8 +50476,8 @@ begin
             data_im_in => first_stage_im_out(1831),
             re_multiplicator => "1100000101100100", --- -0.978271484375 + j0.207092285156
             im_multiplicator => "0000110101000001",
-            product_re_out => mul_re_out(1831),
-            product_im_out => mul_im_out(1831)
+            data_re_out => mul_re_out(1831),
+            data_im_out => mul_im_out(1831)
         );
 
  
@@ -50494,8 +50494,8 @@ begin
             data_im_in => first_stage_im_out(1832),
             re_multiplicator => "1100001011000010", --- -0.956909179688 + j0.290283203125
             im_multiplicator => "0001001010010100",
-            product_re_out => mul_re_out(1832),
-            product_im_out => mul_im_out(1832)
+            data_re_out => mul_re_out(1832),
+            data_im_out => mul_im_out(1832)
         );
 
  
@@ -50512,8 +50512,8 @@ begin
             data_im_in => first_stage_im_out(1833),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j0.371276855469
             im_multiplicator => "0001011111000011",
-            product_re_out => mul_re_out(1833),
-            product_im_out => mul_im_out(1833)
+            data_re_out => mul_re_out(1833),
+            data_im_out => mul_im_out(1833)
         );
 
  
@@ -50530,8 +50530,8 @@ begin
             data_im_in => first_stage_im_out(1834),
             re_multiplicator => "1100011011010110", --- -0.893188476562 + j0.449584960938
             im_multiplicator => "0001110011000110",
-            product_re_out => mul_re_out(1834),
-            product_im_out => mul_im_out(1834)
+            data_re_out => mul_re_out(1834),
+            data_im_out => mul_im_out(1834)
         );
 
  
@@ -50548,8 +50548,8 @@ begin
             data_im_in => first_stage_im_out(1835),
             re_multiplicator => "1100100110000100", --- -0.851318359375 + j0.524536132812
             im_multiplicator => "0010000110010010",
-            product_re_out => mul_re_out(1835),
-            product_im_out => mul_im_out(1835)
+            data_re_out => mul_re_out(1835),
+            data_im_out => mul_im_out(1835)
         );
 
  
@@ -50566,8 +50566,8 @@ begin
             data_im_in => first_stage_im_out(1836),
             re_multiplicator => "1100110010011001", --- -0.803161621094 + j0.595642089844
             im_multiplicator => "0010011000011111",
-            product_re_out => mul_re_out(1836),
-            product_im_out => mul_im_out(1836)
+            data_re_out => mul_re_out(1836),
+            data_im_out => mul_im_out(1836)
         );
 
  
@@ -50584,8 +50584,8 @@ begin
             data_im_in => first_stage_im_out(1837),
             re_multiplicator => "1101000000001111", --- -0.749084472656 + j0.662414550781
             im_multiplicator => "0010101001100101",
-            product_re_out => mul_re_out(1837),
-            product_im_out => mul_im_out(1837)
+            data_re_out => mul_re_out(1837),
+            data_im_out => mul_im_out(1837)
         );
 
  
@@ -50602,8 +50602,8 @@ begin
             data_im_in => first_stage_im_out(1838),
             re_multiplicator => "1101001111011111", --- -0.689514160156 + j0.724243164062
             im_multiplicator => "0010111001011010",
-            product_re_out => mul_re_out(1838),
-            product_im_out => mul_im_out(1838)
+            data_re_out => mul_re_out(1838),
+            data_im_out => mul_im_out(1838)
         );
 
  
@@ -50620,8 +50620,8 @@ begin
             data_im_in => first_stage_im_out(1839),
             re_multiplicator => "1101100000000011", --- -0.624816894531 + j0.780700683594
             im_multiplicator => "0011000111110111",
-            product_re_out => mul_re_out(1839),
-            product_im_out => mul_im_out(1839)
+            data_re_out => mul_re_out(1839),
+            data_im_out => mul_im_out(1839)
         );
 
  
@@ -50638,8 +50638,8 @@ begin
             data_im_in => first_stage_im_out(1840),
             re_multiplicator => "1101110001110010", --- -0.555541992188 + j0.831420898438
             im_multiplicator => "0011010100110110",
-            product_re_out => mul_re_out(1840),
-            product_im_out => mul_im_out(1840)
+            data_re_out => mul_re_out(1840),
+            data_im_out => mul_im_out(1840)
         );
 
  
@@ -50656,8 +50656,8 @@ begin
             data_im_in => first_stage_im_out(1841),
             re_multiplicator => "1110000100100100", --- -0.482177734375 + j0.876037597656
             im_multiplicator => "0011100000010001",
-            product_re_out => mul_re_out(1841),
-            product_im_out => mul_im_out(1841)
+            data_re_out => mul_re_out(1841),
+            data_im_out => mul_im_out(1841)
         );
 
  
@@ -50674,8 +50674,8 @@ begin
             data_im_in => first_stage_im_out(1842),
             re_multiplicator => "1110011000010001", --- -0.405212402344 + j0.914184570312
             im_multiplicator => "0011101010000010",
-            product_re_out => mul_re_out(1842),
-            product_im_out => mul_im_out(1842)
+            data_re_out => mul_re_out(1842),
+            data_im_out => mul_im_out(1842)
         );
 
  
@@ -50692,8 +50692,8 @@ begin
             data_im_in => first_stage_im_out(1843),
             re_multiplicator => "1110101100101111", --- -0.325256347656 + j0.945556640625
             im_multiplicator => "0011110010000100",
-            product_re_out => mul_re_out(1843),
-            product_im_out => mul_im_out(1843)
+            data_re_out => mul_re_out(1843),
+            data_im_out => mul_im_out(1843)
         );
 
  
@@ -50710,8 +50710,8 @@ begin
             data_im_in => first_stage_im_out(1844),
             re_multiplicator => "1111000001110100", --- -0.242919921875 + j0.969970703125
             im_multiplicator => "0011111000010100",
-            product_re_out => mul_re_out(1844),
-            product_im_out => mul_im_out(1844)
+            data_re_out => mul_re_out(1844),
+            data_im_out => mul_im_out(1844)
         );
 
  
@@ -50728,8 +50728,8 @@ begin
             data_im_in => first_stage_im_out(1845),
             re_multiplicator => "1111010111010110", --- -0.158813476562 + j0.987243652344
             im_multiplicator => "0011111100101111",
-            product_re_out => mul_re_out(1845),
-            product_im_out => mul_im_out(1845)
+            data_re_out => mul_re_out(1845),
+            data_im_out => mul_im_out(1845)
         );
 
  
@@ -50746,8 +50746,8 @@ begin
             data_im_in => first_stage_im_out(1846),
             re_multiplicator => "1111101101001011", --- -0.0735473632812 + j0.997253417969
             im_multiplicator => "0011111111010011",
-            product_re_out => mul_re_out(1846),
-            product_im_out => mul_im_out(1846)
+            data_re_out => mul_re_out(1846),
+            data_im_out => mul_im_out(1846)
         );
 
  
@@ -50764,8 +50764,8 @@ begin
             data_im_in => first_stage_im_out(1847),
             re_multiplicator => "0000000011001001", --- 0.0122680664062 + j0.999877929688
             im_multiplicator => "0011111111111110",
-            product_re_out => mul_re_out(1847),
-            product_im_out => mul_im_out(1847)
+            data_re_out => mul_re_out(1847),
+            data_im_out => mul_im_out(1847)
         );
 
  
@@ -50782,8 +50782,8 @@ begin
             data_im_in => first_stage_im_out(1848),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j0.995178222656
             im_multiplicator => "0011111110110001",
-            product_re_out => mul_re_out(1848),
-            product_im_out => mul_im_out(1848)
+            data_re_out => mul_re_out(1848),
+            data_im_out => mul_im_out(1848)
         );
 
  
@@ -50800,8 +50800,8 @@ begin
             data_im_in => first_stage_im_out(1849),
             re_multiplicator => "0000101110110110", --- 0.182983398438 + j0.983093261719
             im_multiplicator => "0011111011101011",
-            product_re_out => mul_re_out(1849),
-            product_im_out => mul_im_out(1849)
+            data_re_out => mul_re_out(1849),
+            data_im_out => mul_im_out(1849)
         );
 
  
@@ -50818,8 +50818,8 @@ begin
             data_im_in => first_stage_im_out(1850),
             re_multiplicator => "0001000100010001", --- 0.266662597656 + j0.963745117188
             im_multiplicator => "0011110110101110",
-            product_re_out => mul_re_out(1850),
-            product_im_out => mul_im_out(1850)
+            data_re_out => mul_re_out(1850),
+            data_im_out => mul_im_out(1850)
         );
 
  
@@ -50836,8 +50836,8 @@ begin
             data_im_in => first_stage_im_out(1851),
             re_multiplicator => "0001011001001100", --- 0.348388671875 + j0.937316894531
             im_multiplicator => "0011101111111101",
-            product_re_out => mul_re_out(1851),
-            product_im_out => mul_im_out(1851)
+            data_re_out => mul_re_out(1851),
+            data_im_out => mul_im_out(1851)
         );
 
  
@@ -50854,8 +50854,8 @@ begin
             data_im_in => first_stage_im_out(1852),
             re_multiplicator => "0001101101011101", --- 0.427551269531 + j0.903930664062
             im_multiplicator => "0011100111011010",
-            product_re_out => mul_re_out(1852),
-            product_im_out => mul_im_out(1852)
+            data_re_out => mul_re_out(1852),
+            data_im_out => mul_im_out(1852)
         );
 
  
@@ -50872,8 +50872,8 @@ begin
             data_im_in => first_stage_im_out(1853),
             re_multiplicator => "0010000000111001", --- 0.503479003906 + j0.863952636719
             im_multiplicator => "0011011101001011",
-            product_re_out => mul_re_out(1853),
-            product_im_out => mul_im_out(1853)
+            data_re_out => mul_re_out(1853),
+            data_im_out => mul_im_out(1853)
         );
 
  
@@ -50890,8 +50890,8 @@ begin
             data_im_in => first_stage_im_out(1854),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j0.817565917969
             im_multiplicator => "0011010001010011",
-            product_re_out => mul_re_out(1854),
-            product_im_out => mul_im_out(1854)
+            data_re_out => mul_re_out(1854),
+            data_im_out => mul_im_out(1854)
         );
 
  
@@ -50908,8 +50908,8 @@ begin
             data_im_in => first_stage_im_out(1855),
             re_multiplicator => "0010100100110100", --- 0.643798828125 + j0.76513671875
             im_multiplicator => "0011000011111000",
-            product_re_out => mul_re_out(1855),
-            product_im_out => mul_im_out(1855)
+            data_re_out => mul_re_out(1855),
+            data_im_out => mul_im_out(1855)
         );
 
  
@@ -50924,8 +50924,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1856),
             data_im_in => first_stage_im_out(1856),
-            product_re_out => mul_re_out(1856),
-            product_im_out => mul_im_out(1856)
+            data_re_out => mul_re_out(1856),
+            data_im_out => mul_im_out(1856)
         );
 
  
@@ -50942,8 +50942,8 @@ begin
             data_im_in => first_stage_im_out(1857),
             re_multiplicator => "0011111110111111", --- 0.996032714844 + j-0.0888061523438
             im_multiplicator => "1111101001010001",
-            product_re_out => mul_re_out(1857),
-            product_im_out => mul_im_out(1857)
+            data_re_out => mul_re_out(1857),
+            data_im_out => mul_im_out(1857)
         );
 
  
@@ -50960,8 +50960,8 @@ begin
             data_im_in => first_stage_im_out(1858),
             re_multiplicator => "0011111011111101", --- 0.984191894531 + j-0.177001953125
             im_multiplicator => "1111010010101100",
-            product_re_out => mul_re_out(1858),
-            product_im_out => mul_im_out(1858)
+            data_re_out => mul_re_out(1858),
+            data_im_out => mul_im_out(1858)
         );
 
  
@@ -50978,8 +50978,8 @@ begin
             data_im_in => first_stage_im_out(1859),
             re_multiplicator => "0011110110111011", --- 0.964538574219 + j-0.263732910156
             im_multiplicator => "1110111100011111",
-            product_re_out => mul_re_out(1859),
-            product_im_out => mul_im_out(1859)
+            data_re_out => mul_re_out(1859),
+            data_im_out => mul_im_out(1859)
         );
 
  
@@ -50996,8 +50996,8 @@ begin
             data_im_in => first_stage_im_out(1860),
             re_multiplicator => "0011101111111101", --- 0.937316894531 + j-0.348388671875
             im_multiplicator => "1110100110110100",
-            product_re_out => mul_re_out(1860),
-            product_im_out => mul_im_out(1860)
+            data_re_out => mul_re_out(1860),
+            data_im_out => mul_im_out(1860)
         );
 
  
@@ -51014,8 +51014,8 @@ begin
             data_im_in => first_stage_im_out(1861),
             re_multiplicator => "0011100111000101", --- 0.902648925781 + j-0.430297851562
             im_multiplicator => "1110010001110110",
-            product_re_out => mul_re_out(1861),
-            product_im_out => mul_im_out(1861)
+            data_re_out => mul_re_out(1861),
+            data_im_out => mul_im_out(1861)
         );
 
  
@@ -51032,8 +51032,8 @@ begin
             data_im_in => first_stage_im_out(1862),
             re_multiplicator => "0011011100011000", --- 0.86083984375 + j-0.5087890625
             im_multiplicator => "1101111101110000",
-            product_re_out => mul_re_out(1862),
-            product_im_out => mul_im_out(1862)
+            data_re_out => mul_re_out(1862),
+            data_im_out => mul_im_out(1862)
         );
 
  
@@ -51050,8 +51050,8 @@ begin
             data_im_in => first_stage_im_out(1863),
             re_multiplicator => "0011001111111011", --- 0.812194824219 + j-0.583251953125
             im_multiplicator => "1101101010101100",
-            product_re_out => mul_re_out(1863),
-            product_im_out => mul_im_out(1863)
+            data_re_out => mul_re_out(1863),
+            data_im_out => mul_im_out(1863)
         );
 
  
@@ -51068,8 +51068,8 @@ begin
             data_im_in => first_stage_im_out(1864),
             re_multiplicator => "0011000001110110", --- 0.757202148438 + j-0.653137207031
             im_multiplicator => "1101011000110011",
-            product_re_out => mul_re_out(1864),
-            product_im_out => mul_im_out(1864)
+            data_re_out => mul_re_out(1864),
+            data_im_out => mul_im_out(1864)
         );
 
  
@@ -51086,8 +51086,8 @@ begin
             data_im_in => first_stage_im_out(1865),
             re_multiplicator => "0010110010001110", --- 0.696166992188 + j-0.717834472656
             im_multiplicator => "1101001000001111",
-            product_re_out => mul_re_out(1865),
-            product_im_out => mul_im_out(1865)
+            data_re_out => mul_re_out(1865),
+            data_im_out => mul_im_out(1865)
         );
 
  
@@ -51104,8 +51104,8 @@ begin
             data_im_in => first_stage_im_out(1866),
             re_multiplicator => "0010100001001011", --- 0.629577636719 + j-0.77685546875
             im_multiplicator => "1100111001001000",
-            product_re_out => mul_re_out(1866),
-            product_im_out => mul_im_out(1866)
+            data_re_out => mul_re_out(1866),
+            data_im_out => mul_im_out(1866)
         );
 
  
@@ -51122,8 +51122,8 @@ begin
             data_im_in => first_stage_im_out(1867),
             re_multiplicator => "0010001110111000", --- 0.55810546875 + j-0.829711914062
             im_multiplicator => "1100101011100110",
-            product_re_out => mul_re_out(1867),
-            product_im_out => mul_im_out(1867)
+            data_re_out => mul_re_out(1867),
+            data_im_out => mul_im_out(1867)
         );
 
  
@@ -51140,8 +51140,8 @@ begin
             data_im_in => first_stage_im_out(1868),
             re_multiplicator => "0001111011011100", --- 0.482177734375 + j-0.876037597656
             im_multiplicator => "1100011111101111",
-            product_re_out => mul_re_out(1868),
-            product_im_out => mul_im_out(1868)
+            data_re_out => mul_re_out(1868),
+            data_im_out => mul_im_out(1868)
         );
 
  
@@ -51158,8 +51158,8 @@ begin
             data_im_in => first_stage_im_out(1869),
             re_multiplicator => "0001100111000001", --- 0.402404785156 + j-0.915405273438
             im_multiplicator => "1100010101101010",
-            product_re_out => mul_re_out(1869),
-            product_im_out => mul_im_out(1869)
+            data_re_out => mul_re_out(1869),
+            data_im_out => mul_im_out(1869)
         );
 
  
@@ -51176,8 +51176,8 @@ begin
             data_im_in => first_stage_im_out(1870),
             re_multiplicator => "0001010001110010", --- 0.319458007812 + j-0.947570800781
             im_multiplicator => "1100001101011011",
-            product_re_out => mul_re_out(1870),
-            product_im_out => mul_im_out(1870)
+            data_re_out => mul_re_out(1870),
+            data_im_out => mul_im_out(1870)
         );
 
  
@@ -51194,8 +51194,8 @@ begin
             data_im_in => first_stage_im_out(1871),
             re_multiplicator => "0000111011111010", --- 0.234008789062 + j-0.97216796875
             im_multiplicator => "1100000111001000",
-            product_re_out => mul_re_out(1871),
-            product_im_out => mul_im_out(1871)
+            data_re_out => mul_re_out(1871),
+            data_im_out => mul_im_out(1871)
         );
 
  
@@ -51212,8 +51212,8 @@ begin
             data_im_in => first_stage_im_out(1872),
             re_multiplicator => "0000100101100100", --- 0.146728515625 + j-0.989135742188
             im_multiplicator => "1100000010110010",
-            product_re_out => mul_re_out(1872),
-            product_im_out => mul_im_out(1872)
+            data_re_out => mul_re_out(1872),
+            data_im_out => mul_im_out(1872)
         );
 
  
@@ -51230,8 +51230,8 @@ begin
             data_im_in => first_stage_im_out(1873),
             re_multiplicator => "0000001110111010", --- 0.0582275390625 + j-0.998291015625
             im_multiplicator => "1100000000011100",
-            product_re_out => mul_re_out(1873),
-            product_im_out => mul_im_out(1873)
+            data_re_out => mul_re_out(1873),
+            data_im_out => mul_im_out(1873)
         );
 
  
@@ -51248,8 +51248,8 @@ begin
             data_im_in => first_stage_im_out(1874),
             re_multiplicator => "1111111000001010", --- -0.0306396484375 + j-0.99951171875
             im_multiplicator => "1100000000001000",
-            product_re_out => mul_re_out(1874),
-            product_im_out => mul_im_out(1874)
+            data_re_out => mul_re_out(1874),
+            data_im_out => mul_im_out(1874)
         );
 
  
@@ -51266,8 +51266,8 @@ begin
             data_im_in => first_stage_im_out(1875),
             re_multiplicator => "1111100001011101", --- -0.119323730469 + j-0.992797851562
             im_multiplicator => "1100000001110110",
-            product_re_out => mul_re_out(1875),
-            product_im_out => mul_im_out(1875)
+            data_re_out => mul_re_out(1875),
+            data_im_out => mul_im_out(1875)
         );
 
  
@@ -51284,8 +51284,8 @@ begin
             data_im_in => first_stage_im_out(1876),
             re_multiplicator => "1111001010111111", --- -0.207092285156 + j-0.978271484375
             im_multiplicator => "1100000101100100",
-            product_re_out => mul_re_out(1876),
-            product_im_out => mul_im_out(1876)
+            data_re_out => mul_re_out(1876),
+            data_im_out => mul_im_out(1876)
         );
 
  
@@ -51302,8 +51302,8 @@ begin
             data_im_in => first_stage_im_out(1877),
             re_multiplicator => "1110110100111100", --- -0.293212890625 + j-0.955993652344
             im_multiplicator => "1100001011010001",
-            product_re_out => mul_re_out(1877),
-            product_im_out => mul_im_out(1877)
+            data_re_out => mul_re_out(1877),
+            data_im_out => mul_im_out(1877)
         );
 
  
@@ -51320,8 +51320,8 @@ begin
             data_im_in => first_stage_im_out(1878),
             re_multiplicator => "1110011111100000", --- -0.376953125 + j-0.926208496094
             im_multiplicator => "1100010010111001",
-            product_re_out => mul_re_out(1878),
-            product_im_out => mul_im_out(1878)
+            data_re_out => mul_re_out(1878),
+            data_im_out => mul_im_out(1878)
         );
 
  
@@ -51338,8 +51338,8 @@ begin
             data_im_in => first_stage_im_out(1879),
             re_multiplicator => "1110001010110100", --- -0.457763671875 + j-0.889038085938
             im_multiplicator => "1100011100011010",
-            product_re_out => mul_re_out(1879),
-            product_im_out => mul_im_out(1879)
+            data_re_out => mul_re_out(1879),
+            data_im_out => mul_im_out(1879)
         );
 
  
@@ -51356,8 +51356,8 @@ begin
             data_im_in => first_stage_im_out(1880),
             re_multiplicator => "1101110111000011", --- -0.534973144531 + j-0.844848632812
             im_multiplicator => "1100100111101110",
-            product_re_out => mul_re_out(1880),
-            product_im_out => mul_im_out(1880)
+            data_re_out => mul_re_out(1880),
+            data_im_out => mul_im_out(1880)
         );
 
  
@@ -51374,8 +51374,8 @@ begin
             data_im_in => first_stage_im_out(1881),
             re_multiplicator => "1101100100011000", --- -0.60791015625 + j-0.7939453125
             im_multiplicator => "1100110100110000",
-            product_re_out => mul_re_out(1881),
-            product_im_out => mul_im_out(1881)
+            data_re_out => mul_re_out(1881),
+            data_im_out => mul_im_out(1881)
         );
 
  
@@ -51392,8 +51392,8 @@ begin
             data_im_in => first_stage_im_out(1882),
             re_multiplicator => "1101010010111011", --- -0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(1882),
-            product_im_out => mul_im_out(1882)
+            data_re_out => mul_re_out(1882),
+            data_im_out => mul_im_out(1882)
         );
 
  
@@ -51410,8 +51410,8 @@ begin
             data_im_in => first_stage_im_out(1883),
             re_multiplicator => "1101000010110111", --- -0.738830566406 + j-0.673828125
             im_multiplicator => "1101010011100000",
-            product_re_out => mul_re_out(1883),
-            product_im_out => mul_im_out(1883)
+            data_re_out => mul_re_out(1883),
+            data_im_out => mul_im_out(1883)
         );
 
  
@@ -51428,8 +51428,8 @@ begin
             data_im_in => first_stage_im_out(1884),
             re_multiplicator => "1100110100010010", --- -0.795776367188 + j-0.60546875
             im_multiplicator => "1101100101000000",
-            product_re_out => mul_re_out(1884),
-            product_im_out => mul_im_out(1884)
+            data_re_out => mul_re_out(1884),
+            data_im_out => mul_im_out(1884)
         );
 
  
@@ -51446,8 +51446,8 @@ begin
             data_im_in => first_stage_im_out(1885),
             re_multiplicator => "1100100111010100", --- -0.846435546875 + j-0.532348632812
             im_multiplicator => "1101110111101110",
-            product_re_out => mul_re_out(1885),
-            product_im_out => mul_im_out(1885)
+            data_re_out => mul_re_out(1885),
+            data_im_out => mul_im_out(1885)
         );
 
  
@@ -51464,8 +51464,8 @@ begin
             data_im_in => first_stage_im_out(1886),
             re_multiplicator => "1100011100000011", --- -0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(1886),
-            product_im_out => mul_im_out(1886)
+            data_re_out => mul_re_out(1886),
+            data_im_out => mul_im_out(1886)
         );
 
  
@@ -51482,8 +51482,8 @@ begin
             data_im_in => first_stage_im_out(1887),
             re_multiplicator => "1100010010100111", --- -0.927307128906 + j-0.374145507812
             im_multiplicator => "1110100000001110",
-            product_re_out => mul_re_out(1887),
-            product_im_out => mul_im_out(1887)
+            data_re_out => mul_re_out(1887),
+            data_im_out => mul_im_out(1887)
         );
 
  
@@ -51500,8 +51500,8 @@ begin
             data_im_in => first_stage_im_out(1888),
             re_multiplicator => "1100001011000010", --- -0.956909179688 + j-0.290283203125
             im_multiplicator => "1110110101101100",
-            product_re_out => mul_re_out(1888),
-            product_im_out => mul_im_out(1888)
+            data_re_out => mul_re_out(1888),
+            data_im_out => mul_im_out(1888)
         );
 
  
@@ -51518,8 +51518,8 @@ begin
             data_im_in => first_stage_im_out(1889),
             re_multiplicator => "1100000101011001", --- -0.978942871094 + j-0.2041015625
             im_multiplicator => "1111001011110000",
-            product_re_out => mul_re_out(1889),
-            product_im_out => mul_im_out(1889)
+            data_re_out => mul_re_out(1889),
+            data_im_out => mul_im_out(1889)
         );
 
  
@@ -51536,8 +51536,8 @@ begin
             data_im_in => first_stage_im_out(1890),
             re_multiplicator => "1100000001110000", --- -0.9931640625 + j-0.116271972656
             im_multiplicator => "1111100010001111",
-            product_re_out => mul_re_out(1890),
-            product_im_out => mul_im_out(1890)
+            data_re_out => mul_re_out(1890),
+            data_im_out => mul_im_out(1890)
         );
 
  
@@ -51554,8 +51554,8 @@ begin
             data_im_in => first_stage_im_out(1891),
             re_multiplicator => "1100000000000111", --- -0.999572753906 + j-0.027587890625
             im_multiplicator => "1111111000111100",
-            product_re_out => mul_re_out(1891),
-            product_im_out => mul_im_out(1891)
+            data_re_out => mul_re_out(1891),
+            data_im_out => mul_im_out(1891)
         );
 
  
@@ -51572,8 +51572,8 @@ begin
             data_im_in => first_stage_im_out(1892),
             re_multiplicator => "1100000000011111", --- -0.998107910156 + j0.061279296875
             im_multiplicator => "0000001111101100",
-            product_re_out => mul_re_out(1892),
-            product_im_out => mul_im_out(1892)
+            data_re_out => mul_re_out(1892),
+            data_im_out => mul_im_out(1892)
         );
 
  
@@ -51590,8 +51590,8 @@ begin
             data_im_in => first_stage_im_out(1893),
             re_multiplicator => "1100000010111001", --- -0.988708496094 + j0.149719238281
             im_multiplicator => "0000100110010101",
-            product_re_out => mul_re_out(1893),
-            product_im_out => mul_im_out(1893)
+            data_re_out => mul_re_out(1893),
+            data_im_out => mul_im_out(1893)
         );
 
  
@@ -51608,8 +51608,8 @@ begin
             data_im_in => first_stage_im_out(1894),
             re_multiplicator => "1100000111010011", --- -0.971496582031 + j0.236999511719
             im_multiplicator => "0000111100101011",
-            product_re_out => mul_re_out(1894),
-            product_im_out => mul_im_out(1894)
+            data_re_out => mul_re_out(1894),
+            data_im_out => mul_im_out(1894)
         );
 
  
@@ -51626,8 +51626,8 @@ begin
             data_im_in => first_stage_im_out(1895),
             re_multiplicator => "1100001101101011", --- -0.946594238281 + j0.322387695312
             im_multiplicator => "0001010010100010",
-            product_re_out => mul_re_out(1895),
-            product_im_out => mul_im_out(1895)
+            data_re_out => mul_re_out(1895),
+            data_im_out => mul_im_out(1895)
         );
 
  
@@ -51644,8 +51644,8 @@ begin
             data_im_in => first_stage_im_out(1896),
             re_multiplicator => "1100010101111110", --- -0.914184570312 + j0.405212402344
             im_multiplicator => "0001100111101111",
-            product_re_out => mul_re_out(1896),
-            product_im_out => mul_im_out(1896)
+            data_re_out => mul_re_out(1896),
+            data_im_out => mul_im_out(1896)
         );
 
  
@@ -51662,8 +51662,8 @@ begin
             data_im_in => first_stage_im_out(1897),
             re_multiplicator => "1100100000000111", --- -0.874572753906 + j0.48486328125
             im_multiplicator => "0001111100001000",
-            product_re_out => mul_re_out(1897),
-            product_im_out => mul_im_out(1897)
+            data_re_out => mul_re_out(1897),
+            data_im_out => mul_im_out(1897)
         );
 
  
@@ -51680,8 +51680,8 @@ begin
             data_im_in => first_stage_im_out(1898),
             re_multiplicator => "1100101100000010", --- -0.828002929688 + j0.560607910156
             im_multiplicator => "0010001111100001",
-            product_re_out => mul_re_out(1898),
-            product_im_out => mul_im_out(1898)
+            data_re_out => mul_re_out(1898),
+            data_im_out => mul_im_out(1898)
         );
 
  
@@ -51698,8 +51698,8 @@ begin
             data_im_in => first_stage_im_out(1899),
             re_multiplicator => "1100111001101000", --- -0.77490234375 + j0.631958007812
             im_multiplicator => "0010100001110010",
-            product_re_out => mul_re_out(1899),
-            product_im_out => mul_im_out(1899)
+            data_re_out => mul_re_out(1899),
+            data_im_out => mul_im_out(1899)
         );
 
  
@@ -51716,8 +51716,8 @@ begin
             data_im_in => first_stage_im_out(1900),
             re_multiplicator => "1101001000110010", --- -0.715698242188 + j0.698364257812
             im_multiplicator => "0010110010110010",
-            product_re_out => mul_re_out(1900),
-            product_im_out => mul_im_out(1900)
+            data_re_out => mul_re_out(1900),
+            data_im_out => mul_im_out(1900)
         );
 
  
@@ -51734,8 +51734,8 @@ begin
             data_im_in => first_stage_im_out(1901),
             re_multiplicator => "1101011001011001", --- -0.650817871094 + j0.759155273438
             im_multiplicator => "0011000010010110",
-            product_re_out => mul_re_out(1901),
-            product_im_out => mul_im_out(1901)
+            data_re_out => mul_re_out(1901),
+            data_im_out => mul_im_out(1901)
         );
 
  
@@ -51752,8 +51752,8 @@ begin
             data_im_in => first_stage_im_out(1902),
             re_multiplicator => "1101101011010100", --- -0.580810546875 + j0.814025878906
             im_multiplicator => "0011010000011001",
-            product_re_out => mul_re_out(1902),
-            product_im_out => mul_im_out(1902)
+            data_re_out => mul_re_out(1902),
+            data_im_out => mul_im_out(1902)
         );
 
  
@@ -51770,8 +51770,8 @@ begin
             data_im_in => first_stage_im_out(1903),
             re_multiplicator => "1101111110011011", --- -0.506164550781 + j0.862365722656
             im_multiplicator => "0011011100110001",
-            product_re_out => mul_re_out(1903),
-            product_im_out => mul_im_out(1903)
+            data_re_out => mul_re_out(1903),
+            data_im_out => mul_im_out(1903)
         );
 
  
@@ -51788,8 +51788,8 @@ begin
             data_im_in => first_stage_im_out(1904),
             re_multiplicator => "1110010010100011", --- -0.427551269531 + j0.903930664062
             im_multiplicator => "0011100111011010",
-            product_re_out => mul_re_out(1904),
-            product_im_out => mul_im_out(1904)
+            data_re_out => mul_re_out(1904),
+            data_im_out => mul_im_out(1904)
         );
 
  
@@ -51806,8 +51806,8 @@ begin
             data_im_in => first_stage_im_out(1905),
             re_multiplicator => "1110100111100011", --- -0.345520019531 + j0.938354492188
             im_multiplicator => "0011110000001110",
-            product_re_out => mul_re_out(1905),
-            product_im_out => mul_im_out(1905)
+            data_re_out => mul_re_out(1905),
+            data_im_out => mul_im_out(1905)
         );
 
  
@@ -51824,8 +51824,8 @@ begin
             data_im_in => first_stage_im_out(1906),
             re_multiplicator => "1110111101010000", --- -0.2607421875 + j0.965393066406
             im_multiplicator => "0011110111001001",
-            product_re_out => mul_re_out(1906),
-            product_im_out => mul_im_out(1906)
+            data_re_out => mul_re_out(1906),
+            data_im_out => mul_im_out(1906)
         );
 
  
@@ -51842,8 +51842,8 @@ begin
             data_im_in => first_stage_im_out(1907),
             re_multiplicator => "1111010011011110", --- -0.173950195312 + j0.984741210938
             im_multiplicator => "0011111100000110",
-            product_re_out => mul_re_out(1907),
-            product_im_out => mul_im_out(1907)
+            data_re_out => mul_re_out(1907),
+            data_im_out => mul_im_out(1907)
         );
 
  
@@ -51860,8 +51860,8 @@ begin
             data_im_in => first_stage_im_out(1908),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j0.996276855469
             im_multiplicator => "0011111111000011",
-            product_re_out => mul_re_out(1908),
-            product_im_out => mul_im_out(1908)
+            data_re_out => mul_re_out(1908),
+            data_im_out => mul_im_out(1908)
         );
 
  
@@ -51878,8 +51878,8 @@ begin
             data_im_in => first_stage_im_out(1909),
             re_multiplicator => "0000000000110010", --- 0.0030517578125 + j0.999938964844
             im_multiplicator => "0011111111111111",
-            product_re_out => mul_re_out(1909),
-            product_im_out => mul_im_out(1909)
+            data_re_out => mul_re_out(1909),
+            data_im_out => mul_im_out(1909)
         );
 
  
@@ -51896,8 +51896,8 @@ begin
             data_im_in => first_stage_im_out(1910),
             re_multiplicator => "0000010111100001", --- 0.0918579101562 + j0.995727539062
             im_multiplicator => "0011111110111010",
-            product_re_out => mul_re_out(1910),
-            product_im_out => mul_im_out(1910)
+            data_re_out => mul_re_out(1910),
+            data_im_out => mul_im_out(1910)
         );
 
  
@@ -51914,8 +51914,8 @@ begin
             data_im_in => first_stage_im_out(1911),
             re_multiplicator => "0000101110000101", --- 0.179992675781 + j0.983642578125
             im_multiplicator => "0011111011110100",
-            product_re_out => mul_re_out(1911),
-            product_im_out => mul_im_out(1911)
+            data_re_out => mul_re_out(1911),
+            data_im_out => mul_im_out(1911)
         );
 
  
@@ -51932,8 +51932,8 @@ begin
             data_im_in => first_stage_im_out(1912),
             re_multiplicator => "0001000100010001", --- 0.266662597656 + j0.963745117188
             im_multiplicator => "0011110110101110",
-            product_re_out => mul_re_out(1912),
-            product_im_out => mul_im_out(1912)
+            data_re_out => mul_re_out(1912),
+            data_im_out => mul_im_out(1912)
         );
 
  
@@ -51950,8 +51950,8 @@ begin
             data_im_in => first_stage_im_out(1913),
             re_multiplicator => "0001011001111011", --- 0.351257324219 + j0.936218261719
             im_multiplicator => "0011101111101011",
-            product_re_out => mul_re_out(1913),
-            product_im_out => mul_im_out(1913)
+            data_re_out => mul_re_out(1913),
+            data_im_out => mul_im_out(1913)
         );
 
  
@@ -51968,8 +51968,8 @@ begin
             data_im_in => first_stage_im_out(1914),
             re_multiplicator => "0001101110110111", --- 0.433044433594 + j0.901306152344
             im_multiplicator => "0011100110101111",
-            product_re_out => mul_re_out(1914),
-            product_im_out => mul_im_out(1914)
+            data_re_out => mul_re_out(1914),
+            data_im_out => mul_im_out(1914)
         );
 
  
@@ -51986,8 +51986,8 @@ begin
             data_im_in => first_stage_im_out(1915),
             re_multiplicator => "0010000010111011", --- 0.511413574219 + j0.859252929688
             im_multiplicator => "0011011011111110",
-            product_re_out => mul_re_out(1915),
-            product_im_out => mul_im_out(1915)
+            data_re_out => mul_re_out(1915),
+            data_im_out => mul_im_out(1915)
         );
 
  
@@ -52004,8 +52004,8 @@ begin
             data_im_in => first_stage_im_out(1916),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j0.810424804688
             im_multiplicator => "0011001111011110",
-            product_re_out => mul_re_out(1916),
-            product_im_out => mul_im_out(1916)
+            data_re_out => mul_re_out(1916),
+            data_im_out => mul_im_out(1916)
         );
 
  
@@ -52022,8 +52022,8 @@ begin
             data_im_in => first_stage_im_out(1917),
             re_multiplicator => "0010100111110011", --- 0.655456542969 + j0.755187988281
             im_multiplicator => "0011000001010101",
-            product_re_out => mul_re_out(1917),
-            product_im_out => mul_im_out(1917)
+            data_re_out => mul_re_out(1917),
+            data_im_out => mul_im_out(1917)
         );
 
  
@@ -52040,8 +52040,8 @@ begin
             data_im_in => first_stage_im_out(1918),
             re_multiplicator => "0010111000010100", --- 0.719970703125 + j0.693969726562
             im_multiplicator => "0010110001101010",
-            product_re_out => mul_re_out(1918),
-            product_im_out => mul_im_out(1918)
+            data_re_out => mul_re_out(1918),
+            data_im_out => mul_im_out(1918)
         );
 
  
@@ -52058,8 +52058,8 @@ begin
             data_im_in => first_stage_im_out(1919),
             re_multiplicator => "0011000111011000", --- 0.77880859375 + j0.627197265625
             im_multiplicator => "0010100000100100",
-            product_re_out => mul_re_out(1919),
-            product_im_out => mul_im_out(1919)
+            data_re_out => mul_re_out(1919),
+            data_im_out => mul_im_out(1919)
         );
 
  
@@ -52074,8 +52074,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1920),
             data_im_in => first_stage_im_out(1920),
-            product_re_out => mul_re_out(1920),
-            product_im_out => mul_im_out(1920)
+            data_re_out => mul_re_out(1920),
+            data_im_out => mul_im_out(1920)
         );
 
  
@@ -52092,8 +52092,8 @@ begin
             data_im_in => first_stage_im_out(1921),
             re_multiplicator => "0011111110111010", --- 0.995727539062 + j-0.0918579101562
             im_multiplicator => "1111101000011111",
-            product_re_out => mul_re_out(1921),
-            product_im_out => mul_im_out(1921)
+            data_re_out => mul_re_out(1921),
+            data_im_out => mul_im_out(1921)
         );
 
  
@@ -52110,8 +52110,8 @@ begin
             data_im_in => first_stage_im_out(1922),
             re_multiplicator => "0011111011101011", --- 0.983093261719 + j-0.182983398438
             im_multiplicator => "1111010001001010",
-            product_re_out => mul_re_out(1922),
-            product_im_out => mul_im_out(1922)
+            data_re_out => mul_re_out(1922),
+            data_im_out => mul_im_out(1922)
         );
 
  
@@ -52128,8 +52128,8 @@ begin
             data_im_in => first_stage_im_out(1923),
             re_multiplicator => "0011110110010011", --- 0.962097167969 + j-0.272583007812
             im_multiplicator => "1110111010001110",
-            product_re_out => mul_re_out(1923),
-            product_im_out => mul_im_out(1923)
+            data_re_out => mul_re_out(1923),
+            data_im_out => mul_im_out(1923)
         );
 
  
@@ -52146,8 +52146,8 @@ begin
             data_im_in => first_stage_im_out(1924),
             re_multiplicator => "0011101110110110", --- 0.932983398438 + j-0.35986328125
             im_multiplicator => "1110100011111000",
-            product_re_out => mul_re_out(1924),
-            product_im_out => mul_im_out(1924)
+            data_re_out => mul_re_out(1924),
+            data_im_out => mul_im_out(1924)
         );
 
  
@@ -52164,8 +52164,8 @@ begin
             data_im_in => first_stage_im_out(1925),
             re_multiplicator => "0011100101010111", --- 0.895935058594 + j-0.444091796875
             im_multiplicator => "1110001110010100",
-            product_re_out => mul_re_out(1925),
-            product_im_out => mul_im_out(1925)
+            data_re_out => mul_re_out(1925),
+            data_im_out => mul_im_out(1925)
         );
 
  
@@ -52182,8 +52182,8 @@ begin
             data_im_in => first_stage_im_out(1926),
             re_multiplicator => "0011011001111100", --- 0.851318359375 + j-0.524536132812
             im_multiplicator => "1101111001101110",
-            product_re_out => mul_re_out(1926),
-            product_im_out => mul_im_out(1926)
+            data_re_out => mul_re_out(1926),
+            data_im_out => mul_im_out(1926)
         );
 
  
@@ -52200,8 +52200,8 @@ begin
             data_im_in => first_stage_im_out(1927),
             re_multiplicator => "0011001100101011", --- 0.799499511719 + j-0.6005859375
             im_multiplicator => "1101100110010000",
-            product_re_out => mul_re_out(1927),
-            product_im_out => mul_im_out(1927)
+            data_re_out => mul_re_out(1927),
+            data_im_out => mul_im_out(1927)
         );
 
  
@@ -52218,8 +52218,8 @@ begin
             data_im_in => first_stage_im_out(1928),
             re_multiplicator => "0010111101101011", --- 0.740905761719 + j-0.671508789062
             im_multiplicator => "1101010100000110",
-            product_re_out => mul_re_out(1928),
-            product_im_out => mul_im_out(1928)
+            data_re_out => mul_re_out(1928),
+            data_im_out => mul_im_out(1928)
         );
 
  
@@ -52236,8 +52236,8 @@ begin
             data_im_in => first_stage_im_out(1929),
             re_multiplicator => "0010101101000101", --- 0.676086425781 + j-0.73681640625
             im_multiplicator => "1101000011011000",
-            product_re_out => mul_re_out(1929),
-            product_im_out => mul_im_out(1929)
+            data_re_out => mul_re_out(1929),
+            data_im_out => mul_im_out(1929)
         );
 
  
@@ -52254,8 +52254,8 @@ begin
             data_im_in => first_stage_im_out(1930),
             re_multiplicator => "0010011011000000", --- 0.60546875 + j-0.795776367188
             im_multiplicator => "1100110100010010",
-            product_re_out => mul_re_out(1930),
-            product_im_out => mul_im_out(1930)
+            data_re_out => mul_re_out(1930),
+            data_im_out => mul_im_out(1930)
         );
 
  
@@ -52272,8 +52272,8 @@ begin
             data_im_in => first_stage_im_out(1931),
             re_multiplicator => "0010000111101000", --- 0.52978515625 + j-0.848083496094
             im_multiplicator => "1100100110111001",
-            product_re_out => mul_re_out(1931),
-            product_im_out => mul_im_out(1931)
+            data_re_out => mul_re_out(1931),
+            data_im_out => mul_im_out(1931)
         );
 
  
@@ -52290,8 +52290,8 @@ begin
             data_im_in => first_stage_im_out(1932),
             re_multiplicator => "0001110011000110", --- 0.449584960938 + j-0.893188476562
             im_multiplicator => "1100011011010110",
-            product_re_out => mul_re_out(1932),
-            product_im_out => mul_im_out(1932)
+            data_re_out => mul_re_out(1932),
+            data_im_out => mul_im_out(1932)
         );
 
  
@@ -52308,8 +52308,8 @@ begin
             data_im_in => first_stage_im_out(1933),
             re_multiplicator => "0001011101100110", --- 0.365600585938 + j-0.930725097656
             im_multiplicator => "1100010001101111",
-            product_re_out => mul_re_out(1933),
-            product_im_out => mul_im_out(1933)
+            data_re_out => mul_re_out(1933),
+            data_im_out => mul_im_out(1933)
         );
 
  
@@ -52326,8 +52326,8 @@ begin
             data_im_in => first_stage_im_out(1934),
             re_multiplicator => "0001000111010011", --- 0.278503417969 + j-0.960388183594
             im_multiplicator => "1100001010001001",
-            product_re_out => mul_re_out(1934),
-            product_im_out => mul_im_out(1934)
+            data_re_out => mul_re_out(1934),
+            data_im_out => mul_im_out(1934)
         );
 
  
@@ -52344,8 +52344,8 @@ begin
             data_im_in => first_stage_im_out(1935),
             re_multiplicator => "0000110000011001", --- 0.189025878906 + j-0.98193359375
             im_multiplicator => "1100000100101000",
-            product_re_out => mul_re_out(1935),
-            product_im_out => mul_im_out(1935)
+            data_re_out => mul_re_out(1935),
+            data_im_out => mul_im_out(1935)
         );
 
  
@@ -52362,8 +52362,8 @@ begin
             data_im_in => first_stage_im_out(1936),
             re_multiplicator => "0000011001000101", --- 0.0979614257812 + j-0.995178222656
             im_multiplicator => "1100000001001111",
-            product_re_out => mul_re_out(1936),
-            product_im_out => mul_im_out(1936)
+            data_re_out => mul_re_out(1936),
+            data_im_out => mul_im_out(1936)
         );
 
  
@@ -52380,8 +52380,8 @@ begin
             data_im_in => first_stage_im_out(1937),
             re_multiplicator => "0000000001100100", --- 0.006103515625 + j-0.999938964844
             im_multiplicator => "1100000000000001",
-            product_re_out => mul_re_out(1937),
-            product_im_out => mul_im_out(1937)
+            data_re_out => mul_re_out(1937),
+            data_im_out => mul_im_out(1937)
         );
 
  
@@ -52398,8 +52398,8 @@ begin
             data_im_in => first_stage_im_out(1938),
             re_multiplicator => "1111101010000011", --- -0.0857543945312 + j-0.996276855469
             im_multiplicator => "1100000000111101",
-            product_re_out => mul_re_out(1938),
-            product_im_out => mul_im_out(1938)
+            data_re_out => mul_re_out(1938),
+            data_im_out => mul_im_out(1938)
         );
 
  
@@ -52416,8 +52416,8 @@ begin
             data_im_in => first_stage_im_out(1939),
             re_multiplicator => "1111010010101100", --- -0.177001953125 + j-0.984191894531
             im_multiplicator => "1100000100000011",
-            product_re_out => mul_re_out(1939),
-            product_im_out => mul_im_out(1939)
+            data_re_out => mul_re_out(1939),
+            data_im_out => mul_im_out(1939)
         );
 
  
@@ -52434,8 +52434,8 @@ begin
             data_im_in => first_stage_im_out(1940),
             re_multiplicator => "1110111011101111", --- -0.266662597656 + j-0.963745117188
             im_multiplicator => "1100001001010010",
-            product_re_out => mul_re_out(1940),
-            product_im_out => mul_im_out(1940)
+            data_re_out => mul_re_out(1940),
+            data_im_out => mul_im_out(1940)
         );
 
  
@@ -52452,8 +52452,8 @@ begin
             data_im_in => first_stage_im_out(1941),
             re_multiplicator => "1110100101010110", --- -0.354125976562 + j-0.935180664062
             im_multiplicator => "1100010000100110",
-            product_re_out => mul_re_out(1941),
-            product_im_out => mul_im_out(1941)
+            data_re_out => mul_re_out(1941),
+            data_im_out => mul_im_out(1941)
         );
 
  
@@ -52470,8 +52470,8 @@ begin
             data_im_in => first_stage_im_out(1942),
             re_multiplicator => "1110001111101110", --- -0.438598632812 + j-0.898620605469
             im_multiplicator => "1100011001111101",
-            product_re_out => mul_re_out(1942),
-            product_im_out => mul_im_out(1942)
+            data_re_out => mul_re_out(1942),
+            data_im_out => mul_im_out(1942)
         );
 
  
@@ -52488,8 +52488,8 @@ begin
             data_im_in => first_stage_im_out(1943),
             re_multiplicator => "1101111011000011", --- -0.519348144531 + j-0.854553222656
             im_multiplicator => "1100100101001111",
-            product_re_out => mul_re_out(1943),
-            product_im_out => mul_im_out(1943)
+            data_re_out => mul_re_out(1943),
+            data_im_out => mul_im_out(1943)
         );
 
  
@@ -52506,8 +52506,8 @@ begin
             data_im_in => first_stage_im_out(1944),
             re_multiplicator => "1101100111100001", --- -0.595642089844 + j-0.803161621094
             im_multiplicator => "1100110010011001",
-            product_re_out => mul_re_out(1944),
-            product_im_out => mul_im_out(1944)
+            data_re_out => mul_re_out(1944),
+            data_im_out => mul_im_out(1944)
         );
 
  
@@ -52524,8 +52524,8 @@ begin
             data_im_in => first_stage_im_out(1945),
             re_multiplicator => "1101010101010000", --- -0.6669921875 + j-0.745056152344
             im_multiplicator => "1101000001010001",
-            product_re_out => mul_re_out(1945),
-            product_im_out => mul_im_out(1945)
+            data_re_out => mul_re_out(1945),
+            data_im_out => mul_im_out(1945)
         );
 
  
@@ -52542,8 +52542,8 @@ begin
             data_im_in => first_stage_im_out(1946),
             re_multiplicator => "1101000100011101", --- -0.732604980469 + j-0.680541992188
             im_multiplicator => "1101010001110010",
-            product_re_out => mul_re_out(1946),
-            product_im_out => mul_im_out(1946)
+            data_re_out => mul_re_out(1946),
+            data_im_out => mul_im_out(1946)
         );
 
  
@@ -52560,8 +52560,8 @@ begin
             data_im_in => first_stage_im_out(1947),
             re_multiplicator => "1100110101001111", --- -0.792053222656 + j-0.6103515625
             im_multiplicator => "1101100011110000",
-            product_re_out => mul_re_out(1947),
-            product_im_out => mul_im_out(1947)
+            data_re_out => mul_re_out(1947),
+            data_im_out => mul_im_out(1947)
         );
 
  
@@ -52578,8 +52578,8 @@ begin
             data_im_in => first_stage_im_out(1948),
             re_multiplicator => "1100100111101110", --- -0.844848632812 + j-0.534973144531
             im_multiplicator => "1101110111000011",
-            product_re_out => mul_re_out(1948),
-            product_im_out => mul_im_out(1948)
+            data_re_out => mul_re_out(1948),
+            data_im_out => mul_im_out(1948)
         );
 
  
@@ -52596,8 +52596,8 @@ begin
             data_im_in => first_stage_im_out(1949),
             re_multiplicator => "1100011100000011", --- -0.890441894531 + j-0.455078125
             im_multiplicator => "1110001011100000",
-            product_re_out => mul_re_out(1949),
-            product_im_out => mul_im_out(1949)
+            data_re_out => mul_re_out(1949),
+            data_im_out => mul_im_out(1949)
         );
 
  
@@ -52614,8 +52614,8 @@ begin
             data_im_in => first_stage_im_out(1950),
             re_multiplicator => "1100010010010100", --- -0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1950),
-            product_im_out => mul_im_out(1950)
+            data_re_out => mul_re_out(1950),
+            data_im_out => mul_im_out(1950)
         );
 
  
@@ -52632,8 +52632,8 @@ begin
             data_im_in => first_stage_im_out(1951),
             re_multiplicator => "1100001010100101", --- -0.958679199219 + j-0.284362792969
             im_multiplicator => "1110110111001101",
-            product_re_out => mul_re_out(1951),
-            product_im_out => mul_im_out(1951)
+            data_re_out => mul_re_out(1951),
+            data_im_out => mul_im_out(1951)
         );
 
  
@@ -52650,8 +52650,8 @@ begin
             data_im_in => first_stage_im_out(1952),
             re_multiplicator => "1100000100111011", --- -0.980773925781 + j-0.195068359375
             im_multiplicator => "1111001110000100",
-            product_re_out => mul_re_out(1952),
-            product_im_out => mul_im_out(1952)
+            data_re_out => mul_re_out(1952),
+            data_im_out => mul_im_out(1952)
         );
 
  
@@ -52668,8 +52668,8 @@ begin
             data_im_in => first_stage_im_out(1953),
             re_multiplicator => "1100000001011010", --- -0.994506835938 + j-0.104064941406
             im_multiplicator => "1111100101010111",
-            product_re_out => mul_re_out(1953),
-            product_im_out => mul_im_out(1953)
+            data_re_out => mul_re_out(1953),
+            data_im_out => mul_im_out(1953)
         );
 
  
@@ -52686,8 +52686,8 @@ begin
             data_im_in => first_stage_im_out(1954),
             re_multiplicator => "1100000000000010", --- -0.999877929688 + j-0.0122680664062
             im_multiplicator => "1111111100110111",
-            product_re_out => mul_re_out(1954),
-            product_im_out => mul_im_out(1954)
+            data_re_out => mul_re_out(1954),
+            data_im_out => mul_im_out(1954)
         );
 
  
@@ -52704,8 +52704,8 @@ begin
             data_im_in => first_stage_im_out(1955),
             re_multiplicator => "1100000000110101", --- -0.996765136719 + j0.0796508789062
             im_multiplicator => "0000010100011001",
-            product_re_out => mul_re_out(1955),
-            product_im_out => mul_im_out(1955)
+            data_re_out => mul_re_out(1955),
+            data_im_out => mul_im_out(1955)
         );
 
  
@@ -52722,8 +52722,8 @@ begin
             data_im_in => first_stage_im_out(1956),
             re_multiplicator => "1100000011110010", --- -0.985229492188 + j0.170959472656
             im_multiplicator => "0000101011110001",
-            product_re_out => mul_re_out(1956),
-            product_im_out => mul_im_out(1956)
+            data_re_out => mul_re_out(1956),
+            data_im_out => mul_im_out(1956)
         );
 
  
@@ -52740,8 +52740,8 @@ begin
             data_im_in => first_stage_im_out(1957),
             re_multiplicator => "1100001000110111", --- -0.965393066406 + j0.2607421875
             im_multiplicator => "0001000010110000",
-            product_re_out => mul_re_out(1957),
-            product_im_out => mul_im_out(1957)
+            data_re_out => mul_re_out(1957),
+            data_im_out => mul_im_out(1957)
         );
 
  
@@ -52758,8 +52758,8 @@ begin
             data_im_in => first_stage_im_out(1958),
             re_multiplicator => "1100010000000011", --- -0.937316894531 + j0.348388671875
             im_multiplicator => "0001011001001100",
-            product_re_out => mul_re_out(1958),
-            product_im_out => mul_im_out(1958)
+            data_re_out => mul_re_out(1958),
+            data_im_out => mul_im_out(1958)
         );
 
  
@@ -52776,8 +52776,8 @@ begin
             data_im_in => first_stage_im_out(1959),
             re_multiplicator => "1100011001010001", --- -0.901306152344 + j0.433044433594
             im_multiplicator => "0001101110110111",
-            product_re_out => mul_re_out(1959),
-            product_im_out => mul_im_out(1959)
+            data_re_out => mul_re_out(1959),
+            data_im_out => mul_im_out(1959)
         );
 
  
@@ -52794,8 +52794,8 @@ begin
             data_im_in => first_stage_im_out(1960),
             re_multiplicator => "1100100100011011", --- -0.857727050781 + j0.514099121094
             im_multiplicator => "0010000011100111",
-            product_re_out => mul_re_out(1960),
-            product_im_out => mul_im_out(1960)
+            data_re_out => mul_re_out(1960),
+            data_im_out => mul_im_out(1960)
         );
 
  
@@ -52812,8 +52812,8 @@ begin
             data_im_in => first_stage_im_out(1961),
             re_multiplicator => "1100110001011101", --- -0.806823730469 + j0.590759277344
             im_multiplicator => "0010010111001111",
-            product_re_out => mul_re_out(1961),
-            product_im_out => mul_im_out(1961)
+            data_re_out => mul_re_out(1961),
+            data_im_out => mul_im_out(1961)
         );
 
  
@@ -52830,8 +52830,8 @@ begin
             data_im_in => first_stage_im_out(1962),
             re_multiplicator => "1101000000001111", --- -0.749084472656 + j0.662414550781
             im_multiplicator => "0010101001100101",
-            product_re_out => mul_re_out(1962),
-            product_im_out => mul_im_out(1962)
+            data_re_out => mul_re_out(1962),
+            data_im_out => mul_im_out(1962)
         );
 
  
@@ -52848,8 +52848,8 @@ begin
             data_im_in => first_stage_im_out(1963),
             re_multiplicator => "1101010000101000", --- -0.68505859375 + j0.728454589844
             im_multiplicator => "0010111010011111",
-            product_re_out => mul_re_out(1963),
-            product_im_out => mul_im_out(1963)
+            data_re_out => mul_re_out(1963),
+            data_im_out => mul_im_out(1963)
         );
 
  
@@ -52866,8 +52866,8 @@ begin
             data_im_in => first_stage_im_out(1964),
             re_multiplicator => "1101100010100001", --- -0.615173339844 + j0.788330078125
             im_multiplicator => "0011001001110100",
-            product_re_out => mul_re_out(1964),
-            product_im_out => mul_im_out(1964)
+            data_re_out => mul_re_out(1964),
+            data_im_out => mul_im_out(1964)
         );
 
  
@@ -52884,8 +52884,8 @@ begin
             data_im_in => first_stage_im_out(1965),
             re_multiplicator => "1101110101101110", --- -0.540161132812 + j0.841552734375
             im_multiplicator => "0011010111011100",
-            product_re_out => mul_re_out(1965),
-            product_im_out => mul_im_out(1965)
+            data_re_out => mul_re_out(1965),
+            data_im_out => mul_im_out(1965)
         );
 
  
@@ -52902,8 +52902,8 @@ begin
             data_im_in => first_stage_im_out(1966),
             re_multiplicator => "1110001010000111", --- -0.460510253906 + j0.887634277344
             im_multiplicator => "0011100011001111",
-            product_re_out => mul_re_out(1966),
-            product_im_out => mul_im_out(1966)
+            data_re_out => mul_re_out(1966),
+            data_im_out => mul_im_out(1966)
         );
 
  
@@ -52920,8 +52920,8 @@ begin
             data_im_in => first_stage_im_out(1967),
             re_multiplicator => "1110011111100000", --- -0.376953125 + j0.926208496094
             im_multiplicator => "0011101101000111",
-            product_re_out => mul_re_out(1967),
-            product_im_out => mul_im_out(1967)
+            data_re_out => mul_re_out(1967),
+            data_im_out => mul_im_out(1967)
         );
 
  
@@ -52938,8 +52938,8 @@ begin
             data_im_in => first_stage_im_out(1968),
             re_multiplicator => "1110110101101100", --- -0.290283203125 + j0.956909179688
             im_multiplicator => "0011110100111110",
-            product_re_out => mul_re_out(1968),
-            product_im_out => mul_im_out(1968)
+            data_re_out => mul_re_out(1968),
+            data_im_out => mul_im_out(1968)
         );
 
  
@@ -52956,8 +52956,8 @@ begin
             data_im_in => first_stage_im_out(1969),
             re_multiplicator => "1111001100100010", --- -0.201049804688 + j0.979553222656
             im_multiplicator => "0011111010110001",
-            product_re_out => mul_re_out(1969),
-            product_im_out => mul_im_out(1969)
+            data_re_out => mul_re_out(1969),
+            data_im_out => mul_im_out(1969)
         );
 
  
@@ -52974,8 +52974,8 @@ begin
             data_im_in => first_stage_im_out(1970),
             re_multiplicator => "1111100011110011", --- -0.110168457031 + j0.993896484375
             im_multiplicator => "0011111110011100",
-            product_re_out => mul_re_out(1970),
-            product_im_out => mul_im_out(1970)
+            data_re_out => mul_re_out(1970),
+            data_im_out => mul_im_out(1970)
         );
 
  
@@ -52992,8 +52992,8 @@ begin
             data_im_in => first_stage_im_out(1971),
             re_multiplicator => "1111111011010011", --- -0.0183715820312 + j0.999816894531
             im_multiplicator => "0011111111111101",
-            product_re_out => mul_re_out(1971),
-            product_im_out => mul_im_out(1971)
+            data_re_out => mul_re_out(1971),
+            data_im_out => mul_im_out(1971)
         );
 
  
@@ -53010,8 +53010,8 @@ begin
             data_im_in => first_stage_im_out(1972),
             re_multiplicator => "0000010010110101", --- 0.0735473632812 + j0.997253417969
             im_multiplicator => "0011111111010011",
-            product_re_out => mul_re_out(1972),
-            product_im_out => mul_im_out(1972)
+            data_re_out => mul_re_out(1972),
+            data_im_out => mul_im_out(1972)
         );
 
  
@@ -53028,8 +53028,8 @@ begin
             data_im_in => first_stage_im_out(1973),
             re_multiplicator => "0000101010001101", --- 0.164855957031 + j0.986267089844
             im_multiplicator => "0011111100011111",
-            product_re_out => mul_re_out(1973),
-            product_im_out => mul_im_out(1973)
+            data_re_out => mul_re_out(1973),
+            data_im_out => mul_im_out(1973)
         );
 
  
@@ -53046,8 +53046,8 @@ begin
             data_im_in => first_stage_im_out(1974),
             re_multiplicator => "0001000001001111", --- 0.254821777344 + j0.966918945312
             im_multiplicator => "0011110111100010",
-            product_re_out => mul_re_out(1974),
-            product_im_out => mul_im_out(1974)
+            data_re_out => mul_re_out(1974),
+            data_im_out => mul_im_out(1974)
         );
 
  
@@ -53064,8 +53064,8 @@ begin
             data_im_in => first_stage_im_out(1975),
             re_multiplicator => "0001010111101110", --- 0.342651367188 + j0.939453125
             im_multiplicator => "0011110000100000",
-            product_re_out => mul_re_out(1975),
-            product_im_out => mul_im_out(1975)
+            data_re_out => mul_re_out(1975),
+            data_im_out => mul_im_out(1975)
         );
 
  
@@ -53082,8 +53082,8 @@ begin
             data_im_in => first_stage_im_out(1976),
             re_multiplicator => "0001101101011101", --- 0.427551269531 + j0.903930664062
             im_multiplicator => "0011100111011010",
-            product_re_out => mul_re_out(1976),
-            product_im_out => mul_im_out(1976)
+            data_re_out => mul_re_out(1976),
+            data_im_out => mul_im_out(1976)
         );
 
  
@@ -53100,8 +53100,8 @@ begin
             data_im_in => first_stage_im_out(1977),
             re_multiplicator => "0010000010010000", --- 0.5087890625 + j0.86083984375
             im_multiplicator => "0011011100011000",
-            product_re_out => mul_re_out(1977),
-            product_im_out => mul_im_out(1977)
+            data_re_out => mul_re_out(1977),
+            data_im_out => mul_im_out(1977)
         );
 
  
@@ -53118,8 +53118,8 @@ begin
             data_im_in => first_stage_im_out(1978),
             re_multiplicator => "0010010101111101", --- 0.585754394531 + j0.810424804688
             im_multiplicator => "0011001111011110",
-            product_re_out => mul_re_out(1978),
-            product_im_out => mul_im_out(1978)
+            data_re_out => mul_re_out(1978),
+            data_im_out => mul_im_out(1978)
         );
 
  
@@ -53136,8 +53136,8 @@ begin
             data_im_in => first_stage_im_out(1979),
             re_multiplicator => "0010101000011001", --- 0.657775878906 + j0.753173828125
             im_multiplicator => "0011000000110100",
-            product_re_out => mul_re_out(1979),
-            product_im_out => mul_im_out(1979)
+            data_re_out => mul_re_out(1979),
+            data_im_out => mul_im_out(1979)
         );
 
  
@@ -53154,8 +53154,8 @@ begin
             data_im_in => first_stage_im_out(1980),
             re_multiplicator => "0010111001011010", --- 0.724243164062 + j0.689514160156
             im_multiplicator => "0010110000100001",
-            product_re_out => mul_re_out(1980),
-            product_im_out => mul_im_out(1980)
+            data_re_out => mul_re_out(1980),
+            data_im_out => mul_im_out(1980)
         );
 
  
@@ -53172,8 +53172,8 @@ begin
             data_im_in => first_stage_im_out(1981),
             re_multiplicator => "0011001000110110", --- 0.784545898438 + j0.620056152344
             im_multiplicator => "0010011110101111",
-            product_re_out => mul_re_out(1981),
-            product_im_out => mul_im_out(1981)
+            data_re_out => mul_re_out(1981),
+            data_im_out => mul_im_out(1981)
         );
 
  
@@ -53190,8 +53190,8 @@ begin
             data_im_in => first_stage_im_out(1982),
             re_multiplicator => "0011010110100101", --- 0.838195800781 + j0.545288085938
             im_multiplicator => "0010001011100110",
-            product_re_out => mul_re_out(1982),
-            product_im_out => mul_im_out(1982)
+            data_re_out => mul_re_out(1982),
+            data_im_out => mul_im_out(1982)
         );
 
  
@@ -53208,8 +53208,8 @@ begin
             data_im_in => first_stage_im_out(1983),
             re_multiplicator => "0011100010100000", --- 0.884765625 + j0.465942382812
             im_multiplicator => "0001110111010010",
-            product_re_out => mul_re_out(1983),
-            product_im_out => mul_im_out(1983)
+            data_re_out => mul_re_out(1983),
+            data_im_out => mul_im_out(1983)
         );
 
  
@@ -53224,8 +53224,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1984),
             data_im_in => first_stage_im_out(1984),
-            product_re_out => mul_re_out(1984),
-            product_im_out => mul_im_out(1984)
+            data_re_out => mul_re_out(1984),
+            data_im_out => mul_im_out(1984)
         );
 
  
@@ -53242,8 +53242,8 @@ begin
             data_im_in => first_stage_im_out(1985),
             re_multiplicator => "0011111110110101", --- 0.995422363281 + j-0.0949096679688
             im_multiplicator => "1111100111101101",
-            product_re_out => mul_re_out(1985),
-            product_im_out => mul_im_out(1985)
+            data_re_out => mul_re_out(1985),
+            data_im_out => mul_im_out(1985)
         );
 
  
@@ -53260,8 +53260,8 @@ begin
             data_im_in => first_stage_im_out(1986),
             re_multiplicator => "0011111011011000", --- 0.98193359375 + j-0.189025878906
             im_multiplicator => "1111001111100111",
-            product_re_out => mul_re_out(1986),
-            product_im_out => mul_im_out(1986)
+            data_re_out => mul_re_out(1986),
+            data_im_out => mul_im_out(1986)
         );
 
  
@@ -53278,8 +53278,8 @@ begin
             data_im_in => first_stage_im_out(1987),
             re_multiplicator => "0011110101101001", --- 0.959533691406 + j-0.281433105469
             im_multiplicator => "1110110111111101",
-            product_re_out => mul_re_out(1987),
-            product_im_out => mul_im_out(1987)
+            data_re_out => mul_re_out(1987),
+            data_im_out => mul_im_out(1987)
         );
 
  
@@ -53296,8 +53296,8 @@ begin
             data_im_in => first_stage_im_out(1988),
             re_multiplicator => "0011101101101100", --- 0.928466796875 + j-0.371276855469
             im_multiplicator => "1110100000111101",
-            product_re_out => mul_re_out(1988),
-            product_im_out => mul_im_out(1988)
+            data_re_out => mul_re_out(1988),
+            data_im_out => mul_im_out(1988)
         );
 
  
@@ -53314,8 +53314,8 @@ begin
             data_im_in => first_stage_im_out(1989),
             re_multiplicator => "0011100011100110", --- 0.889038085938 + j-0.457763671875
             im_multiplicator => "1110001010110100",
-            product_re_out => mul_re_out(1989),
-            product_im_out => mul_im_out(1989)
+            data_re_out => mul_re_out(1989),
+            data_im_out => mul_im_out(1989)
         );
 
  
@@ -53332,8 +53332,8 @@ begin
             data_im_in => first_stage_im_out(1990),
             re_multiplicator => "0011010111011100", --- 0.841552734375 + j-0.540161132812
             im_multiplicator => "1101110101101110",
-            product_re_out => mul_re_out(1990),
-            product_im_out => mul_im_out(1990)
+            data_re_out => mul_re_out(1990),
+            data_im_out => mul_im_out(1990)
         );
 
  
@@ -53350,8 +53350,8 @@ begin
             data_im_in => first_stage_im_out(1991),
             re_multiplicator => "0011001001010101", --- 0.786437988281 + j-0.617614746094
             im_multiplicator => "1101100001111001",
-            product_re_out => mul_re_out(1991),
-            product_im_out => mul_im_out(1991)
+            data_re_out => mul_re_out(1991),
+            data_im_out => mul_im_out(1991)
         );
 
  
@@ -53368,8 +53368,8 @@ begin
             data_im_in => first_stage_im_out(1992),
             re_multiplicator => "0010111001011010", --- 0.724243164062 + j-0.689514160156
             im_multiplicator => "1101001111011111",
-            product_re_out => mul_re_out(1992),
-            product_im_out => mul_im_out(1992)
+            data_re_out => mul_re_out(1992),
+            data_im_out => mul_im_out(1992)
         );
 
  
@@ -53386,8 +53386,8 @@ begin
             data_im_in => first_stage_im_out(1993),
             re_multiplicator => "0010100111110011", --- 0.655456542969 + j-0.755187988281
             im_multiplicator => "1100111110101011",
-            product_re_out => mul_re_out(1993),
-            product_im_out => mul_im_out(1993)
+            data_re_out => mul_re_out(1993),
+            data_im_out => mul_im_out(1993)
         );
 
  
@@ -53404,8 +53404,8 @@ begin
             data_im_in => first_stage_im_out(1994),
             re_multiplicator => "0010010100101100", --- 0.580810546875 + j-0.814025878906
             im_multiplicator => "1100101111100111",
-            product_re_out => mul_re_out(1994),
-            product_im_out => mul_im_out(1994)
+            data_re_out => mul_re_out(1994),
+            data_im_out => mul_im_out(1994)
         );
 
  
@@ -53422,8 +53422,8 @@ begin
             data_im_in => first_stage_im_out(1995),
             re_multiplicator => "0010000000001110", --- 0.500854492188 + j-0.865478515625
             im_multiplicator => "1100100010011100",
-            product_re_out => mul_re_out(1995),
-            product_im_out => mul_im_out(1995)
+            data_re_out => mul_re_out(1995),
+            data_im_out => mul_im_out(1995)
         );
 
  
@@ -53440,8 +53440,8 @@ begin
             data_im_in => first_stage_im_out(1996),
             re_multiplicator => "0001101010100110", --- 0.416381835938 + j-0.909118652344
             im_multiplicator => "1100010111010001",
-            product_re_out => mul_re_out(1996),
-            product_im_out => mul_im_out(1996)
+            data_re_out => mul_re_out(1996),
+            data_im_out => mul_im_out(1996)
         );
 
  
@@ -53458,8 +53458,8 @@ begin
             data_im_in => first_stage_im_out(1997),
             re_multiplicator => "0001010100000001", --- 0.328186035156 + j-0.944580078125
             im_multiplicator => "1100001110001100",
-            product_re_out => mul_re_out(1997),
-            product_im_out => mul_im_out(1997)
+            data_re_out => mul_re_out(1997),
+            data_im_out => mul_im_out(1997)
         );
 
  
@@ -53476,8 +53476,8 @@ begin
             data_im_in => first_stage_im_out(1998),
             re_multiplicator => "0000111100101011", --- 0.236999511719 + j-0.971496582031
             im_multiplicator => "1100000111010011",
-            product_re_out => mul_re_out(1998),
-            product_im_out => mul_im_out(1998)
+            data_re_out => mul_re_out(1998),
+            data_im_out => mul_im_out(1998)
         );
 
  
@@ -53494,8 +53494,8 @@ begin
             data_im_in => first_stage_im_out(1999),
             re_multiplicator => "0000100100110010", --- 0.143676757812 + j-0.989562988281
             im_multiplicator => "1100000010101011",
-            product_re_out => mul_re_out(1999),
-            product_im_out => mul_im_out(1999)
+            data_re_out => mul_re_out(1999),
+            data_im_out => mul_im_out(1999)
         );
 
  
@@ -53512,8 +53512,8 @@ begin
             data_im_in => first_stage_im_out(2000),
             re_multiplicator => "0000001100100011", --- 0.0490112304688 + j-0.998779296875
             im_multiplicator => "1100000000010100",
-            product_re_out => mul_re_out(2000),
-            product_im_out => mul_im_out(2000)
+            data_re_out => mul_re_out(2000),
+            data_im_out => mul_im_out(2000)
         );
 
  
@@ -53530,8 +53530,8 @@ begin
             data_im_in => first_stage_im_out(2001),
             re_multiplicator => "1111110100001111", --- -0.0459594726562 + j-0.998901367188
             im_multiplicator => "1100000000010010",
-            product_re_out => mul_re_out(2001),
-            product_im_out => mul_im_out(2001)
+            data_re_out => mul_re_out(2001),
+            data_im_out => mul_im_out(2001)
         );
 
  
@@ -53548,8 +53548,8 @@ begin
             data_im_in => first_stage_im_out(2002),
             re_multiplicator => "1111011100000000", --- -0.140625 + j-0.990051269531
             im_multiplicator => "1100000010100011",
-            product_re_out => mul_re_out(2002),
-            product_im_out => mul_im_out(2002)
+            data_re_out => mul_re_out(2002),
+            data_im_out => mul_im_out(2002)
         );
 
  
@@ -53566,8 +53566,8 @@ begin
             data_im_in => first_stage_im_out(2003),
             re_multiplicator => "1111000100000110", --- -0.234008789062 + j-0.97216796875
             im_multiplicator => "1100000111001000",
-            product_re_out => mul_re_out(2003),
-            product_im_out => mul_im_out(2003)
+            data_re_out => mul_re_out(2003),
+            data_im_out => mul_im_out(2003)
         );
 
  
@@ -53584,8 +53584,8 @@ begin
             data_im_in => first_stage_im_out(2004),
             re_multiplicator => "1110101100101111", --- -0.325256347656 + j-0.945556640625
             im_multiplicator => "1100001101111100",
-            product_re_out => mul_re_out(2004),
-            product_im_out => mul_im_out(2004)
+            data_re_out => mul_re_out(2004),
+            data_im_out => mul_im_out(2004)
         );
 
  
@@ -53602,8 +53602,8 @@ begin
             data_im_in => first_stage_im_out(2005),
             re_multiplicator => "1110010110000111", --- -0.413635253906 + j-0.910400390625
             im_multiplicator => "1100010110111100",
-            product_re_out => mul_re_out(2005),
-            product_im_out => mul_im_out(2005)
+            data_re_out => mul_re_out(2005),
+            data_im_out => mul_im_out(2005)
         );
 
  
@@ -53620,8 +53620,8 @@ begin
             data_im_in => first_stage_im_out(2006),
             re_multiplicator => "1110000000011110", --- -0.498168945312 + j-0.867004394531
             im_multiplicator => "1100100010000011",
-            product_re_out => mul_re_out(2006),
-            product_im_out => mul_im_out(2006)
+            data_re_out => mul_re_out(2006),
+            data_im_out => mul_im_out(2006)
         );
 
  
@@ -53638,8 +53638,8 @@ begin
             data_im_in => first_stage_im_out(2007),
             re_multiplicator => "1101101011111101", --- -0.578308105469 + j-0.815795898438
             im_multiplicator => "1100101111001010",
-            product_re_out => mul_re_out(2007),
-            product_im_out => mul_im_out(2007)
+            data_re_out => mul_re_out(2007),
+            data_im_out => mul_im_out(2007)
         );
 
  
@@ -53656,8 +53656,8 @@ begin
             data_im_in => first_stage_im_out(2008),
             re_multiplicator => "1101011000110011", --- -0.653137207031 + j-0.757202148438
             im_multiplicator => "1100111110001010",
-            product_re_out => mul_re_out(2008),
-            product_im_out => mul_im_out(2008)
+            data_re_out => mul_re_out(2008),
+            data_im_out => mul_im_out(2008)
         );
 
  
@@ -53674,8 +53674,8 @@ begin
             data_im_in => first_stage_im_out(2009),
             re_multiplicator => "1101000111001001", --- -0.722106933594 + j-0.691711425781
             im_multiplicator => "1101001110111011",
-            product_re_out => mul_re_out(2009),
-            product_im_out => mul_im_out(2009)
+            data_re_out => mul_re_out(2009),
+            data_im_out => mul_im_out(2009)
         );
 
  
@@ -53692,8 +53692,8 @@ begin
             data_im_in => first_stage_im_out(2010),
             re_multiplicator => "1100110111001010", --- -0.784545898438 + j-0.620056152344
             im_multiplicator => "1101100001010001",
-            product_re_out => mul_re_out(2010),
-            product_im_out => mul_im_out(2010)
+            data_re_out => mul_re_out(2010),
+            data_im_out => mul_im_out(2010)
         );
 
  
@@ -53710,8 +53710,8 @@ begin
             data_im_in => first_stage_im_out(2011),
             re_multiplicator => "1100101001000000", --- -0.83984375 + j-0.542724609375
             im_multiplicator => "1101110101000100",
-            product_re_out => mul_re_out(2011),
-            product_im_out => mul_im_out(2011)
+            data_re_out => mul_re_out(2011),
+            data_im_out => mul_im_out(2011)
         );
 
  
@@ -53728,8 +53728,8 @@ begin
             data_im_in => first_stage_im_out(2012),
             re_multiplicator => "1100011100110001", --- -0.887634277344 + j-0.460510253906
             im_multiplicator => "1110001010000111",
-            product_re_out => mul_re_out(2012),
-            product_im_out => mul_im_out(2012)
+            data_re_out => mul_re_out(2012),
+            data_im_out => mul_im_out(2012)
         );
 
  
@@ -53746,8 +53746,8 @@ begin
             data_im_in => first_stage_im_out(2013),
             re_multiplicator => "1100010010100111", --- -0.927307128906 + j-0.374145507812
             im_multiplicator => "1110100000001110",
-            product_re_out => mul_re_out(2013),
-            product_im_out => mul_im_out(2013)
+            data_re_out => mul_re_out(2013),
+            data_im_out => mul_im_out(2013)
         );
 
  
@@ -53764,8 +53764,8 @@ begin
             data_im_in => first_stage_im_out(2014),
             re_multiplicator => "1100001010100101", --- -0.958679199219 + j-0.284362792969
             im_multiplicator => "1110110111001101",
-            product_re_out => mul_re_out(2014),
-            product_im_out => mul_im_out(2014)
+            data_re_out => mul_re_out(2014),
+            data_im_out => mul_im_out(2014)
         );
 
  
@@ -53782,8 +53782,8 @@ begin
             data_im_in => first_stage_im_out(2015),
             re_multiplicator => "1100000100110010", --- -0.981323242188 + j-0.192077636719
             im_multiplicator => "1111001110110101",
-            product_re_out => mul_re_out(2015),
-            product_im_out => mul_im_out(2015)
+            data_re_out => mul_re_out(2015),
+            data_im_out => mul_im_out(2015)
         );
 
  
@@ -53800,8 +53800,8 @@ begin
             data_im_in => first_stage_im_out(2016),
             re_multiplicator => "1100000001001111", --- -0.995178222656 + j-0.0979614257812
             im_multiplicator => "1111100110111011",
-            product_re_out => mul_re_out(2016),
-            product_im_out => mul_im_out(2016)
+            data_re_out => mul_re_out(2016),
+            data_im_out => mul_im_out(2016)
         );
 
  
@@ -53818,8 +53818,8 @@ begin
             data_im_in => first_stage_im_out(2017),
             re_multiplicator => "1100000000000001", --- -0.999938964844 + j-0.0030517578125
             im_multiplicator => "1111111111001110",
-            product_re_out => mul_re_out(2017),
-            product_im_out => mul_im_out(2017)
+            data_re_out => mul_re_out(2017),
+            data_im_out => mul_im_out(2017)
         );
 
  
@@ -53836,8 +53836,8 @@ begin
             data_im_in => first_stage_im_out(2018),
             re_multiplicator => "1100000001000110", --- -0.995727539062 + j0.0918579101562
             im_multiplicator => "0000010111100001",
-            product_re_out => mul_re_out(2018),
-            product_im_out => mul_im_out(2018)
+            data_re_out => mul_re_out(2018),
+            data_im_out => mul_im_out(2018)
         );
 
  
@@ -53854,8 +53854,8 @@ begin
             data_im_in => first_stage_im_out(2019),
             re_multiplicator => "1100000100011111", --- -0.982482910156 + j0.18603515625
             im_multiplicator => "0000101111101000",
-            product_re_out => mul_re_out(2019),
-            product_im_out => mul_im_out(2019)
+            data_re_out => mul_re_out(2019),
+            data_im_out => mul_im_out(2019)
         );
 
  
@@ -53872,8 +53872,8 @@ begin
             data_im_in => first_stage_im_out(2020),
             re_multiplicator => "1100001010001001", --- -0.960388183594 + j0.278503417969
             im_multiplicator => "0001000111010011",
-            product_re_out => mul_re_out(2020),
-            product_im_out => mul_im_out(2020)
+            data_re_out => mul_re_out(2020),
+            data_im_out => mul_im_out(2020)
         );
 
  
@@ -53890,8 +53890,8 @@ begin
             data_im_in => first_stage_im_out(2021),
             re_multiplicator => "1100010010000001", --- -0.929626464844 + j0.368408203125
             im_multiplicator => "0001011110010100",
-            product_re_out => mul_re_out(2021),
-            product_im_out => mul_im_out(2021)
+            data_re_out => mul_re_out(2021),
+            data_im_out => mul_im_out(2021)
         );
 
  
@@ -53908,8 +53908,8 @@ begin
             data_im_in => first_stage_im_out(2022),
             re_multiplicator => "1100011100000011", --- -0.890441894531 + j0.455078125
             im_multiplicator => "0001110100100000",
-            product_re_out => mul_re_out(2022),
-            product_im_out => mul_im_out(2022)
+            data_re_out => mul_re_out(2022),
+            data_im_out => mul_im_out(2022)
         );
 
  
@@ -53926,8 +53926,8 @@ begin
             data_im_in => first_stage_im_out(2023),
             re_multiplicator => "1100101000001001", --- -0.843200683594 + j0.537536621094
             im_multiplicator => "0010001001100111",
-            product_re_out => mul_re_out(2023),
-            product_im_out => mul_im_out(2023)
+            data_re_out => mul_re_out(2023),
+            data_im_out => mul_im_out(2023)
         );
 
  
@@ -53944,8 +53944,8 @@ begin
             data_im_in => first_stage_im_out(2024),
             re_multiplicator => "1100110110001100", --- -0.788330078125 + j0.615173339844
             im_multiplicator => "0010011101011111",
-            product_re_out => mul_re_out(2024),
-            product_im_out => mul_im_out(2024)
+            data_re_out => mul_re_out(2024),
+            data_im_out => mul_im_out(2024)
         );
 
  
@@ -53962,8 +53962,8 @@ begin
             data_im_in => first_stage_im_out(2025),
             re_multiplicator => "1101000110000100", --- -0.726318359375 + j0.687255859375
             im_multiplicator => "0010101111111100",
-            product_re_out => mul_re_out(2025),
-            product_im_out => mul_im_out(2025)
+            data_re_out => mul_re_out(2025),
+            data_im_out => mul_im_out(2025)
         );
 
  
@@ -53980,8 +53980,8 @@ begin
             data_im_in => first_stage_im_out(2026),
             re_multiplicator => "1101010111100111", --- -0.657775878906 + j0.753173828125
             im_multiplicator => "0011000000110100",
-            product_re_out => mul_re_out(2026),
-            product_im_out => mul_im_out(2026)
+            data_re_out => mul_re_out(2026),
+            data_im_out => mul_im_out(2026)
         );
 
  
@@ -53998,8 +53998,8 @@ begin
             data_im_in => first_stage_im_out(2027),
             re_multiplicator => "1101101010101100", --- -0.583251953125 + j0.812194824219
             im_multiplicator => "0011001111111011",
-            product_re_out => mul_re_out(2027),
-            product_im_out => mul_im_out(2027)
+            data_re_out => mul_re_out(2027),
+            data_im_out => mul_im_out(2027)
         );
 
  
@@ -54016,8 +54016,8 @@ begin
             data_im_in => first_stage_im_out(2028),
             re_multiplicator => "1101111111000111", --- -0.503479003906 + j0.863952636719
             im_multiplicator => "0011011101001011",
-            product_re_out => mul_re_out(2028),
-            product_im_out => mul_im_out(2028)
+            data_re_out => mul_re_out(2028),
+            data_im_out => mul_im_out(2028)
         );
 
  
@@ -54034,8 +54034,8 @@ begin
             data_im_in => first_stage_im_out(2029),
             re_multiplicator => "1110010100101100", --- -0.419189453125 + j0.907836914062
             im_multiplicator => "0011101000011010",
-            product_re_out => mul_re_out(2029),
-            product_im_out => mul_im_out(2029)
+            data_re_out => mul_re_out(2029),
+            data_im_out => mul_im_out(2029)
         );
 
  
@@ -54052,8 +54052,8 @@ begin
             data_im_in => first_stage_im_out(2030),
             re_multiplicator => "1110101011010000", --- -0.3310546875 + j0.943542480469
             im_multiplicator => "0011110001100011",
-            product_re_out => mul_re_out(2030),
-            product_im_out => mul_im_out(2030)
+            data_re_out => mul_re_out(2030),
+            data_im_out => mul_im_out(2030)
         );
 
  
@@ -54070,8 +54070,8 @@ begin
             data_im_in => first_stage_im_out(2031),
             re_multiplicator => "1111000010100100", --- -0.239990234375 + j0.970764160156
             im_multiplicator => "0011111000100001",
-            product_re_out => mul_re_out(2031),
-            product_im_out => mul_im_out(2031)
+            data_re_out => mul_re_out(2031),
+            data_im_out => mul_im_out(2031)
         );
 
  
@@ -54088,8 +54088,8 @@ begin
             data_im_in => first_stage_im_out(2032),
             re_multiplicator => "1111011010011100", --- -0.146728515625 + j0.989135742188
             im_multiplicator => "0011111101001110",
-            product_re_out => mul_re_out(2032),
-            product_im_out => mul_im_out(2032)
+            data_re_out => mul_re_out(2032),
+            data_im_out => mul_im_out(2032)
         );
 
  
@@ -54106,8 +54106,8 @@ begin
             data_im_in => first_stage_im_out(2033),
             re_multiplicator => "1111110010101010", --- -0.0521240234375 + j0.998596191406
             im_multiplicator => "0011111111101001",
-            product_re_out => mul_re_out(2033),
-            product_im_out => mul_im_out(2033)
+            data_re_out => mul_re_out(2033),
+            data_im_out => mul_im_out(2033)
         );
 
  
@@ -54124,8 +54124,8 @@ begin
             data_im_in => first_stage_im_out(2034),
             re_multiplicator => "0000001010111111", --- 0.0429077148438 + j0.9990234375
             im_multiplicator => "0011111111110000",
-            product_re_out => mul_re_out(2034),
-            product_im_out => mul_im_out(2034)
+            data_re_out => mul_re_out(2034),
+            data_im_out => mul_im_out(2034)
         );
 
  
@@ -54142,8 +54142,8 @@ begin
             data_im_in => first_stage_im_out(2035),
             re_multiplicator => "0000100011001110", --- 0.137573242188 + j0.990478515625
             im_multiplicator => "0011111101100100",
-            product_re_out => mul_re_out(2035),
-            product_im_out => mul_im_out(2035)
+            data_re_out => mul_re_out(2035),
+            data_im_out => mul_im_out(2035)
         );
 
  
@@ -54160,8 +54160,8 @@ begin
             data_im_in => first_stage_im_out(2036),
             re_multiplicator => "0000111011001001", --- 0.231018066406 + j0.972900390625
             im_multiplicator => "0011111001000100",
-            product_re_out => mul_re_out(2036),
-            product_im_out => mul_im_out(2036)
+            data_re_out => mul_re_out(2036),
+            data_im_out => mul_im_out(2036)
         );
 
  
@@ -54178,8 +54178,8 @@ begin
             data_im_in => first_stage_im_out(2037),
             re_multiplicator => "0001010010100010", --- 0.322387695312 + j0.946594238281
             im_multiplicator => "0011110010010101",
-            product_re_out => mul_re_out(2037),
-            product_im_out => mul_im_out(2037)
+            data_re_out => mul_re_out(2037),
+            data_im_out => mul_im_out(2037)
         );
 
  
@@ -54196,8 +54196,8 @@ begin
             data_im_in => first_stage_im_out(2038),
             re_multiplicator => "0001101001001011", --- 0.410827636719 + j0.911682128906
             im_multiplicator => "0011101001011001",
-            product_re_out => mul_re_out(2038),
-            product_im_out => mul_im_out(2038)
+            data_re_out => mul_re_out(2038),
+            data_im_out => mul_im_out(2038)
         );
 
  
@@ -54214,8 +54214,8 @@ begin
             data_im_in => first_stage_im_out(2039),
             re_multiplicator => "0001111110110111", --- 0.495544433594 + j0.868530273438
             im_multiplicator => "0011011110010110",
-            product_re_out => mul_re_out(2039),
-            product_im_out => mul_im_out(2039)
+            data_re_out => mul_re_out(2039),
+            data_im_out => mul_im_out(2039)
         );
 
  
@@ -54232,8 +54232,8 @@ begin
             data_im_in => first_stage_im_out(2040),
             re_multiplicator => "0010010011011010", --- 0.575805664062 + j0.817565917969
             im_multiplicator => "0011010001010011",
-            product_re_out => mul_re_out(2040),
-            product_im_out => mul_im_out(2040)
+            data_re_out => mul_re_out(2040),
+            data_im_out => mul_im_out(2040)
         );
 
  
@@ -54250,8 +54250,8 @@ begin
             data_im_in => first_stage_im_out(2041),
             re_multiplicator => "0010100110100111", --- 0.650817871094 + j0.759155273438
             im_multiplicator => "0011000010010110",
-            product_re_out => mul_re_out(2041),
-            product_im_out => mul_im_out(2041)
+            data_re_out => mul_re_out(2041),
+            data_im_out => mul_im_out(2041)
         );
 
  
@@ -54268,8 +54268,8 @@ begin
             data_im_in => first_stage_im_out(2042),
             re_multiplicator => "0010111000010100", --- 0.719970703125 + j0.693969726562
             im_multiplicator => "0010110001101010",
-            product_re_out => mul_re_out(2042),
-            product_im_out => mul_im_out(2042)
+            data_re_out => mul_re_out(2042),
+            data_im_out => mul_im_out(2042)
         );
 
  
@@ -54286,8 +54286,8 @@ begin
             data_im_in => first_stage_im_out(2043),
             re_multiplicator => "0011001000010110", --- 0.782592773438 + j0.622436523438
             im_multiplicator => "0010011111010110",
-            product_re_out => mul_re_out(2043),
-            product_im_out => mul_im_out(2043)
+            data_re_out => mul_re_out(2043),
+            data_im_out => mul_im_out(2043)
         );
 
  
@@ -54304,8 +54304,8 @@ begin
             data_im_in => first_stage_im_out(2044),
             re_multiplicator => "0011010110100101", --- 0.838195800781 + j0.545288085938
             im_multiplicator => "0010001011100110",
-            product_re_out => mul_re_out(2044),
-            product_im_out => mul_im_out(2044)
+            data_re_out => mul_re_out(2044),
+            data_im_out => mul_im_out(2044)
         );
 
  
@@ -54322,8 +54322,8 @@ begin
             data_im_in => first_stage_im_out(2045),
             re_multiplicator => "0011100010110111", --- 0.886169433594 + j0.463256835938
             im_multiplicator => "0001110110100110",
-            product_re_out => mul_re_out(2045),
-            product_im_out => mul_im_out(2045)
+            data_re_out => mul_re_out(2045),
+            data_im_out => mul_im_out(2045)
         );
 
  
@@ -54340,8 +54340,8 @@ begin
             data_im_in => first_stage_im_out(2046),
             re_multiplicator => "0011101101000111", --- 0.926208496094 + j0.376953125
             im_multiplicator => "0001100000100000",
-            product_re_out => mul_re_out(2046),
-            product_im_out => mul_im_out(2046)
+            data_re_out => mul_re_out(2046),
+            data_im_out => mul_im_out(2046)
         );
 
  
@@ -54358,8 +54358,8 @@ begin
             data_im_in => first_stage_im_out(2047),
             re_multiplicator => "0011110101001101", --- 0.957824707031 + j0.287292480469
             im_multiplicator => "0001001001100011",
-            product_re_out => mul_re_out(2047),
-            product_im_out => mul_im_out(2047)
+            data_re_out => mul_re_out(2047),
+            data_im_out => mul_im_out(2047)
         );
 
 end Behavioral;

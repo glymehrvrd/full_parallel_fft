@@ -95,8 +95,8 @@ component complex_multiplier is
         data_im_in      : IN std_logic;
         re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 end component;
 
@@ -111,8 +111,8 @@ component multiplier_mul1 IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -127,8 +127,8 @@ component multiplier_mulminusj IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -257,8 +257,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
-            product_re_out => mul_re_out({{i}}),
-            product_im_out => mul_im_out({{i}})
+            data_re_out => mul_re_out({{i}}),
+            data_im_out => mul_im_out({{i}})
         );
 
     {% elif w[(i/rhs_point)|int][i%rhs_point]==(0,-(2**14)) %}
@@ -273,8 +273,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
-            product_re_out => mul_re_out({{i}}),
-            product_im_out => mul_im_out({{i}})
+            data_re_out => mul_re_out({{i}}),
+            data_im_out => mul_im_out({{i}})
         );
 
     {% else %}
@@ -291,8 +291,8 @@ begin
             data_im_in => first_stage_im_out({{i}}),
             re_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][0]|to_bin}}", --- {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}} + j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
             im_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][1]|to_bin}}",
-            product_re_out => mul_re_out({{i}}),
-            product_im_out => mul_im_out({{i}})
+            data_re_out => mul_re_out({{i}}),
+            data_im_out => mul_im_out({{i}})
         );
 
     {% endif %}

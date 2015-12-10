@@ -13,8 +13,8 @@ ENTITY multiplier_mul1 IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END multiplier_mul1;
 
@@ -66,7 +66,7 @@ BEGIN
             ce=>ce,
             ctrl=>ctrl_delay(ctrl_start),
             data_in=>shifter_re,
-            data_out=>product_re_out
+            data_out=>data_re_out
         );
     USHIFTER_IM: shifter
     port map(
@@ -75,7 +75,7 @@ BEGIN
             ce=>ce,
             ctrl=>ctrl_delay(ctrl_start),
             data_in=>shifter_im,
-            data_out=>product_im_out
+            data_out=>data_im_out
         );
 
 END Behavioral;

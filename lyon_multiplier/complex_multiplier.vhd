@@ -10,13 +10,14 @@ ENTITY complex_multiplier IS
         clk             : IN std_logic;
         rst             : IN std_logic;
         ce              : IN std_logic;
+        bypass          : in STD_LOGIC;
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
         re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END complex_multiplier;
 
@@ -30,6 +31,7 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
             clk          : IN std_logic;
             rst          : IN std_logic;
             ce           : IN std_logic;
+            bypass       : in STD_LOGIC;
             ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
             data_in      : IN std_logic;
             multiplicator: IN std_logic_vector(15 DOWNTO 0);
@@ -67,11 +69,27 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         );
     END COMPONENT;
 
+    COMPONENT mux_in2 IS
+        PORT (
+            sel       : IN STD_LOGIC;
+
+            data1_in  : IN STD_LOGIC;
+            data2_in  : IN std_logic;
+            data_out  : OUT std_logic
+        );
+    END COMPONENT;
+
     SIGNAL acd, bcd, dab, ab : std_logic;
     SIGNAL not_b : std_logic;
 
     SIGNAL c : std_logic_vector(2 DOWNTO 0);
     SIGNAL c_buff : std_logic_vector(2 DOWNTO 0);
+
+    signal product_re_out: std_logic;
+    signal product_im_out: std_logic;
+
+    signal c_plus_d  : std_logic_vector(15 downto 0);
+    signal c_minus_d : std_logic_vector(15 downto 0);
 
 BEGIN
     --- (a+b*i)*(c+d*i) = (a*c - b*d) + (b*c + a*d)*i = x + y*i
@@ -79,6 +97,8 @@ BEGIN
     --- y = b(c+d)+d(a-b)
 
     not_b <= NOT data_im_in;
+    c_plus_d <= std_logic_vector(signed(re_multiplicator) + signed(im_multiplicator));
+    c_minus_d <= std_logic_vector(signed(re_multiplicator) - signed(im_multiplicator));
 
     --- calculate a(c-d)
     UMUL0 : lyon_multiplier
@@ -89,9 +109,10 @@ BEGIN
         clk            => clk, 
         rst            => rst, 
         ce             => ce, 
+        bypass         => bypass,
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
-        multiplicator  => std_logic_vector(signed(re_multiplicator) - signed(im_multiplicator)), 
+        multiplicator  => c_minus_d,
         product_out    => acd
     );
 
@@ -104,9 +125,10 @@ BEGIN
         clk            => clk, 
         rst            => rst, 
         ce             => ce, 
+        bypass         => bypass,
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
-        multiplicator  => std_logic_vector(signed(re_multiplicator) + signed(im_multiplicator)), 
+        multiplicator  => c_plus_d,
         product_out    => bcd
     );
 
@@ -119,6 +141,7 @@ BEGIN
         clk          => clk, 
         rst          => rst, 
         ce           => ce, 
+        bypass       => bypass,
         ctrl_delay   => ctrl_delay, 
         data_in      => ab, 
         multiplicator  => im_multiplicator, 
@@ -161,6 +184,13 @@ BEGIN
         c_out     => c(1)
     );
 
+    UMUX_RE: mux_in2
+    port map(
+        sel=>bypass,
+        data1_in=>product_re_out,
+        data2_in=>acd,
+        data_out=>data_re_out
+    );
     --- y = b(c+d)+d(a-b)
     C_BUFF_IM : Dff_preload_reg1
     PORT MAP(
@@ -177,6 +207,14 @@ BEGIN
         c_in      => c_buff(2), 
         sum_out   => product_im_out, 
         c_out     => c(2)
+    );
+
+    UMUX_IM: mux_in2
+    port map(
+        sel=>bypass,
+        data1_in=>product_im_out,
+        data2_in=>bcd,
+        data_out=>data_im_out
     );
 
 END Behavioral;

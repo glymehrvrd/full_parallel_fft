@@ -77,8 +77,8 @@ component complex_multiplier is
         data_im_in      : IN std_logic;
         re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
         im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 end component;
 
@@ -93,8 +93,8 @@ component multiplier_mul1 IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -109,8 +109,8 @@ component multiplier_mulminusj IS
         ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
         data_re_in      : IN std_logic;
         data_im_in      : IN std_logic;
-        product_re_out  : OUT STD_LOGIC;
-        product_im_out  : OUT STD_LOGIC
+        data_re_out  : OUT STD_LOGIC;
+        data_im_out  : OUT STD_LOGIC
     );
 END component;
 
@@ -288,8 +288,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(0),
             data_im_in => first_stage_im_out(0),
-            product_re_out => mul_re_out(0),
-            product_im_out => mul_im_out(0)
+            data_re_out => mul_re_out(0),
+            data_im_out => mul_im_out(0)
         );
 
  
@@ -304,8 +304,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(1),
             data_im_in => first_stage_im_out(1),
-            product_re_out => mul_re_out(1),
-            product_im_out => mul_im_out(1)
+            data_re_out => mul_re_out(1),
+            data_im_out => mul_im_out(1)
         );
 
  
@@ -320,8 +320,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(2),
             data_im_in => first_stage_im_out(2),
-            product_re_out => mul_re_out(2),
-            product_im_out => mul_im_out(2)
+            data_re_out => mul_re_out(2),
+            data_im_out => mul_im_out(2)
         );
 
  
@@ -336,8 +336,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(3),
             data_im_in => first_stage_im_out(3),
-            product_re_out => mul_re_out(3),
-            product_im_out => mul_im_out(3)
+            data_re_out => mul_re_out(3),
+            data_im_out => mul_im_out(3)
         );
 
  
@@ -352,8 +352,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(4),
             data_im_in => first_stage_im_out(4),
-            product_re_out => mul_re_out(4),
-            product_im_out => mul_im_out(4)
+            data_re_out => mul_re_out(4),
+            data_im_out => mul_im_out(4)
         );
 
  
@@ -370,8 +370,8 @@ begin
             data_im_in => first_stage_im_out(5),
             re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(5),
-            product_im_out => mul_im_out(5)
+            data_re_out => mul_re_out(5),
+            data_im_out => mul_im_out(5)
         );
 
  
@@ -386,8 +386,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(6),
             data_im_in => first_stage_im_out(6),
-            product_re_out => mul_re_out(6),
-            product_im_out => mul_im_out(6)
+            data_re_out => mul_re_out(6),
+            data_im_out => mul_im_out(6)
         );
 
  
@@ -404,8 +404,8 @@ begin
             data_im_in => first_stage_im_out(7),
             re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
             im_multiplicator => "1101001010111111",
-            product_re_out => mul_re_out(7),
-            product_im_out => mul_im_out(7)
+            data_re_out => mul_re_out(7),
+            data_im_out => mul_im_out(7)
         );
 
 end Behavioral;
