@@ -79,28 +79,21 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         );
     END COMPONENT;
 
-    SIGNAL acd, bcd, dab, ab : std_logic;
-    SIGNAL not_b : std_logic;
+    SIGNAL ac, bd, bc, ad : std_logic;
+    SIGNAL not_bd : std_logic;
 
-    SIGNAL c : std_logic_vector(2 DOWNTO 0);
-    SIGNAL c_buff : std_logic_vector(2 DOWNTO 0);
+    SIGNAL c : std_logic_vector(1 DOWNTO 0);
+    SIGNAL c_buff : std_logic_vector(1 DOWNTO 0);
 
     signal product_re_out: std_logic;
     signal product_im_out: std_logic;
 
-    signal c_plus_d  : std_logic_vector(15 downto 0);
-    signal c_minus_d : std_logic_vector(15 downto 0);
-
 BEGIN
     --- (a+b*i)*(c+d*i) = (a*c - b*d) + (b*c + a*d)*i = x + y*i
-    --- x = a(c-d)+d(a-b)
-    --- y = b(c+d)+d(a-b)
+    --- x = a*c - b*d
+    --- y = b*c + a*d
 
-    not_b <= NOT data_im_in;
-    c_plus_d <= std_logic_vector(signed(re_multiplicator) + signed(im_multiplicator));
-    c_minus_d <= std_logic_vector(signed(re_multiplicator) - signed(im_multiplicator));
-
-    --- calculate a(c-d)
+    --- calculate a*c
     UMUL0 : lyon_multiplier
     GENERIC MAP(
         ctrl_start => (ctrl_start + 1) MOD 16
@@ -112,11 +105,11 @@ BEGIN
         bypass         => bypass,
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
-        multiplicator  => c_minus_d,
-        product_out    => acd
+        multiplicator  => re_multiplicator,
+        product_out    => ac
     );
 
-    --- calculate b(c+d)
+    --- calculate b*d
     UMUL1 : lyon_multiplier
     GENERIC MAP(
         ctrl_start     => (ctrl_start + 1) MOD 16
@@ -128,11 +121,11 @@ BEGIN
         bypass         => bypass,
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
-        multiplicator  => c_plus_d,
-        product_out    => bcd
+        multiplicator  => im_multiplicator,
+        product_out    => bd
     );
 
-    --- calculate d(a-b)
+    --- calculate b*c
     UMUL2 : lyon_multiplier
     GENERIC MAP(
         ctrl_start     => (ctrl_start + 1) MOD 16
@@ -143,13 +136,30 @@ BEGIN
         ce           => ce, 
         bypass       => bypass,
         ctrl_delay   => ctrl_delay, 
-        data_in      => ab, 
-        multiplicator  => im_multiplicator, 
-        product_out  => dab
+        data_in      => data_im_in, 
+        multiplicator  => re_multiplicator, 
+        product_out  => bc
     );
 
-    --- a-b
-    C_BUFF_AB : Dff_preload_reg1_init_1
+    --- calculate a*d
+    UMUL3 : lyon_multiplier
+    GENERIC MAP(
+        ctrl_start     => (ctrl_start + 1) MOD 16
+    )
+    PORT MAP(
+        clk          => clk, 
+        rst          => rst, 
+        ce           => ce, 
+        bypass       => bypass,
+        ctrl_delay   => ctrl_delay, 
+        data_in      => data_re_in, 
+        multiplicator  => im_multiplicator, 
+        product_out  => ad
+    );
+
+    --- x=ac-bd
+    not_bd<=not bd;
+    C_BUFF_ACBD : Dff_preload_reg1_init_1
     PORT MAP(
         D        => c(0), 
         clk      => clk, 
@@ -157,16 +167,16 @@ BEGIN
         Q        => c_buff(0)
     );
 
-    ADDER_AB : adder_bit1
+    ADDER_ACBD : adder_bit1
     PORT MAP(
-        data1_in  => data_re_in, 
-        data2_in  => not_b, 
+        data1_in  => ac, 
+        data2_in  => not_bd, 
         c_in      => c_buff(0), 
-        sum_out   => ab, 
+        sum_out   => product_re_out, 
         c_out     => c(0)
     );
 
-    --- x = a(c-d)+d(a-b)
+    --- y=bc+ad
     C_BUFF_RE : Dff_preload_reg1
     PORT MAP(
         D        => c(1), 
@@ -177,43 +187,27 @@ BEGIN
 
     ADDER_RE : adder_bit1
     PORT MAP(
-        data1_in  => acd, 
-        data2_in  => dab, 
+        data1_in  => bc, 
+        data2_in  => ad, 
         c_in      => c_buff(1), 
-        sum_out   => product_re_out, 
+        sum_out   => product_im_out, 
         c_out     => c(1)
     );
 
+    --- bypass selector
     UMUX_RE: mux_in2
     port map(
         sel=>bypass,
         data1_in=>product_re_out,
-        data2_in=>acd,
+        data2_in=>ac,
         data_out=>data_re_out
-    );
-    --- y = b(c+d)+d(a-b)
-    C_BUFF_IM : Dff_preload_reg1
-    PORT MAP(
-        D        => c(2), 
-        clk      => clk, 
-        preload  => ctrl_delay(ctrl_start), 
-        Q        => c_buff(2)
-    );
-
-    ADDER_IM : adder_bit1
-    PORT MAP(
-        data1_in  => bcd, 
-        data2_in  => dab, 
-        c_in      => c_buff(2), 
-        sum_out   => product_im_out, 
-        c_out     => c(2)
     );
 
     UMUX_IM: mux_in2
     port map(
         sel=>bypass,
         data1_in=>product_im_out,
-        data2_in=>bcd,
+        data2_in=>bd,
         data_out=>data_im_out
     );
 

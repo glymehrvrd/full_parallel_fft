@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.14"
+    ComputedModelVersion    "1.16"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, 35.0, 1936.0, 1053.0]
+      Location		      [-8.0, 35.0, 1425.0, 1053.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -66,7 +66,7 @@ Model {
 	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1689.0, 863.0]
+	  Extents		  [1178.0, 863.0]
 	  ZoomFactor		  [1.5]
 	  Offset		  [320.66666666666669, 110.99999999999983]
 	}
@@ -75,7 +75,7 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "61"
-	  Extents		  [793.0, 645.0]
+	  Extents		  [1178.0, 863.0]
 	  ZoomFactor		  [1.5]
 	  Offset		  [230.6666666666668, 125.66666666666669]
 	}
@@ -89,9 +89,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 10 10:58:12 2015"
-  RTWModifiedTimeStamp	  371644846
-  ModelVersionFormat	  "1.%<AutoIncrement:14>"
+  LastModifiedDate	  "Mon Dec 14 21:58:33 2015"
+  RTWModifiedTimeStamp	  372030985
+  ModelVersionFormat	  "1.%<AutoIncrement:16>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -882,7 +882,7 @@ Model {
   }
   System {
     Name		    "complex_multiplier_co_sim"
-    Location		    [-8, 35, 1928, 1088]
+    Location		    [-8, 35, 1417, 1088]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -1159,7 +1159,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem"
-	Location		[-8, 42, 1032, 877]
+	Location		[-8, 35, 1417, 1088]
 	Open			on
 	ModelBrowserVisibility	on
 	ModelBrowserWidth	200
