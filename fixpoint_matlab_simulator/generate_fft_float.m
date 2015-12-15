@@ -1,6 +1,5 @@
-function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
-    w=int16(w.*2^14);
-    function [result,eachclass,eachmul]=fftn(data)
+function [fft_func]=generate_fft_float(lfft,m,index,w,rfft,n)
+    function [result,eachclass]=fftn(data)
         for i=1:n
             [left_outputs(i,:),clz]=lfft(data(i:n:end));
             if i==1
@@ -11,7 +10,7 @@ function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
         end;
         left_outputs=left_outputs.';
         
-        right_inputs=complexmul(left_outputs,w);
+        right_inputs=left_outputs.*w;
         
         right_inputs=right_inputs(index+1);
         
