@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.21"
+    ComputedModelVersion    "1.23"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1912.0, 210.0, 1616.0, 873.0]
+      Location		      [-8.0, 36.0, 1425.0, 1103.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1369.0, 687.0]
+	Extents			[1178.0, 917.0]
 	ZoomFactor		[1.0]
-	Offset			[-39.925000000000011, -28.0]
+	Offset			[-39.924999999999955, -28.0]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 10 21:30:11 2015"
-  RTWModifiedTimeStamp	  371683809
-  ModelVersionFormat	  "1.%<AutoIncrement:21>"
+  LastModifiedDate	  "Tue Dec 15 13:01:19 2015"
+  RTWModifiedTimeStamp	  372085278
+  ModelVersionFormat	  "1.%<AutoIncrement:23>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -870,7 +870,7 @@ Model {
   }
   System {
     Name		    "fft_8pt_co_sim"
-    Location		    [1912, 210, 3528, 1083]
+    Location		    [-8, 36, 1417, 1139]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -901,7 +901,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "\n1"
       SID		      "2"
-      Position		      [60, 433, 125, 457]
+      Position		      [60, 438, 125, 462]
       ZOrder		      105
       VariableName	      "d_im_in"
       SampleTime	      "1"
@@ -1002,7 +1002,7 @@ Model {
       SID		      "68"
       Position		      [75, 255, 105, 285]
       ZOrder		      205
-      Value		      "0"
+      Value		      "7"
     }
     Block {
       BlockType		      Reference
@@ -1252,7 +1252,7 @@ Model {
       BlockType		      Step
       Name		      "Step1"
       SID		      "8"
-      Position		      [75, 190, 105, 220]
+      Position		      [75, 195, 105, 225]
       ZOrder		      102
       SampleTime	      "1"
     }
@@ -1261,7 +1261,7 @@ Model {
       Name		      "Subsystem"
       SID		      "46"
       Ports		      [1, 1]
-      Position		      [200, 314, 300, 356]
+      Position		      [200, 309, 300, 351]
       ZOrder		      186
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2373,7 +2373,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "ctrl1"
       SID		      "12"
-      Position		      [60, 323, 125, 347]
+      Position		      [60, 318, 125, 342]
       ZOrder		      100
       VariableName	      "ctrl"
       SampleTime	      "1"
@@ -2384,7 +2384,7 @@ Model {
       Name		      "d0_re_in\n1"
       SID		      "14"
       Ports		      [1, 1]
-      Position		      [235, 434, 290, 456]
+      Position		      [235, 439, 290, 461]
       ZOrder		      106
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
@@ -2478,7 +2478,7 @@ Model {
       Name		      "rst (active low)1"
       SID		      "15"
       Ports		      [1, 1]
-      Position		      [235, 191, 290, 219]
+      Position		      [235, 196, 290, 224]
       ZOrder		      101
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway In"
@@ -2677,7 +2677,6 @@ Model {
     Line {
       SrcBlock		      "Subsystem"
       SrcPort		      1
-      Points		      [77, 0; 0, -5]
       DstBlock		      "Black Box"
       DstPort		      3
     }
@@ -2696,14 +2695,12 @@ Model {
     Line {
       SrcBlock		      "rst (active low)1"
       SrcPort		      1
-      Points		      [82, 0; 0, 5]
       DstBlock		      "Black Box"
       DstPort		      1
     }
     Line {
       SrcBlock		      "d0_re_in\n1"
       SrcPort		      1
-      Points		      [82, 0; 0, 5]
       DstBlock		      "Black Box"
       DstPort		      5
     }

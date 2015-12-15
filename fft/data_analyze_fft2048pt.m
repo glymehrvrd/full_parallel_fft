@@ -22,4 +22,4 @@ end;
 d_out=flipud(d_out);
 
 float_out=fft(d);
-hardware_out=d_out*64;
+hardware_out=d_out;

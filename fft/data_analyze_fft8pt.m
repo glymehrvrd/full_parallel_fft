@@ -1,8 +1,8 @@
 % set number of input data
 d_num=10;
 beginner=23;
-beginner_stage=6;
-beginner_mul=22;
+beginner_stage=5;
+beginner_mul=21;
 
 d_re_out.data=fi(d_re_out.data,0,8,0);
 d_im_out.data=fi(d_im_out.data,0,8,0);
@@ -43,6 +43,8 @@ for i=1:size(d_re_fp,1)
     d_mul_im(i,:)=serial2parallel(mul_im_fp(i,:));
 end;
 
+d_stage=d_stage_re+d_stage_im*1i;
+d_mul=d_mul_re+d_mul_im*1i;
 d_out=d_re+d_im*1i;
 
 % disp('error cased by first fft');

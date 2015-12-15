@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.15"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1912.0, 210.0, 1616.0, 873.0]
+      Location		      [-8.0, 35.0, 1936.0, 1053.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1369.0, 687.0]
+	Extents			[1689.0, 867.0]
 	ZoomFactor		[1.0]
-	Offset			[-253.17261904761898, -98.09523809523813]
+	Offset			[-187.57262292788135, -98.09523809523813]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "dell"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 10 21:28:44 2015"
-  RTWModifiedTimeStamp	  371678611
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Tue Dec 15 15:43:53 2015"
+  RTWModifiedTimeStamp	  372085484
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -859,7 +859,7 @@ Model {
   }
   System {
     Name		    "fft_32pt_co_sim"
-    Location		    [1912, 210, 3528, 1083]
+    Location		    [-8, 35, 1928, 1088]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -873,7 +873,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "41"
+    SIDHighWatermark	    "59"
     Block {
       BlockType		      FromWorkspace
       Name		      "\n"
@@ -950,10 +950,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Black Box"
-      SID		      "18"
-      Ports		      [5, 2]
-      Position		      [455, 239, 575, 401]
-      ZOrder		      145
+      SID		      "43"
+      Ports		      [5, 6]
+      Position		      [475, 219, 645, 451]
+      ZOrder		      191
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Black Box"
       SourceType	      "Xilinx Black Box Block"
@@ -971,17 +971,19 @@ Model {
       has_advanced_control    "0"
       sggui_pos		      "-1,-1,-1,-1"
       block_type	      "blackbox2"
-      sg_icon_stat	      "120,162,5,2,white,blue,0,75c7059f,right,,[ ],[ ]"
-      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 120 120 0 0 ],[0 0 162 162 0 ],[0.7"
-      "7 0.82 0.91 ]);\nplot([0 120 120 0 0 ],[0 0 162 162 0 ]);\npatch([22.175 46.74 63.74 80.74 97.74 63.74 39.175 22"
-      ".175 ],[99.87 99.87 116.87 99.87 116.87 116.87 116.87 99.87 ],[1 1 1 ]);\npatch([39.175 63.74 46.74 22.175 39.17"
-      "5 ],[82.87 82.87 99.87 99.87 82.87 ],[0.931 0.946 0.973 ]);\npatch([22.175 46.74 63.74 39.175 22.175 ],[65.87 65"
-      ".87 82.87 82.87 65.87 ],[1 1 1 ]);\npatch([39.175 97.74 80.74 63.74 46.74 22.175 39.175 ],[48.87 48.87 65.87 48."
-      "87 65.87 65.87 48.87 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: b"
-      "egin icon text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'bypass');\n"
-      "color('black');port_label('input',3,'ctrl_delay');\ncolor('black');port_label('input',4,'data_re_in');\ncolor('b"
-      "lack');port_label('input',5,'data_im_in');\ncolor('black');port_label('output',1,'data_re_out');\ncolor('black')"
-      ";port_label('output',2,'data_im_out');\nfprintf('','COMMENT: end icon text');"
+      sg_icon_stat	      "170,232,5,6,white,blue,0,92e5ded6,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 170 170 0 0 ],[0 0 232 232 0 ],[0.7"
+      "7 0.82 0.91 ]);\nplot([0 170 170 0 0 ],[0 0 232 232 0 ]);\npatch([31.6 66.28 90.28 114.28 138.28 90.28 55.6 31.6"
+      " ],[142.64 142.64 166.64 142.64 166.64 166.64 166.64 142.64 ],[1 1 1 ]);\npatch([55.6 90.28 66.28 31.6 55.6 ],[1"
+      "18.64 118.64 142.64 142.64 118.64 ],[0.931 0.946 0.973 ]);\npatch([31.6 66.28 90.28 55.6 31.6 ],[94.64 94.64 118"
+      ".64 118.64 94.64 ],[1 1 1 ]);\npatch([55.6 138.28 114.28 90.28 66.28 31.6 55.6 ],[70.64 70.64 94.64 70.64 94.64 "
+      "94.64 70.64 ],[0.931 0.946 0.973 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon"
+      " text');\ncolor('black');port_label('input',1,'rst');\ncolor('black');port_label('input',2,'bypass');\ncolor('bl"
+      "ack');port_label('input',3,'ctrl_delay');\ncolor('black');port_label('input',4,'data_re_in');\ncolor('black');po"
+      "rt_label('input',5,'data_im_in');\ncolor('black');port_label('output',1,'tmp_first_stage_re_out');\ncolor('black"
+      "');port_label('output',2,'tmp_first_stage_im_out');\ncolor('black');port_label('output',3,'tmp_mul_re_out');\nco"
+      "lor('black');port_label('output',4,'tmp_mul_im_out');\ncolor('black');port_label('output',5,'data_re_out');\ncol"
+      "or('black');port_label('output',6,'data_im_out');\nfprintf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Constant
@@ -989,15 +991,50 @@ Model {
       SID		      "41"
       Position		      [75, 285, 105, 315]
       ZOrder		      189
-      Value		      "0"
+      Value		      "31"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out1"
+      SID		      "48"
+      Ports		      [1, 1]
+      Position		      [755, 165, 815, 185]
+      ZOrder		      202
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
     }
     Block {
       BlockType		      Reference
       Name		      "Gateway Out2"
-      SID		      "5"
+      SID		      "49"
       Ports		      [1, 1]
-      Position		      [770, 270, 830, 290]
-      ZOrder		      140
+      Position		      [755, 305, 815, 325]
+      ZOrder		      198
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -1029,10 +1066,115 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Gateway Out3"
-      SID		      "6"
+      SID		      "50"
       Ports		      [1, 1]
-      Position		      [770, 350, 830, 370]
-      ZOrder		      141
+      Position		      [755, 385, 815, 405]
+      ZOrder		      199
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out4"
+      SID		      "51"
+      Ports		      [1, 1]
+      Position		      [755, 245, 815, 265]
+      ZOrder		      203
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out5"
+      SID		      "52"
+      Ports		      [1, 1]
+      Position		      [755, 460, 815, 480]
+      ZOrder		      206
+      LibraryVersion	      "1.2"
+      SourceBlock	      "xbsIndex_r4/Gateway Out"
+      SourceType	      "Xilinx Gateway Out Block"
+      infoedit		      "Gateway out block.  Converts Xilinx fixed-point or floating-point type inputs into ouputs of ty"
+      "pe Simulink integer, single, double, or fixed-point.<br><br>Hardware notes:  In hardware these blocks become top"
+      " level output ports or are discarded, depending on how they are configured."
+      inherit_from_input      on
+      hdl_port		      on
+      timing_constraint	      "None"
+      locs_specified	      off
+      LOCs		      "{}"
+      UseAsDAC		      off
+      DACChannel	      "'1'"
+      xl_use_area	      off
+      xl_area		      "[0,0,0,0,0,0,0]"
+      has_advanced_control    "0"
+      sggui_pos		      "-1,-1,-1,-1"
+      block_type	      "gatewayout"
+      sg_icon_stat	      "60,20,1,1,white,yellow,1,cc31b7ac,right,,[ ],[ ]"
+      sg_mask_display	      "fprintf('','COMMENT: begin icon graphics');\npatch([0 60 60 0 0 ],[0 0 20 20 0 ],[0.95 0."
+      "93 0.65 ]);\nplot([0 60 60 0 0 ],[0 0 20 20 0 ]);\npatch([25.55 28.44 30.44 32.44 34.44 30.44 27.55 25.55 ],[12."
+      "22 12.22 14.22 12.22 14.22 14.22 14.22 12.22 ],[1 1 1 ]);\npatch([27.55 30.44 28.44 25.55 27.55 ],[10.22 10.22 1"
+      "2.22 12.22 10.22 ],[0.985 0.979 0.895 ]);\npatch([25.55 28.44 30.44 27.55 25.55 ],[8.22 8.22 10.22 10.22 8.22 ],"
+      "[1 1 1 ]);\npatch([27.55 34.44 32.44 30.44 28.44 25.55 27.55 ],[6.22 6.22 8.22 6.22 8.22 8.22 6.22 ],[0.985 0.97"
+      "9 0.895 ]);\nfprintf('','COMMENT: end icon graphics');\nfprintf('','COMMENT: begin icon text');\ncolor('black');"
+      "port_label('input',1,' ');\ncolor('black');port_label('output',1,'\\fontsize{11pt}\\bf Out ','texmode','on');\nf"
+      "printf('','COMMENT: end icon text');"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Gateway Out6"
+      SID		      "53"
+      Ports		      [1, 1]
+      Position		      [755, 540, 815, 560]
+      ZOrder		      207
       LibraryVersion	      "1.2"
       SourceBlock	      "xbsIndex_r4/Gateway Out"
       SourceType	      "Xilinx Gateway Out Block"
@@ -2146,12 +2288,24 @@ Model {
     }
     Block {
       BlockType		      ToWorkspace
-      Name		      "To Workspace2"
-      SID		      "9"
+      Name		      "To Workspace1"
+      SID		      "54"
       Ports		      [1]
-      Position		      [885, 265, 945, 295]
-      ZOrder		      138
-      VariableName	      "d_re_out"
+      Position		      [870, 160, 930, 190]
+      ZOrder		      200
+      VariableName	      "stage_re"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace2"
+      SID		      "55"
+      Ports		      [1]
+      Position		      [870, 300, 930, 330]
+      ZOrder		      196
+      VariableName	      "mul_re"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
       SaveFormat	      "Timeseries"
@@ -2159,10 +2313,46 @@ Model {
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace3"
-      SID		      "10"
+      SID		      "56"
       Ports		      [1]
-      Position		      [885, 345, 945, 375]
-      ZOrder		      139
+      Position		      [870, 380, 930, 410]
+      ZOrder		      197
+      VariableName	      "mul_im"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace4"
+      SID		      "57"
+      Ports		      [1]
+      Position		      [870, 240, 930, 270]
+      ZOrder		      201
+      VariableName	      "stage_im"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace5"
+      SID		      "58"
+      Ports		      [1]
+      Position		      [870, 455, 930, 485]
+      ZOrder		      204
+      VariableName	      "d_re_out"
+      MaxDataPoints	      "inf"
+      SampleTime	      "-1"
+      SaveFormat	      "Timeseries"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace6"
+      SID		      "59"
+      Ports		      [1]
+      Position		      [870, 535, 930, 565]
+      ZOrder		      205
       VariableName	      "d_im_out"
       MaxDataPoints	      "inf"
       SampleTime	      "-1"
@@ -2385,17 +2575,50 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "rst (active low)1"
-      SrcPort		      1
-      Points		      [77, 0; 0, 15]
-      DstBlock		      "Black Box"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "\n1"
       SrcPort		      1
       DstBlock		      "d0_re_in\n1"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "rst (active low)2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem"
+      SrcPort		      1
+      Points		      [75, 0; 0, -20]
+      DstBlock		      "Black Box"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "rst (active low)1"
+      SrcPort		      1
+      DstBlock		      "Black Box"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "rst (active low)2"
+      SrcPort		      1
+      Points		      [87, 0; 0, -10]
+      DstBlock		      "Black Box"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "d0_re_in\n"
+      SrcPort		      1
+      Points		      [100, 0; 0, -30]
+      DstBlock		      "Black Box"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "d0_re_in\n1"
+      SrcPort		      1
+      Points		      [87, 0; 0, -40]
+      DstBlock		      "Black Box"
+      DstPort		      5
     }
     Line {
       SrcBlock		      "Gateway Out2"
@@ -2410,50 +2633,69 @@ Model {
       DstPort		      1
     }
     Line {
+      SrcBlock		      "Gateway Out1"
+      SrcPort		      1
+      DstBlock		      "To Workspace1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out4"
+      SrcPort		      1
+      DstBlock		      "To Workspace4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out5"
+      SrcPort		      1
+      DstBlock		      "To Workspace5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gateway Out6"
+      SrcPort		      1
+      DstBlock		      "To Workspace6"
+      DstPort		      1
+    }
+    Line {
       SrcBlock		      "Black Box"
       SrcPort		      1
-      DstBlock		      "Gateway Out2"
+      Points		      [49, 0; 0, -60]
+      DstBlock		      "Gateway Out1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Black Box"
       SrcPort		      2
+      Points		      [49, 0; 0, -20]
+      DstBlock		      "Gateway Out4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      3
+      DstBlock		      "Gateway Out2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Black Box"
+      SrcPort		      4
+      Points		      [50, 0; 0, 40]
       DstBlock		      "Gateway Out3"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant"
-      SrcPort		      1
-      DstBlock		      "rst (active low)2"
+      SrcBlock		      "Black Box"
+      SrcPort		      5
+      Points		      [23, 0; 0, 75]
+      DstBlock		      "Gateway Out5"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "rst (active low)2"
-      SrcPort		      1
-      Points		      [77, 0; 0, -10]
-      DstBlock		      "Black Box"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Subsystem"
-      SrcPort		      1
-      Points		      [65, 0; 0, -35]
-      DstBlock		      "Black Box"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "d0_re_in\n"
-      SrcPort		      1
-      Points		      [125, 0; 0, -60]
-      DstBlock		      "Black Box"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "d0_re_in\n1"
-      SrcPort		      1
-      Points		      [142, 0; 0, -85]
-      DstBlock		      "Black Box"
-      DstPort		      5
+      SrcBlock		      "Black Box"
+      SrcPort		      6
+      Points		      [9, 0; 0, 115]
+      DstBlock		      "Gateway Out6"
+      DstPort		      1
     }
   }
 }

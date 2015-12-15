@@ -447,8 +447,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
-            re_multiplicator => "0011101100100000", --- 0.923828125 + j-0.382629394531
-            im_multiplicator => "1110011110000011",
+            re_multiplicator => "0011101100100001", --- 0.923889160156 + j-0.382690429688
+            im_multiplicator => "1110011110000010",
             data_re_out => mul_re_out(5),
             data_im_out => mul_im_out(5)
         );
@@ -485,8 +485,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
-            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
-            im_multiplicator => "1100010011100000",
+            re_multiplicator => "0001100001111110", --- 0.382690429688 + j-0.923889160156
+            im_multiplicator => "1100010011011111",
             data_re_out => mul_re_out(7),
             data_im_out => mul_im_out(7)
         );
@@ -593,8 +593,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(13),
             data_im_in => first_stage_im_out(13),
-            re_multiplicator => "0001100001111101", --- 0.382629394531 + j-0.923828125
-            im_multiplicator => "1100010011100000",
+            re_multiplicator => "0001100001111110", --- 0.382690429688 + j-0.923889160156
+            im_multiplicator => "1100010011011111",
             data_re_out => mul_re_out(13),
             data_im_out => mul_im_out(13)
         );
@@ -631,8 +631,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(15),
             data_im_in => first_stage_im_out(15),
-            re_multiplicator => "1100010011100000", --- -0.923828125 + j0.382629394531
-            im_multiplicator => "0001100001111101",
+            re_multiplicator => "1100010011011111", --- -0.923889160156 + j0.382690429688
+            im_multiplicator => "0001100001111110",
             data_re_out => mul_re_out(15),
             data_im_out => mul_im_out(15)
         );
