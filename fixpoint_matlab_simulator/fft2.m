@@ -1,8 +1,7 @@
-function [result]=fft2(data)
+function [result,eachclass]=fft2(data)
+    r=real(data);
+    i=imag(data);
 
-    result={{serial_adder(data{1}{1},data{2}{1}),...  % real
-        serial_adder(data{1}{2},data{2}{2})},...     % imaginary
-        {serial_subtractor(data{1}{1},data{2}{1}),... % real
-        serial_subtractor(data{1}{2},data{2}{2})}};   % imaginary
-
+    result = [complex(r(1)+r(2),i(1)+i(2)), complex(r(1)-r(2),i(1)-i(2))];
+    eachclass={result(:)};
 end
