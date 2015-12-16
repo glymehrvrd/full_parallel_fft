@@ -1,5 +1,6 @@
 function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
     w=int16(w.*2^14);
+    w=tobitarray(w);
     function [result,eachclass,eachmul]=fftn(data)
         for i=1:n
             [left_outputs(i,:),clz]=lfft(data(i:n:end));
@@ -11,7 +12,11 @@ function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
         end;
         left_outputs=left_outputs.';
         
-        right_inputs=complexmul(left_outputs,w);
+        for i=1:size(left_outputs,1)
+            for j=1:size(left_outputs,2)
+                right_inputs{i,j}=complexmul(left_outputs{i,j},w{i,j});
+            end;
+        end;
         
         right_inputs=right_inputs(index+1);
         
