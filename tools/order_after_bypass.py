@@ -14,6 +14,7 @@ def order_after_bypass(pt,structure):
     return pt.transpose().reshape((1,l*r))
 
 
-a=np.arange(32, )
+a=np.arange(4, )
 structure={2048:(32,64),32:(4,8),64:(8,8),16:(4,4),8:(2,4),4:(2,2)}
-print order_after_bypass(a, structure)+1
+b=order_after_bypass(a, structure)+1
+print b.transpose()

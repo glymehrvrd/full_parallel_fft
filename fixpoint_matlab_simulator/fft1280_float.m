@@ -5,8 +5,8 @@ function [result,eachclass]=fft1280_float(data)
     [i,w]=calc_param(8,8);
     fft64_float=generate_fft_float(fft8_float,8,i,w,fft8_float,8);
 
-    [i,w]=calc_param(64,4);
-    fft256_float=generate_fft_float(fft64_float,64,i,w,@fft4_float,4);
+    [i,w]=calc_param(4,64);
+    fft256_float=generate_fft_float(@fft4_float,4,i,w,fft64_float,64);
 
     [i,w]=calc_param(256,5);
     w=ones(256,5);
