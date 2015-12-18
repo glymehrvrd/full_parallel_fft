@@ -32,11 +32,10 @@ void read_din(complex din[])
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-
 	initparam();
 
 	complex a[2048];
-	complex b[2048] = { 0 };
+	complex b[2048] = {0};
 	read_din(a);
 
 	fft1536(a, b);

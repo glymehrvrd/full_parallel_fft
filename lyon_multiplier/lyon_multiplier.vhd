@@ -7,14 +7,14 @@ ENTITY lyon_multiplier IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk          : IN std_logic;
-        rst          : IN std_logic;
-        ce           : IN std_logic;
-        bypass       : IN std_logic;
-        ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
-        data_in      : IN std_logic;
-        multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        product_out  : OUT STD_LOGIC
+        clk            : IN std_logic;
+        rst            : IN std_logic;
+        ce             : IN std_logic;
+        bypass         : IN std_logic;
+        ctrl_delay     : IN std_logic_vector(15 DOWNTO 0);
+        data_in        : IN std_logic;
+        multiplicator  : IN std_logic_vector(15 DOWNTO 0);
+        product_out    : OUT STD_LOGIC
     );
 END lyon_multiplier;
 
@@ -22,7 +22,7 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
 
     COMPONENT partial_product IS
         GENERIC (
-            ctrl_start   : INTEGER 
+            ctrl_start     : INTEGER
         );
         PORT (
             clk         : IN std_logic;
@@ -38,7 +38,7 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
 
     COMPONENT partial_product_last IS
         GENERIC (
-            ctrl_start  : INTEGER 
+            ctrl_start  : INTEGER
         );
         PORT (
             clk         : IN std_logic;
@@ -82,7 +82,7 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
     END COMPONENT;
 
     SIGNAL data_in_delay : std_logic_vector(15 DOWNTO 0);
-    SIGNAL ndata_in_delay: std_logic_vector(15 downto 1);
+    SIGNAL ndata_in_delay : std_logic_vector(15 DOWNTO 1);
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
@@ -97,7 +97,7 @@ BEGIN
     PORT MAP(
         D           => data_in, 
         clk         => clk, 
-        Q           => data_in_delay(15 DOWNTO 1),
+        Q           => data_in_delay(15 DOWNTO 1), 
         QN          => ndata_in_delay(15 DOWNTO 1)
     );
 
@@ -136,18 +136,20 @@ BEGIN
         pp_out      => pp(15)
     );
 
-    UMUX : mux_in2 port map(
-            sel=>bypass,
-            data1_in=>pp(15),
-            data2_in=>data_in_delay(15),
-            data_out=>data_output
-        );
+    UMUX : mux_in2
+    PORT MAP(
+        sel       => bypass, 
+        data1_in  => pp(15), 
+        data2_in  => data_in_delay(15), 
+        data_out  => data_output
+    );
 
     --- output
-    UDFF_OUT : Dff_reg1 port map(
-            D=>data_output,
-            clk=>clk,
-            Q=>product_out
-        );
+    UDFF_OUT : Dff_reg1
+    PORT MAP(
+        D    => data_output, 
+        clk  => clk, 
+        Q    => product_out
+    );
 
 END Behavioral;

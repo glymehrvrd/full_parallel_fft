@@ -18,7 +18,7 @@ ARCHITECTURE Behavioral OF Dff_regN_Nout IS
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
             Q    : OUT STD_LOGIC;
-            QN : OUT STD_LOGIC
+            QN   : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -34,8 +34,8 @@ BEGIN
         PORT MAP(
             D    => reg(I), 
             clk  => clk, 
-            Q    => reg(I + 1),
-            QN   => nreg(I+1)
+            Q    => reg(I + 1), 
+            QN   => nreg(I + 1)
         );
     END GENERATE; -- GEN_DFF
 

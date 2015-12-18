@@ -3,14 +3,14 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY fft_pt2 IS
     GENERIC (
-        ctrl_start       : INTEGER
+        ctrl_start : INTEGER
     );
     PORT (
         clk          : IN STD_LOGIC;
         rst          : IN STD_LOGIC;
         ce           : IN STD_LOGIC;
         bypass       : IN std_logic;
-        ctrl_delay   : IN STD_LOGIC_VECTOR(15 downto 0);
+        ctrl_delay   : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
 
         data_re_in   : IN std_logic_vector(1 DOWNTO 0);
         data_im_in   : IN std_logic_vector(1 DOWNTO 0);
@@ -60,8 +60,6 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
             QN   : OUT STD_LOGIC
         );
     END COMPONENT;
-
-
     COMPONENT mux_in2 IS
         PORT (
             sel       : IN STD_LOGIC;
@@ -84,40 +82,42 @@ ARCHITECTURE Behavioral OF fft_pt2 IS
     SIGNAL data_re_out_fft : std_logic_vector(1 DOWNTO 0);
     SIGNAL data_im_out_fft : std_logic_vector(1 DOWNTO 0);
 BEGIN
-    GEN_OUT_MUX : for I in 0 to 1 generate
+    GEN_OUT_MUX : FOR I IN 0 TO 1 GENERATE
         UMUXRE : mux_in2
-        port map(
-            sel=>bypass,
-            data1_in=>data_re_out_fft(I),
-            data2_in=>data_re_in(I),
-            data_out=>data_re_out_buff(I)
+        PORT MAP(
+            sel       => bypass, 
+            data1_in  => data_re_out_fft(I), 
+            data2_in  => data_re_in(I), 
+            data_out  => data_re_out_buff(I)
         );
 
         UMUXIM : mux_in2
-        port map(
-            sel=>bypass,
-            data1_in=>data_im_out_fft(I),
-            data2_in=>data_im_in(I),
-            data_out=>data_im_out_buff(I)
+        PORT MAP(
+            sel       => bypass, 
+            data1_in  => data_im_out_fft(I), 
+            data2_in  => data_im_in(I), 
+            data_out  => data_im_out_buff(I)
         );
-    end generate ; -- GEN_OUT_MUX
+    END GENERATE; -- GEN_OUT_MUX
 
     not_data_re_in1 <= NOT data_re_in(1);
     not_data_im_in1 <= NOT data_im_in(1);
 
-    GEN_OUT_BUFF : for I in 0 to 1 generate
-        UDFF_RE_OUT : Dff_reg1 port map(
-                D=>data_re_out_buff(I),
-                clk=>clk,
-                Q=>data_re_out(I)
-            );
+    GEN_OUT_BUFF : FOR I IN 0 TO 1 GENERATE
+        UDFF_RE_OUT : Dff_reg1
+        PORT MAP(
+            D    => data_re_out_buff(I), 
+            clk  => clk, 
+            Q    => data_re_out(I)
+        );
 
-        UDFF_IM_OUT : Dff_reg1 port map(
-                D=>data_im_out_buff(I),
-                clk=>clk,
-                Q=>data_im_out(I)
-            );
-    end generate ; -- GEN_OUT_BUFF
+        UDFF_IM_OUT : Dff_reg1
+        PORT MAP(
+            D    => data_im_out_buff(I), 
+            clk  => clk, 
+            Q    => data_im_out(I)
+        );
+    END GENERATE; -- GEN_OUT_BUFF
 
     --- Re(X[0])=Re(x[0])+Re(x[1])
     C_BUFF0_RE : Dff_preload_reg1

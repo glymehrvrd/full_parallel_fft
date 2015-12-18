@@ -21,7 +21,7 @@ ARCHITECTURE Behavioral OF shifter IS
             D    : IN STD_LOGIC;
             clk  : IN STD_LOGIC;
             Q    : OUT STD_LOGIC;
-            QN : OUT STD_LOGIC
+            QN   : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -46,11 +46,11 @@ BEGIN
     );
 
     UMUX : mux_in2
-    port map(
-        sel => ctrl,
-        data1_in=>data_in,
-        data2_in=>data_in_delay,
-        data_out=>data_out
+    PORT MAP(
+        sel       => ctrl, 
+        data1_in  => data_in, 
+        data2_in  => data_in_delay, 
+        data_out  => data_out
     );
 
 END Behavioral;

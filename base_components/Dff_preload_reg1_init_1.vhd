@@ -15,24 +15,24 @@ ARCHITECTURE Behavioral OF Dff_preload_reg1_init_1 IS
 
     COMPONENT DFFSSRX1_LVT IS
         PORT (
-            D   : IN STD_LOGIC;
-            CLK  : IN STD_LOGIC;
+            D     : IN STD_LOGIC;
+            CLK   : IN STD_LOGIC;
             SETB  : IN STD_LOGIC;
-            RSTB: IN STD_LOGIC;
-            Q   : OUT STD_LOGIC;
-            QN  : OUT STD_LOGIC
+            RSTB  : IN STD_LOGIC;
+            Q     : OUT STD_LOGIC;
+            QN    : OUT STD_LOGIC
         );
     END COMPONENT;
 
 BEGIN
     UDFFR : DFFSSRX1_LVT
     PORT MAP(
-        D   => D, 
-        CLK  => clk, 
-        SETB => preload,
-        RSTB => '1',
-        Q   => Q, 
-        QN  => QN
+        D     => D, 
+        CLK   => clk, 
+        SETB  => preload, 
+        RSTB  => '1', 
+        Q     => Q, 
+        QN    => QN
     );
 
 END Behavioral;

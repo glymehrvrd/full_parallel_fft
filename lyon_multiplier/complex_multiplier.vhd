@@ -7,17 +7,17 @@ ENTITY complex_multiplier IS
         ctrl_start : INTEGER := 0
     );
     PORT (
-        clk             : IN std_logic;
-        rst             : IN std_logic;
-        ce              : IN std_logic;
-        bypass          : in STD_LOGIC;
-        ctrl_delay      : IN std_logic_vector(15 DOWNTO 0);
-        data_re_in      : IN std_logic;
-        data_im_in      : IN std_logic;
-        re_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        im_multiplicator: IN std_logic_vector(15 DOWNTO 0);
-        data_re_out  : OUT STD_LOGIC;
-        data_im_out  : OUT STD_LOGIC
+        clk               : IN std_logic;
+        rst               : IN std_logic;
+        ce                : IN std_logic;
+        bypass            : IN STD_LOGIC;
+        ctrl_delay        : IN std_logic_vector(15 DOWNTO 0);
+        data_re_in        : IN std_logic;
+        data_im_in        : IN std_logic;
+        re_multiplicator  : IN std_logic_vector(15 DOWNTO 0);
+        im_multiplicator  : IN std_logic_vector(15 DOWNTO 0);
+        data_re_out       : OUT STD_LOGIC;
+        data_im_out       : OUT STD_LOGIC
     );
 END complex_multiplier;
 
@@ -25,17 +25,17 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
 
     COMPONENT lyon_multiplier IS
         GENERIC (
-            ctrl_start      : INTEGER
+            ctrl_start        : INTEGER
         );
         PORT (
-            clk          : IN std_logic;
-            rst          : IN std_logic;
-            ce           : IN std_logic;
-            bypass       : in STD_LOGIC;
-            ctrl_delay   : IN std_logic_vector(15 DOWNTO 0);
-            data_in      : IN std_logic;
-            multiplicator: IN std_logic_vector(15 DOWNTO 0);
-            product_out  : OUT STD_LOGIC
+            clk            : IN std_logic;
+            rst            : IN std_logic;
+            ce             : IN std_logic;
+            bypass         : IN STD_LOGIC;
+            ctrl_delay     : IN std_logic_vector(15 DOWNTO 0);
+            data_in        : IN std_logic;
+            multiplicator  : IN std_logic_vector(15 DOWNTO 0);
+            product_out    : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -85,8 +85,8 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
     SIGNAL c : std_logic_vector(1 DOWNTO 0);
     SIGNAL c_buff : std_logic_vector(1 DOWNTO 0);
 
-    signal product_re_out: std_logic;
-    signal product_im_out: std_logic;
+    SIGNAL product_re_out : std_logic;
+    SIGNAL product_im_out : std_logic;
 
 BEGIN
     --- (a+b*i)*(c+d*i) = (a*c - b*d) + (b*c + a*d)*i = x + y*i
@@ -102,10 +102,10 @@ BEGIN
         clk            => clk, 
         rst            => rst, 
         ce             => ce, 
-        bypass         => bypass,
+        bypass         => bypass, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
-        multiplicator  => re_multiplicator,
+        multiplicator  => re_multiplicator, 
         product_out    => ac
     );
 
@@ -118,10 +118,10 @@ BEGIN
         clk            => clk, 
         rst            => rst, 
         ce             => ce, 
-        bypass         => bypass,
+        bypass         => bypass, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
-        multiplicator  => im_multiplicator,
+        multiplicator  => im_multiplicator, 
         product_out    => bd
     );
 
@@ -131,14 +131,14 @@ BEGIN
         ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
-        clk          => clk, 
-        rst          => rst, 
-        ce           => ce, 
-        bypass       => bypass,
-        ctrl_delay   => ctrl_delay, 
-        data_in      => data_im_in, 
+        clk            => clk, 
+        rst            => rst, 
+        ce             => ce, 
+        bypass         => bypass, 
+        ctrl_delay     => ctrl_delay, 
+        data_in        => data_im_in, 
         multiplicator  => re_multiplicator, 
-        product_out  => bc
+        product_out    => bc
     );
 
     --- calculate a*d
@@ -147,18 +147,18 @@ BEGIN
         ctrl_start     => (ctrl_start + 1) MOD 16
     )
     PORT MAP(
-        clk          => clk, 
-        rst          => rst, 
-        ce           => ce, 
-        bypass       => bypass,
-        ctrl_delay   => ctrl_delay, 
-        data_in      => data_re_in, 
+        clk            => clk, 
+        rst            => rst, 
+        ce             => ce, 
+        bypass         => bypass, 
+        ctrl_delay     => ctrl_delay, 
+        data_in        => data_re_in, 
         multiplicator  => im_multiplicator, 
-        product_out  => ad
+        product_out    => ad
     );
 
     --- x=ac-bd
-    not_bd<=not bd;
+    not_bd <= NOT bd;
     C_BUFF_ACBD : Dff_preload_reg1_init_1
     PORT MAP(
         D        => c(0), 
@@ -195,20 +195,20 @@ BEGIN
     );
 
     --- bypass selector
-    UMUX_RE: mux_in2
-    port map(
-        sel=>bypass,
-        data1_in=>product_re_out,
-        data2_in=>ac,
-        data_out=>data_re_out
+    UMUX_RE : mux_in2
+    PORT MAP(
+        sel       => bypass, 
+        data1_in  => product_re_out, 
+        data2_in  => ac, 
+        data_out  => data_re_out
     );
 
-    UMUX_IM: mux_in2
-    port map(
-        sel=>bypass,
-        data1_in=>product_im_out,
-        data2_in=>bd,
-        data_out=>data_im_out
+    UMUX_IM : mux_in2
+    PORT MAP(
+        sel       => bypass, 
+        data1_in  => product_im_out, 
+        data2_in  => bd, 
+        data_out  => data_im_out
     );
 
 END Behavioral;

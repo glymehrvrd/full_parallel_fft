@@ -15,8 +15,8 @@ ARCHITECTURE Behavioral OF adder_bit1 IS
 
     COMPONENT FADDX1_LVT IS
         PORT (
-            A0   : IN STD_LOGIC;
-            B0   : IN STD_LOGIC;
+            A0  : IN STD_LOGIC;
+            B0  : IN STD_LOGIC;
             CI  : IN STD_LOGIC;
             S   : OUT STD_LOGIC;
             CO  : OUT STD_LOGIC
@@ -26,8 +26,8 @@ ARCHITECTURE Behavioral OF adder_bit1 IS
 BEGIN
     UADD : FADDX1_LVT
     PORT MAP(
-        A0   => data1_in, 
-        B0   => data2_in, 
+        A0  => data1_in, 
+        B0  => data2_in, 
         CI  => c_in, 
         S   => sum_out, 
         CO  => c_out

@@ -69,3 +69,4 @@ complex complexmul(complex d1, complex d2)
 	}
 	return result;
 }
+

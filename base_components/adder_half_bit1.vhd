@@ -14,9 +14,9 @@ ARCHITECTURE Behavioral OF adder_half_bit1 IS
 
     COMPONENT HADDX1_LVT IS
         PORT (
-            A0   : IN STD_LOGIC;
-            B0   : IN STD_LOGIC;
-            S0   : OUT STD_LOGIC;
+            A0  : IN STD_LOGIC;
+            B0  : IN STD_LOGIC;
+            S0  : OUT STD_LOGIC;
             C1  : OUT STD_LOGIC
         );
     END COMPONENT;
@@ -24,9 +24,9 @@ ARCHITECTURE Behavioral OF adder_half_bit1 IS
 BEGIN
     UADD : HADDX1_LVT
     PORT MAP(
-        A0   => data1_in, 
-        B0   => data2_in, 
-        S0   => sum_out, 
+        A0  => data1_in, 
+        B0  => data2_in, 
+        S0  => sum_out, 
         C1  => c_out
     );
 END Behavioral;

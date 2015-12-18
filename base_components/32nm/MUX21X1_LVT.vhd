@@ -3,9 +3,9 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY MUX21X1_LVT IS
     PORT (
-        A1   : IN STD_LOGIC;
-        A2   : IN std_logic;
-        S  : IN STD_LOGIC;
+        A1  : IN STD_LOGIC;
+        A2  : IN std_logic;
+        S   : IN STD_LOGIC;
         Y   : OUT STD_LOGIC
     );
 END MUX21X1_LVT;

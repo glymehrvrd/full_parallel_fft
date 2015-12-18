@@ -3,8 +3,8 @@ USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY FADDX1_LVT IS
     PORT (
-        A0   : IN STD_LOGIC;
-        B0   : IN STD_LOGIC;
+        A0  : IN STD_LOGIC;
+        B0  : IN STD_LOGIC;
         CI  : IN STD_LOGIC;
         S   : OUT STD_LOGIC;
         CO  : OUT STD_LOGIC
