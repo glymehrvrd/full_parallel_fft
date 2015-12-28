@@ -1,37 +1,39 @@
 {
+    "dff_1_preload_1": {
+        "gate": 2.8
+    },
+    "dff_1": {
+        "gate": 2.64
+    },
+    "mux": {
+        "gate": 2
+    },
+    "HA": {
+        "gate": 1.3
+    },
+    "FA": {
+        "gate": 1.89
+    },
+    "dff_15": {
+        "dff_1": 15
+    },
+    "dff_16": {
+        "dff_1": 16
+    },
     "shifter": {
         "dff_1": 1,
         "mux":1
     },
-    "dff_1_preload_1": {
-        "dff": 1,
-        "gate": 0
+    "multiplier_mul1":{
+        "dff_15":2,
+        "shifter":2
     },
-    "dff_1": {
-        "dff": 1,
-        "gate": 0
-    },
-    "mux": {
-        "gate": 3
-    },
-    "HA": {
-        "gate": 3
-    },
-    "FA": {
-        "gate": 5
-    },
-    "dff_16": {
-        "dff": 15
-    },
-    "complex_multiplier": {
-        "gate": 1,
-        "dff_1_preload_1": 3,
-        "FA": 3,
-        "mul": 3
-    },
-    "mul":{
-        "dff_1":15,
-        "partial_product":15
+    "multiplier_mulminusj":{
+        "HA":1,
+        "dff_1_preload_1":1,
+        "gate":2,
+        "dff_15":2,
+        "shifter":2
     },
     "partial_product": {
         "gate": 2,
@@ -39,39 +41,72 @@
         "mux": 1,
         "FA": 1
     },
+    "mul":{
+        "dff_15":1,
+        "gate":1,
+        "partial_product":15
+    },
+    "complex_multiplier": {
+        "gate": 1,
+        "dff_1_preload_1": 2,
+        "FA": 2,
+        "mul": 4
+    },
     "fft2":{
         "FA":4,
         "dff_1_preload_1":4
     },
+    "fft3":{
+        "FA":14,
+        "HA":1,
+        "dff_1_preload_1":16,
+        "gate":4,
+        "mul":2
+    },
     "fft4":{
-        "FA":16,
-        "dff_1_preload_1":16
+        "fft2":4,
+        "gate":1,
+        "dff_1_preload_1":1,
+        "HA":1
+    },
+    "fft5":{
+        "FA":36,
+        "dff_1_preload_1":12,
+        "gate":12,
+        "multiplier_mul1":1,
+        "mul":8
     },
     "fft8":{
         "fft4":2,
         "fft2":4,
         "complex_multiplier":3,
-        "dff_16":10,
-        "shifter":10
+        "multiplier_mul1":5
     },
     "fft32":{
         "fft4":8,
         "fft8":4,
         "complex_multiplier":21,
-        "dff_16":22,
-        "shifter":22
+        "multiplier_mul1":11
     },
     "fft64":{
         "fft8":16,
         "complex_multiplier":49,
-        "dff_16":30,
-        "shifter":30
+        "multiplier_mul1":15
+    },
+    "fft1024":{
+        "fft32":64,
+        "complex_multiplier":961,
+        "multiplier_mul1":63
     },
     "fft2048":{
         "fft32":64,
         "fft64":32,
         "complex_multiplier":1953,
-        "dff_16":190,
-        "shifter":190
+        "multiplier_mul1":95
+    },
+    "total":{
+        "fft2048":1,
+        "fft5":256,
+        "fft3":512
     }
 }

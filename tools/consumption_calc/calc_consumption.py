@@ -14,17 +14,13 @@ def memo(func):
 @memo
 def calc(item,data):
     total_gates=0
-    total_dff=0
     for k,v in data[item].iteritems():
         if k=='gate':
             total_gates+=v
-        elif k=='dff':
-            total_dff+=v
         else:
-            g,d=calc(k, data)
+            g=calc(k, data)
             total_gates+=g*v
-            total_dff+=d*v
-    print '%s: %d,%d'%(item,total_gates,total_dff)
-    return total_gates,total_dff
+    print '%s: %d'%(item,total_gates)
+    return total_gates
 
-print calc('fft2048', data)
+calc('total', data)
