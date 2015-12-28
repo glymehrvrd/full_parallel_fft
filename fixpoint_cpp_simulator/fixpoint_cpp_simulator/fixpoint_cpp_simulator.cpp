@@ -30,6 +30,57 @@ void read_din(complex din[])
 	f.close();
 }
 
+void fftcore(double pdfftdin[], int isize, int idirec)
+{
+	complex *din = new complex[isize];
+	complex *dout = new complex[isize];
+	initparam();
+
+	for (size_t i = 0; i < isize; i++)
+	{
+		din[i] = complex{ round(pdfftdin[i * 2] * 1024),
+			round(pdfftdin[i * 2 + 1] * 1024) };
+	}
+	switch (isize)
+	{
+		case 64:
+			fft64(din, dout);
+			break;
+		case 128:
+			fft128(din, dout);
+			break;
+		case 256:
+			fft256(din, dout);
+			break;
+		case 512:
+			fft512(din, dout);
+			break;
+		case 1024:
+			fft1024(din, dout);
+			break;
+		case 2048:
+			fft2048(din, dout);
+			break;
+		case 1280:
+			fft1280(din, dout);
+			break;
+		case 1536:
+			fft1536(din, dout);
+			break;
+		default:
+			break;
+	}
+	for (size_t i = 0; i < isize; i++)
+	{
+		pdfftdin[i * 2] = dout[i].real / 1024.0;
+		pdfftdin[i * 2 + 1] = dout[i].imag / 1024.0;
+	}
+
+	releaseparam();
+	delete[] din;
+	delete[] dout;
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	initparam();
