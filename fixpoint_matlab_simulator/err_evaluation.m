@@ -1,3 +1,5 @@
+% evaluate error for each class output
+
 d_num=10;
 % input data, each row an input port, each column a data
 d=(rand(2048,d_num)-0.5)*2*2^10+(rand(2048,d_num)-0.5)*1j*2*2^10;

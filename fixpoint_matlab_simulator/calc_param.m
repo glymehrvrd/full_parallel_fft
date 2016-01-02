@@ -1,3 +1,4 @@
+% calculate twiddle factor
 function [index,w]=calc_param(m,n)
     r=0:m*n-1;
     index=reshape(r,[m,n]);

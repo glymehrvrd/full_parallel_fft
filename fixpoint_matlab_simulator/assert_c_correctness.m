@@ -1,3 +1,4 @@
+% read data outputed by fixpoint_cpp_simulator
 f=fopen('d:\\dout.txt','r');
 d_cout=[];
 i=1;

@@ -3,7 +3,7 @@ function [result] = complexmul(data1,data2,bypass)
         bypass=0;
     end;
 
-    if bypass==1
+    if bypass
         result=data1;
     else
         a=real(data1);

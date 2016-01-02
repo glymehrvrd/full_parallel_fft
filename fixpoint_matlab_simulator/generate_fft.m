@@ -1,37 +1,53 @@
 function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
     w=int16(w.*2^14);
-    function [result,eachclass]=fftn(data,bypass)
 
+    % bypass: bypass parameter for each class
+    % ordertest: set to test the order of input and output fft data
+    function [result]=fftn(data,bypass,ordertest)
+        
         if nargin==1
             bypass=zeros(1,log2(m*n));
+            ordertest=false;
+        elseif nargin==2
+            ordertest=false;
         end;
-
-        left_outputs=int16(zeros(n,m));
-        for i=1:n
-            [left_outputs(i,:),clz]=lfft(data(i:n:end),bypass(1:log2(m)));
-            if i==1
-                classleft=clz;
+        
+        % if ordertest and no bypass for entire fft,
+        % output fft order is the same as the input order
+        if ordertest&&~bypass(1)
+            result=data;
+        else
+            % do left-side fft
+            left_outputs=int16(zeros(n,m));
+            for i=1:n
+                left_outputs(i,:)=lfft(data(i:n:end),bypass(1:log2(m)),ordertest);
+            end;
+            left_outputs=left_outputs.';
+            
+            % do twiddle factor adjustment,
+            % if left-size fft is partially bypassed, the twiddle factor is recalculated
+            % if left-side fft is totally bypassed, multiplication is bypassed
+            % if ordertest is set, multiplication is also bypassed
+            right_inputs=complexmul(left_outputs,w_bypassed(w,bypass(1:log2(m))),bypass(log2(m))||ordertest);
+            
+            % router for right-side fft
+            right_inputs=right_inputs(index+1);
+            
+            % do right-side fft
+            right_outputs=int16(zeros(m,n));
+            for j=1:m
+                right_outputs(j,:)=rfft(right_inputs(j,:),bypass(log2(m)+1:end),ordertest);
+            end;
+            
+            % if left-side fft is bypassed partially, for ordertest,
+            % output fft index need to be reordered
+            if ordertest&&~bypass(log2(m))
+                result=testorder_reorder(right_outputs,m,n,bypass);
+                result=result(:);
             else
-                classleft=combinecell(classleft,clz);
+                result=right_outputs(:);
             end;
         end;
-        left_outputs=left_outputs.';
-        
-        right_inputs=complexmul(left_outputs,w,bypass(log2(m)));
-        
-        right_inputs=right_inputs(index+1);
-        
-        right_outputs=int16(zeros(m,n));
-        for j=1:m
-            [right_outputs(j,:),clz]=rfft(right_inputs(j,:),bypass(log2(m)+1:end));
-            if j==1
-                classright=clz;
-            else
-                classright=combinecell(classright,clz);
-            end;
-        end;
-        eachclass=[classleft classright];
-        result=right_outputs(:);
     end
-    fft_func=@fftn;
+fft_func=@fftn;
 end
