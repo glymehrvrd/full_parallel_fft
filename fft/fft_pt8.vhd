@@ -127,11 +127,19 @@ COMPONENT Dff_regN_Nout IS
     );
 END COMPONENT;
 
+--- multiplicator declaration
+type ArrOfStdlogic is array (0 to 7) of STD_LOGIC_VECTOR(15 downto 0);
+signal re_multiplicator, im_multiplicator : ArrOfStdlogic;
+
 signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR(7 DOWNTO 0);
 signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
-
 begin
+    --- multiplicator definition
+    re_multiplicator(5) <= "0010110101000001"; ---  0.707092285156
+    im_multiplicator(5) <= "1101001010111111"; --- j-0.707092285156
+    re_multiplicator(7) <= "1101001010111111"; ---  -0.707092285156
+    im_multiplicator(7) <= "1101001010111111"; --- j-0.707092285156
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
@@ -377,8 +385,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
-            re_multiplicator => "0010110101000001", --- 0.707092285156 + j-0.707092285156
-            im_multiplicator => "1101001010111111",
+            re_multiplicator => re_multiplicator(5), ---  0.707092285156
+            im_multiplicator => im_multiplicator(5), --- j-0.707092285156
             data_re_out => mul_re_out(5),
             data_im_out => mul_im_out(5)
         );
@@ -413,8 +421,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
-            re_multiplicator => "1101001010111111", --- -0.707092285156 + j-0.707092285156
-            im_multiplicator => "1101001010111111",
+            re_multiplicator => re_multiplicator(7), ---  -0.707092285156
+            im_multiplicator => im_multiplicator(7), --- j-0.707092285156
             data_re_out => mul_re_out(7),
             data_im_out => mul_im_out(7)
         );

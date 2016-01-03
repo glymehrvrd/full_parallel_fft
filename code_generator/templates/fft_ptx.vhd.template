@@ -42,7 +42,7 @@ component {{ lhs_component_name }} is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        {% if lhs_point==2%}
+        {% if lhs_point==2 %}
         bypass         : IN STD_LOGIC;
         {% else %}
         bypass         : IN STD_LOGIC_VECTOR({{lhs_point|log2-1}} DOWNTO 0);
@@ -145,14 +145,26 @@ COMPONENT Dff_regN_Nout IS
     );
 END COMPONENT;
 
+--- multiplicator declaration
+type ArrOfStdlogic is array (0 to {{point-1}}) of STD_LOGIC_VECTOR(15 downto 0);
+signal re_multiplicator, im_multiplicator : ArrOfStdlogic;
+
 signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
 signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR({{ point-1 }} DOWNTO 0);
 
 {% if istop %}
 SIGNAL ctrl_delay : STD_LOGIC_VECTOR(15 DOWNTO 0);
-{% endif %}
 
+{% endif %}
 begin
+    --- multiplicator definition
+    {% for i in range(point) %} 
+    {%- if w[(i/rhs_point)|int][i%rhs_point]!=(2**14,0) and w[(i/rhs_point)|int][i%rhs_point]!=(0,-(2**14)) %}
+    re_multiplicator({{i}}) <= "{{w[(i/rhs_point)|int][i%rhs_point][0]|to_bin}}"; ---  {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}}
+    im_multiplicator({{i}}) <= "{{w[(i/rhs_point)|int][i%rhs_point][1]|to_bin}}"; --- j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
+    {% endif %}
+    {% endfor %}
+
     {% if istop %}
     --- create ctrl_delay signal IN top module
     ctrl_delay(0) <= ctrl;
@@ -168,7 +180,6 @@ begin
     );
 
     {% endif %}
-
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
     tmp_mul_re_out <= mul_re_out;
@@ -248,7 +259,7 @@ begin
 
     --- multipliers
     {% for i in range(point) %} 
-   {% if w[(i/rhs_point)|int][i%rhs_point]==(2**14,0) %}
+    {% if w[(i/rhs_point)|int][i%rhs_point]==(2**14,0) %}
     UMUL_{{i}} : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+{{delay['shifter']}}) mod 16
@@ -295,8 +306,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out({{i}}),
             data_im_in => first_stage_im_out({{i}}),
-            re_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][0]|to_bin}}", --- {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}} + j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
-            im_multiplicator => "{{w[(i/rhs_point)|int][i%rhs_point][1]|to_bin}}",
+            re_multiplicator => re_multiplicator({{i}}), ---  {{w[(i/rhs_point)|int][i%rhs_point][0]/2.0**14}}
+            im_multiplicator => im_multiplicator({{i}}), --- j{{w[(i/rhs_point)|int][i%rhs_point][1]/2.0**14}}
             data_re_out => mul_re_out({{i}}),
             data_im_out => mul_im_out({{i}})
         );
