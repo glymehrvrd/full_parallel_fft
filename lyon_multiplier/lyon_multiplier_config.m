@@ -18,8 +18,11 @@ function lyon_multiplier_config(this_block)
   this_block.tagAsCombinational;
 
   this_block.addSimulinkInport('rst');
+  this_block.addSimulinkInport('bypass');
+  this_block.addSimulinkInport('mul1');
   this_block.addSimulinkInport('ctrl_delay');
   this_block.addSimulinkInport('data_in');
+  this_block.addSimulinkInport('multiplicator');
 
   this_block.addSimulinkOutport('product_out');
 
@@ -37,6 +40,18 @@ function lyon_multiplier_config(this_block)
 
     this_block.port('rst').useHDLVector(false);
 
+    if (this_block.port('bypass').width ~= 1);
+      this_block.setError('Input data type for port "bypass" must have width=1.');
+    end
+
+    this_block.port('bypass').useHDLVector(false);
+
+    if (this_block.port('mul1').width ~= 1);
+      this_block.setError('Input data type for port "mul1" must have width=1.');
+    end
+
+    this_block.port('mul1').useHDLVector(false);
+    
     if (this_block.port('ctrl_delay').width ~= 16);
       this_block.setError('Input data type for port "ctrl_delay" must have width=16.');
     end
@@ -47,6 +62,9 @@ function lyon_multiplier_config(this_block)
 
     this_block.port('data_in').useHDLVector(false);
 
+    if (this_block.port('multiplicator').width ~= 16);
+      this_block.setError('Input data type for port "multiplicator" must have width=16.');
+    end
   end  % if(inputTypesKnown)
   % -----------------------------
 
@@ -64,7 +82,6 @@ function lyon_multiplier_config(this_block)
   %      on input types, make the settings in the "inputTypesKnown" code block.
   %      The addGeneric function takes  3 parameters, generic name, type and constant value.
   %      Supported types are boolean, real, integer and string.
-  this_block.addGeneric('multiplicator','INTEGER','-11586');
   this_block.addGeneric('ctrl_start','INTEGER','0');
 
   % Add addtional source files as needed.

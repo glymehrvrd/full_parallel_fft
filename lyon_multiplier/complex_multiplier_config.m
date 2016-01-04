@@ -19,6 +19,7 @@ function complex_multiplier_config(this_block)
 
   this_block.addSimulinkInport('rst');
   this_block.addSimulinkInport('bypass');
+  this_block.addSimulinkInport('mul1');
   this_block.addSimulinkInport('ctrl_delay');
   this_block.addSimulinkInport('data_re_in');
   this_block.addSimulinkInport('data_im_in');
@@ -50,6 +51,12 @@ function complex_multiplier_config(this_block)
     end
 
     this_block.port('bypass').useHDLVector(false);
+
+    if (this_block.port('mul1').width ~= 1);
+      this_block.setError('Input data type for port "mul1" must have width=1.');
+    end
+
+    this_block.port('mul1').useHDLVector(false);
 
     if (this_block.port('ctrl_delay').width ~= 16);
       this_block.setError('Input data type for port "ctrl_delay" must have width=16.');

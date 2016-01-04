@@ -11,6 +11,7 @@ ENTITY lyon_multiplier IS
         rst            : IN std_logic;
         ce             : IN std_logic;
         bypass         : IN std_logic;
+        mul1           : IN std_logic;
         ctrl_delay     : IN std_logic_vector(15 DOWNTO 0);
         data_in        : IN std_logic;
         multiplicator  : IN std_logic_vector(15 DOWNTO 0);
@@ -81,11 +82,23 @@ ARCHITECTURE Behavioral OF lyon_multiplier IS
         );
     END COMPONENT;
 
+    COMPONENT shifter IS
+        PORT (
+            clk       : IN STD_LOGIC;
+            rst       : IN STD_LOGIC;
+            ce        : IN STD_LOGIC;
+            ctrl      : IN STD_LOGIC;
+            data_in   : IN std_logic;
+            data_out  : OUT std_logic
+        );
+    END COMPONENT;
+    
     SIGNAL data_in_delay : std_logic_vector(15 DOWNTO 0);
     SIGNAL ndata_in_delay : std_logic_vector(15 DOWNTO 1);
 
     SIGNAL pp : std_logic_vector(15 DOWNTO 0);
 
+    SIGNAL output_sel, ctrl_shifter : STD_LOGIC;
     SIGNAL data_output : STD_LOGIC;
 BEGIN
     data_in_delay(0) <= data_in;
@@ -136,20 +149,25 @@ BEGIN
         pp_out      => pp(15)
     );
 
+    output_sel <= bypass and mul1;
     UMUX : mux_in2
     PORT MAP(
-        sel       => bypass, 
+        sel       => output_sel, 
         data1_in  => pp(15), 
         data2_in  => data_in_delay(15), 
         data_out  => data_output
     );
 
     --- output
-    UDFF_OUT : Dff_reg1
+    ctrl_shifter <= ctrl_delay((15 + ctrl_start) MOD 16) and (not mul1) and bypass;
+    USHIFTER_OUT : shifter
     PORT MAP(
-        D    => data_output, 
-        clk  => clk, 
-        Q    => product_out
+        clk       => clk, 
+        rst       => rst, 
+        ce        => ce, 
+        ctrl      => ctrl_shifter, 
+        data_in   => data_output, 
+        data_out  => product_out
     );
 
 END Behavioral;

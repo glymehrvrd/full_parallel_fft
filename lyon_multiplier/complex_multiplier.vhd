@@ -11,6 +11,7 @@ ENTITY complex_multiplier IS
         rst               : IN std_logic;
         ce                : IN std_logic;
         bypass            : IN STD_LOGIC;
+        mul1              : IN STD_LOGIC;
         ctrl_delay        : IN std_logic_vector(15 DOWNTO 0);
         data_re_in        : IN std_logic;
         data_im_in        : IN std_logic;
@@ -32,6 +33,7 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
             rst            : IN std_logic;
             ce             : IN std_logic;
             bypass         : IN STD_LOGIC;
+            mul1           : IN STD_LOGIC;
             ctrl_delay     : IN std_logic_vector(15 DOWNTO 0);
             data_in        : IN std_logic;
             multiplicator  : IN std_logic_vector(15 DOWNTO 0);
@@ -79,6 +81,7 @@ ARCHITECTURE Behavioral OF complex_multiplier IS
         );
     END COMPONENT;
 
+    SIGNAL output_sel : STD_LOGIC;
     SIGNAL ac, bd, bc, ad : std_logic;
     SIGNAL not_bd : std_logic;
 
@@ -103,6 +106,7 @@ BEGIN
         rst            => rst, 
         ce             => ce, 
         bypass         => bypass, 
+        mul1           => mul1, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
         multiplicator  => re_multiplicator, 
@@ -119,6 +123,7 @@ BEGIN
         rst            => rst, 
         ce             => ce, 
         bypass         => bypass, 
+        mul1           => mul1, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
         multiplicator  => im_multiplicator, 
@@ -135,6 +140,7 @@ BEGIN
         rst            => rst, 
         ce             => ce, 
         bypass         => bypass, 
+        mul1           => mul1, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_im_in, 
         multiplicator  => re_multiplicator, 
@@ -151,6 +157,7 @@ BEGIN
         rst            => rst, 
         ce             => ce, 
         bypass         => bypass, 
+        mul1           => mul1, 
         ctrl_delay     => ctrl_delay, 
         data_in        => data_re_in, 
         multiplicator  => im_multiplicator, 
@@ -195,9 +202,10 @@ BEGIN
     );
 
     --- bypass selector
+    output_sel <= bypass and mul1;
     UMUX_RE : mux_in2
     PORT MAP(
-        sel       => bypass, 
+        sel       => output_sel, 
         data1_in  => product_re_out, 
         data2_in  => ac, 
         data_out  => data_re_out
@@ -205,7 +213,7 @@ BEGIN
 
     UMUX_IM : mux_in2
     PORT MAP(
-        sel       => bypass, 
+        sel       => output_sel, 
         data1_in  => product_im_out, 
         data2_in  => bd, 
         data_out  => data_im_out
