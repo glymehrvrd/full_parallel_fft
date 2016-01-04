@@ -12,7 +12,7 @@ function [result] = complexmul(data1,data2,bypass)
         d=imag(data2);
         
         if any(any((bitget(a,16,'int16')~=bitget(a,15,'int16')) | (bitget(b,16,'int16')~=bitget(b,15,'int16'))))
-            throw(MException('complexmul','overflow'));
+%             warning('complexmul overflows');
         end;
         mul1=int32(a).*int32(c);
         mul2=int32(b).*int32(d);

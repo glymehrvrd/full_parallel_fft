@@ -1,4 +1,5 @@
 function [dout] = reorder(data,pt,order)
+% PFA algorithm reorder for 1536pt and 1280pt
 if pt==1280
     crl=zeros(256,5);
     goods=zeros(256,5);

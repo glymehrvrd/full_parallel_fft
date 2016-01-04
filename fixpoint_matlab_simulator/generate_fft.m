@@ -19,7 +19,7 @@ function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
         else
             % do left-side fft
             left_outputs=int16(zeros(n,m));
-            for i=1:n
+            parfor i=1:n
                 left_outputs(i,:)=lfft(data(i:n:end),bypass(1:log2(m)),ordertest);
             end;
             left_outputs=left_outputs.';
@@ -35,7 +35,7 @@ function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
             
             % do right-side fft
             right_outputs=int16(zeros(m,n));
-            for j=1:m
+            parfor j=1:m
                 right_outputs(j,:)=rfft(right_inputs(j,:),bypass(log2(m)+1:end),ordertest);
             end;
             
