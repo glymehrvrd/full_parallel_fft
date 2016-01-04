@@ -1,7 +1,9 @@
 % get twiddle factor types after each type of bypass
-d_ori=(1:32).';
+num=4;
+
+d_ori=(1:num).';
 d=d_ori;
-for i=2:log2(32)
+for i=2:log2(num)
     d=[d w_bypassed(d_ori,ones(1,i-1))];
 end;
 

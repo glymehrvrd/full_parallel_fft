@@ -66,7 +66,7 @@ component {{ rhs_component_name }} is
         clk            : IN STD_LOGIC;
         rst            : IN STD_LOGIC;
         ce             : IN STD_LOGIC;
-        {% if rhs_point==2%}
+        {% if rhs_point==2 %}
         bypass         : IN STD_LOGIC;
         {% else %}
         bypass         : IN STD_LOGIC_VECTOR({{rhs_point|log2-1}} DOWNTO 0);
@@ -222,7 +222,6 @@ begin
         );
 
     {% endfor %}
-
     --- right-hand-side processors
     {% for i in range(lhs_point) %}
     UR{{rhs_component_name|upper}}_{{i}} : {{ rhs_component_name }}
@@ -258,10 +257,9 @@ begin
         );           
 
     {% endfor %}
-
     --- multipliers
     {% for i in range(point) %}
-    {%- if w[(i/rhs_point)|int][i%rhs_point]==(2**14,0) %}
+    {% if w[(i/rhs_point)|int][i%rhs_point]==(2**14,0) %}
     UMUL_{{i}} : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+{{delay['shifter']}}) mod 16
@@ -315,4 +313,3 @@ begin
 
     {% endfor %}
 end Behavioral;
-
