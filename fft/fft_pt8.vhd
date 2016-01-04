@@ -128,7 +128,7 @@ COMPONENT Dff_regN_Nout IS
 END COMPONENT;
 
 --- multiplicator declaration
-type ArrOfStdlogic is array (0 to 7) of STD_LOGIC_VECTOR(15 downto 0);
+type ArrOfStdlogic is array (0 to 1, 0 to 3) of STD_LOGIC_VECTOR(15 downto 0);
 signal re_multiplicator, im_multiplicator : ArrOfStdlogic;
 
 signal first_stage_re_out, first_stage_im_out: STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -136,10 +136,10 @@ signal mul_re_out, mul_im_out : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
 begin
     --- multiplicator definition
-    re_multiplicator(5) <= "0010110101000001"; ---  0.707092285156
-    im_multiplicator(5) <= "1101001010111111"; --- j-0.707092285156
-    re_multiplicator(7) <= "1101001010111111"; ---  -0.707092285156
-    im_multiplicator(7) <= "1101001010111111"; --- j-0.707092285156
+    re_multiplicator(1,1) <= "0010110101000001"; ---  0.707092285156
+    im_multiplicator(1,1) <= "1101001010111111"; --- j-0.707092285156
+    re_multiplicator(1,3) <= "1101001010111111"; ---  -0.707092285156
+    im_multiplicator(1,3) <= "1101001010111111"; --- j-0.707092285156
 
     tmp_first_stage_re_out <= first_stage_re_out;
     tmp_first_stage_im_out <= first_stage_im_out;
@@ -287,7 +287,6 @@ begin
 
 
     --- multipliers
- 
     UMUL_0 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -304,7 +303,6 @@ begin
             data_im_out => mul_im_out(0)
         );
 
- 
     UMUL_1 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -321,7 +319,6 @@ begin
             data_im_out => mul_im_out(1)
         );
 
- 
     UMUL_2 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -338,7 +335,6 @@ begin
             data_im_out => mul_im_out(2)
         );
 
- 
     UMUL_3 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -355,7 +351,6 @@ begin
             data_im_out => mul_im_out(3)
         );
 
- 
     UMUL_4 : multiplier_mul1
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -372,7 +367,6 @@ begin
             data_im_out => mul_im_out(4)
         );
 
- 
     UMUL_5 : complex_multiplier
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -385,13 +379,12 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(5),
             data_im_in => first_stage_im_out(5),
-            re_multiplicator => re_multiplicator(5), ---  0.707092285156
-            im_multiplicator => im_multiplicator(5), --- j-0.707092285156
+            re_multiplicator => re_multiplicator(1,1), ---  0.707092285156
+            im_multiplicator => im_multiplicator(1,1), --- j-0.707092285156
             data_re_out => mul_re_out(5),
             data_im_out => mul_im_out(5)
         );
 
- 
     UMUL_6 : multiplier_mulminusj
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -408,7 +401,6 @@ begin
             data_im_out => mul_im_out(6)
         );
 
- 
     UMUL_7 : complex_multiplier
     generic map(
             ctrl_start => (ctrl_start+1) mod 16
@@ -421,8 +413,8 @@ begin
             ctrl_delay => ctrl_delay,
             data_re_in => first_stage_re_out(7),
             data_im_in => first_stage_im_out(7),
-            re_multiplicator => re_multiplicator(7), ---  -0.707092285156
-            im_multiplicator => im_multiplicator(7), --- j-0.707092285156
+            re_multiplicator => re_multiplicator(1,3), ---  -0.707092285156
+            im_multiplicator => im_multiplicator(1,3), --- j-0.707092285156
             data_re_out => mul_re_out(7),
             data_im_out => mul_im_out(7)
         );
