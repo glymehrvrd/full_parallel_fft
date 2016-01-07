@@ -1,5 +1,6 @@
 function [fft_func]=generate_fft_float(lfft,m,index,w,rfft,n)
     function [result,eachclass]=fftn(data)
+        left_outputs=zeros(n,m);
         for i=1:n
             [left_outputs(i,:),clz]=lfft(data(i:n:end));
             if i==1
@@ -15,6 +16,7 @@ function [fft_func]=generate_fft_float(lfft,m,index,w,rfft,n)
         right_inputs=right_inputs(index+1);
         
         classright=[];
+        right_outputs=zeros(m,n);
         for j=1:m
             [right_outputs(j,:),clz]=rfft(right_inputs(j,:));
             if j==1

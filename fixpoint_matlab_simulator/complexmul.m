@@ -12,20 +12,17 @@ function [result] = complexmul(data1,data2,bypass)
         d=imag(data2);
         
         if any(any((bitget(a,16,'int16')~=bitget(a,15,'int16')) | (bitget(b,16,'int16')~=bitget(b,15,'int16'))))
-%             warning('complexmul overflows');
+%              warning('complexmul overflows');
         end;
-        mul1=int32(a).*int32(c);
-        mul2=int32(b).*int32(d);
-        mul3=int32(a).*int32(d);
-        mul4=int32(b).*int32(c);
+        mul1=mul(a,c);
+        mul2=mul(b,d);
+        mul3=mul(a,d);
+        mul4=mul(b,c);
 
-        mul1=int16(bitshift(mul1,-15));
-        mul2=int16(bitshift(mul2,-15));
-        mul3=int16(bitshift(mul3,-15));
-        mul4=int16(bitshift(mul4,-15));
-
-        x=bitshift(mul1-mul2,0);
-        y=bitshift(mul3+mul4,0);
+        x=serial_adder(mul1,serial_subtractor(0,mul2));
+        x=typecast(uint16(x),'int16');
+        y=serial_adder(mul3,mul4);
+        y=typecast(uint16(y),'int16');
 
         result=complex(x,y);
 

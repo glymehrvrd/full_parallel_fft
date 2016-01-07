@@ -8,7 +8,7 @@ function [result,eachclass]=fft1536(data)
     [i,w]=calc_param(8,64);
     fft512=generate_fft(fft8,8,i,w,fft64,64);
     
-    [i,w]=calc_param(512,3);
+    [i,~]=calc_param(512,3);
     w=ones(512,3);
     fft1536_pre=generate_fft(fft512,512,i,w,@fft3,3);
 

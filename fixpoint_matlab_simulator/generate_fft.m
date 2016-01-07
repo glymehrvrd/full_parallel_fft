@@ -28,7 +28,11 @@ function [fft_func]=generate_fft(lfft,m,index,w,rfft,n)
             % if left-size fft is partially bypassed, the twiddle factor is recalculated
             % if left-side fft is totally bypassed, multiplication is bypassed
             % if ordertest is set, multiplication is also bypassed
-            right_inputs=complexmul(left_outputs,w_bypassed(w,bypass(1:log2(m))),bypass(log2(m))||ordertest);
+            right_inputs=int16(zeros(m,n));
+            wp=w_bypassed(w,bypass(1:log2(m)));
+            parfor i=1:numel(left_outputs)
+                right_inputs(i)=complexmul(left_outputs(i),wp(i),bypass(log2(m))||ordertest);
+            end;
             
             % router for right-side fft
             right_inputs=right_inputs(index+1);
