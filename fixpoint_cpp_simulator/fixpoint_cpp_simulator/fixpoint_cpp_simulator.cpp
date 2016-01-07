@@ -1,7 +1,6 @@
 // fixpoint_cpp_simulator.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include "utils.h"
 #include <iostream>
 #include <fstream>
@@ -12,11 +11,11 @@ using namespace std;
 
 void print_param(param r)
 {
-	for (size_t i = 0; i < 2 * 4; i++)
+	for (int i = 0; i < 2 * 4; i++)
 	{
 		cout << r.index[i] << endl;
 	}
-	for (size_t i = 0; i < 2 * 4; i++)
+	for (int i = 0; i < 2 * 4; i++)
 	{
 		cout << r.w[i].real << " " << r.w[i].imag << "i" << endl;
 	}
@@ -26,23 +25,129 @@ void print_param(param r)
 void read_din(complex din[])
 {
 	fstream f("data.txt", ios::in);
-	for (size_t i = 0; f >> din[i].real >> din[i].imag; i++);
+	for (int i = 0; f >> din[i].real >> din[i].imag; i++);
 	f.close();
 }
 
 void fftcore(double pdfftdin[], int isize, int idirec)
 {
-	complex *din = new complex[isize];
-	complex *dout = new complex[isize];
+	complex* din = new complex[isize];
+	complex* dout = new complex[isize];
 	initparam();
 
-	for (size_t i = 0; i < isize; i++)
+	for (int i = 0; i < isize; i++)
 	{
-		din[i] = complex{ round(pdfftdin[i * 2] * 1024),
-			round(pdfftdin[i * 2 + 1] * 1024) };
+		din[i] = complex{round(pdfftdin[i * 2] * 512),
+			round(pdfftdin[i * 2 + 1] * 512)};
 	}
 	switch (isize)
 	{
+	case 64:
+		fft64(din, dout);
+		break;
+	case 128:
+		fft128(din, dout);
+		break;
+	case 256:
+		fft256(din, dout);
+		break;
+	case 512:
+		fft512(din, dout);
+		break;
+	case 1024:
+		fft1024(din, dout);
+		break;
+	case 2048:
+		fft2048(din, dout);
+		break;
+	case 1280:
+		fft1280(din, dout);
+		break;
+	case 1536:
+		fft1536(din, dout);
+		break;
+	default:
+		break;
+	}
+	for (int i = 0; i < isize; i++)
+	{
+		switch (isize)
+		{
+		case 64:
+			pdfftdin[i * 2] = dout[i].real * 8;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 8;
+			break;
+		case 128:
+			pdfftdin[i * 2] = dout[i].real * 16;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 16;
+			break;
+		case 256:
+			pdfftdin[i * 2] = dout[i].real * 16;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 16;
+			break;
+		case 512:
+			pdfftdin[i * 2] = dout[i].real * 32;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 32;
+			break;
+		case 1024:
+			pdfftdin[i * 2] = dout[i].real * 64;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
+			break;
+		case 2048:
+			pdfftdin[i * 2] = dout[i].real * 64;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
+			break;
+		case 1280:
+			pdfftdin[i * 2] = dout[i].real * 64;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
+			break;
+		case 1536:
+			pdfftdin[i * 2] = dout[i].real * 64;
+			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
+			break;
+		default:
+			break;
+		}
+		pdfftdin[i * 2] = pdfftdin[i * 2] / 512;
+		pdfftdin[i * 2 + 1] = pdfftdin[i * 2 + 1] / 512;
+	}
+
+	releaseparam();
+	delete[] din;
+	delete[] dout;
+}
+
+int main(int argc, char* argv[])
+{
+	// check input argument
+	if (argc != 5)
+	{
+		return 7;
+	}
+
+	int fftPt = atoi(argv[1]);
+	int groupNum = atoi(argv[2]);
+	char* din_path = argv[3];
+	char* dout_path = argv[4];
+
+	initparam();
+
+	complex din[2048];
+	complex dout[2048] = {0};
+
+	fstream fin(din_path, ios::in);
+	fstream fout(dout_path, ios::out);
+	for (int group = 0; group < groupNum; group++)
+	{
+		printf("do %d group\n", group + 1);
+		// read data
+		for (int i = 0; i < fftPt; i++)
+		{
+			fin >> din[i].real >> din[i].imag;
+		}
+		// do fft
+		switch (fftPt)
+		{
 		case 64:
 			fft64(din, dout);
 			break;
@@ -69,36 +174,49 @@ void fftcore(double pdfftdin[], int isize, int idirec)
 			break;
 		default:
 			break;
+		}
+		// do scale adjustment
+		int scale = 0;
+		for (int i = 0; i < fftPt; i++)
+		{
+			switch (fftPt)
+			{
+			case 64:
+				scale = 8;
+				break;
+			case 128:
+				scale = 16;
+				break;
+			case 256:
+				scale = 16;
+				break;
+			case 512:
+				scale = 32;
+				break;
+			case 1024:
+				scale = 64;
+				break;
+			case 2048:
+				scale = 64;
+				break;
+			case 1280:
+				scale = 64;
+				break;
+			case 1536:
+				scale = 64;
+				break;
+			default:
+				break;
+			}
+		}
+		// write data after fft to file
+		for (int i = 0; i < fftPt; i++)
+		{
+			fout << dout[i].real * scale << " " << dout[i].imag * scale << endl;
+		}
 	}
-	for (size_t i = 0; i < isize; i++)
-	{
-		pdfftdin[i * 2] = dout[i].real / 1024.0;
-		pdfftdin[i * 2 + 1] = dout[i].imag / 1024.0;
-	}
-
-	releaseparam();
-	delete[] din;
-	delete[] dout;
-}
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	initparam();
-
-	complex a[2048];
-	complex b[2048] = {0};
-	read_din(a);
-
-	fft1536(a, b);
-
-	fstream f("d:\\dout.txt", ios::out);
-	for (size_t i = 0; i < 1536; i++)
-	{
-		f << b[i].real << " " << b[i].imag << endl;
-	}
-	f.close();
-
-	system("pause");
+	fin.close();
+	fout.close();
 
 	releaseparam();
 	return 0;

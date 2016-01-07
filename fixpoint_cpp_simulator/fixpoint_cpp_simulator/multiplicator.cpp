@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "multiplicator.h"
 
 int duplbits(int a, int n = 16)
@@ -29,7 +28,7 @@ short mul(short a, short b)
 {
 	int pp = a & duplbits(b & 0x01, 16);
 	pp = pp | ((pp << 1) & 0x10000);
-	for (size_t i = 1; i < 15; i++)
+	for (int i = 1; i < 15; i++)
 	{
 		pp = serial_adder(pp, (a & duplbits(b >> i & 0x01)) << 1, 0, 17);
 		pp >>= 1;

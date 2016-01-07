@@ -1,4 +1,5 @@
 #pragma once
+
 #include "utils.h"
 
 int serial_adder(int a, int b, int c = 0, int length = 16);

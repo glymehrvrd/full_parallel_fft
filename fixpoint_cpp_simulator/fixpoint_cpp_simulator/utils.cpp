@@ -1,5 +1,4 @@
-﻿#include "stdafx.h"
-#include "utils.h"
+﻿#include "utils.h"
 #include <cmath>
 
 param calc_param(int m, int n)
