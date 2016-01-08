@@ -24,7 +24,10 @@
     <ClInclude Include="fft_func.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="multiplicator.h">
+    <ClInclude Include="fixpoint_cpp_simulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multiplier.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,10 +38,10 @@
     <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="multiplicator.cpp">
+    <ClCompile Include="fft_func.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fft_func.cpp">
+    <ClCompile Include="multiplier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

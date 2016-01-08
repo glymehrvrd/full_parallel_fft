@@ -4,8 +4,8 @@
 
 struct complex
 {
-	short real;
-	short imag;
+	int real;
+	int imag;
 };
 
 struct param

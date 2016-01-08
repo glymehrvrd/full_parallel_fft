@@ -5,9 +5,12 @@
 #include <iostream>
 #include <fstream>
 #include "stdlib.h"
-#include "multiplicator.h"
 #include "fft_func.h"
+#include "fixpoint_cpp_simulator.h"
+
 using namespace std;
+
+int WIDTH;
 
 void print_param(param r)
 {
@@ -37,8 +40,8 @@ void fftcore(double pdfftdin[], int isize, int idirec)
 
 	for (int i = 0; i < isize; i++)
 	{
-		din[i] = complex{round(pdfftdin[i * 2] * 512),
-			round(pdfftdin[i * 2 + 1] * 512)};
+		din[i] = complex{(int)round(pdfftdin[i * 2] * 512),
+			(int)round(pdfftdin[i * 2 + 1] * 512)};
 	}
 	switch (isize)
 	{
@@ -117,13 +120,30 @@ void fftcore(double pdfftdin[], int isize, int idirec)
 	delete[] dout;
 }
 
+int convToSigned(int data, int width)
+{
+	if (data >> (width - 1))
+	{
+		return data - (1 << width);
+	}
+	else
+	{
+		return data;
+	}
+}
+
 int main(int argc, char* argv[])
 {
+	//	cout << (short)mul(64767, 752) << endl;
+	//	system("pause");
+	//	return 0;
 	// check input argument
-	if (argc != 5)
-	{
+	if (argc < 5)
 		return 7;
-	}
+	else if (argc == 5)
+		WIDTH = 16;
+	else
+		WIDTH = atoi(argv[5]);
 
 	int fftPt = atoi(argv[1]);
 	int groupNum = atoi(argv[2]);
@@ -209,10 +229,11 @@ int main(int argc, char* argv[])
 				break;
 			}
 		}
+//		scale = 1;
 		// write data after fft to file
 		for (int i = 0; i < fftPt; i++)
 		{
-			fout << dout[i].real * scale << " " << dout[i].imag * scale << endl;
+			fout << convToSigned(dout[i].real, WIDTH) * scale << " " << convToSigned(dout[i].imag, WIDTH) * scale << endl;
 		}
 	}
 	fin.close();
@@ -221,4 +242,3 @@ int main(int argc, char* argv[])
 	releaseparam();
 	return 0;
 }
-
