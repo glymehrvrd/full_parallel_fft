@@ -76,10 +76,10 @@ void fft2(complex const din[], complex dout[])
 {
 	dout[0] = complexadd(din[0], din[1]);
 	dout[1] = complexsub(din[0], din[1]);
-	dout[0].real = mul(dout[0].real, 759250125, WIDTH);
-	dout[0].imag = mul(dout[0].imag, 759250125, WIDTH);
-	dout[1].real = mul(dout[1].real, 759250125, WIDTH);
-	dout[1].imag = mul(dout[1].imag, 759250125, WIDTH);
+	//dout[0].real = mul(dout[0].real, 759250125, WIDTH);
+	//dout[0].imag = mul(dout[0].imag, 759250125, WIDTH);
+	//dout[1].real = mul(dout[1].real, 759250125, WIDTH);
+	//dout[1].imag = mul(dout[1].imag, 759250125, WIDTH);
 };
 
 void fft3(complex const din[], complex dout[])
@@ -140,7 +140,8 @@ void fft4(complex const din[], complex dout[])
 	{
 		for (int j = 0; j < 2; j++)
 		{
-			dout[i * 2 + j] = right_outputs[j][i];
+			dout[i * 2 + j].real = arith_rshift(right_outputs[j][i].real, WIDTH, 1);
+			dout[i * 2 + j].imag = arith_rshift(right_outputs[j][i].imag, WIDTH, 1);
 		}
 	}
 }

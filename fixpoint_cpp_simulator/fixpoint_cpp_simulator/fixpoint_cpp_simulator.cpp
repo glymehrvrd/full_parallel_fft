@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 	if (argc < 5)
 		return 7;
 	else if (argc == 5)
-		WIDTH = 32;
+		WIDTH = 16;
 	else
 		WIDTH = atoi(argv[5]);
 

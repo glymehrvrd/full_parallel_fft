@@ -1,6 +1,6 @@
 #include "multiplier.h"
 
-int duplbits(int a, int n = 16)
+int duplbits(int a, int n)
 {
 	int result = 0;
 	if (a == 0)
@@ -9,7 +9,7 @@ int duplbits(int a, int n = 16)
 	}
 	else
 	{
-		result = 0xffffffff>>(32-n);
+		result = 0xffffffff >> (32 - n);
 	}
 	return result;
 }
@@ -35,11 +35,22 @@ int bitget(int data, int pos)
 
 int arith_rshift(int data, int width, int length)
 {
-	return data >> length | duplbits(bitget(data, width - 1), length) << (width - length);
+	if (data & 0x01)
+	{
+		return serial_adder(data >> length | duplbits(bitget(data, width - 1), length) << (width - length), 1, width);
+	}
+	else
+	{
+		return data >> length | duplbits(bitget(data, width - 1), length) << (width - length);
+	}
 }
 
 int mul(int a, int b, int length)
 {
+//	if (a >> (length - 2) == 1 || a >> (length - 2) == 2)
+//	{
+//		throw 1;
+//	}
 	a = a & duplbits(1, length);
 	b = b & duplbits(1, length);
 	int pp = a & duplbits(b & 0x01, length);
