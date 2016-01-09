@@ -1,10 +1,10 @@
-dBov_list=[-60, -54, -48, -42, -36, -30, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -6, 0];
-% 
+dBov_list=[-60];
+
 % d=load(['../fixpoint_cpp_simulator/Release/fft_2048_gaussian.txt']);
 % d=complex(d(:,1),d(:,2));
-% 
-% hout=load(['../fixpoint_cpp_simulator/Release/fft_2048_gaussian_out.txt']);
-% hout=complex(hout(:,1),hout(:,2));
+
+hout=load(['../fixpoint_cpp_simulator/Release/fft_2048_gaussian_out.txt']);
+hout=complex(hout(:,1),hout(:,2));
 
 snr=[];
 for dBovIdx=1:length(dBov_list)

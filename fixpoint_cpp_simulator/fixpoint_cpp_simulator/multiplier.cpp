@@ -9,7 +9,7 @@ int duplbits(int a, int n = 16)
 	}
 	else
 	{
-		result = (a << n) - 1;
+		result = 0xffffffff>>(32-n);
 	}
 	return result;
 }
@@ -61,16 +61,19 @@ complex complexmul(complex d1, complex d2, int length)
 {
 	complex result;
 	// d2==1
-	if (d2.real == 1 << (length - 2) && d2.imag == 0)
+	if (d2.real == 1 << (length - 1) && d2.imag == 0)
 	{
-		result.real = arith_rshift(d1.real, length, 1);
-		result.imag = arith_rshift(d1.imag, length, 1);
+		result = d1;
+		//result.real = arith_rshift(d1.real, length, 1);
+		//result.imag = arith_rshift(d1.imag, length, 1);
 	}
 	// d2==-j
-	else if (d2.real == 0 && d2.imag == -1 << (length - 2))
+	else if (d2.real == 0 && d2.imag == -1 << (length - 1))
 	{
-		result.real = arith_rshift(d1.imag, length, 1);
-		result.imag = arith_rshift(serial_subtractor(0, d1.real, length), length, 1);
+		result.real = d1.imag;
+		result.imag = serial_subtractor(0, d1.real, length);
+		//result.real = arith_rshift(d1.imag, length, 1);
+		//result.imag = arith_rshift(serial_subtractor(0, d1.real, length), length, 1);
 	}
 	else
 	{

@@ -14,8 +14,8 @@ param calc_param(int m, int n)
 		for (int col = 0; col < n; col++)
 		{
 			result.index[row * n + col] = row * n + col;
-			result.w[row * n + col].real = (int)round(cos(2 * PI * row * col / (m * n)) * (1 << (WIDTH - 2)));
-			result.w[row * n + col].imag = (int)round(-sin(2 * PI * row * col / (m * n)) * (1 << (WIDTH - 2)));
+			result.w[row * n + col].real = (int)round(cos(2 * PI * row * col / (m * n)) * (1 << (WIDTH - 1)));
+			result.w[row * n + col].imag = (int)round(-sin(2 * PI * row * col / (m * n)) * (1 << (WIDTH - 1)));
 		}
 	}
 	return result;

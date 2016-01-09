@@ -1,4 +1,4 @@
-function [result,eachclass]=fft4_float(data)
+function [result]=fft4_float(data)
     left_outputs=zeros(2,2);
     for i=1:2
         left_outputs(i,:)=fft(data(i:2:end));
@@ -12,6 +12,5 @@ function [result,eachclass]=fft4_float(data)
     for j=1:2
         right_outputs(j,:)=fft(right_inputs(j,:));
     end;
-    eachclass={left_outputs(:),right_outputs(:)};
     result=right_outputs(:);
 end

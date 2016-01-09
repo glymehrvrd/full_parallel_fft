@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 	if (argc < 5)
 		return 7;
 	else if (argc == 5)
-		WIDTH = 16;
+		WIDTH = 32;
 	else
 		WIDTH = atoi(argv[5]);
 
@@ -229,7 +229,7 @@ int main(int argc, char* argv[])
 				break;
 			}
 		}
-//		scale = 1;
+		scale = 1;
 		// write data after fft to file
 		for (int i = 0; i < fftPt; i++)
 		{
