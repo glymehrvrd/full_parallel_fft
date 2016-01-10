@@ -2,6 +2,8 @@
 #include "multiplier.h"
 #include <map>
 #include "fixpoint_cpp_simulator.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -72,10 +74,20 @@ complex complexsub(complex d1, complex d2)
 	return result;
 }
 
+//fstream f = fstream("inner.txt", ios::out);
 void fft2(complex const din[], complex dout[])
 {
 	dout[0] = complexadd(din[0], din[1]);
 	dout[1] = complexsub(din[0], din[1]);
+//	f << "din" <<endl<< conv_to_signed(din[0].real, WIDTH) << " "
+//		<< conv_to_signed(din[0].imag, WIDTH) << endl
+//		<< conv_to_signed(din[1].real, WIDTH) << " "
+//		<< conv_to_signed(din[1].imag, WIDTH) << endl << endl;
+//
+//	f << "dout" <<endl<< conv_to_signed(dout[0].real, WIDTH) << " "
+//		<< conv_to_signed(dout[0].imag, WIDTH) << endl
+//		<< conv_to_signed(dout[1].real, WIDTH) << " "
+//		<< conv_to_signed(dout[1].imag, WIDTH) << endl << endl;
 	//dout[0].real = mul(dout[0].real, 759250125, WIDTH);
 	//dout[0].imag = mul(dout[0].imag, 759250125, WIDTH);
 	//dout[1].real = mul(dout[1].real, 759250125, WIDTH);

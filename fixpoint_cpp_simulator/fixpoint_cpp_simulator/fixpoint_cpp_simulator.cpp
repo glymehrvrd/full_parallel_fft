@@ -32,142 +32,19 @@ void read_din(complex din[])
 	f.close();
 }
 
-void fftcore(double pdfftdin[], int isize, int idirec)
+void fftcore(double pdFftdin[], int iSize, int iDir)
 {
-	complex* din = new complex[isize];
-	complex* dout = new complex[isize];
+	complex* din = new complex[iSize];
+	complex* dout = new complex[iSize];
 	initparam();
 
-	for (int i = 0; i < isize; i++)
+	for (int i = 0; i < iSize; i++)
 	{
-		din[i] = complex{(int)round(pdfftdin[i * 2] * 512),
-			(int)round(pdfftdin[i * 2 + 1] * 512)};
+		din[i] = complex{ (int)round(pdFftdin[i * 2] * 512),
+			(int)round(pdFftdin[i * 2 + 1] * 512) };
 	}
-	switch (isize)
+	switch (iSize)
 	{
-	case 64:
-		fft64(din, dout);
-		break;
-	case 128:
-		fft128(din, dout);
-		break;
-	case 256:
-		fft256(din, dout);
-		break;
-	case 512:
-		fft512(din, dout);
-		break;
-	case 1024:
-		fft1024(din, dout);
-		break;
-	case 2048:
-		fft2048(din, dout);
-		break;
-	case 1280:
-		fft1280(din, dout);
-		break;
-	case 1536:
-		fft1536(din, dout);
-		break;
-	default:
-		break;
-	}
-	for (int i = 0; i < isize; i++)
-	{
-		switch (isize)
-		{
-		case 64:
-			pdfftdin[i * 2] = dout[i].real * 8;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 8;
-			break;
-		case 128:
-			pdfftdin[i * 2] = dout[i].real * 16;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 16;
-			break;
-		case 256:
-			pdfftdin[i * 2] = dout[i].real * 16;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 16;
-			break;
-		case 512:
-			pdfftdin[i * 2] = dout[i].real * 32;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 32;
-			break;
-		case 1024:
-			pdfftdin[i * 2] = dout[i].real * 64;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
-			break;
-		case 2048:
-			pdfftdin[i * 2] = dout[i].real * 64;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
-			break;
-		case 1280:
-			pdfftdin[i * 2] = dout[i].real * 64;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
-			break;
-		case 1536:
-			pdfftdin[i * 2] = dout[i].real * 64;
-			pdfftdin[i * 2 + 1] = dout[i].imag * 64;
-			break;
-		default:
-			break;
-		}
-		pdfftdin[i * 2] = pdfftdin[i * 2] / 512;
-		pdfftdin[i * 2 + 1] = pdfftdin[i * 2 + 1] / 512;
-	}
-
-	releaseparam();
-	delete[] din;
-	delete[] dout;
-}
-
-int convToSigned(int data, int width)
-{
-	if (data >> (width - 1))
-	{
-		return data - (1 << width);
-	}
-	else
-	{
-		return data;
-	}
-}
-
-int main(int argc, char* argv[])
-{
-	//	cout << (short)mul(64767, 752) << endl;
-	//	system("pause");
-	//	return 0;
-	// check input argument
-	if (argc < 5)
-		return 7;
-	else if (argc == 5)
-		WIDTH = 16;
-	else
-		WIDTH = atoi(argv[5]);
-
-	int fftPt = atoi(argv[1]);
-	int groupNum = atoi(argv[2]);
-	char* din_path = argv[3];
-	char* dout_path = argv[4];
-
-	initparam();
-
-	complex din[2048];
-	complex dout[2048] = {0};
-
-	fstream fin(din_path, ios::in);
-	fstream fout(dout_path, ios::out);
-	for (int group = 0; group < groupNum; group++)
-	{
-		printf("do %d group\n", group + 1);
-		// read data
-		for (int i = 0; i < fftPt; i++)
-		{
-			fin >> din[i].real >> din[i].imag;
-		}
-		// do fft
-		switch (fftPt)
-		{
 		case 64:
 			fft64(din, dout);
 			break;
@@ -194,6 +71,129 @@ int main(int argc, char* argv[])
 			break;
 		default:
 			break;
+	}
+	for (int i = 0; i < iSize; i++)
+	{
+		switch (iSize)
+		{
+			case 64:
+				pdFftdin[i * 2] = dout[i].real * 8;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 8;
+				break;
+			case 128:
+				pdFftdin[i * 2] = dout[i].real * 16;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 16;
+				break;
+			case 256:
+				pdFftdin[i * 2] = dout[i].real * 16;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 16;
+				break;
+			case 512:
+				pdFftdin[i * 2] = dout[i].real * 32;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 32;
+				break;
+			case 1024:
+				pdFftdin[i * 2] = dout[i].real * 64;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 64;
+				break;
+			case 2048:
+				pdFftdin[i * 2] = dout[i].real * 64;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 64;
+				break;
+			case 1280:
+				pdFftdin[i * 2] = dout[i].real * 64;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 64;
+				break;
+			case 1536:
+				pdFftdin[i * 2] = dout[i].real * 64;
+				pdFftdin[i * 2 + 1] = dout[i].imag * 64;
+				break;
+			default:
+				break;
+		}
+		pdFftdin[i * 2] = pdFftdin[i * 2] / 512;
+		pdFftdin[i * 2 + 1] = pdFftdin[i * 2 + 1] / 512;
+	}
+
+	releaseparam();
+	delete[] din;
+	delete[] dout;
+}
+
+void print_progress(float progress)
+{
+	int barWidth = 70;
+
+	printf("[");
+	int pos = barWidth * progress;
+	for (int i = 0; i < barWidth; ++i) {
+		if (i < pos) printf("=");
+		else if (i == pos) printf(">");
+		else printf(" ");
+	}
+	printf("] %d %%\r", int(progress*100.0));
+	fflush(stdout);
+}
+
+int main(int argc, char* argv[])
+{
+	// check input argument
+	if (argc < 5)
+		return 7;
+	else if (argc == 5)
+		WIDTH = 31;
+	else
+		WIDTH = atoi(argv[5]);
+
+	int fftPt = atoi(argv[1]);
+	int groupNum = atoi(argv[2]);
+	char* din_path = argv[3];
+	char* dout_path = argv[4];
+
+	initparam();
+
+	complex din[2048];
+	complex dout[2048] = { 0 };
+
+	fstream fin(din_path, ios::in);
+	fstream fout(dout_path, ios::out);
+	for (int group = 0; group < groupNum; group++)
+	{
+		print_progress((float)(group + 1) / groupNum);
+		// read data
+		for (int i = 0; i < fftPt; i++)
+		{
+			fin >> din[i].real >> din[i].imag;
+		}
+		// do fft
+		switch (fftPt)
+		{
+			case 64:
+				fft64(din, dout);
+				break;
+			case 128:
+				fft128(din, dout);
+				break;
+			case 256:
+				fft256(din, dout);
+				break;
+			case 512:
+				fft512(din, dout);
+				break;
+			case 1024:
+				fft1024(din, dout);
+				break;
+			case 2048:
+				fft2048(din, dout);
+				break;
+			case 1280:
+				fft1280(din, dout);
+				break;
+			case 1536:
+				fft1536(din, dout);
+				break;
+			default:
+				break;
 		}
 		// do scale adjustment
 		int scale = 0;
@@ -201,39 +201,40 @@ int main(int argc, char* argv[])
 		{
 			switch (fftPt)
 			{
-			case 64:
-				scale = 8;
-				break;
-			case 128:
-				scale = 16;
-				break;
-			case 256:
-				scale = 16;
-				break;
-			case 512:
-				scale = 32;
-				break;
-			case 1024:
-				scale = 64;
-				break;
-			case 2048:
-				scale = 64;
-				break;
-			case 1280:
-				scale = 64;
-				break;
-			case 1536:
-				scale = 64;
-				break;
-			default:
-				break;
+				case 64:
+					scale = 8;
+					break;
+				case 128:
+					scale = 16;
+					break;
+				case 256:
+					scale = 16;
+					break;
+				case 512:
+					scale = 32;
+					break;
+				case 1024:
+					scale = 64;
+					break;
+				case 2048:
+					scale = 64;
+					break;
+				case 1280:
+					scale = 64;
+					break;
+				case 1536:
+					scale = 64;
+					break;
+				default:
+					break;
 			}
 		}
+		// TODO: now scale is done in fft
 		scale = 1;
 		// write data after fft to file
 		for (int i = 0; i < fftPt; i++)
 		{
-			fout << convToSigned(dout[i].real, WIDTH) * scale << " " << convToSigned(dout[i].imag, WIDTH) * scale << endl;
+			fout << conv_to_signed(dout[i].real, WIDTH) * scale << " " << conv_to_signed(dout[i].imag, WIDTH) * scale << endl;
 		}
 	}
 	fin.close();

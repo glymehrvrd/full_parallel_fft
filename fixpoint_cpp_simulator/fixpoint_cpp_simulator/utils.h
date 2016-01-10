@@ -14,6 +14,7 @@ struct param
 	complex* w;
 };
 
+int conv_to_signed(int data, int width);
 param calc_param(int m, int n);
 
 template <class T>

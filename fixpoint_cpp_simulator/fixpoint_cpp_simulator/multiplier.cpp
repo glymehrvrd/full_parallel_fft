@@ -35,22 +35,23 @@ int bitget(int data, int pos)
 
 int arith_rshift(int data, int width, int length)
 {
-	if (data & 0x01)
-	{
-		return serial_adder(data >> length | duplbits(bitget(data, width - 1), length) << (width - length), 1, width);
-	}
-	else
-	{
-		return data >> length | duplbits(bitget(data, width - 1), length) << (width - length);
-	}
+	//	if (data & 0x01)
+	//	{
+	//		return serial_adder(data >> length | duplbits(bitget(data, width - 1), length) << (width - length), 1, width);
+	//	}
+	//	else
+	//	{
+	//		return data >> length | duplbits(bitget(data, width - 1), length) << (width - length);
+	//	}
+	return data >> length | duplbits(bitget(data, width - 1), length) << (width - length);
 }
 
 int mul(int a, int b, int length)
 {
-//	if (a >> (length - 2) == 1 || a >> (length - 2) == 2)
-//	{
-//		throw 1;
-//	}
+	if (a >> (length - 2) == 1 || a >> (length - 2) == 2)
+	{
+		//		throw 1;
+	}
 	a = a & duplbits(1, length);
 	b = b & duplbits(1, length);
 	int pp = a & duplbits(b & 0x01, length);
@@ -88,14 +89,13 @@ complex complexmul(complex d1, complex d2, int length)
 	}
 	else
 	{
-		short mul1 = mul(d1.real, d2.real, length);
-		short mul2 = mul(d1.imag, d2.imag, length);
-		short mul3 = mul(d1.real, d2.imag, length);
-		short mul4 = mul(d1.imag, d2.real, length);
+		int mul1 = mul(d1.real, d2.real, length);
+		int mul2 = mul(d1.imag, d2.imag, length);
+		int mul3 = mul(d1.real, d2.imag, length);
+		int mul4 = mul(d1.imag, d2.real, length);
 
 		result.real = serial_adder(mul1, serial_subtractor(0, mul2, length), length);
 		result.imag = serial_adder(mul3, mul4, length);
 	}
 	return result;
 }
-

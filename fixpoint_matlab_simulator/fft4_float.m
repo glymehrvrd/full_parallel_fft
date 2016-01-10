@@ -1,7 +1,7 @@
 function [result]=fft4_float(data)
     left_outputs=zeros(2,2);
     for i=1:2
-        left_outputs(i,:)=fft(data(i:2:end));
+        left_outputs(i,:)=fft2_float(data(i:2:end));
     end;
     left_outputs=left_outputs.';
 
@@ -10,7 +10,7 @@ function [result]=fft4_float(data)
 
     right_outputs=zeros(2,2);
     for j=1:2
-        right_outputs(j,:)=fft(right_inputs(j,:));
+        right_outputs(j,:)=fft2_float(right_inputs(j,:));
     end;
     result=right_outputs(:);
 end

@@ -3,6 +3,18 @@
 #include <cmath>
 #include "fixpoint_cpp_simulator.h"
 
+int conv_to_signed(int data, int width)
+{
+	if (data > 0 && data >> (width - 1))
+	{
+		return data - (1 << width);
+	}
+	else
+	{
+		return data;
+	}
+}
+
 param calc_param(int m, int n)
 {
 	param result;
