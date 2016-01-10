@@ -79,15 +79,15 @@ void fft2(complex const din[], complex dout[])
 {
 	dout[0] = complexadd(din[0], din[1]);
 	dout[1] = complexsub(din[0], din[1]);
-//	f << "din" <<endl<< conv_to_signed(din[0].real, WIDTH) << " "
-//		<< conv_to_signed(din[0].imag, WIDTH) << endl
-//		<< conv_to_signed(din[1].real, WIDTH) << " "
-//		<< conv_to_signed(din[1].imag, WIDTH) << endl << endl;
-//
-//	f << "dout" <<endl<< conv_to_signed(dout[0].real, WIDTH) << " "
-//		<< conv_to_signed(dout[0].imag, WIDTH) << endl
-//		<< conv_to_signed(dout[1].real, WIDTH) << " "
-//		<< conv_to_signed(dout[1].imag, WIDTH) << endl << endl;
+	//	f << "din" <<endl<< conv_to_signed(din[0].real, WIDTH) << " "
+	//		<< conv_to_signed(din[0].imag, WIDTH) << endl
+	//		<< conv_to_signed(din[1].real, WIDTH) << " "
+	//		<< conv_to_signed(din[1].imag, WIDTH) << endl << endl;
+	//
+	//	f << "dout" <<endl<< conv_to_signed(dout[0].real, WIDTH) << " "
+	//		<< conv_to_signed(dout[0].imag, WIDTH) << endl
+	//		<< conv_to_signed(dout[1].real, WIDTH) << " "
+	//		<< conv_to_signed(dout[1].imag, WIDTH) << endl << endl;
 	//dout[0].real = mul(dout[0].real, 759250125, WIDTH);
 	//dout[0].imag = mul(dout[0].imag, 759250125, WIDTH);
 	//dout[1].real = mul(dout[1].real, 759250125, WIDTH);
@@ -101,11 +101,11 @@ void fft3(complex const din[], complex dout[])
 
 	complex m31 = complexadd(din[0], t31);
 
-	complex m32{ t31.real >> 1, t31.imag >> 1 };
+	complex m32{ arith_rshift(t31.real, WIDTH, 1), arith_rshift(t31.imag, WIDTH, 1) };
 	m32 = complexadd(m32, t31);
 	m32 = complexsub(complex{ 0, 0 }, m32);
 
-	complex m33 = complex{ -mul(t32.imag, 28378, WIDTH), mul(t32.real, 28378, WIDTH) };
+	complex m33 = complex{ serial_subtractor(0, mul(t32.imag, 454047, WIDTH), WIDTH), mul(t32.real, 454047, WIDTH) };
 
 	complex s31 = complexadd(m31, m32);
 
@@ -170,14 +170,14 @@ void fft5(complex const din[], complex dout[])
 
 	complex m51 = complexadd(din[0], t55);
 
-	complex m52{ t55.real >> 2, t55.imag >> 2 };
+	complex m52{ arith_rshift(t55.real, WIDTH, 2), arith_rshift(t55.imag, WIDTH, 2) };
 	m52 = complexadd(m52, t55);
 	m52 = complexsub(complex{ 0, 0 }, m52);
 
-	complex m53{ mul(t56.real, 18318, WIDTH), mul(t56.imag, 18318, WIDTH) };
-	complex m54{ -mul(t57.imag, 31164, WIDTH), mul(t57.real, 31164, WIDTH) };
-	complex m55{ mul(t54.imag, 25212, WIDTH) << 1, -mul(t54.real, 25212, WIDTH) << 1 };
-	complex m56{ mul(t53.imag, 11904, WIDTH), -mul(t53.real, 11904, WIDTH) };
+	complex m53{ mul(t56.real, 293086, WIDTH), mul(t56.imag, 293086, WIDTH) };
+	complex m54{ serial_subtractor(0, mul(t57.imag, 498628, WIDTH), WIDTH), mul(t57.real, 498628, WIDTH) };
+	complex m55{ mul(t54.imag, 403398, WIDTH) << 1, serial_subtractor(0, mul(t54.real, 403398, WIDTH), WIDTH) << 1 };
+	complex m56{ mul(t53.imag, 190459, WIDTH), serial_subtractor(0, mul(t53.real, 190459, WIDTH), WIDTH) };
 
 	complex s51 = complexadd(m51, m52);
 	complex s52 = complexadd(s51, m53);
@@ -252,7 +252,7 @@ void fft1280(const complex din[], complex dout[])
 	complex w[1280];
 	for (int i = 0; i < 1280; i++)
 	{
-		w[i].real = 1 << 14;
+		w[i].real = 1 << (WIDTH - 1);
 		w[i].imag = 0;
 	}
 
@@ -269,7 +269,7 @@ void fft1280(const complex din[], complex dout[])
 	}
 
 	// fft
-	fftx(din_reordered, dout_messed, fft256, 256, nullptr, w, fft5, 5);
+	fftx(din_reordered, dout_messed, fft256, 256, NULL, w, fft5, 5);
 
 	// reorder for output
 	for (int i = 0; i < 5; i++)
@@ -290,7 +290,7 @@ void fft1536(const complex din[], complex dout[])
 	complex w[1536];
 	for (int i = 0; i < 1536; i++)
 	{
-		w[i].real = 1 << 14;
+		w[i].real = 1 << (WIDTH - 1);
 		w[i].imag = 0;
 	}
 
@@ -307,7 +307,7 @@ void fft1536(const complex din[], complex dout[])
 	}
 
 	// fft
-	fftx(din_reordered, dout_messed, fft512, 512, nullptr, w, fft3, 3);
+	fftx(din_reordered, dout_messed, fft512, 512, NULL, w, fft3, 3);
 
 	// reorder for output
 	for (int i = 0; i < 3; i++)

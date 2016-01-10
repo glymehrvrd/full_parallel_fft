@@ -125,13 +125,13 @@ void print_progress(float progress)
 	int barWidth = 70;
 
 	printf("[");
-	int pos = barWidth * progress;
+	int pos = (int)(barWidth * progress);
 	for (int i = 0; i < barWidth; ++i) {
 		if (i < pos) printf("=");
 		else if (i == pos) printf(">");
 		else printf(" ");
 	}
-	printf("] %d %%\r", int(progress*100.0));
+	printf("] %3d %%\r", int(progress*100.0));
 	fflush(stdout);
 }
 
@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 	if (argc < 5)
 		return 7;
 	else if (argc == 5)
-		WIDTH = 31;
+		WIDTH = 20;
 	else
 		WIDTH = atoi(argv[5]);
 
@@ -164,6 +164,8 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < fftPt; i++)
 		{
 			fin >> din[i].real >> din[i].imag;
+			din[i].real = din[i].real << 2;
+			din[i].imag = din[i].imag << 2;
 		}
 		// do fft
 		switch (fftPt)
@@ -196,41 +198,39 @@ int main(int argc, char* argv[])
 				break;
 		}
 		// do scale adjustment
-		int scale = 0;
+		float scale = 0;
 		for (int i = 0; i < fftPt; i++)
 		{
 			switch (fftPt)
 			{
 				case 64:
-					scale = 8;
+					scale = 4/4.0;
 					break;
 				case 128:
-					scale = 16;
+					scale = 4/4.0;
 					break;
 				case 256:
-					scale = 16;
+					scale = 8/4.0;
 					break;
 				case 512:
-					scale = 32;
+					scale = 8/4.0;
 					break;
 				case 1024:
-					scale = 64;
+					scale = 8/4.0;
 					break;
 				case 2048:
-					scale = 64;
+					scale = 16/4.0;
 					break;
 				case 1280:
-					scale = 64;
+					scale = 8/4.0;
 					break;
 				case 1536:
-					scale = 64;
+					scale = 8/4.0;
 					break;
 				default:
 					break;
 			}
 		}
-		// TODO: now scale is done in fft
-		scale = 1;
 		// write data after fft to file
 		for (int i = 0; i < fftPt; i++)
 		{
