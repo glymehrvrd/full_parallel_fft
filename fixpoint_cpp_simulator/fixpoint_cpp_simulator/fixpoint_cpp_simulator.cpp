@@ -164,8 +164,8 @@ int main(int argc, char* argv[])
 		for (int i = 0; i < fftPt; i++)
 		{
 			fin >> din[i].real >> din[i].imag;
-			din[i].real = din[i].real << 2;
-			din[i].imag = din[i].imag << 2;
+			din[i].real = din[i].real << 1;
+			din[i].imag = din[i].imag << 1;
 		}
 		// do fft
 		switch (fftPt)
@@ -204,28 +204,28 @@ int main(int argc, char* argv[])
 			switch (fftPt)
 			{
 				case 64:
-					scale = 4/4.0;
+					scale = 4/2.0;
 					break;
 				case 128:
-					scale = 4/4.0;
+					scale = 4/2.0;
 					break;
 				case 256:
-					scale = 8/4.0;
+					scale = 8/2.0;
 					break;
 				case 512:
-					scale = 8/4.0;
+					scale = 8/2.0;
 					break;
 				case 1024:
-					scale = 8/4.0;
+					scale = 8/2.0;
 					break;
 				case 2048:
-					scale = 16/4.0;
+					scale = 16/2.0;
 					break;
 				case 1280:
-					scale = 8/4.0;
+					scale = 8/2.0;
 					break;
 				case 1536:
-					scale = 8/4.0;
+					scale = 8/2.0;
 					break;
 				default:
 					break;

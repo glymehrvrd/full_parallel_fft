@@ -51,7 +51,7 @@ void initparam()
 
 void releaseparam()
 {
-	for (auto itr = param_pairs.begin(); itr != param_pairs.end(); ++itr)
+	for (map<int,param>::iterator itr = param_pairs.begin(); itr != param_pairs.end(); ++itr)
 	{
 		delete itr->second.index;
 		delete itr->second.w;
