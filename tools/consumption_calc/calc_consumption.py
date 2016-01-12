@@ -1,6 +1,7 @@
 import json
+import sys
 
-with open('data.json') as f:
+with open(sys.argv[1]) as f:
     data=json.load(f)
 
 def memo(func):

@@ -1,18 +1,18 @@
 {
     "dff_1_preload_1": {
-        "gate": 2.8
+        "gate": 4
     },
     "dff_1": {
-        "gate": 2.64
+        "gate": 4
     },
     "mux": {
         "gate": 2
     },
     "HA": {
-        "gate": 1.3
+        "gate": 2
     },
     "FA": {
-        "gate": 1.89
+        "gate": 3
     },
     "dff_15": {
         "dff_1": 15
