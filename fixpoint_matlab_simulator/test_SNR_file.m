@@ -1,11 +1,11 @@
 dBov_list=[-60, -54, -48, -42, -36, -30, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -6, 0];
 groupNum=100;
-fftpt=1280;
+fftpt=64;
 
 d=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian.txt']);
 d=complex(d(:,1),d(:,2));
 
-hout=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian_out.txt']);
+hout=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian_out_stoc.txt']);
 hout=complex(hout(:,1),hout(:,2));
 
 snr=[];
