@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include "stdlib.h"
+#include "math.h"
 #include "fft_func.h"
 #include "fixpoint_cpp_simulator.h"
 #include "multiplier.h"

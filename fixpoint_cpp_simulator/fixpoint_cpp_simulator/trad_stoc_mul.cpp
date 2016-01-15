@@ -1,3 +1,5 @@
+#include "stdlib.h"
+#include "math.h"
 #include "trad_stoc_mul.h"
 #include "utils.h"
 #include <iostream>
