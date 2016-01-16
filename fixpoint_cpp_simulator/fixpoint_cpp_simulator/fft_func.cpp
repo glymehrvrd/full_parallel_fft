@@ -328,7 +328,7 @@ void fftx(complex const din[], complex dout[], fftx_func lfft, int m, int* index
 	{
 		for (int j = 0; j < n; j++)
 		{
-			right_inputs[i][j] = complexmul(left_outputs[j][i], w[i * n + j], WIDTH, TRAD_STOC_MUL);
+			right_inputs[i][j] = complexmul(left_outputs[j][i], w[i * n + j], WIDTH, MULTYPE);
 		}
 	}
 
