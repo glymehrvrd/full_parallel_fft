@@ -8,7 +8,6 @@
 #include "math.h"
 #include "fft_func.h"
 #include "fixpoint_cpp_simulator.h"
-#include "multiplier.h"
 
 using namespace std;
 
@@ -139,13 +138,17 @@ void print_progress(float progress)
 	fflush(stdout);
 }
 
-//#include "trad_stoc_mul.h"
+//#define DEBUG_MUL
 
 int main(int argc, char* argv[])
 {
-	//	cout << serial_mul(0, - 1518500250,20) << endl;
-	//	system("pause");
-	//	return 0;
+#ifdef DEBUG_MUL
+//	cout << mul(1, 1, 20, TRAD_STOC_MUL) << endl;
+	cout << seg_two_stoc_mul(11123, 111112, 20) << endl;
+	system("pause");
+	return 0;
+#endif
+
 	// check input argument
 	if (argc < 6)
 	{
@@ -157,7 +160,7 @@ int main(int argc, char* argv[])
 	int groupNum = atoi(argv[2]);
 	char* din_path = argv[3];
 	char* dout_path = argv[4];
-//	WIDTH = atoi(argv[5]);
+	//	WIDTH = atoi(argv[5]);
 	WIDTH = 20;
 	MULTYPE = (multype)atoi(argv[5]);
 
@@ -254,4 +257,3 @@ int main(int argc, char* argv[])
 	releaseparam();
 	return 0;
 }
-

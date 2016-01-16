@@ -5,7 +5,7 @@ fftpt=64;
 d=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian.txt']);
 d=complex(d(:,1),d(:,2));
 
-hout=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian_out_stoc.txt']);
+hout=load(['../fixpoint_cpp_simulator/Release/fft_' int2str(fftpt) '_gaussian_out.txt']);
 hout=complex(hout(:,1),hout(:,2));
 
 snr=[];

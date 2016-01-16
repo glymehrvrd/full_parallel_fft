@@ -140,20 +140,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="fft_func.h" />
     <ClInclude Include="fixpoint_cpp_simulator.h" />
     <ClInclude Include="multiplier.h" />
-    <ClInclude Include="trad_stoc_mul.h" />
+    <ClInclude Include="serial_mul.h" />
+    <ClInclude Include="stoc_mul.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fft_func.cpp" />
     <ClCompile Include="fixpoint_cpp_simulator.cpp" />
     <ClCompile Include="multiplier.cpp" />
-    <ClCompile Include="trad_stoc_mul.cpp" />
+    <ClCompile Include="serial_mul.cpp" />
+    <ClCompile Include="stoc_mul.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -53,25 +53,9 @@ void releaseparam()
 {
 	for (map<int, param>::iterator itr = param_pairs.begin(); itr != param_pairs.end(); ++itr)
 	{
-		delete itr->second.index;
-		delete itr->second.w;
+		delete[] itr->second.index;
+		delete[] itr->second.w;
 	}
-}
-
-complex complexadd(complex lhs, complex rhs)
-{
-	complex result;
-	result.real = serial_adder(lhs.real, rhs.real, WIDTH);
-	result.imag = serial_adder(lhs.imag, rhs.imag, WIDTH);
-	return result;
-}
-
-complex complexsub(complex lhs, complex rhs)
-{
-	complex result;
-	result.real = serial_subtractor(lhs.real, rhs.real, WIDTH);
-	result.imag = serial_subtractor(lhs.imag, rhs.imag, WIDTH);
-	return result;
 }
 
 //fstream f = fstream("inner.txt", ios::out);
