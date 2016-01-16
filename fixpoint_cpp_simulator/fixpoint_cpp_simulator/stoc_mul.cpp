@@ -112,7 +112,7 @@ int seg_two_stoc_mul(int lhs, int rhs, int width)
 	int sign = (lhs >> 31 ^ rhs >> 31) ? -1 : 1;
 
 	lhs = abs(lhs);
-	rhs = abs(rhs);
+	rhs = abs(rhs) << 1; // now sequence is for 20-bit TCS (exclude the sign bit), so scale needs to be done.
 
 	gen_sequence_uniform(lhs >> 10, A, 10);
 	gen_sequence_allhead(lhs & 0x3FF, B, 10);
