@@ -122,5 +122,5 @@ int seg_two_stoc_mul(int lhs, int rhs, int width)
 	seq_and(A, D, A, 10);
 	seq_and(B, C, B, 10);
 
-	return sign * ((lhs >> 10) * (rhs >> 10) + seq_to_num(A, 10) + seq_to_num(B, 10));
+	return sign * ((lhs >> 10) * (rhs >> 10) + seq_to_num(A, 10) + seq_to_num(B, 10) + 1);
 }
